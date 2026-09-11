@@ -1,0 +1,28 @@
+.............F....                                                       [100%]
+=================================== FAILURES ===================================
+___ test_runtime_fixture_failures_are_real_invocations_but_not_live_accuracy ___
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_runtime_fixture_failures_0')
+
+    def test_runtime_fixture_failures_are_real_invocations_but_not_live_accuracy(tmp_path):
+        class ScriptedProvider:
+            def __init__(self):self.calls=0
+            def observe(self,image):
+                self.calls+=1
+                if self.calls==11:raise ObservationError('scripted nondetection')
+                return phantom_observation(image,phantom_points())
+        source=study(tmp_path/'inputs',acquisition=True);provider=ScriptedProvider()
+        run=run_validation_study(source,tmp_path/'run',provider=provider)
+        assert provider.calls==11
+        log=(run/'events.jsonl').read_text()
+>       assert log.count('"stage":"provider.observe"')==22
+E       assert 0 == 22
+E        +  where 0 = <built-in method count of str object at 0x1cfbc640>('"stage":"provider.observe"')
+E        +    where <built-in method count of str object at 0x1cfbc640> = '{"operation":"validation.preflight.begin","payload":{"study_file_sha256":"cdb1f49f5537f8a59ee4fc0e64096ccdedb14a52686...sha256":"62b1672517988384317936dc0668aa46d522af9e89332ca4235c58c997f5e238","utc":"2026-09-11T19:59:04.665571+00:00"}\n'.count
+
+tests/test_wave4_io.py:104: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_wave4_io.py::test_runtime_fixture_failures_are_real_invocations_but_not_live_accuracy - assert 0 == 22
+ +  where 0 = <built-in method count of str object at 0x1cfbc640>('"stage":"provider.observe"')
+ +    where <built-in method count of str object at 0x1cfbc640> = '{"operation":"validation.preflight.begin","payload":{"study_file_sha256":"cdb1f49f5537f8a59ee4fc0e64096ccdedb14a52686...sha256":"62b1672517988384317936dc0668aa46d522af9e89332ca4235c58c997f5e238","utc":"2026-09-11T19:59:04.665571+00:00"}\n'.count
+1 failed, 17 passed in 8.41s

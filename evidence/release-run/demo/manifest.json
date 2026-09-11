@@ -1,0 +1,512 @@
+{
+  "format": "facemath.bundle.v3",
+  "recipe_sha256": "84ae203afff18fe60a2306a7e0bb56ed4d6b088b024d1d8149cc041fa1165a1c",
+  "files": {
+    "arrays.npz": {
+      "sha256": "abd0fb52429571b9762b5bdc52d27ff7354dd574639dfe6db70f054739eb5c2a",
+      "bytes": 2192782
+    },
+    "canonical_a.png": {
+      "sha256": "f88cfe5732bf30b330b9d32ad8cd949f82d0340f2552b4322e8914786919506c",
+      "bytes": 103098
+    },
+    "canonical_b.png": {
+      "sha256": "3d389acf728ad1a0ea1902dfaced4a8088a9f9d2a37cfd139df1b0409faf32de",
+      "bytes": 102901
+    },
+    "environment.json": {
+      "sha256": "06d964728bdf2085eee7cc7e07ee81e0488b8a7da04745a0bffb66725c1a6fa4",
+      "bytes": 457
+    },
+    "events.jsonl": {
+      "sha256": "7554a4af0ddc4926085cbeeb1d762e670873cccb72a6397ba9e3c1726b7d5bd4",
+      "bytes": 6260
+    },
+    "evidence.json": {
+      "sha256": "efb1e5734a9ae402b4536abd823c362920ff632f4b205382c5fb12577e12f6cc",
+      "bytes": 22603
+    },
+    "landmark_overlay.png": {
+      "sha256": "996f3212fa88c9c1687250d3de6dcdc20da72b6a5bc99e4417f9c56f05a6504d",
+      "bytes": 100096
+    },
+    "observations.json": {
+      "sha256": "4476337a131d86ec89ebf8012f3f18b759318aaefe146070e7ea268499c876ee",
+      "bytes": 6708
+    },
+    "report.html": {
+      "sha256": "52a3af56aa9ab50c086f7eca787ae62083000fcb08fca6275f00f9a28633fc2a",
+      "bytes": 709590
+    },
+    "source_a.png": {
+      "sha256": "c395ace9af5685a3ee435aa53669a870c5d21c380a7d1a377256ac684c62a9d4",
+      "bytes": 108377
+    },
+    "source_b.png": {
+      "sha256": "0097e23956ac2daa0953dae46831142c99e1c99b41d0495f07ab2274a0d1955b",
+      "bytes": 107779
+    }
+  },
+  "arrays": {
+    "anatomical_support": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "ede465ba43f094b92b0cdd77d70075e186e664834fe66762cfcdb7b6f4a89557"
+    },
+    "anatomical_uv": {
+      "shape": [
+        256,
+        256,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "344b7ac645c7d53cd178fc3fab7ccc5819a1c67e188afadcceb167ca2281b84b"
+    },
+    "canonical_a_xy": {
+      "shape": [
+        21,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "be63b40052d009f72012eb8aae2a11ccd06d5dca5e72384312d3be5c89a119d4"
+    },
+    "canonical_b_xy": {
+      "shape": [
+        21,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "6f6ca6c0580a024162b02f0c708e26c991df741cec8c04a80b06330e904b1269"
+    },
+    "canonical_to_source_a": {
+      "shape": [
+        3,
+        3
+      ],
+      "dtype": "<f8",
+      "sha256": "5029798f9018cb111cc4643989c2c9d3833362e3210b25df38100a1939235f47"
+    },
+    "canonical_to_source_b": {
+      "shape": [
+        3,
+        3
+      ],
+      "dtype": "<f8",
+      "sha256": "cb792b4934f470f4988e9593fa3be75d965eb62379a46d03a5e96a2b77aad2de"
+    },
+    "flow_admissible": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "829dbe8a659813437ec5e8eef33220119ae539258660e6379463882359270610"
+    },
+    "flow_anatomical_disagreement_px": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "<f8",
+      "sha256": "7897a237710fd2d5d096bb348b6ac3e8b852098d1144deb911ab8edd5dd03ebe"
+    },
+    "flow_concordant": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "ae3c73cfe2c9fb30ff06dd625094d0affbb5956820269afcdeab3a535c73516e"
+    },
+    "flow_cycle_error_px": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "<f8",
+      "sha256": "ba8607bb8510f46ff6ec710288eb939932a52d520edb4150965ed3e78fb10e85"
+    },
+    "flow_photometric_residual": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "<f8",
+      "sha256": "851b5aaf0c44ad55add4ac7d79ebfe41748884833dd1692e7de2157738a8791f"
+    },
+    "flow_texture_observability": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "<f8",
+      "sha256": "4d6ae0a544147e18f884aa35b9ae0e60bdc97096b1b6ffc09a5b06d515b68256"
+    },
+    "flow_uv": {
+      "shape": [
+        256,
+        256,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "5e130f17c39304536fa029c47b6dafb87b692a8a99c20e82741a4a5e80339cc3"
+    },
+    "heldout_residual_vectors": {
+      "shape": [
+        4,
+        21,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "c00456c09f116beacb9803fff07c38fa3845fd13d3ff6b360946d90b74968d27"
+    },
+    "landmark_residual_vectors": {
+      "shape": [
+        21,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "65608c5507494a18d098f8776a4323221ae479bfe26d0ac32735006fc60261f9"
+    },
+    "landmark_supported": {
+      "shape": [
+        21
+      ],
+      "dtype": "|b1",
+      "sha256": "11ae1706841395da988d142aa17fb1441ac794161bbcca0db4687d80c17fb44e"
+    },
+    "observation_a_covariance": {
+      "shape": [
+        21,
+        2,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "bd21d10fd68be15d7f924bda9d0aec7753fd0c6cf883712163af7be39f3825b1"
+    },
+    "observation_a_samples": {
+      "shape": [
+        1,
+        21,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "3c3ebb662673b005053f5753753ecf8b8788a7c6f53018452ef9fe53f6b3966c"
+    },
+    "observation_a_xy": {
+      "shape": [
+        21,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "f428afaea0f000f47907a54830c649e67671af65be7d2b890816054acfddba12"
+    },
+    "observation_b_covariance": {
+      "shape": [
+        21,
+        2,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "bd21d10fd68be15d7f924bda9d0aec7753fd0c6cf883712163af7be39f3825b1"
+    },
+    "observation_b_samples": {
+      "shape": [
+        1,
+        21,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "62a69cc0d3c4217c3cf5b2a4be5e2d679c767cfee551afd21ed478c62b738c1b"
+    },
+    "observation_b_xy": {
+      "shape": [
+        21,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "ef73ea23ed206c4f5d9f6d238a6a6ff31b7111adfef4e7e2afc42b65145a027e"
+    },
+    "photometric_support": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "709c2d1bff8ffabde532caac8844f8ef4d4a84a8cf216a475340ce5622cdb37b"
+    },
+    "region_a_central": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "179a51b937f44a3d387db810d06680829744fd27ba87456c1bee10fe310aaefc"
+    },
+    "region_a_face": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "410ebc6f5b88bb6c0def1b14e7c4319fdba4791ad4985bf05ec49eba7114f3c0"
+    },
+    "region_a_jaw": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "9498269e6ac708262fc64078f89d51df149c872082fc2c3c1808ca0a832ae381"
+    },
+    "region_a_left_eye": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "c96254b2515440c6ccc2ab6b7b8b6ab5c14b71dc6c063e1995dd6196200ca582"
+    },
+    "region_a_mouth": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "551dcc3bf1806177d3d1e2d8077fd901b49e48aa3125a8403b4691ef2b7db02e"
+    },
+    "region_a_nose": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "400d2ebb29c2b214ab28962046e4fbc21628114e8b5504e1214db7945aa88f05"
+    },
+    "region_a_right_eye": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "d9711e7217e79e6d572d62b49228a29d520b3eee76ec3587260cf08687c4158d"
+    },
+    "region_b_central": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "ade5340a099ad1dad26c332a126d236fff2353e5a559820f252679b362cc6663"
+    },
+    "region_b_face": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "046f375f35eb3201ee9ef0e8dda415af71cd27ed0cdd625c0fbba1744e4cb256"
+    },
+    "region_b_jaw": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "5f82a64dafd30e5cba783d7fb1284dd3938afb73f015e92adb077e9325a51b9d"
+    },
+    "region_b_left_eye": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "35eb39fd5d8cd7f0829c57ce0241577f6fdc38567ba99b4304e697e993a6c90e"
+    },
+    "region_b_mouth": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "551dcc3bf1806177d3d1e2d8077fd901b49e48aa3125a8403b4691ef2b7db02e"
+    },
+    "region_b_nose": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "c2d61b82fbba7843a448564c962cadaeedd3151385f1665e9f467cd686bbd87b"
+    },
+    "region_b_right_eye": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "01eac843aa4377cd726e6c70e585523ed31219d09b8ec1f6e7f7855041de479b"
+    },
+    "registration_weights": {
+      "shape": [
+        11
+      ],
+      "dtype": "<f8",
+      "sha256": "198fdcb1c04c51d9738a63bc0e34ca05f2b7688ac657a9dfdfa31cf83d191fc3"
+    },
+    "relational_distortion": {
+      "shape": [
+        21,
+        21
+      ],
+      "dtype": "<f8",
+      "sha256": "e63ce46e94885bd4f52c428e5e356b8061fba0b8f4b28cece73b8fe38d968cd2"
+    },
+    "sensitivity_draws": {
+      "shape": [
+        96,
+        7
+      ],
+      "dtype": "<f8",
+      "sha256": "ba306c8e37d7fb2d676ba6e2dbc24360a16f5c1d7f92e560370f8555c0e405b6"
+    },
+    "sensitivity_region_supported": {
+      "shape": [
+        7
+      ],
+      "dtype": "|b1",
+      "sha256": "6d2924ef2583c5d66b0013a9d63b072d94409471a2abdbc7b7cb59496b9587e6"
+    },
+    "simplex_index": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "<i4",
+      "sha256": "10dd0c5c579f3aeff02ff1293e5798e6f0854cae4af953df4aa4eefc713e2352"
+    },
+    "source_support_a": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "9eaa5be67556e578e3e1f7c8da27814477ec618235b230c91eabaddb0f72b675"
+    },
+    "source_support_b": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "9eaa5be67556e578e3e1f7c8da27814477ec618235b230c91eabaddb0f72b675"
+    },
+    "source_to_canonical_a": {
+      "shape": [
+        3,
+        3
+      ],
+      "dtype": "<f8",
+      "sha256": "1d582078253d0dda526e5b08b010a48be53b772b9464c99935cfd8aea85386c4"
+    },
+    "source_to_canonical_b": {
+      "shape": [
+        3,
+        3
+      ],
+      "dtype": "<f8",
+      "sha256": "aca7993d76c1fba7d99d00d77d3405a41e2606d9ecd7946cbf20071bc0053f5b"
+    },
+    "triangle_condition": {
+      "shape": [
+        35
+      ],
+      "dtype": "<f8",
+      "sha256": "4692d28be02fbce53aa31bb814546f12e086e3b1589c7d6f5b4ca3b6721826f9"
+    },
+    "triangle_determinants": {
+      "shape": [
+        35
+      ],
+      "dtype": "<f8",
+      "sha256": "4fa9cea1fa405f5e840f4741c04afe2a2ed21da6c0cd0d88e3a30f3027d1ea4c"
+    },
+    "triangle_green_strain": {
+      "shape": [
+        35,
+        2,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "749a766c892031264a04627bf1d9d417a8129752dbb3d9e1fbede8e34c16451b"
+    },
+    "triangle_indices": {
+      "shape": [
+        35,
+        3
+      ],
+      "dtype": "<i4",
+      "sha256": "d563f0cf66c40abdae76d1cce246611c039517336cd2cd91390635faecbe97ca"
+    },
+    "triangle_jacobians": {
+      "shape": [
+        35,
+        2,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "ffa184c0b91615049553c497feb5dcbbf07343236981bcc3e19d1e6516451f92"
+    },
+    "triangle_principal_log_stretch": {
+      "shape": [
+        35,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "9127d0ba3a87b1bd0dc3f314abf6315a6c8ce8ed4d77651f14e19fc477738834"
+    },
+    "triangle_valid": {
+      "shape": [
+        35
+      ],
+      "dtype": "|b1",
+      "sha256": "a5351c7375fc55388ecda0652c504ed038f22f4d1c2a795ad708a2a26ff749ce"
+    }
+  },
+  "array_semantics": {
+    "coordinates": "xy pixel coordinates; rows use observation.names; image arrays are y,x",
+    "anatomical_uv": "A-domain B-minus-A displacement; zero outside support is a sentinel, not agreement",
+    "triangle_jacobians": "d(B_coordinates)/d(A_coordinates); piecewise-affine inferred anatomy",
+    "triangle_green_strain": "0.5*(F.T@F-I); geometric distortion, not physical tissue deformation",
+    "triangle_principal_log_stretch": "log singular values of F; invalid triangles excluded by triangle_valid",
+    "heldout_residual_vectors": {
+      "axis_0": [
+        "eyes",
+        "nose",
+        "mouth",
+        "jaw"
+      ],
+      "units": "registered_eye_span_geomean"
+    },
+    "sensitivity_draws": {
+      "axis_1": [
+        "left_eye",
+        "right_eye",
+        "nose",
+        "mouth",
+        "jaw",
+        "central",
+        "all"
+      ],
+      "kind": "conditional_observation_sensitivity",
+      "missingness": "columns with sensitivity_region_supported=false contain zero sentinels, never interpreted as measurements"
+    },
+    "landmark_supported": "source-coordinate in-bounds intersection for both observations",
+    "flow_admissible": "heuristic texture/cycle/overlap support, not correctness probability"
+  },
+  "integrity_limit": "self-consistency hashes; not an externally signed execution attestation",
+  "manifest_content_sha256": "05bde118e3c91482461c063514aac02cf76faf1974bc08fd50f99826b562678a"
+}

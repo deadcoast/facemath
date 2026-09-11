@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import facemath,json;from facemath.observation.journal import code_fingerprint;print(json.dumps({"module":facemath.__file__,"code_sha256":code_fingerprint()}))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/facemath_wave4_release_validation/wheel-env/lib/python3.13/site-packages/facemath/observation/__init__.py", line 3, in <module>
+    from .canonical import InstrumentConfig
+  File "/mnt/data/facemath_wave4_release_validation/wheel-env/lib/python3.13/site-packages/facemath/observation/canonical.py", line 12, in <module>
+    import cv2
+ModuleNotFoundError: No module named 'cv2'

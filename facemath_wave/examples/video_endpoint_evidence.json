@@ -1,0 +1,197 @@
+{
+  "residual_rms": {
+    "name": "residual_rms",
+    "value": 0.5313844229573208,
+    "unit": "normalized_intensity",
+    "direction": "lower_is_more_similar",
+    "domain": "signal",
+    "description": "RMS registered residual",
+    "provenance": {
+      "operation": "difference_field",
+      "inputs": [
+        "1e41a14aea8277e7",
+        "78bc564ebe748dc4"
+      ],
+      "parameters": {},
+      "implementation": "facemath",
+      "timestamp_unix": 1789142352.803876
+    },
+    "calibrated_percentile": null,
+    "uncertainty": null,
+    "tags": []
+  },
+  "residual_entropy": {
+    "name": "residual_entropy",
+    "value": 4.558912960237616,
+    "unit": "bits",
+    "direction": "lower_is_more_similar",
+    "domain": "signal",
+    "description": "Entropy of registered residual",
+    "provenance": {
+      "operation": "residual_entropy",
+      "inputs": [
+        "1e41a14aea8277e7",
+        "78bc564ebe748dc4"
+      ],
+      "parameters": {},
+      "implementation": "facemath",
+      "timestamp_unix": 1789142352.8124864
+    },
+    "calibrated_percentile": null,
+    "uncertainty": null,
+    "tags": []
+  },
+  "structure_tensor_distance": {
+    "name": "structure_tensor_distance",
+    "value": 0.32154113592869277,
+    "unit": "tensor_rmse",
+    "direction": "lower_is_more_similar",
+    "domain": "signal",
+    "description": "Local edge/orientation structure disagreement",
+    "provenance": {
+      "operation": "structure_tensor",
+      "inputs": [
+        "1e41a14aea8277e7",
+        "78bc564ebe748dc4"
+      ],
+      "parameters": {},
+      "implementation": "facemath",
+      "timestamp_unix": 1789142352.9755127
+    },
+    "calibrated_percentile": null,
+    "uncertainty": null,
+    "tags": []
+  },
+  "phase_distance": {
+    "name": "phase_distance",
+    "value": 1.6583405004249796,
+    "unit": "radians_rms",
+    "direction": "lower_is_more_similar",
+    "domain": "signal",
+    "description": "Fourier phase disagreement",
+    "provenance": {
+      "operation": "fourier_phase",
+      "inputs": [
+        "1e41a14aea8277e7",
+        "78bc564ebe748dc4"
+      ],
+      "parameters": {},
+      "implementation": "facemath",
+      "timestamp_unix": 1789142353.022557
+    },
+    "calibrated_percentile": null,
+    "uncertainty": null,
+    "tags": []
+  },
+  "multiscale_laplacian": {
+    "name": "multiscale_laplacian",
+    "value": [
+      0.014504530763932409,
+      0.019398588484512615,
+      0.027302443122796883,
+      0.03620358791734379,
+      0.05004349265329073
+    ],
+    "unit": "rms_per_scale",
+    "direction": "descriptive",
+    "domain": "signal",
+    "description": "Scale-specific appearance/structure residual",
+    "provenance": {
+      "operation": "laplacian_pyramid",
+      "inputs": [
+        "1e41a14aea8277e7",
+        "78bc564ebe748dc4"
+      ],
+      "parameters": {},
+      "implementation": "facemath",
+      "timestamp_unix": 1789142353.051678
+    },
+    "calibrated_percentile": null,
+    "uncertainty": null,
+    "tags": []
+  },
+  "scattering_distance": {
+    "name": "scattering_distance",
+    "value": 0.0024205977996883724,
+    "unit": "feature_rmse",
+    "direction": "lower_is_more_similar",
+    "domain": "signal",
+    "description": "Deformation-stable Gabor scattering-like distance",
+    "provenance": {
+      "operation": "gabor_scattering",
+      "inputs": [
+        "1e41a14aea8277e7",
+        "78bc564ebe748dc4"
+      ],
+      "parameters": {},
+      "implementation": "facemath",
+      "timestamp_unix": 1789142359.978927
+    },
+    "calibrated_percentile": null,
+    "uncertainty": null,
+    "tags": []
+  },
+  "flow_mean_magnitude": {
+    "name": "flow_mean_magnitude",
+    "value": 43.94156948599634,
+    "unit": "pixels",
+    "direction": "lower_is_more_similar",
+    "domain": "deformation",
+    "description": "Dense apparent displacement after canonical registration",
+    "provenance": {
+      "operation": "farneback",
+      "inputs": [
+        "1e41a14aea8277e7",
+        "78bc564ebe748dc4"
+      ],
+      "parameters": {},
+      "implementation": "facemath",
+      "timestamp_unix": 1789142360.1230047
+    },
+    "calibrated_percentile": null,
+    "uncertainty": null,
+    "tags": []
+  },
+  "strain_energy": {
+    "name": "strain_energy",
+    "value": 41.56711833560088,
+    "unit": "squared_gradient",
+    "direction": "lower_is_more_similar",
+    "domain": "deformation",
+    "description": "Translation-insensitive local deformation strain",
+    "provenance": {
+      "operation": "strain_tensor",
+      "inputs": [
+        "1e41a14aea8277e7",
+        "78bc564ebe748dc4"
+      ],
+      "parameters": {},
+      "implementation": "facemath",
+      "timestamp_unix": 1789142360.150474
+    },
+    "calibrated_percentile": null,
+    "uncertainty": null,
+    "tags": []
+  },
+  "smooth_deformation_energy": {
+    "name": "smooth_deformation_energy",
+    "value": 5671.269998241147,
+    "unit": "energy",
+    "direction": "lower_is_more_similar",
+    "domain": "deformation",
+    "description": "Magnitude + first/second derivative deformation energy",
+    "provenance": {
+      "operation": "deformation_energy",
+      "inputs": [
+        "1e41a14aea8277e7",
+        "78bc564ebe748dc4"
+      ],
+      "parameters": {},
+      "implementation": "facemath",
+      "timestamp_unix": 1789142360.2020977
+    },
+    "calibrated_percentile": null,
+    "uncertainty": null,
+    "tags": []
+  }
+}

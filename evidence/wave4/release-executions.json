@@ -1,0 +1,338 @@
+[
+  {
+    "name": "release-source-tests",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "coverage",
+      "run",
+      "-m",
+      "pytest",
+      "-q",
+      "--junitxml=/mnt/data/facemath_wave_04/evidence/wave4/source-tests.xml"
+    ],
+    "cwd": "/mnt/data/facemath_wave_04",
+    "returncode": 0,
+    "elapsed_seconds": 28.986776843999905,
+    "log": "evidence/wave4/release-source-tests.txt",
+    "log_sha256": "f7597c1c12ab6845eb62a0ce115900f04fd0e731bdaa02d1a6b36d7f4a5fe035"
+  },
+  {
+    "name": "release-coverage",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "coverage",
+      "json",
+      "-o",
+      "/mnt/data/facemath_wave_04/evidence/wave4/coverage.json"
+    ],
+    "cwd": "/mnt/data/facemath_wave_04",
+    "returncode": 0,
+    "elapsed_seconds": 1.2934078480002427,
+    "log": "evidence/wave4/release-coverage.txt",
+    "log_sha256": "36eaf8bd0182b6bcaed949aa8716d695d5e30b4f9e8101302da120baf2ac41c9"
+  },
+  {
+    "name": "release-laboratory",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "facemath",
+      "validation-lab",
+      "--out",
+      "/mnt/data/facemath_wave_04/evidence/wave4/laboratory"
+    ],
+    "cwd": "/mnt/data/facemath_wave_04",
+    "returncode": 0,
+    "elapsed_seconds": 2.5090891350000675,
+    "log": "evidence/wave4/release-laboratory.txt",
+    "log_sha256": "5ec96f0a8fe214726837d4c5c99065379467032c79192daed0e764a14cce6720"
+  },
+  {
+    "name": "release-source-verify-validation",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "facemath",
+      "verify",
+      "/mnt/data/facemath_wave_04/evidence/wave4/laboratory/validation"
+    ],
+    "cwd": "/mnt/data/facemath_wave_04",
+    "returncode": 0,
+    "elapsed_seconds": 1.5376820759997827,
+    "log": "evidence/wave4/release-source-verify-validation.txt",
+    "log_sha256": "9ed4e992bfef893c8735d6b5628d06c609045ce217625d91fd2c208f3b0aa7e6"
+  },
+  {
+    "name": "release-source-verify-validation",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "facemath",
+      "verify",
+      "/mnt/data/facemath_wave_04/evidence/wave4/laboratory/validation"
+    ],
+    "cwd": "/mnt/data/facemath_wave_04",
+    "returncode": 0,
+    "elapsed_seconds": 1.4127750140000899,
+    "log": "evidence/wave4/release-source-verify-validation.txt",
+    "log_sha256": "9ed4e992bfef893c8735d6b5628d06c609045ce217625d91fd2c208f3b0aa7e6"
+  },
+  {
+    "name": "release-source-replay-validation",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "facemath",
+      "replay",
+      "/mnt/data/facemath_wave_04/evidence/wave4/laboratory/validation",
+      "--out",
+      "/mnt/data/facemath_wave4_release_validation/source-replay-validation"
+    ],
+    "cwd": "/mnt/data/facemath_wave_04",
+    "returncode": 0,
+    "elapsed_seconds": 1.8210844320001343,
+    "log": "evidence/wave4/release-source-replay-validation.txt",
+    "log_sha256": "0288da24836b947cf8e3c60716472c1c6cb6ea985a04bc4ac001c5a4926a4e09"
+  },
+  {
+    "name": "release-source-verify-qualified_pair",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "facemath",
+      "verify",
+      "/mnt/data/facemath_wave_04/evidence/wave4/laboratory/qualified_pair"
+    ],
+    "cwd": "/mnt/data/facemath_wave_04",
+    "returncode": 0,
+    "elapsed_seconds": 1.4168562499999098,
+    "log": "evidence/wave4/release-source-verify-qualified_pair.txt",
+    "log_sha256": "549d91a98ed060b4ede30d20d30fa7a0a737d65cb294aa2d5f511453e143b56b"
+  },
+  {
+    "name": "release-source-replay-qualified_pair",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "facemath",
+      "replay",
+      "/mnt/data/facemath_wave_04/evidence/wave4/laboratory/qualified_pair",
+      "--out",
+      "/mnt/data/facemath_wave4_release_validation/source-replay-qualified_pair"
+    ],
+    "cwd": "/mnt/data/facemath_wave_04",
+    "returncode": 0,
+    "elapsed_seconds": 2.118996505999803,
+    "log": "evidence/wave4/release-source-replay-qualified_pair.txt",
+    "log_sha256": "ce06a9ff8fab3910b2bee35e01225639dae1b0e0fdcd302e276b14e68c6a83b0"
+  },
+  {
+    "name": "release-browser",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "/mnt/data/facemath_wave_04/scripts/browser_qa_wave4.py",
+      "/mnt/data/facemath_wave_04/evidence/wave4/laboratory",
+      "/mnt/data/facemath_wave_04/evidence/wave4/browser",
+      "--chromium",
+      "/usr/bin/chromium"
+    ],
+    "cwd": "/mnt/data/facemath_wave_04",
+    "returncode": 0,
+    "elapsed_seconds": 6.816704223000215,
+    "log": "evidence/wave4/release-browser.txt",
+    "log_sha256": "fcc6bcc7872e9943c5b3c9f2b2fe522ea2d75c071cb23707a6779a0e505fcd96"
+  },
+  {
+    "name": "release-wheel-build",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "pip",
+      "wheel",
+      "--no-deps",
+      "--no-build-isolation",
+      "/mnt/data/facemath_wave_04",
+      "-w",
+      "/mnt/data/facemath_wave_04/dist"
+    ],
+    "cwd": "/mnt/data/facemath_wave_04",
+    "returncode": 0,
+    "elapsed_seconds": 2.958797967999999,
+    "log": "evidence/wave4/release-wheel-build.txt",
+    "log_sha256": "8f3794ce7b3f9a9f66dc799f20d29cf715cc7b9b416f8ea6600e66cdb75c9038"
+  },
+  {
+    "name": "release-venv",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "venv",
+      "--system-site-packages",
+      "/mnt/data/facemath_wave4_release_validation/wheel-env"
+    ],
+    "cwd": "/mnt/data/facemath_wave_04",
+    "returncode": 0,
+    "elapsed_seconds": 2.182596929999818,
+    "log": "evidence/wave4/release-venv.txt",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "release-wheel-install",
+    "command": [
+      "/mnt/data/facemath_wave4_release_validation/wheel-env/bin/python",
+      "-m",
+      "pip",
+      "install",
+      "--no-deps",
+      "--force-reinstall",
+      "/mnt/data/facemath_wave_04/dist/facemath-0.4.0-py3-none-any.whl"
+    ],
+    "cwd": "/mnt/data/facemath_wave4_release_validation/outside-source",
+    "returncode": 0,
+    "elapsed_seconds": 0.35738077500036525,
+    "log": "evidence/wave4/release-wheel-install.txt",
+    "log_sha256": "37844d85f798e01af5e421376fe63769f824e9ff24cbc82c8eabf7759324d155"
+  },
+  {
+    "name": "release-wheel-import",
+    "command": [
+      "/mnt/data/facemath_wave4_release_validation/wheel-env/bin/python",
+      "-c",
+      "import facemath,json;from facemath.observation.journal import code_fingerprint;print(json.dumps({\"module\":facemath.__file__,\"code_sha256\":code_fingerprint()}))"
+    ],
+    "cwd": "/mnt/data/facemath_wave4_release_validation/outside-source",
+    "returncode": 1,
+    "elapsed_seconds": 0.08307514899979651,
+    "log": "evidence/wave4/release-wheel-import.txt",
+    "log_sha256": "7e58a2af8be3e7366f3c02fba7528fba30459c8a936d2f7853ad7b7a45920b54"
+  },
+  {
+    "name": "release-wheel-build",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "pip",
+      "wheel",
+      "--no-deps",
+      "--no-build-isolation",
+      "/mnt/data/facemath_wave_04",
+      "-w",
+      "/mnt/data/facemath_wave_04/dist"
+    ],
+    "cwd": "/mnt/data/facemath_wave_04",
+    "returncode": 0,
+    "elapsed_seconds": 2.8161482839996097,
+    "log": "evidence/wave4/release-wheel-build.attempt-2.txt",
+    "log_sha256": "ba6247c600366353b794c6d7878a7d8c5a16f84bb1b6fbc917c794272d98425f"
+  },
+  {
+    "name": "release-venv",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "venv",
+      "--system-site-packages",
+      "/mnt/data/facemath_wave4_release_validation/wheel-env"
+    ],
+    "cwd": "/mnt/data/facemath_wave_04",
+    "returncode": 0,
+    "elapsed_seconds": 1.543090217000099,
+    "log": "evidence/wave4/release-venv.attempt-2.txt",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "release-wheel-dependency-path",
+    "command": [
+      "/mnt/data/facemath_wave4_release_validation/wheel-env/bin/python",
+      "-c",
+      "import pathlib,sysconfig; p=pathlib.Path(sysconfig.get_path(\"purelib\"))/\"facemath-validation-dependencies.pth\";p.write_text('/opt/pyvenv/lib/python3.13/site-packages\\n');print(p.read_text())"
+    ],
+    "cwd": "/mnt/data/facemath_wave4_release_validation/outside-source",
+    "returncode": 0,
+    "elapsed_seconds": 0.02378636200000983,
+    "log": "evidence/wave4/release-wheel-dependency-path.txt",
+    "log_sha256": "52a33dd90f9475484407e30ebf5c11bdeeeef6a83e1b087fccbd75adda39ef15"
+  },
+  {
+    "name": "release-wheel-install",
+    "command": [
+      "/mnt/data/facemath_wave4_release_validation/wheel-env/bin/python",
+      "-m",
+      "pip",
+      "install",
+      "--no-deps",
+      "--force-reinstall",
+      "/mnt/data/facemath_wave_04/dist/facemath-0.4.0-py3-none-any.whl"
+    ],
+    "cwd": "/mnt/data/facemath_wave4_release_validation/outside-source",
+    "returncode": 0,
+    "elapsed_seconds": 0.36341010000023743,
+    "log": "evidence/wave4/release-wheel-install.attempt-2.txt",
+    "log_sha256": "d75a15662b2aae95698833570dee1addcc6215aaeeb1a16bc7732e46d51b53ea"
+  },
+  {
+    "name": "release-wheel-import",
+    "command": [
+      "/mnt/data/facemath_wave4_release_validation/wheel-env/bin/python",
+      "-c",
+      "import facemath,json;from facemath.observation.journal import code_fingerprint;print(json.dumps({\"module\":facemath.__file__,\"code_sha256\":code_fingerprint()}))"
+    ],
+    "cwd": "/mnt/data/facemath_wave4_release_validation/outside-source",
+    "returncode": 0,
+    "elapsed_seconds": 0.40005491000010807,
+    "log": "evidence/wave4/release-wheel-import.attempt-2.txt",
+    "log_sha256": "1b3c423475175ed286715b86c024ac0b73cadf6b839b324633435b3c69cf61ab"
+  },
+  {
+    "name": "release-wheel-tests",
+    "command": [
+      "/mnt/data/facemath_wave4_release_validation/wheel-env/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "tests",
+      "--junitxml=/mnt/data/facemath_wave_04/evidence/wave4/wheel-tests.xml"
+    ],
+    "cwd": "/mnt/data/facemath_wave4_release_validation/outside-source",
+    "returncode": 0,
+    "elapsed_seconds": 21.78221498599987,
+    "log": "evidence/wave4/release-wheel-tests.txt",
+    "log_sha256": "5c2be9b1e7f3b05964ac3d910b9fdcf95a556ac10c43e95aa648a265721eb16e"
+  },
+  {
+    "name": "release-wheel-replay-validation",
+    "command": [
+      "/mnt/data/facemath_wave4_release_validation/wheel-env/bin/python",
+      "-m",
+      "facemath",
+      "replay",
+      "/mnt/data/facemath_wave_04/evidence/wave4/laboratory/validation",
+      "--out",
+      "/mnt/data/facemath_wave4_release_validation/wheel-replay-validation"
+    ],
+    "cwd": "/mnt/data/facemath_wave4_release_validation/outside-source",
+    "returncode": 0,
+    "elapsed_seconds": 1.1679078779998235,
+    "log": "evidence/wave4/release-wheel-replay-validation.txt",
+    "log_sha256": "c2df0362668b0b4856f0f326d8ee69abbdac788973da551e895b825e0fe256b9"
+  },
+  {
+    "name": "release-wheel-replay-qualified_pair",
+    "command": [
+      "/mnt/data/facemath_wave4_release_validation/wheel-env/bin/python",
+      "-m",
+      "facemath",
+      "replay",
+      "/mnt/data/facemath_wave_04/evidence/wave4/laboratory/qualified_pair",
+      "--out",
+      "/mnt/data/facemath_wave4_release_validation/wheel-replay-qualified_pair"
+    ],
+    "cwd": "/mnt/data/facemath_wave4_release_validation/outside-source",
+    "returncode": 0,
+    "elapsed_seconds": 1.4679001309996238,
+    "log": "evidence/wave4/release-wheel-replay-qualified_pair.txt",
+    "log_sha256": "0b3de31a121da0787d29edf60be95bcc712dbe08a2f7b010b0a738344075a04e"
+  }
+]

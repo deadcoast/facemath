@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "facemath"
+version = "0.1.0"
+description = "Integrated multiscale facial geometry evidence engine"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.12",
+  "opencv-python>=4.9",
+  "scikit-image>=0.22",
+  "scikit-learn>=1.4",
+  "networkx>=3.2",
+  "torch>=2.2",
+]
+
+[project.scripts]
+facemath = "facemath.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,0 +1,25 @@
+{
+  "artifact": "facemath_wave_03.zip",
+  "bytes": 13704100,
+  "sha256": "7516c1a64e8cc96548ec192812f7f27fde6d0e858b413d0a7f7881057ba1c746",
+  "files": 170,
+  "zip_crc_check": "passed",
+  "fresh_extraction_verification": {
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "facemath",
+      "verify",
+      "/mnt/data/facemath_wave3_archive_check/facemath_wave_03/evidence/release-run/demo"
+    ],
+    "returncode": 0,
+    "result": {
+      "verified": true,
+      "files": 11,
+      "arrays": 53,
+      "events": 13,
+      "manifest_content_sha256": "05bde118e3c91482461c063514aac02cf76faf1974bc08fd50f99826b562678a",
+      "limit": "self-consistency hashes; not an externally signed execution attestation"
+    }
+  }
+}

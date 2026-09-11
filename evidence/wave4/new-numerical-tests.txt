@@ -1,0 +1,111 @@
+.....................................F.............................      [100%]
+=================================== FAILURES ===================================
+____________ test_assessment_does_not_change_uncalibrated_geometry _____________
+
+self = <facemath.observation.instrument.FacialInstrument object at 0x7f5a6ac14d60>
+image_a = array([[[53, 53, 53],
+        [61, 61, 61],
+        [74, 74, 74],
+        ...,
+        [43, 43, 43],
+        [48, 48, ...72],
+        ...,
+        [71, 71, 71],
+        [74, 74, 74],
+        [78, 78, 78]]], shape=(224, 256, 3), dtype=uint8)
+image_b = array([[[57, 57, 57],
+        [61, 61, 61],
+        [68, 68, 68],
+        ...,
+        [78, 78, 78],
+        [77, 77, ...69],
+        ...,
+        [62, 62, 62],
+        [59, 59, 59],
+        [59, 59, 59]]], shape=(224, 256, 3), dtype=uint8)
+observation_a = Observation(image_sha256='db00d98891f490aab1c1c51cdfc310f84a5ef5b5dc95052f88a66a55e8200915', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+observation_b = Observation(image_sha256='bc4aeed50cb80d57c88e1e1598a6aee7b3f5a3eafc4e1df49026e67ab58a93ef', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+
+    def run(self, image_a: np.ndarray, image_b: np.ndarray,
+            observation_a: Observation | None = None,
+            observation_b: Observation | None = None) -> InstrumentResult:
+        journal = Journal()
+        try:
+>           return self._execute(image_a, image_b, observation_a, observation_b, journal)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+src/facemath/observation/instrument.py:111: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/instrument.py:161: in _execute
+    localization = assess_pair(state, self.localization_calibration,
+src/facemath/observation/error_model.py:219: in assess_pair
+    calibration.require_query(observation, group, domain)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = LocalizationCalibration(alpha=0.1, quantile=17.00000000000003, rank=18, group_scores=(('group-0', 0), ('group-1', 0.99...6e5fde104d26e60ff75d626eba85a9', 'ec9d53ec6c59f770decbfabee85d15df8eb41a02c3cd9b7fe66e28c014b1c760'), minimum_raters=1)
+observation = Observation(image_sha256='bc4aeed50cb80d57c88e1e1598a6aee7b3f5a3eafc4e1df49026e67ab58a93ef', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+group_id = 'qb', domain = 'schematic-validation-only', lineage_ids = ()
+
+    def require_query(self, observation: Any, group_id: str, domain: str, lineage_ids: tuple[str, ...] = ()) -> None:
+        if self.quantile is None:
+            raise ObservationError("localization calibration is unbounded: insufficient groups or failure mass")
+        if not group_id or domain != self.domain:
+            raise ObservationError("explicit query group and matching acquisition domain required")
+        if observer_recipe(observation) != self.observer_recipe_sha256:
+            raise ObservationError("localization observer recipe mismatch")
+        if observation.image_sha256 in self.calibration_images or group_id in dict(self.group_scores):
+>           raise ObservationError("localization calibration/query leakage")
+E           facemath.observation.contracts.ObservationError: localization calibration/query leakage
+
+src/facemath/observation/error_model.py:104: ObservationError
+
+The above exception was the direct cause of the following exception:
+
+    def test_assessment_does_not_change_uncalibrated_geometry():
+        c,_=calibration();p=phantom_points();a=render_phantom(p,seed=400);b=render_phantom(p,seed=500)
+        oa=phantom_observation(a,p);ob=phantom_observation(b,p+[1,0]);cfg=InstrumentConfig(uncertainty_draws=4,enable_flow=False,enable_edges=False)
+        raw=FacialInstrument(cfg).run(a,b,oa,ob)
+>       qualified=FacialInstrument(cfg,localization_calibration=c,query_groups=('qa','qb'),domain=c.domain).run(a,b,oa,ob)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_wave4_error_model.py:126: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <facemath.observation.instrument.FacialInstrument object at 0x7f5a6ac14d60>
+image_a = array([[[53, 53, 53],
+        [61, 61, 61],
+        [74, 74, 74],
+        ...,
+        [43, 43, 43],
+        [48, 48, ...72],
+        ...,
+        [71, 71, 71],
+        [74, 74, 74],
+        [78, 78, 78]]], shape=(224, 256, 3), dtype=uint8)
+image_b = array([[[57, 57, 57],
+        [61, 61, 61],
+        [68, 68, 68],
+        ...,
+        [78, 78, 78],
+        [77, 77, ...69],
+        ...,
+        [62, 62, 62],
+        [59, 59, 59],
+        [59, 59, 59]]], shape=(224, 256, 3), dtype=uint8)
+observation_a = Observation(image_sha256='db00d98891f490aab1c1c51cdfc310f84a5ef5b5dc95052f88a66a55e8200915', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+observation_b = Observation(image_sha256='bc4aeed50cb80d57c88e1e1598a6aee7b3f5a3eafc4e1df49026e67ab58a93ef', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+
+    def run(self, image_a: np.ndarray, image_b: np.ndarray,
+            observation_a: Observation | None = None,
+            observation_b: Observation | None = None) -> InstrumentResult:
+        journal = Journal()
+        try:
+            return self._execute(image_a, image_b, observation_a, observation_b, journal)
+        except ObservationError as exc:
+>           raise InstrumentFailure(str(exc), journal.jsonl()) from exc
+E           facemath.observation.instrument.InstrumentFailure: localization calibration/query leakage
+
+src/facemath/observation/instrument.py:113: InstrumentFailure
+=========================== short test summary info ============================
+FAILED tests/test_wave4_error_model.py::test_assessment_does_not_change_uncalibrated_geometry - facemath.observation.instrument.InstrumentFailure: localization calibration/query leakage
+1 failed, 66 passed in 1.23s

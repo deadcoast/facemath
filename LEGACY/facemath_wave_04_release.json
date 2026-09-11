@@ -1,0 +1,111 @@
+{
+  "format": "facemath.distribution-verification.v4",
+  "version": "0.4.0",
+  "archive": "facemath_wave_04.zip",
+  "archive_bytes": 20385413,
+  "archive_sha256": "7c75e20dc9586881c2e30c87d3835339aa7b1b2eaaec08537dc8b08b9a7fa049",
+  "wheel": "facemath-0.4.0-py3-none-any.whl",
+  "wheel_sha256": "c6264082b23e4ed6da832cb8a4fd8923787ab87bb2fcca718cd7c35535df48b0",
+  "source_wheel_extracted_archive_python_files_identical": 52,
+  "engine_code_sha256": "c4e0c3890234a3981080905104c73bb1cbe36ad6bf8b2d1bbf8de382e7e30054",
+  "parent_archive_sha256": "7516c1a64e8cc96548ec192812f7f27fde6d0e858b413d0a7f7881057ba1c746",
+  "source_tests": {
+    "tests": 297,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "passed": 296
+  },
+  "installed_wheel_tests": {
+    "tests": 297,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "passed": 296
+  },
+  "evidence_release_validation_sha256": "10cb5aea80d10c75589179a0a1343b48a101ed0ed3e7334f6a19b61a3e13a050",
+  "raw_extracted_checks": [
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=/mnt/data/facemath_wave4_archive_tests.xml"
+      ],
+      "cwd": "/mnt/data/facemath_wave4_archive_check/facemath_wave_04",
+      "pythonpath": "/mnt/data/facemath_wave4_archive_check/facemath_wave_04/src",
+      "returncode": 0,
+      "elapsed_seconds": 27.050634892999824,
+      "stdout_file": "/mnt/data/facemath_wave4_archive_tests.txt",
+      "stdout_sha256": "4818930337de0c93d4d93a22ca6d5361e313b8c27110433fb21254c961a6fea0"
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-c",
+        "import facemath,json;from facemath.observation.journal import code_fingerprint;print(json.dumps({\"module\":facemath.__file__,\"code_sha256\":code_fingerprint()}))"
+      ],
+      "cwd": "/mnt/data/facemath_wave4_archive_check/facemath_wave_04",
+      "pythonpath": "/mnt/data/facemath_wave4_archive_check/facemath_wave_04/src",
+      "returncode": 0,
+      "elapsed_seconds": 1.0052449559998422,
+      "stdout_file": "/mnt/data/facemath_wave4_archive_import.txt",
+      "stdout_sha256": "8ee70ad1c1095b34b20d6db12d3dd3d5b67ce21b5a2938333682f91fb5f845b5"
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "verify",
+        "/mnt/data/facemath_wave4_archive_check/facemath_wave_04/evidence/wave4/laboratory/validation"
+      ],
+      "cwd": "/mnt/data/facemath_wave4_archive_check/facemath_wave_04",
+      "pythonpath": "/mnt/data/facemath_wave4_archive_check/facemath_wave_04/src",
+      "returncode": 0,
+      "elapsed_seconds": 1.323527471000034,
+      "stdout_file": "/mnt/data/facemath_wave4_archive_validation.txt",
+      "stdout_sha256": "9ed4e992bfef893c8735d6b5628d06c609045ce217625d91fd2c208f3b0aa7e6"
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "verify",
+        "/mnt/data/facemath_wave4_archive_check/facemath_wave_04/evidence/wave4/laboratory/qualified_pair"
+      ],
+      "cwd": "/mnt/data/facemath_wave4_archive_check/facemath_wave_04",
+      "pythonpath": "/mnt/data/facemath_wave4_archive_check/facemath_wave_04/src",
+      "returncode": 0,
+      "elapsed_seconds": 1.3076719769996998,
+      "stdout_file": "/mnt/data/facemath_wave4_archive_qualified_pair.txt",
+      "stdout_sha256": "549d91a98ed060b4ede30d20d30fa7a0a737d65cb294aa2d5f511453e143b56b"
+    }
+  ],
+  "live_inference_executed": false,
+  "human_calibration_performed": false,
+  "extracted_archive_tests": {
+    "tests": 297,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "passed": 296
+  },
+  "extracted_validation_verification": {
+    "verified": true,
+    "kind": "localization_validation",
+    "files": 186,
+    "arrays": 11,
+    "manifest_content_sha256": "834943cfd0381e127009dcc35f23f3c79ead273889504a523ebe8d59acfc3831"
+  },
+  "extracted_qualified_pair_verification": {
+    "verified": true,
+    "files": 12,
+    "arrays": 146,
+    "events": 17,
+    "manifest_content_sha256": "2dd110650fc756fc471abb36bd31295d88e7f51b935f178bea872ee81b32fd57",
+    "limit": "self-consistency hashes; not an externally signed execution attestation"
+  }
+}

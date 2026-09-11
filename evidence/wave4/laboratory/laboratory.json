@@ -1,0 +1,77 @@
+{
+  "format": "facemath.localization_lab.v4",
+  "kind": "synthetic_falsification_NOT_HUMAN_DETECTOR_VALIDATION",
+  "seed": 24091,
+  "provider_spec": {
+    "provider": "synthetic_biased_observer",
+    "version": 1,
+    "shared_bias_px": [
+      1.3,
+      -0.9
+    ],
+    "case_shared_jitter_sd_px": 0.45,
+    "local_bias_sd_px": 0.4,
+    "perturbation_jitter_sd_px": 0.015,
+    "attempted_samples": 7,
+    "assumed_noise_floor_px": 0.25,
+    "calibration_failure_indices": [
+      17
+    ],
+    "evaluation_failure_indices": [
+      49
+    ],
+    "scope": "deterministic falsification fixture, not learned face inference"
+  },
+  "cases": 60,
+  "calibration_groups": 40,
+  "evaluation_groups": 20,
+  "mean_perturbation_rms_px": 0.018027930725088567,
+  "heldout_mean_localization_error_px": 1.6010402153902554,
+  "bias_to_repeatability_ratio": 88.80887328694735,
+  "naive_3sigma_simultaneous_hit_fraction_including_failures": 0.0,
+  "naive_rule_is_not_a_coverage_guarantee": true,
+  "calibrated_empirical_group_coverage": 0.95,
+  "conformal_rank": 37,
+  "conformal_quantile": 12.688326774080187,
+  "calibration_failed_groups": 1,
+  "evaluation_failed_cases": 1,
+  "known_fixed_gauge_gap_ipd": [
+    0.026088905420490933,
+    0.023173758113028305,
+    0.025203402618198655,
+    0.020581406156517348,
+    0.011395057173659885,
+    0.021383393688868206,
+    0.03526409954867977,
+    0.017592457837465467
+  ],
+  "fixed_gauge_bounds_contain_rendered_reference": true,
+  "pair_localization_statuses": [
+    "unresolved_at_tolerance",
+    "unresolved_at_tolerance",
+    "unresolved_at_tolerance",
+    "unresolved_at_tolerance",
+    "unresolved_at_tolerance",
+    "unresolved_at_tolerance",
+    "unresolved_at_tolerance",
+    "unresolved_at_tolerance"
+  ],
+  "verification": {
+    "validation": {
+      "verified": true,
+      "kind": "localization_validation",
+      "files": 186,
+      "arrays": 11,
+      "manifest_content_sha256": "834943cfd0381e127009dcc35f23f3c79ead273889504a523ebe8d59acfc3831"
+    },
+    "qualified_pair": {
+      "verified": true,
+      "files": 12,
+      "arrays": 146,
+      "events": 17,
+      "manifest_content_sha256": "2dd110650fc756fc471abb36bd31295d88e7f51b935f178bea872ee81b32fd57",
+      "limit": "self-consistency hashes; not an externally signed execution attestation"
+    }
+  },
+  "limit": "a controlled detector-error model validates this workflow, not MediaPipe or human facial localization"
+}

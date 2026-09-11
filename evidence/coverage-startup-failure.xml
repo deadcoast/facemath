@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="14" failures="0" skipped="0" tests="14" time="1.431" timestamp="2026-09-11T17:17:35.039337+00:00" hostname="localhost"><testcase classname="" name="tests.test_core" time="0.000"><error message="collection failure">tests/test_core.py:2: in &lt;module&gt;
+    from facemath.geometry import generalized_procrustes, similarity_transform, apply_homography, epsilon_isometry_distortion
+src/facemath/__init__.py:2: in &lt;module&gt;
+    from .pipeline import GeometryPipeline
+src/facemath/pipeline.py:8: in &lt;module&gt;
+    from .signal import difference_field, residual_entropy, structure_tensor_distance, fourier_phase_distance, laplacian_pyramid_distance, scattering_distance
+src/facemath/signal.py:3: in &lt;module&gt;
+    import cv2
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:181: in &lt;module&gt;
+    bootstrap()
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:175: in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:28: in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/typing/__init__.py:162: in &lt;module&gt;
+    LayerId = cv2.dnn.DictValue
+              ^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'cv2.dnn' has no attribute 'DictValue'</error></testcase><testcase classname="" name="tests.test_observation_contracts" time="0.000"><error message="collection failure">tests/test_observation_contracts.py:6: in &lt;module&gt;
+    from facemath.observation.contracts import Observation, ObservationError, array_digest, frozen_array, rgb_image
+src/facemath/__init__.py:2: in &lt;module&gt;
+    from .pipeline import GeometryPipeline
+src/facemath/pipeline.py:8: in &lt;module&gt;
+    from .signal import difference_field, residual_entropy, structure_tensor_distance, fourier_phase_distance, laplacian_pyramid_distance, scattering_distance
+src/facemath/signal.py:3: in &lt;module&gt;
+    import cv2
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:181: in &lt;module&gt;
+    bootstrap()
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:175: in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:28: in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/typing/__init__.py:162: in &lt;module&gt;
+    LayerId = cv2.dnn.DictValue
+              ^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'cv2.dnn' has no attribute 'DictValue'</error></testcase><testcase classname="" name="tests.test_wave2" time="0.000"><error message="collection failure">tests/test_wave2.py:2: in &lt;module&gt;
+    import cv2
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:181: in &lt;module&gt;
+    bootstrap()
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:175: in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:28: in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/typing/__init__.py:162: in &lt;module&gt;
+    LayerId = cv2.dnn.DictValue
+              ^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'cv2.dnn' has no attribute 'DictValue'</error></testcase><testcase classname="" name="tests.test_wave3_artifacts" time="0.000"><error message="collection failure">tests/test_wave3_artifacts.py:6: in &lt;module&gt;
+    from facemath.observation.artifacts import write_bundle,verify_bundle
+src/facemath/__init__.py:2: in &lt;module&gt;
+    from .pipeline import GeometryPipeline
+src/facemath/pipeline.py:8: in &lt;module&gt;
+    from .signal import difference_field, residual_entropy, structure_tensor_distance, fourier_phase_distance, laplacian_pyramid_distance, scattering_distance
+src/facemath/signal.py:3: in &lt;module&gt;
+    import cv2
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:181: in &lt;module&gt;
+    bootstrap()
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:175: in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:28: in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/typing/__init__.py:162: in &lt;module&gt;
+    LayerId = cv2.dnn.DictValue
+              ^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'cv2.dnn' has no attribute 'DictValue'</error></testcase><testcase classname="" name="tests.test_wave3_cli" time="0.000"><error message="collection failure">tests/test_wave3_cli.py:8: in &lt;module&gt;
+    import cv2
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:181: in &lt;module&gt;
+    bootstrap()
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:175: in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:28: in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/typing/__init__.py:162: in &lt;module&gt;
+    LayerId = cv2.dnn.DictValue
+              ^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'cv2.dnn' has no attribute 'DictValue'</error></testcase><testcase classname="" name="tests.test_wave3_cohort" time="0.000"><error message="collection failure">tests/test_wave3_cohort.py:4: in &lt;module&gt;
+    from facemath.observation.cohort import Cohort, CohortRow
+src/facemath/__init__.py:2: in &lt;module&gt;
+    from .pipeline import GeometryPipeline
+src/facemath/pipeline.py:8: in &lt;module&gt;
+    from .signal import difference_field, residual_entropy, structure_tensor_distance, fourier_phase_distance, laplacian_pyramid_distance, scattering_distance
+src/facemath/signal.py:3: in &lt;module&gt;
+    import cv2
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:181: in &lt;module&gt;
+    bootstrap()
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:175: in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:28: in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/typing/__init__.py:162: in &lt;module&gt;
+    LayerId = cv2.dnn.DictValue
+              ^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'cv2.dnn' has no attribute 'DictValue'</error></testcase><testcase classname="" name="tests.test_wave3_cohort_ingestion" time="0.000"><error message="collection failure">tests/test_wave3_cohort_ingestion.py:7: in &lt;module&gt;
+    from facemath.observation import FacialInstrument, InstrumentConfig, ObservationError
+src/facemath/__init__.py:2: in &lt;module&gt;
+    from .pipeline import GeometryPipeline
+src/facemath/pipeline.py:8: in &lt;module&gt;
+    from .signal import difference_field, residual_entropy, structure_tensor_distance, fourier_phase_distance, laplacian_pyramid_distance, scattering_distance
+src/facemath/signal.py:3: in &lt;module&gt;
+    import cv2
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:181: in &lt;module&gt;
+    bootstrap()
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:175: in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:28: in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/typing/__init__.py:162: in &lt;module&gt;
+    LayerId = cv2.dnn.DictValue
+              ^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'cv2.dnn' has no attribute 'DictValue'</error></testcase><testcase classname="" name="tests.test_wave3_dense_schema" time="0.000"><error message="collection failure">tests/test_wave3_dense_schema.py:4: in &lt;module&gt;
+    from facemath.observation import FacialInstrument, InstrumentConfig, Observation
+src/facemath/__init__.py:2: in &lt;module&gt;
+    from .pipeline import GeometryPipeline
+src/facemath/pipeline.py:8: in &lt;module&gt;
+    from .signal import difference_field, residual_entropy, structure_tensor_distance, fourier_phase_distance, laplacian_pyramid_distance, scattering_distance
+src/facemath/signal.py:3: in &lt;module&gt;
+    import cv2
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:181: in &lt;module&gt;
+    bootstrap()
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:175: in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:28: in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/typing/__init__.py:162: in &lt;module&gt;
+    LayerId = cv2.dnn.DictValue
+              ^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'cv2.dnn' has no attribute 'DictValue'</error></testcase><testcase classname="" name="tests.test_wave3_field" time="0.000"><error message="collection failure">tests/test_wave3_field.py:4: in &lt;module&gt;
+    from facemath.observation.field import affine_triangle_field
+src/facemath/__init__.py:2: in &lt;module&gt;
+    from .pipeline import GeometryPipeline
+src/facemath/pipeline.py:8: in &lt;module&gt;
+    from .signal import difference_field, residual_entropy, structure_tensor_distance, fourier_phase_distance, laplacian_pyramid_distance, scattering_distance
+src/facemath/signal.py:3: in &lt;module&gt;
+    import cv2
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:181: in &lt;module&gt;
+    bootstrap()
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:175: in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:28: in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/typing/__init__.py:162: in &lt;module&gt;
+    LayerId = cv2.dnn.DictValue
+              ^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'cv2.dnn' has no attribute 'DictValue'</error></testcase><testcase classname="" name="tests.test_wave3_instrument" time="0.000"><error message="collection failure">tests/test_wave3_instrument.py:5: in &lt;module&gt;
+    from facemath.observation import FacialInstrument, InstrumentConfig, ObservationError
+src/facemath/__init__.py:2: in &lt;module&gt;
+    from .pipeline import GeometryPipeline
+src/facemath/pipeline.py:8: in &lt;module&gt;
+    from .signal import difference_field, residual_entropy, structure_tensor_distance, fourier_phase_distance, laplacian_pyramid_distance, scattering_distance
+src/facemath/signal.py:3: in &lt;module&gt;
+    import cv2
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:181: in &lt;module&gt;
+    bootstrap()
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:175: in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:28: in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/typing/__init__.py:162: in &lt;module&gt;
+    LayerId = cv2.dnn.DictValue
+              ^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'cv2.dnn' has no attribute 'DictValue'</error></testcase><testcase classname="" name="tests.test_wave3_legacy_repairs" time="0.000"><error message="collection failure">tests/test_wave3_legacy_repairs.py:5: in &lt;module&gt;
+    from facemath.registration import weighted_similarity_transform
+src/facemath/__init__.py:2: in &lt;module&gt;
+    from .pipeline import GeometryPipeline
+src/facemath/pipeline.py:8: in &lt;module&gt;
+    from .signal import difference_field, residual_entropy, structure_tensor_distance, fourier_phase_distance, laplacian_pyramid_distance, scattering_distance
+src/facemath/signal.py:3: in &lt;module&gt;
+    import cv2
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:181: in &lt;module&gt;
+    bootstrap()
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:175: in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:28: in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/typing/__init__.py:162: in &lt;module&gt;
+    LayerId = cv2.dnn.DictValue
+              ^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'cv2.dnn' has no attribute 'DictValue'</error></testcase><testcase classname="" name="tests.test_wave3_provider" time="0.000"><error message="collection failure">tests/test_wave3_provider.py:8: in &lt;module&gt;
+    from facemath.observation.provider import MediaPipeProvider, augmentations, apply_points, annotated_observation
+src/facemath/__init__.py:2: in &lt;module&gt;
+    from .pipeline import GeometryPipeline
+src/facemath/pipeline.py:8: in &lt;module&gt;
+    from .signal import difference_field, residual_entropy, structure_tensor_distance, fourier_phase_distance, laplacian_pyramid_distance, scattering_distance
+src/facemath/signal.py:3: in &lt;module&gt;
+    import cv2
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:181: in &lt;module&gt;
+    bootstrap()
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:175: in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:28: in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/typing/__init__.py:162: in &lt;module&gt;
+    LayerId = cv2.dnn.DictValue
+              ^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'cv2.dnn' has no attribute 'DictValue'</error></testcase><testcase classname="" name="tests.test_wave3_registration" time="0.000"><error message="collection failure">tests/test_wave3_registration.py:4: in &lt;module&gt;
+    from facemath.observation.canonical import proper_similarity, balanced_similarity, fit_anatomy, InstrumentConfig
+src/facemath/__init__.py:2: in &lt;module&gt;
+    from .pipeline import GeometryPipeline
+src/facemath/pipeline.py:8: in &lt;module&gt;
+    from .signal import difference_field, residual_entropy, structure_tensor_distance, fourier_phase_distance, laplacian_pyramid_distance, scattering_distance
+src/facemath/signal.py:3: in &lt;module&gt;
+    import cv2
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:181: in &lt;module&gt;
+    bootstrap()
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:175: in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:28: in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/typing/__init__.py:162: in &lt;module&gt;
+    LayerId = cv2.dnn.DictValue
+              ^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'cv2.dnn' has no attribute 'DictValue'</error></testcase><testcase classname="" name="tests.test_wave3_sequence" time="0.000"><error message="collection failure">tests/test_wave3_sequence.py:4: in &lt;module&gt;
+    from facemath.observation.sequence_guard import crossfade, sequence_diagnostics
+src/facemath/__init__.py:2: in &lt;module&gt;
+    from .pipeline import GeometryPipeline
+src/facemath/pipeline.py:8: in &lt;module&gt;
+    from .signal import difference_field, residual_entropy, structure_tensor_distance, fourier_phase_distance, laplacian_pyramid_distance, scattering_distance
+src/facemath/signal.py:3: in &lt;module&gt;
+    import cv2
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:181: in &lt;module&gt;
+    bootstrap()
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:175: in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/__init__.py:28: in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/pyvenv/lib/python3.13/site-packages/cv2/typing/__init__.py:162: in &lt;module&gt;
+    LayerId = cv2.dnn.DictValue
+              ^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'cv2.dnn' has no attribute 'DictValue'</error></testcase></testsuite></testsuites>

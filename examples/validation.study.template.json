@@ -1,0 +1,23 @@
+{
+  "format": "facemath.validation_study.v4",
+  "domain": "REPLACE_WITH_EXPLICIT_ACQUISITION_PROTOCOL",
+  "minimum_raters": 2,
+  "cases": [
+    {
+      "case_id": "calibration_example_001",
+      "group_id": "independent_acquisition_group_001",
+      "split": "calibration",
+      "lineage_ids": ["source_session_001"],
+      "image": "portraits/001.png",
+      "references": ["labels/001_rater_A.json", "labels/001_rater_B.json"]
+    },
+    {
+      "case_id": "heldout_example_101",
+      "group_id": "independent_acquisition_group_101",
+      "split": "evaluation",
+      "lineage_ids": ["source_session_101"],
+      "image": "portraits/101.png",
+      "references": ["labels/101_rater_C.json", "labels/101_rater_D.json"]
+    }
+  ]
+}
