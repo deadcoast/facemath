@@ -1,5 +1,5 @@
 from __future__ import annotations
-from dataclasses import dataclass
+
 import numpy as np
 from scipy.linalg import svd
 from sklearn.cross_decomposition import CCA
@@ -23,7 +23,9 @@ def path_curvature_energy(z: np.ndarray) -> float:
     return float(np.mean(np.sum(a * a, axis=-1)))
 
 
-def slow_feature_analysis(x: np.ndarray, n_components: int | None = None, ridge: float = 1e-8) -> tuple[np.ndarray, np.ndarray]:
+def slow_feature_analysis(
+    x: np.ndarray, n_components: int | None = None, ridge: float = 1e-8
+) -> tuple[np.ndarray, np.ndarray]:
     x = np.asarray(x, float)
     x = x - x.mean(0)
     cov = np.cov(x, rowvar=False) + ridge * np.eye(x.shape[1])
@@ -40,7 +42,13 @@ def slow_feature_analysis(x: np.ndarray, n_components: int | None = None, ridge:
     return x @ components, dvals[order]
 
 
-def robust_pca_pcp(x: np.ndarray, lam: float | None = None, mu: float | None = None, max_iter: int = 500, tol: float = 1e-7) -> tuple[np.ndarray, np.ndarray]:
+def robust_pca_pcp(
+    x: np.ndarray,
+    lam: float | None = None,
+    mu: float | None = None,
+    max_iter: int = 500,
+    tol: float = 1e-7,
+) -> tuple[np.ndarray, np.ndarray]:
     """Principal Component Pursuit via inexact augmented Lagrangian."""
     x = np.asarray(x, float)
     m, n = x.shape
@@ -54,7 +62,7 @@ def robust_pca_pcp(x: np.ndarray, lam: float | None = None, mu: float | None = N
     rho = 1.5
     l = np.zeros_like(x)
     s = np.zeros_like(x)
-    xnorm = max(np.linalg.norm(x, 'fro'), 1e-12)
+    xnorm = max(np.linalg.norm(x, "fro"), 1e-12)
     for _ in range(max_iter):
         # low-rank prox
         u, sig, vt = np.linalg.svd(x - s + y / mu, full_matrices=False)
@@ -67,12 +75,14 @@ def robust_pca_pcp(x: np.ndarray, lam: float | None = None, mu: float | None = N
         z = x - l - s
         y = y + mu * z
         mu = min(mu * rho, mu_bar)
-        if np.linalg.norm(z, 'fro') / xnorm < tol:
+        if np.linalg.norm(z, "fro") / xnorm < tol:
             break
     return l, s
 
 
-def dynamic_mode_decomposition(x: np.ndarray, rank: int | None = None) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+def dynamic_mode_decomposition(
+    x: np.ndarray, rank: int | None = None
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     x = np.asarray(x, float)
     x0, x1 = x[:-1].T, x[1:].T
     u, s, vt = svd(x0, full_matrices=False)
@@ -84,7 +94,9 @@ def dynamic_mode_decomposition(x: np.ndarray, rank: int | None = None) -> tuple[
     return eigvals, modes, a_tilde
 
 
-def canonical_correlation(x: np.ndarray, y: np.ndarray, n_components: int = 2) -> np.ndarray:
+def canonical_correlation(
+    x: np.ndarray, y: np.ndarray, n_components: int = 2
+) -> np.ndarray:
     n = min(n_components, x.shape[1], y.shape[1])
     cca = CCA(n_components=n).fit(x, y)
     xa, ya = cca.transform(x, y)

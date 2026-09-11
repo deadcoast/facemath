@@ -4,14 +4,15 @@ No similarity probability is manufactured. A fraction within a declared
 geometric tolerance IS a valid empirical percentage; a population percentile is
 a separate operation. Sensitivity intervals are not accuracy confidence bounds.
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Any
-import numpy as np
-from ..geometry import pairwise_distance_matrix
 
-from .anatomy import eye_span
+import numpy as np
+
+from ..geometry import pairwise_distance_matrix
 from .canonical import CanonicalState, fit_anatomy, symmetric_normalizer
 from .contracts import frozen_array
 from .field import AnatomicalField, FlowDiagnostics
@@ -38,14 +39,18 @@ class Measurement:
             raise ValueError("measurement values must be finite or explicitly missing")
         if self.support < 0 or self.total < self.support:
             raise ValueError("invalid measurement support counts")
-        if self.interval is not None and (len(self.interval) != 2 or not np.isfinite(self.interval).all()
-                                          or self.interval[0] > self.interval[1]):
+        if self.interval is not None and (
+            len(self.interval) != 2
+            or not np.isfinite(self.interval).all()
+            or self.interval[0] > self.interval[1]
+        ):
             raise ValueError("invalid measurement interval")
         if self.value is None and not self.exclusion:
             raise ValueError("missing measurement requires an exclusion reason")
 
     def to_dict(self) -> dict[str, Any]:
         from dataclasses import asdict
+
         return asdict(self)
 
 
@@ -61,13 +66,22 @@ class MeasurementProfile:
     warnings: tuple[str, ...]
 
     def __post_init__(self) -> None:
-        for name in ("residual_vectors", "relational_distortion", "heldout_residuals", "sensitivity_draws"):
+        for name in (
+            "residual_vectors",
+            "relational_distortion",
+            "heldout_residuals",
+            "sensitivity_draws",
+        ):
             object.__setattr__(self, name, frozen_array(getattr(self, name)))
 
 
-def _residual(a: np.ndarray, b: np.ndarray, state: CanonicalState, excluded: str | None = None) -> np.ndarray:
+def _residual(
+    a: np.ndarray, b: np.ndarray, state: CanonicalState, excluded: str | None = None
+) -> np.ndarray:
     supported = state.observation_a.in_bounds & state.observation_b.in_bounds
-    m, _, _ = fit_anatomy(a, b, state.anatomy, state.config, excluded, supported=supported)
+    m, _, _ = fit_anatomy(
+        a, b, state.anatomy, state.config, excluded, supported=supported
+    )
     return (apply_points(a, m) - b) / symmetric_normalizer(a, b, state.anatomy, m)
 
 
@@ -85,18 +99,28 @@ def sensitivity(state: CanonicalState) -> np.ndarray:
     valid = a.in_bounds & b.in_bounds
     out = np.zeros((state.config.uncertainty_draws, len(REGIONS)))
     for draw in range(len(out)):
-        aa = a.xy + centered_a[rng.integers(len(centered_a))] + rng.normal(0, a.noise_floor_px, a.xy.shape)
-        bb = b.xy + centered_b[rng.integers(len(centered_b))] + rng.normal(0, b.noise_floor_px, b.xy.shape)
+        aa = (
+            a.xy
+            + centered_a[rng.integers(len(centered_a))]
+            + rng.normal(0, a.noise_floor_px, a.xy.shape)
+        )
+        bb = (
+            b.xy
+            + centered_b[rng.integers(len(centered_b))]
+            + rng.normal(0, b.noise_floor_px, b.xy.shape)
+        )
         residual = np.linalg.norm(_residual(aa, bb, state), axis=1)
         for column, region in enumerate(REGIONS):
             ids = state.anatomy.region_indices(region)
             ids = ids[valid[ids]]
             # Missing regions are separately excluded in the ledger; zero is never published for them.
-            out[draw, column] = np.sqrt(np.mean(residual[ids]**2)) if len(ids) else 0
+            out[draw, column] = np.sqrt(np.mean(residual[ids] ** 2)) if len(ids) else 0
     return out
 
 
-def measure(state: CanonicalState, field: AnatomicalField, flow: FlowDiagnostics | None) -> MeasurementProfile:
+def measure(
+    state: CanonicalState, field: AnatomicalField, flow: FlowDiagnostics | None
+) -> MeasurementProfile:
     span = state.normalization_span_px
     residual = (state.xy_a - state.xy_b) / span
     magnitudes = np.linalg.norm(residual, axis=1)
@@ -108,70 +132,182 @@ def measure(state: CanonicalState, field: AnatomicalField, flow: FlowDiagnostics
         ids = state.anatomy.region_indices(region)
         selected = ids[visible[ids]]
         if len(selected) < 2:
-            measurements.append(Measurement(f"geometry.{region}.rms", None, "registered_eye_span_geomean", len(selected), len(ids),
-                                            "landmarks", "positional residual after proper similarity registration",
-                                            exclusion="fewer_than_two_visible_landmarks"))
+            measurements.append(
+                Measurement(
+                    f"geometry.{region}.rms",
+                    None,
+                    "registered_eye_span_geomean",
+                    len(selected),
+                    len(ids),
+                    "landmarks",
+                    "positional residual after proper similarity registration",
+                    exclusion="fewer_than_two_visible_landmarks",
+                )
+            )
             continue
-        value = float(np.sqrt(np.mean(magnitudes[selected]**2)))
-        interval = tuple(float(x) for x in np.quantile(draw_values[:, column], [.025, .975]))
-        measurements.append(Measurement(f"geometry.{region}.rms", value, "registered_eye_span_geomean", len(selected), len(ids),
-            "landmarks", "lower residual means closer projected layout under this registration gauge",
-            interval, "95_percent_conditional_observation_sensitivity_not_accuracy_CI"))
+        value = float(np.sqrt(np.mean(magnitudes[selected] ** 2)))
+        interval = tuple(
+            float(x) for x in np.quantile(draw_values[:, column], [0.025, 0.975])
+        )
+        measurements.append(
+            Measurement(
+                f"geometry.{region}.rms",
+                value,
+                "registered_eye_span_geomean",
+                len(selected),
+                len(ids),
+                "landmarks",
+                "lower residual means closer projected layout under this registration gauge",
+                interval,
+                "95_percent_conditional_observation_sensitivity_not_accuracy_CI",
+            )
+        )
         fraction = float(np.mean(magnitudes[selected] <= state.config.tolerance_ipd))
-        measurements.append(Measurement(f"geometry.{region}.within_tolerance", fraction, "fraction_of_evaluated_landmarks",
-            len(selected), len(ids), "landmarks",
-            f"fraction within {state.config.tolerance_ipd:g} geometric-mean registered eye spans; not identity probability or rarity"))
+        measurements.append(
+            Measurement(
+                f"geometry.{region}.within_tolerance",
+                fraction,
+                "fraction_of_evaluated_landmarks",
+                len(selected),
+                len(ids),
+                "landmarks",
+                f"fraction within {state.config.tolerance_ipd:g} geometric-mean registered eye spans; not identity probability or rarity",
+            )
+        )
         if region in ("left_eye", "right_eye", "nose", "mouth", "jaw"):
             # Paired model-contour samples retain their original ordering; no per-region warp fit.
             delta = residual[selected]
             centered = delta - delta.mean(axis=0)
-            measurements.append(Measurement(f"contour.{region}.centered_rms", float(np.sqrt(np.mean(np.sum(centered**2, axis=1)))),
-                "registered_eye_span_geomean", len(selected), len(ids), "landmarks",
-                "model-predicted contour mismatch after removing translation only; not independent edge evidence"))
+            measurements.append(
+                Measurement(
+                    f"contour.{region}.centered_rms",
+                    float(np.sqrt(np.mean(np.sum(centered**2, axis=1)))),
+                    "registered_eye_span_geomean",
+                    len(selected),
+                    len(ids),
+                    "landmarks",
+                    "model-predicted contour mismatch after removing translation only; not independent edge evidence",
+                )
+            )
     da = pairwise_distance_matrix(state.xy_a, span)
     db = pairwise_distance_matrix(state.xy_b, span)
     distortion = da - db
-    mask = np.triu(np.ones(distortion.shape, bool), 1) & visible[:, None] & visible[None, :]
-    measurements.append(Measurement("geometry.relational_rms", float(np.sqrt(np.mean(distortion[mask]**2))),
-        "registered_eye_span_geomean", int(mask.sum()), int(np.triu(np.ones_like(mask), 1).sum()),
-        "landmarks", "pairwise distances share landmarks and are not independent observations"))
+    mask = (
+        np.triu(np.ones(distortion.shape, bool), 1)
+        & visible[:, None]
+        & visible[None, :]
+    )
+    measurements.append(
+        Measurement(
+            "geometry.relational_rms",
+            float(np.sqrt(np.mean(distortion[mask] ** 2))),
+            "registered_eye_span_geomean",
+            int(mask.sum()),
+            int(np.triu(np.ones_like(mask), 1).sum()),
+            "landmarks",
+            "pairwise distances share landmarks and are not independent observations",
+        )
+    )
     labels = ("eyes", "nose", "mouth", "jaw")
-    heldout = np.stack([_residual(state.observation_a.xy, state.observation_b.xy, state, r) for r in labels])
+    heldout = np.stack(
+        [
+            _residual(state.observation_a.xy, state.observation_b.xy, state, r)
+            for r in labels
+        ]
+    )
     for i, label in enumerate(labels):
         regions = ("left_eye", "right_eye") if label == "eyes" else (label,)
-        ids = np.unique(np.concatenate([state.anatomy.region_indices(r) for r in regions]))
+        ids = np.unique(
+            np.concatenate([state.anatomy.region_indices(r) for r in regions])
+        )
         total_ids = len(ids)
         ids = ids[visible[ids]]
         if not len(ids):
-            for suffix in ("rms", "change"):
-                measurements.append(Measurement(
-                    f"registration.heldout_{label}.{suffix}", None,
-                    "registered_eye_span_geomean", 0, total_ids, "registration_sensitivity",
-                    "region excluded from alignment anchors", exclusion="no_supported_region_landmarks"))
+            measurements.extend(
+                Measurement(
+                    f"registration.heldout_{label}.{suffix}",
+                    None,
+                    "registered_eye_span_geomean",
+                    0,
+                    total_ids,
+                    "registration_sensitivity",
+                    "region excluded from alignment anchors",
+                    exclusion="no_supported_region_landmarks",
+                )
+                for suffix in ("rms", "change")
+            )
             continue
-        hold_value = float(np.sqrt(np.mean(np.sum(heldout[i, ids]**2, axis=1))))
-        base_value = float(np.sqrt(np.mean(magnitudes[ids]**2)))
-        measurements.append(Measurement(f"registration.heldout_{label}.rms", hold_value, "registered_eye_span_geomean",
-            len(ids), len(ids), "registration_sensitivity",
-            "evaluation region excluded from alignment anchors; exposes alignment-induced resemblance"))
-        measurements.append(Measurement(f"registration.heldout_{label}.change", hold_value - base_value, "registered_eye_span_geomean",
-            len(ids), len(ids), "registration_sensitivity", "signed change from the primary registration residual"))
+        hold_value = float(np.sqrt(np.mean(np.sum(heldout[i, ids] ** 2, axis=1))))
+        base_value = float(np.sqrt(np.mean(magnitudes[ids] ** 2)))
+        measurements.extend(
+            (
+                Measurement(
+                    f"registration.heldout_{label}.rms",
+                    hold_value,
+                    "registered_eye_span_geomean",
+                    len(ids),
+                    len(ids),
+                    "registration_sensitivity",
+                    "evaluation region excluded from alignment anchors; exposes alignment-induced resemblance",
+                ),
+                Measurement(
+                    f"registration.heldout_{label}.change",
+                    hold_value - base_value,
+                    "registered_eye_span_geomean",
+                    len(ids),
+                    len(ids),
+                    "registration_sensitivity",
+                    "signed change from the primary registration residual",
+                ),
+            )
+        )
     # Regions use an A-domain field and explicitly record its interpolation support.
     for region, region_mask in state.masks_a.items():
         observed_region = visible[state.anatomy.region_indices(region)].sum() >= 3
         selected = region_mask & field.valid & observed_region
         total, count = int(region_mask.sum()), int(selected.sum())
         if count < 8:
-            measurements.append(Measurement(f"deformation.{region}.log_stretch_rms", None, "log_stretch",
-                count, total, "interpolated_anatomy", "finite-rotation-invariant local stretch",
-                exclusion="insufficient_observed_region_landmarks" if not observed_region else "fewer_than_eight_supported_pixels"))
+            measurements.append(
+                Measurement(
+                    f"deformation.{region}.log_stretch_rms",
+                    None,
+                    "log_stretch",
+                    count,
+                    total,
+                    "interpolated_anatomy",
+                    "finite-rotation-invariant local stretch",
+                    exclusion="fewer_than_eight_supported_pixels"
+                    if observed_region
+                    else "insufficient_observed_region_landmarks",
+                )
+            )
             continue
         ids = field.simplex_index[selected]
-        value = float(np.sqrt(np.mean(np.sum(field.principal_log_stretch[ids]**2, axis=1))))
-        measurements.append(Measurement(f"deformation.{region}.log_stretch_rms", value, "log_stretch", count, total,
-            "interpolated_anatomy", "piecewise-affine shape-model distortion; not physical strain or independent evidence"))
-    measurements.append(Measurement("quality.folded_triangle_fraction", field.folded_fraction, "fraction", len(field.triangles),
-                                    len(field.triangles), "quality", "folded triangles retained in denominator and excluded from interpolation"))
+        value = float(
+            np.sqrt(np.mean(np.sum(field.principal_log_stretch[ids] ** 2, axis=1)))
+        )
+        measurements.append(
+            Measurement(
+                f"deformation.{region}.log_stretch_rms",
+                value,
+                "log_stretch",
+                count,
+                total,
+                "interpolated_anatomy",
+                "piecewise-affine shape-model distortion; not physical strain or independent evidence",
+            )
+        )
+    measurements.append(
+        Measurement(
+            "quality.folded_triangle_fraction",
+            field.folded_fraction,
+            "fraction",
+            len(field.triangles),
+            len(field.triangles),
+            "quality",
+            "folded triangles retained in denominator and excluded from interpolation",
+        )
+    )
     if field.folded_fraction > 0:
         warnings.append("anatomical_field_has_folded_triangles")
     if flow is not None:
@@ -180,11 +316,53 @@ def measure(state: CanonicalState, field: AnatomicalField, flow: FlowDiagnostics
             observed_region = visible[state.anatomy.region_indices(region)].sum() >= 3
             valid = region_mask & flow.admissible & field.valid & observed_region
             count = int(valid.sum())
-            measurements.append(Measurement(f"flow.{region}.support_fraction", count / total if total and observed_region else None,
-                "fraction_of_region_pixels", count, total, "image_correspondence", "texture/cycle-qualified overlap, not match probability",
-                exclusion="empty_region" if not total else ("insufficient_observed_region_landmarks" if not observed_region else None)))
-            measurements.append(Measurement(f"flow.{region}.anatomical_disagreement", float(np.median(flow.anatomical_disagreement_px[valid]) / span) if count else None,
-                "registered_eye_span_geomean", count, total, "image_correspondence", "independent image-flow vs interpolated-anatomy disagreement; never fused into shape score",
-                exclusion="no_texture_cycle_supported_pixels" if not count else None))
-    return MeasurementProfile(tuple(measurements), residual, distortion, heldout, labels,
-                              draw_values, REGIONS, tuple(warnings))
+            measurements.extend(
+                (
+                    Measurement(
+                        f"flow.{region}.support_fraction",
+                        count / total if total and observed_region else None,
+                        "fraction_of_region_pixels",
+                        count,
+                        total,
+                        "image_correspondence",
+                        "texture/cycle-qualified overlap, not match probability",
+                        exclusion=(
+                            (
+                                None
+                                if observed_region
+                                else "insufficient_observed_region_landmarks"
+                            )
+                            if total
+                            else "empty_region"
+                        ),
+                    ),
+                    Measurement(
+                        f"flow.{region}.anatomical_disagreement",
+                        (
+                            float(
+                                np.median(flow.anatomical_disagreement_px[valid]) / span
+                            )
+                            if count
+                            else None
+                        ),
+                        "registered_eye_span_geomean",
+                        count,
+                        total,
+                        "image_correspondence",
+                        "independent image-flow vs interpolated-anatomy disagreement; never fused into shape score",
+                        exclusion=(
+                            None if count else "no_texture_cycle_supported_pixels"
+                        ),
+                    ),
+                )
+            )
+    return MeasurementProfile(
+        tuple(measurements),
+        residual,
+        distortion,
+        heldout,
+        labels,
+        draw_values,
+        REGIONS,
+        tuple(warnings),
+    )

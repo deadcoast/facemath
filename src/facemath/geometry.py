@@ -1,12 +1,10 @@
 from __future__ import annotations
 
+from collections.abc import Sequence
 from dataclasses import dataclass
-from typing import Sequence
-import numpy as np
-from scipy.linalg import orthogonal_procrustes
-from scipy.spatial.distance import cdist
 
-from .core import LandmarkSet
+import numpy as np
+from scipy.spatial.distance import cdist
 
 
 @dataclass(frozen=True)
@@ -31,7 +29,9 @@ def center_scale(points: np.ndarray) -> tuple[np.ndarray, np.ndarray, float]:
     return centered / scale, center, scale
 
 
-def generalized_procrustes(a: np.ndarray, b: np.ndarray, allow_reflection: bool = False) -> ProcrustesResult:
+def generalized_procrustes(
+    a: np.ndarray, b: np.ndarray, allow_reflection: bool = False
+) -> ProcrustesResult:
     an, ac, ascale = center_scale(a)
     bn, bc, bscale = center_scale(b)
     if an.shape != bn.shape or not np.isfinite(an).all() or not np.isfinite(bn).all():
@@ -46,7 +46,9 @@ def generalized_procrustes(a: np.ndarray, b: np.ndarray, allow_reflection: bool 
     return ProcrustesResult(aa, bn, r, ascale, bscale, ac, bc, d)
 
 
-def similarity_transform(a: np.ndarray, b: np.ndarray) -> tuple[np.ndarray, float, float]:
+def similarity_transform(
+    a: np.ndarray, b: np.ndarray
+) -> tuple[np.ndarray, float, float]:
     """Return 3x3 homogeneous similarity transform mapping 2D points a -> b."""
     a = np.asarray(a, dtype=float)
     b = np.asarray(b, dtype=float)
@@ -78,7 +80,9 @@ def apply_homography(points: np.ndarray, m: np.ndarray) -> np.ndarray:
     return q[:, :2] / q[:, 2:3]
 
 
-def intrinsic_coordinates(points: np.ndarray, left_eye: int, right_eye: int) -> np.ndarray:
+def intrinsic_coordinates(
+    points: np.ndarray, left_eye: int, right_eye: int
+) -> np.ndarray:
     p = np.asarray(points, dtype=float)
     l, r = p[left_eye], p[right_eye]
     origin = (l + r) / 2
@@ -92,12 +96,19 @@ def intrinsic_coordinates(points: np.ndarray, left_eye: int, right_eye: int) -> 
     return ((p - origin) @ basis) / scale
 
 
-def pairwise_distance_matrix(points: np.ndarray, scale: float | None = None) -> np.ndarray:
+def pairwise_distance_matrix(
+    points: np.ndarray, scale: float | None = None
+) -> np.ndarray:
     d = cdist(points, points)
     return d if scale is None else d / float(scale)
 
 
-def distance_matrix_error(a: np.ndarray, b: np.ndarray, scale_a: float | None = None, scale_b: float | None = None) -> float:
+def distance_matrix_error(
+    a: np.ndarray,
+    b: np.ndarray,
+    scale_a: float | None = None,
+    scale_b: float | None = None,
+) -> float:
     da = pairwise_distance_matrix(a, scale_a)
     db = pairwise_distance_matrix(b, scale_b)
     return float(np.linalg.norm(da - db, ord="fro") / np.sqrt(da.size))
@@ -111,12 +122,16 @@ def angle(p: np.ndarray, q: np.ndarray, r: np.ndarray) -> float:
     return float(np.arccos(np.clip((u @ v) / denom, -1, 1)))
 
 
-def angle_signature(points: np.ndarray, triples: Sequence[tuple[int, int, int]]) -> np.ndarray:
+def angle_signature(
+    points: np.ndarray, triples: Sequence[tuple[int, int, int]]
+) -> np.ndarray:
     p = np.asarray(points, dtype=float)
     return np.array([angle(p[i], p[j], p[k]) for i, j, k in triples])
 
 
-def angle_error(a: np.ndarray, b: np.ndarray, triples: Sequence[tuple[int, int, int]]) -> float:
+def angle_error(
+    a: np.ndarray, b: np.ndarray, triples: Sequence[tuple[int, int, int]]
+) -> float:
     aa = angle_signature(a, triples)
     bb = angle_signature(b, triples)
     mask = np.isfinite(aa) & np.isfinite(bb)
@@ -125,14 +140,18 @@ def angle_error(a: np.ndarray, b: np.ndarray, triples: Sequence[tuple[int, int, 
     return float(np.sqrt(np.mean((aa[mask] - bb[mask]) ** 2)))
 
 
-def epsilon_isometry_distortion(a: np.ndarray, b: np.ndarray) -> tuple[float, np.ndarray]:
+def epsilon_isometry_distortion(
+    a: np.ndarray, b: np.ndarray
+) -> tuple[float, np.ndarray]:
     da = pairwise_distance_matrix(a)
     db = pairwise_distance_matrix(b)
     delta = da - db
     return float(np.max(np.abs(delta))), delta
 
 
-def rigid_residuals(a: np.ndarray, b: np.ndarray) -> tuple[np.ndarray, np.ndarray, float]:
+def rigid_residuals(
+    a: np.ndarray, b: np.ndarray
+) -> tuple[np.ndarray, np.ndarray, float]:
     m, _, rmse = similarity_transform(a, b)
     pred = apply_homography(a, m)
     return pred, b - pred, rmse
@@ -159,10 +178,17 @@ def relational_graph(points: np.ndarray, k: int = 4) -> np.ndarray:
 
 def graph_laplacian(adjacency: np.ndarray, normalized: bool = True) -> np.ndarray:
     a = np.asarray(adjacency, dtype=float)
-    if a.ndim != 2 or a.shape[0] != a.shape[1] or not np.isfinite(a).all() or np.any(a < 0):
+    if (
+        a.ndim != 2
+        or a.shape[0] != a.shape[1]
+        or not np.isfinite(a).all()
+        or np.any(a < 0)
+    ):
         raise ValueError("adjacency must be finite, nonnegative and square")
     if not np.allclose(a, a.T, rtol=1e-10, atol=1e-12):
-        raise ValueError("undirected Laplacian requires symmetric adjacency; symmetrize explicitly")
+        raise ValueError(
+            "undirected Laplacian requires symmetric adjacency; symmetrize explicitly"
+        )
     degree = a.sum(1)
     if not normalized:
         return np.diag(degree) - a
@@ -178,7 +204,9 @@ def graph_spectrum(adjacency: np.ndarray, k: int | None = None) -> np.ndarray:
     return vals if k is None else vals[:k]
 
 
-def spectral_graph_distance(a: np.ndarray, b: np.ndarray, k: int | None = None) -> float:
+def spectral_graph_distance(
+    a: np.ndarray, b: np.ndarray, k: int | None = None
+) -> float:
     sa, sb = graph_spectrum(a, k), graph_spectrum(b, k)
     m = min(len(sa), len(sb))
     return float(np.linalg.norm(sa[:m] - sb[:m]) / np.sqrt(m))

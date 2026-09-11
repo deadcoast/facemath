@@ -1,6 +1,7 @@
 from __future__ import annotations
+
 import numpy as np
-from scipy.interpolate import splprep, splev
+from scipy.interpolate import splev, splprep
 
 
 def resample_closed_contour(points: np.ndarray, n: int = 128) -> np.ndarray:
@@ -43,6 +44,8 @@ def fourier_descriptors(points: np.ndarray, harmonics: int = 16) -> np.ndarray:
     return f[idx]
 
 
-def fourier_descriptor_distance(a: np.ndarray, b: np.ndarray, harmonics: int = 16) -> float:
+def fourier_descriptor_distance(
+    a: np.ndarray, b: np.ndarray, harmonics: int = 16
+) -> float:
     fa, fb = fourier_descriptors(a, harmonics), fourier_descriptors(b, harmonics)
     return float(np.linalg.norm(fa - fb) / np.sqrt(len(fa)))

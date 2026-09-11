@@ -1,18 +1,20 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, field, asdict
+import json
+import time
+from collections.abc import Iterable, Mapping
+from dataclasses import asdict, dataclass, field
 from enum import Enum
 from hashlib import sha256
 from pathlib import Path
-from typing import Any, Iterable, Mapping
-import json
-import time
+from typing import Any
 
 import numpy as np
 
 
 class Direction(str, Enum):
     """How to interpret a scalar metric."""
+
     HIGHER_IS_MORE_SIMILAR = "higher_is_more_similar"
     LOWER_IS_MORE_SIMILAR = "lower_is_more_similar"
     DESCRIPTIVE = "descriptive"
@@ -74,13 +76,14 @@ class EvidenceLedger:
                 return {str(k): clean(x) for k, x in v.items()}
             if isinstance(v, (list, tuple)):
                 return [clean(x) for x in v]
-            if hasattr(v, "__dataclass_fields__"):
-                return clean(asdict(v))
-            return v
+            return clean(asdict(v)) if hasattr(v, "__dataclass_fields__") else v
+
         return clean(self.results)
 
     def write_json(self, path: str | Path) -> None:
-        Path(path).write_text(json.dumps(self.to_jsonable(), indent=2), encoding="utf-8")
+        Path(path).write_text(
+            json.dumps(self.to_jsonable(), indent=2), encoding="utf-8"
+        )
 
 
 @dataclass(frozen=True)

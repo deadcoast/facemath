@@ -3,6 +3,7 @@
 Importing the package/version does not initialize every legacy numerical
 subsystem. Requesting a legacy symbol still resolves its original class.
 """
+
 from __future__ import annotations
 
 from importlib import import_module

@@ -73,7 +73,7 @@ Inspected video metadata and created a frame contact sheet
 tool: python.exec
 
 ```python
-'/mnt/data/contact.jpg'
+"/mnt/data/contact.jpg"
 ```
 
 ```bash
@@ -83,17 +83,23 @@ assistant -> python.exec
 ```python
 # extract 12 evenly spaced frames into contact sheet
 import matplotlib.pyplot as plt
-times=np.linspace(0,dur-0.05,12)
-frames=[]
+
+times = np.linspace(0, dur - 0.05, 12)
+frames = []
 for t in times:
-    cap.set(cv2.CAP_PROP_POS_MSEC,t*1000)
-    ok,f=cap.read()
-    if ok: frames.append(cv2.cvtColor(f,cv2.COLOR_BGR2RGB))
-fig,axs=plt.subplots(3,4,figsize=(10,16))
-for ax,im,t in zip(axs.flat,frames,times):
-    ax.imshow(im); ax.set_title(f"{t:.1f}s"); ax.axis("off")
+    cap.set(cv2.CAP_PROP_POS_MSEC, t * 1000)
+    ok, f = cap.read()
+    if ok:
+        frames.append(cv2.cvtColor(f, cv2.COLOR_BGR2RGB))
+fig, axs = plt.subplots(3, 4, figsize=(10, 16))
+for ax, im, t in zip(axs.flat, frames, times):
+    ax.imshow(im)
+    ax.set_title(f"{t:.1f}s")
+    ax.axis("off")
 plt.tight_layout()
-out="/mnt/data/contact.jpg"; plt.savefig(out,dpi=120); plt.close()
+out = "/mnt/data/contact.jpg"
+plt.savefig(out, dpi=120)
+plt.close()
 ```
 
 out
@@ -110,11 +116,15 @@ assistant -> python.exec
 
 ```python
 import cv2, os, numpy as np, math
-p="/mnt/data/ScreenRecording_07-18-2026_23-17-09_1.mp4"
-cap=cv2.VideoCapture(p)
-fps=cap.get(cv2.CAP_PROP_FPS); n=int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-dur=n/fps; w=int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)); h=int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-fps,n,dur,w,h
+
+p = "/mnt/data/ScreenRecording_07-18-2026_23-17-09_1.mp4"
+cap = cv2.VideoCapture(p)
+fps = cap.get(cv2.CAP_PROP_FPS)
+n = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+dur = n / fps
+w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+fps, n, dur, w, h
 ```
 
 ---
@@ -461,16 +471,16 @@ And still earlier in the same recovered history is a **different first extractio
 ```python
 import cv2, os, numpy as np, math
 
-p="/mnt/data/ScreenRecording_07-18-2026_23-17-09_1.mp4"
-cap=cv2.VideoCapture(p)
+p = "/mnt/data/ScreenRecording_07-18-2026_23-17-09_1.mp4"
+cap = cv2.VideoCapture(p)
 
-fps=cap.get(cv2.CAP_PROP_FPS)
-n=int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-dur=n/fps
-w=int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-h=int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+fps = cap.get(cv2.CAP_PROP_FPS)
+n = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+dur = n / fps
+w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
-fps,n,dur,w,h
+fps, n, dur, w, h
 ```
 
 whose result was:
@@ -485,26 +495,26 @@ followed by:
 # extract 12 evenly spaced frames into contact sheet
 import matplotlib.pyplot as plt
 
-times=np.linspace(0,dur-0.05,12)
-frames=[]
+times = np.linspace(0, dur - 0.05, 12)
+frames = []
 
 for t in times:
-    cap.set(cv2.CAP_PROP_POS_MSEC,t*1000)
-    ok,f=cap.read()
+    cap.set(cv2.CAP_PROP_POS_MSEC, t * 1000)
+    ok, f = cap.read()
     if ok:
-        frames.append(cv2.cvtColor(f,cv2.COLOR_BGR2RGB))
+        frames.append(cv2.cvtColor(f, cv2.COLOR_BGR2RGB))
 
-fig,axs=plt.subplots(3,4,figsize=(10,16))
+fig, axs = plt.subplots(3, 4, figsize=(10, 16))
 
-for ax,im,t in zip(axs.flat,frames,times):
+for ax, im, t in zip(axs.flat, frames, times):
     ax.imshow(im)
     ax.set_title(f"{t:.1f}s")
     ax.axis("off")
 
 plt.tight_layout()
 
-out="/mnt/data/contact.jpg"
-plt.savefig(out,dpi=120)
+out = "/mnt/data/contact.jpg"
+plt.savefig(out, dpi=120)
 plt.close()
 
 out

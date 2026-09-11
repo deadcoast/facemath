@@ -1,7 +1,10 @@
 from __future__ import annotations
+
 from dataclasses import dataclass, field
+
 import numpy as np
-from .core import MetricResult, Direction
+
+from .core import Direction, MetricResult
 from .statistics import empirical_similarity_percentile
 
 

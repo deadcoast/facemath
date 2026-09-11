@@ -1,5 +1,7 @@
 from __future__ import annotations
+
 import zlib
+
 import numpy as np
 from sklearn.feature_selection import mutual_info_regression
 
@@ -7,7 +9,8 @@ from sklearn.feature_selection import mutual_info_regression
 def shannon_entropy(values: np.ndarray, bins: int = 128) -> float:
     x = np.asarray(values, float).ravel()
     h, _ = np.histogram(x, bins=bins)
-    p = h[h > 0].astype(float); p /= p.sum()
+    p = h[h > 0].astype(float)
+    p /= p.sum()
     return float(-np.sum(p * np.log2(p)))
 
 
@@ -25,8 +28,11 @@ def algorithmic_mutual_information_proxy(a: bytes, b: bytes) -> float:
     return float(compressed_length(a) + compressed_length(b) - compressed_length(a + b))
 
 
-def mutual_information_matrix(x: np.ndarray, y: np.ndarray, random_state: int = 0) -> np.ndarray:
-    x = np.asarray(x, float); y = np.asarray(y, float)
+def mutual_information_matrix(
+    x: np.ndarray, y: np.ndarray, random_state: int = 0
+) -> np.ndarray:
+    x = np.asarray(x, float)
+    y = np.asarray(y, float)
     if y.ndim == 1:
         y = y[:, None]
     out = np.zeros((x.shape[1], y.shape[1]))

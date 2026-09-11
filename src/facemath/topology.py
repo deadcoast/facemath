@@ -1,7 +1,8 @@
 from __future__ import annotations
+
 import numpy as np
-from scipy.spatial.distance import pdist, squareform
 from scipy.optimize import linear_sum_assignment
+from scipy.spatial.distance import pdist, squareform
 
 
 def zero_dim_persistence(points: np.ndarray) -> np.ndarray:
@@ -11,11 +12,13 @@ def zero_dim_persistence(points: np.ndarray) -> np.ndarray:
     n = len(p)
     edges = sorted((d[i, j], i, j) for i in range(n) for j in range(i + 1, n))
     parent = list(range(n))
+
     def find(x):
         while parent[x] != x:
             parent[x] = parent[parent[x]]
             x = parent[x]
         return x
+
     deaths = []
     for w, i, j in edges:
         ri, rj = find(i), find(j)
@@ -41,7 +44,9 @@ def relational_assignment(a: np.ndarray, b: np.ndarray) -> tuple[np.ndarray, flo
     return np.c_[i, j], float(cost[i, j].mean())
 
 
-def gromov_relational_distortion(a: np.ndarray, b: np.ndarray, assignment: np.ndarray | None = None) -> float:
+def gromov_relational_distortion(
+    a: np.ndarray, b: np.ndarray, assignment: np.ndarray | None = None
+) -> float:
     """GW-like relational distortion under a discrete correspondence.
 
     Exact entropic GW requires a dedicated OT solver; this computes the core relational

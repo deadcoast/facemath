@@ -1,9 +1,13 @@
 from __future__ import annotations
-from typing import Callable
+
+from collections.abc import Callable
+
 import torch
 
 
-def input_gradient(model: Callable[[torch.Tensor], torch.Tensor], x: torch.Tensor, target_index: int) -> torch.Tensor:
+def input_gradient(
+    model: Callable[[torch.Tensor], torch.Tensor], x: torch.Tensor, target_index: int
+) -> torch.Tensor:
     z = x.detach().clone().requires_grad_(True)
     out = model(z)
     scalar = out[..., target_index].sum()
@@ -11,7 +15,13 @@ def input_gradient(model: Callable[[torch.Tensor], torch.Tensor], x: torch.Tenso
     return z.grad.detach()
 
 
-def integrated_gradients(model: Callable[[torch.Tensor], torch.Tensor], x: torch.Tensor, target_index: int, baseline: torch.Tensor | None = None, steps: int = 64) -> torch.Tensor:
+def integrated_gradients(
+    model: Callable[[torch.Tensor], torch.Tensor],
+    x: torch.Tensor,
+    target_index: int,
+    baseline: torch.Tensor | None = None,
+    steps: int = 64,
+) -> torch.Tensor:
     baseline = torch.zeros_like(x) if baseline is None else baseline
     total = torch.zeros_like(x)
     for alpha in torch.linspace(0, 1, steps, device=x.device, dtype=x.dtype):
