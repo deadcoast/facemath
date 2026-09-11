@@ -307,9 +307,9 @@ def main() -> None:
             ),
             "live_detector_inference": live_executed,
             "human_localization_calibration": False,
-            "skipped_scope": None
-            if live_executed
-            else "real MediaPipe runtime/model inference",
+            "skipped_scope": (
+                None if live_executed else "real MediaPipe runtime/model inference"
+            ),
             "boundary": "executed numerical/synthetic/provider-fixture/browser evidence; not external attestation or hidden model telemetry",
         }
         (root / "evidence/WAVE4_VALIDATION.json").write_text(

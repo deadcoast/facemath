@@ -19,7 +19,9 @@ class SequenceEvidence:
     slow_feature_values: np.ndarray | None
     low_rank_fraction: float | None
     admissible_as_facial_similarity: bool = False
-    interpretation: str = "Two-image crossfades are inherently low rank; these statistics do not establish resemblance. Prefer facemath inspect-video."
+    interpretation: str = (
+        "Two-image crossfades are inherently low rank; these statistics do not establish resemblance. Prefer facemath inspect-video."
+    )
 
 
 def analyze_sequence(

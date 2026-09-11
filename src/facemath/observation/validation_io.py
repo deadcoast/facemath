@@ -78,18 +78,22 @@ def _html(report: dict, coverage: dict | None, domain: str) -> str:
         )
         cards = f"""<div class="cards"><div><small>Attempted / complete</small><strong>{s["attempted_cases"]} / {s["complete_cases"]}</strong></div><div><small>Declared groups</small><strong>{s["groups"]}</strong></div><div><small>Mean NME · complete cases</small><strong>{nme}</strong></div><div><small>PCK ≤ {s["pck_threshold_ipd"]:.2f} reference spans</small><strong>{s["pck_including_failures"]:.1%}</strong></div></div>"""
         rows = "".join(
-            f"<tr><td><code>{escape(r['name'])}</code></td><td>{r['observed']} / {r['eligible']}</td><td>{r['within_tolerance']} / {r['eligible']}</td><td>{r['median_error_px']:.3f}</td></tr>"
-            if r["median_error_px"] is not None
-            else f"<tr><td>{escape(r['name'])}</td><td>0 / {r['eligible']}</td><td>0 / {r['eligible']}</td><td>withheld</td></tr>"
+            (
+                f"<tr><td><code>{escape(r['name'])}</code></td><td>{r['observed']} / {r['eligible']}</td><td>{r['within_tolerance']} / {r['eligible']}</td><td>{r['median_error_px']:.3f}</td></tr>"
+                if r["median_error_px"] is not None
+                else f"<tr><td>{escape(r['name'])}</td><td>0 / {r['eligible']}</td><td>0 / {r['eligible']}</td><td>withheld</td></tr>"
+            )
             for r in s["per_landmark"]
         )
         sections.append(
             f"<h2>{escape(split.title())}</h2>{cards}<p>{s['failed_cases']} failed cases remain in the PCK and AUC denominators. Unconditional AUC to {s['auc_threshold_ipd']:.2f} spans: {s['unconditional_auc']:.4f}.</p><div class='scroll'><table><tr><th>Landmark</th><th>Observed / eligible</th><th>Within tolerance / eligible</th><th>Median error · source px</th></tr>{rows}</table></div>"
         )
     cases = "".join(
-        f"<tr><td>{escape(r['case_id'])}</td><td>{escape(r['group_id'])}</td><td>{escape(r['split'])}</td><td>{r['nme']:.5f}</td><td>complete</td></tr>"
-        if r["nme"] is not None
-        else f"<tr><td>{escape(r['case_id'])}</td><td>{escape(r['group_id'])}</td><td>{escape(r['split'])}</td><td>withheld</td><td>{escape(r['failure'] or 'unsupported')}</td></tr>"
+        (
+            f"<tr><td>{escape(r['case_id'])}</td><td>{escape(r['group_id'])}</td><td>{escape(r['split'])}</td><td>{r['nme']:.5f}</td><td>complete</td></tr>"
+            if r["nme"] is not None
+            else f"<tr><td>{escape(r['case_id'])}</td><td>{escape(r['group_id'])}</td><td>{escape(r['split'])}</td><td>withheld</td><td>{escape(r['failure'] or 'unsupported')}</td></tr>"
+        )
         for r in report["cases"]
     )
     cover = "<p>No localization calibration attached.</p>"

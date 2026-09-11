@@ -2,7 +2,7 @@ Metadata-Version: 2.4
 Name: facemath
 Version: 0.4.0
 Summary: Observation-driven, gauge-aware facial geometry evidence instrument
-Requires-Python: >=3.11
+Requires-Python: >=3.14
 Description-Content-Type: text/markdown
 Requires-Dist: numpy>=1.26
 Requires-Dist: scipy>=1.12
@@ -14,6 +14,7 @@ Requires-Dist: setuptools>=84.0.0
 Requires-Dist: ruff>=0.16.7
 Requires-Dist: sourcery>=1.45.0
 Requires-Dist: mypy>=2.3.1
+Requires-Dist: black>=26.5.1
 Provides-Extra: observer
 Requires-Dist: mediapipe>=0.10; extra == "observer"
 Provides-Extra: telemetry

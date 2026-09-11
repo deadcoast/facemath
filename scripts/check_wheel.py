@@ -97,9 +97,9 @@ def main() -> None:
                 raise SystemExit(result.returncode)
             if index == 1:
                 imported = json.loads(result.stdout)
-                assert Path(imported["file"]).is_relative_to(target), (
-                    "source-tree shadowing detected"
-                )
+                assert Path(imported["file"]).is_relative_to(
+                    target
+                ), "source-tree shadowing detected"
                 original = json.loads((bundle / "environment.json").read_text())
                 assert imported["code_sha256"] == original["engine_code_sha256"]
 

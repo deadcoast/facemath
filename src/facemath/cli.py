@@ -393,9 +393,11 @@ def _replay(args: argparse.Namespace) -> dict:
         config,
         localization_calibration=calibration,
         query_groups=tuple(envelope["query_groups"]) if envelope else ("", ""),
-        query_lineages=tuple(tuple(x) for x in envelope.get("query_lineages", ((), ())))
-        if envelope
-        else ((), ()),
+        query_lineages=(
+            tuple(tuple(x) for x in envelope.get("query_lineages", ((), ())))
+            if envelope
+            else ((), ())
+        ),
         domain=envelope["domain"] if envelope else "",
     ).run(
         image_a,
@@ -611,9 +613,11 @@ def execute(args: argparse.Namespace) -> dict:
             "format": "facemath.runtime_check.v4",
             "packages": packages,
             "model_present": bool(model and model.is_file()),
-            "model_sha256": sha256(model.read_bytes()).hexdigest()
-            if model and model.is_file()
-            else None,
+            "model_sha256": (
+                sha256(model.read_bytes()).hexdigest()
+                if model and model.is_file()
+                else None
+            ),
             "inference_executed": False,
             "live_validation": "not established by availability checks",
             "network_policy": "FACEMATH never implicitly downloads a model; third-party runtime telemetry is not attested",

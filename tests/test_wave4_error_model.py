@@ -21,12 +21,15 @@ from facemath.observation.validation import evaluate_study
 def calibration(n=19, alpha=0.1):
     cases = tuple(case(i, delta=(0.1 * i, 0)) for i in range(n))
     report, rows = evaluate_study(cases)
-    return fit_localization_calibration(
+    return (
+        fit_localization_calibration(
+            rows,
+            study_sha256=report["content_sha256"],
+            alpha=alpha,
+            domain="schematic-validation-only",
+        ),
         rows,
-        study_sha256=report["content_sha256"],
-        alpha=alpha,
-        domain="schematic-validation-only",
-    ), rows
+    )
 
 
 def test_conformal_rank_not_ordinary_numpy_quantile():

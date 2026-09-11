@@ -109,9 +109,11 @@ class LocalizationCalibration:
             **asdict(self),
             "protocol_sha256": REFERENCE_PROTOCOL_SHA256,
             "names": list(REFERENCE_NAMES),
-            "scope": "synthetic_only"
-            if self.reference_kind == "synthetic_fixture"
-            else "declared_reference_domain_only",
+            "scope": (
+                "synthetic_only"
+                if self.reference_kind == "synthetic_fixture"
+                else "declared_reference_domain_only"
+            ),
             "score": "group_max_of_case_max_reference8_mahalanobis",
             "guarantee": "marginal new-group simultaneous-reference coverage under exchangeability and frozen protocol; not per-image posterior certainty",
             "unbounded": self.quantile is None,
@@ -278,12 +280,14 @@ def evaluate_coverage(
         "finite_envelope": calibration.quantile is not None,
         "evaluation_cases": len(evaluation),
         "evaluation_groups": len(group_results),
-        "covered_groups": sum(group_results.values())
-        if calibration.quantile is not None
-        else None,
-        "empirical_group_coverage": float(np.mean(list(group_results.values())))
-        if calibration.quantile is not None
-        else None,
+        "covered_groups": (
+            sum(group_results.values()) if calibration.quantile is not None else None
+        ),
+        "empirical_group_coverage": (
+            float(np.mean(list(group_results.values())))
+            if calibration.quantile is not None
+            else None
+        ),
         "failures": sum(not c["assessable"] for c in outcomes),
         "cases": outcomes,
         "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage",
@@ -423,39 +427,45 @@ class LocalizationEnvelope:
             "calibration_sha256": self.calibration.digest,
             "names": list(REFERENCE_NAMES),
             "bound_method": "ellipse_support_outer_bounds_with_finite_angle_correction_and_radial_intersection",
-            "angular_directions": len(self.directional.normals)
-            if self.directional
-            else None,
+            "angular_directions": (
+                len(self.directional.normals) if self.directional else None
+            ),
             "query_groups": list(self.query_groups),
             "query_lineages": [list(x) for x in self.query_lineages],
             "domain": self.domain,
             "nominal_per_source_coverage": 1 - self.calibration.alpha,
             "pair_union_bound": max(0, 1 - 2 * self.calibration.alpha),
-            "scope": "synthetic_only"
-            if self.calibration.reference_kind == "synthetic_fixture"
-            else "calibration_reference_domain",
+            "scope": (
+                "synthetic_only"
+                if self.calibration.reference_kind == "synthetic_fixture"
+                else "calibration_reference_domain"
+            ),
             "gauge": "observed_transforms_and_observed_normalizer_held_fixed; NOT re-fitted_true_shape_geometry",
             "interpretation": "conservative geometric gap bounds from calibrated reference ellipses; full covariance pushforward with fixed observed gauge; no extrapolation to unannotated vertices",
             "rows": [
                 {
                     "name": name,
-                    "observed_gap_ipd": float(self.observed_gap_ipd[i])
-                    if self.supported[i]
-                    else None,
-                    "lower_ipd": float(self.lower_ipd[i])
-                    if self.supported[i]
-                    else None,
-                    "upper_ipd": float(self.upper_ipd[i])
-                    if self.supported[i]
-                    else None,
+                    "observed_gap_ipd": (
+                        float(self.observed_gap_ipd[i]) if self.supported[i] else None
+                    ),
+                    "lower_ipd": (
+                        float(self.lower_ipd[i]) if self.supported[i] else None
+                    ),
+                    "upper_ipd": (
+                        float(self.upper_ipd[i]) if self.supported[i] else None
+                    ),
                     "status": (
                         "withheld"
                         if not self.supported[i]
-                        else "within_tolerance_under_envelope"
-                        if self.upper_ipd[i] <= self.tolerance_ipd
-                        else "outside_tolerance_under_envelope"
-                        if self.lower_ipd[i] > self.tolerance_ipd
-                        else "unresolved_at_tolerance"
+                        else (
+                            "within_tolerance_under_envelope"
+                            if self.upper_ipd[i] <= self.tolerance_ipd
+                            else (
+                                "outside_tolerance_under_envelope"
+                                if self.lower_ipd[i] > self.tolerance_ipd
+                                else "unresolved_at_tolerance"
+                            )
+                        )
                     ),
                 }
                 for i, name in enumerate(REFERENCE_NAMES)

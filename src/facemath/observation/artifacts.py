@@ -73,9 +73,11 @@ def _html(result: InstrumentResult, arrays: dict[str, np.ndarray]) -> str:
     if result.edges:
         summaries = result.edges.summary()
         erows = "".join(
-            f"<tr><td>{escape(k)}</td><td>{v['accepted']} / {v['rays']}</td><td>{v['source_supported']}</td><td>{v['median_absolute_offset_px']:.3f}</td></tr>"
-            if v["median_absolute_offset_px"] is not None
-            else f"<tr><td>{escape(k)}</td><td>0 / {v['rays']}</td><td>{v['source_supported']}</td><td>withheld</td></tr>"
+            (
+                f"<tr><td>{escape(k)}</td><td>{v['accepted']} / {v['rays']}</td><td>{v['source_supported']}</td><td>{v['median_absolute_offset_px']:.3f}</td></tr>"
+                if v["median_absolute_offset_px"] is not None
+                else f"<tr><td>{escape(k)}</td><td>0 / {v['rays']}</td><td>{v['source_supported']}</td><td>withheld</td></tr>"
+            )
             for k, v in summaries["profiles"].items()
         )
         edge_section = f"<h2>Image-edge support</h2><p>Landmark-guided normal-ray searches. Matching image gradients are diagnostic, not proof of correct anatomy. Landmarks are never moved to an edge candidate. Complete ray responses and rejection masks are in arrays.npz.</p><div class='scroll'><table><tr><th>Source / region</th><th>Accepted / attempted rays</th><th>Full source support</th><th>Median |normal offset| · px</th></tr>{erows}</table></div>"
@@ -83,13 +85,15 @@ def _html(result: InstrumentResult, arrays: dict[str, np.ndarray]) -> str:
     if result.localization:
         info = result.localization.to_dict()
         lrows = "".join(
-            f"<tr><td>{escape(r['name'])}</td><td>{r['observed_gap_ipd']:.4f}</td><td>[{r['lower_ipd']:.4f}, {r['upper_ipd']:.4f}]</td><td>{escape(r['status'])}</td></tr>"
-            if r["observed_gap_ipd"] is not None
-            else f"<tr><td>{escape(r['name'])}</td><td colspan='3'>withheld</td></tr>"
+            (
+                f"<tr><td>{escape(r['name'])}</td><td>{r['observed_gap_ipd']:.4f}</td><td>[{r['lower_ipd']:.4f}, {r['upper_ipd']:.4f}]</td><td>{escape(r['status'])}</td></tr>"
+                if r["observed_gap_ipd"] is not None
+                else f"<tr><td>{escape(r['name'])}</td><td colspan='3'>withheld</td></tr>"
+            )
             for r in info["rows"]
         )
         localization_section = f"<h2>Reference-calibrated localization envelope</h2><div class='panel'>Scope: <strong>{escape(info['scope'])}</strong>. Acquisition domain: {escape(info['domain'])}. These bounds hold the observed transforms and normalization fixed; they are not confidence intervals for re-fitted true shape or identity.</div><div class='scroll'><table><tr><th>Annotated landmark</th><th>Observed gap</th><th>Error envelope · observed eye spans</th><th>At selected tolerance</th></tr>{lrows}</table></div><p><a href='localization_calibration.json'>Recorded error calibration</a> · all eight bounds retained in arrays.npz.</p>"
-    return f'''<!doctype html><html lang="en"><meta charset="utf-8">
+    return f"""<!doctype html><html lang="en"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>FACEMATH · Anatomical observation instrument</title>
 <style>
@@ -127,7 +131,7 @@ Landmark residuals are normalized by the geometric mean of registered interocula
 <footer>Recipe SHA-256: <code>{escape(result.state.recipe_sha256)}</code><br>Engine source SHA-256: <code>{code}</code><br>
 This bundle verifies internal integrity, not external authorship or historical model telemetry. Report has no remote assets, analytics, or network calls.</footer>
 <script>document.getElementById('opacity').addEventListener('input', e => {{document.getElementById('blend-b').style.opacity=e.target.value/100;}});</script>
-</main></html>'''
+</main></html>"""
 
 
 def write_bundle(

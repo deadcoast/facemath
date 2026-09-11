@@ -237,11 +237,13 @@ def summarize(
                 "observed": supported,
                 "within_tolerance": int(hit[:, i].sum()),
                 "pck": float(hit[:, i].sum() / total) if total else None,
-                "median_error_px": float(
-                    np.median([r.error_norm_px[i] for r in rows if r.observed[i]])
-                )
-                if supported
-                else None,
+                "median_error_px": (
+                    float(
+                        np.median([r.error_norm_px[i] for r in rows if r.observed[i]])
+                    )
+                    if supported
+                    else None
+                ),
             }
         )
     successful = [r.nme for r in rows if r.nme is not None]

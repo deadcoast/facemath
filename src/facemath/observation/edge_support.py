@@ -176,11 +176,11 @@ class EdgeDiagnostics:
                     "rays": len(p.points),
                     "source_supported": int(p.ray_supported.sum()),
                     "accepted": int(p.accepted.sum()),
-                    "median_absolute_offset_px": float(
-                        np.median(np.abs(p.best_offset_px[p.accepted]))
-                    )
-                    if p.accepted.any()
-                    else None,
+                    "median_absolute_offset_px": (
+                        float(np.median(np.abs(p.best_offset_px[p.accepted])))
+                        if p.accepted.any()
+                        else None
+                    ),
                 }
                 for k, p in self.profiles.items()
             },

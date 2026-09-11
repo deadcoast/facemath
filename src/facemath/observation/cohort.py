@@ -208,12 +208,12 @@ class Cohort:
             "seed": seed,
             "percentile": float(wins.mean() * 100),
             "interval": interval,
-            "interval_kind": "cluster_bootstrap_percentile_95"
-            if interval is not None
-            else None,
-            "interval_unavailable_reason": "fewer_than_three_independent_components"
-            if interval is None
-            else None,
+            "interval_kind": (
+                "cluster_bootstrap_percentile_95" if interval is not None else None
+            ),
+            "interval_unavailable_reason": (
+                "fewer_than_three_independent_components" if interval is None else None
+            ),
             "cohort_name": self.name,
             "cohort_kind": self.kind,
             "cohort_sha256": self.fingerprint,

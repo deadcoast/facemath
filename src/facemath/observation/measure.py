@@ -276,9 +276,11 @@ def measure(
                     total,
                     "interpolated_anatomy",
                     "finite-rotation-invariant local stretch",
-                    exclusion="fewer_than_eight_supported_pixels"
-                    if observed_region
-                    else "insufficient_observed_region_landmarks",
+                    exclusion=(
+                        "fewer_than_eight_supported_pixels"
+                        if observed_region
+                        else "insufficient_observed_region_landmarks"
+                    ),
                 )
             )
             continue

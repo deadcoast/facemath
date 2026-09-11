@@ -48,12 +48,12 @@ class InstrumentResult:
             "warnings": list(self.profile.warnings),
             "consensus_similarity_percent": None,
             "population_percentile": None,
-            "edge_diagnostics": self.edges.summary()
-            if self.edges is not None
-            else None,
-            "localization_envelope": self.localization.to_dict()
-            if self.localization is not None
-            else None,
+            "edge_diagnostics": (
+                self.edges.summary() if self.edges is not None else None
+            ),
+            "localization_envelope": (
+                self.localization.to_dict() if self.localization is not None else None
+            ),
             "limits": [
                 "2D projected geometry, not identity recognition or proof of 3D shape",
                 "model contours and interpolated fields derive from the same landmarks; not independent evidence",

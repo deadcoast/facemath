@@ -154,9 +154,11 @@ def inspect_video(
                 "source_frame_count": total,
                 "sampling_records": records,
                 "roi_xywh": roi,
-                "scope": "full_screen_including_UI_not_anatomy"
-                if roi is None
-                else "explicit_ROI_not_verified_anatomy",
+                "scope": (
+                    "full_screen_including_UI_not_anatomy"
+                    if roi is None
+                    else "explicit_ROI_not_verified_anatomy"
+                ),
                 "timing_assumption": "CFR frame_index/fps; decoded timestamps retained; VFR accuracy unvalidated",
             }
         )
