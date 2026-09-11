@@ -1,4 +1,70 @@
 [{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/scripts/validate_release_wave4.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"facemath.observation.journal\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 250,
+	"startColumn": 1,
+	"endLineNumber": 250,
+	"endColumn": 2,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/scripts/validate_release_wave4.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "note",
+		"target": {
+			"$mid": 1,
+			"path": "/en/stable/running_mypy.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "missing-imports"
+		}
+	},
+	"severity": 2,
+	"message": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+	"source": "Mypy",
+	"startLineNumber": 250,
+	"startColumn": 1,
+	"endLineNumber": 250,
+	"endColumn": 2,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/calibration.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "arg-type",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-arg-type"
+		}
+	},
+	"severity": 8,
+	"message": "Argument 1 to \"float\" has incompatible type \"generic[Any] | complex | str | bytes | memoryview[int]\"; expected \"str | Buffer | SupportsFloat | SupportsIndex\"",
+	"source": "Mypy",
+	"startLineNumber": 97,
+	"startColumn": 19,
+	"endLineNumber": 97,
+	"endColumn": 31,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/calibration.py",
 	"owner": "Pylance",
 	"code": {
@@ -56,10 +122,10 @@
 	"severity": 8,
 	"message": "Argument 1 to \"float\" has incompatible type \"generic[Any] | complex | str | bytes | memoryview[int]\"; expected \"str | Buffer | SupportsFloat | SupportsIndex\"",
 	"source": "Mypy",
-	"startLineNumber": 97,
-	"startColumn": 19,
-	"endLineNumber": 97,
-	"endColumn": 31,
+	"startLineNumber": 101,
+	"startColumn": 23,
+	"endLineNumber": 101,
+	"endColumn": 35,
 	"modelVersionId": 1,
 	"origin": "extHost1"
 },{
@@ -98,28 +164,6 @@
 	"severity": 8,
 	"message": "Argument of type \"generic[Any] | complex | str | bytes | memoryview[int]\" cannot be assigned to parameter \"x\" of type \"ConvertibleToFloat\" in function \"__new__\"\n  Type \"generic[Any] | complex | str | bytes | memoryview[int]\" is not assignable to type \"ConvertibleToFloat\"\n    Type \"complex\" is not assignable to type \"ConvertibleToFloat\"\n      \"complex\" is not assignable to \"str\"\n      \"complex\" is incompatible with protocol \"Buffer\"\n        \"__buffer__\" is not present\n      \"complex\" is incompatible with protocol \"SupportsFloat\"\n        \"__float__\" is not present\n      \"complex\" is incompatible with protocol \"SupportsIndex\"",
 	"source": "Pylance",
-	"startLineNumber": 101,
-	"startColumn": 23,
-	"endLineNumber": 101,
-	"endColumn": 35,
-	"modelVersionId": 1,
-	"origin": "extHost1"
-},{
-	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/calibration.py",
-	"owner": "_generated_diagnostic_collection_name_#52",
-	"code": {
-		"value": "arg-type",
-		"target": {
-			"$mid": 1,
-			"path": "/en/latest/_refs.html",
-			"scheme": "https",
-			"authority": "mypy.readthedocs.io",
-			"fragment": "code-arg-type"
-		}
-	},
-	"severity": 8,
-	"message": "Argument 1 to \"float\" has incompatible type \"generic[Any] | complex | str | bytes | memoryview[int]\"; expected \"str | Buffer | SupportsFloat | SupportsIndex\"",
-	"source": "Mypy",
 	"startLineNumber": 101,
 	"startColumn": 23,
 	"endLineNumber": 101,
@@ -492,6 +536,28 @@
 	"origin": "extHost1"
 },{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/core.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "arg-type",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-arg-type"
+		}
+	},
+	"severity": 8,
+	"message": "Argument 1 to \"float\" has incompatible type \"generic[Any] | complex | str | bytes | memoryview[int]\"; expected \"str | Buffer | SupportsFloat | SupportsIndex\"",
+	"source": "Mypy",
+	"startLineNumber": 47,
+	"startColumn": 26,
+	"endLineNumber": 47,
+	"endColumn": 36,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/core.py",
 	"owner": "Pylance",
 	"code": {
 		"value": "reportArgumentType",
@@ -533,28 +599,6 @@
 	"modelVersionId": 1,
 	"origin": "extHost1"
 },{
-	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/core.py",
-	"owner": "_generated_diagnostic_collection_name_#52",
-	"code": {
-		"value": "arg-type",
-		"target": {
-			"$mid": 1,
-			"path": "/en/latest/_refs.html",
-			"scheme": "https",
-			"authority": "mypy.readthedocs.io",
-			"fragment": "code-arg-type"
-		}
-	},
-	"severity": 8,
-	"message": "Argument 1 to \"float\" has incompatible type \"generic[Any] | complex | str | bytes | memoryview[int]\"; expected \"str | Buffer | SupportsFloat | SupportsIndex\"",
-	"source": "Mypy",
-	"startLineNumber": 47,
-	"startColumn": 26,
-	"endLineNumber": 47,
-	"endColumn": 36,
-	"modelVersionId": 1,
-	"origin": "extHost1"
-},{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/correspondence.py",
 	"owner": "_generated_diagnostic_collection_name_#52",
 	"code": {
@@ -574,6 +618,28 @@
 	"startColumn": 1,
 	"endLineNumber": 5,
 	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/correspondence.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "call-overload",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-call-overload"
+		}
+	},
+	"severity": 8,
+	"message": "No overload variant of \"calcOpticalFlowFarneback\" matches argument types \"ndarray[Any, Any]\", \"ndarray[Any, Any]\", \"None\", \"float\", \"int\", \"int\", \"int\", \"int\", \"float\", \"int\"",
+	"source": "Mypy",
+	"startLineNumber": 23,
+	"startColumn": 9,
+	"endLineNumber": 23,
+	"endColumn": 77,
 	"modelVersionId": 1,
 	"origin": "extHost1"
 },{
@@ -605,28 +671,6 @@
 			"resource": "/c:/Users/ryanf/github/_new/workflow-replications/.venv/Lib/site-packages/cv2/__init__.pyi"
 		}
 	],
-	"modelVersionId": 1,
-	"origin": "extHost1"
-},{
-	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/correspondence.py",
-	"owner": "_generated_diagnostic_collection_name_#52",
-	"code": {
-		"value": "call-overload",
-		"target": {
-			"$mid": 1,
-			"path": "/en/latest/_refs.html",
-			"scheme": "https",
-			"authority": "mypy.readthedocs.io",
-			"fragment": "code-call-overload"
-		}
-	},
-	"severity": 8,
-	"message": "No overload variant of \"calcOpticalFlowFarneback\" matches argument types \"ndarray[Any, Any]\", \"ndarray[Any, Any]\", \"None\", \"float\", \"int\", \"int\", \"int\", \"int\", \"float\", \"int\"",
-	"source": "Mypy",
-	"startLineNumber": 23,
-	"startColumn": 9,
-	"endLineNumber": 23,
-	"endColumn": 77,
 	"modelVersionId": 1,
 	"origin": "extHost1"
 },{
@@ -652,6 +696,28 @@
 	"origin": "extHost1"
 },{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/correspondence.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "call-overload",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-call-overload"
+		}
+	},
+	"severity": 8,
+	"message": "No overload variant of \"calcOpticalFlowFarneback\" matches argument types \"ndarray[Any, Any]\", \"ndarray[Any, Any]\", \"None\", \"float\", \"int\", \"int\", \"int\", \"int\", \"float\", \"int\"",
+	"source": "Mypy",
+	"startLineNumber": 24,
+	"startColumn": 9,
+	"endLineNumber": 24,
+	"endColumn": 77,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/correspondence.py",
 	"owner": "Pylance",
 	"code": {
 		"value": "reportCallIssue",
@@ -679,28 +745,6 @@
 			"resource": "/c:/Users/ryanf/github/_new/workflow-replications/.venv/Lib/site-packages/cv2/__init__.pyi"
 		}
 	],
-	"modelVersionId": 1,
-	"origin": "extHost1"
-},{
-	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/correspondence.py",
-	"owner": "_generated_diagnostic_collection_name_#52",
-	"code": {
-		"value": "call-overload",
-		"target": {
-			"$mid": 1,
-			"path": "/en/latest/_refs.html",
-			"scheme": "https",
-			"authority": "mypy.readthedocs.io",
-			"fragment": "code-call-overload"
-		}
-	},
-	"severity": 8,
-	"message": "No overload variant of \"calcOpticalFlowFarneback\" matches argument types \"ndarray[Any, Any]\", \"ndarray[Any, Any]\", \"None\", \"float\", \"int\", \"int\", \"int\", \"int\", \"float\", \"int\"",
-	"source": "Mypy",
-	"startLineNumber": 24,
-	"startColumn": 9,
-	"endLineNumber": 24,
-	"endColumn": 77,
 	"modelVersionId": 1,
 	"origin": "extHost1"
 },{
@@ -898,6 +942,28 @@
 	"origin": "extHost1"
 },{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/deformation.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "call-overload",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-call-overload"
+		}
+	},
+	"severity": 8,
+	"message": "No overload variant of \"calcOpticalFlowFarneback\" matches argument types \"ndarray[Any, dtype[unsignedinteger[_8Bit]]]\", \"ndarray[Any, dtype[unsignedinteger[_8Bit]]]\", \"None\", \"float\", \"int\", \"int\", \"int\", \"int\", \"float\", \"int\"",
+	"source": "Mypy",
+	"startLineNumber": 26,
+	"startColumn": 12,
+	"endLineNumber": 28,
+	"endColumn": 6,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/deformation.py",
 	"owner": "Pylance",
 	"code": {
 		"value": "reportCallIssue",
@@ -925,28 +991,6 @@
 			"resource": "/c:/Users/ryanf/github/_new/workflow-replications/.venv/Lib/site-packages/cv2/__init__.pyi"
 		}
 	],
-	"modelVersionId": 1,
-	"origin": "extHost1"
-},{
-	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/deformation.py",
-	"owner": "_generated_diagnostic_collection_name_#52",
-	"code": {
-		"value": "call-overload",
-		"target": {
-			"$mid": 1,
-			"path": "/en/latest/_refs.html",
-			"scheme": "https",
-			"authority": "mypy.readthedocs.io",
-			"fragment": "code-call-overload"
-		}
-	},
-	"severity": 8,
-	"message": "No overload variant of \"calcOpticalFlowFarneback\" matches argument types \"ndarray[Any, dtype[unsignedinteger[_8Bit]]]\", \"ndarray[Any, dtype[unsignedinteger[_8Bit]]]\", \"None\", \"float\", \"int\", \"int\", \"int\", \"int\", \"float\", \"int\"",
-	"source": "Mypy",
-	"startLineNumber": 26,
-	"startColumn": 12,
-	"endLineNumber": 28,
-	"endColumn": 6,
 	"modelVersionId": 1,
 	"origin": "extHost1"
 },{
@@ -1003,6 +1047,712 @@
 	"endLineNumber": 28,
 	"endColumn": 6,
 	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/geometry.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"scipy.spatial.distance\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 7,
+	"startColumn": 1,
+	"endLineNumber": 7,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/geometry.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "note",
+		"target": {
+			"$mid": 1,
+			"path": "/en/stable/running_mypy.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "missing-imports"
+		}
+	},
+	"severity": 2,
+	"message": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+	"source": "Mypy",
+	"startLineNumber": 7,
+	"startColumn": 1,
+	"endLineNumber": 7,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/information.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"sklearn.feature_selection\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 6,
+	"startColumn": 1,
+	"endLineNumber": 6,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/information.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "note",
+		"target": {
+			"$mid": 1,
+			"path": "/en/stable/running_mypy.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "missing-imports"
+		}
+	},
+	"severity": 2,
+	"message": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+	"source": "Mypy",
+	"startLineNumber": 6,
+	"startColumn": 1,
+	"endLineNumber": 6,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/artifacts.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "arg-type",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-arg-type"
+		}
+	},
+	"severity": 8,
+	"message": "Argument 2 to \"savez_compressed\" has incompatible type \"**dict[str, ndarray[tuple[Any, ...], dtype[Any]]]\"; expected \"bool\"",
+	"source": "Mypy",
+	"startLineNumber": 153,
+	"startColumn": 52,
+	"endLineNumber": 153,
+	"endColumn": 58,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/cohort.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"scipy.stats\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 16,
+	"startColumn": 1,
+	"endLineNumber": 16,
+	"endColumn": 2,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/cohort.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "var-annotated",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-var-annotated"
+		}
+	},
+	"severity": 8,
+	"message": "Need type annotation for \"owner\" (hint: \"owner: dict[<type>, <type>] = ...\")",
+	"source": "Mypy",
+	"startLineNumber": 134,
+	"startColumn": 9,
+	"endLineNumber": 134,
+	"endColumn": 14,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/cohort.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "var-annotated",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-var-annotated"
+		}
+	},
+	"severity": 8,
+	"message": "Need type annotation for \"groups\" (hint: \"groups: dict[<type>, <type>] = ...\")",
+	"source": "Mypy",
+	"startLineNumber": 144,
+	"startColumn": 9,
+	"endLineNumber": 144,
+	"endColumn": 15,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/cohort.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "var-annotated",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-var-annotated"
+		}
+	},
+	"severity": 8,
+	"message": "Need type annotation for \"row\" (hint: \"row: list[<type>] = ...\")",
+	"source": "Mypy",
+	"startLineNumber": 229,
+	"startColumn": 13,
+	"endLineNumber": 229,
+	"endColumn": 16,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/cohort.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "arg-type",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-arg-type"
+		}
+	},
+	"severity": 8,
+	"message": "Argument 1 to \"append\" of \"list\" has incompatible type \"None\"; expected \"float\"",
+	"source": "Mypy",
+	"startLineNumber": 234,
+	"startColumn": 32,
+	"endLineNumber": 234,
+	"endColumn": 36,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/cohort.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "arg-type",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-arg-type"
+		}
+	},
+	"severity": 8,
+	"message": "Argument 1 to \"append\" of \"list\" has incompatible type \"list[float]\"; expected \"list[float | None]\"",
+	"source": "Mypy",
+	"startLineNumber": 237,
+	"startColumn": 27,
+	"endLineNumber": 237,
+	"endColumn": 30,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/cohort.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "arg-type",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-arg-type"
+		}
+	},
+	"severity": 8,
+	"message": "Argument \"kind\" to \"Cohort\" has incompatible type \"str\"; expected \"Literal['synthetic', 'observational']\"",
+	"source": "Mypy",
+	"startLineNumber": 308,
+	"startColumn": 44,
+	"endLineNumber": 308,
+	"endColumn": 48,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/cohort.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "note",
+		"target": {
+			"$mid": 1,
+			"path": "/en/stable/running_mypy.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "missing-imports"
+		}
+	},
+	"severity": 2,
+	"message": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+	"source": "Mypy",
+	"startLineNumber": 16,
+	"startColumn": 1,
+	"endLineNumber": 16,
+	"endColumn": 2,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/cohort.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"severity": 2,
+	"message": "\"List\" is invariant -- see https://mypy.readthedocs.io/en/stable/common_issues.html#variance\nConsider using \"Sequence\" instead, which is covariant",
+	"source": "Mypy",
+	"startLineNumber": 237,
+	"startColumn": 27,
+	"endLineNumber": 237,
+	"endColumn": 30,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/edge_support.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "attr-defined",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-attr-defined"
+		}
+	},
+	"severity": 8,
+	"message": "\"object\" has no attribute \"observation_a\"",
+	"source": "Mypy",
+	"startLineNumber": 194,
+	"startColumn": 15,
+	"endLineNumber": 194,
+	"endColumn": 34,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/edge_support.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "attr-defined",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-attr-defined"
+		}
+	},
+	"severity": 8,
+	"message": "\"object\" has no attribute \"xy_a\"",
+	"source": "Mypy",
+	"startLineNumber": 194,
+	"startColumn": 36,
+	"endLineNumber": 194,
+	"endColumn": 46,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/edge_support.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "attr-defined",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-attr-defined"
+		}
+	},
+	"severity": 8,
+	"message": "\"object\" has no attribute \"image_a\"",
+	"source": "Mypy",
+	"startLineNumber": 194,
+	"startColumn": 48,
+	"endLineNumber": 194,
+	"endColumn": 61,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/edge_support.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "attr-defined",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-attr-defined"
+		}
+	},
+	"severity": 8,
+	"message": "\"object\" has no attribute \"valid_source_a\"",
+	"source": "Mypy",
+	"startLineNumber": 194,
+	"startColumn": 63,
+	"endLineNumber": 194,
+	"endColumn": 83,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/edge_support.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "attr-defined",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-attr-defined"
+		}
+	},
+	"severity": 8,
+	"message": "\"object\" has no attribute \"observation_b\"",
+	"source": "Mypy",
+	"startLineNumber": 195,
+	"startColumn": 15,
+	"endLineNumber": 195,
+	"endColumn": 34,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/edge_support.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "attr-defined",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-attr-defined"
+		}
+	},
+	"severity": 8,
+	"message": "\"object\" has no attribute \"xy_b\"",
+	"source": "Mypy",
+	"startLineNumber": 195,
+	"startColumn": 36,
+	"endLineNumber": 195,
+	"endColumn": 46,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/edge_support.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "attr-defined",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-attr-defined"
+		}
+	},
+	"severity": 8,
+	"message": "\"object\" has no attribute \"image_b\"",
+	"source": "Mypy",
+	"startLineNumber": 195,
+	"startColumn": 48,
+	"endLineNumber": 195,
+	"endColumn": 61,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/edge_support.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "attr-defined",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-attr-defined"
+		}
+	},
+	"severity": 8,
+	"message": "\"object\" has no attribute \"valid_source_b\"",
+	"source": "Mypy",
+	"startLineNumber": 195,
+	"startColumn": 63,
+	"endLineNumber": 195,
+	"endColumn": 83,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/edge_support.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "attr-defined",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-attr-defined"
+		}
+	},
+	"severity": 8,
+	"message": "\"object\" has no attribute \"anatomy\"",
+	"source": "Mypy",
+	"startLineNumber": 199,
+	"startColumn": 24,
+	"endLineNumber": 199,
+	"endColumn": 37,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/edge_support.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "attr-defined",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-attr-defined"
+		}
+	},
+	"severity": 8,
+	"message": "\"object\" has no attribute \"config\"",
+	"source": "Mypy",
+	"startLineNumber": 205,
+	"startColumn": 30,
+	"endLineNumber": 205,
+	"endColumn": 42,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/edge_support.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "attr-defined",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-attr-defined"
+		}
+	},
+	"severity": 8,
+	"message": "\"object\" has no attribute \"config\"",
+	"source": "Mypy",
+	"startLineNumber": 216,
+	"startColumn": 27,
+	"endLineNumber": 216,
+	"endColumn": 39,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/edge_support.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "attr-defined",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-attr-defined"
+		}
+	},
+	"severity": 8,
+	"message": "\"object\" has no attribute \"normalization_span_px\"",
+	"source": "Mypy",
+	"startLineNumber": 216,
+	"startColumn": 58,
+	"endLineNumber": 216,
+	"endColumn": 85,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/edge_support.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "attr-defined",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-attr-defined"
+		}
+	},
+	"severity": 8,
+	"message": "\"object\" has no attribute \"config\"",
+	"source": "Mypy",
+	"startLineNumber": 218,
+	"startColumn": 34,
+	"endLineNumber": 218,
+	"endColumn": 46,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/edge_support.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "attr-defined",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-attr-defined"
+		}
+	},
+	"severity": 8,
+	"message": "\"object\" has no attribute \"config\"",
+	"source": "Mypy",
+	"startLineNumber": 219,
+	"startColumn": 35,
+	"endLineNumber": 219,
+	"endColumn": 47,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/error_model.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "operator",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-operator"
+		}
+	},
+	"severity": 8,
+	"message": "Unsupported operand types for >= (\"float\" and \"None\")",
+	"source": "Mypy",
+	"startLineNumber": 265,
+	"startColumn": 17,
+	"endLineNumber": 265,
+	"endColumn": 18,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/error_model.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "arg-type",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-arg-type"
+		}
+	},
+	"severity": 8,
+	"message": "Argument 3 to \"ellipse_gap_bounds\" has incompatible type \"float | None\"; expected \"float\"",
+	"source": "Mypy",
+	"startLineNumber": 521,
+	"startColumn": 9,
+	"endLineNumber": 521,
+	"endColumn": 29,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/error_model.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "arg-type",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-arg-type"
+		}
+	},
+	"severity": 8,
+	"message": "Argument 2 to \"LocalizationEnvelope\" has incompatible type \"tuple[str, ...]\"; expected \"tuple[str, str]\"",
+	"source": "Mypy",
+	"startLineNumber": 527,
+	"startColumn": 9,
+	"endLineNumber": 527,
+	"endColumn": 28,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/error_model.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "arg-type",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-arg-type"
+		}
+	},
+	"severity": 8,
+	"message": "Argument 13 to \"LocalizationEnvelope\" has incompatible type \"tuple[tuple[str, ...], ...]\"; expected \"tuple[tuple[str, ...], tuple[str, ...]]\"",
+	"source": "Mypy",
+	"startLineNumber": 538,
+	"startColumn": 9,
+	"endLineNumber": 538,
+	"endColumn": 48,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/error_model.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"severity": 2,
+	"message": "Left operand is of type \"float | None\"",
+	"source": "Mypy",
+	"startLineNumber": 265,
+	"startColumn": 17,
+	"endLineNumber": 265,
+	"endColumn": 18,
+	"modelVersionId": 2,
 	"origin": "extHost1"
 },{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/field.py",
@@ -1072,6 +1822,28 @@
 	"origin": "extHost1"
 },{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/field.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "call-overload",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-call-overload"
+		}
+	},
+	"severity": 8,
+	"message": "No overload variant of \"calcOpticalFlowFarneback\" matches argument types \"ndarray[Any, dtype[integer[Any] | floating[Any]]]\", \"ndarray[Any, dtype[integer[Any] | floating[Any]]]\", \"None\", \"tuple[float, int, int, int, int, float, int]\"",
+	"source": "Mypy",
+	"startLineNumber": 170,
+	"startColumn": 15,
+	"endLineNumber": 170,
+	"endColumn": 62,
+	"modelVersionId": 3,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/field.py",
 	"owner": "Pylance",
 	"code": {
 		"value": "reportCallIssue",
@@ -1099,28 +1871,6 @@
 			"resource": "/c:/Users/ryanf/github/_new/workflow-replications/.venv/Lib/site-packages/cv2/__init__.pyi"
 		}
 	],
-	"modelVersionId": 3,
-	"origin": "extHost1"
-},{
-	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/field.py",
-	"owner": "_generated_diagnostic_collection_name_#52",
-	"code": {
-		"value": "call-overload",
-		"target": {
-			"$mid": 1,
-			"path": "/en/latest/_refs.html",
-			"scheme": "https",
-			"authority": "mypy.readthedocs.io",
-			"fragment": "code-call-overload"
-		}
-	},
-	"severity": 8,
-	"message": "No overload variant of \"calcOpticalFlowFarneback\" matches argument types \"ndarray[Any, dtype[integer[Any] | floating[Any]]]\", \"ndarray[Any, dtype[integer[Any] | floating[Any]]]\", \"None\", \"tuple[float, int, int, int, int, float, int]\"",
-	"source": "Mypy",
-	"startLineNumber": 170,
-	"startColumn": 15,
-	"endLineNumber": 170,
-	"endColumn": 62,
 	"modelVersionId": 3,
 	"origin": "extHost1"
 },{
@@ -1146,6 +1896,28 @@
 	"origin": "extHost1"
 },{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/field.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "call-overload",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-call-overload"
+		}
+	},
+	"severity": 8,
+	"message": "No overload variant of \"calcOpticalFlowFarneback\" matches argument types \"ndarray[Any, dtype[integer[Any] | floating[Any]]]\", \"ndarray[Any, dtype[integer[Any] | floating[Any]]]\", \"None\", \"tuple[float, int, int, int, int, float, int]\"",
+	"source": "Mypy",
+	"startLineNumber": 171,
+	"startColumn": 16,
+	"endLineNumber": 171,
+	"endColumn": 63,
+	"modelVersionId": 3,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/field.py",
 	"owner": "Pylance",
 	"code": {
 		"value": "reportCallIssue",
@@ -1173,28 +1945,6 @@
 			"resource": "/c:/Users/ryanf/github/_new/workflow-replications/.venv/Lib/site-packages/cv2/__init__.pyi"
 		}
 	],
-	"modelVersionId": 3,
-	"origin": "extHost1"
-},{
-	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/field.py",
-	"owner": "_generated_diagnostic_collection_name_#52",
-	"code": {
-		"value": "call-overload",
-		"target": {
-			"$mid": 1,
-			"path": "/en/latest/_refs.html",
-			"scheme": "https",
-			"authority": "mypy.readthedocs.io",
-			"fragment": "code-call-overload"
-		}
-	},
-	"severity": 8,
-	"message": "No overload variant of \"calcOpticalFlowFarneback\" matches argument types \"ndarray[Any, dtype[integer[Any] | floating[Any]]]\", \"ndarray[Any, dtype[integer[Any] | floating[Any]]]\", \"None\", \"tuple[float, int, int, int, int, float, int]\"",
-	"source": "Mypy",
-	"startLineNumber": 171,
-	"startColumn": 16,
-	"endLineNumber": 171,
-	"endColumn": 63,
 	"modelVersionId": 3,
 	"origin": "extHost1"
 },{
@@ -1266,27 +2016,6 @@
 	"origin": "extHost1"
 },{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/instrument.py",
-	"owner": "Pylance",
-	"code": {
-		"value": "reportArgumentType",
-		"target": {
-			"$mid": 1,
-			"path": "/microsoft/pylance-release/blob/main/docs/diagnostics/reportArgumentType.md",
-			"scheme": "https",
-			"authority": "github.com"
-		}
-	},
-	"severity": 8,
-	"message": "Argument of type \"tuple[str, ...]\" cannot be assigned to parameter \"query_groups\" of type \"tuple[str, str]\" in function \"assess_pair\"\n  \"tuple[str, ...]\" is not assignable to \"tuple[str, str]\"\n    Tuple size mismatch; expected 2 but received indeterminate",
-	"source": "Pylance",
-	"startLineNumber": 280,
-	"startColumn": 34,
-	"endLineNumber": 280,
-	"endColumn": 51,
-	"modelVersionId": 2,
-	"origin": "extHost1"
-},{
-	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/instrument.py",
 	"owner": "_generated_diagnostic_collection_name_#52",
 	"code": {
 		"value": "arg-type",
@@ -1320,12 +2049,12 @@
 		}
 	},
 	"severity": 8,
-	"message": "Argument of type \"tuple[tuple[str, ...], ...]\" cannot be assigned to parameter \"query_lineages\" of type \"tuple[tuple[str, ...], tuple[str, ...]]\" in function \"assess_pair\"\n  \"tuple[tuple[str, ...], ...]\" is not assignable to \"tuple[tuple[str, ...], tuple[str, ...]]\"\n    Tuple size mismatch; expected 2 but received indeterminate",
+	"message": "Argument of type \"tuple[str, ...]\" cannot be assigned to parameter \"query_groups\" of type \"tuple[str, str]\" in function \"assess_pair\"\n  \"tuple[str, ...]\" is not assignable to \"tuple[str, str]\"\n    Tuple size mismatch; expected 2 but received indeterminate",
 	"source": "Pylance",
-	"startLineNumber": 282,
-	"startColumn": 36,
-	"endLineNumber": 282,
-	"endColumn": 55,
+	"startLineNumber": 280,
+	"startColumn": 34,
+	"endLineNumber": 280,
+	"endColumn": 51,
 	"modelVersionId": 2,
 	"origin": "extHost1"
 },{
@@ -1344,6 +2073,27 @@
 	"severity": 8,
 	"message": "Argument \"query_lineages\" to \"assess_pair\" has incompatible type \"tuple[tuple[str, ...], ...]\"; expected \"tuple[tuple[str, ...], tuple[str, ...]]\"",
 	"source": "Mypy",
+	"startLineNumber": 282,
+	"startColumn": 36,
+	"endLineNumber": 282,
+	"endColumn": 55,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/instrument.py",
+	"owner": "Pylance",
+	"code": {
+		"value": "reportArgumentType",
+		"target": {
+			"$mid": 1,
+			"path": "/microsoft/pylance-release/blob/main/docs/diagnostics/reportArgumentType.md",
+			"scheme": "https",
+			"authority": "github.com"
+		}
+	},
+	"severity": 8,
+	"message": "Argument of type \"tuple[tuple[str, ...], ...]\" cannot be assigned to parameter \"query_lineages\" of type \"tuple[tuple[str, ...], tuple[str, ...]]\" in function \"assess_pair\"\n  \"tuple[tuple[str, ...], ...]\" is not assignable to \"tuple[tuple[str, ...], tuple[str, ...]]\"\n    Tuple size mismatch; expected 2 but received indeterminate",
+	"source": "Pylance",
 	"startLineNumber": 282,
 	"startColumn": 36,
 	"endLineNumber": 282,
@@ -1496,27 +2246,6 @@
 	"origin": "extHost1"
 },{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/measure.py",
-	"owner": "Pylance",
-	"code": {
-		"value": "reportArgumentType",
-		"target": {
-			"$mid": 1,
-			"path": "/microsoft/pylance-release/blob/main/docs/diagnostics/reportArgumentType.md",
-			"scheme": "https",
-			"authority": "github.com"
-		}
-	},
-	"severity": 8,
-	"message": "Argument of type \"tuple[float, ...]\" cannot be assigned to parameter \"interval\" of type \"tuple[float, float] | None\" in function \"__init__\"\n  Type \"tuple[float, ...]\" is not assignable to type \"tuple[float, float] | None\"\n    \"tuple[float, ...]\" is not assignable to \"tuple[float, float]\"\n      Tuple size mismatch; expected 2 but received indeterminate\n    \"tuple[float, ...]\" is not assignable to \"None\"",
-	"source": "Pylance",
-	"startLineNumber": 161,
-	"startColumn": 17,
-	"endLineNumber": 161,
-	"endColumn": 25,
-	"modelVersionId": 2,
-	"origin": "extHost1"
-},{
-	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/measure.py",
 	"owner": "_generated_diagnostic_collection_name_#52",
 	"code": {
 		"value": "arg-type",
@@ -1531,6 +2260,27 @@
 	"severity": 8,
 	"message": "Argument 8 to \"Measurement\" has incompatible type \"tuple[float, ...]\"; expected \"tuple[float, float] | None\"",
 	"source": "Mypy",
+	"startLineNumber": 161,
+	"startColumn": 17,
+	"endLineNumber": 161,
+	"endColumn": 25,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/measure.py",
+	"owner": "Pylance",
+	"code": {
+		"value": "reportArgumentType",
+		"target": {
+			"$mid": 1,
+			"path": "/microsoft/pylance-release/blob/main/docs/diagnostics/reportArgumentType.md",
+			"scheme": "https",
+			"authority": "github.com"
+		}
+	},
+	"severity": 8,
+	"message": "Argument of type \"tuple[float, ...]\" cannot be assigned to parameter \"interval\" of type \"tuple[float, float] | None\" in function \"__init__\"\n  Type \"tuple[float, ...]\" is not assignable to type \"tuple[float, float] | None\"\n    \"tuple[float, ...]\" is not assignable to \"tuple[float, float]\"\n      Tuple size mismatch; expected 2 but received indeterminate\n    \"tuple[float, ...]\" is not assignable to \"None\"",
+	"source": "Pylance",
 	"startLineNumber": 161,
 	"startColumn": 17,
 	"endLineNumber": 161,
@@ -1846,27 +2596,6 @@
 	"origin": "extHost1"
 },{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/validation_io.py",
-	"owner": "Pylance",
-	"code": {
-		"value": "reportArgumentType",
-		"target": {
-			"$mid": 1,
-			"path": "/microsoft/pylance-release/blob/main/docs/diagnostics/reportArgumentType.md",
-			"scheme": "https",
-			"authority": "github.com"
-		}
-	},
-	"severity": 8,
-	"message": "Argument of type \"NDArray[Any]\" cannot be assigned to parameter \"allow_pickle\" of type \"bool\" in function \"savez_compressed\"\n  \"ndarray[_AnyShape, dtype[Any]]\" is not assignable to \"bool\"",
-	"source": "Pylance",
-	"startLineNumber": 305,
-	"startColumn": 52,
-	"endLineNumber": 305,
-	"endColumn": 58,
-	"modelVersionId": 2,
-	"origin": "extHost1"
-},{
-	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/validation_io.py",
 	"owner": "_generated_diagnostic_collection_name_#52",
 	"code": {
 		"value": "arg-type",
@@ -1881,6 +2610,27 @@
 	"severity": 8,
 	"message": "Argument 2 to \"savez_compressed\" has incompatible type \"**dict[str, ndarray[tuple[Any, ...], dtype[Any]]]\"; expected \"bool\"",
 	"source": "Mypy",
+	"startLineNumber": 305,
+	"startColumn": 52,
+	"endLineNumber": 305,
+	"endColumn": 58,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/observation/validation_io.py",
+	"owner": "Pylance",
+	"code": {
+		"value": "reportArgumentType",
+		"target": {
+			"$mid": 1,
+			"path": "/microsoft/pylance-release/blob/main/docs/diagnostics/reportArgumentType.md",
+			"scheme": "https",
+			"authority": "github.com"
+		}
+	},
+	"severity": 8,
+	"message": "Argument of type \"NDArray[Any]\" cannot be assigned to parameter \"allow_pickle\" of type \"bool\" in function \"savez_compressed\"\n  \"ndarray[_AnyShape, dtype[Any]]\" is not assignable to \"bool\"",
+	"source": "Pylance",
 	"startLineNumber": 305,
 	"startColumn": 52,
 	"endLineNumber": 305,
@@ -2039,6 +2789,28 @@
 	"modelVersionId": 1,
 	"origin": "extHost1"
 },{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/regions.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "assignment",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-assignment"
+		}
+	},
+	"severity": 8,
+	"message": "Incompatible types in assignment (expression has type \"ndarray[Any, dtype[integer[Any] | floating[Any]]]\", variable has type \"ndarray[tuple[int, int], dtype[unsignedinteger[_8Bit]]]\")",
+	"source": "Mypy",
+	"startLineNumber": 93,
+	"startColumn": 16,
+	"endLineNumber": 93,
+	"endColumn": 40,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/registration.py",
 	"owner": "Pylance",
 	"code": {
@@ -2071,6 +2843,28 @@
 	"origin": "extHost1"
 },{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/registration.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "arg-type",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-arg-type"
+		}
+	},
+	"severity": 8,
+	"message": "Argument 6 to \"findTransformECC\" has incompatible type \"ndarray[tuple[Any, ...], dtype[unsignedinteger[_8Bit]]] | None\"; expected \"Mat | ndarray[Any, dtype[integer[Any] | floating[Any]]]\"",
+	"source": "Mypy",
+	"startLineNumber": 92,
+	"startColumn": 13,
+	"endLineNumber": 92,
+	"endColumn": 18,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/registration.py",
 	"owner": "Pylance",
 	"code": {
 		"value": "reportArgumentType",
@@ -2092,6 +2886,50 @@
 	"origin": "extHost1"
 },{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/representation.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"scipy.stats\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 8,
+	"startColumn": 1,
+	"endLineNumber": 8,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/representation.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"sklearn.cross_decomposition\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 9,
+	"startColumn": 1,
+	"endLineNumber": 9,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/representation.py",
 	"owner": "Pylance",
 	"code": {
 		"value": "reportAttributeAccessIssue",
@@ -2109,6 +2947,28 @@
 	"startColumn": 44,
 	"endLineNumber": 45,
 	"endColumn": 53,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/representation.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "note",
+		"target": {
+			"$mid": 1,
+			"path": "/en/stable/running_mypy.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "missing-imports"
+		}
+	},
+	"severity": 2,
+	"message": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+	"source": "Mypy",
+	"startLineNumber": 8,
+	"startColumn": 1,
+	"endLineNumber": 8,
+	"endColumn": 2,
 	"modelVersionId": 1,
 	"origin": "extHost1"
 },{
@@ -2134,6 +2994,72 @@
 	"origin": "extHost1"
 },{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/sequence.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "assignment",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-assignment"
+		}
+	},
+	"severity": 8,
+	"message": "Incompatible types in assignment (expression has type \"ndarray[tuple[int], dtype[float64]]\", variable has type \"list[Any]\")",
+	"source": "Mypy",
+	"startLineNumber": 51,
+	"startColumn": 13,
+	"endLineNumber": 51,
+	"endColumn": 30,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/sequence.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "arg-type",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-arg-type"
+		}
+	},
+	"severity": 8,
+	"message": "Argument 1 to \"slow_feature_analysis\" has incompatible type \"list[Any]\"; expected \"ndarray[tuple[Any, ...], dtype[Any]]\"",
+	"source": "Mypy",
+	"startLineNumber": 57,
+	"startColumn": 46,
+	"endLineNumber": 57,
+	"endColumn": 51,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/sequence.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "attr-defined",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-attr-defined"
+		}
+	},
+	"severity": 8,
+	"message": "\"list[Any]\" has no attribute \"shape\"",
+	"source": "Mypy",
+	"startLineNumber": 57,
+	"startColumn": 60,
+	"endLineNumber": 57,
+	"endColumn": 71,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/sequence.py",
 	"owner": "Pylance",
 	"code": {
 		"value": "reportGeneralTypeIssues",
@@ -2152,6 +3078,72 @@
 	"endLineNumber": 57,
 	"endColumn": 74,
 	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/shape.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"scipy.interpolate\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 4,
+	"startColumn": 1,
+	"endLineNumber": 4,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/shape.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "note",
+		"target": {
+			"$mid": 1,
+			"path": "/en/stable/running_mypy.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "missing-imports"
+		}
+	},
+	"severity": 2,
+	"message": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+	"source": "Mypy",
+	"startLineNumber": 4,
+	"startColumn": 1,
+	"endLineNumber": 4,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/signal.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"scipy.ndimage\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 5,
+	"startColumn": 1,
+	"endLineNumber": 5,
+	"endColumn": 2,
+	"modelVersionId": 1,
 	"origin": "extHost1"
 },{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/signal.py",
@@ -2175,6 +3167,182 @@
 	"modelVersionId": 1,
 	"origin": "extHost1"
 },{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/signal.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "note",
+		"target": {
+			"$mid": 1,
+			"path": "/en/stable/running_mypy.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "missing-imports"
+		}
+	},
+	"severity": 2,
+	"message": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+	"source": "Mypy",
+	"startLineNumber": 5,
+	"startColumn": 1,
+	"endLineNumber": 5,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/statistics.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"scipy.stats\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 6,
+	"startColumn": 1,
+	"endLineNumber": 6,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/statistics.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"sklearn.decomposition\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 7,
+	"startColumn": 1,
+	"endLineNumber": 7,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/statistics.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "note",
+		"target": {
+			"$mid": 1,
+			"path": "/en/stable/running_mypy.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "missing-imports"
+		}
+	},
+	"severity": 2,
+	"message": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+	"source": "Mypy",
+	"startLineNumber": 6,
+	"startColumn": 1,
+	"endLineNumber": 6,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/surface3d.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"scipy.sparse\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 4,
+	"startColumn": 1,
+	"endLineNumber": 4,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/surface3d.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"scipy.sparse.linalg\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 5,
+	"startColumn": 1,
+	"endLineNumber": 5,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/surface3d.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "note",
+		"target": {
+			"$mid": 1,
+			"path": "/en/stable/running_mypy.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "missing-imports"
+		}
+	},
+	"severity": 2,
+	"message": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+	"source": "Mypy",
+	"startLineNumber": 5,
+	"startColumn": 1,
+	"endLineNumber": 5,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/symmetry.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"scipy.interpolate\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 4,
+	"startColumn": 1,
+	"endLineNumber": 4,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/symmetry.py",
 	"owner": "Pylance",
 	"code": {
@@ -2187,12 +3355,188 @@
 		}
 	},
 	"severity": 8,
-	"message": "Operator \"-\" not supported for types \"Unknown | NDArray[Any] | list[list[list[Unknown] | Unknown] | Unknown]\" and \"float64\"\n  Operator \"-\" not supported for types \"list[list[list[Unknown] | Unknown] | Unknown]\" and \"float64\" when expected type is \"ndarray[_AnyShape, dtype[Any]]\"",
+	"message": "Operator \"-\" not supported for types \"Unknown | NDArray[Incomplete] | list[list[list[Unknown] | Unknown] | Unknown]\" and \"float64\"\n  Operator \"-\" not supported for types \"list[list[list[Unknown] | Unknown] | Unknown]\" and \"float64\" when expected type is \"ndarray[_AnyShape, dtype[Any]]\"",
 	"source": "Pylance",
 	"startLineNumber": 59,
 	"startColumn": 12,
 	"endLineNumber": 59,
 	"endColumn": 40,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/symmetry.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "note",
+		"target": {
+			"$mid": 1,
+			"path": "/en/stable/running_mypy.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "missing-imports"
+		}
+	},
+	"severity": 2,
+	"message": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+	"source": "Mypy",
+	"startLineNumber": 4,
+	"startColumn": 1,
+	"endLineNumber": 4,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/temporal.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"scipy.linalg\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 4,
+	"startColumn": 1,
+	"endLineNumber": 4,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/temporal.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"sklearn.cross_decomposition\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 5,
+	"startColumn": 1,
+	"endLineNumber": 5,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/temporal.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "note",
+		"target": {
+			"$mid": 1,
+			"path": "/en/stable/running_mypy.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "missing-imports"
+		}
+	},
+	"severity": 2,
+	"message": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+	"source": "Mypy",
+	"startLineNumber": 4,
+	"startColumn": 1,
+	"endLineNumber": 4,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/topology.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"scipy.optimize\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 4,
+	"startColumn": 1,
+	"endLineNumber": 4,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/topology.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"scipy.spatial.distance\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 5,
+	"startColumn": 1,
+	"endLineNumber": 5,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/topology.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "note",
+		"target": {
+			"$mid": 1,
+			"path": "/en/stable/running_mypy.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "missing-imports"
+		}
+	},
+	"severity": 2,
+	"message": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+	"source": "Mypy",
+	"startLineNumber": 5,
+	"startColumn": 1,
+	"endLineNumber": 5,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/torch_attribution.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-not-found",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-not-found"
+		}
+	},
+	"severity": 8,
+	"message": "Cannot find implementation or library stub for module named \"torch\"",
+	"source": "Mypy",
+	"startLineNumber": 5,
+	"startColumn": 1,
+	"endLineNumber": 5,
+	"endColumn": 2,
 	"modelVersionId": 1,
 	"origin": "extHost1"
 },{
@@ -2215,6 +3559,270 @@
 	"endLineNumber": 5,
 	"endColumn": 13,
 	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/torch_attribution.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "note",
+		"target": {
+			"$mid": 1,
+			"path": "/en/stable/running_mypy.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "missing-imports"
+		}
+	},
+	"severity": 2,
+	"message": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+	"source": "Mypy",
+	"startLineNumber": 5,
+	"startColumn": 1,
+	"endLineNumber": 5,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/wave2.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "assignment",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-assignment"
+		}
+	},
+	"severity": 8,
+	"message": "Incompatible types in assignment (expression has type \"LandmarkSet | None\", variable has type \"LandmarkSet\")",
+	"source": "Mypy",
+	"startLineNumber": 128,
+	"startColumn": 19,
+	"endLineNumber": 128,
+	"endColumn": 21,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/tests/test_wave4_error_model.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-not-found",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-not-found"
+		}
+	},
+	"severity": 8,
+	"message": "Cannot find implementation or library stub for module named \"pytest\"",
+	"source": "Mypy",
+	"startLineNumber": 4,
+	"startColumn": 1,
+	"endLineNumber": 4,
+	"endColumn": 2,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/tests/test_wave4_error_model.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"facemath.observation.canonical\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 7,
+	"startColumn": 1,
+	"endLineNumber": 7,
+	"endColumn": 2,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/tests/test_wave4_error_model.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"facemath.observation.contracts\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 8,
+	"startColumn": 1,
+	"endLineNumber": 8,
+	"endColumn": 2,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/tests/test_wave4_error_model.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"facemath.observation.error_model\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 9,
+	"startColumn": 1,
+	"endLineNumber": 9,
+	"endColumn": 2,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/tests/test_wave4_error_model.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"facemath.observation.instrument\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 15,
+	"startColumn": 1,
+	"endLineNumber": 15,
+	"endColumn": 2,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/tests/test_wave4_error_model.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"facemath.observation.lab\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 16,
+	"startColumn": 1,
+	"endLineNumber": 16,
+	"endColumn": 2,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/tests/test_wave4_error_model.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"facemath.observation.reference\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 17,
+	"startColumn": 1,
+	"endLineNumber": 17,
+	"endColumn": 2,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/tests/test_wave4_error_model.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"facemath.observation.validation\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 18,
+	"startColumn": 1,
+	"endLineNumber": 18,
+	"endColumn": 2,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/tests/test_wave4_error_model.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "import-untyped",
+		"target": {
+			"$mid": 1,
+			"path": "/en/latest/_refs.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "code-import-untyped"
+		}
+	},
+	"severity": 8,
+	"message": "Skipping analyzing \"facemath.observation.provider\": module is installed, but missing library stubs or py.typed marker",
+	"source": "Mypy",
+	"startLineNumber": 163,
+	"startColumn": 1,
+	"endLineNumber": 163,
+	"endColumn": 2,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/tests/test_wave4_error_model.py",
+	"owner": "_generated_diagnostic_collection_name_#52",
+	"code": {
+		"value": "note",
+		"target": {
+			"$mid": 1,
+			"path": "/en/stable/running_mypy.html",
+			"scheme": "https",
+			"authority": "mypy.readthedocs.io",
+			"fragment": "missing-imports"
+		}
+	},
+	"severity": 2,
+	"message": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+	"source": "Mypy",
+	"startLineNumber": 7,
+	"startColumn": 1,
+	"endLineNumber": 7,
+	"endColumn": 2,
+	"modelVersionId": 2,
 	"origin": "extHost1"
 },{
 	"resource": "/c:/Users/ryanf/github/_new/workflow-replications/src/facemath/__init__.py",
