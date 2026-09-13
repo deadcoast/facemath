@@ -3,18 +3,17 @@
 Hashes establish consistency with the manifest, not external authorship or a
 trusted timestamp. All paths are sandboxed to the selected output directory.
 """
-
 from __future__ import annotations
 
-import json
-import os
-import shutil
-import tempfile
 from base64 import b64encode
 from hashlib import sha256
 from html import escape
 from pathlib import Path
 from typing import Any
+import json
+import os
+import shutil
+import tempfile
 
 import cv2
 import numpy as np
@@ -33,7 +32,7 @@ def _png(image: np.ndarray) -> bytes:
 
 
 def _overlay(result: InstrumentResult) -> np.ndarray:
-    image = cv2.addWeighted(result.state.image_a, 0.5, result.state.image_b, 0.5, 0)
+    image = cv2.addWeighted(result.state.image_a, .5, result.state.image_b, .5, 0)
     pa, pb = result.state.xy_a, result.state.xy_b
     # Distinct marker forms, not an unlabeled interpolation portrayed as measurement.
     for a, b in zip(pa, pb):
@@ -46,54 +45,35 @@ def _overlay(result: InstrumentResult) -> np.ndarray:
 
 def _html(result: InstrumentResult, arrays: dict[str, np.ndarray]) -> str:
     def uri(image: np.ndarray) -> str:
-        return f"data:image/png;base64,{b64encode(_png(image)).decode()}"
-
+        return "data:image/png;base64," + b64encode(_png(image)).decode()
     ev = result.evidence()
     rows = []
     for m in result.profile.measurements:
         value = "WITHHELD" if m.value is None else f"{m.value:.6g}"
-        interval = (
-            "—" if m.interval is None else f"[{m.interval[0]:.5g}, {m.interval[1]:.5g}]"
-        )
-        rows.append(
-            f"<tr><td><code>{escape(m.name)}</code><small>{escape(m.interpretation)}</small></td>"
-            f'<td class="number">{value}</td><td>{escape(m.unit)}</td>'
-            f'<td class="number">{m.support:,} / {m.total:,}</td><td>{interval}'
-            f"<small>{escape(m.exclusion or '')}</small></td></tr>"
-        )
-    array_rows = "".join(
-        f"<tr><td><code>{escape(name)}</code></td><td>{list(a.shape)}</td><td>{a.dtype}</td>"
-        f"<td><code>{array_digest(a)[:18]}…</code></td></tr>"
-        for name, a in sorted(arrays.items())
-    )
+        interval = "—" if m.interval is None else f"[{m.interval[0]:.5g}, {m.interval[1]:.5g}]"
+        rows.append(f'<tr><td><code>{escape(m.name)}</code><small>{escape(m.interpretation)}</small></td>'
+                    f'<td class="number">{value}</td><td>{escape(m.unit)}</td>'
+                    f'<td class="number">{m.support:,} / {m.total:,}</td><td>{interval}'
+                    f'<small>{escape(m.exclusion or "")}</small></td></tr>')
+    array_rows = "".join(f'<tr><td><code>{escape(name)}</code></td><td>{list(a.shape)}</td><td>{a.dtype}</td>'
+                         f'<td><code>{array_digest(a)[:18]}…</code></td></tr>' for name, a in sorted(arrays.items()))
     warnings = "".join(f"<li>{escape(w)}</li>" for w in ev["warnings"])
     limits = "".join(f"<li>{escape(w)}</li>" for w in ev["limits"])
     code = escape(result.environment["engine_code_sha256"])
     edge_section = ""
     if result.edges:
         summaries = result.edges.summary()
-        erows = "".join(
-            (
-                f"<tr><td>{escape(k)}</td><td>{v['accepted']} / {v['rays']}</td><td>{v['source_supported']}</td><td>{v['median_absolute_offset_px']:.3f}</td></tr>"
-                if v["median_absolute_offset_px"] is not None
-                else f"<tr><td>{escape(k)}</td><td>0 / {v['rays']}</td><td>{v['source_supported']}</td><td>withheld</td></tr>"
-            )
-            for k, v in summaries["profiles"].items()
-        )
+        erows = "".join(f"<tr><td>{escape(k)}</td><td>{v['accepted']} / {v['rays']}</td><td>{v['source_supported']}</td><td>{v['median_absolute_offset_px']:.3f}</td></tr>" if v['median_absolute_offset_px'] is not None else f"<tr><td>{escape(k)}</td><td>0 / {v['rays']}</td><td>{v['source_supported']}</td><td>withheld</td></tr>" for k, v in summaries['profiles'].items())
         edge_section = f"<h2>Image-edge support</h2><p>Landmark-guided normal-ray searches. Matching image gradients are diagnostic, not proof of correct anatomy. Landmarks are never moved to an edge candidate. Complete ray responses and rejection masks are in arrays.npz.</p><div class='scroll'><table><tr><th>Source / region</th><th>Accepted / attempted rays</th><th>Full source support</th><th>Median |normal offset| · px</th></tr>{erows}</table></div>"
     localization_section = ""
     if result.localization:
         info = result.localization.to_dict()
-        lrows = "".join(
-            (
-                f"<tr><td>{escape(r['name'])}</td><td>{r['observed_gap_ipd']:.4f}</td><td>[{r['lower_ipd']:.4f}, {r['upper_ipd']:.4f}]</td><td>{escape(r['status'])}</td></tr>"
-                if r["observed_gap_ipd"] is not None
-                else f"<tr><td>{escape(r['name'])}</td><td colspan='3'>withheld</td></tr>"
-            )
-            for r in info["rows"]
-        )
-        localization_section = f"<h2>Reference-calibrated localization envelope</h2><div class='panel'>Scope: <strong>{escape(info['scope'])}</strong>. Acquisition domain: {escape(info['domain'])}. These bounds hold the observed transforms and normalization fixed; they are not confidence intervals for re-fitted true shape or identity.</div><div class='scroll'><table><tr><th>Annotated landmark</th><th>Observed gap</th><th>Error envelope · observed eye spans</th><th>At selected tolerance</th></tr>{lrows}</table></div><p><a href='localization_calibration.json'>Recorded error calibration</a> · all eight bounds retained in arrays.npz.</p>"
-    return f"""<!doctype html><html lang="en"><meta charset="utf-8">
+        centering_note = ""
+        if info.get("bias_sha256"):
+            centering_note = "<p><strong>Development-qualified error centers.</strong> The observed gap remains the raw measurement. The bounds use reference-position centers shifted by the frozen development-only localization-bias model. The mesh, raster, registration and measured geometry have not moved. A raw gap need not lie inside an interval for the independently referenced gap.</p>"
+        lrows = "".join(f"<tr><td>{escape(r['name'])}</td><td>{r['observed_gap_ipd']:.4f}</td><td>[{r['lower_ipd']:.4f}, {r['upper_ipd']:.4f}]</td><td>{escape(r['status'])}</td></tr>" if r['observed_gap_ipd'] is not None else f"<tr><td>{escape(r['name'])}</td><td colspan='3'>withheld</td></tr>" for r in info['rows'])
+        localization_section = f"<h2>Reference-calibrated localization envelope</h2><div class='panel'>{centering_note}Scope: <strong>{escape(info['scope'])}</strong>. Acquisition domain: {escape(info['domain'])}. These bounds hold the observed transforms and normalization fixed; they are not confidence intervals for re-fitted true shape or identity.</div><div class='scroll'><table><tr><th>Annotated landmark</th><th>Observed gap</th><th>Error envelope · observed eye spans</th><th>At selected tolerance</th></tr>{lrows}</table></div><p><a href='localization_calibration.json'>Recorded error calibration</a> · all eight bounds retained in arrays.npz.</p>"
+    return f'''<!doctype html><html lang="en"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>FACEMATH · Anatomical observation instrument</title>
 <style>
@@ -110,7 +90,7 @@ small{{display:block;color:var(--muted);font-size:12px;max-width:68ch}}code{{fon
 a{{color:var(--accent)}}summary{{cursor:pointer;font-weight:600}}input[type=range]{{width:min(100%,500px)}}.blend{{position:relative;max-width:360px}}.blend img{{width:100%;display:block}}.blend img:last-child{{position:absolute;inset:0;opacity:.5}}
 footer{{margin-top:40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:18px}}
 @media(max-width:760px){{.gallery{{grid-template-columns:1fr}}main{{padding:20px 14px}}h1{{font-size:28px}}}}
-</style><main><header><div class="eyebrow">FACEMATH / WAVE 04 / OBSERVATION → FIELD → EVIDENCE</div>
+</style><main><header><div class="eyebrow">FACEMATH / WAVE 05 / OBSERVATION → FIELD → EVIDENCE</div>
 <h1>Anatomical correspondence, exposed.</h1>
 <span class="tag">{escape(result.state.observation_a.provider)}</span><span class="tag">{len(result.state.xy_a)} observed landmarks</span>
 <span class="tag">No identity scoring</span><span class="tag">No population calibration attached</span>
@@ -124,22 +104,18 @@ footer{{margin-top:40px;color:var(--muted);font-size:12px;border-top:1px solid v
 <label>A → B <input id="opacity" type="range" min="0" max="100" value="50" aria-label="B opacity"></label></details>
 <div class="panel"><strong>Read the units before the number.</strong><br>
 Landmark residuals are normalized by the geometric mean of registered interocular spans. A within-tolerance fraction counts landmarks below the declared threshold ({result.state.config.tolerance_ipd:g} spans). Neither quantity is an identity probability. The intervals below measure conditional observation sensitivity, not established detector accuracy.</div>
-<h2>Measured profile</h2><div class="scroll"><table><thead><tr><th>Measurement / interpretation</th><th>Value</th><th>Unit</th><th>Support / denominator</th><th>95% sensitivity interval</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>
+<h2>Measured profile</h2><div class="scroll"><table><thead><tr><th>Measurement / interpretation</th><th>Value</th><th>Unit</th><th>Support / denominator</th><th>95% sensitivity interval</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
 {edge_section}{localization_section}<h2>Raw numerical state</h2><p><a href="arrays.npz">arrays.npz</a> · <a href="evidence.json">evidence.json</a> · <a href="observations.json">observations.json</a> · <a href="events.jsonl">actual execution events</a> · <a href="manifest.json">byte manifest</a></p>
 <div class="scroll"><table><thead><tr><th>Array</th><th>Shape</th><th>dtype</th><th>Content digest</th></tr></thead><tbody>{array_rows}</tbody></table></div>
-<h2>Observation constraints</h2><ul>{warnings or "<li>No additional source warnings.</li>"}</ul><ul>{limits}</ul>
+<h2>Observation constraints</h2><ul>{warnings or '<li>No additional source warnings.</li>'}</ul><ul>{limits}</ul>
 <footer>Recipe SHA-256: <code>{escape(result.state.recipe_sha256)}</code><br>Engine source SHA-256: <code>{code}</code><br>
 This bundle verifies internal integrity, not external authorship or historical model telemetry. Report has no remote assets, analytics, or network calls.</footer>
 <script>document.getElementById('opacity').addEventListener('input', e => {{document.getElementById('blend-b').style.opacity=e.target.value/100;}});</script>
-</main></html>"""
+</main></html>'''
 
 
-def write_bundle(
-    result: InstrumentResult,
-    destination: str | Path,
-    source_a: np.ndarray,
-    source_b: np.ndarray,
-) -> Path:
+def write_bundle(result: InstrumentResult, destination: str | Path,
+                 source_a: np.ndarray, source_b: np.ndarray) -> Path:
     """Create-only, atomic directory publication. Never replaces an earlier run."""
     destination = Path(destination).absolute()
     if destination.exists():
@@ -151,73 +127,31 @@ def write_bundle(
     try:
         arrays = result.arrays()
         np.savez_compressed(temp / "arrays.npz", **arrays)
-        (temp / "evidence.json").write_text(
-            json.dumps(result.evidence(), indent=2, allow_nan=False), encoding="utf-8"
-        )
-        (temp / "observations.json").write_text(
-            json.dumps(
-                {
-                    "a": result.state.observation_a.to_dict(),
-                    "b": result.state.observation_b.to_dict(),
-                },
-                indent=2,
-                allow_nan=False,
-            ),
-            encoding="utf-8",
-        )
-        (temp / "environment.json").write_text(
-            json.dumps(result.environment, indent=2, allow_nan=False), encoding="utf-8"
-        )
+        (temp / "evidence.json").write_text(json.dumps(result.evidence(), indent=2, allow_nan=False), encoding="utf-8")
+        (temp / "observations.json").write_text(json.dumps({"a": result.state.observation_a.to_dict(), "b": result.state.observation_b.to_dict()}, indent=2, allow_nan=False), encoding="utf-8")
+        (temp / "environment.json").write_text(json.dumps(result.environment, indent=2, allow_nan=False), encoding="utf-8")
         (temp / "events.jsonl").write_text(result.journal_jsonl, encoding="utf-8")
         if result.localization is not None:
-            (temp / "localization_calibration.json").write_text(
-                json.dumps(
-                    result.localization.calibration.to_dict(), indent=2, allow_nan=False
-                ),
-                encoding="utf-8",
-            )
-        for name, image in (
-            ("source_a.png", source_a),
-            ("source_b.png", source_b),
-            ("canonical_a.png", result.state.image_a),
-            ("canonical_b.png", result.state.image_b),
-            ("landmark_overlay.png", _overlay(result)),
-        ):
+            (temp / "localization_calibration.json").write_text(json.dumps(result.localization.calibration.to_dict(), indent=2, allow_nan=False), encoding="utf-8")
+        for name, image in (("source_a.png", source_a), ("source_b.png", source_b),
+                            ("canonical_a.png", result.state.image_a), ("canonical_b.png", result.state.image_b),
+                            ("landmark_overlay.png", _overlay(result))):
             (temp / name).write_bytes(_png(image))
         (temp / "report.html").write_text(_html(result, arrays), encoding="utf-8")
         manifest: dict[str, Any] = {
-            "format": "facemath.bundle.v3",
-            "recipe_sha256": result.state.recipe_sha256,
-            "files": {
-                p.name: {
-                    "sha256": sha256(p.read_bytes()).hexdigest(),
-                    "bytes": p.stat().st_size,
-                }
-                for p in sorted(temp.iterdir())
-            },
-            "arrays": {
-                k: {
-                    "shape": list(a.shape),
-                    "dtype": a.dtype.str,
-                    "sha256": array_digest(a),
-                }
-                for k, a in sorted(arrays.items())
-            },
+            "format": "facemath.bundle.v3", "recipe_sha256": result.state.recipe_sha256,
+            "files": {p.name: {"sha256": sha256(p.read_bytes()).hexdigest(), "bytes": p.stat().st_size}
+                      for p in sorted(temp.iterdir())},
+            "arrays": {k: {"shape": list(a.shape), "dtype": a.dtype.str, "sha256": array_digest(a)} for k, a in sorted(arrays.items())},
             "array_semantics": {
                 "coordinates": "xy pixel coordinates; rows use observation.names; image arrays are y,x",
                 "anatomical_uv": "A-domain B-minus-A displacement; zero outside support is a sentinel, not agreement",
                 "triangle_jacobians": "d(B_coordinates)/d(A_coordinates); piecewise-affine inferred anatomy",
                 "triangle_green_strain": "0.5*(F.T@F-I); geometric distortion, not physical tissue deformation",
                 "triangle_principal_log_stretch": "log singular values of F; invalid triangles excluded by triangle_valid",
-                "heldout_residual_vectors": {
-                    "axis_0": result.profile.heldout_labels,
-                    "units": "registered_eye_span_geomean",
-                },
-                "sensitivity_draws": {
-                    "axis_1": result.profile.sensitivity_regions,
-                    "kind": "conditional_observation_sensitivity",
-                    "missingness": "columns with sensitivity_region_supported=false contain zero sentinels, never interpreted as measurements",
-                },
+                "heldout_residual_vectors": {"axis_0": result.profile.heldout_labels, "units": "registered_eye_span_geomean"},
+                "sensitivity_draws": {"axis_1": result.profile.sensitivity_regions, "kind": "conditional_observation_sensitivity",
+                                      "missingness": "columns with sensitivity_region_supported=false contain zero sentinels, never interpreted as measurements"},
                 "landmark_supported": "source-coordinate in-bounds intersection for both observations",
                 "flow_admissible": "heuristic texture/cycle/overlap support, not correctness probability",
                 "edge_*": "landmark-guided normal-ray gradient response; offsets are meaningful only where accepted; not independent anatomy or landmark corrections",
@@ -225,12 +159,8 @@ def write_bundle(
             },
             "integrity_limit": "self-consistency hashes; not an externally signed execution attestation",
         }
-        manifest["manifest_content_sha256"] = sha256(
-            canonical_json(manifest).encode()
-        ).hexdigest()
-        (temp / "manifest.json").write_text(
-            json.dumps(manifest, indent=2, allow_nan=False), encoding="utf-8"
-        )
+        manifest["manifest_content_sha256"] = sha256(canonical_json(manifest).encode()).hexdigest()
+        (temp / "manifest.json").write_text(json.dumps(manifest, indent=2, allow_nan=False), encoding="utf-8")
         verify_bundle(temp)
         # Directory rename is atomic on this filesystem; create-only checked again.
         if destination.exists():
@@ -252,38 +182,20 @@ def verify_bundle(path: str | Path) -> dict[str, Any]:
         raise ObservationError("unknown bundle format")
     for relative, info in manifest["files"].items():
         target = root / relative
-        if (
-            target.is_symlink()
-            or target.resolve().parent != root
-            or Path(relative).name != relative
-        ):
+        if target.is_symlink() or target.resolve().parent != root or Path(relative).name != relative:
             raise ObservationError("manifest path escapes bundle or is a symlink")
         content = target.read_bytes()
-        if (
-            len(content) != info["bytes"]
-            or sha256(content).hexdigest() != info["sha256"]
-        ):
+        if len(content) != info["bytes"] or sha256(content).hexdigest() != info["sha256"]:
             raise ObservationError(f"artifact mismatch: {relative}")
     with np.load(root / "arrays.npz", allow_pickle=False) as data:
         if set(data.files) != set(manifest["arrays"]):
             raise ObservationError("array inventory mismatch")
         for name, spec in manifest["arrays"].items():
             a = data[name]
-            if (
-                list(a.shape) != spec["shape"]
-                or a.dtype.str != spec["dtype"]
-                or array_digest(a) != spec["sha256"]
-            ):
+            if list(a.shape) != spec["shape"] or a.dtype.str != spec["dtype"] or array_digest(a) != spec["sha256"]:
                 raise ObservationError(f"array contract mismatch: {name}")
-    records = [
-        json.loads(line) for line in (root / "events.jsonl").read_text().splitlines()
-    ]
+    records = [json.loads(line) for line in (root / "events.jsonl").read_text().splitlines()]
     verify_journal(records)
-    return {
-        "verified": True,
-        "files": len(manifest["files"]),
-        "arrays": len(manifest["arrays"]),
-        "events": len(records),
-        "manifest_content_sha256": digest,
-        "limit": manifest["integrity_limit"],
-    }
+    return {"verified": True, "files": len(manifest["files"]), "arrays": len(manifest["arrays"]),
+            "events": len(records), "manifest_content_sha256": digest,
+            "limit": manifest["integrity_limit"]}

@@ -1,9 +1,6 @@
 from __future__ import annotations
-
-from collections.abc import Mapping
 from dataclasses import dataclass, field
-from typing import Any
-
+from typing import Callable, Mapping, Any
 import numpy as np
 from scipy.stats import spearmanr
 from sklearn.cross_decomposition import CCA
@@ -23,13 +20,11 @@ def cosine_similarity(a: np.ndarray, b: np.ndarray) -> float:
 
 
 def linear_cka(x: np.ndarray, y: np.ndarray) -> float:
-    x = np.asarray(x, float)
-    y = np.asarray(y, float)
-    x = x - x.mean(0, keepdims=True)
-    y = y - y.mean(0, keepdims=True)
-    hsic = np.linalg.norm(x.T @ y, "fro") ** 2
-    nx = np.linalg.norm(x.T @ x, "fro")
-    ny = np.linalg.norm(y.T @ y, "fro")
+    x = np.asarray(x, float); y = np.asarray(y, float)
+    x = x - x.mean(0, keepdims=True); y = y - y.mean(0, keepdims=True)
+    hsic = np.linalg.norm(x.T @ y, 'fro') ** 2
+    nx = np.linalg.norm(x.T @ x, 'fro')
+    ny = np.linalg.norm(y.T @ y, 'fro')
     return float(hsic / (nx * ny + 1e-12))
 
 
@@ -46,8 +41,7 @@ def rsa(x: np.ndarray, y: np.ndarray) -> float:
 
 
 def svcca(x: np.ndarray, y: np.ndarray, n_components: int | None = None) -> np.ndarray:
-    x = np.asarray(x, float)
-    y = np.asarray(y, float)
+    x = np.asarray(x, float); y = np.asarray(y, float)
     n = n_components or min(x.shape[1], y.shape[1], max(1, x.shape[0] - 1))
     n = min(n, x.shape[1], y.shape[1], max(1, x.shape[0] - 1))
     cca = CCA(n_components=n).fit(x, y)
@@ -64,9 +58,7 @@ def attention_laplacian(attn: np.ndarray) -> np.ndarray:
     return np.diag(d) - a
 
 
-def attention_spectral_distance(
-    a: np.ndarray, b: np.ndarray, k: int | None = None
-) -> float:
+def attention_spectral_distance(a: np.ndarray, b: np.ndarray, k: int | None = None) -> float:
     ea = np.sort(np.linalg.eigvalsh(attention_laplacian(a)))
     eb = np.sort(np.linalg.eigvalsh(attention_laplacian(b)))
     m = min(len(ea), len(eb), k or 10**9)
@@ -84,13 +76,8 @@ class ModelAdapter:
     Implementations should return RepresentationSnapshot from real model telemetry. The
     facemath core never invents activations when none are supplied.
     """
-
-    def capture(
-        self, inputs: Any
-    ) -> RepresentationSnapshot:  # pragma: no cover - interface
+    def capture(self, inputs: Any) -> RepresentationSnapshot:  # pragma: no cover - interface
         raise NotImplementedError
 
-    def intervene(
-        self, inputs: Any, patch: Mapping[str, np.ndarray]
-    ) -> RepresentationSnapshot:  # pragma: no cover
+    def intervene(self, inputs: Any, patch: Mapping[str, np.ndarray]) -> RepresentationSnapshot:  # pragma: no cover
         raise NotImplementedError

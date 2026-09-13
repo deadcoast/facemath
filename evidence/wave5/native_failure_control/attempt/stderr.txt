@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/mnt/data/facemath_wave_05/src/facemath/observation/worker.py", line 32, in main
+    with MediaPipeProvider(request["model"], declaration.model_sha256,
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                           noise_floor_px=declaration.noise_floor_px,
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                           use_augmentations=declaration.attempted_samples == 7) as provider:
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/facemath_wave_05/src/facemath/observation/provider.py", line 77, in __init__
+    raise ProviderUnavailable(f"local FaceLandmarker model not found: {path}")
+facemath.observation.contracts.ProviderUnavailable: local FaceLandmarker model not found: /mnt/data/facemath_wave_05/evidence/wave5/native_failure_control/intentionally_missing.task

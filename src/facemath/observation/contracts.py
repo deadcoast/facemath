@@ -4,14 +4,12 @@ Frozen dataclasses alone do not freeze NumPy storage; all owned arrays here are
 copied into immutable bytes-backed views. Joint augmentation samples are kept,
 not reduced to independent landmark confidence scores.
 """
-
 from __future__ import annotations
 
-import json
-from collections.abc import Mapping
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from hashlib import sha256
-from typing import Any, Protocol
+from typing import Any, Mapping, Protocol
+import json
 
 import numpy as np
 from numpy.typing import NDArray
@@ -51,9 +49,7 @@ def array_digest(value: NDArray) -> str:
 def rgb_image(image: Any) -> NDArray[np.uint8]:
     a = np.asarray(image)
     if a.dtype != np.uint8 or a.ndim != 3 or a.shape[2] != 3:
-        raise ObservationError(
-            "images must be explicit RGB uint8 [H,W,3]; no inferred ranges"
-        )
+        raise ObservationError("images must be explicit RGB uint8 [H,W,3]; no inferred ranges")
     if min(a.shape[:2]) < 8:
         raise ObservationError("image dimensions must each be at least eight pixels")
     return frozen_array(a, np.uint8)
@@ -85,7 +81,7 @@ class Observation:
     def __post_init__(self) -> None:
         names = tuple(self.names)
         xy, samples = frozen_array(self.xy), frozen_array(self.samples)
-        if len(set(names)) != len(names) or not all(names):
+        if len(set(names)) != len(names) or any(not n for n in names):
             raise ObservationError("landmark names must be unique and nonempty")
         if xy.shape != (len(names), 2) or len(names) < 3:
             raise ObservationError("xy must be [N,2], N>=3, matching names")
@@ -94,20 +90,14 @@ class Observation:
         if len(self.sample_labels) != len(samples):
             raise ObservationError("sample_labels must match successful samples")
         if self.attempted_samples < len(samples):
-            raise ObservationError(
-                "attempted sample count cannot be smaller than successes"
-            )
+            raise ObservationError("attempted sample count cannot be smaller than successes")
         if not np.isfinite(self.noise_floor_px) or self.noise_floor_px <= 0:
             raise ObservationError("noise_floor_px must be finite and positive")
         if len(self.image_shape) != 2 or min(self.image_shape) < 8:
             raise ObservationError("image_shape must be [height,width]")
         for fingerprint in (self.image_sha256, self.provider_fingerprint):
-            if len(fingerprint) != 64 or any(
-                c not in "0123456789abcdef" for c in fingerprint
-            ):
-                raise ObservationError(
-                    "fingerprints must be full lowercase SHA-256 digests"
-                )
+            if len(fingerprint) != 64 or any(c not in '0123456789abcdef' for c in fingerprint):
+                raise ObservationError("fingerprints must be full lowercase SHA-256 digests")
         metadata = json.loads(self.metadata_json)
         canonical_json(metadata)  # reject NaN/Infinity
         if not isinstance(metadata, dict):
@@ -133,11 +123,8 @@ class Observation:
     def in_bounds(self) -> NDArray[np.bool_]:
         h, w = self.image_shape
         return frozen_array(
-            (self.xy[:, 0] >= 0)
-            & (self.xy[:, 0] <= w - 1)
-            & (self.xy[:, 1] >= 0)
-            & (self.xy[:, 1] <= h - 1),
-            bool,
+            (self.xy[:, 0] >= 0) & (self.xy[:, 0] <= w - 1)
+            & (self.xy[:, 1] >= 0) & (self.xy[:, 1] <= h - 1), bool
         )
 
     @property
@@ -145,29 +132,17 @@ class Observation:
         return object_digest(self.to_dict())
 
     def require_image(self, image: NDArray) -> None:
-        if (
-            tuple(image.shape[:2]) != self.image_shape
-            or array_digest(image) != self.image_sha256
-        ):
-            raise ObservationError(
-                "observation is bound to a different image or coordinate frame"
-            )
+        if tuple(image.shape[:2]) != self.image_shape or array_digest(image) != self.image_sha256:
+            raise ObservationError("observation is bound to a different image or coordinate frame")
 
     def to_dict(self) -> dict[str, Any]:
         return {
-            "format": "facemath.observation.v3",
-            "image_sha256": self.image_sha256,
-            "image_shape": list(self.image_shape),
-            "schema": self.schema,
-            "names": list(self.names),
-            "xy": self.xy.tolist(),
-            "samples": self.samples.tolist(),
-            "provider": self.provider,
-            "provider_fingerprint": self.provider_fingerprint,
-            "noise_floor_px": self.noise_floor_px,
-            "attempted_samples": self.attempted_samples,
-            "sample_labels": list(self.sample_labels),
-            "source_notes": list(self.source_notes),
+            "format": "facemath.observation.v3", "image_sha256": self.image_sha256,
+            "image_shape": list(self.image_shape), "schema": self.schema,
+            "names": list(self.names), "xy": self.xy.tolist(), "samples": self.samples.tolist(),
+            "provider": self.provider, "provider_fingerprint": self.provider_fingerprint,
+            "noise_floor_px": self.noise_floor_px, "attempted_samples": self.attempted_samples,
+            "sample_labels": list(self.sample_labels), "source_notes": list(self.source_notes),
             "uncertainty_kind": "perturbation_repeatability_plus_assumed_noise_floor",
             "metadata": json.loads(self.metadata_json),
         }
@@ -177,18 +152,11 @@ class Observation:
         if obj.get("format") != "facemath.observation.v3":
             raise ObservationError("unsupported observation format")
         return cls(
-            image_sha256=obj["image_sha256"],
-            image_shape=tuple(obj["image_shape"]),
-            schema=obj["schema"],
-            names=tuple(obj["names"]),
-            xy=obj["xy"],
-            samples=obj["samples"],
-            provider=obj["provider"],
-            provider_fingerprint=obj["provider_fingerprint"],
-            noise_floor_px=obj["noise_floor_px"],
-            attempted_samples=obj["attempted_samples"],
-            sample_labels=tuple(obj["sample_labels"]),
-            source_notes=tuple(obj["source_notes"]),
+            image_sha256=obj["image_sha256"], image_shape=tuple(obj["image_shape"]),
+            schema=obj["schema"], names=tuple(obj["names"]), xy=obj["xy"], samples=obj["samples"],
+            provider=obj["provider"], provider_fingerprint=obj["provider_fingerprint"],
+            noise_floor_px=obj["noise_floor_px"], attempted_samples=obj["attempted_samples"],
+            sample_labels=tuple(obj["sample_labels"]), source_notes=tuple(obj["source_notes"]),
             metadata_json=canonical_json(obj["metadata"]),
         )
 

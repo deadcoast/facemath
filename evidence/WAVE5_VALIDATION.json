@@ -1,0 +1,989 @@
+{
+  "format": "facemath.release_validation.v5",
+  "version": "0.5.0",
+  "created_at": "2026-09-11T21:33:52.540408+00:00",
+  "scope": "actual captured executions; no live human-detector validation or external attestation",
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "packages": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "opencv-python": "4.13.0.92",
+      "mediapipe": null,
+      "pytest": "9.0.2"
+    },
+    "numeric_environment": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "opencv": "4.13.0"
+    },
+    "engine_code_sha256": "f9b8852232d09b722bc9619573e7b26ee02ff2eb8569f128f579db2c119a8dc4"
+  },
+  "code_sha256": "f9b8852232d09b722bc9619573e7b26ee02ff2eb8569f128f579db2c119a8dc4",
+  "lineage": {
+    "parent_archive": "facemath_wave_04.zip",
+    "parent_sha256": "7c75e20dc9586881c2e30c87d3835339aa7b1b2eaaec08537dc8b08b9a7fa049",
+    "new_modules": [
+      "observation/bias.py",
+      "observation/qualification.py",
+      "observation/study.py",
+      "observation/study_io.py",
+      "observation/study_lab.py",
+      "observation/study_report.py",
+      "observation/study_runner.py",
+      "observation/worker.py"
+    ],
+    "modified_modules": [
+      "__init__.py",
+      "cli.py",
+      "observation/artifacts.py",
+      "observation/error_model.py",
+      "observation/instrument.py",
+      "observation/provider.py",
+      "observation/validation_io.py"
+    ],
+    "unchanged_modules": [
+      "__main__.py",
+      "calibration.py",
+      "core.py",
+      "correspondence.py",
+      "coverage.py",
+      "deformation.py",
+      "fusion.py",
+      "geometry.py",
+      "information.py",
+      "legacy_cli.py",
+      "observation/__init__.py",
+      "observation/anatomy.py",
+      "observation/annotation_ui.py",
+      "observation/canonical.py",
+      "observation/capabilities.py",
+      "observation/cohort.py",
+      "observation/contracts.py",
+      "observation/edge_support.py",
+      "observation/field.py",
+      "observation/journal.py",
+      "observation/lab.py",
+      "observation/measure.py",
+      "observation/reference.py",
+      "observation/sequence_guard.py",
+      "observation/validation.py",
+      "observation/validation_lab.py",
+      "perturbation.py",
+      "pipeline.py",
+      "quality.py",
+      "regions.py",
+      "registration.py",
+      "report.py",
+      "representation.py",
+      "sequence.py",
+      "shape.py",
+      "signal.py",
+      "state.py",
+      "statistics.py",
+      "surface3d.py",
+      "symmetry.py",
+      "temporal.py",
+      "topology.py",
+      "torch_attribution.py",
+      "video.py",
+      "wave2.py"
+    ],
+    "removed_modules": []
+  },
+  "source_files": {
+    "__init__.py": "9ddc9c54d77a439ea3eb0c2c352d22939c7f9b2950ed49ffe974c125f3f3c14b",
+    "__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+    "calibration.py": "e250ddccf702f848951a629759f98d1e812052e4a0e1dd693c8545958ff5eedd",
+    "cli.py": "ea98305efaf7974c685637d2fa8f7d4c7e7995365952badad3e0bf85236a34c8",
+    "core.py": "b8e14bd8b5eeaee1b15390d7c31b82c8c4520eac5347bfbc811eea34c4acb576",
+    "correspondence.py": "29938b08b495653327675e58c2e7d359103cb733b140c47539cb9d91d816f80f",
+    "coverage.py": "ba1786739debb0efffadd5d1f3df69e5f2aaa9f2e793c1e6ffc549655a220346",
+    "deformation.py": "4368188fb9fd0dbb1f3238549d3fbf0fbac9ddaf3b6dfb3dda19a59226e399bf",
+    "fusion.py": "249a7b9ea88433ccfea3378254f13d856cb4896d8249d9caada2009b9fb764e0",
+    "geometry.py": "22dfa9c9d4745ad517b947d0595a51cba1b2d6ddfbb6369a6b2e5ca3b04155e9",
+    "information.py": "7aab4e1ddba064fe05463de9b790473be094b2ca282c64a346402aaac1f4fc59",
+    "legacy_cli.py": "4ea0dd14ad4d2fed4605eed8df62cd57cf4edc43febdafe0ac044f29af07b148",
+    "observation/__init__.py": "fdfa47265a68fb008270bdac62f381efae1844c084b05452a824f3d0c71f6ab5",
+    "observation/anatomy.py": "e4341cab848edc4236ab8fbbcd76783e6cb66bfcb69ece4df75bedb201d1ba31",
+    "observation/annotation_ui.py": "737db83d5e611bcb4a3e7b97d62b3081a8b0c173854e30d347a3b2b8e96ea1e8",
+    "observation/artifacts.py": "ccb2328d96e2064d54690b159e395da181ee795dd79a586e66c06b9e458713b9",
+    "observation/bias.py": "219333f1c0cb82b976d378cf0c16e10afb7e4d9cabbf779c7279421c0cfbad4a",
+    "observation/canonical.py": "cd39e352b211d91f21b0e7d7415564f6b4aae55eb72ae022258ec0268e2a58de",
+    "observation/capabilities.py": "57390c3270860b2a2f99dd045bfdcc0a381e2aed32fcdf45bbb5dc715c77beff",
+    "observation/cohort.py": "6b5eb89c591a13336057ce590586263339078d13292862092f50e25ee61eeb7a",
+    "observation/contracts.py": "c1c6458bbd0e701fcfa6f1e9f48fed4b3e760cb2c2c4586565960e0b33042b84",
+    "observation/edge_support.py": "740e8fb92b508a82f95e72a6373ce3a16bd0fd588e7a6989dcce99459a5b6b22",
+    "observation/error_model.py": "d10eca40fcc4e9780fe6f2c894584074fd27ccc1dbe5de9b67aa0a31fb361e48",
+    "observation/field.py": "3bb389f78f4fd3a199cb0cfc8e789a54375f714035489abbe3f9712b9b3645c0",
+    "observation/instrument.py": "1ed20d3b3596b513347fcf91a3a1bd0f62faaac0596204154b43a940339349ed",
+    "observation/journal.py": "8bdac0f5499502b13448968dd5c2d74d8677b898c3e5e4c675c1d774d5ec2dd9",
+    "observation/lab.py": "211e4e768a68885c052f3bee1b53c95edb2b8dfd00669ca8870f41505578b5ce",
+    "observation/measure.py": "b27815eab351fe4f41ca23b2e9874de240858da33b2364893622f526b84c3b6f",
+    "observation/provider.py": "c7f8843fcd7b26f2f6272553e91f38ef7b1ab78ccaf9ae9c3b3f540a42ffaaf6",
+    "observation/qualification.py": "0eb267817ca24d058ef279206171f340d791c15b46ed64d978813a050ef5386f",
+    "observation/reference.py": "1cc15c84747433495ef9058ca735f85265423700f0b413aa96a65c6affca9780",
+    "observation/sequence_guard.py": "8c633f71a609fb81a2c75569451cbf0026aa4d68007f4b51ccd542cc98b2303c",
+    "observation/study.py": "95bd28dddff6bc04dbf42ba9b5d2950ac53a9b3f986ebbd6e837b0bf9dc9e2a4",
+    "observation/study_io.py": "c900cb210a0e20cc7b1579b3186ecb6127b5bddc27b841a47426a0d82d9c084e",
+    "observation/study_lab.py": "707208e4362a37cadb64bdb7385b7195855d62e8c1c3f5277c7fa53d2039c8e3",
+    "observation/study_report.py": "533ac9afae5c9572cdc934bcf2be576c0ff1aa414fe8110a91c2cdea43b36df5",
+    "observation/study_runner.py": "e8e848a7bf6a1103b2a6b319c08d8e16a0899b3520a28844575a212dfacba47a",
+    "observation/validation.py": "741a5eb339540022d369f1a6f753f4d8115b52cd15b796004e402fc0b449d9cf",
+    "observation/validation_io.py": "baab032659520ecc509005d49c6a9585cafb43e8dd5a737647f2dfe1599a3d48",
+    "observation/validation_lab.py": "9d39f2c3d820e6f27a93544b301f68e5da845a266a585bd847a1843b01ec98d4",
+    "observation/worker.py": "aaf98bdc7dd368fd02e5b45cd0910f9f150760f52414de46aaa7788a62c18d11",
+    "perturbation.py": "ff11412a5340cdbd633c87992ab450cf5fc2a66d807e0c09ffe87799a13d3414",
+    "pipeline.py": "9df6314135c2ef2d0be507d32b477a8204b4c96ecc28625503afa36a7c86739e",
+    "quality.py": "41050e7bc785c9c47d804840b291aa4dd2727f5c876807fd7308094b4c341baf",
+    "regions.py": "522fa6163c3f1f4c5854c89a89908adcfdb436dcb097b96bef6337e08493d45b",
+    "registration.py": "7f3d33c2cfea5e4166b97567caf97a0a193e9846d98ba1a9719240681959e53c",
+    "report.py": "46512b78efd1f0bb33a26c86cd2a0a6d3311dc2b59b537bc4986c8965b4927fe",
+    "representation.py": "e633159df99ea731a823affc32412faa550bdbd2aa7fc47686d9b0ccff7665b2",
+    "sequence.py": "46bfe47f421ea6116293a5f9be015b3fd8f2181d1423b46bd284b001ec8ee8ac",
+    "shape.py": "9a6e516dae972478993d0060245e15c6819e3ee2aab51f04da9d890ccf95d9a5",
+    "signal.py": "46cd755b6bffd2e7bd45ad06d31f46b49842499aed419995172aca5fabf89ea5",
+    "state.py": "a45de992b20f89696c8b535c24f5319421e1a058065215b65dac78d4408f0e06",
+    "statistics.py": "8fbcd6b6b8efc8c25be950e7d730fd9d7ee477a0706be530c78628fc407a40ae",
+    "surface3d.py": "c774637b7b05cf17658c3672c1edd750ef76ad2af75eafb549728bffd9c3a50c",
+    "symmetry.py": "c861830e9186f9c6d943f632b0798fd19ee8f7e7d7426f4acfa8beb438d5f15b",
+    "temporal.py": "2eb99baa70601c755a741ace79a8fa54e68027082ccf4dcfe7ae786b0dc4264c",
+    "topology.py": "44e5fad29ad7b38702a555e7fbf69d1739b4577e597a30b030c6232ef8f857e2",
+    "torch_attribution.py": "ece4814667dbb8bfb839548f903028bfbd2a3b5bd1d834b30d17ea921ac757cf",
+    "video.py": "b93ea4008e45a577981b39a9e06d5789be5dfbf569c9bfaf2100bbfbc4860249",
+    "wave2.py": "c8a970f2d14beb17249ee77d8b5c1982fbdf3a618cb05908f9a9fb1e1d62cfa9"
+  },
+  "wheel_sha256": "2184d0ec3d1d04a299ceee8164da40f33d27e1cc191d0fb5137b51dc194a078c",
+  "wheel_source_equivalence": {
+    "files": 60,
+    "byte_identical": true
+  },
+  "tests": {
+    "source": {
+      "tests": 371,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 370
+    },
+    "installed_wheel": {
+      "tests": 371,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 370
+    }
+  },
+  "commands": {
+    "final-wheel-validation.json": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_05/scripts/check_wheel.py",
+        "/mnt/data/facemath_wave_05/dist/facemath-0.5.0-py3-none-any.whl",
+        "--tests",
+        "/mnt/data/facemath_wave_05/tests",
+        "--bundle",
+        "/mnt/data/facemath_wave_05/evidence/wave5/laboratory/qualification",
+        "--pair-bundle",
+        "/mnt/data/facemath_wave_05/evidence/wave5/laboratory/qualified_pair",
+        "--out",
+        "/mnt/data/facemath_wave_05/evidence/wave5/wheel-check"
+      ],
+      "cwd": "/mnt/data/facemath_wave_05",
+      "started_utc": "2026-09-11T21:30:14.192339+00:00",
+      "finished_utc": "2026-09-11T21:31:51.763801+00:00",
+      "returncode": 0,
+      "stdout": "Processing /mnt/data/facemath_wave_05/dist/facemath-0.5.0-py3-none-any.whl\nInstalling collected packages: facemath\nSuccessfully installed facemath-0.5.0\n{\"file\": \"/tmp/facemath-installed-ifqltz3l/installed/facemath/__init__.py\", \"version\": \"0.5.0\", \"code_sha256\": \"f9b8852232d09b722bc9619573e7b26ee02ff2eb8569f128f579db2c119a8dc4\"}\n........................................................................ [ 19%]\n........................................................................ [ 38%]\ns....................................................................... [ 58%]\n........................................................................ [ 77%]\n........................................................................ [ 97%]\n...........                                                              [100%]\n370 passed, 1 skipped in 78.13s (0:01:18)\n{\n  \"replay_verified\": true,\n  \"bundle\": \"/mnt/data/facemath_wave_05/evidence/wave5/wheel-check/replayed\",\n  \"comparison\": \"exact qualification/calibration JSON and numerical array equality\",\n  \"live_inference_reexecuted\": false\n}\n{\n  \"replay_verified\": true,\n  \"source_bundle\": \"/mnt/data/facemath_wave_05/evidence/wave5/laboratory/qualified_pair\",\n  \"new_bundle\": \"/mnt/data/facemath_wave_05/evidence/wave5/wheel-check/pair-replayed\",\n  \"numerical_tolerance\": \"arrays atol=1e-9, rtol=1e-7; measurements atol=1e-10, rtol=1e-8\"\n}\n",
+      "stderr": "WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+    },
+    "final-study-replay.json": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_05/evidence/wave5/laboratory/qualification",
+        "--out",
+        "/mnt/data/facemath_wave_05/evidence/wave5/source-study-replay"
+      ],
+      "cwd": "/mnt/data/facemath_wave_05",
+      "started_utc": "2026-09-11T21:29:56.931985+00:00",
+      "finished_utc": "2026-09-11T21:30:04.968803+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"replay_verified\": true,\n  \"bundle\": \"/mnt/data/facemath_wave_05/evidence/wave5/source-study-replay\",\n  \"comparison\": \"exact qualification/calibration JSON and numerical array equality\",\n  \"live_inference_reexecuted\": false\n}\n",
+      "stderr": ""
+    },
+    "final-source-tests.json": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=/mnt/data/facemath_wave_05/evidence/wave5/final-source-tests.xml"
+      ],
+      "cwd": "/mnt/data/facemath_wave_05",
+      "started_utc": "2026-09-11T21:28:21.557270+00:00",
+      "finished_utc": "2026-09-11T21:29:41.596238+00:00",
+      "returncode": 0,
+      "stdout": "........................................................................ [ 19%]\n........................................................................ [ 38%]\ns....................................................................... [ 58%]\n........................................................................ [ 77%]\n........................................................................ [ 97%]\n...........                                                              [100%]\n370 passed, 1 skipped in 76.91s (0:01:16)\n",
+      "stderr": ""
+    },
+    "final-doctor.json": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "doctor"
+      ],
+      "cwd": "/mnt/data/facemath_wave_05",
+      "started_utc": "2026-09-11T21:28:18.975878+00:00",
+      "finished_utc": "2026-09-11T21:28:21.555551+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"format\": \"facemath.runtime_check.v4\",\n  \"packages\": {\n    \"facemath\": \"0.5.0\",\n    \"mediapipe\": null,\n    \"numpy\": \"2.3.5\",\n    \"scipy\": \"1.17.0\",\n    \"opencv-python\": \"4.13.0.92\"\n  },\n  \"model_present\": false,\n  \"model_sha256\": null,\n  \"inference_executed\": false,\n  \"live_validation\": \"not established by availability checks\",\n  \"network_policy\": \"FACEMATH never implicitly downloads a model; third-party runtime telemetry is not attested\"\n}\n",
+      "stderr": ""
+    },
+    "final-pair-replay.json": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_05/evidence/wave5/laboratory/qualified_pair",
+        "--out",
+        "/mnt/data/facemath_wave_05/evidence/wave5/source-pair-replay"
+      ],
+      "cwd": "/mnt/data/facemath_wave_05",
+      "started_utc": "2026-09-11T21:30:04.970496+00:00",
+      "finished_utc": "2026-09-11T21:30:08.161513+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"replay_verified\": true,\n  \"source_bundle\": \"/mnt/data/facemath_wave_05/evidence/wave5/laboratory/qualified_pair\",\n  \"new_bundle\": \"/mnt/data/facemath_wave_05/evidence/wave5/source-pair-replay\",\n  \"numerical_tolerance\": \"arrays atol=1e-9, rtol=1e-7; measurements atol=1e-10, rtol=1e-8\"\n}\n",
+      "stderr": ""
+    },
+    "final-wheel-build.json": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-deps",
+        "--no-build-isolation",
+        "--no-index",
+        "--wheel-dir",
+        "/mnt/data/facemath_wave_05/dist",
+        "/mnt/data/facemath_wave_05"
+      ],
+      "cwd": "/mnt/data/facemath_wave_05",
+      "started_utc": "2026-09-11T21:30:08.161985+00:00",
+      "finished_utc": "2026-09-11T21:30:14.191878+00:00",
+      "returncode": 0,
+      "stdout": "Processing /mnt/data/facemath_wave_05\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: facemath\n  Building wheel for facemath (pyproject.toml): started\n  Building wheel for facemath (pyproject.toml): finished with status 'done'\n  Created wheel for facemath: filename=facemath-0.5.0-py3-none-any.whl size=157067 sha256=2184d0ec3d1d04a299ceee8164da40f33d27e1cc191d0fb5137b51dc194a078c\n  Stored in directory: /tmp/pip-ephem-wheel-cache-qg4ft6xt/wheels/91/ba/8f/cf9f5c4852fce1fb8caac40c3f955e9515d09fac731c3bb601\nSuccessfully built facemath\n",
+      "stderr": "WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+    },
+    "final-laboratory.json": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "study-lab",
+        "--out",
+        "/mnt/data/facemath_wave_05/evidence/wave5/laboratory"
+      ],
+      "cwd": "/mnt/data/facemath_wave_05",
+      "started_utc": "2026-09-11T21:29:41.597968+00:00",
+      "finished_utc": "2026-09-11T21:29:56.931178+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"format\": \"facemath.study_lab.v5\",\n  \"kind\": \"synthetic_falsification_NOT_HUMAN_DETECTOR_VALIDATION\",\n  \"seed\": 25091,\n  \"enrolled\": 91,\n  \"eligible\": 90,\n  \"excluded\": 1,\n  \"calls_first_batch\": 7,\n  \"calls_completed\": 90,\n  \"calls_after_idempotent_resume\": 90,\n  \"outcomes\": {\n    \"contract_error\": 0,\n    \"interrupted\": 0,\n    \"multiple_faces\": 0,\n    \"no_face\": 2,\n    \"observed\": 88,\n    \"runtime_error\": 0,\n    \"timeout\": 0\n  },\n  \"beta_max_absolute_error\": 0.0008933671366293423,\n  \"raw_quantile\": 18.184732148133936,\n  \"centered_quantile\": 2.485113837453321,\n  \"coverage\": {\n    \"calibration_sha256\": \"c0441890614ceb1955589665e9ebc70a8078613826990a654f3252128c8d2bd1\",\n    \"nominal_coverage\": 0.9,\n    \"finite_envelope\": true,\n    \"evaluation_cases\": 30,\n    \"evaluation_groups\": 30,\n    \"covered_groups\": 15,\n    \"empirical_group_coverage\": 0.5,\n    \"failures\": 1,\n    \"cases\": [\n      {\n        \"case_id\": \"control_060\",\n        \"group_id\": \"independent_draw_060\",\n        \"score\": 2.214216614707677,\n        \"assessable\": true,\n        \"covered\": true\n      },\n      {\n        \"case_id\": \"control_061\",\n        \"group_id\": \"independent_draw_061\",\n        \"score\": 2.760998257229622,\n        \"assessable\": true,\n        \"covered\": false\n      },\n      {\n        \"case_id\": \"control_062\",\n        \"group_id\": \"independent_draw_062\",\n        \"score\": 1.7360195301582861,\n        \"assessable\": true,\n        \"covered\": true\n      },\n      {\n        \"case_id\": \"control_063\",\n        \"group_id\": \"independent_draw_063\",\n        \"score\": 2.2239766775151444,\n        \"assessable\": true,\n        \"covered\": true\n      },\n      {\n        \"case_id\": \"control_064\",\n        \"group_id\": \"independent_draw_064\",\n        \"score\": 1.6656403883248783,\n        \"assessable\": true,\n        \"covered\": true\n      },\n      {\n        \"case_id\": \"control_065\",\n        \"group_id\": \"independent_draw_065\",\n        \"score\": 1.4365266844935072,\n        \"assessable\": true,\n        \"covered\": true\n      },\n      {\n        \"case_id\": \"control_066\",\n        \"group_id\": \"independent_draw_066\",\n        \"score\": 3.79529411051744,\n        \"assessable\": true,\n        \"covered\": false\n      },\n      {\n        \"case_id\": \"control_067\",\n        \"group_id\": \"independent_draw_067\",\n        \"score\": null,\n        \"assessable\": false,\n        \"covered\": false\n      },\n      {\n        \"case_id\": \"control_068\",\n        \"group_id\": \"independent_draw_068\",\n        \"score\": 1.7504611667671275,\n        \"assessable\": true,\n        \"covered\": true\n      },\n      {\n        \"case_id\": \"control_069\",\n        \"group_id\": \"independent_draw_069\",\n        \"score\": 1.8863690975036664,\n        \"assessable\": true,\n        \"covered\": true\n      },\n      {\n        \"case_id\": \"control_070\",\n        \"group_id\": \"independent_draw_070\",\n        \"score\": 1.7418748178222143,\n        \"assessable\": true,\n        \"covered\": true\n      },\n      {\n        \"case_id\": \"control_071\",\n        \"group_id\": \"independent_draw_071\",\n        \"score\": 1.608368147818107,\n        \"assessable\": true,\n        \"covered\": true\n      },\n      {\n        \"case_id\": \"control_072\",\n        \"group_id\": \"independent_draw_072\",\n        \"score\": 2.029511135917016,\n        \"assessable\": true,\n        \"covered\": true\n      },\n      {\n        \"case_id\": \"control_073\",\n        \"group_id\": \"independent_draw_073\",\n        \"score\": 2.122420949085875,\n        \"assessable\": true,\n        \"covered\": true\n      },\n      {\n        \"case_id\": \"control_074\",\n        \"group_id\": \"independent_draw_074\",\n        \"score\": 1.0676547691315634,\n        \"assessable\": true,\n        \"covered\": true\n      },\n      {\n        \"case_id\": \"control_075\",\n        \"group_id\": \"independent_draw_075\",\n        \"score\": 3.130834989453856,\n        \"assessable\": true,\n        \"covered\": false\n      },\n      {\n        \"case_id\": \"control_076\",\n        \"group_id\": \"independent_draw_076\",\n        \"score\": 2.026683552915046,\n        \"assessable\": true,\n        \"covered\": true\n      },\n      {\n        \"case_id\": \"control_077\",\n        \"group_id\": \"independent_draw_077\",\n        \"score\": 1.7757483706101613,\n        \"assessable\": true,\n        \"covered\": true\n      },\n      {\n        \"case_id\": \"control_078\",\n        \"group_id\": \"independent_draw_078\",\n        \"score\": 3.173340785122207,\n        \"assessable\": true,\n        \"covered\": false\n      },\n      {\n        \"case_id\": \"control_079\",\n        \"group_id\": \"independent_draw_079\",\n        \"score\": 1.4555051489791233,\n        \"assessable\": true,\n        \"covered\": true\n      },\n      {\n        \"case_id\": \"control_080\",\n        \"group_id\": \"independent_draw_080\",\n        \"score\": 28.03896275000547,\n        \"assessable\": true,\n        \"covered\": false\n      },\n      {\n        \"case_id\": \"control_081\",\n        \"group_id\": \"independent_draw_081\",\n        \"score\": 20.18095521510559,\n        \"assessable\": true,\n        \"covered\": false\n      },\n      {\n        \"case_id\": \"control_082\",\n        \"group_id\": \"independent_draw_082\",\n        \"score\": 27.50673949131885,\n        \"assessable\": true,\n        \"covered\": false\n      },\n      {\n        \"case_id\": \"control_083\",\n        \"group_id\": \"independent_draw_083\",\n        \"score\": 24.71189875063335,\n        \"assessable\": true,\n        \"covered\": false\n      },\n      {\n        \"case_id\": \"control_084\",\n        \"group_id\": \"independent_draw_084\",\n        \"score\": 24.715261349447484,\n        \"assessable\": true,\n        \"covered\": false\n      },\n      {\n        \"case_id\": \"control_085\",\n        \"group_id\": \"independent_draw_085\",\n        \"score\": 20.819030001963686,\n        \"assessable\": true,\n        \"covered\": false\n      },\n      {\n        \"case_id\": \"control_086\",\n        \"group_id\": \"independent_draw_086\",\n        \"score\": 27.377145454785534,\n        \"assessable\": true,\n        \"covered\": false\n      },\n      {\n        \"case_id\": \"control_087\",\n        \"group_id\": \"independent_draw_087\",\n        \"score\": 21.24369960715724,\n        \"assessable\": true,\n        \"covered\": false\n      },\n      {\n        \"case_id\": \"control_088\",\n        \"group_id\": \"independent_draw_088\",\n        \"score\": 24.110693142278052,\n        \"assessable\": true,\n        \"covered\": false\n      },\n      {\n        \"case_id\": \"control_089\",\n        \"group_id\": \"independent_draw_089\",\n        \"score\": 22.48490646234994,\n        \"assessable\": true,\n        \"covered\": false\n      }\n    ],\n    \"interpretation\": \"held-out reference coverage, not facial resemblance or a guarantee of deployment coverage\",\n    \"full_error_model_sha256\": \"a0bfece2bda1bea51fdb71d16a4ad9456d69c8bb69c0a6b00c6d96ff22b3e398\",\n    \"score_centering\": \"development_ocular\",\n    \"binomial_95_interval\": [\n      0.31297028586802744,\n      0.6870297141319726\n    ]\n  },\n  \"slices\": [\n    {\n      \"stratum\": \"clear\",\n      \"prespecified\": true,\n      \"calibration_groups\": 27,\n      \"has_calibration_representation\": true,\n      \"evaluation\": {\n        \"cases\": 13,\n        \"groups\": 13,\n        \"covered_groups\": 11,\n        \"empirical_coverage\": 0.8461538461538461,\n        \"binomial_95_interval\": [\n          0.5455289443234422,\n          0.9807933280174715\n        ],\n        \"case_count_per_group\": {\n          \"independent_draw_061\": 1,\n          \"independent_draw_062\": 1,\n          \"independent_draw_064\": 1,\n          \"independent_draw_065\": 1,\n          \"independent_draw_067\": 1,\n          \"independent_draw_068\": 1,\n          \"independent_draw_070\": 1,\n          \"independent_draw_071\": 1,\n          \"independent_draw_073\": 1,\n          \"independent_draw_074\": 1,\n          \"independent_draw_076\": 1,\n          \"independent_draw_077\": 1,\n          \"independent_draw_079\": 1\n        },\n        \"scope\": \"all scored reference points in this slice's cases per group; overlapping slices are not pooled\",\n        \"interval_assumption\": \"independent comparable Bernoulli groups; not implied by marginal conformal exchangeability\"\n      },\n      \"raw_localization\": {\n        \"attempted_cases\": 13,\n        \"complete_cases\": 12,\n        \"failed_cases\": 1,\n        \"groups\": 13,\n        \"reference_kind\": \"synthetic_fixture\",\n        \"successful_case_mean_nme\": 0.030196556372052406,\n        \"unconditional_auc\": 0.6443394796425932,\n        \"auc_threshold_ipd\": 0.1,\n        \"pck_threshold_ipd\": 0.05,\n        \"eligible_landmarks\": 104,\n        \"observed_landmarks\": 96,\n        \"pck_including_failures\": 0.8076923076923077,\n        \"per_landmark\": [\n          {\n            \"name\": \"left_eye_outer\",\n            \"eligible\": 13,\n            \"observed\": 12,\n            \"within_tolerance\": 12,\n            \"pck\": 0.9230769230769231,\n            \"median_error_px\": 1.0865473444205747\n          },\n          {\n            \"name\": \"left_eye_inner\",\n            \"eligible\": 13,\n            \"observed\": 12,\n            \"within_tolerance\": 12,\n            \"pck\": 0.9230769230769231,\n            \"median_error_px\": 1.120527938675489\n          },\n          {\n            \"name\": \"right_eye_inner\",\n            \"eligible\": 13,\n            \"observed\": 12,\n            \"within_tolerance\": 12,\n            \"pck\": 0.9230769230769231,\n            \"median_error_px\": 1.05303292821945\n          },\n          {\n            \"name\": \"right_eye_outer\",\n            \"eligible\": 13,\n            \"observed\": 12,\n            \"within_tolerance\": 12,\n            \"pck\": 0.9230769230769231,\n            \"median_error_px\": 1.0345444517907914\n          },\n          {\n            \"name\": \"nose_tip\",\n            \"eligible\": 13,\n            \"observed\": 12,\n            \"within_tolerance\": 12,\n            \"pck\": 0.9230769230769231,\n            \"median_error_px\": 1.731610571981808\n          },\n          {\n            \"name\": \"mouth_left\",\n            \"eligible\": 13,\n            \"observed\": 12,\n            \"within_tolerance\": 12,\n            \"pck\": 0.9230769230769231,\n            \"median_error_px\": 1.4756948489386947\n          },\n          {\n            \"name\": \"mouth_right\",\n            \"eligible\": 13,\n            \"observed\": 12,\n            \"within_tolerance\": 12,\n            \"pck\": 0.9230769230769231,\n            \"median_error_px\": 1.5298038325606989\n          },\n          {\n            \"name\": \"chin\",\n            \"eligible\": 13,\n            \"observed\": 12,\n            \"within_tolerance\": 0,\n            \"pck\": 0.0,\n            \"median_error_px\": 2.750519314055426\n          }\n        ],\n        \"failure_policy\": \"every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled\",\n        \"reference_limit\": \"errors are relative to recorded annotations; blinding is declared, not independently attested\",\n        \"covariance_limit\": \"perturbation repeatability is not localization accuracy\",\n        \"rater_agreement_limit\": \"disagreement needs at least two raters; zero with one rater is not evidence of agreement\"\n      },\n      \"conditional_coverage_guaranteed\": false\n    },\n    {\n      \"stratum\": \"degraded\",\n      \"prespecified\": true,\n      \"calibration_groups\": 13,\n      \"has_calibration_representation\": true,\n      \"evaluation\": {\n        \"cases\": 7,\n        \"groups\": 7,\n        \"covered_groups\": 4,\n        \"empirical_coverage\": 0.5714285714285714,\n        \"binomial_95_interval\": [\n          0.184051567640083,\n          0.9010117215574921\n        ],\n        \"case_count_per_group\": {\n          \"independent_draw_060\": 1,\n          \"independent_draw_063\": 1,\n          \"independent_draw_066\": 1,\n          \"independent_draw_069\": 1,\n          \"independent_draw_072\": 1,\n          \"independent_draw_075\": 1,\n          \"independent_draw_078\": 1\n        },\n        \"scope\": \"all scored reference points in this slice's cases per group; overlapping slices are not pooled\",\n        \"interval_assumption\": \"independent comparable Bernoulli groups; not implied by marginal conformal exchangeability\"\n      },\n      \"raw_localization\": {\n        \"attempted_cases\": 7,\n        \"complete_cases\": 7,\n        \"failed_cases\": 0,\n        \"groups\": 7,\n        \"reference_kind\": \"synthetic_fixture\",\n        \"successful_case_mean_nme\": 0.02985059267518696,\n        \"unconditional_auc\": 0.7014940732481305,\n        \"auc_threshold_ipd\": 0.1,\n        \"pck_threshold_ipd\": 0.05,\n        \"eligible_landmarks\": 56,\n        \"observed_landmarks\": 56,\n        \"pck_including_failures\": 0.8928571428571429,\n        \"per_landmark\": [\n          {\n            \"name\": \"left_eye_outer\",\n            \"eligible\": 7,\n            \"observed\": 7,\n            \"within_tolerance\": 7,\n            \"pck\": 1.0,\n            \"median_error_px\": 0.9751786070988977\n          },\n          {\n            \"name\": \"left_eye_inner\",\n            \"eligible\": 7,\n            \"observed\": 7,\n            \"within_tolerance\": 7,\n            \"pck\": 1.0,\n            \"median_error_px\": 0.9902281550855015\n          },\n          {\n            \"name\": \"right_eye_inner\",\n            \"eligible\": 7,\n            \"observed\": 7,\n            \"within_tolerance\": 7,\n            \"pck\": 1.0,\n            \"median_error_px\": 1.0971416914924819\n          },\n          {\n            \"name\": \"right_eye_outer\",\n            \"eligible\": 7,\n            \"observed\": 7,\n            \"within_tolerance\": 7,\n            \"pck\": 1.0,\n            \"median_error_px\": 1.0747005799088354\n          },\n          {\n            \"name\": \"nose_tip\",\n            \"eligible\": 7,\n            \"observed\": 7,\n            \"within_tolerance\": 7,\n            \"pck\": 1.0,\n            \"median_error_px\": 1.7501063066568374\n          },\n          {\n            \"name\": \"mouth_left\",\n            \"eligible\": 7,\n            \"observed\": 7,\n            \"within_tolerance\": 7,\n            \"pck\": 1.0,\n            \"median_error_px\": 1.4627182489374073\n          },\n          {\n            \"name\": \"mouth_right\",\n            \"eligible\": 7,\n            \"observed\": 7,\n            \"within_tolerance\": 7,\n            \"pck\": 1.0,\n            \"median_error_px\": 1.3574445712031145\n          },\n          {\n            \"name\": \"chin\",\n            \"eligible\": 7,\n            \"observed\": 7,\n            \"within_tolerance\": 1,\n            \"pck\": 0.14285714285714285,\n            \"median_error_px\": 2.979024725279031\n          }\n        ],\n        \"failure_policy\": \"every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled\",\n        \"reference_limit\": \"errors are relative to recorded annotations; blinding is declared, not independently attested\",\n        \"covariance_limit\": \"perturbation repeatability is not localization accuracy\",\n        \"rater_agreement_limit\": \"disagreement needs at least two raters; zero with one rater is not evidence of agreement\"\n      },\n      \"conditional_coverage_guaranteed\": false\n    },\n    {\n      \"stratum\": \"unseen_shift\",\n      \"prespecified\": true,\n      \"calibration_groups\": 0,\n      \"has_calibration_representation\": false,\n      \"evaluation\": {\n        \"cases\": 10,\n        \"groups\": 10,\n        \"covered_groups\": 0,\n        \"empirical_coverage\": 0.0,\n        \"binomial_95_interval\": [\n          0.0,\n          0.3084971078187607\n        ],\n        \"case_count_per_group\": {\n          \"independent_draw_080\": 1,\n          \"independent_draw_081\": 1,\n          \"independent_draw_082\": 1,\n          \"independent_draw_083\": 1,\n          \"independent_draw_084\": 1,\n          \"independent_draw_085\": 1,\n          \"independent_draw_086\": 1,\n          \"independent_draw_087\": 1,\n          \"independent_draw_088\": 1,\n          \"independent_draw_089\": 1\n        },\n        \"scope\": \"all scored reference points in this slice's cases per group; overlapping slices are not pooled\",\n        \"interval_assumption\": \"independent comparable Bernoulli groups; not implied by marginal conformal exchangeability\"\n      },\n      \"raw_localization\": {\n        \"attempted_cases\": 10,\n        \"complete_cases\": 10,\n        \"failed_cases\": 0,\n        \"groups\": 10,\n        \"reference_kind\": \"synthetic_fixture\",\n        \"successful_case_mean_nme\": 0.07053169598706864,\n        \"unconditional_auc\": 0.29468304012931357,\n        \"auc_threshold_ipd\": 0.1,\n        \"pck_threshold_ipd\": 0.05,\n        \"eligible_landmarks\": 80,\n        \"observed_landmarks\": 80,\n        \"pck_including_failures\": 0.5,\n        \"per_landmark\": [\n          {\n            \"name\": \"left_eye_outer\",\n            \"eligible\": 10,\n            \"observed\": 10,\n            \"within_tolerance\": 10,\n            \"pck\": 1.0,\n            \"median_error_px\": 1.139741706832263\n          },\n          {\n            \"name\": \"left_eye_inner\",\n            \"eligible\": 10,\n            \"observed\": 10,\n            \"within_tolerance\": 10,\n            \"pck\": 1.0,\n            \"median_error_px\": 1.105025044786081\n          },\n          {\n            \"name\": \"right_eye_inner\",\n            \"eligible\": 10,\n            \"observed\": 10,\n            \"within_tolerance\": 10,\n            \"pck\": 1.0,\n            \"median_error_px\": 1.0912654210495747\n          },\n          {\n            \"name\": \"right_eye_outer\",\n            \"eligible\": 10,\n            \"observed\": 10,\n            \"within_tolerance\": 10,\n            \"pck\": 1.0,\n            \"median_error_px\": 1.093388580911126\n          },\n          {\n            \"name\": \"nose_tip\",\n            \"eligible\": 10,\n            \"observed\": 10,\n            \"within_tolerance\": 0,\n            \"pck\": 0.0,\n            \"median_error_px\": 5.198532293508263\n          },\n          {\n            \"name\": \"mouth_left\",\n            \"eligible\": 10,\n            \"observed\": 10,\n            \"within_tolerance\": 0,\n            \"pck\": 0.0,\n            \"median_error_px\": 5.674812216275903\n          },\n          {\n            \"name\": \"mouth_right\",\n            \"eligible\": 10,\n            \"observed\": 10,\n            \"within_tolerance\": 0,\n            \"pck\": 0.0,\n            \"median_error_px\": 5.703070882386952\n          },\n          {\n            \"name\": \"chin\",\n            \"eligible\": 10,\n            \"observed\": 10,\n            \"within_tolerance\": 0,\n            \"pck\": 0.0,\n            \"median_error_px\": 6.178843835094442\n          }\n        ],\n        \"failure_policy\": \"every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled\",\n        \"reference_limit\": \"errors are relative to recorded annotations; blinding is declared, not independently attested\",\n        \"covariance_limit\": \"perturbation repeatability is not localization accuracy\",\n        \"rater_agreement_limit\": \"disagreement needs at least two raters; zero with one rater is not evidence of agreement\"\n      },\n      \"conditional_coverage_guaranteed\": false\n    }\n  ],\n  \"unchanged_raw_pair_arrays\": 126,\n  \"raw_geometry_arrays_identical\": true,\n  \"known_query_reference_gaps_contained\": true,\n  \"checks\": {\n    \"first_batch_committed_seven\": true,\n    \"resume_no_duplicate_calls\": true,\n    \"excluded_never_observed\": true,\n    \"bias_recovered\": true,\n    \"raw_geometry_unchanged\": true,\n    \"stress_stratum_has_no_calibration_support\": true,\n    \"stress_undercoverage_exposed\": true\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  "replay": {
+    "source_qualification": true,
+    "source_pair": true,
+    "wheel_qualification": true,
+    "wheel_pair": true,
+    "scope": "captured observations and source rasters; no detector reinvocation"
+  },
+  "laboratory": {
+    "format": "facemath.study_lab.v5",
+    "kind": "synthetic_falsification_NOT_HUMAN_DETECTOR_VALIDATION",
+    "seed": 25091,
+    "enrolled": 91,
+    "eligible": 90,
+    "excluded": 1,
+    "calls_first_batch": 7,
+    "calls_completed": 90,
+    "calls_after_idempotent_resume": 90,
+    "outcomes": {
+      "contract_error": 0,
+      "interrupted": 0,
+      "multiple_faces": 0,
+      "no_face": 2,
+      "observed": 88,
+      "runtime_error": 0,
+      "timeout": 0
+    },
+    "beta_max_absolute_error": 0.0008933671366293423,
+    "raw_quantile": 18.184732148133936,
+    "centered_quantile": 2.485113837453321,
+    "coverage": {
+      "calibration_sha256": "c0441890614ceb1955589665e9ebc70a8078613826990a654f3252128c8d2bd1",
+      "nominal_coverage": 0.9,
+      "finite_envelope": true,
+      "evaluation_cases": 30,
+      "evaluation_groups": 30,
+      "covered_groups": 15,
+      "empirical_group_coverage": 0.5,
+      "failures": 1,
+      "cases": [
+        {
+          "case_id": "control_060",
+          "group_id": "independent_draw_060",
+          "score": 2.214216614707677,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_061",
+          "group_id": "independent_draw_061",
+          "score": 2.760998257229622,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_062",
+          "group_id": "independent_draw_062",
+          "score": 1.7360195301582861,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_063",
+          "group_id": "independent_draw_063",
+          "score": 2.2239766775151444,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_064",
+          "group_id": "independent_draw_064",
+          "score": 1.6656403883248783,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_065",
+          "group_id": "independent_draw_065",
+          "score": 1.4365266844935072,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_066",
+          "group_id": "independent_draw_066",
+          "score": 3.79529411051744,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_067",
+          "group_id": "independent_draw_067",
+          "score": null,
+          "assessable": false,
+          "covered": false
+        },
+        {
+          "case_id": "control_068",
+          "group_id": "independent_draw_068",
+          "score": 1.7504611667671275,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_069",
+          "group_id": "independent_draw_069",
+          "score": 1.8863690975036664,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_070",
+          "group_id": "independent_draw_070",
+          "score": 1.7418748178222143,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_071",
+          "group_id": "independent_draw_071",
+          "score": 1.608368147818107,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_072",
+          "group_id": "independent_draw_072",
+          "score": 2.029511135917016,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_073",
+          "group_id": "independent_draw_073",
+          "score": 2.122420949085875,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_074",
+          "group_id": "independent_draw_074",
+          "score": 1.0676547691315634,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_075",
+          "group_id": "independent_draw_075",
+          "score": 3.130834989453856,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_076",
+          "group_id": "independent_draw_076",
+          "score": 2.026683552915046,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_077",
+          "group_id": "independent_draw_077",
+          "score": 1.7757483706101613,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_078",
+          "group_id": "independent_draw_078",
+          "score": 3.173340785122207,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_079",
+          "group_id": "independent_draw_079",
+          "score": 1.4555051489791233,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_080",
+          "group_id": "independent_draw_080",
+          "score": 28.03896275000547,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_081",
+          "group_id": "independent_draw_081",
+          "score": 20.18095521510559,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_082",
+          "group_id": "independent_draw_082",
+          "score": 27.50673949131885,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_083",
+          "group_id": "independent_draw_083",
+          "score": 24.71189875063335,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_084",
+          "group_id": "independent_draw_084",
+          "score": 24.715261349447484,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_085",
+          "group_id": "independent_draw_085",
+          "score": 20.819030001963686,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_086",
+          "group_id": "independent_draw_086",
+          "score": 27.377145454785534,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_087",
+          "group_id": "independent_draw_087",
+          "score": 21.24369960715724,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_088",
+          "group_id": "independent_draw_088",
+          "score": 24.110693142278052,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_089",
+          "group_id": "independent_draw_089",
+          "score": 22.48490646234994,
+          "assessable": true,
+          "covered": false
+        }
+      ],
+      "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage",
+      "full_error_model_sha256": "a0bfece2bda1bea51fdb71d16a4ad9456d69c8bb69c0a6b00c6d96ff22b3e398",
+      "score_centering": "development_ocular",
+      "binomial_95_interval": [
+        0.31297028586802744,
+        0.6870297141319726
+      ]
+    },
+    "slices": [
+      {
+        "stratum": "clear",
+        "prespecified": true,
+        "calibration_groups": 27,
+        "has_calibration_representation": true,
+        "evaluation": {
+          "cases": 13,
+          "groups": 13,
+          "covered_groups": 11,
+          "empirical_coverage": 0.8461538461538461,
+          "binomial_95_interval": [
+            0.5455289443234422,
+            0.9807933280174715
+          ],
+          "case_count_per_group": {
+            "independent_draw_061": 1,
+            "independent_draw_062": 1,
+            "independent_draw_064": 1,
+            "independent_draw_065": 1,
+            "independent_draw_067": 1,
+            "independent_draw_068": 1,
+            "independent_draw_070": 1,
+            "independent_draw_071": 1,
+            "independent_draw_073": 1,
+            "independent_draw_074": 1,
+            "independent_draw_076": 1,
+            "independent_draw_077": 1,
+            "independent_draw_079": 1
+          },
+          "scope": "all scored reference points in this slice's cases per group; overlapping slices are not pooled",
+          "interval_assumption": "independent comparable Bernoulli groups; not implied by marginal conformal exchangeability"
+        },
+        "raw_localization": {
+          "attempted_cases": 13,
+          "complete_cases": 12,
+          "failed_cases": 1,
+          "groups": 13,
+          "reference_kind": "synthetic_fixture",
+          "successful_case_mean_nme": 0.030196556372052406,
+          "unconditional_auc": 0.6443394796425932,
+          "auc_threshold_ipd": 0.1,
+          "pck_threshold_ipd": 0.05,
+          "eligible_landmarks": 104,
+          "observed_landmarks": 96,
+          "pck_including_failures": 0.8076923076923077,
+          "per_landmark": [
+            {
+              "name": "left_eye_outer",
+              "eligible": 13,
+              "observed": 12,
+              "within_tolerance": 12,
+              "pck": 0.9230769230769231,
+              "median_error_px": 1.0865473444205747
+            },
+            {
+              "name": "left_eye_inner",
+              "eligible": 13,
+              "observed": 12,
+              "within_tolerance": 12,
+              "pck": 0.9230769230769231,
+              "median_error_px": 1.120527938675489
+            },
+            {
+              "name": "right_eye_inner",
+              "eligible": 13,
+              "observed": 12,
+              "within_tolerance": 12,
+              "pck": 0.9230769230769231,
+              "median_error_px": 1.05303292821945
+            },
+            {
+              "name": "right_eye_outer",
+              "eligible": 13,
+              "observed": 12,
+              "within_tolerance": 12,
+              "pck": 0.9230769230769231,
+              "median_error_px": 1.0345444517907914
+            },
+            {
+              "name": "nose_tip",
+              "eligible": 13,
+              "observed": 12,
+              "within_tolerance": 12,
+              "pck": 0.9230769230769231,
+              "median_error_px": 1.731610571981808
+            },
+            {
+              "name": "mouth_left",
+              "eligible": 13,
+              "observed": 12,
+              "within_tolerance": 12,
+              "pck": 0.9230769230769231,
+              "median_error_px": 1.4756948489386947
+            },
+            {
+              "name": "mouth_right",
+              "eligible": 13,
+              "observed": 12,
+              "within_tolerance": 12,
+              "pck": 0.9230769230769231,
+              "median_error_px": 1.5298038325606989
+            },
+            {
+              "name": "chin",
+              "eligible": 13,
+              "observed": 12,
+              "within_tolerance": 0,
+              "pck": 0.0,
+              "median_error_px": 2.750519314055426
+            }
+          ],
+          "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+          "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+          "covariance_limit": "perturbation repeatability is not localization accuracy",
+          "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+        },
+        "conditional_coverage_guaranteed": false
+      },
+      {
+        "stratum": "degraded",
+        "prespecified": true,
+        "calibration_groups": 13,
+        "has_calibration_representation": true,
+        "evaluation": {
+          "cases": 7,
+          "groups": 7,
+          "covered_groups": 4,
+          "empirical_coverage": 0.5714285714285714,
+          "binomial_95_interval": [
+            0.184051567640083,
+            0.9010117215574921
+          ],
+          "case_count_per_group": {
+            "independent_draw_060": 1,
+            "independent_draw_063": 1,
+            "independent_draw_066": 1,
+            "independent_draw_069": 1,
+            "independent_draw_072": 1,
+            "independent_draw_075": 1,
+            "independent_draw_078": 1
+          },
+          "scope": "all scored reference points in this slice's cases per group; overlapping slices are not pooled",
+          "interval_assumption": "independent comparable Bernoulli groups; not implied by marginal conformal exchangeability"
+        },
+        "raw_localization": {
+          "attempted_cases": 7,
+          "complete_cases": 7,
+          "failed_cases": 0,
+          "groups": 7,
+          "reference_kind": "synthetic_fixture",
+          "successful_case_mean_nme": 0.02985059267518696,
+          "unconditional_auc": 0.7014940732481305,
+          "auc_threshold_ipd": 0.1,
+          "pck_threshold_ipd": 0.05,
+          "eligible_landmarks": 56,
+          "observed_landmarks": 56,
+          "pck_including_failures": 0.8928571428571429,
+          "per_landmark": [
+            {
+              "name": "left_eye_outer",
+              "eligible": 7,
+              "observed": 7,
+              "within_tolerance": 7,
+              "pck": 1.0,
+              "median_error_px": 0.9751786070988977
+            },
+            {
+              "name": "left_eye_inner",
+              "eligible": 7,
+              "observed": 7,
+              "within_tolerance": 7,
+              "pck": 1.0,
+              "median_error_px": 0.9902281550855015
+            },
+            {
+              "name": "right_eye_inner",
+              "eligible": 7,
+              "observed": 7,
+              "within_tolerance": 7,
+              "pck": 1.0,
+              "median_error_px": 1.0971416914924819
+            },
+            {
+              "name": "right_eye_outer",
+              "eligible": 7,
+              "observed": 7,
+              "within_tolerance": 7,
+              "pck": 1.0,
+              "median_error_px": 1.0747005799088354
+            },
+            {
+              "name": "nose_tip",
+              "eligible": 7,
+              "observed": 7,
+              "within_tolerance": 7,
+              "pck": 1.0,
+              "median_error_px": 1.7501063066568374
+            },
+            {
+              "name": "mouth_left",
+              "eligible": 7,
+              "observed": 7,
+              "within_tolerance": 7,
+              "pck": 1.0,
+              "median_error_px": 1.4627182489374073
+            },
+            {
+              "name": "mouth_right",
+              "eligible": 7,
+              "observed": 7,
+              "within_tolerance": 7,
+              "pck": 1.0,
+              "median_error_px": 1.3574445712031145
+            },
+            {
+              "name": "chin",
+              "eligible": 7,
+              "observed": 7,
+              "within_tolerance": 1,
+              "pck": 0.14285714285714285,
+              "median_error_px": 2.979024725279031
+            }
+          ],
+          "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+          "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+          "covariance_limit": "perturbation repeatability is not localization accuracy",
+          "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+        },
+        "conditional_coverage_guaranteed": false
+      },
+      {
+        "stratum": "unseen_shift",
+        "prespecified": true,
+        "calibration_groups": 0,
+        "has_calibration_representation": false,
+        "evaluation": {
+          "cases": 10,
+          "groups": 10,
+          "covered_groups": 0,
+          "empirical_coverage": 0.0,
+          "binomial_95_interval": [
+            0.0,
+            0.3084971078187607
+          ],
+          "case_count_per_group": {
+            "independent_draw_080": 1,
+            "independent_draw_081": 1,
+            "independent_draw_082": 1,
+            "independent_draw_083": 1,
+            "independent_draw_084": 1,
+            "independent_draw_085": 1,
+            "independent_draw_086": 1,
+            "independent_draw_087": 1,
+            "independent_draw_088": 1,
+            "independent_draw_089": 1
+          },
+          "scope": "all scored reference points in this slice's cases per group; overlapping slices are not pooled",
+          "interval_assumption": "independent comparable Bernoulli groups; not implied by marginal conformal exchangeability"
+        },
+        "raw_localization": {
+          "attempted_cases": 10,
+          "complete_cases": 10,
+          "failed_cases": 0,
+          "groups": 10,
+          "reference_kind": "synthetic_fixture",
+          "successful_case_mean_nme": 0.07053169598706864,
+          "unconditional_auc": 0.29468304012931357,
+          "auc_threshold_ipd": 0.1,
+          "pck_threshold_ipd": 0.05,
+          "eligible_landmarks": 80,
+          "observed_landmarks": 80,
+          "pck_including_failures": 0.5,
+          "per_landmark": [
+            {
+              "name": "left_eye_outer",
+              "eligible": 10,
+              "observed": 10,
+              "within_tolerance": 10,
+              "pck": 1.0,
+              "median_error_px": 1.139741706832263
+            },
+            {
+              "name": "left_eye_inner",
+              "eligible": 10,
+              "observed": 10,
+              "within_tolerance": 10,
+              "pck": 1.0,
+              "median_error_px": 1.105025044786081
+            },
+            {
+              "name": "right_eye_inner",
+              "eligible": 10,
+              "observed": 10,
+              "within_tolerance": 10,
+              "pck": 1.0,
+              "median_error_px": 1.0912654210495747
+            },
+            {
+              "name": "right_eye_outer",
+              "eligible": 10,
+              "observed": 10,
+              "within_tolerance": 10,
+              "pck": 1.0,
+              "median_error_px": 1.093388580911126
+            },
+            {
+              "name": "nose_tip",
+              "eligible": 10,
+              "observed": 10,
+              "within_tolerance": 0,
+              "pck": 0.0,
+              "median_error_px": 5.198532293508263
+            },
+            {
+              "name": "mouth_left",
+              "eligible": 10,
+              "observed": 10,
+              "within_tolerance": 0,
+              "pck": 0.0,
+              "median_error_px": 5.674812216275903
+            },
+            {
+              "name": "mouth_right",
+              "eligible": 10,
+              "observed": 10,
+              "within_tolerance": 0,
+              "pck": 0.0,
+              "median_error_px": 5.703070882386952
+            },
+            {
+              "name": "chin",
+              "eligible": 10,
+              "observed": 10,
+              "within_tolerance": 0,
+              "pck": 0.0,
+              "median_error_px": 6.178843835094442
+            }
+          ],
+          "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+          "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+          "covariance_limit": "perturbation repeatability is not localization accuracy",
+          "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+        },
+        "conditional_coverage_guaranteed": false
+      }
+    ],
+    "unchanged_raw_pair_arrays": 126,
+    "raw_geometry_arrays_identical": true,
+    "known_query_reference_gaps_contained": true,
+    "checks": {
+      "first_batch_committed_seven": true,
+      "resume_no_duplicate_calls": true,
+      "excluded_never_observed": true,
+      "bias_recovered": true,
+      "raw_geometry_unchanged": true,
+      "stress_stratum_has_no_calibration_support": true,
+      "stress_undercoverage_exposed": true
+    }
+  },
+  "browser": {
+    "format": "facemath.browser_qa.v5",
+    "started_at": "2026-09-11T21:30:38.061102+00:00",
+    "report": "/mnt/data/facemath_wave_05/evidence/wave5/laboratory/qualification/report.html",
+    "engine": "Chromium / Playwright",
+    "checks": {
+      "all_cases_rendered": 90,
+      "heldout_stratum_filter_rows": 10,
+      "export_exact_selected_cases": true,
+      "failed_outcome_filter_rows": 1,
+      "local_evidence_links_exist": true,
+      "browser_navigation_to_evidence": false,
+      "markup_and_csv_formula_escaped": true
+    },
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 1100,
+        "document_width": 1440,
+        "body_overflow": false
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "document_width": 390,
+        "body_overflow": false
+      }
+    ],
+    "loading": "in-memory HTML; local navigation unavailable",
+    "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_05/evidence/wave5/laboratory/qualification/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_05/evidence/wave5/laboratory/qualification/report.html\", waiting until \"load\"\n",
+    "page_errors": [],
+    "remote_requests": [],
+    "finished_at": "2026-09-11T21:30:43.684238+00:00",
+    "passed": true
+  },
+  "native_environment": {
+    "checked_utc": "2026-09-11T21:16:41.362904+00:00",
+    "kind": "native_dependency_acquisition_check",
+    "inference_executed": false,
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "hosts": {
+      "pypi.org": {
+        "resolved": false,
+        "exception_type": "gaierror",
+        "error": "[Errno -3] Temporary failure in name resolution"
+      },
+      "storage.googleapis.com": {
+        "resolved": false,
+        "exception_type": "gaierror",
+        "error": "[Errno -3] Temporary failure in name resolution"
+      }
+    },
+    "mediapipe_installed_version": null
+  },
+  "native_failure_control": {
+    "kind": "native_worker_missing_model_failure_path_CONTROL",
+    "learned_inference_executed": false,
+    "model_digest_is_placeholder_for_explicit_failure_test": true,
+    "actual_subprocess_invoked": true,
+    "status": "runtime_error",
+    "detail": "ProviderUnavailable: local FaceLandmarker model not found: /mnt/data/facemath_wave_05/evidence/wave5/native_failure_control/intentionally_missing.task",
+    "observation_present": false,
+    "not_a_native_accuracy_result": true
+  },
+  "limits": [
+    "one live MediaPipe integration test remains skipped",
+    "synthetic controls are not human localization accuracy or a resemblance score",
+    "wheel checks reuse installed numerical dependencies; not a fresh dependency-stack install",
+    "browser used in-memory HTML after file navigation was blocked; evidence paths checked on disk",
+    "final ZIP extraction/test record is produced beside the ZIP after packaging"
+  ]
+}

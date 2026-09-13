@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/facemath_wave_05/scripts/check_wheel.py",
+    "/mnt/data/facemath_wave_05/dist/facemath-0.5.0-py3-none-any.whl",
+    "--tests",
+    "/mnt/data/facemath_wave_05/tests",
+    "--bundle",
+    "/mnt/data/facemath_wave_05/evidence/wave5/laboratory/qualification",
+    "--pair-bundle",
+    "/mnt/data/facemath_wave_05/evidence/wave5/laboratory/qualified_pair",
+    "--out",
+    "/mnt/data/facemath_wave_05/evidence/wave5/wheel-check"
+  ],
+  "cwd": "/mnt/data/facemath_wave_05",
+  "started_utc": "2026-09-11T21:30:14.192339+00:00",
+  "finished_utc": "2026-09-11T21:31:51.763801+00:00",
+  "returncode": 0,
+  "stdout": "Processing /mnt/data/facemath_wave_05/dist/facemath-0.5.0-py3-none-any.whl\nInstalling collected packages: facemath\nSuccessfully installed facemath-0.5.0\n{\"file\": \"/tmp/facemath-installed-ifqltz3l/installed/facemath/__init__.py\", \"version\": \"0.5.0\", \"code_sha256\": \"f9b8852232d09b722bc9619573e7b26ee02ff2eb8569f128f579db2c119a8dc4\"}\n........................................................................ [ 19%]\n........................................................................ [ 38%]\ns....................................................................... [ 58%]\n........................................................................ [ 77%]\n........................................................................ [ 97%]\n...........                                                              [100%]\n370 passed, 1 skipped in 78.13s (0:01:18)\n{\n  \"replay_verified\": true,\n  \"bundle\": \"/mnt/data/facemath_wave_05/evidence/wave5/wheel-check/replayed\",\n  \"comparison\": \"exact qualification/calibration JSON and numerical array equality\",\n  \"live_inference_reexecuted\": false\n}\n{\n  \"replay_verified\": true,\n  \"source_bundle\": \"/mnt/data/facemath_wave_05/evidence/wave5/laboratory/qualified_pair\",\n  \"new_bundle\": \"/mnt/data/facemath_wave_05/evidence/wave5/wheel-check/pair-replayed\",\n  \"numerical_tolerance\": \"arrays atol=1e-9, rtol=1e-7; measurements atol=1e-10, rtol=1e-8\"\n}\n",
+  "stderr": "WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+}

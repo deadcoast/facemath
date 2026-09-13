@@ -1,0 +1,83 @@
+{
+  "seed": 25091,
+  "spec": {
+    "name": "synthetic_ocular_bias_observer",
+    "version": 1,
+    "beta": [
+      [
+        0.018,
+        -0.012
+      ],
+      [
+        0.018,
+        -0.012
+      ],
+      [
+        0.018,
+        -0.012
+      ],
+      [
+        0.018,
+        -0.012
+      ],
+      [
+        0.035,
+        -0.015
+      ],
+      [
+        0.018,
+        0.025
+      ],
+      [
+        0.018,
+        0.025
+      ],
+      [
+        -0.015,
+        0.055
+      ]
+    ],
+    "source_noise_px": 0.13,
+    "sample_jitter_px": 0.015,
+    "noise_floor_px": 0.18,
+    "scope": "known renderer controls, no live detector"
+  },
+  "injected_beta": [
+    [
+      0.018,
+      -0.012
+    ],
+    [
+      0.018,
+      -0.012
+    ],
+    [
+      0.018,
+      -0.012
+    ],
+    [
+      0.018,
+      -0.012
+    ],
+    [
+      0.035,
+      -0.015
+    ],
+    [
+      0.018,
+      0.025
+    ],
+    [
+      0.018,
+      0.025
+    ],
+    [
+      -0.015,
+      0.055
+    ]
+  ],
+  "development": 20,
+  "calibration": 40,
+  "evaluation": 30,
+  "unseen_shift_is_a_prespecified_nonexchangeable_stress_control": true
+}

@@ -1,5 +1,4 @@
 from __future__ import annotations
-
 import numpy as np
 from scipy.interpolate import UnivariateSpline
 
@@ -21,9 +20,7 @@ def image_reflection_error(gray: np.ndarray, midline_x: float | None = None) -> 
     return float(np.sqrt(np.mean(diff * diff)))
 
 
-def paired_symmetry_signature(
-    points: np.ndarray, pairs: list[tuple[int, int]], midline_x: float | None = None
-) -> np.ndarray:
+def paired_symmetry_signature(points: np.ndarray, pairs: list[tuple[int, int]], midline_x: float | None = None) -> np.ndarray:
     p = np.asarray(points, dtype=float)
     m = float(np.median(p[:, 0])) if midline_x is None else float(midline_x)
     rows = []
@@ -35,17 +32,13 @@ def paired_symmetry_signature(
     return np.asarray(rows)
 
 
-def symmetry_topology_distance(
-    a: np.ndarray, b: np.ndarray, pairs: list[tuple[int, int]]
-) -> float:
+def symmetry_topology_distance(a: np.ndarray, b: np.ndarray, pairs: list[tuple[int, int]]) -> float:
     sa = paired_symmetry_signature(a, pairs)
     sb = paired_symmetry_signature(b, pairs)
     return float(np.sqrt(np.mean((sa - sb) ** 2)))
 
 
-def midline_deviation_signature(
-    points: np.ndarray, indices: list[int], samples: int = 64
-) -> np.ndarray:
+def midline_deviation_signature(points: np.ndarray, indices: list[int], samples: int = 64) -> np.ndarray:
     p = np.asarray(points, dtype=float)[indices]
     order = np.argsort(p[:, 1])
     p = p[order]
@@ -59,9 +52,7 @@ def midline_deviation_signature(
     return x_interp - np.mean(x_interp)
 
 
-def midline_signature_distance(
-    a: np.ndarray, b: np.ndarray, indices: list[int]
-) -> float:
+def midline_signature_distance(a: np.ndarray, b: np.ndarray, indices: list[int]) -> float:
     sa = midline_deviation_signature(a, indices)
     sb = midline_deviation_signature(b, indices)
     return float(np.sqrt(np.mean((sa - sb) ** 2)))

@@ -1,25 +1,18 @@
 """The Wave 3 orchestration boundary: one state, one field, one measured profile."""
-
 from __future__ import annotations
 
 from dataclasses import dataclass
-
 import numpy as np
 
 from .anatomy import anatomy_for
 from .canonical import CanonicalState, InstrumentConfig, canonicalize
-from .contracts import (
-    LandmarkProvider,
-    Observation,
-    ObservationError,
-    array_digest,
-    rgb_image,
-)
-from .edge_support import EdgeDiagnostics, diagnose_edges
-from .error_model import LocalizationCalibration, LocalizationEnvelope, assess_pair
+from .contracts import LandmarkProvider, Observation, ObservationError, array_digest, rgb_image
 from .field import AnatomicalField, FlowDiagnostics, build_field, flow_diagnostics
 from .journal import Journal, environment
 from .measure import MeasurementProfile, measure
+from .edge_support import EdgeDiagnostics, diagnose_edges
+from .error_model import LocalizationCalibration, LocalizationEnvelope, assess_pair
+from .bias import BiasCalibration, BiasEnvelope, assess_bias_pair
 
 
 @dataclass(frozen=True)
@@ -31,29 +24,22 @@ class InstrumentResult:
     journal_jsonl: str
     environment: dict
     edges: EdgeDiagnostics | None = None
-    localization: LocalizationEnvelope | None = None
+    localization: LocalizationEnvelope | BiasEnvelope | None = None
 
     def evidence(self) -> dict:
         return {
-            "format": "facemath.evidence.v3",
-            "recipe_sha256": self.state.recipe_sha256,
+            "format": "facemath.evidence.v3", "recipe_sha256": self.state.recipe_sha256,
             "observation_a_sha256": self.state.observation_a.digest,
             "observation_b_sha256": self.state.observation_b.digest,
             "configuration": self.state.config.recipe(),
-            "normalization": {
-                "kind": "geometric_mean_of_registered_interocular_spans",
-                "canonical_pixels": self.state.normalization_span_px,
-            },
+            "normalization": {"kind": "geometric_mean_of_registered_interocular_spans",
+                              "canonical_pixels": self.state.normalization_span_px},
             "measurement_profile": [m.to_dict() for m in self.profile.measurements],
             "warnings": list(self.profile.warnings),
             "consensus_similarity_percent": None,
             "population_percentile": None,
-            "edge_diagnostics": (
-                self.edges.summary() if self.edges is not None else None
-            ),
-            "localization_envelope": (
-                self.localization.to_dict() if self.localization is not None else None
-            ),
+            "edge_diagnostics": self.edges.summary() if self.edges is not None else None,
+            "localization_envelope": self.localization.to_dict() if self.localization is not None else None,
             "limits": [
                 "2D projected geometry, not identity recognition or proof of 3D shape",
                 "model contours and interpolated fields derive from the same landmarks; not independent evidence",
@@ -67,63 +53,34 @@ class InstrumentResult:
 
     def arrays(self) -> dict[str, np.ndarray]:
         state, field, profile = self.state, self.field, self.profile
-        arrays = (
-            {
-                "observation_a_xy": state.observation_a.xy,
-                "observation_b_xy": state.observation_b.xy,
-                "landmark_supported": state.observation_a.in_bounds
-                & state.observation_b.in_bounds,
-                "sensitivity_region_supported": np.array(
-                    [
-                        np.sum(
-                            (
-                                state.observation_a.in_bounds
-                                & state.observation_b.in_bounds
-                            )[state.anatomy.region_indices(r)]
-                        )
-                        >= 2
-                        for r in profile.sensitivity_regions
-                    ]
-                ),
-                "observation_a_samples": state.observation_a.samples,
-                "observation_b_samples": state.observation_b.samples,
-                "observation_a_covariance": state.observation_a.covariance,
-                "observation_b_covariance": state.observation_b.covariance,
-                "canonical_a_xy": state.xy_a,
-                "canonical_b_xy": state.xy_b,
-                "source_to_canonical_a": state.source_to_canonical_a,
-                "source_to_canonical_b": state.source_to_canonical_b,
-                "canonical_to_source_a": np.linalg.inv(state.source_to_canonical_a),
-                "canonical_to_source_b": np.linalg.inv(state.source_to_canonical_b),
-                "source_support_a": state.valid_source_a,
-                "source_support_b": state.valid_source_b,
-                "photometric_support": state.photometric_support,
-                "registration_weights": state.fit_weights,
-                "anatomical_uv": field.uv,
-                "triangle_indices": field.triangles,
-                "simplex_index": field.simplex_index,
-                "triangle_jacobians": field.jacobians,
-                "triangle_determinants": field.determinant,
-                "triangle_green_strain": field.green_strain,
-                "triangle_principal_log_stretch": field.principal_log_stretch,
-                "triangle_condition": field.condition,
-                "triangle_valid": field.valid_triangles,
-                "anatomical_support": field.valid,
-                "landmark_residual_vectors": profile.residual_vectors,
-                "relational_distortion": profile.relational_distortion,
-                "heldout_residual_vectors": profile.heldout_residuals,
-                "sensitivity_draws": profile.sensitivity_draws,
-            }
-            | {f"region_a_{k}": v for k, v in state.masks_a.items()}
-            | {f"region_b_{k}": v for k, v in state.masks_b.items()}
-        )
+        arrays = {
+            "observation_a_xy": state.observation_a.xy, "observation_b_xy": state.observation_b.xy,
+            "landmark_supported": state.observation_a.in_bounds & state.observation_b.in_bounds,
+            "sensitivity_region_supported": np.array([
+                np.sum((state.observation_a.in_bounds & state.observation_b.in_bounds)[state.anatomy.region_indices(r)]) >= 2
+                for r in profile.sensitivity_regions
+            ]),
+            "observation_a_samples": state.observation_a.samples, "observation_b_samples": state.observation_b.samples,
+            "observation_a_covariance": state.observation_a.covariance, "observation_b_covariance": state.observation_b.covariance,
+            "canonical_a_xy": state.xy_a, "canonical_b_xy": state.xy_b,
+            "source_to_canonical_a": state.source_to_canonical_a, "source_to_canonical_b": state.source_to_canonical_b,
+            "canonical_to_source_a": np.linalg.inv(state.source_to_canonical_a), "canonical_to_source_b": np.linalg.inv(state.source_to_canonical_b),
+            "source_support_a": state.valid_source_a, "source_support_b": state.valid_source_b,
+            "photometric_support": state.photometric_support, "registration_weights": state.fit_weights,
+            "anatomical_uv": field.uv, "triangle_indices": field.triangles, "simplex_index": field.simplex_index,
+            "triangle_jacobians": field.jacobians, "triangle_determinants": field.determinant,
+            "triangle_green_strain": field.green_strain, "triangle_principal_log_stretch": field.principal_log_stretch,
+            "triangle_condition": field.condition, "triangle_valid": field.valid_triangles,
+            "anatomical_support": field.valid, "landmark_residual_vectors": profile.residual_vectors,
+            "relational_distortion": profile.relational_distortion,
+            "heldout_residual_vectors": profile.heldout_residuals, "sensitivity_draws": profile.sensitivity_draws,
+        }
+        arrays.update({f"region_a_{k}": v for k, v in state.masks_a.items()})
+        arrays.update({f"region_b_{k}": v for k, v in state.masks_b.items()})
         if self.flow is not None:
-            arrays |= {
-                f"flow_{name}": getattr(self.flow, name)
-                for name in self.flow.__dataclass_fields__
-            }
+            arrays.update({f"flow_{name}": getattr(self.flow, name) for name in self.flow.__dataclass_fields__})
         if self.edges is not None:
-            arrays |= self.edges.arrays()
+            arrays.update(self.edges.arrays())
         if self.localization is not None:
             arrays.update(self.localization.arrays())
             if self.localization.directional is not None:
@@ -140,16 +97,10 @@ class InstrumentFailure(ObservationError):
 
 
 class FacialInstrument:
-    def __init__(
-        self,
-        config: InstrumentConfig | None = None,
-        provider: LandmarkProvider | None = None,
-        *,
-        localization_calibration: LocalizationCalibration | None = None,
-        query_groups: tuple[str, str] = ("", ""),
-        domain: str = "",
-        query_lineages: tuple[tuple[str, ...], tuple[str, ...]] = ((), ()),
-    ) -> None:
+    def __init__(self, config: InstrumentConfig | None = None, provider: LandmarkProvider | None = None,
+                 *, localization_calibration: LocalizationCalibration | BiasCalibration | None = None,
+                 query_groups: tuple[str, str] = ("", ""), domain: str = "",
+                 query_lineages: tuple[tuple[str, ...], tuple[str, ...]] = ((), ())) -> None:
         self.config = config or InstrumentConfig()
         self.provider = provider
         self.localization_calibration = localization_calibration
@@ -157,139 +108,66 @@ class FacialInstrument:
         self.query_lineages = tuple(tuple(x) for x in query_lineages)
         self.domain = domain
 
-    def run(
-        self,
-        image_a: np.ndarray,
-        image_b: np.ndarray,
-        observation_a: Observation | None = None,
-        observation_b: Observation | None = None,
-    ) -> InstrumentResult:
+    def run(self, image_a: np.ndarray, image_b: np.ndarray,
+            observation_a: Observation | None = None,
+            observation_b: Observation | None = None) -> InstrumentResult:
         journal = Journal()
         try:
-            return self._execute(
-                image_a, image_b, observation_a, observation_b, journal
-            )
+            return self._execute(image_a, image_b, observation_a, observation_b, journal)
         except ObservationError as exc:
             raise InstrumentFailure(str(exc), journal.jsonl()) from exc
 
-    def _execute(
-        self,
-        image_a: np.ndarray,
-        image_b: np.ndarray,
-        observation_a: Observation | None,
-        observation_b: Observation | None,
-        journal: Journal,
-    ) -> InstrumentResult:
+    def _execute(self, image_a: np.ndarray, image_b: np.ndarray,
+                 observation_a: Observation | None, observation_b: Observation | None,
+                 journal: Journal) -> InstrumentResult:
         with journal.step("inputs.validate", {}) as output:
             a, b = rgb_image(image_a), rgb_image(image_b)
-            output.update(
-                a_sha256=array_digest(a),
-                b_sha256=array_digest(b),
-                shape_a=list(a.shape),
-                shape_b=list(b.shape),
-            )
-        with journal.step(
-            "observation.acquire",
-            {
-                "provided_a": observation_a is not None,
-                "provided_b": observation_b is not None,
-            },
-        ) as output:
+            output.update(a_sha256=array_digest(a), b_sha256=array_digest(b), shape_a=list(a.shape), shape_b=list(b.shape))
+        with journal.step("observation.acquire", {"provided_a": observation_a is not None, "provided_b": observation_b is not None}) as output:
             if observation_a is None or observation_b is None:
                 if self.provider is None:
-                    raise ObservationError(
-                        "supply two image-bound observations or a concrete local landmark provider"
-                    )
+                    raise ObservationError("supply two image-bound observations or a concrete local landmark provider")
                 observation_a = observation_a or self.provider.observe(a)
                 observation_b = observation_b or self.provider.observe(b)
             anatomy = anatomy_for(observation_a)
             anatomy_for(observation_b)
-            output.update(
-                observation_a_sha256=observation_a.digest,
-                observation_b_sha256=observation_b.digest,
-                provider_a=observation_a.provider,
-                provider_b=observation_b.provider,
-                samples_a=len(observation_a.samples),
-                samples_b=len(observation_b.samples),
-            )
+            output.update(observation_a_sha256=observation_a.digest, observation_b_sha256=observation_b.digest,
+                          provider_a=observation_a.provider, provider_b=observation_b.provider,
+                          samples_a=len(observation_a.samples), samples_b=len(observation_b.samples))
         with journal.step("canonical.shared_state", self.config.recipe()) as output:
-            state = canonicalize(
-                a, b, observation_a, observation_b, anatomy, self.config
-            )
-            output.update(
-                recipe_sha256=state.recipe_sha256,
-                a_matrix=state.source_to_canonical_a.tolist(),
-                b_matrix=state.source_to_canonical_b.tolist(),
-                fit_anchor_names=list(state.fit_names),
-                fit_weights=state.fit_weights.tolist(),
-            )
-        with journal.step(
-            "field.anatomical_interpolation",
-            {"method": "piecewise_affine_delaunay", "direction": "A_to_B"},
-        ) as output:
+            state = canonicalize(a, b, observation_a, observation_b, anatomy, self.config)
+            output.update(recipe_sha256=state.recipe_sha256, a_matrix=state.source_to_canonical_a.tolist(),
+                          b_matrix=state.source_to_canonical_b.tolist(), fit_anchor_names=list(state.fit_names),
+                          fit_weights=state.fit_weights.tolist())
+        with journal.step("field.anatomical_interpolation", {"method": "piecewise_affine_delaunay", "direction": "A_to_B"}) as output:
             field = build_field(state)
-            output.update(
-                triangles=len(field.triangles),
-                valid_triangles=int(field.valid_triangles.sum()),
-                supported_pixels=int(field.valid.sum()),
-                folded_fraction=field.folded_fraction,
-                uv_sha256=array_digest(field.uv),
-            )
+            output.update(triangles=len(field.triangles), valid_triangles=int(field.valid_triangles.sum()),
+                          supported_pixels=int(field.valid.sum()), folded_fraction=field.folded_fraction,
+                          uv_sha256=array_digest(field.uv))
         flow = None
         if self.config.enable_flow:
-            with journal.step(
-                "field.independent_flow_diagnostic",
-                {"method": "uint8_farneback_forward_backward"},
-            ) as output:
+            with journal.step("field.independent_flow_diagnostic", {"method": "uint8_farneback_forward_backward"}) as output:
                 flow = flow_diagnostics(state, field)
-                output.update(
-                    admissible_pixels=int(flow.admissible.sum()),
-                    concordant_pixels=int(flow.concordant.sum()),
-                    uv_sha256=array_digest(flow.uv),
-                )
-        with journal.step(
-            "measure.shared_state_profile",
-            {
-                "uncertainty_draws": self.config.uncertainty_draws,
-                "seed": self.config.seed,
-            },
-        ) as output:
+                output.update(admissible_pixels=int(flow.admissible.sum()), concordant_pixels=int(flow.concordant.sum()),
+                              uv_sha256=array_digest(flow.uv))
+        with journal.step("measure.shared_state_profile", {"uncertainty_draws": self.config.uncertainty_draws, "seed": self.config.seed}) as output:
             profile = measure(state, field, flow)
-            output.update(
-                measurements=len(profile.measurements),
-                withheld=sum(m.value is None for m in profile.measurements),
-                sensitivity_sha256=array_digest(profile.sensitivity_draws),
-            )
+            output.update(measurements=len(profile.measurements),
+                          withheld=sum(m.value is None for m in profile.measurements),
+                          sensitivity_sha256=array_digest(profile.sensitivity_draws))
         edges = None
         if self.config.enable_edges:
-            with journal.step(
-                "observation.image_edge_support",
-                {"landmark_guided": True, "moves_landmarks": False},
-            ) as output:
+            with journal.step("observation.image_edge_support", {"landmark_guided": True, "moves_landmarks": False}) as output:
                 edges = diagnose_edges(state)
                 output.update(edges.summary())
         localization = None
         if self.localization_calibration is not None:
-            with journal.step(
-                "validation.localization_envelope",
-                {"calibration_sha256": self.localization_calibration.digest},
-            ) as output:
-                localization = assess_pair(
-                    state,
-                    self.localization_calibration,
-                    query_groups=self.query_groups,
-                    domain=self.domain,
-                    query_lineages=self.query_lineages,
-                )
-                output.update(
-                    supported_points=int(localization.supported.sum()),
-                    kind="fixed_observed_gauge_error_envelope_not_shape_confidence",
-                )
+            with journal.step("validation.localization_envelope", {"calibration_sha256": self.localization_calibration.digest}) as output:
+                assessor = assess_bias_pair if isinstance(self.localization_calibration, BiasCalibration) else assess_pair
+                localization = assessor(state, self.localization_calibration,
+                                          query_groups=self.query_groups, domain=self.domain, query_lineages=self.query_lineages)
+                output.update(supported_points=int(localization.supported.sum()),
+                              kind="fixed_observed_gauge_error_envelope_not_shape_confidence")
         env = environment()
-        journal.record(
-            "execution.complete",
-            {"environment": env, "recipe_sha256": state.recipe_sha256},
-        )
-        return InstrumentResult(
-            state, field, flow, profile, journal.jsonl(), env, edges, localization
-        )
+        journal.record("execution.complete", {"environment": env, "recipe_sha256": state.recipe_sha256})
+        return InstrumentResult(state, field, flow, profile, journal.jsonl(), env, edges, localization)

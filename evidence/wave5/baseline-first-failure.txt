@@ -1,0 +1,12 @@
+...........................................................F
+=================================== FAILURES ===================================
+________ test_module_entrypoint_reports_version_from_another_directory _________
+tests/test_wave3_cli.py:34: in test_module_entrypoint_reports_version_from_another_directory
+    result = subprocess.run([sys.executable, '-m', 'facemath', '--version'], cwd=tmp_path,
+/usr/lib/python3.13/subprocess.py:577: in run
+    raise CalledProcessError(retcode, process.args,
+E   subprocess.CalledProcessError: Command '['/opt/pyvenv/bin/python', '-m', 'facemath', '--version']' returned non-zero exit status 1.
+=========================== short test summary info ============================
+FAILED tests/test_wave3_cli.py::test_module_entrypoint_reports_version_from_another_directory - subprocess.CalledProcessError: Command '['/opt/pyvenv/bin/python', '-m', 'facemath', '--version']' returned non-zero exit status 1.
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed, 59 passed in 14.25s

@@ -3,62 +3,36 @@
 No detector coordinates are accepted by this function. Annotation identity and
 blinding are user declarations, not guarantees about the person using a browser.
 """
-
 from __future__ import annotations
 
-import json
 from base64 import b64encode
 from html import escape
 from pathlib import Path
-
+import json
 import cv2
 import numpy as np
 
 from .contracts import ObservationError, array_digest, rgb_image
-from .reference import (
-    REFERENCE_DEFINITIONS,
-    REFERENCE_NAMES,
-    REFERENCE_PROTOCOL_SHA256,
-)
+from .reference import REFERENCE_NAMES, REFERENCE_DEFINITIONS, REFERENCE_PROTOCOL_SHA256, REFERENCE_KINDS
 
 
-def create_annotation_workspace(
-    image: np.ndarray,
-    destination: str | Path,
-    *,
-    source: str,
-    kind: str = "human_blind",
-) -> Path:
+def create_annotation_workspace(image: np.ndarray, destination: str | Path, *, source: str,
+                                kind: str = "human_blind") -> Path:
     image = rgb_image(image)
     if kind not in ("human_blind", "synthetic_fixture"):
-        raise ObservationError(
-            "workspace requires an explicit blind/external/synthetic reference kind"
-        )
+        raise ObservationError("workspace requires an explicit blind/external/synthetic reference kind")
     if not isinstance(source, str) or not source.strip():
         raise ObservationError("annotation workspace requires a source description")
     ok, encoded = cv2.imencode(".png", cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
     if not ok:
         raise ObservationError("annotation image encoding failed")
-    payload = {
-        "names": REFERENCE_NAMES,
-        "definitions": REFERENCE_DEFINITIONS,
-        "image_sha256": array_digest(image),
-        "image_shape": image.shape[:2],
-        "protocol_sha256": REFERENCE_PROTOCOL_SHA256,
-        "source": source,
-        "kind": kind,
-        "image": f"data:image/png;base64,{b64encode(encoded).decode()}",
-    }
+    payload = {"names": REFERENCE_NAMES, "definitions": REFERENCE_DEFINITIONS,
+               "image_sha256": array_digest(image), "image_shape": image.shape[:2],
+               "protocol_sha256": REFERENCE_PROTOCOL_SHA256, "source": source, "kind": kind,
+               "image": "data:image/png;base64," + b64encode(encoded).decode()}
     # JSON text lives in a script data element; escape closing tags and separators.
-    data = (
-        json.dumps(payload, ensure_ascii=True)
-        .replace("<", "\\u003c")
-        .replace(">", "\\u003e")
-        .replace("&", "\\u0026")
-    )
-    html = TEMPLATE.replace("__SOURCE_LABEL__", escape(source)).replace(
-        "__PAYLOAD__", data
-    )
+    data = json.dumps(payload, ensure_ascii=True).replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
+    html = TEMPLATE.replace("__SOURCE_LABEL__", escape(source)).replace("__PAYLOAD__", data)
     path = Path(destination)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("x", encoding="utf-8") as stream:
@@ -66,7 +40,7 @@ def create_annotation_workspace(
     return path
 
 
-TEMPLATE = r"""<!doctype html><html lang="en"><head><meta charset="utf-8">
+TEMPLATE = r'''<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; font-src 'none'; base-uri 'none'">
 <title>FACEMATH / Reference workbench</title><style>
@@ -118,4 +92,4 @@ window.addEventListener('keydown',e=>{if(e.target.matches('input,textarea'))retu
 function exportReference(){if(points.some(p=>p===null)||!$('rater').value.trim())return null;return {format:'facemath.reference.v4',protocol_sha256:data.protocol_sha256,names:data.names,image_sha256:data.image_sha256,image_shape:data.image_shape,xy:points.map(p=>p.xy),visible:points.map(p=>p.visible),rater_id:$('rater').value.trim(),kind:data.kind,source:data.source,prediction_exposure:'none_declared',metadata:{interface:'facemath.reference-workbench.v4',note:$('note').value,ui_event_history:events,authorship:'declared_by_operator_not_attested'}};}
 $('export').onclick=()=>{const obj=exportReference();if(!obj)return;const blob=new Blob([JSON.stringify(obj,null,2)+'\n'],{type:'application/json'}),a=document.createElement('a'),u=URL.createObjectURL(blob);a.href=u;a.download='reference_'+data.image_sha256.slice(0,12)+'_'+$('rater').value.replace(/[^a-zA-Z0-9_-]/g,'_')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);announce('Exported image-bound reference JSON.');};
 image.onload=()=>{resize();render();};image.src=data.image;window.addEventListener('resize',resize);render();
-</script></body></html>"""
+</script></body></html>'''

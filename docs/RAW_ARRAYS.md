@@ -51,3 +51,26 @@ These are landmark-guided gradients, not independent contour ground truth. An ex
 ## Provenance
 
 The validation and pair journals record executed named stages. Replaying saved observations does not rerun ML inference; this distinction is in the journal and command descriptions. Hashes can detect changed bytes relative to the recorded manifest, not establish an external author, truly independent raters or unreported duplicate subjects.
+
+
+## Wave 05 qualification arrays
+
+Case order is `qualification.json.array_order.cases`; point order is `reference_points` (the fixed reference8 grammar).
+
+| Name | Shape | Unit / meaning |
+|---|---|---|
+| raw_error_vectors_px | cases × 8 × 2 | prediction minus independent reference, stored source px |
+| source_bias_vectors_px | cases × 8 × 2 | development-fit model error, in observed ocular frame |
+| centered_error_vectors_px | cases × 8 × 2 | raw minus modeled bias, not changed detector outputs |
+| centered_error_valid | cases × 8 | explicit support mask; a zero sentinel is not zero error |
+| source_predicted_xy | cases × 8 × 2 | untouched source prediction coordinates |
+| source_reference_xy | cases × 8 × 2 | independently supplied reference coordinates |
+| covariance_px2 | cases × 8 × 2 × 2 | unchanged observer covariance in source pixel squared units |
+| development_group_bias_vectors | fitted groups × 8 × 2 | equal-group inputs to the frozen beta; dimensionless ocular units |
+| development_bias_beta | 8 × 2 | fitted group mean in observed ocular vector coordinates |
+
+The last two arrays exist only for `development_ocular`. Nested `raw_validation/arrays.npz` retains all original Wave 04 per-case arrays and mask semantics. Native request/response/stdout/stderr and receipts remain in `acquisition/cases/case_XXXXX/`.
+
+### Additional qualified-pair arrays
+
+`localization_source_bias_px` and `localization_canonical_bias_px` are 2 × 8 × 2 vectors before/after the observed transform. `localization_reference_center_points` stores the two shifted reference-set centers in canonical pixels. `localization_model_centered_gap_ipd` stores their normalized separation (8 values). Original `localization_observed_gap_ipd` remains the raw observed gap. All earlier support masks, full covariance matrices and directional bounds remain retained. No array supplies dense478 reference accuracy.

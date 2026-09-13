@@ -1,0 +1,612 @@
+{
+  "format": "facemath.study_lab.v5",
+  "kind": "synthetic_falsification_NOT_HUMAN_DETECTOR_VALIDATION",
+  "seed": 25091,
+  "enrolled": 91,
+  "eligible": 90,
+  "excluded": 1,
+  "calls_first_batch": 7,
+  "calls_completed": 90,
+  "calls_after_idempotent_resume": 90,
+  "outcomes": {
+    "contract_error": 0,
+    "interrupted": 0,
+    "multiple_faces": 0,
+    "no_face": 2,
+    "observed": 88,
+    "runtime_error": 0,
+    "timeout": 0
+  },
+  "beta_max_absolute_error": 0.0008933671366293423,
+  "raw_quantile": 18.184732148133936,
+  "centered_quantile": 2.485113837453321,
+  "coverage": {
+    "calibration_sha256": "c0441890614ceb1955589665e9ebc70a8078613826990a654f3252128c8d2bd1",
+    "nominal_coverage": 0.9,
+    "finite_envelope": true,
+    "evaluation_cases": 30,
+    "evaluation_groups": 30,
+    "covered_groups": 15,
+    "empirical_group_coverage": 0.5,
+    "failures": 1,
+    "cases": [
+      {
+        "case_id": "control_060",
+        "group_id": "independent_draw_060",
+        "score": 2.214216614707677,
+        "assessable": true,
+        "covered": true
+      },
+      {
+        "case_id": "control_061",
+        "group_id": "independent_draw_061",
+        "score": 2.760998257229622,
+        "assessable": true,
+        "covered": false
+      },
+      {
+        "case_id": "control_062",
+        "group_id": "independent_draw_062",
+        "score": 1.7360195301582861,
+        "assessable": true,
+        "covered": true
+      },
+      {
+        "case_id": "control_063",
+        "group_id": "independent_draw_063",
+        "score": 2.2239766775151444,
+        "assessable": true,
+        "covered": true
+      },
+      {
+        "case_id": "control_064",
+        "group_id": "independent_draw_064",
+        "score": 1.6656403883248783,
+        "assessable": true,
+        "covered": true
+      },
+      {
+        "case_id": "control_065",
+        "group_id": "independent_draw_065",
+        "score": 1.4365266844935072,
+        "assessable": true,
+        "covered": true
+      },
+      {
+        "case_id": "control_066",
+        "group_id": "independent_draw_066",
+        "score": 3.79529411051744,
+        "assessable": true,
+        "covered": false
+      },
+      {
+        "case_id": "control_067",
+        "group_id": "independent_draw_067",
+        "score": null,
+        "assessable": false,
+        "covered": false
+      },
+      {
+        "case_id": "control_068",
+        "group_id": "independent_draw_068",
+        "score": 1.7504611667671275,
+        "assessable": true,
+        "covered": true
+      },
+      {
+        "case_id": "control_069",
+        "group_id": "independent_draw_069",
+        "score": 1.8863690975036664,
+        "assessable": true,
+        "covered": true
+      },
+      {
+        "case_id": "control_070",
+        "group_id": "independent_draw_070",
+        "score": 1.7418748178222143,
+        "assessable": true,
+        "covered": true
+      },
+      {
+        "case_id": "control_071",
+        "group_id": "independent_draw_071",
+        "score": 1.608368147818107,
+        "assessable": true,
+        "covered": true
+      },
+      {
+        "case_id": "control_072",
+        "group_id": "independent_draw_072",
+        "score": 2.029511135917016,
+        "assessable": true,
+        "covered": true
+      },
+      {
+        "case_id": "control_073",
+        "group_id": "independent_draw_073",
+        "score": 2.122420949085875,
+        "assessable": true,
+        "covered": true
+      },
+      {
+        "case_id": "control_074",
+        "group_id": "independent_draw_074",
+        "score": 1.0676547691315634,
+        "assessable": true,
+        "covered": true
+      },
+      {
+        "case_id": "control_075",
+        "group_id": "independent_draw_075",
+        "score": 3.130834989453856,
+        "assessable": true,
+        "covered": false
+      },
+      {
+        "case_id": "control_076",
+        "group_id": "independent_draw_076",
+        "score": 2.026683552915046,
+        "assessable": true,
+        "covered": true
+      },
+      {
+        "case_id": "control_077",
+        "group_id": "independent_draw_077",
+        "score": 1.7757483706101613,
+        "assessable": true,
+        "covered": true
+      },
+      {
+        "case_id": "control_078",
+        "group_id": "independent_draw_078",
+        "score": 3.173340785122207,
+        "assessable": true,
+        "covered": false
+      },
+      {
+        "case_id": "control_079",
+        "group_id": "independent_draw_079",
+        "score": 1.4555051489791233,
+        "assessable": true,
+        "covered": true
+      },
+      {
+        "case_id": "control_080",
+        "group_id": "independent_draw_080",
+        "score": 28.03896275000547,
+        "assessable": true,
+        "covered": false
+      },
+      {
+        "case_id": "control_081",
+        "group_id": "independent_draw_081",
+        "score": 20.18095521510559,
+        "assessable": true,
+        "covered": false
+      },
+      {
+        "case_id": "control_082",
+        "group_id": "independent_draw_082",
+        "score": 27.50673949131885,
+        "assessable": true,
+        "covered": false
+      },
+      {
+        "case_id": "control_083",
+        "group_id": "independent_draw_083",
+        "score": 24.71189875063335,
+        "assessable": true,
+        "covered": false
+      },
+      {
+        "case_id": "control_084",
+        "group_id": "independent_draw_084",
+        "score": 24.715261349447484,
+        "assessable": true,
+        "covered": false
+      },
+      {
+        "case_id": "control_085",
+        "group_id": "independent_draw_085",
+        "score": 20.819030001963686,
+        "assessable": true,
+        "covered": false
+      },
+      {
+        "case_id": "control_086",
+        "group_id": "independent_draw_086",
+        "score": 27.377145454785534,
+        "assessable": true,
+        "covered": false
+      },
+      {
+        "case_id": "control_087",
+        "group_id": "independent_draw_087",
+        "score": 21.24369960715724,
+        "assessable": true,
+        "covered": false
+      },
+      {
+        "case_id": "control_088",
+        "group_id": "independent_draw_088",
+        "score": 24.110693142278052,
+        "assessable": true,
+        "covered": false
+      },
+      {
+        "case_id": "control_089",
+        "group_id": "independent_draw_089",
+        "score": 22.48490646234994,
+        "assessable": true,
+        "covered": false
+      }
+    ],
+    "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage",
+    "full_error_model_sha256": "a0bfece2bda1bea51fdb71d16a4ad9456d69c8bb69c0a6b00c6d96ff22b3e398",
+    "score_centering": "development_ocular",
+    "binomial_95_interval": [
+      0.31297028586802744,
+      0.6870297141319726
+    ]
+  },
+  "slices": [
+    {
+      "stratum": "clear",
+      "prespecified": true,
+      "calibration_groups": 27,
+      "has_calibration_representation": true,
+      "evaluation": {
+        "cases": 13,
+        "groups": 13,
+        "covered_groups": 11,
+        "empirical_coverage": 0.8461538461538461,
+        "binomial_95_interval": [
+          0.5455289443234422,
+          0.9807933280174715
+        ],
+        "case_count_per_group": {
+          "independent_draw_061": 1,
+          "independent_draw_062": 1,
+          "independent_draw_064": 1,
+          "independent_draw_065": 1,
+          "independent_draw_067": 1,
+          "independent_draw_068": 1,
+          "independent_draw_070": 1,
+          "independent_draw_071": 1,
+          "independent_draw_073": 1,
+          "independent_draw_074": 1,
+          "independent_draw_076": 1,
+          "independent_draw_077": 1,
+          "independent_draw_079": 1
+        },
+        "scope": "all scored reference points in this slice's cases per group; overlapping slices are not pooled",
+        "interval_assumption": "independent comparable Bernoulli groups; not implied by marginal conformal exchangeability"
+      },
+      "raw_localization": {
+        "attempted_cases": 13,
+        "complete_cases": 12,
+        "failed_cases": 1,
+        "groups": 13,
+        "reference_kind": "synthetic_fixture",
+        "successful_case_mean_nme": 0.030196556372052406,
+        "unconditional_auc": 0.6443394796425932,
+        "auc_threshold_ipd": 0.1,
+        "pck_threshold_ipd": 0.05,
+        "eligible_landmarks": 104,
+        "observed_landmarks": 96,
+        "pck_including_failures": 0.8076923076923077,
+        "per_landmark": [
+          {
+            "name": "left_eye_outer",
+            "eligible": 13,
+            "observed": 12,
+            "within_tolerance": 12,
+            "pck": 0.9230769230769231,
+            "median_error_px": 1.0865473444205747
+          },
+          {
+            "name": "left_eye_inner",
+            "eligible": 13,
+            "observed": 12,
+            "within_tolerance": 12,
+            "pck": 0.9230769230769231,
+            "median_error_px": 1.120527938675489
+          },
+          {
+            "name": "right_eye_inner",
+            "eligible": 13,
+            "observed": 12,
+            "within_tolerance": 12,
+            "pck": 0.9230769230769231,
+            "median_error_px": 1.05303292821945
+          },
+          {
+            "name": "right_eye_outer",
+            "eligible": 13,
+            "observed": 12,
+            "within_tolerance": 12,
+            "pck": 0.9230769230769231,
+            "median_error_px": 1.0345444517907914
+          },
+          {
+            "name": "nose_tip",
+            "eligible": 13,
+            "observed": 12,
+            "within_tolerance": 12,
+            "pck": 0.9230769230769231,
+            "median_error_px": 1.731610571981808
+          },
+          {
+            "name": "mouth_left",
+            "eligible": 13,
+            "observed": 12,
+            "within_tolerance": 12,
+            "pck": 0.9230769230769231,
+            "median_error_px": 1.4756948489386947
+          },
+          {
+            "name": "mouth_right",
+            "eligible": 13,
+            "observed": 12,
+            "within_tolerance": 12,
+            "pck": 0.9230769230769231,
+            "median_error_px": 1.5298038325606989
+          },
+          {
+            "name": "chin",
+            "eligible": 13,
+            "observed": 12,
+            "within_tolerance": 0,
+            "pck": 0.0,
+            "median_error_px": 2.750519314055426
+          }
+        ],
+        "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+        "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+        "covariance_limit": "perturbation repeatability is not localization accuracy",
+        "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+      },
+      "conditional_coverage_guaranteed": false
+    },
+    {
+      "stratum": "degraded",
+      "prespecified": true,
+      "calibration_groups": 13,
+      "has_calibration_representation": true,
+      "evaluation": {
+        "cases": 7,
+        "groups": 7,
+        "covered_groups": 4,
+        "empirical_coverage": 0.5714285714285714,
+        "binomial_95_interval": [
+          0.184051567640083,
+          0.9010117215574921
+        ],
+        "case_count_per_group": {
+          "independent_draw_060": 1,
+          "independent_draw_063": 1,
+          "independent_draw_066": 1,
+          "independent_draw_069": 1,
+          "independent_draw_072": 1,
+          "independent_draw_075": 1,
+          "independent_draw_078": 1
+        },
+        "scope": "all scored reference points in this slice's cases per group; overlapping slices are not pooled",
+        "interval_assumption": "independent comparable Bernoulli groups; not implied by marginal conformal exchangeability"
+      },
+      "raw_localization": {
+        "attempted_cases": 7,
+        "complete_cases": 7,
+        "failed_cases": 0,
+        "groups": 7,
+        "reference_kind": "synthetic_fixture",
+        "successful_case_mean_nme": 0.02985059267518696,
+        "unconditional_auc": 0.7014940732481305,
+        "auc_threshold_ipd": 0.1,
+        "pck_threshold_ipd": 0.05,
+        "eligible_landmarks": 56,
+        "observed_landmarks": 56,
+        "pck_including_failures": 0.8928571428571429,
+        "per_landmark": [
+          {
+            "name": "left_eye_outer",
+            "eligible": 7,
+            "observed": 7,
+            "within_tolerance": 7,
+            "pck": 1.0,
+            "median_error_px": 0.9751786070988977
+          },
+          {
+            "name": "left_eye_inner",
+            "eligible": 7,
+            "observed": 7,
+            "within_tolerance": 7,
+            "pck": 1.0,
+            "median_error_px": 0.9902281550855015
+          },
+          {
+            "name": "right_eye_inner",
+            "eligible": 7,
+            "observed": 7,
+            "within_tolerance": 7,
+            "pck": 1.0,
+            "median_error_px": 1.0971416914924819
+          },
+          {
+            "name": "right_eye_outer",
+            "eligible": 7,
+            "observed": 7,
+            "within_tolerance": 7,
+            "pck": 1.0,
+            "median_error_px": 1.0747005799088354
+          },
+          {
+            "name": "nose_tip",
+            "eligible": 7,
+            "observed": 7,
+            "within_tolerance": 7,
+            "pck": 1.0,
+            "median_error_px": 1.7501063066568374
+          },
+          {
+            "name": "mouth_left",
+            "eligible": 7,
+            "observed": 7,
+            "within_tolerance": 7,
+            "pck": 1.0,
+            "median_error_px": 1.4627182489374073
+          },
+          {
+            "name": "mouth_right",
+            "eligible": 7,
+            "observed": 7,
+            "within_tolerance": 7,
+            "pck": 1.0,
+            "median_error_px": 1.3574445712031145
+          },
+          {
+            "name": "chin",
+            "eligible": 7,
+            "observed": 7,
+            "within_tolerance": 1,
+            "pck": 0.14285714285714285,
+            "median_error_px": 2.979024725279031
+          }
+        ],
+        "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+        "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+        "covariance_limit": "perturbation repeatability is not localization accuracy",
+        "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+      },
+      "conditional_coverage_guaranteed": false
+    },
+    {
+      "stratum": "unseen_shift",
+      "prespecified": true,
+      "calibration_groups": 0,
+      "has_calibration_representation": false,
+      "evaluation": {
+        "cases": 10,
+        "groups": 10,
+        "covered_groups": 0,
+        "empirical_coverage": 0.0,
+        "binomial_95_interval": [
+          0.0,
+          0.3084971078187607
+        ],
+        "case_count_per_group": {
+          "independent_draw_080": 1,
+          "independent_draw_081": 1,
+          "independent_draw_082": 1,
+          "independent_draw_083": 1,
+          "independent_draw_084": 1,
+          "independent_draw_085": 1,
+          "independent_draw_086": 1,
+          "independent_draw_087": 1,
+          "independent_draw_088": 1,
+          "independent_draw_089": 1
+        },
+        "scope": "all scored reference points in this slice's cases per group; overlapping slices are not pooled",
+        "interval_assumption": "independent comparable Bernoulli groups; not implied by marginal conformal exchangeability"
+      },
+      "raw_localization": {
+        "attempted_cases": 10,
+        "complete_cases": 10,
+        "failed_cases": 0,
+        "groups": 10,
+        "reference_kind": "synthetic_fixture",
+        "successful_case_mean_nme": 0.07053169598706864,
+        "unconditional_auc": 0.29468304012931357,
+        "auc_threshold_ipd": 0.1,
+        "pck_threshold_ipd": 0.05,
+        "eligible_landmarks": 80,
+        "observed_landmarks": 80,
+        "pck_including_failures": 0.5,
+        "per_landmark": [
+          {
+            "name": "left_eye_outer",
+            "eligible": 10,
+            "observed": 10,
+            "within_tolerance": 10,
+            "pck": 1.0,
+            "median_error_px": 1.139741706832263
+          },
+          {
+            "name": "left_eye_inner",
+            "eligible": 10,
+            "observed": 10,
+            "within_tolerance": 10,
+            "pck": 1.0,
+            "median_error_px": 1.105025044786081
+          },
+          {
+            "name": "right_eye_inner",
+            "eligible": 10,
+            "observed": 10,
+            "within_tolerance": 10,
+            "pck": 1.0,
+            "median_error_px": 1.0912654210495747
+          },
+          {
+            "name": "right_eye_outer",
+            "eligible": 10,
+            "observed": 10,
+            "within_tolerance": 10,
+            "pck": 1.0,
+            "median_error_px": 1.093388580911126
+          },
+          {
+            "name": "nose_tip",
+            "eligible": 10,
+            "observed": 10,
+            "within_tolerance": 0,
+            "pck": 0.0,
+            "median_error_px": 5.198532293508263
+          },
+          {
+            "name": "mouth_left",
+            "eligible": 10,
+            "observed": 10,
+            "within_tolerance": 0,
+            "pck": 0.0,
+            "median_error_px": 5.674812216275903
+          },
+          {
+            "name": "mouth_right",
+            "eligible": 10,
+            "observed": 10,
+            "within_tolerance": 0,
+            "pck": 0.0,
+            "median_error_px": 5.703070882386952
+          },
+          {
+            "name": "chin",
+            "eligible": 10,
+            "observed": 10,
+            "within_tolerance": 0,
+            "pck": 0.0,
+            "median_error_px": 6.178843835094442
+          }
+        ],
+        "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+        "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+        "covariance_limit": "perturbation repeatability is not localization accuracy",
+        "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+      },
+      "conditional_coverage_guaranteed": false
+    }
+  ],
+  "unchanged_raw_pair_arrays": 126,
+  "raw_geometry_arrays_identical": true,
+  "known_query_reference_gaps_contained": true,
+  "checks": {
+    "first_batch_committed_seven": true,
+    "resume_no_duplicate_calls": true,
+    "excluded_never_observed": true,
+    "bias_recovered": true,
+    "raw_geometry_unchanged": true,
+    "stress_stratum_has_no_calibration_support": true,
+    "stress_undercoverage_exposed": true
+  }
+}
+

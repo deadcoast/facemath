@@ -1,0 +1,658 @@
+{
+  "format": "facemath.evidence.v3",
+  "recipe_sha256": "e8aaa4a79cd2d3b193d12591eeedce799dcc0cf47333f5cf6be62e8a786c464c",
+  "observation_a_sha256": "363013fad77503b2ec4ee47610069e55cb7cc03d14ae1cf7a4e82350cb963d9b",
+  "observation_b_sha256": "2328f54da664bef2f9440dfacaf2352a48ce492bb9bafb6d1147469b7fe008ea",
+  "configuration": {
+    "engine": "facemath-observation-4.0",
+    "canvas_size": 192,
+    "eye_span_px": 60,
+    "minimum_source_eye_span_px": 8.0,
+    "huber_delta_ipd": 0.04,
+    "fit_iterations": 8,
+    "uncertainty_draws": 24,
+    "seed": 0,
+    "tolerance_ipd": 0.05,
+    "max_triangle_condition": 100.0,
+    "fb_threshold_px": 1.5,
+    "texture_floor": 2e-05,
+    "sparse_dense_tolerance_ipd": 0.04,
+    "enable_flow": false,
+    "enable_edges": true,
+    "edge_samples": 16,
+    "edge_radius_ipd": 0.05,
+    "edge_gradient_floor": 0.025,
+    "edge_maximum_ambiguity": 0.85
+  },
+  "normalization": {
+    "kind": "geometric_mean_of_registered_interocular_spans",
+    "canonical_pixels": 60.00955547736916
+  },
+  "measurement_profile": [
+    {
+      "name": "geometry.left_eye.rms",
+      "value": 0.012268117077647233,
+      "unit": "registered_eye_span_geomean",
+      "support": 4,
+      "total": 4,
+      "family": "landmarks",
+      "interpretation": "lower residual means closer projected layout under this registration gauge",
+      "interval": [
+        0.010186619554235748,
+        0.018980585456463306
+      ],
+      "interval_kind": "95_percent_conditional_observation_sensitivity_not_accuracy_CI",
+      "exclusion": null
+    },
+    {
+      "name": "geometry.left_eye.within_tolerance",
+      "value": 1.0,
+      "unit": "fraction_of_evaluated_landmarks",
+      "support": 4,
+      "total": 4,
+      "family": "landmarks",
+      "interpretation": "fraction within 0.05 geometric-mean registered eye spans; not identity probability or rarity",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "contour.left_eye.centered_rms",
+      "value": 0.008892908999555197,
+      "unit": "registered_eye_span_geomean",
+      "support": 4,
+      "total": 4,
+      "family": "landmarks",
+      "interpretation": "model-predicted contour mismatch after removing translation only; not independent edge evidence",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "geometry.right_eye.rms",
+      "value": 0.012786490621699557,
+      "unit": "registered_eye_span_geomean",
+      "support": 4,
+      "total": 4,
+      "family": "landmarks",
+      "interpretation": "lower residual means closer projected layout under this registration gauge",
+      "interval": [
+        0.009231980994324413,
+        0.018717738076734006
+      ],
+      "interval_kind": "95_percent_conditional_observation_sensitivity_not_accuracy_CI",
+      "exclusion": null
+    },
+    {
+      "name": "geometry.right_eye.within_tolerance",
+      "value": 1.0,
+      "unit": "fraction_of_evaluated_landmarks",
+      "support": 4,
+      "total": 4,
+      "family": "landmarks",
+      "interpretation": "fraction within 0.05 geometric-mean registered eye spans; not identity probability or rarity",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "contour.right_eye.centered_rms",
+      "value": 0.011535642100510193,
+      "unit": "registered_eye_span_geomean",
+      "support": 4,
+      "total": 4,
+      "family": "landmarks",
+      "interpretation": "model-predicted contour mismatch after removing translation only; not independent edge evidence",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "geometry.nose.rms",
+      "value": 0.021659544231643835,
+      "unit": "registered_eye_span_geomean",
+      "support": 4,
+      "total": 4,
+      "family": "landmarks",
+      "interpretation": "lower residual means closer projected layout under this registration gauge",
+      "interval": [
+        0.019197827648075587,
+        0.027467870838566263
+      ],
+      "interval_kind": "95_percent_conditional_observation_sensitivity_not_accuracy_CI",
+      "exclusion": null
+    },
+    {
+      "name": "geometry.nose.within_tolerance",
+      "value": 1.0,
+      "unit": "fraction_of_evaluated_landmarks",
+      "support": 4,
+      "total": 4,
+      "family": "landmarks",
+      "interpretation": "fraction within 0.05 geometric-mean registered eye spans; not identity probability or rarity",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "contour.nose.centered_rms",
+      "value": 0.017821933965207766,
+      "unit": "registered_eye_span_geomean",
+      "support": 4,
+      "total": 4,
+      "family": "landmarks",
+      "interpretation": "model-predicted contour mismatch after removing translation only; not independent edge evidence",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "geometry.mouth.rms",
+      "value": 0.019888503236844365,
+      "unit": "registered_eye_span_geomean",
+      "support": 4,
+      "total": 4,
+      "family": "landmarks",
+      "interpretation": "lower residual means closer projected layout under this registration gauge",
+      "interval": [
+        0.016121365264339563,
+        0.02478471719704124
+      ],
+      "interval_kind": "95_percent_conditional_observation_sensitivity_not_accuracy_CI",
+      "exclusion": null
+    },
+    {
+      "name": "geometry.mouth.within_tolerance",
+      "value": 1.0,
+      "unit": "fraction_of_evaluated_landmarks",
+      "support": 4,
+      "total": 4,
+      "family": "landmarks",
+      "interpretation": "fraction within 0.05 geometric-mean registered eye spans; not identity probability or rarity",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "contour.mouth.centered_rms",
+      "value": 0.0188054749934066,
+      "unit": "registered_eye_span_geomean",
+      "support": 4,
+      "total": 4,
+      "family": "landmarks",
+      "interpretation": "model-predicted contour mismatch after removing translation only; not independent edge evidence",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "geometry.jaw.rms",
+      "value": 0.011901532383936864,
+      "unit": "registered_eye_span_geomean",
+      "support": 3,
+      "total": 3,
+      "family": "landmarks",
+      "interpretation": "lower residual means closer projected layout under this registration gauge",
+      "interval": [
+        0.008586580225099212,
+        0.018899043703709307
+      ],
+      "interval_kind": "95_percent_conditional_observation_sensitivity_not_accuracy_CI",
+      "exclusion": null
+    },
+    {
+      "name": "geometry.jaw.within_tolerance",
+      "value": 1.0,
+      "unit": "fraction_of_evaluated_landmarks",
+      "support": 3,
+      "total": 3,
+      "family": "landmarks",
+      "interpretation": "fraction within 0.05 geometric-mean registered eye spans; not identity probability or rarity",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "contour.jaw.centered_rms",
+      "value": 0.008705085354917472,
+      "unit": "registered_eye_span_geomean",
+      "support": 3,
+      "total": 3,
+      "family": "landmarks",
+      "interpretation": "model-predicted contour mismatch after removing translation only; not independent edge evidence",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "geometry.central.rms",
+      "value": 0.017166023537603103,
+      "unit": "registered_eye_span_geomean",
+      "support": 16,
+      "total": 16,
+      "family": "landmarks",
+      "interpretation": "lower residual means closer projected layout under this registration gauge",
+      "interval": [
+        0.016717728116230797,
+        0.020556594684124664
+      ],
+      "interval_kind": "95_percent_conditional_observation_sensitivity_not_accuracy_CI",
+      "exclusion": null
+    },
+    {
+      "name": "geometry.central.within_tolerance",
+      "value": 1.0,
+      "unit": "fraction_of_evaluated_landmarks",
+      "support": 16,
+      "total": 16,
+      "family": "landmarks",
+      "interpretation": "fraction within 0.05 geometric-mean registered eye spans; not identity probability or rarity",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "geometry.all.rms",
+      "value": 0.01586306214920388,
+      "unit": "registered_eye_span_geomean",
+      "support": 21,
+      "total": 21,
+      "family": "landmarks",
+      "interpretation": "lower residual means closer projected layout under this registration gauge",
+      "interval": [
+        0.015704934859207712,
+        0.018885256686256756
+      ],
+      "interval_kind": "95_percent_conditional_observation_sensitivity_not_accuracy_CI",
+      "exclusion": null
+    },
+    {
+      "name": "geometry.all.within_tolerance",
+      "value": 1.0,
+      "unit": "fraction_of_evaluated_landmarks",
+      "support": 21,
+      "total": 21,
+      "family": "landmarks",
+      "interpretation": "fraction within 0.05 geometric-mean registered eye spans; not identity probability or rarity",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "geometry.relational_rms",
+      "value": 0.016024052178798164,
+      "unit": "registered_eye_span_geomean",
+      "support": 210,
+      "total": 210,
+      "family": "landmarks",
+      "interpretation": "pairwise distances share landmarks and are not independent observations",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "registration.heldout_eyes.rms",
+      "value": 0.012685521550054176,
+      "unit": "registered_eye_span_geomean",
+      "support": 8,
+      "total": 8,
+      "family": "registration_sensitivity",
+      "interpretation": "evaluation region excluded from alignment anchors; exposes alignment-induced resemblance",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "registration.heldout_eyes.change",
+      "value": 0.00015553673263180197,
+      "unit": "registered_eye_span_geomean",
+      "support": 8,
+      "total": 8,
+      "family": "registration_sensitivity",
+      "interpretation": "signed change from the primary registration residual",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "registration.heldout_nose.rms",
+      "value": 0.023304131204605873,
+      "unit": "registered_eye_span_geomean",
+      "support": 4,
+      "total": 4,
+      "family": "registration_sensitivity",
+      "interpretation": "evaluation region excluded from alignment anchors; exposes alignment-induced resemblance",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "registration.heldout_nose.change",
+      "value": 0.0016445869729620373,
+      "unit": "registered_eye_span_geomean",
+      "support": 4,
+      "total": 4,
+      "family": "registration_sensitivity",
+      "interpretation": "signed change from the primary registration residual",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "registration.heldout_mouth.rms",
+      "value": 0.021349233081023718,
+      "unit": "registered_eye_span_geomean",
+      "support": 4,
+      "total": 4,
+      "family": "registration_sensitivity",
+      "interpretation": "evaluation region excluded from alignment anchors; exposes alignment-induced resemblance",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "registration.heldout_mouth.change",
+      "value": 0.0014607298441793523,
+      "unit": "registered_eye_span_geomean",
+      "support": 4,
+      "total": 4,
+      "family": "registration_sensitivity",
+      "interpretation": "signed change from the primary registration residual",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "registration.heldout_jaw.rms",
+      "value": 0.018393307828567143,
+      "unit": "registered_eye_span_geomean",
+      "support": 3,
+      "total": 3,
+      "family": "registration_sensitivity",
+      "interpretation": "evaluation region excluded from alignment anchors; exposes alignment-induced resemblance",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "registration.heldout_jaw.change",
+      "value": 0.006491775444630279,
+      "unit": "registered_eye_span_geomean",
+      "support": 3,
+      "total": 3,
+      "family": "registration_sensitivity",
+      "interpretation": "signed change from the primary registration residual",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "deformation.face.log_stretch_rms",
+      "value": 0.077883615976335,
+      "unit": "log_stretch",
+      "support": 13724,
+      "total": 13986,
+      "family": "interpolated_anatomy",
+      "interpretation": "piecewise-affine shape-model distortion; not physical strain or independent evidence",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "deformation.left_eye.log_stretch_rms",
+      "value": 0.09195002466044996,
+      "unit": "log_stretch",
+      "support": 209,
+      "total": 209,
+      "family": "interpolated_anatomy",
+      "interpretation": "piecewise-affine shape-model distortion; not physical strain or independent evidence",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "deformation.right_eye.log_stretch_rms",
+      "value": 0.08158637165939381,
+      "unit": "log_stretch",
+      "support": 205,
+      "total": 205,
+      "family": "interpolated_anatomy",
+      "interpretation": "piecewise-affine shape-model distortion; not physical strain or independent evidence",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "deformation.nose.log_stretch_rms",
+      "value": 0.12126067181043838,
+      "unit": "log_stretch",
+      "support": 527,
+      "total": 527,
+      "family": "interpolated_anatomy",
+      "interpretation": "piecewise-affine shape-model distortion; not physical strain or independent evidence",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "deformation.mouth.log_stretch_rms",
+      "value": 0.16952529219979037,
+      "unit": "log_stretch",
+      "support": 301,
+      "total": 301,
+      "family": "interpolated_anatomy",
+      "interpretation": "piecewise-affine shape-model distortion; not physical strain or independent evidence",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "deformation.jaw.log_stretch_rms",
+      "value": 0.04840070628084155,
+      "unit": "log_stretch",
+      "support": 1067,
+      "total": 1125,
+      "family": "interpolated_anatomy",
+      "interpretation": "piecewise-affine shape-model distortion; not physical strain or independent evidence",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "deformation.central.log_stretch_rms",
+      "value": 0.1254013753021745,
+      "unit": "log_stretch",
+      "support": 1242,
+      "total": 1242,
+      "family": "interpolated_anatomy",
+      "interpretation": "piecewise-affine shape-model distortion; not physical strain or independent evidence",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "quality.folded_triangle_fraction",
+      "value": 0.0,
+      "unit": "fraction",
+      "support": 35,
+      "total": 35,
+      "family": "quality",
+      "interpretation": "folded triangles retained in denominator and excluded from interpolation",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    }
+  ],
+  "warnings": [
+    "a:scripted bias fixture; not actual learned face inference",
+    "b:scripted bias fixture; not actual learned face inference"
+  ],
+  "consensus_similarity_percent": null,
+  "population_percentile": null,
+  "edge_diagnostics": {
+    "method": "landmark_guided_normal_gradient_profiles.v1",
+    "interpretation": "image edge support/disagreement, not ground truth; never moves anatomy",
+    "profiles": {
+      "a_left_eye": {
+        "rays": 16,
+        "source_supported": 16,
+        "accepted": 5,
+        "median_absolute_offset_px": 2.1431984099060415
+      },
+      "a_right_eye": {
+        "rays": 16,
+        "source_supported": 16,
+        "accepted": 9,
+        "median_absolute_offset_px": 1.7145587279248333
+      },
+      "a_mouth": {
+        "rays": 16,
+        "source_supported": 16,
+        "accepted": 10,
+        "median_absolute_offset_px": 2.1431984099060415
+      },
+      "a_jaw": {
+        "rays": 16,
+        "source_supported": 16,
+        "accepted": 8,
+        "median_absolute_offset_px": 0.4286396819812084
+      },
+      "b_left_eye": {
+        "rays": 16,
+        "source_supported": 16,
+        "accepted": 9,
+        "median_absolute_offset_px": 1.285919045943625
+      },
+      "b_right_eye": {
+        "rays": 16,
+        "source_supported": 16,
+        "accepted": 7,
+        "median_absolute_offset_px": 2.1431984099060415
+      },
+      "b_mouth": {
+        "rays": 16,
+        "source_supported": 16,
+        "accepted": 11,
+        "median_absolute_offset_px": 1.7145587279248333
+      },
+      "b_jaw": {
+        "rays": 16,
+        "source_supported": 16,
+        "accepted": 12,
+        "median_absolute_offset_px": 1.2859190459436247
+      }
+    },
+    "exclusions": {}
+  },
+  "localization_envelope": {
+    "calibration_sha256": "a0bfece2bda1bea51fdb71d16a4ad9456d69c8bb69c0a6b00c6d96ff22b3e398",
+    "names": [
+      "left_eye_outer",
+      "left_eye_inner",
+      "right_eye_inner",
+      "right_eye_outer",
+      "nose_tip",
+      "mouth_left",
+      "mouth_right",
+      "chin"
+    ],
+    "bound_method": "ellipse_support_outer_bounds_with_finite_angle_correction_and_radial_intersection",
+    "angular_directions": 128,
+    "query_groups": [
+      "independent_draw_060",
+      "independent_draw_061"
+    ],
+    "query_lineages": [
+      [
+        "render_25091_60"
+      ],
+      [
+        "render_25091_61"
+      ]
+    ],
+    "domain": "schematic-ocular-bias-and-unseen-shift-controls-v5-NOT-HUMAN",
+    "nominal_per_source_coverage": 0.9,
+    "pair_union_bound": 0.8,
+    "scope": "synthetic_only",
+    "gauge": "observed_transforms_and_observed_normalizer_held_fixed; NOT re-fitted_true_shape_geometry",
+    "interpretation": "conservative geometric gap bounds from calibrated reference ellipses; full covariance pushforward with fixed observed gauge; no extrapolation to unannotated vertices",
+    "rows": [
+      {
+        "name": "left_eye_outer",
+        "observed_gap_ipd": 0.0037686085143283626,
+        "lower_ipd": 0.0,
+        "upper_ipd": 0.022141982831490683,
+        "status": "within_tolerance_under_envelope",
+        "model_centered_gap_ipd": 0.003832157270697097
+      },
+      {
+        "name": "left_eye_inner",
+        "observed_gap_ipd": 0.009661857024106383,
+        "lower_ipd": 0.0,
+        "upper_ipd": 0.028094195036793584,
+        "status": "within_tolerance_under_envelope",
+        "model_centered_gap_ipd": 0.009812352663641768
+      },
+      {
+        "name": "right_eye_inner",
+        "observed_gap_ipd": 0.01561655064490605,
+        "lower_ipd": 0.0,
+        "upper_ipd": 0.03382549366166528,
+        "status": "within_tolerance_under_envelope",
+        "model_centered_gap_ipd": 0.015552691873384112
+      },
+      {
+        "name": "right_eye_outer",
+        "observed_gap_ipd": 0.009752473950182248,
+        "lower_ipd": 0.0,
+        "upper_ipd": 0.02816131760682452,
+        "status": "within_tolerance_under_envelope",
+        "model_centered_gap_ipd": 0.009835496534582336
+      },
+      {
+        "name": "nose_tip",
+        "observed_gap_ipd": 0.008812754087174558,
+        "lower_ipd": 0.0,
+        "upper_ipd": 0.0273775292601557,
+        "status": "within_tolerance_under_envelope",
+        "model_centered_gap_ipd": 0.009088666548964562
+      },
+      {
+        "name": "mouth_left",
+        "observed_gap_ipd": 0.005415189473234613,
+        "lower_ipd": 0.0,
+        "upper_ipd": 0.023757543923635747,
+        "status": "within_tolerance_under_envelope",
+        "model_centered_gap_ipd": 0.0054580502398647
+      },
+      {
+        "name": "mouth_right",
+        "observed_gap_ipd": 0.026732915930398594,
+        "lower_ipd": 0.008638527471395041,
+        "upper_ipd": 0.04526242849515993,
+        "status": "within_tolerance_under_envelope",
+        "model_centered_gap_ipd": 0.026947591230922902
+      },
+      {
+        "name": "chin",
+        "observed_gap_ipd": 0.015213042383812835,
+        "lower_ipd": 0.0,
+        "upper_ipd": 0.03310967129451163,
+        "status": "within_tolerance_under_envelope",
+        "model_centered_gap_ipd": 0.014802941925327417
+      }
+    ],
+    "bias_sha256": "e507b7fcfd8bf44c12d71ea146d0658fc6817803ba87e01d38099fc0fd0dbc1a",
+    "raw_geometry_changed": false,
+    "centering": "reference ellipse centers are prediction minus development-only bias; displayed geometry remains raw"
+  },
+  "limits": [
+    "2D projected geometry, not identity recognition or proof of 3D shape",
+    "model contours and interpolated fields derive from the same landmarks; not independent evidence",
+    "sensitivity intervals are conditional perturbation intervals, not measured localization-accuracy confidence intervals",
+    "flow consistency tests image matching, not anatomical correctness across people",
+    "within-tolerance fractions have an explicit threshold and denominator; they are not resemblance probabilities",
+    "no population rarity without an exact-recipe held-out reference cohort",
+    "the report contains new tool-side evidence, not inaccessible historical model activations"
+  ]
+}
