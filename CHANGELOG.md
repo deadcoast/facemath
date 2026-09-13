@@ -1,3 +1,5 @@
+# facemath: CHANGELOG
+
 ## 0.5.0 — Wave 05
 
 - Prospective source/reference enrollment lock, frozen timeout/runtime/estimator, predeclared strata and exclusions.
@@ -9,7 +11,7 @@
 - Full study console, raw case filters/CSV/receipt links, raw-array export and exact captured-observation replay.
 - Existing live inference gate is NOT marked passed; all new numerical demonstration data are explicit synthetic controls.
 
-# Wave 04 · v0.4.0
+## Wave 04 · v0.4.0
 
 - Independent eight-point references, strict source binding and prediction-blind annotation workbench with zoom, explicit visibility, rater isolation and export.
 - Source-coordinate localization evaluation, retained failures, declared group/lineage split checks, exact unconditional AUC and reference-aware denominators.
@@ -22,7 +24,7 @@
 
 ---
 
-# Changelog
+## Changelog
 
 ## 0.3.0 — Observed correspondence / Wave 3
 
