@@ -75,7 +75,9 @@ def finalize_session(session_path: str | Path, destination: str | Path) -> Path:
         with journal.step("study.frozen_bias_and_heldout_qualification", {"bias_mode": spec["bias_mode"]}) as step:
             report, arrays, calibration = qualify(study, raw, status)
             step.update(report_sha256=report["content_sha256"], calibration_sha256=calibration.digest,
-                        finite_calibration=calibration.quantile is not None, raw_coordinates_changed=False)
+                        finite_calibration=(any(r.quantile is not None for r in calibration.radii) if hasattr(calibration, "radii") else calibration.quantile is not None),
+                        radius_mode="per_acquisition_category" if hasattr(calibration, "radii") else "pooled",
+                        raw_coordinates_changed=False)
         write_json_new(temp / "qualification.json", report)
         write_json_new(temp / "localization_calibration.json", calibration.to_dict())
         np.savez_compressed(temp / "arrays.npz", **arrays)

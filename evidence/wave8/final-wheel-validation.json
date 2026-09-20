@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/facemath_wave_08/scripts/check_wheel.py",
+    "/mnt/data/facemath_wave_08/dist/facemath-0.8.0-py3-none-any.whl",
+    "--tests",
+    "/mnt/data/facemath_wave_08/tests",
+    "--bundle",
+    "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification",
+    "--pair-bundle",
+    "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px",
+    "--out",
+    "/mnt/data/facemath_wave_08/evidence/wave8/wheel-check"
+  ],
+  "cwd": "/mnt/data/facemath_wave_08",
+  "started_utc": "2026-09-20T07:07:09.724359+00:00",
+  "finished_utc": "2026-09-20T07:08:29.048340+00:00",
+  "returncode": 0,
+  "stdout": "Processing /mnt/data/facemath_wave_08/dist/facemath-0.8.0-py3-none-any.whl\nInstalling collected packages: facemath\nSuccessfully installed facemath-0.8.0\n{\"file\": \"/tmp/facemath-installed-v3hxzzlv/installed/facemath/__init__.py\", \"version\": \"0.8.0\", \"code_sha256\": \"94c9b9484f05877d59f2f5e2a25be508a9ecb0aa3f8d9df6f6625d570077e023\"}\n........................................................................ [ 10%]\n........................................................................ [ 20%]\ns....................................................................... [ 31%]\n........................................................................ [ 41%]\n........................................................................ [ 52%]\n........................................................................ [ 62%]\n........................................................................ [ 72%]\n........................................................................ [ 83%]\n........................................................................ [ 93%]\n............................................                             [100%]\n691 passed, 1 skipped in 67.59s (0:01:07)\n{\n  \"replay_verified\": true,\n  \"bundle\": \"/mnt/data/facemath_wave_08/evidence/wave8/wheel-check/replayed\",\n  \"comparison\": \"exact qualification/calibration JSON and numerical array equality\",\n  \"live_inference_reexecuted\": false\n}\n{\n  \"replay_verified\": true,\n  \"source_bundle\": \"/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px\",\n  \"new_bundle\": \"/mnt/data/facemath_wave_08/evidence/wave8/wheel-check/pair-replayed\",\n  \"numerical_tolerance\": \"arrays atol=1e-9, rtol=1e-7; measurements atol=1e-10, rtol=1e-8\"\n}\n",
+  "stderr": "WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+}

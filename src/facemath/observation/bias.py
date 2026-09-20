@@ -227,6 +227,9 @@ class BiasCalibration:
     def reference_kind(self) -> str:
         return self.residual.reference_kind
 
+    def source_quantile(self, observation: Observation) -> float | None:
+        return self.quantile
+
     def source_covariance(self, observation: Observation) -> np.ndarray:
         return self.residual.source_covariance(observation)
 
@@ -334,7 +337,7 @@ def assess_bias_pair(state: Any, calibration: BiasCalibration, **kwargs: Any) ->
     canonical = np.stack(canonical)
     centers = base.canonical_points - canonical
     delta = (centers[0] - centers[1]) / state.normalization_span_px
-    directional = ellipse_gap_bounds(delta, base.directional.normalized_covariances, calibration.quantile)
+    directional = ellipse_gap_bounds(delta, base.directional.normalized_covariances, base.source_quantiles)
     lo, hi = directional.lower_ipd.copy(), directional.upper_ipd.copy()
     lo[~base.supported], hi[~base.supported] = 0, 0
     revised = replace(base, lower_ipd=lo, upper_ipd=hi, directional=directional)
@@ -342,6 +345,12 @@ def assess_bias_pair(state: Any, calibration: BiasCalibration, **kwargs: Any) ->
 
 
 def load_localization_calibration(obj: Mapping[str, Any]) -> LocalizationCalibration | BiasCalibration:
+    if obj.get("format") == "facemath.stratified_joint_calibration.v8":
+        from .stratified import StratifiedJointCalibration
+        return StratifiedJointCalibration.from_dict(obj)
+    if obj.get("format") == "facemath.source_bound_stratified_calibration.v8":
+        from .stratified import BoundStratifiedCalibration
+        return BoundStratifiedCalibration.from_dict(obj)
     if obj.get("format") == "facemath.localization_calibration.v7":
         from .joint import JointCalibration
         return JointCalibration.from_dict(obj)

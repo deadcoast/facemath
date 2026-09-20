@@ -1,0 +1,1178 @@
+{
+  "format": "facemath.release_validation.v8",
+  "version": "0.8.0",
+  "generated_utc": "2026-09-20T07:10:37.400279+00:00",
+  "scope": "executed source and independently installed-wheel tests/replay; fresh-final-ZIP checks recorded in external release JSON",
+  "environment": {
+    "format": "facemath.native_environment_check.v8",
+    "utc": "2026-09-20T07:05:20.409696+00:00",
+    "environment": {
+      "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+      "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+      "packages": {
+        "numpy": "2.3.5",
+        "scipy": "1.17.0",
+        "opencv-python": "4.13.0.92",
+        "mediapipe": null,
+        "pytest": "9.0.2"
+      },
+      "numeric_environment": {
+        "numpy": "2.3.5",
+        "scipy": "1.17.0",
+        "opencv": "4.13.0"
+      },
+      "engine_code_sha256": "94c9b9484f05877d59f2f5e2a25be508a9ecb0aa3f8d9df6f6625d570077e023"
+    },
+    "mediapipe_installed": false,
+    "network_attempts": [
+      {
+        "argv": [
+          "/opt/pyvenv/bin/python",
+          "-c",
+          "import socket; print(socket.getaddrinfo('pypi.org',443))"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import socket; print(socket.getaddrinfo('pypi.org',443))\n                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.13/socket.py\", line 977, in getaddrinfo\n    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):\n               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsocket.gaierror: [Errno -3] Temporary failure in name resolution\n",
+        "started_utc": "2026-09-20T07:05:20.423793+00:00",
+        "finished_utc": "2026-09-20T07:05:21.149337+00:00"
+      },
+      {
+        "argv": [
+          "/opt/pyvenv/bin/python",
+          "-c",
+          "import socket; print(socket.getaddrinfo('storage.googleapis.com',443))"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import socket; print(socket.getaddrinfo('storage.googleapis.com',443))\n                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.13/socket.py\", line 977, in getaddrinfo\n    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):\n               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsocket.gaierror: [Errno -3] Temporary failure in name resolution\n",
+        "started_utc": "2026-09-20T07:05:21.149364+00:00",
+        "finished_utc": "2026-09-20T07:05:26.748490+00:00"
+      },
+      {
+        "argv": [
+          "/opt/pyvenv/bin/python",
+          "-c",
+          "import socket; print(socket.getaddrinfo('raw.githubusercontent.com',443))"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import socket; print(socket.getaddrinfo('raw.githubusercontent.com',443))\n                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.13/socket.py\", line 977, in getaddrinfo\n    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):\n               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsocket.gaierror: [Errno -3] Temporary failure in name resolution\n",
+        "started_utc": "2026-09-20T07:05:26.748517+00:00",
+        "finished_utc": "2026-09-20T07:05:27.369807+00:00"
+      }
+    ],
+    "live_inference_executed": false,
+    "attempted_tool_download": {
+      "mechanism": "container.download",
+      "url": "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task",
+      "tool_result": "ERROR: download failed",
+      "provenance": "description of actual visible tool response earlier in this turn; not a Python-generated download receipt"
+    }
+  },
+  "source_tests": {
+    "total": 692,
+    "passed": 691,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0,
+    "skip_reasons": [
+      "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+    ]
+  },
+  "installed_wheel_tests": {
+    "total": 692,
+    "passed": 691,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0,
+    "skip_reasons": [
+      "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+    ]
+  },
+  "distribution_equivalence": {
+    "package_python_files": 70,
+    "source_equals_wheel": true,
+    "source_hashes": {
+      "__init__.py": "1be8500a3b05b4847d56c2b97dccd8d827c2148abad1596950ee910f18f9158f",
+      "__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+      "calibration.py": "e250ddccf702f848951a629759f98d1e812052e4a0e1dd693c8545958ff5eedd",
+      "cli.py": "298ef549aacdcdb742e6c075aa3d53ddb477aab2041d16adcded4fc7880cc62d",
+      "core.py": "b8e14bd8b5eeaee1b15390d7c31b82c8c4520eac5347bfbc811eea34c4acb576",
+      "correspondence.py": "29938b08b495653327675e58c2e7d359103cb733b140c47539cb9d91d816f80f",
+      "coverage.py": "ba1786739debb0efffadd5d1f3df69e5f2aaa9f2e793c1e6ffc549655a220346",
+      "deformation.py": "4368188fb9fd0dbb1f3238549d3fbf0fbac9ddaf3b6dfb3dda19a59226e399bf",
+      "fusion.py": "249a7b9ea88433ccfea3378254f13d856cb4896d8249d9caada2009b9fb764e0",
+      "geometry.py": "22dfa9c9d4745ad517b947d0595a51cba1b2d6ddfbb6369a6b2e5ca3b04155e9",
+      "information.py": "7aab4e1ddba064fe05463de9b790473be094b2ca282c64a346402aaac1f4fc59",
+      "legacy_cli.py": "4ea0dd14ad4d2fed4605eed8df62cd57cf4edc43febdafe0ac044f29af07b148",
+      "observation/__init__.py": "fdfa47265a68fb008270bdac62f381efae1844c084b05452a824f3d0c71f6ab5",
+      "observation/anatomy.py": "e4341cab848edc4236ab8fbbcd76783e6cb66bfcb69ece4df75bedb201d1ba31",
+      "observation/annotation_ui.py": "737db83d5e611bcb4a3e7b97d62b3081a8b0c173854e30d347a3b2b8e96ea1e8",
+      "observation/artifacts.py": "5ae84ef262b36d7966b02b5e86d740404cb52d9e05cebc1859996eb5052ab823",
+      "observation/bias.py": "9b4d035776bd109c7e4714cb94c20c2a2183993eb1e468d8b096eae26e3422a8",
+      "observation/canonical.py": "41295180185e7015043ecf660dc0e94711570a1e78b1c9713a89a07fa3f6aea8",
+      "observation/capabilities.py": "57390c3270860b2a2f99dd045bfdcc0a381e2aed32fcdf45bbb5dc715c77beff",
+      "observation/cohort.py": "6b5eb89c591a13336057ce590586263339078d13292862092f50e25ee61eeb7a",
+      "observation/contracts.py": "c1c6458bbd0e701fcfa6f1e9f48fed4b3e760cb2c2c4586565960e0b33042b84",
+      "observation/edge_support.py": "740e8fb92b508a82f95e72a6373ce3a16bd0fd588e7a6989dcce99459a5b6b22",
+      "observation/error_model.py": "06d3ba178fff14d173cdeef04f95e4db2cfec78c890b4694ae552d8771ac20ee",
+      "observation/field.py": "3bb389f78f4fd3a199cb0cfc8e789a54375f714035489abbe3f9712b9b3645c0",
+      "observation/instrument.py": "91d45699c4c6a4f06c346c8fd310527c327d375b584499ab2b0729b780ccdcbc",
+      "observation/intrinsic.py": "3817b75b41613a79ce8c0685d2b0bdfe2a0ecf90db9f95651d994af95248463a",
+      "observation/intrinsic_lab.py": "fe2730b47eded66ccde2ac61159aac2333d0af905ff9544da27a46e8632574be",
+      "observation/intrinsic_report.py": "08e54fd013959102abe953fc07a1108fd01346023b5fec1f9ad699cdf9b48e63",
+      "observation/intrinsic_sets.py": "82623604f4cdddf963a9eeb5ac5e35ee6f116e147f52c9e9e4207dd384ca0d28",
+      "observation/joint.py": "d033c840cfe024c3705ade7d71297fe769de79bc8c4f14211f545caa0d9c0b72",
+      "observation/joint_lab.py": "2b5d18a9d2bb687847799ad282f64b4716e138fc1c19899ab83ce2dcfc11ce43",
+      "observation/joint_report.py": "5781a06e418a9bdb1f9f8c7e7bf72e1afdd16082580895ab646553b420dac7e6",
+      "observation/journal.py": "8bdac0f5499502b13448968dd5c2d74d8677b898c3e5e4c675c1d774d5ec2dd9",
+      "observation/lab.py": "211e4e768a68885c052f3bee1b53c95edb2b8dfd00669ca8870f41505578b5ce",
+      "observation/measure.py": "b27815eab351fe4f41ca23b2e9874de240858da33b2364893622f526b84c3b6f",
+      "observation/provider.py": "c7f8843fcd7b26f2f6272553e91f38ef7b1ab78ccaf9ae9c3b3f540a42ffaaf6",
+      "observation/qualification.py": "c91cdc0118054617356e33941d686e7ef10992c0799b7d24f9ecaff9f6f7715c",
+      "observation/reference.py": "1cc15c84747433495ef9058ca735f85265423700f0b413aa96a65c6affca9780",
+      "observation/sequence_guard.py": "8c633f71a609fb81a2c75569451cbf0026aa4d68007f4b51ccd542cc98b2303c",
+      "observation/stratified.py": "eba488766ddf08981287c0c8b9a4220d01c940799495e81c756b1cb6744c2367",
+      "observation/stratified_lab.py": "9d6b2d005d1dbd7fbe9a88850ddfe3602dcef2fe1787c6e32e159ec697a81605",
+      "observation/stratified_report.py": "6c15cd0b72ca70f73a2225fae5ecc6111fae3c8f6d1bb12dcbe212a2edee78f3",
+      "observation/study.py": "ae526f310ecc2c5555e73535c270528c047fe299fafb0bdd20507dedcfcba4c7",
+      "observation/study_io.py": "2d4360b4b1fc4a3d1b975cf3a8ca9e6c0cf7cb7546cffdd8e3f3f8802e493539",
+      "observation/study_lab.py": "2361217b14cf6eeca3736b1b40653c846dd458ce06ce5de35371ac32fe4db3b4",
+      "observation/study_report.py": "3ecd8fec467db9ea798965758d5ec0facf330ece592c35f49d755f0f2fdbcdfe",
+      "observation/study_runner.py": "e8e848a7bf6a1103b2a6b319c08d8e16a0899b3520a28844575a212dfacba47a",
+      "observation/validation.py": "741a5eb339540022d369f1a6f753f4d8115b52cd15b796004e402fc0b449d9cf",
+      "observation/validation_io.py": "baab032659520ecc509005d49c6a9585cafb43e8dd5a737647f2dfe1599a3d48",
+      "observation/validation_lab.py": "9d39f2c3d820e6f27a93544b301f68e5da845a266a585bd847a1843b01ec98d4",
+      "observation/worker.py": "aaf98bdc7dd368fd02e5b45cd0910f9f150760f52414de46aaa7788a62c18d11",
+      "perturbation.py": "ff11412a5340cdbd633c87992ab450cf5fc2a66d807e0c09ffe87799a13d3414",
+      "pipeline.py": "9df6314135c2ef2d0be507d32b477a8204b4c96ecc28625503afa36a7c86739e",
+      "quality.py": "41050e7bc785c9c47d804840b291aa4dd2727f5c876807fd7308094b4c341baf",
+      "regions.py": "522fa6163c3f1f4c5854c89a89908adcfdb436dcb097b96bef6337e08493d45b",
+      "registration.py": "7f3d33c2cfea5e4166b97567caf97a0a193e9846d98ba1a9719240681959e53c",
+      "report.py": "46512b78efd1f0bb33a26c86cd2a0a6d3311dc2b59b537bc4986c8965b4927fe",
+      "representation.py": "e633159df99ea731a823affc32412faa550bdbd2aa7fc47686d9b0ccff7665b2",
+      "sequence.py": "46bfe47f421ea6116293a5f9be015b3fd8f2181d1423b46bd284b001ec8ee8ac",
+      "shape.py": "9a6e516dae972478993d0060245e15c6819e3ee2aab51f04da9d890ccf95d9a5",
+      "signal.py": "46cd755b6bffd2e7bd45ad06d31f46b49842499aed419995172aca5fabf89ea5",
+      "state.py": "a45de992b20f89696c8b535c24f5319421e1a058065215b65dac78d4408f0e06",
+      "statistics.py": "8fbcd6b6b8efc8c25be950e7d730fd9d7ee477a0706be530c78628fc407a40ae",
+      "surface3d.py": "c774637b7b05cf17658c3672c1edd750ef76ad2af75eafb549728bffd9c3a50c",
+      "symmetry.py": "c861830e9186f9c6d943f632b0798fd19ee8f7e7d7426f4acfa8beb438d5f15b",
+      "temporal.py": "2eb99baa70601c755a741ace79a8fa54e68027082ccf4dcfe7ae786b0dc4264c",
+      "topology.py": "44e5fad29ad7b38702a555e7fbf69d1739b4577e597a30b030c6232ef8f857e2",
+      "torch_attribution.py": "ece4814667dbb8bfb839548f903028bfbd2a3b5bd1d834b30d17ea921ac757cf",
+      "video.py": "b93ea4008e45a577981b39a9e06d5789be5dfbf569c9bfaf2100bbfbc4860249",
+      "wave2.py": "c8a970f2d14beb17249ee77d8b5c1982fbdf3a618cb05908f9a9fb1e1d62cfa9"
+    },
+    "wheel_sha256": "a7db36f60569ee7574e510b85481ace006a9be11f4962e7570783a1e571af513",
+    "installed_import": {
+      "file": "/tmp/facemath-installed-v3hxzzlv/installed/facemath/__init__.py",
+      "version": "0.8.0",
+      "code_sha256": "94c9b9484f05877d59f2f5e2a25be508a9ecb0aa3f8d9df6f6625d570077e023"
+    }
+  },
+  "lineage": {
+    "parent_archive": "facemath_wave_07.zip",
+    "parent_archive_sha256": "5ad333a51cdc60addce78f7b96e01b42c13d7153a9291b020bfa2733d2bcd2d5",
+    "new_modules": [
+      "observation/stratified.py",
+      "observation/stratified_lab.py",
+      "observation/stratified_report.py"
+    ],
+    "modified_modules": [
+      "__init__.py",
+      "cli.py",
+      "observation/artifacts.py",
+      "observation/bias.py",
+      "observation/error_model.py",
+      "observation/instrument.py",
+      "observation/intrinsic.py",
+      "observation/intrinsic_report.py",
+      "observation/joint_report.py",
+      "observation/qualification.py",
+      "observation/study.py",
+      "observation/study_io.py",
+      "observation/study_report.py"
+    ],
+    "unchanged_modules": [
+      "__main__.py",
+      "calibration.py",
+      "core.py",
+      "correspondence.py",
+      "coverage.py",
+      "deformation.py",
+      "fusion.py",
+      "geometry.py",
+      "information.py",
+      "legacy_cli.py",
+      "observation/__init__.py",
+      "observation/anatomy.py",
+      "observation/annotation_ui.py",
+      "observation/canonical.py",
+      "observation/capabilities.py",
+      "observation/cohort.py",
+      "observation/contracts.py",
+      "observation/edge_support.py",
+      "observation/field.py",
+      "observation/intrinsic_lab.py",
+      "observation/intrinsic_sets.py",
+      "observation/joint.py",
+      "observation/joint_lab.py",
+      "observation/journal.py",
+      "observation/lab.py",
+      "observation/measure.py",
+      "observation/provider.py",
+      "observation/reference.py",
+      "observation/sequence_guard.py",
+      "observation/study_lab.py",
+      "observation/study_runner.py",
+      "observation/validation.py",
+      "observation/validation_io.py",
+      "observation/validation_lab.py",
+      "observation/worker.py",
+      "perturbation.py",
+      "pipeline.py",
+      "quality.py",
+      "regions.py",
+      "registration.py",
+      "report.py",
+      "representation.py",
+      "sequence.py",
+      "shape.py",
+      "signal.py",
+      "state.py",
+      "statistics.py",
+      "surface3d.py",
+      "symmetry.py",
+      "temporal.py",
+      "topology.py",
+      "torch_attribution.py",
+      "video.py",
+      "wave2.py"
+    ],
+    "removed_modules": [],
+    "inherited_tests_modified": [
+      "test_wave3_cli.py"
+    ],
+    "test_change": "only CLI release-version assertions; all inherited numerical assertions retained",
+    "parent_python_hashes": {
+      "__init__.py": "2dfbf474a6aa8a44c7a6b15b9e02df1d468c4a554cb196aff60bc5b1d5a888aa",
+      "__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+      "calibration.py": "e250ddccf702f848951a629759f98d1e812052e4a0e1dd693c8545958ff5eedd",
+      "cli.py": "ed6325f4bd1d87a5d8423ad0c5240547405e7c7b21d33d6b97c2ae85da7795fc",
+      "core.py": "b8e14bd8b5eeaee1b15390d7c31b82c8c4520eac5347bfbc811eea34c4acb576",
+      "correspondence.py": "29938b08b495653327675e58c2e7d359103cb733b140c47539cb9d91d816f80f",
+      "coverage.py": "ba1786739debb0efffadd5d1f3df69e5f2aaa9f2e793c1e6ffc549655a220346",
+      "deformation.py": "4368188fb9fd0dbb1f3238549d3fbf0fbac9ddaf3b6dfb3dda19a59226e399bf",
+      "fusion.py": "249a7b9ea88433ccfea3378254f13d856cb4896d8249d9caada2009b9fb764e0",
+      "geometry.py": "22dfa9c9d4745ad517b947d0595a51cba1b2d6ddfbb6369a6b2e5ca3b04155e9",
+      "information.py": "7aab4e1ddba064fe05463de9b790473be094b2ca282c64a346402aaac1f4fc59",
+      "legacy_cli.py": "4ea0dd14ad4d2fed4605eed8df62cd57cf4edc43febdafe0ac044f29af07b148",
+      "observation/__init__.py": "fdfa47265a68fb008270bdac62f381efae1844c084b05452a824f3d0c71f6ab5",
+      "observation/anatomy.py": "e4341cab848edc4236ab8fbbcd76783e6cb66bfcb69ece4df75bedb201d1ba31",
+      "observation/annotation_ui.py": "737db83d5e611bcb4a3e7b97d62b3081a8b0c173854e30d347a3b2b8e96ea1e8",
+      "observation/artifacts.py": "e54dfd053add3f26576ea5ce9d3779b01f83f223faac9069288208acfb75bec2",
+      "observation/bias.py": "9ac5b9aab79aecc5bc85adc58e358326ce83bac65dbf27eb90f8125ef5632526",
+      "observation/canonical.py": "41295180185e7015043ecf660dc0e94711570a1e78b1c9713a89a07fa3f6aea8",
+      "observation/capabilities.py": "57390c3270860b2a2f99dd045bfdcc0a381e2aed32fcdf45bbb5dc715c77beff",
+      "observation/cohort.py": "6b5eb89c591a13336057ce590586263339078d13292862092f50e25ee61eeb7a",
+      "observation/contracts.py": "c1c6458bbd0e701fcfa6f1e9f48fed4b3e760cb2c2c4586565960e0b33042b84",
+      "observation/edge_support.py": "740e8fb92b508a82f95e72a6373ce3a16bd0fd588e7a6989dcce99459a5b6b22",
+      "observation/error_model.py": "04648d26ec0be7e861327240c253de0c37b9da35aadc2d32a5c0594ac4db8e06",
+      "observation/field.py": "3bb389f78f4fd3a199cb0cfc8e789a54375f714035489abbe3f9712b9b3645c0",
+      "observation/instrument.py": "70324434f09525e526b8e6f8435a930025806f7ec37ad9032a28764496c60391",
+      "observation/intrinsic.py": "4654c13f1317c7cc5f9af99db26bb38805dadd6eeea3fe891b01bbf2982d799a",
+      "observation/intrinsic_lab.py": "fe2730b47eded66ccde2ac61159aac2333d0af905ff9544da27a46e8632574be",
+      "observation/intrinsic_report.py": "59f226a9235b1b2ab724641a84768655a0cd8245be122d95fc3c00fa090351a2",
+      "observation/intrinsic_sets.py": "82623604f4cdddf963a9eeb5ac5e35ee6f116e147f52c9e9e4207dd384ca0d28",
+      "observation/joint.py": "d033c840cfe024c3705ade7d71297fe769de79bc8c4f14211f545caa0d9c0b72",
+      "observation/joint_lab.py": "2b5d18a9d2bb687847799ad282f64b4716e138fc1c19899ab83ce2dcfc11ce43",
+      "observation/joint_report.py": "1febf92ddec011ff38ff6439f15a2fc5616a11d0e930f4a3949a9ef5eb7d3f8a",
+      "observation/journal.py": "8bdac0f5499502b13448968dd5c2d74d8677b898c3e5e4c675c1d774d5ec2dd9",
+      "observation/lab.py": "211e4e768a68885c052f3bee1b53c95edb2b8dfd00669ca8870f41505578b5ce",
+      "observation/measure.py": "b27815eab351fe4f41ca23b2e9874de240858da33b2364893622f526b84c3b6f",
+      "observation/provider.py": "c7f8843fcd7b26f2f6272553e91f38ef7b1ab78ccaf9ae9c3b3f540a42ffaaf6",
+      "observation/qualification.py": "5a90bdbbb13675bb0192bdd1d7f80532c34b86e5967d8fc156b5903b433f367c",
+      "observation/reference.py": "1cc15c84747433495ef9058ca735f85265423700f0b413aa96a65c6affca9780",
+      "observation/sequence_guard.py": "8c633f71a609fb81a2c75569451cbf0026aa4d68007f4b51ccd542cc98b2303c",
+      "observation/study.py": "b71b75ac405e389ce88bb94125ee977fda6079b8fece867fdcdded7742e8b2a4",
+      "observation/study_io.py": "c900cb210a0e20cc7b1579b3186ecb6127b5bddc27b841a47426a0d82d9c084e",
+      "observation/study_lab.py": "2361217b14cf6eeca3736b1b40653c846dd458ce06ce5de35371ac32fe4db3b4",
+      "observation/study_report.py": "d1dd3d03b9c3d7fb3e2fed2cbfd7d1a04c21894b663f457a3232c74a0a2ea764",
+      "observation/study_runner.py": "e8e848a7bf6a1103b2a6b319c08d8e16a0899b3520a28844575a212dfacba47a",
+      "observation/validation.py": "741a5eb339540022d369f1a6f753f4d8115b52cd15b796004e402fc0b449d9cf",
+      "observation/validation_io.py": "baab032659520ecc509005d49c6a9585cafb43e8dd5a737647f2dfe1599a3d48",
+      "observation/validation_lab.py": "9d39f2c3d820e6f27a93544b301f68e5da845a266a585bd847a1843b01ec98d4",
+      "observation/worker.py": "aaf98bdc7dd368fd02e5b45cd0910f9f150760f52414de46aaa7788a62c18d11",
+      "perturbation.py": "ff11412a5340cdbd633c87992ab450cf5fc2a66d807e0c09ffe87799a13d3414",
+      "pipeline.py": "9df6314135c2ef2d0be507d32b477a8204b4c96ecc28625503afa36a7c86739e",
+      "quality.py": "41050e7bc785c9c47d804840b291aa4dd2727f5c876807fd7308094b4c341baf",
+      "regions.py": "522fa6163c3f1f4c5854c89a89908adcfdb436dcb097b96bef6337e08493d45b",
+      "registration.py": "7f3d33c2cfea5e4166b97567caf97a0a193e9846d98ba1a9719240681959e53c",
+      "report.py": "46512b78efd1f0bb33a26c86cd2a0a6d3311dc2b59b537bc4986c8965b4927fe",
+      "representation.py": "e633159df99ea731a823affc32412faa550bdbd2aa7fc47686d9b0ccff7665b2",
+      "sequence.py": "46bfe47f421ea6116293a5f9be015b3fd8f2181d1423b46bd284b001ec8ee8ac",
+      "shape.py": "9a6e516dae972478993d0060245e15c6819e3ee2aab51f04da9d890ccf95d9a5",
+      "signal.py": "46cd755b6bffd2e7bd45ad06d31f46b49842499aed419995172aca5fabf89ea5",
+      "state.py": "a45de992b20f89696c8b535c24f5319421e1a058065215b65dac78d4408f0e06",
+      "statistics.py": "8fbcd6b6b8efc8c25be950e7d730fd9d7ee477a0706be530c78628fc407a40ae",
+      "surface3d.py": "c774637b7b05cf17658c3672c1edd750ef76ad2af75eafb549728bffd9c3a50c",
+      "symmetry.py": "c861830e9186f9c6d943f632b0798fd19ee8f7e7d7426f4acfa8beb438d5f15b",
+      "temporal.py": "2eb99baa70601c755a741ace79a8fa54e68027082ccf4dcfe7ae786b0dc4264c",
+      "topology.py": "44e5fad29ad7b38702a555e7fbf69d1739b4577e597a30b030c6232ef8f857e2",
+      "torch_attribution.py": "ece4814667dbb8bfb839548f903028bfbd2a3b5bd1d834b30d17ea921ac757cf",
+      "video.py": "b93ea4008e45a577981b39a9e06d5789be5dfbf569c9bfaf2100bbfbc4860249",
+      "wave2.py": "c8a970f2d14beb17249ee77d8b5c1982fbdf3a618cb05908f9a9fb1e1d62cfa9"
+    }
+  },
+  "executed_commands": {
+    "final-wheel-validation": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_08/scripts/check_wheel.py",
+        "/mnt/data/facemath_wave_08/dist/facemath-0.8.0-py3-none-any.whl",
+        "--tests",
+        "/mnt/data/facemath_wave_08/tests",
+        "--bundle",
+        "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification",
+        "--pair-bundle",
+        "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px",
+        "--out",
+        "/mnt/data/facemath_wave_08/evidence/wave8/wheel-check"
+      ],
+      "cwd": "/mnt/data/facemath_wave_08",
+      "started_utc": "2026-09-20T07:07:09.724359+00:00",
+      "finished_utc": "2026-09-20T07:08:29.048340+00:00",
+      "returncode": 0,
+      "stdout": "Processing /mnt/data/facemath_wave_08/dist/facemath-0.8.0-py3-none-any.whl\nInstalling collected packages: facemath\nSuccessfully installed facemath-0.8.0\n{\"file\": \"/tmp/facemath-installed-v3hxzzlv/installed/facemath/__init__.py\", \"version\": \"0.8.0\", \"code_sha256\": \"94c9b9484f05877d59f2f5e2a25be508a9ecb0aa3f8d9df6f6625d570077e023\"}\n........................................................................ [ 10%]\n........................................................................ [ 20%]\ns....................................................................... [ 31%]\n........................................................................ [ 41%]\n........................................................................ [ 52%]\n........................................................................ [ 62%]\n........................................................................ [ 72%]\n........................................................................ [ 83%]\n........................................................................ [ 93%]\n............................................                             [100%]\n691 passed, 1 skipped in 67.59s (0:01:07)\n{\n  \"replay_verified\": true,\n  \"bundle\": \"/mnt/data/facemath_wave_08/evidence/wave8/wheel-check/replayed\",\n  \"comparison\": \"exact qualification/calibration JSON and numerical array equality\",\n  \"live_inference_reexecuted\": false\n}\n{\n  \"replay_verified\": true,\n  \"source_bundle\": \"/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px\",\n  \"new_bundle\": \"/mnt/data/facemath_wave_08/evidence/wave8/wheel-check/pair-replayed\",\n  \"numerical_tolerance\": \"arrays atol=1e-9, rtol=1e-7; measurements atol=1e-10, rtol=1e-8\"\n}\n",
+      "stderr": "WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+    },
+    "final-source-tests": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=/mnt/data/facemath_wave_08/evidence/wave8/final-source-tests.xml"
+      ],
+      "cwd": "/mnt/data/facemath_wave_08",
+      "started_utc": "2026-09-20T07:05:29.044046+00:00",
+      "finished_utc": "2026-09-20T07:06:38.579140+00:00",
+      "returncode": 0,
+      "stdout": "........................................................................ [ 10%]\n........................................................................ [ 20%]\ns....................................................................... [ 31%]\n........................................................................ [ 41%]\n........................................................................ [ 52%]\n........................................................................ [ 62%]\n........................................................................ [ 72%]\n........................................................................ [ 83%]\n........................................................................ [ 93%]\n............................................                             [100%]\n691 passed, 1 skipped in 67.50s (0:01:07)\n",
+      "stderr": ""
+    },
+    "final-pair-replay": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px",
+        "--out",
+        "/mnt/data/facemath_wave_08/evidence/wave8/source-pair-replay"
+      ],
+      "cwd": "/mnt/data/facemath_wave_08",
+      "started_utc": "2026-09-20T07:06:52.235967+00:00",
+      "finished_utc": "2026-09-20T07:06:54.061534+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"replay_verified\": true,\n  \"source_bundle\": \"/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px\",\n  \"new_bundle\": \"/mnt/data/facemath_wave_08/evidence/wave8/source-pair-replay\",\n  \"numerical_tolerance\": \"arrays atol=1e-9, rtol=1e-7; measurements atol=1e-10, rtol=1e-8\"\n}\n",
+      "stderr": ""
+    },
+    "final-inherited-relation-browser": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_08/scripts/browser_qa_wave6.py",
+        "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html",
+        "--out",
+        "/mnt/data/facemath_wave_08/evidence/wave8/relation-browser"
+      ],
+      "cwd": "/mnt/data/facemath_wave_08",
+      "started_utc": "2026-09-20T07:07:04.709761+00:00",
+      "finished_utc": "2026-09-20T07:07:07.164657+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"format\": \"facemath.browser_qa.v6\",\n  \"report\": \"/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\",\n  \"started_at\": \"2026-09-20T07:07:05.163289+00:00\",\n  \"checks\": {\n    \"distance_rows\": 28,\n    \"angle_rows\": 168,\n    \"signed_double_area_rows\": 56,\n    \"asymmetry_rows\": 4,\n    \"anatomical_name_filter_rows\": 63,\n    \"selection_links_same_raw_array_row\": true,\n    \"csv_matches_exact_selected_frozen_values\": true,\n    \"status_filter_rows\": 1,\n    \"full_covariance_ellipse_display\": true,\n    \"display_zoom_not_measurement_rescale\": true,\n    \"local_evidence_links_exist\": true,\n    \"controls_do_not_change_measurements\": true\n  },\n  \"viewports\": [\n    {\n      \"width\": 1440,\n      \"height\": 1150,\n      \"document_width\": 1440,\n      \"body_overflow\": false\n    },\n    {\n      \"width\": 390,\n      \"height\": 844,\n      \"document_width\": 390,\n      \"body_overflow\": false\n    }\n  ],\n  \"loading\": \"in-memory emitted HTML; local navigation unavailable\",\n  \"navigation_error\": \"Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\\nCall log:\\n  - navigating to \\\"file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\\\", waiting until \\\"load\\\"\\n\",\n  \"page_errors\": [],\n  \"remote_requests\": [],\n  \"passed\": true,\n  \"finished_at\": \"2026-09-20T07:07:07.016992+00:00\"\n}\n",
+      "stderr": ""
+    },
+    "final-browser": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_08/scripts/browser_qa_wave8.py",
+        "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification/report.html",
+        "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html",
+        "--out",
+        "/mnt/data/facemath_wave_08/evidence/wave8/browser"
+      ],
+      "cwd": "/mnt/data/facemath_wave_08",
+      "started_utc": "2026-09-20T07:06:59.474996+00:00",
+      "finished_utc": "2026-09-20T07:07:02.321140+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"format\": \"facemath.browser_qa.v8\",\n  \"started_utc\": \"2026-09-20T07:06:59.957071+00:00\",\n  \"reports\": {\n    \"study\": {\n      \"loading\": \"emitted HTML in memory after local file navigation was blocked\",\n      \"source\": \"/mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification/report.html\",\n      \"navigation_error\": \"Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification/report.html\\nCall log:\\n  - navigating to \\\"file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification/report.html\\\", waiting until \\\"load\\\"\\n\"\n    },\n    \"pair\": {\n      \"loading\": \"emitted HTML in memory after local file navigation was blocked\",\n      \"source\": \"/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\",\n      \"navigation_error\": \"Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\\nCall log:\\n  - navigating to \\\"file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\\\", waiting until \\\"load\\\"\\n\"\n    }\n  },\n  \"checks\": {\n    \"all_retained_group_scores_export_exactly\": true,\n    \"unsupported_case_rows_remain_visible\": 3,\n    \"no_source_route_selector\": true,\n    \"reference_geometry_enabled_with_two_radii\": true,\n    \"display_preserves_measurement_payload\": true,\n    \"local_evidence_paths_exist\": true\n  },\n  \"viewports\": [\n    {\n      \"report\": \"study\",\n      \"viewport\": {\n        \"width\": 1440,\n        \"height\": 1050\n      },\n      \"screenshot\": \"desktop_acquisition.png\",\n      \"categories_checked\": 4\n    },\n    {\n      \"report\": \"study\",\n      \"viewport\": {\n        \"width\": 390,\n        \"height\": 844\n      },\n      \"screenshot\": \"mobile_acquisition.png\",\n      \"categories_checked\": 4\n    },\n    {\n      \"report\": \"pair\",\n      \"viewport\": {\n        \"width\": 1440,\n        \"height\": 1050\n      },\n      \"screenshot\": \"desktop_source_radii.png\",\n      \"query_radii\": [\n        3.990515730848953,\n        9.152608775526309\n      ]\n    },\n    {\n      \"report\": \"pair\",\n      \"viewport\": {\n        \"width\": 390,\n        \"height\": 844\n      },\n      \"screenshot\": \"mobile_source_radii.png\",\n      \"query_radii\": [\n        3.990515730848953,\n        9.152608775526309\n      ]\n    }\n  ],\n  \"errors\": [],\n  \"remote_requests\": [],\n  \"finished_utc\": \"2026-09-20T07:07:02.176335+00:00\",\n  \"passed\": true\n}\n",
+      "stderr": ""
+    },
+    "final-doctor": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "doctor"
+      ],
+      "cwd": "/mnt/data/facemath_wave_08",
+      "started_utc": "2026-09-20T07:05:27.848250+00:00",
+      "finished_utc": "2026-09-20T07:05:29.043712+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"format\": \"facemath.runtime_check.v4\",\n  \"packages\": {\n    \"facemath\": \"0.8.0\",\n    \"mediapipe\": null,\n    \"numpy\": \"2.3.5\",\n    \"scipy\": \"1.17.0\",\n    \"opencv-python\": \"4.13.0.92\"\n  },\n  \"model_present\": false,\n  \"model_sha256\": null,\n  \"inference_executed\": false,\n  \"live_validation\": \"not established by availability checks\",\n  \"network_policy\": \"FACEMATH never implicitly downloads a model; third-party runtime telemetry is not attested\"\n}\n",
+      "stderr": ""
+    },
+    "final-inherited-joint-browser": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_08/scripts/browser_qa_wave7.py",
+        "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html",
+        "--out",
+        "/mnt/data/facemath_wave_08/evidence/wave8/joint-browser"
+      ],
+      "cwd": "/mnt/data/facemath_wave_08",
+      "started_utc": "2026-09-20T07:07:02.321551+00:00",
+      "finished_utc": "2026-09-20T07:07:04.709388+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"format\": \"facemath.browser_qa.v7\",\n  \"started_utc\": \"2026-09-20T07:07:02.784319+00:00\",\n  \"source\": \"/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\",\n  \"checks\": {\n    \"retained_mode_and_covariance_inventory\": [\n      16,\n      256,\n      8\n    ],\n    \"display_operations_preserve_measurements\": true,\n    \"csv_exact_full_covariance\": true,\n    \"local_evidence_links\": true,\n    \"no_horizontal_overflow\": true\n  },\n  \"viewports\": [\n    {\n      \"size\": {\n        \"width\": 1440,\n        \"height\": 1150\n      },\n      \"csv_rows\": 256,\n      \"interactive\": true,\n      \"screenshot\": \"desktop_joint.png\"\n    },\n    {\n      \"size\": {\n        \"width\": 390,\n        \"height\": 844\n      },\n      \"csv_rows\": 256,\n      \"interactive\": true,\n      \"screenshot\": \"mobile_joint.png\"\n    }\n  ],\n  \"loading\": \"emitted HTML in memory; local file navigation blocked\",\n  \"navigation_error\": \"Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\\nCall log:\\n  - navigating to \\\"file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\\\", waiting until \\\"load\\\"\\n\",\n  \"errors\": [],\n  \"remote_requests\": [],\n  \"finished_utc\": \"2026-09-20T07:07:04.545429+00:00\",\n  \"passed\": true\n}\n",
+      "stderr": ""
+    },
+    "final-study-replay": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification",
+        "--out",
+        "/mnt/data/facemath_wave_08/evidence/wave8/source-study-replay"
+      ],
+      "cwd": "/mnt/data/facemath_wave_08",
+      "started_utc": "2026-09-20T07:06:54.062004+00:00",
+      "finished_utc": "2026-09-20T07:06:59.474076+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"replay_verified\": true,\n  \"bundle\": \"/mnt/data/facemath_wave_08/evidence/wave8/source-study-replay\",\n  \"comparison\": \"exact qualification/calibration JSON and numerical array equality\",\n  \"live_inference_reexecuted\": false\n}\n",
+      "stderr": ""
+    },
+    "final-laboratory": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "stratified-lab",
+        "--out",
+        "/mnt/data/facemath_wave_08/evidence/wave8/laboratory"
+      ],
+      "cwd": "/mnt/data/facemath_wave_08",
+      "started_utc": "2026-09-20T07:06:38.579556+00:00",
+      "finished_utc": "2026-09-20T07:06:52.233850+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"format\": \"facemath.stratified_laboratory.v8\",\n  \"kind\": \"SYNTHETIC_CONTROL_NOT_HUMAN\",\n  \"seed\": 28091,\n  \"acquisition\": {\n    \"enrolled\": 155,\n    \"eligible\": 154,\n    \"calls_after_first_batch\": 7,\n    \"calls_after_complete\": 154,\n    \"calls_after_resume\": 154,\n    \"outcomes\": {\n      \"contract_error\": 0,\n      \"interrupted\": 0,\n      \"multiple_faces\": 0,\n      \"no_face\": 2,\n      \"observed\": 152,\n      \"runtime_error\": 0,\n      \"timeout\": 0\n    },\n    \"excluded\": 1\n  },\n  \"category_radii\": [\n    {\n      \"format\": \"facemath.category_radius_fragment.v8\",\n      \"stratum\": \"clear\",\n      \"alpha\": 0.1,\n      \"minimum_groups\": 9,\n      \"group_scores\": [\n        [\n          \"group_28091_32\",\n          2.4415768013871313\n        ],\n        [\n          \"group_28091_33\",\n          2.9029616499071946\n        ],\n        [\n          \"group_28091_34\",\n          2.451225857746431\n        ],\n        [\n          \"group_28091_35\",\n          null\n        ],\n        [\n          \"group_28091_36\",\n          1.9604352543859105\n        ],\n        [\n          \"group_28091_37\",\n          2.2117812184330465\n        ],\n        [\n          \"group_28091_38\",\n          1.8952383695826915\n        ],\n        [\n          \"group_28091_39\",\n          3.2787661163089514\n        ],\n        [\n          \"group_28091_40\",\n          0.9223758785103409\n        ],\n        [\n          \"group_28091_41\",\n          3.193801473292221\n        ],\n        [\n          \"group_28091_42\",\n          1.8204598287759481\n        ],\n        [\n          \"group_28091_43\",\n          0.9111506893563954\n        ],\n        [\n          \"group_28091_44\",\n          1.8688190926293538\n        ],\n        [\n          \"group_28091_45\",\n          4.23839490795288\n        ],\n        [\n          \"group_28091_46\",\n          2.908664873289382\n        ],\n        [\n          \"group_28091_47\",\n          1.750569232528671\n        ],\n        [\n          \"group_28091_48\",\n          2.6666722368879054\n        ],\n        [\n          \"group_28091_49\",\n          1.737665612606616\n        ],\n        [\n          \"group_28091_50\",\n          1.933792774257507\n        ],\n        [\n          \"group_28091_51\",\n          2.329098389049838\n        ],\n        [\n          \"group_28091_52\",\n          1.3091132470651148\n        ],\n        [\n          \"group_28091_53\",\n          4.097236080162479\n        ],\n        [\n          \"group_28091_54\",\n          1.214476313740053\n        ],\n        [\n          \"group_28091_55\",\n          2.6593348000142467\n        ],\n        [\n          \"group_28091_56\",\n          2.1239064375193073\n        ],\n        [\n          \"group_28091_57\",\n          3.13429962717393\n        ],\n        [\n          \"group_28091_58\",\n          1.9518720138915124\n        ],\n        [\n          \"group_28091_59\",\n          1.0387451520219793\n        ],\n        [\n          \"group_28091_60\",\n          2.721257939531124\n        ],\n        [\n          \"group_28091_61\",\n          1.6290941794653728\n        ],\n        [\n          \"group_28091_62\",\n          1.8064256127840754\n        ],\n        [\n          \"group_28091_63\",\n          1.5431094980013478\n        ],\n        [\n          \"group_28091_64\",\n          2.269851369157076\n        ],\n        [\n          \"group_28091_65\",\n          2.6953752852119592\n        ],\n        [\n          \"group_28091_66\",\n          2.9014222428574654\n        ],\n        [\n          \"group_28091_67\",\n          4.1583560506811725\n        ],\n        [\n          \"group_28091_68\",\n          1.1669224066214128\n        ],\n        [\n          \"group_28091_69\",\n          1.2188217212018295\n        ],\n        [\n          \"group_28091_70\",\n          2.0834679295632927\n        ],\n        [\n          \"group_28091_71\",\n          2.3784680088321553\n        ],\n        [\n          \"group_28091_72\",\n          1.9530231816158017\n        ],\n        [\n          \"group_28091_73\",\n          2.274695562362781\n        ],\n        [\n          \"group_28091_74\",\n          2.0944948565097956\n        ],\n        [\n          \"group_28091_75\",\n          2.5086214750909828\n        ],\n        [\n          \"group_28091_76\",\n          3.0292823059388896\n        ],\n        [\n          \"group_28091_77\",\n          3.990515730848953\n        ],\n        [\n          \"group_28091_78\",\n          2.4496644015420213\n        ],\n        [\n          \"group_28091_79\",\n          1.8643513811551162\n        ],\n        [\n          \"group_28091_80\",\n          2.5179749763929644\n        ],\n        [\n          \"group_28091_81\",\n          2.249736588399127\n        ],\n        [\n          \"group_28091_82\",\n          2.9101624127683414\n        ],\n        [\n          \"group_28091_83\",\n          2.0800791521785778\n        ],\n        [\n          \"group_28091_84\",\n          2.697707945395\n        ],\n        [\n          \"group_28091_85\",\n          2.07835417733174\n        ],\n        [\n          \"group_28091_86\",\n          1.937503842069484\n        ],\n        [\n          \"group_28091_87\",\n          1.0407018491436537\n        ],\n        [\n          \"group_28091_88\",\n          3.959881828592832\n        ],\n        [\n          \"group_28091_89\",\n          2.561685667116496\n        ],\n        [\n          \"group_28091_90\",\n          2.5292420953086814\n        ],\n        [\n          \"group_28091_91\",\n          4.14137074088668\n        ]\n      ],\n      \"calibration_images\": [\n        \"05a85a04662f5b03e7c63edafc0d4052f66330aadd9d6ca79c6ebc5e43e59957\",\n        \"0f4fcf57d7c85625572c134ae362abeba7384df466373f23eb910d3983058206\",\n        \"12e4af46bc20d1e5b463b2da134af3ca4f0e83a7c2311211e1d9e36e8f0e7ce2\",\n        \"1551722df95a0a16b07263146c0ac33b924ccbf81e016171ec1eb875fd484583\",\n        \"1c104ca66e4c75ed882ee0c8acf874aa2dafe1716d380e336d61bec6dd74f8e7\",\n        \"203554125c6f6460abb629ea9bef8cf4649054c7e7cf75f2e9b0100e1cbb2f88\",\n        \"2dd957bc01c15c970d4a3b85e468c453ef027b05242e8f210a3a52f808da15b9\",\n        \"314add1473f204d5d380320260ea44368955f4361ac367f3df281ed8b1577a78\",\n        \"33bd5fe25d147672e5f7573cfa4fd9d6cf9f0cddf4c7a899a1d4267a16602249\",\n        \"38356b633229c8378ecf65ed36fab2ae18fb9910e2f739e1820840b32e0627ef\",\n        \"3c93441c724d637886c981809dd501955f5c7967f37ac9be9b0d3f721289052f\",\n        \"3c96edc5ab02d74749a85246316fe28edd8c069781c44607c939b478b31292d6\",\n        \"3cb645b1d6a3be21e29406eca1d780645d30a1f68778b098bc04ef29b7d230df\",\n        \"45d00617d90d3c751f4b9626717f2a2b534025d8989501e244c0c78eadd184e5\",\n        \"4893f0e9a8ee3ac05793d30632c4f7ed37eba6a1df8fb393142b7aaef7b9d76e\",\n        \"4d2fd6c1f5cfa5119b661960b9372160e36a6478d5ff50bb9063a928e000ec94\",\n        \"4e4c2bf2c5a436b2a14e0cf2141ccc7c345c7d9c4d030c037843cb19c47b8100\",\n        \"4fabd67cede33f9753e6c2a05424b45a3c3e20cf7cb0823d97923f5c45b2a00b\",\n        \"5041d21d7b332d68efd7b41e9a95b1b9ae58d21deb1b9d132816894bc4b7c9e1\",\n        \"5533f974f6b3ef556a434f3ce7343049d8c8f55527b090ff5d55b0eb7be40e8e\",\n        \"5d3c85a5c46cfafd09490e5f662c2bc44f4d90bd3197b3ecbbaa57e1ac9fdf32\",\n        \"5f33cb0995c0a103da23ac4ff4f53ebac82a34977fe27e9a480713efbea6d915\",\n        \"602a2d864a5ed76377d186450c6a5d11188e81a73aff0a059ca8916d93fb76ad\",\n        \"67193c643b4db49eea9c649146721c3ac2927051a7ee4e469c62889ea6b79c4f\",\n        \"687a1cbe3f848570838de76a22b5b49a646d25843c9fc14a390bbff6f002d5eb\",\n        \"6b0e1b2f2555d04f60cd29e17f49c8d14aedc98eaad86b4041579d8d320cf454\",\n        \"720046edc3c4a17100030769444ff84946ab1f81afba9ae0665fd7e949be9578\",\n        \"7862579327fd3a6e31fa636c0e2455e6d52dd060a5bd8fecc7848f09961ee2fc\",\n        \"798a1898643496d5daac962c83f63afa83a50e804d4fb4403f4de08bc56c5ec2\",\n        \"8191a333aa67b27692c4d6cbfb3647edf41a7f296a72b20e322e7e774aa84990\",\n        \"8a68d1c4386eebf18e5b77ef6788c4758ab94ea1a4b59755496ef342b7528425\",\n        \"8fcf7f201647546545b840a25c8ec32a56a5aba5c80bdd69bf45ee4dc696cbee\",\n        \"92c1fa5b3e7b60ea28e0594e66fe6cbd948057e18f67abacfe40ccda6d78718d\",\n        \"93d0fbb354bc7019217e436a932e139d976e1eecebdea633b84e74843cecca53\",\n        \"af617e982badfaddcf9dd311928319abd7f54b7d719ae00f92314d22c6f866c7\",\n        \"b09181406932a99cb316f9192cbadbcb5f005267cee2f0e4d14c6bf6183151bd\",\n        \"b771ce64d5e460f3d6c443026910fb0bdfeff45ff4e490be8f6fe4124d4e52f9\",\n        \"b7972455fa2d7de8fe7ea83f77c3307ef6ff28931fa4ebb5bccdf773a7332ba4\",\n        \"b89e8dbc934bed5491c18c68f475f76116da84990610592c0606cfdcd157a882\",\n        \"b8fbd4f808af5b5db10f29acfc591d3f5e0a561973712d8988e69084c27b73c3\",\n        \"bb195be7bb17816ff63a2e22641f7e0dfedce05a2c302633e843760214e87e78\",\n        \"bcfb06dfc231b755f31911874319bb714fc2307dd29ccec1375cb59f40b10e77\",\n        \"be90a0e1676d128e1f38afa3db0a9ef674eab079e2e0fda0d2d9b608d81875e3\",\n        \"c03ad972132829dbf31120c75a52aae61724fd2b8a6403767fc27de5d70da75c\",\n        \"c691cc12238c9d03c22205b33726e307436f894085dce0417b04e059296c3294\",\n        \"c71c23afa0e6e5dc16af09e5fb71ff0c290d7bac878d5c3588d2bb5919bcab77\",\n        \"c9374798731a15d7ffb8393d9b8a8a306fe62b734d82f95ceea30c2f044ec1e2\",\n        \"cdc53ddd0de827f195337619260dc87e6caa1ee28864f3483a6f7abf133045cf\",\n        \"cef69947318a1e38a41c7c143a6213afe2791d469bfdeb7f9aef0d7626581a4e\",\n        \"d5d1222b048656ea448cb0f6bc4565d9066f4dee3f40b768d7afd75dd9231825\",\n        \"d7fcf5485202274aac8bb590d1a4fa0ce2014f1c7604a2b7da5bd38e05dee714\",\n        \"eb6fb39badd33ade81ee57abad878930322c6977817e1bbf093acc5193bea69a\",\n        \"eb9bf241fa9938dbc1df8460e17d41ecc5d51ae40bf3dc8b658d0d59eb87bb3c\",\n        \"ec3b37b3df130b9ee46f3990c902e714a8806e920c39a8394a1b487b0ca6479d\",\n        \"ef6e6639065d232bfa1ccd76915daa628cb4058c901c787f47f1612827531a26\",\n        \"f25f92a77447914beda692c5beae05bd83bfc42b2aa0511755e6314929c753d4\",\n        \"f4ebf527d63fb020bccac1fef1128ca7938cbb9157cb1f791bcfdb96d7f0e550\",\n        \"f6c4e3ad30db5f5a708e71cdb7093297aed824335d520c9b7f39b84f4c05547b\",\n        \"f7c72925d2751b6e5c643b03e4b5864586d840e0836868093fa98cf3a7581848\",\n        \"fc5c0cc38a2050bb08cef46e9d060dbebec3adf4f16d4f7d5dcfceca40e11db6\"\n      ],\n      \"calibration_lineages\": [\n        \"source_lineage_28091_32\",\n        \"source_lineage_28091_33\",\n        \"source_lineage_28091_34\",\n        \"source_lineage_28091_35\",\n        \"source_lineage_28091_36\",\n        \"source_lineage_28091_37\",\n        \"source_lineage_28091_38\",\n        \"source_lineage_28091_39\",\n        \"source_lineage_28091_40\",\n        \"source_lineage_28091_41\",\n        \"source_lineage_28091_42\",\n        \"source_lineage_28091_43\",\n        \"source_lineage_28091_44\",\n        \"source_lineage_28091_45\",\n        \"source_lineage_28091_46\",\n        \"source_lineage_28091_47\",\n        \"source_lineage_28091_48\",\n        \"source_lineage_28091_49\",\n        \"source_lineage_28091_50\",\n        \"source_lineage_28091_51\",\n        \"source_lineage_28091_52\",\n        \"source_lineage_28091_53\",\n        \"source_lineage_28091_54\",\n        \"source_lineage_28091_55\",\n        \"source_lineage_28091_56\",\n        \"source_lineage_28091_57\",\n        \"source_lineage_28091_58\",\n        \"source_lineage_28091_59\",\n        \"source_lineage_28091_60\",\n        \"source_lineage_28091_61\",\n        \"source_lineage_28091_62\",\n        \"source_lineage_28091_63\",\n        \"source_lineage_28091_64\",\n        \"source_lineage_28091_65\",\n        \"source_lineage_28091_66\",\n        \"source_lineage_28091_67\",\n        \"source_lineage_28091_68\",\n        \"source_lineage_28091_69\",\n        \"source_lineage_28091_70\",\n        \"source_lineage_28091_71\",\n        \"source_lineage_28091_72\",\n        \"source_lineage_28091_73\",\n        \"source_lineage_28091_74\",\n        \"source_lineage_28091_75\",\n        \"source_lineage_28091_76\",\n        \"source_lineage_28091_77\",\n        \"source_lineage_28091_78\",\n        \"source_lineage_28091_79\",\n        \"source_lineage_28091_80\",\n        \"source_lineage_28091_81\",\n        \"source_lineage_28091_82\",\n        \"source_lineage_28091_83\",\n        \"source_lineage_28091_84\",\n        \"source_lineage_28091_85\",\n        \"source_lineage_28091_86\",\n        \"source_lineage_28091_87\",\n        \"source_lineage_28091_88\",\n        \"source_lineage_28091_89\",\n        \"source_lineage_28091_90\",\n        \"source_lineage_28091_91\"\n      ],\n      \"quantile\": 3.990515730848953,\n      \"rank\": 55,\n      \"status\": \"supported\",\n      \"calibration_groups\": 60,\n      \"scope\": \"requires its containing joint model and frozen routing policy\"\n    },\n    {\n      \"format\": \"facemath.category_radius_fragment.v8\",\n      \"stratum\": \"degraded\",\n      \"alpha\": 0.1,\n      \"minimum_groups\": 9,\n      \"group_scores\": [\n        [\n          \"group_28091_100\",\n          5.626912341406915\n        ],\n        [\n          \"group_28091_101\",\n          4.655662219505217\n        ],\n        [\n          \"group_28091_102\",\n          9.067859956533187\n        ],\n        [\n          \"group_28091_103\",\n          9.152608775526309\n        ],\n        [\n          \"group_28091_104\",\n          6.152850626858231\n        ],\n        [\n          \"group_28091_105\",\n          5.10711149119989\n        ],\n        [\n          \"group_28091_106\",\n          6.893736962063772\n        ],\n        [\n          \"group_28091_107\",\n          7.593313710571407\n        ],\n        [\n          \"group_28091_108\",\n          5.967302393472459\n        ],\n        [\n          \"group_28091_109\",\n          5.714950281649603\n        ],\n        [\n          \"group_28091_110\",\n          9.153915723890528\n        ],\n        [\n          \"group_28091_111\",\n          5.871058480826917\n        ],\n        [\n          \"group_28091_92\",\n          6.660401904166521\n        ],\n        [\n          \"group_28091_93\",\n          5.2398752471048855\n        ],\n        [\n          \"group_28091_94\",\n          4.492970820874874\n        ],\n        [\n          \"group_28091_95\",\n          6.481936423213263\n        ],\n        [\n          \"group_28091_96\",\n          4.620496272553486\n        ],\n        [\n          \"group_28091_97\",\n          6.467168071517722\n        ],\n        [\n          \"group_28091_98\",\n          5.346167793531989\n        ],\n        [\n          \"group_28091_99\",\n          8.611569480459245\n        ]\n      ],\n      \"calibration_images\": [\n        \"0c358c98b00bc947cee8b64ed79d0df1fa0d2e23440b2a6af42d05de0842a0da\",\n        \"14c2985de9622d6641e3d54aa75c8958131241d3e39191c89d3ab463ba28a26f\",\n        \"16e45bc38d20bc1fba9e2a38796ade64c65d76447d564e57c964e3b539e2f8de\",\n        \"1e26d2086f622b9116b27b8b91fe39f83807371a213ca6a413eb236f537d3e92\",\n        \"539454c24bca27c8fbc2dbdbcd9fe95afe8429f130e216d2da2003cc167804f4\",\n        \"57bcb117676f35eb007fe156294bc57940d0e96170df80cae0b5320a40a15100\",\n        \"690bbda13548a67d3c33ed098dde6025da63dd2e1367dd6c578ba008a221f3ab\",\n        \"6d2cadf1d0826c0a3dc207790d47fba5bc0e945b31a1b2c72b1404c32c56dc06\",\n        \"a314eefe1beb9c39f5bfc65754333a04f7151b0a61de999818fd7d0f04fa1dc2\",\n        \"a6c92fd561e5eaed41a71bea995b8407196236d3c900ea8f9cad25985a323b53\",\n        \"a9228dc6f54af5e95390bf13eda773172e5754371b0e5aded2b7ac95d247c517\",\n        \"b0eefca95562b14d509b601c83a23c5712916d6375355a8fe8f0eade4713d0b6\",\n        \"b8c84fb1eb6fca779dbb65fe14c42e4c9e289868139f85b30de453558b07df52\",\n        \"c04a8962b1d4bcca110e62ed0d9ba44546329e18df7f75e800e7edecb215953d\",\n        \"d293d9417bff6d73c7a0611b947497620df26c5b6f44da88e8b796fead1144b4\",\n        \"d41e799109a204ac7990b76e3bd2ed87d88eb1d1cc5a9128380b983d864b9ba6\",\n        \"d7d1e23aaf68a77a3c73c4157afb40c218b37488017b842efe43d92614b541a1\",\n        \"df62f7a4248e615da45e683cf5ee8fcaadd407394d952fa39f57825d69d78fb7\",\n        \"f73328afe8ab137e62e6b4fddab464c40356631d800a0612e2ad223e93cbfae5\",\n        \"f9b903b34871fb67494da13d7818c7eb22e27846d9b940b0ba9b9de6a244af23\"\n      ],\n      \"calibration_lineages\": [\n        \"source_lineage_28091_100\",\n        \"source_lineage_28091_101\",\n        \"source_lineage_28091_102\",\n        \"source_lineage_28091_103\",\n        \"source_lineage_28091_104\",\n        \"source_lineage_28091_105\",\n        \"source_lineage_28091_106\",\n        \"source_lineage_28091_107\",\n        \"source_lineage_28091_108\",\n        \"source_lineage_28091_109\",\n        \"source_lineage_28091_110\",\n        \"source_lineage_28091_111\",\n        \"source_lineage_28091_92\",\n        \"source_lineage_28091_93\",\n        \"source_lineage_28091_94\",\n        \"source_lineage_28091_95\",\n        \"source_lineage_28091_96\",\n        \"source_lineage_28091_97\",\n        \"source_lineage_28091_98\",\n        \"source_lineage_28091_99\"\n      ],\n      \"quantile\": 9.152608775526309,\n      \"rank\": 19,\n      \"status\": \"supported\",\n      \"calibration_groups\": 20,\n      \"scope\": \"requires its containing joint model and frozen routing policy\"\n    },\n    {\n      \"format\": \"facemath.category_radius_fragment.v8\",\n      \"stratum\": \"sparse\",\n      \"alpha\": 0.1,\n      \"minimum_groups\": 9,\n      \"group_scores\": [\n        [\n          \"group_28091_112\",\n          3.376609818728628\n        ],\n        [\n          \"group_28091_113\",\n          2.008063876543626\n        ],\n        [\n          \"group_28091_114\",\n          2.5850216103998203\n        ],\n        [\n          \"group_28091_115\",\n          3.5523701273962445\n        ]\n      ],\n      \"calibration_images\": [\n        \"73e11380e94626bd2a73e80041ce12fcb32bb56b0a64a2a5eae91ee89c874f83\",\n        \"825d2b5e54554bbb69b3594979b1c9ecacea617668415e3797c85c9cde38df61\",\n        \"8e9f309a3a4c658b6c1cdff84b2020fc338a8aff7238066bdb8556ab2a49966f\",\n        \"9b3167115c0b34ca9e78bf573475c2e712ad8befcc0e443c103fe9be23267253\"\n      ],\n      \"calibration_lineages\": [\n        \"source_lineage_28091_112\",\n        \"source_lineage_28091_113\",\n        \"source_lineage_28091_114\",\n        \"source_lineage_28091_115\"\n      ],\n      \"quantile\": null,\n      \"rank\": 5,\n      \"status\": \"below_frozen_minimum_groups\",\n      \"calibration_groups\": 4,\n      \"scope\": \"requires its containing joint model and frozen routing policy\"\n    },\n    {\n      \"format\": \"facemath.category_radius_fragment.v8\",\n      \"stratum\": \"unseen\",\n      \"alpha\": 0.1,\n      \"minimum_groups\": 9,\n      \"group_scores\": [],\n      \"calibration_images\": [],\n      \"calibration_lineages\": [],\n      \"quantile\": null,\n      \"rank\": 1,\n      \"status\": \"no_calibration_groups\",\n      \"calibration_groups\": 0,\n      \"scope\": \"requires its containing joint model and frozen routing policy\"\n    }\n  ],\n  \"selected_coverage\": {\n    \"calibration_sha256\": \"cfcc1d3d8c805557d89db4911132739feaae5066ebcb5e753b8be91cb04dc65f\",\n    \"nominal_coverage\": 0.9,\n    \"evaluation_cases\": 38,\n    \"evaluation_groups\": 38,\n    \"covered_groups\": 20,\n    \"empirical_group_coverage\": 0.5263157894736842,\n    \"finite_envelope\": false,\n    \"finite_envelope_groups\": 32,\n    \"unsupported_groups\": 6,\n    \"supported_group_empirical_coverage\": 0.625,\n    \"failures\": 1,\n    \"cases\": [\n      {\n        \"case_id\": \"acquisition_0116\",\n        \"group_id\": \"group_28091_116\",\n        \"stratum\": \"clear\",\n        \"score\": 2.693209925676074,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0117\",\n        \"group_id\": \"group_28091_117\",\n        \"stratum\": \"clear\",\n        \"score\": 2.2282185196451385,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0118\",\n        \"group_id\": \"group_28091_118\",\n        \"stratum\": \"clear\",\n        \"score\": 2.4155227060592823,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0119\",\n        \"group_id\": \"group_28091_119\",\n        \"stratum\": \"clear\",\n        \"score\": 1.519529316175325,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0120\",\n        \"group_id\": \"group_28091_120\",\n        \"stratum\": \"clear\",\n        \"score\": 1.3477473121089336,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0121\",\n        \"group_id\": \"group_28091_121\",\n        \"stratum\": \"clear\",\n        \"score\": 1.54561151132197,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0122\",\n        \"group_id\": \"group_28091_122\",\n        \"stratum\": \"clear\",\n        \"score\": 1.7519448968734381,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0123\",\n        \"group_id\": \"group_28091_123\",\n        \"stratum\": \"clear\",\n        \"score\": 2.2815211645172506,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0124\",\n        \"group_id\": \"group_28091_124\",\n        \"stratum\": \"clear\",\n        \"score\": 2.0047499754415004,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0125\",\n        \"group_id\": \"group_28091_125\",\n        \"stratum\": \"clear\",\n        \"score\": 2.5211832067248054,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0126\",\n        \"group_id\": \"group_28091_126\",\n        \"stratum\": \"clear\",\n        \"score\": 4.8475564608846495,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": false,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0127\",\n        \"group_id\": \"group_28091_127\",\n        \"stratum\": \"clear\",\n        \"score\": 4.0296518898110465,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": false,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0128\",\n        \"group_id\": \"group_28091_128\",\n        \"stratum\": \"clear\",\n        \"score\": 25.604520290577188,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": false,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0129\",\n        \"group_id\": \"group_28091_129\",\n        \"stratum\": \"clear\",\n        \"score\": 25.10197744129559,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": false,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0130\",\n        \"group_id\": \"group_28091_130\",\n        \"stratum\": \"clear\",\n        \"score\": 26.39629318790147,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": false,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0131\",\n        \"group_id\": \"group_28091_131\",\n        \"stratum\": \"clear\",\n        \"score\": 24.981661738072145,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": false,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0132\",\n        \"group_id\": \"group_28091_132\",\n        \"stratum\": \"clear\",\n        \"score\": 25.28490263553967,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": false,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0133\",\n        \"group_id\": \"group_28091_133\",\n        \"stratum\": \"clear\",\n        \"score\": 25.272682609127763,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": false,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0134\",\n        \"group_id\": \"group_28091_134\",\n        \"stratum\": \"clear\",\n        \"score\": 26.066060282080276,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": false,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0135\",\n        \"group_id\": \"group_28091_135\",\n        \"stratum\": \"clear\",\n        \"score\": 24.97895538264321,\n        \"quantile\": 3.990515730848953,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": false,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0136\",\n        \"group_id\": \"group_28091_136\",\n        \"stratum\": \"degraded\",\n        \"score\": 7.086663995197389,\n        \"quantile\": 9.152608775526309,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0137\",\n        \"group_id\": \"group_28091_137\",\n        \"stratum\": \"degraded\",\n        \"score\": 9.315379423029473,\n        \"quantile\": 9.152608775526309,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": false,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0138\",\n        \"group_id\": \"group_28091_138\",\n        \"stratum\": \"degraded\",\n        \"score\": null,\n        \"quantile\": 9.152608775526309,\n        \"assessable\": false,\n        \"finite\": true,\n        \"covered\": false,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0139\",\n        \"group_id\": \"group_28091_139\",\n        \"stratum\": \"degraded\",\n        \"score\": 8.762434690929615,\n        \"quantile\": 9.152608775526309,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0140\",\n        \"group_id\": \"group_28091_140\",\n        \"stratum\": \"degraded\",\n        \"score\": 6.780771334657648,\n        \"quantile\": 9.152608775526309,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0141\",\n        \"group_id\": \"group_28091_141\",\n        \"stratum\": \"degraded\",\n        \"score\": 5.311841900218858,\n        \"quantile\": 9.152608775526309,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0142\",\n        \"group_id\": \"group_28091_142\",\n        \"stratum\": \"degraded\",\n        \"score\": 6.202892009849274,\n        \"quantile\": 9.152608775526309,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0143\",\n        \"group_id\": \"group_28091_143\",\n        \"stratum\": \"degraded\",\n        \"score\": 7.371156254855533,\n        \"quantile\": 9.152608775526309,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0144\",\n        \"group_id\": \"group_28091_144\",\n        \"stratum\": \"degraded\",\n        \"score\": 4.673018425161619,\n        \"quantile\": 9.152608775526309,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0145\",\n        \"group_id\": \"group_28091_145\",\n        \"stratum\": \"degraded\",\n        \"score\": 4.100284040207839,\n        \"quantile\": 9.152608775526309,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0146\",\n        \"group_id\": \"group_28091_146\",\n        \"stratum\": \"degraded\",\n        \"score\": 5.982965751062406,\n        \"quantile\": 9.152608775526309,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0147\",\n        \"group_id\": \"group_28091_147\",\n        \"stratum\": \"degraded\",\n        \"score\": 6.723622039346735,\n        \"quantile\": 9.152608775526309,\n        \"assessable\": true,\n        \"finite\": true,\n        \"covered\": true,\n        \"route_status\": \"supported\"\n      },\n      {\n        \"case_id\": \"acquisition_0148\",\n        \"group_id\": \"group_28091_148\",\n        \"stratum\": \"sparse\",\n        \"score\": 2.647892763248283,\n        \"quantile\": null,\n        \"assessable\": true,\n        \"finite\": false,\n        \"covered\": null,\n        \"route_status\": \"below_frozen_minimum_groups\"\n      },\n      {\n        \"case_id\": \"acquisition_0149\",\n        \"group_id\": \"group_28091_149\",\n        \"stratum\": \"sparse\",\n        \"score\": 4.499251388952108,\n        \"quantile\": null,\n        \"assessable\": true,\n        \"finite\": false,\n        \"covered\": null,\n        \"route_status\": \"below_frozen_minimum_groups\"\n      },\n      {\n        \"case_id\": \"acquisition_0150\",\n        \"group_id\": \"group_28091_150\",\n        \"stratum\": \"sparse\",\n        \"score\": 3.444891079931191,\n        \"quantile\": null,\n        \"assessable\": true,\n        \"finite\": false,\n        \"covered\": null,\n        \"route_status\": \"below_frozen_minimum_groups\"\n      },\n      {\n        \"case_id\": \"acquisition_0151\",\n        \"group_id\": \"group_28091_151\",\n        \"stratum\": \"unseen\",\n        \"score\": 10.274342981727006,\n        \"quantile\": null,\n        \"assessable\": true,\n        \"finite\": false,\n        \"covered\": null,\n        \"route_status\": \"no_calibration_groups\"\n      },\n      {\n        \"case_id\": \"acquisition_0152\",\n        \"group_id\": \"group_28091_152\",\n        \"stratum\": \"unseen\",\n        \"score\": 7.5472827534431834,\n        \"quantile\": null,\n        \"assessable\": true,\n        \"finite\": false,\n        \"covered\": null,\n        \"route_status\": \"no_calibration_groups\"\n      },\n      {\n        \"case_id\": \"acquisition_0153\",\n        \"group_id\": \"group_28091_153\",\n        \"stratum\": \"unseen\",\n        \"score\": 13.621579190077783,\n        \"quantile\": null,\n        \"assessable\": true,\n        \"finite\": false,\n        \"covered\": null,\n        \"route_status\": \"no_calibration_groups\"\n      }\n    ],\n    \"groups\": [\n      {\n        \"group_id\": \"group_28091_116\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_117\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_118\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_119\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_120\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_121\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_122\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_123\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_124\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_125\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_126\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_127\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_128\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_129\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_130\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_131\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_132\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_133\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_134\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_135\",\n        \"stratum\": \"clear\",\n        \"finite\": true,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_136\",\n        \"stratum\": \"degraded\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_137\",\n        \"stratum\": \"degraded\",\n        \"finite\": true,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_138\",\n        \"stratum\": \"degraded\",\n        \"finite\": true,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": false\n      },\n      {\n        \"group_id\": \"group_28091_139\",\n        \"stratum\": \"degraded\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_140\",\n        \"stratum\": \"degraded\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_141\",\n        \"stratum\": \"degraded\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_142\",\n        \"stratum\": \"degraded\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_143\",\n        \"stratum\": \"degraded\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_144\",\n        \"stratum\": \"degraded\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_145\",\n        \"stratum\": \"degraded\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_146\",\n        \"stratum\": \"degraded\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_147\",\n        \"stratum\": \"degraded\",\n        \"finite\": true,\n        \"covered\": true,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_148\",\n        \"stratum\": \"sparse\",\n        \"finite\": false,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_149\",\n        \"stratum\": \"sparse\",\n        \"finite\": false,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_150\",\n        \"stratum\": \"sparse\",\n        \"finite\": false,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_151\",\n        \"stratum\": \"unseen\",\n        \"finite\": false,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_152\",\n        \"stratum\": \"unseen\",\n        \"finite\": false,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      },\n      {\n        \"group_id\": \"group_28091_153\",\n        \"stratum\": \"unseen\",\n        \"finite\": false,\n        \"covered\": false,\n        \"cases\": 1,\n        \"assessable\": true\n      }\n    ],\n    \"strata\": [\n      {\n        \"stratum\": \"clear\",\n        \"radius\": {\n          \"format\": \"facemath.category_radius_fragment.v8\",\n          \"stratum\": \"clear\",\n          \"alpha\": 0.1,\n          \"minimum_groups\": 9,\n          \"group_scores\": [\n            [\n              \"group_28091_32\",\n              2.4415768013871313\n            ],\n            [\n              \"group_28091_33\",\n              2.9029616499071946\n            ],\n            [\n              \"group_28091_34\",\n              2.451225857746431\n            ],\n            [\n              \"group_28091_35\",\n              null\n            ],\n            [\n              \"group_28091_36\",\n              1.9604352543859105\n            ],\n            [\n              \"group_28091_37\",\n              2.2117812184330465\n            ],\n            [\n              \"group_28091_38\",\n              1.8952383695826915\n            ],\n            [\n              \"group_28091_39\",\n              3.2787661163089514\n            ],\n            [\n              \"group_28091_40\",\n              0.9223758785103409\n            ],\n            [\n              \"group_28091_41\",\n              3.193801473292221\n            ],\n            [\n              \"group_28091_42\",\n              1.8204598287759481\n            ],\n            [\n              \"group_28091_43\",\n              0.9111506893563954\n            ],\n            [\n              \"group_28091_44\",\n              1.8688190926293538\n            ],\n            [\n              \"group_28091_45\",\n              4.23839490795288\n            ],\n            [\n              \"group_28091_46\",\n              2.908664873289382\n            ],\n            [\n              \"group_28091_47\",\n              1.750569232528671\n            ],\n            [\n              \"group_28091_48\",\n              2.6666722368879054\n            ],\n            [\n              \"group_28091_49\",\n              1.737665612606616\n            ],\n            [\n              \"group_28091_50\",\n              1.933792774257507\n            ],\n            [\n              \"group_28091_51\",\n              2.329098389049838\n            ],\n            [\n              \"group_28091_52\",\n              1.3091132470651148\n            ],\n            [\n              \"group_28091_53\",\n              4.097236080162479\n            ],\n            [\n              \"group_28091_54\",\n              1.214476313740053\n            ],\n            [\n              \"group_28091_55\",\n              2.6593348000142467\n            ],\n            [\n              \"group_28091_56\",\n              2.1239064375193073\n            ],\n            [\n              \"group_28091_57\",\n              3.13429962717393\n            ],\n            [\n              \"group_28091_58\",\n              1.9518720138915124\n            ],\n            [\n              \"group_28091_59\",\n              1.0387451520219793\n            ],\n            [\n              \"group_28091_60\",\n              2.721257939531124\n            ],\n            [\n              \"group_28091_61\",\n              1.6290941794653728\n            ],\n            [\n              \"group_28091_62\",\n              1.8064256127840754\n            ],\n            [\n              \"group_28091_63\",\n              1.5431094980013478\n            ],\n            [\n              \"group_28091_64\",\n              2.269851369157076\n            ],\n            [\n              \"group_28091_65\",\n              2.6953752852119592\n            ],\n            [\n              \"group_28091_66\",\n              2.9014222428574654\n            ],\n            [\n              \"group_28091_67\",\n              4.1583560506811725\n            ],\n            [\n              \"group_28091_68\",\n              1.1669224066214128\n            ],\n            [\n              \"group_28091_69\",\n              1.2188217212018295\n            ],\n            [\n              \"group_28091_70\",\n              2.0834679295632927\n            ],\n            [\n              \"group_28091_71\",\n              2.3784680088321553\n            ],\n            [\n              \"group_28091_72\",\n              1.9530231816158017\n            ],\n            [\n              \"group_28091_73\",\n              2.274695562362781\n            ],\n            [\n              \"group_28091_74\",\n              2.0944948565097956\n            ],\n            [\n              \"group_28091_75\",\n              2.5086214750909828\n            ],\n            [\n              \"group_28091_76\",\n              3.0292823059388896\n            ],\n            [\n              \"group_28091_77\",\n              3.990515730848953\n            ],\n            [\n              \"group_28091_78\",\n              2.4496644015420213\n            ],\n            [\n              \"group_28091_79\",\n              1.8643513811551162\n            ],\n            [\n              \"group_28091_80\",\n              2.5179749763929644\n            ],\n            [\n              \"group_28091_81\",\n              2.249736588399127\n            ],\n            [\n              \"group_28091_82\",\n              2.9101624127683414\n            ],\n            [\n              \"group_28091_83\",\n              2.0800791521785778\n            ],\n            [\n              \"group_28091_84\",\n              2.697707945395\n            ],\n            [\n              \"group_28091_85\",\n              2.07835417733174\n            ],\n            [\n              \"group_28091_86\",\n              1.937503842069484\n            ],\n            [\n              \"group_28091_87\",\n              1.0407018491436537\n            ],\n            [\n              \"group_28091_88\",\n              3.959881828592832\n            ],\n            [\n              \"group_28091_89\",\n              2.561685667116496\n            ],\n            [\n              \"group_28091_90\",\n              2.5292420953086814\n            ],\n            [\n              \"group_28091_91\",\n              4.14137074088668\n            ]\n          ],\n          \"calibration_images\": [\n            \"05a85a04662f5b03e7c63edafc0d4052f66330aadd9d6ca79c6ebc5e43e59957\",\n            \"0f4fcf57d7c85625572c134ae362abeba7384df466373f23eb910d3983058206\",\n            \"12e4af46bc20d1e5b463b2da134af3ca4f0e83a7c2311211e1d9e36e8f0e7ce2\",\n            \"1551722df95a0a16b07263146c0ac33b924ccbf81e016171ec1eb875fd484583\",\n            \"1c104ca66e4c75ed882ee0c8acf874aa2dafe1716d380e336d61bec6dd74f8e7\",\n            \"203554125c6f6460abb629ea9bef8cf4649054c7e7cf75f2e9b0100e1cbb2f88\",\n            \"2dd957bc01c15c970d4a3b85e468c453ef027b05242e8f210a3a52f808da15b9\",\n            \"314add1473f204d5d380320260ea44368955f4361ac367f3df281ed8b1577a78\",\n            \"33bd5fe25d147672e5f7573cfa4fd9d6cf9f0cddf4c7a899a1d4267a16602249\",\n            \"38356b633229c8378ecf65ed36fab2ae18fb9910e2f739e1820840b32e0627ef\",\n            \"3c93441c724d637886c981809dd501955f5c7967f37ac9be9b0d3f721289052f\",\n            \"3c96edc5ab02d74749a85246316fe28edd8c069781c44607c939b478b31292d6\",\n            \"3cb645b1d6a3be21e29406eca1d780645d30a1f68778b098bc04ef29b7d230df\",\n            \"45d00617d90d3c751f4b9626717f2a2b534025d8989501e244c0c78eadd184e5\",\n            \"4893f0e9a8ee3ac05793d30632c4f7ed37eba6a1df8fb393142b7aaef7b9d76e\",\n            \"4d2fd6c1f5cfa5119b661960b9372160e36a6478d5ff50bb9063a928e000ec94\",\n            \"4e4c2bf2c5a436b2a14e0cf2141ccc7c345c7d9c4d030c037843cb19c47b8100\",\n            \"4fabd67cede33f9753e6c2a05424b45a3c3e20cf7cb0823d97923f5c45b2a00b\",\n            \"5041d21d7b332d68efd7b41e9a95b1b9ae58d21deb1b9d132816894bc4b7c9e1\",\n            \"5533f974f6b3ef556a434f3ce7343049d8c8f55527b090ff5d55b0eb7be40e8e\",\n            \"5d3c85a5c46cfafd09490e5f662c2bc44f4d90bd3197b3ecbbaa57e1ac9fdf32\",\n            \"5f33cb0995c0a103da23ac4ff4f53ebac82a34977fe27e9a480713efbea6d915\",\n            \"602a2d864a5ed76377d186450c6a5d11188e81a73aff0a059ca8916d93fb76ad\",\n            \"67193c643b4db49eea9c649146721c3ac2927051a7ee4e469c62889ea6b79c4f\",\n            \"687a1cbe3f848570838de76a22b5b49a646d25843c9fc14a390bbff6f002d5eb\",\n            \"6b0e1b2f2555d04f60cd29e17f49c8d14aedc98eaad86b4041579d8d320cf454\",\n            \"720046edc3c4a17100030769444ff84946ab1f81afba9ae0665fd7e949be9578\",\n            \"7862579327fd3a6e31fa636c0e2455e6d52dd060a5bd8fecc7848f09961ee2fc\",\n            \"798a1898643496d5daac962c83f63afa83a50e804d4fb4403f4de08bc56c5ec2\",\n            \"8191a333aa67b27692c4d6cbfb3647edf41a7f296a72b20e322e7e774aa84990\",\n            \"8a68d1c4386eebf18e5b77ef6788c4758ab94ea1a4b59755496ef342b7528425\",\n            \"8fcf7f201647546545b840a25c8ec32a56a5aba5c80bdd69bf45ee4dc696cbee\",\n            \"92c1fa5b3e7b60ea28e0594e66fe6cbd948057e18f67abacfe40ccda6d78718d\",\n            \"93d0fbb354bc7019217e436a932e139d976e1eecebdea633b84e74843cecca53\",\n            \"af617e982badfaddcf9dd311928319abd7f54b7d719ae00f92314d22c6f866c7\",\n            \"b09181406932a99cb316f9192cbadbcb5f005267cee2f0e4d14c6bf6183151bd\",\n            \"b771ce64d5e460f3d6c443026910fb0bdfeff45ff4e490be8f6fe4124d4e52f9\",\n            \"b7972455fa2d7de8fe7ea83f77c3307ef6ff28931fa4ebb5bccdf773a7332ba4\",\n            \"b89e8dbc934bed5491c18c68f475f76116da84990610592c0606cfdcd157a882\",\n            \"b8fbd4f808af5b5db10f29acfc591d3f5e0a561973712d8988e69084c27b73c3\",\n            \"bb195be7bb17816ff63a2e22641f7e0dfedce05a2c302633e843760214e87e78\",\n            \"bcfb06dfc231b755f31911874319bb714fc2307dd29ccec1375cb59f40b10e77\",\n            \"be90a0e1676d128e1f38afa3db0a9ef674eab079e2e0fda0d2d9b608d81875e3\",\n            \"c03ad972132829dbf31120c75a52aae61724fd2b8a6403767fc27de5d70da75c\",\n            \"c691cc12238c9d03c22205b33726e307436f894085dce0417b04e059296c3294\",\n            \"c71c23afa0e6e5dc16af09e5fb71ff0c290d7bac878d5c3588d2bb5919bcab77\",\n            \"c9374798731a15d7ffb8393d9b8a8a306fe62b734d82f95ceea30c2f044ec1e2\",\n            \"cdc53ddd0de827f195337619260dc87e6caa1ee28864f3483a6f7abf133045cf\",\n            \"cef69947318a1e38a41c7c143a6213afe2791d469bfdeb7f9aef0d7626581a4e\",\n            \"d5d1222b048656ea448cb0f6bc4565d9066f4dee3f40b768d7afd75dd9231825\",\n            \"d7fcf5485202274aac8bb590d1a4fa0ce2014f1c7604a2b7da5bd38e05dee714\",\n            \"eb6fb39badd33ade81ee57abad878930322c6977817e1bbf093acc5193bea69a\",\n            \"eb9bf241fa9938dbc1df8460e17d41ecc5d51ae40bf3dc8b658d0d59eb87bb3c\",\n            \"ec3b37b3df130b9ee46f3990c902e714a8806e920c39a8394a1b487b0ca6479d\",\n            \"ef6e6639065d232bfa1ccd76915daa628cb4058c901c787f47f1612827531a26\",\n            \"f25f92a77447914beda692c5beae05bd83bfc42b2aa0511755e6314929c753d4\",\n            \"f4ebf527d63fb020bccac1fef1128ca7938cbb9157cb1f791bcfdb96d7f0e550\",\n            \"f6c4e3ad30db5f5a708e71cdb7093297aed824335d520c9b7f39b84f4c05547b\",\n            \"f7c72925d2751b6e5c643b03e4b5864586d840e0836868093fa98cf3a7581848\",\n            \"fc5c0cc38a2050bb08cef46e9d060dbebec3adf4f16d4f7d5dcfceca40e11db6\"\n          ],\n          \"calibration_lineages\": [\n            \"source_lineage_28091_32\",\n            \"source_lineage_28091_33\",\n            \"source_lineage_28091_34\",\n            \"source_lineage_28091_35\",\n            \"source_lineage_28091_36\",\n            \"source_lineage_28091_37\",\n            \"source_lineage_28091_38\",\n            \"source_lineage_28091_39\",\n            \"source_lineage_28091_40\",\n            \"source_lineage_28091_41\",\n            \"source_lineage_28091_42\",\n            \"source_lineage_28091_43\",\n            \"source_lineage_28091_44\",\n            \"source_lineage_28091_45\",\n            \"source_lineage_28091_46\",\n            \"source_lineage_28091_47\",\n            \"source_lineage_28091_48\",\n            \"source_lineage_28091_49\",\n            \"source_lineage_28091_50\",\n            \"source_lineage_28091_51\",\n            \"source_lineage_28091_52\",\n            \"source_lineage_28091_53\",\n            \"source_lineage_28091_54\",\n            \"source_lineage_28091_55\",\n            \"source_lineage_28091_56\",\n            \"source_lineage_28091_57\",\n            \"source_lineage_28091_58\",\n            \"source_lineage_28091_59\",\n            \"source_lineage_28091_60\",\n            \"source_lineage_28091_61\",\n            \"source_lineage_28091_62\",\n            \"source_lineage_28091_63\",\n            \"source_lineage_28091_64\",\n            \"source_lineage_28091_65\",\n            \"source_lineage_28091_66\",\n            \"source_lineage_28091_67\",\n            \"source_lineage_28091_68\",\n            \"source_lineage_28091_69\",\n            \"source_lineage_28091_70\",\n            \"source_lineage_28091_71\",\n            \"source_lineage_28091_72\",\n            \"source_lineage_28091_73\",\n            \"source_lineage_28091_74\",\n            \"source_lineage_28091_75\",\n            \"source_lineage_28091_76\",\n            \"source_lineage_28091_77\",\n            \"source_lineage_28091_78\",\n            \"source_lineage_28091_79\",\n            \"source_lineage_28091_80\",\n            \"source_lineage_28091_81\",\n            \"source_lineage_28091_82\",\n            \"source_lineage_28091_83\",\n            \"source_lineage_28091_84\",\n            \"source_lineage_28091_85\",\n            \"source_lineage_28091_86\",\n            \"source_lineage_28091_87\",\n            \"source_lineage_28091_88\",\n            \"source_lineage_28091_89\",\n            \"source_lineage_28091_90\",\n            \"source_lineage_28091_91\"\n          ],\n          \"quantile\": 3.990515730848953,\n          \"rank\": 55,\n          \"status\": \"supported\",\n          \"calibration_groups\": 60,\n          \"scope\": \"requires its containing joint model and frozen routing policy\"\n        },\n        \"evaluation\": {\n          \"cases\": 20,\n          \"groups\": 20,\n          \"covered_groups\": 10,\n          \"empirical_coverage\": 0.5,\n          \"binomial_95_interval\": [\n            0.27195784956079183,\n            0.7280421504392081\n          ],\n          \"finite_and_covered_fraction\": 0.5,\n          \"case_count_per_group\": {\n            \"group_28091_116\": 1,\n            \"group_28091_117\": 1,\n            \"group_28091_118\": 1,\n            \"group_28091_119\": 1,\n            \"group_28091_120\": 1,\n            \"group_28091_121\": 1,\n            \"group_28091_122\": 1,\n            \"group_28091_123\": 1,\n            \"group_28091_124\": 1,\n            \"group_28091_125\": 1,\n            \"group_28091_126\": 1,\n            \"group_28091_127\": 1,\n            \"group_28091_128\": 1,\n            \"group_28091_129\": 1,\n            \"group_28091_130\": 1,\n            \"group_28091_131\": 1,\n            \"group_28091_132\": 1,\n            \"group_28091_133\": 1,\n            \"group_28091_134\": 1,\n            \"group_28091_135\": 1\n          }\n        }\n      },\n      {\n        \"stratum\": \"degraded\",\n        \"radius\": {\n          \"format\": \"facemath.category_radius_fragment.v8\",\n          \"stratum\": \"degraded\",\n          \"alpha\": 0.1,\n          \"minimum_groups\": 9,\n          \"group_scores\": [\n            [\n              \"group_28091_100\",\n              5.626912341406915\n            ],\n            [\n              \"group_28091_101\",\n              4.655662219505217\n            ],\n            [\n              \"group_28091_102\",\n              9.067859956533187\n            ],\n            [\n              \"group_28091_103\",\n              9.152608775526309\n            ],\n            [\n              \"group_28091_104\",\n              6.152850626858231\n            ],\n            [\n              \"group_28091_105\",\n              5.10711149119989\n            ],\n            [\n              \"group_28091_106\",\n              6.893736962063772\n            ],\n            [\n              \"group_28091_107\",\n              7.593313710571407\n            ],\n            [\n              \"group_28091_108\",\n              5.967302393472459\n            ],\n            [\n              \"group_28091_109\",\n              5.714950281649603\n            ],\n            [\n              \"group_28091_110\",\n              9.153915723890528\n            ],\n            [\n              \"group_28091_111\",\n              5.871058480826917\n            ],\n            [\n              \"group_28091_92\",\n              6.660401904166521\n            ],\n            [\n              \"group_28091_93\",\n              5.2398752471048855\n            ],\n            [\n              \"group_28091_94\",\n              4.492970820874874\n            ],\n            [\n              \"group_28091_95\",\n              6.481936423213263\n            ],\n            [\n              \"group_28091_96\",\n              4.620496272553486\n            ],\n            [\n              \"group_28091_97\",\n              6.467168071517722\n            ],\n            [\n              \"group_28091_98\",\n              5.346167793531989\n            ],\n            [\n              \"group_28091_99\",\n              8.611569480459245\n            ]\n          ],\n          \"calibration_images\": [\n            \"0c358c98b00bc947cee8b64ed79d0df1fa0d2e23440b2a6af42d05de0842a0da\",\n            \"14c2985de9622d6641e3d54aa75c8958131241d3e39191c89d3ab463ba28a26f\",\n            \"16e45bc38d20bc1fba9e2a38796ade64c65d76447d564e57c964e3b539e2f8de\",\n            \"1e26d2086f622b9116b27b8b91fe39f83807371a213ca6a413eb236f537d3e92\",\n            \"539454c24bca27c8fbc2dbdbcd9fe95afe8429f130e216d2da2003cc167804f4\",\n            \"57bcb117676f35eb007fe156294bc57940d0e96170df80cae0b5320a40a15100\",\n            \"690bbda13548a67d3c33ed098dde6025da63dd2e1367dd6c578ba008a221f3ab\",\n            \"6d2cadf1d0826c0a3dc207790d47fba5bc0e945b31a1b2c72b1404c32c56dc06\",\n            \"a314eefe1beb9c39f5bfc65754333a04f7151b0a61de999818fd7d0f04fa1dc2\",\n            \"a6c92fd561e5eaed41a71bea995b8407196236d3c900ea8f9cad25985a323b53\",\n            \"a9228dc6f54af5e95390bf13eda773172e5754371b0e5aded2b7ac95d247c517\",\n            \"b0eefca95562b14d509b601c83a23c5712916d6375355a8fe8f0eade4713d0b6\",\n            \"b8c84fb1eb6fca779dbb65fe14c42e4c9e289868139f85b30de453558b07df52\",\n            \"c04a8962b1d4bcca110e62ed0d9ba44546329e18df7f75e800e7edecb215953d\",\n            \"d293d9417bff6d73c7a0611b947497620df26c5b6f44da88e8b796fead1144b4\",\n            \"d41e799109a204ac7990b76e3bd2ed87d88eb1d1cc5a9128380b983d864b9ba6\",\n            \"d7d1e23aaf68a77a3c73c4157afb40c218b37488017b842efe43d92614b541a1\",\n            \"df62f7a4248e615da45e683cf5ee8fcaadd407394d952fa39f57825d69d78fb7\",\n            \"f73328afe8ab137e62e6b4fddab464c40356631d800a0612e2ad223e93cbfae5\",\n            \"f9b903b34871fb67494da13d7818c7eb22e27846d9b940b0ba9b9de6a244af23\"\n          ],\n          \"calibration_lineages\": [\n            \"source_lineage_28091_100\",\n            \"source_lineage_28091_101\",\n            \"source_lineage_28091_102\",\n            \"source_lineage_28091_103\",\n            \"source_lineage_28091_104\",\n            \"source_lineage_28091_105\",\n            \"source_lineage_28091_106\",\n            \"source_lineage_28091_107\",\n            \"source_lineage_28091_108\",\n            \"source_lineage_28091_109\",\n            \"source_lineage_28091_110\",\n            \"source_lineage_28091_111\",\n            \"source_lineage_28091_92\",\n            \"source_lineage_28091_93\",\n            \"source_lineage_28091_94\",\n            \"source_lineage_28091_95\",\n            \"source_lineage_28091_96\",\n            \"source_lineage_28091_97\",\n            \"source_lineage_28091_98\",\n            \"source_lineage_28091_99\"\n          ],\n          \"quantile\": 9.152608775526309,\n          \"rank\": 19,\n          \"status\": \"supported\",\n          \"calibration_groups\": 20,\n          \"scope\": \"requires its containing joint model and frozen routing policy\"\n        },\n        \"evaluation\": {\n          \"cases\": 12,\n          \"groups\": 12,\n          \"covered_groups\": 10,\n          \"empirical_coverage\": 0.8333333333333334,\n          \"binomial_95_interval\": [\n            0.5158622513140328,\n            0.9791374745399076\n          ],\n          \"finite_and_covered_fraction\": 0.8333333333333334,\n          \"case_count_per_group\": {\n            \"group_28091_136\": 1,\n            \"group_28091_137\": 1,\n            \"group_28091_138\": 1,\n            \"group_28091_139\": 1,\n            \"group_28091_140\": 1,\n            \"group_28091_141\": 1,\n            \"group_28091_142\": 1,\n            \"group_28091_143\": 1,\n            \"group_28091_144\": 1,\n            \"group_28091_145\": 1,\n            \"group_28091_146\": 1,\n            \"group_28091_147\": 1\n          }\n        }\n      },\n      {\n        \"stratum\": \"sparse\",\n        \"radius\": {\n          \"format\": \"facemath.category_radius_fragment.v8\",\n          \"stratum\": \"sparse\",\n          \"alpha\": 0.1,\n          \"minimum_groups\": 9,\n          \"group_scores\": [\n            [\n              \"group_28091_112\",\n              3.376609818728628\n            ],\n            [\n              \"group_28091_113\",\n              2.008063876543626\n            ],\n            [\n              \"group_28091_114\",\n              2.5850216103998203\n            ],\n            [\n              \"group_28091_115\",\n              3.5523701273962445\n            ]\n          ],\n          \"calibration_images\": [\n            \"73e11380e94626bd2a73e80041ce12fcb32bb56b0a64a2a5eae91ee89c874f83\",\n            \"825d2b5e54554bbb69b3594979b1c9ecacea617668415e3797c85c9cde38df61\",\n            \"8e9f309a3a4c658b6c1cdff84b2020fc338a8aff7238066bdb8556ab2a49966f\",\n            \"9b3167115c0b34ca9e78bf573475c2e712ad8befcc0e443c103fe9be23267253\"\n          ],\n          \"calibration_lineages\": [\n            \"source_lineage_28091_112\",\n            \"source_lineage_28091_113\",\n            \"source_lineage_28091_114\",\n            \"source_lineage_28091_115\"\n          ],\n          \"quantile\": null,\n          \"rank\": 5,\n          \"status\": \"below_frozen_minimum_groups\",\n          \"calibration_groups\": 4,\n          \"scope\": \"requires its containing joint model and frozen routing policy\"\n        },\n        \"evaluation\": {\n          \"cases\": 3,\n          \"groups\": 3,\n          \"covered_groups\": null,\n          \"empirical_coverage\": null,\n          \"binomial_95_interval\": null,\n          \"finite_and_covered_fraction\": 0.0,\n          \"case_count_per_group\": {\n            \"group_28091_148\": 1,\n            \"group_28091_149\": 1,\n            \"group_28091_150\": 1\n          }\n        }\n      },\n      {\n        \"stratum\": \"unseen\",\n        \"radius\": {\n          \"format\": \"facemath.category_radius_fragment.v8\",\n          \"stratum\": \"unseen\",\n          \"alpha\": 0.1,\n          \"minimum_groups\": 9,\n          \"group_scores\": [],\n          \"calibration_images\": [],\n          \"calibration_lineages\": [],\n          \"quantile\": null,\n          \"rank\": 1,\n          \"status\": \"no_calibration_groups\",\n          \"calibration_groups\": 0,\n          \"scope\": \"requires its containing joint model and frozen routing policy\"\n        },\n        \"evaluation\": {\n          \"cases\": 3,\n          \"groups\": 3,\n          \"covered_groups\": null,\n          \"empirical_coverage\": null,\n          \"binomial_95_interval\": null,\n          \"finite_and_covered_fraction\": 0.0,\n          \"case_count_per_group\": {\n            \"group_28091_151\": 1,\n            \"group_28091_152\": 1,\n            \"group_28091_153\": 1\n          }\n        }\n      }\n    ],\n    \"meaning\": \"aggregate = fraction of ALL evaluation groups with finite delivered bounds AND covered references; abstentions are not deleted\",\n    \"guarantee_scope\": \"category-local conformal rank under exchangeable groups in each frozen category; not per-image, not hidden-shift immunity\",\n    \"evaluation_used_to_select_radii\": false,\n    \"availability_limit\": \"unbounded theoretical error sets are not delivered as numerical geometry; conditioning on finite delivery is not a separate conformal guarantee\",\n    \"full_error_model_sha256\": \"cfcc1d3d8c805557d89db4911132739feaae5066ebcb5e753b8be91cb04dc65f\",\n    \"score_centering\": \"development_joint_ocular_stratified\",\n    \"binomial_95_interval\": null,\n    \"aggregate_interval_limit\": \"heterogeneous category mixtures and abstentions are not asserted to be iid Bernoulli trials; no aggregate binomial interval\"\n  },\n  \"pooled_joint_diagnostic\": {\n    \"quantile\": 6.660401904166521,\n    \"coverage\": {\n      \"calibration_sha256\": \"0441323b7b043f4945c2fc29c396d187721b2764b873e37ef2a87030371338ba\",\n      \"nominal_coverage\": 0.9,\n      \"finite_envelope\": true,\n      \"evaluation_cases\": 38,\n      \"evaluation_groups\": 38,\n      \"covered_groups\": 20,\n      \"empirical_group_coverage\": 0.5263157894736842,\n      \"failures\": 1,\n      \"cases\": [\n        {\n          \"case_id\": \"acquisition_0116\",\n          \"group_id\": \"group_28091_116\",\n          \"score\": 2.693209925676074,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0117\",\n          \"group_id\": \"group_28091_117\",\n          \"score\": 2.2282185196451385,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0118\",\n          \"group_id\": \"group_28091_118\",\n          \"score\": 2.4155227060592823,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0119\",\n          \"group_id\": \"group_28091_119\",\n          \"score\": 1.519529316175325,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0120\",\n          \"group_id\": \"group_28091_120\",\n          \"score\": 1.3477473121089336,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0121\",\n          \"group_id\": \"group_28091_121\",\n          \"score\": 1.54561151132197,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0122\",\n          \"group_id\": \"group_28091_122\",\n          \"score\": 1.7519448968734381,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0123\",\n          \"group_id\": \"group_28091_123\",\n          \"score\": 2.2815211645172506,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0124\",\n          \"group_id\": \"group_28091_124\",\n          \"score\": 2.0047499754415004,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0125\",\n          \"group_id\": \"group_28091_125\",\n          \"score\": 2.5211832067248054,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0126\",\n          \"group_id\": \"group_28091_126\",\n          \"score\": 4.8475564608846495,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0127\",\n          \"group_id\": \"group_28091_127\",\n          \"score\": 4.0296518898110465,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0128\",\n          \"group_id\": \"group_28091_128\",\n          \"score\": 25.604520290577188,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0129\",\n          \"group_id\": \"group_28091_129\",\n          \"score\": 25.10197744129559,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0130\",\n          \"group_id\": \"group_28091_130\",\n          \"score\": 26.39629318790147,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0131\",\n          \"group_id\": \"group_28091_131\",\n          \"score\": 24.981661738072145,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0132\",\n          \"group_id\": \"group_28091_132\",\n          \"score\": 25.28490263553967,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0133\",\n          \"group_id\": \"group_28091_133\",\n          \"score\": 25.272682609127763,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0134\",\n          \"group_id\": \"group_28091_134\",\n          \"score\": 26.066060282080276,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0135\",\n          \"group_id\": \"group_28091_135\",\n          \"score\": 24.97895538264321,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0136\",\n          \"group_id\": \"group_28091_136\",\n          \"score\": 7.086663995197389,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0137\",\n          \"group_id\": \"group_28091_137\",\n          \"score\": 9.315379423029473,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0138\",\n          \"group_id\": \"group_28091_138\",\n          \"score\": null,\n          \"assessable\": false,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0139\",\n          \"group_id\": \"group_28091_139\",\n          \"score\": 8.762434690929615,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0140\",\n          \"group_id\": \"group_28091_140\",\n          \"score\": 6.780771334657648,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0141\",\n          \"group_id\": \"group_28091_141\",\n          \"score\": 5.311841900218858,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0142\",\n          \"group_id\": \"group_28091_142\",\n          \"score\": 6.202892009849274,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0143\",\n          \"group_id\": \"group_28091_143\",\n          \"score\": 7.371156254855533,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0144\",\n          \"group_id\": \"group_28091_144\",\n          \"score\": 4.673018425161619,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0145\",\n          \"group_id\": \"group_28091_145\",\n          \"score\": 4.100284040207839,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0146\",\n          \"group_id\": \"group_28091_146\",\n          \"score\": 5.982965751062406,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0147\",\n          \"group_id\": \"group_28091_147\",\n          \"score\": 6.723622039346735,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0148\",\n          \"group_id\": \"group_28091_148\",\n          \"score\": 2.647892763248283,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0149\",\n          \"group_id\": \"group_28091_149\",\n          \"score\": 4.499251388952108,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0150\",\n          \"group_id\": \"group_28091_150\",\n          \"score\": 3.444891079931191,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"acquisition_0151\",\n          \"group_id\": \"group_28091_151\",\n          \"score\": 10.274342981727006,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0152\",\n          \"group_id\": \"group_28091_152\",\n          \"score\": 7.5472827534431834,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"acquisition_0153\",\n          \"group_id\": \"group_28091_153\",\n          \"score\": 13.621579190077783,\n          \"assessable\": true,\n          \"covered\": false\n        }\n      ],\n      \"interpretation\": \"held-out reference coverage, not facial resemblance or a guarantee of deployment coverage\"\n    },\n    \"meaning\": \"same development fit with pooled calibration; diagnostic only, never a deployment fallback\"\n  },\n  \"hidden_within_clear_shift\": {\n    \"prespecified_groups\": 8,\n    \"covered\": 0,\n    \"not_detected_by_category_label\": true\n  },\n  \"queries\": [\n    {\n      \"bundle\": \"pair_00_mouth_0px\",\n      \"mouth_expansion_px\": 0.0,\n      \"query_strata\": [\n        \"clear\",\n        \"degraded\"\n      ],\n      \"source_quantiles\": [\n        3.990515730848953,\n        9.152608775526309\n      ],\n      \"known_reference_shape_rms\": 0.0,\n      \"shape_range\": {\n        \"metric\": \"intrinsic.eye_normalized_proper_procrustes_rms\",\n        \"observed_rms\": 0.009096453373681673,\n        \"reference_set_center_rms\": 0.009082627515732883,\n        \"lower\": 0.0,\n        \"upper\": 0.16041083632722306,\n        \"available\": true,\n        \"reason\": \"bounded\",\n        \"distance_matrix_lower\": 0.0,\n        \"quotient_lipschitz_lower\": 0.0,\n        \"quotient_lipschitz_upper\": 0.16083718390948704,\n        \"candidate_rotation_upper\": 0.16041083632719463,\n        \"meaning\": \"outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans\",\n        \"not\": \"not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage\",\n        \"arrays\": [\n          \"intrinsic_shape_deviation_radii\",\n          \"intrinsic_shape_candidate_rotation\"\n        ]\n      },\n      \"known_shape_enclosed\": true,\n      \"bounded_relations\": 256,\n      \"known_relation_gap_violations\": 0,\n      \"raw_arrays_unchanged\": true,\n      \"raw_array_count\": 135,\n      \"array_count\": 176,\n      \"verification\": {\n        \"verified\": true,\n        \"files\": 14,\n        \"arrays\": 176,\n        \"events\": 19,\n        \"manifest_content_sha256\": \"2c1b09ba1061c3565581424ee3f846d5afefaf07abed6b3ed54c6fb246a484c1\",\n        \"limit\": \"self-consistency hashes; not an externally signed execution attestation\"\n      }\n    },\n    {\n      \"bundle\": \"pair_01_mouth_4px\",\n      \"mouth_expansion_px\": 4.0,\n      \"query_strata\": [\n        \"clear\",\n        \"degraded\"\n      ],\n      \"source_quantiles\": [\n        3.990515730848953,\n        9.152608775526309\n      ],\n      \"known_reference_shape_rms\": 0.041666666666669926,\n      \"shape_range\": {\n        \"metric\": \"intrinsic.eye_normalized_proper_procrustes_rms\",\n        \"observed_rms\": 0.0421738842318254,\n        \"reference_set_center_rms\": 0.04214987055744872,\n        \"lower\": 0.0,\n        \"upper\": 0.18241836166058403,\n        \"available\": true,\n        \"reason\": \"bounded\",\n        \"distance_matrix_lower\": 0.0,\n        \"quotient_lipschitz_lower\": 0.0,\n        \"quotient_lipschitz_upper\": 0.19431509245289186,\n        \"candidate_rotation_upper\": 0.1824183616605556,\n        \"meaning\": \"outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans\",\n        \"not\": \"not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage\",\n        \"arrays\": [\n          \"intrinsic_shape_deviation_radii\",\n          \"intrinsic_shape_candidate_rotation\"\n        ]\n      },\n      \"known_shape_enclosed\": true,\n      \"bounded_relations\": 256,\n      \"known_relation_gap_violations\": 0,\n      \"raw_arrays_unchanged\": true,\n      \"raw_array_count\": 135,\n      \"array_count\": 176,\n      \"verification\": {\n        \"verified\": true,\n        \"files\": 14,\n        \"arrays\": 176,\n        \"events\": 19,\n        \"manifest_content_sha256\": \"7e444aa8f6790020723327f7d9effdb4329466503d6b7138302dd0ad3de41c89\",\n        \"limit\": \"self-consistency hashes; not an externally signed execution attestation\"\n      }\n    },\n    {\n      \"bundle\": \"pair_02_mouth_8px\",\n      \"mouth_expansion_px\": 8.0,\n      \"query_strata\": [\n        \"clear\",\n        \"degraded\"\n      ],\n      \"source_quantiles\": [\n        3.990515730848953,\n        9.152608775526309\n      ],\n      \"known_reference_shape_rms\": 0.08333333333333319,\n      \"shape_range\": {\n        \"metric\": \"intrinsic.eye_normalized_proper_procrustes_rms\",\n        \"observed_rms\": 0.08293613811615588,\n        \"reference_set_center_rms\": 0.08288716862194673,\n        \"lower\": 0.01705960209870187,\n        \"upper\": 0.2112280597191004,\n        \"available\": true,\n        \"reason\": \"bounded\",\n        \"distance_matrix_lower\": 0.01705960209873029,\n        \"quotient_lipschitz_lower\": 0.0,\n        \"quotient_lipschitz_upper\": 0.23553971124450496,\n        \"candidate_rotation_upper\": 0.21122805971907196,\n        \"meaning\": \"outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans\",\n        \"not\": \"not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage\",\n        \"arrays\": [\n          \"intrinsic_shape_deviation_radii\",\n          \"intrinsic_shape_candidate_rotation\"\n        ]\n      },\n      \"known_shape_enclosed\": true,\n      \"bounded_relations\": 256,\n      \"known_relation_gap_violations\": 0,\n      \"raw_arrays_unchanged\": true,\n      \"raw_array_count\": 135,\n      \"array_count\": 176,\n      \"verification\": {\n        \"verified\": true,\n        \"files\": 14,\n        \"arrays\": 176,\n        \"events\": 19,\n        \"manifest_content_sha256\": \"4652ef8bb726ea4aa606afeb430060c240da7341db10139b74ac713b8f62451b\",\n        \"limit\": \"self-consistency hashes; not an externally signed execution attestation\"\n      }\n    },\n    {\n      \"bundle\": \"pair_03_mouth_12px\",\n      \"mouth_expansion_px\": 12.0,\n      \"query_strata\": [\n        \"clear\",\n        \"degraded\"\n      ],\n      \"source_quantiles\": [\n        3.990515730848953,\n        9.152608775526309\n      ],\n      \"known_reference_shape_rms\": 0.125,\n      \"shape_range\": {\n        \"metric\": \"intrinsic.eye_normalized_proper_procrustes_rms\",\n        \"observed_rms\": 0.13207284941332123,\n        \"reference_set_center_rms\": 0.1319990411162596,\n        \"lower\": 0.04055352053818143,\n        \"upper\": 0.2544585688731014,\n        \"available\": true,\n        \"reason\": \"bounded\",\n        \"distance_matrix_lower\": 0.040553520538209854,\n        \"quotient_lipschitz_lower\": 0.0,\n        \"quotient_lipschitz_upper\": 0.2857168126956446,\n        \"candidate_rotation_upper\": 0.254458568873073,\n        \"meaning\": \"outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans\",\n        \"not\": \"not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage\",\n        \"arrays\": [\n          \"intrinsic_shape_deviation_radii\",\n          \"intrinsic_shape_candidate_rotation\"\n        ]\n      },\n      \"known_shape_enclosed\": true,\n      \"bounded_relations\": 256,\n      \"known_relation_gap_violations\": 0,\n      \"raw_arrays_unchanged\": true,\n      \"raw_array_count\": 135,\n      \"array_count\": 176,\n      \"verification\": {\n        \"verified\": true,\n        \"files\": 14,\n        \"arrays\": 176,\n        \"events\": 19,\n        \"manifest_content_sha256\": \"e6b15f24f127d79ee8c0226a2f84620d9d7a676b879ffa3d2c4f74a0c8f569cd\",\n        \"limit\": \"self-consistency hashes; not an externally signed execution attestation\"\n      }\n    }\n  ],\n  \"unsupported_queries\": [\n    {\n      \"stratum\": \"unseen\",\n      \"reason\": \"acquisition category 'unseen' is unsupported: no_calibration_groups; no pooled fallback\",\n      \"actual_events\": \"refused_unseen.events.jsonl\",\n      \"no_measurement_bundle_created\": true\n    },\n    {\n      \"stratum\": \"sparse\",\n      \"reason\": \"acquisition category 'sparse' is unsupported: below_frozen_minimum_groups; no pooled fallback\",\n      \"actual_events\": \"refused_sparse.events.jsonl\",\n      \"no_measurement_bundle_created\": true\n    }\n  ],\n  \"set_controls\": {\n    \"format\": \"facemath.mixed_source_radius_controls.v8\",\n    \"kind\": \"analytic_and_synthetic_NOT_HUMAN\",\n    \"seed\": 28801,\n    \"sampled_shape_pairs\": 1024,\n    \"scalar_relation_checks\": 262144,\n    \"sampled_relation_violations\": 0,\n    \"sampled_shape_violations\": 0,\n    \"shape_bound\": {\n      \"metric\": \"intrinsic.eye_normalized_proper_procrustes_rms\",\n      \"observed_rms\": 0.04999972298708903,\n      \"reference_set_center_rms\": 0.04999972298708903,\n      \"lower\": 0.02428640423154512,\n      \"upper\": 0.06634270166002348,\n      \"available\": true,\n      \"reason\": \"bounded\",\n      \"distance_matrix_lower\": 0.0233635065375299,\n      \"quotient_lipschitz_lower\": 0.024286404231573543,\n      \"quotient_lipschitz_upper\": 0.07571304174260451,\n      \"candidate_rotation_upper\": 0.06634270165999506,\n      \"meaning\": \"outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans\",\n      \"not\": \"not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage\",\n      \"arrays\": [\n        \"intrinsic_shape_deviation_radii\",\n        \"intrinsic_shape_candidate_rotation\"\n      ]\n    },\n    \"circle_counterexample\": {\n      \"source_radii\": [\n        1.0,\n        3.0\n      ],\n      \"admissible_witness_gap\": 1.2,\n      \"correct_source_specific_upper\": 1.2000000000000173,\n      \"unsafe_smaller_single_radius_upper\": 0.8000000000000143,\n      \"overconservative_larger_single_radius_upper\": 1.4000000000000201\n    },\n    \"arrays\": {\n      \"source_centers\": {\n        \"shape\": [\n          2,\n          8,\n          2\n        ],\n        \"dtype\": \"float64\",\n        \"sha256\": \"495101ca8266efbfe6c6ec02051ad331b4facb55d192099ba8e9d6f5500f3b65\"\n      },\n      \"source_covariance\": {\n        \"shape\": [\n          2,\n          16,\n          16\n        ],\n        \"dtype\": \"float64\",\n        \"sha256\": \"4b9e0e415291ef7249ba90a44a2035b35176fa408819776f12d0db693e119d8a\"\n      },\n      \"source_factors\": {\n        \"shape\": [\n          2,\n          8,\n          2,\n          16\n        ],\n        \"dtype\": \"float64\",\n        \"sha256\": \"5267f31980069c8c950c2c68af915e7c2e684a2e94a1c04f883a7f1abeb6eaf0\"\n      },\n      \"source_radii\": {\n        \"shape\": [\n          2\n        ],\n        \"dtype\": \"float64\",\n        \"sha256\": \"c70124d34f3c6fd97aefa319957e0d71ba85b80c664ac9ecede6785f615b2c05\"\n      },\n      \"latent_draws\": {\n        \"shape\": [\n          2,\n          1024,\n          16\n        ],\n        \"dtype\": \"float64\",\n        \"sha256\": \"5d2fc9d471bd73b62a714ec27282a384b6bd2e756c1626cdc4d382503cdc1cce\"\n      },\n      \"shape_draws\": {\n        \"shape\": [\n          2,\n          1024,\n          8,\n          2\n        ],\n        \"dtype\": \"float64\",\n        \"sha256\": \"9a3125eae6b9e98a23bc51e8ef747969ecbc09b771fa96270f68e9f828dc4cbd\"\n      },\n      \"exact_relation_values\": {\n        \"shape\": [\n          2,\n          1024,\n          256\n        ],\n        \"dtype\": \"float64\",\n        \"sha256\": \"f3eb81f50548496e62aff442b4d7af11ce2bafd1b19459cf3df4a39d62931f69\"\n      },\n      \"exact_relation_gaps\": {\n        \"shape\": [\n          1024,\n          256\n        ],\n        \"dtype\": \"float64\",\n        \"sha256\": \"b1143d6885c1e2b80537a65a78d2ebcfe2adbaea7051d8cbb9c9623ec72db4e1\"\n      },\n      \"gap_lower\": {\n        \"shape\": [\n          256\n        ],\n        \"dtype\": \"float64\",\n        \"sha256\": \"59877682e5827cb684b14e417bbbb4c3f1408a55295966ab0174787e90593798\"\n      },\n      \"gap_upper\": {\n        \"shape\": [\n          256\n        ],\n        \"dtype\": \"float64\",\n        \"sha256\": \"288cf913f6e51b7741b9286e63a91b8a59ac107aeeca2056e5735fad7e5484e8\"\n      },\n      \"gap_available\": {\n        \"shape\": [\n          256\n        ],\n        \"dtype\": \"bool\",\n        \"sha256\": \"f9484b9c5a5151fdd263b1925dc6dbeeb7b7d99b60bd555a5fbfbf492661e1ad\"\n      },\n      \"exact_refitted_shape\": {\n        \"shape\": [\n          1024\n        ],\n        \"dtype\": \"float64\",\n        \"sha256\": \"51abdd1ab6f338eca9e1605d723a3a3b1f304ceb9eb2d31d1eba508c9c6979ab\"\n      },\n      \"shape_bounds\": {\n        \"shape\": [\n          2\n        ],\n        \"dtype\": \"float64\",\n        \"sha256\": \"6767f7571242244b7cb9271563d4d473b9fa572413de206a198ec668279d97f9\"\n      },\n      \"circle_delta\": {\n        \"shape\": [\n          1,\n          2\n        ],\n        \"dtype\": \"float64\",\n        \"sha256\": \"739236a6acf2507c9b12f40d51728d57ac9fc90c4927a12ee6238723550da2ee\"\n      },\n      \"circle_covariances\": {\n        \"shape\": [\n          2,\n          1,\n          2,\n          2\n        ],\n        \"dtype\": \"float64\",\n        \"sha256\": \"aa3c969a6f11a9c88dd545634528083a34bb007955525500d38eef997ac2e99a\"\n      },\n      \"circle_source_radii\": {\n        \"shape\": [\n          2\n        ],\n        \"dtype\": \"float64\",\n        \"sha256\": \"c3c7e70f0287dbcf738f14e45cc97cb1ed6af16a1701d1895a7c1449ab457cf6\"\n      },\n      \"circle_witness\": {\n        \"shape\": [\n          2\n        ],\n        \"dtype\": \"float64\",\n        \"sha256\": \"56dc728216c1976bd451867d21bbe94b9d2ddfc49e3d5de51f4f3def11b7089b\"\n      }\n    },\n    \"limit\": \"sampling tests the analytic outer bounds; it is not proof by sampling or real reference calibration\"\n  },\n  \"qualification_verified\": {\n    \"verified\": true,\n    \"kind\": \"observer_qualification\",\n    \"files\": 1252,\n    \"arrays\": 18,\n    \"study_sha256\": \"aa84c9f8ceeca1d8803d3c457f4a2e014801df6cdc82a3602d0a93b510b62b8d\",\n    \"manifest_content_sha256\": \"4d3e41bdd994d1b2aec867b79c24a20f5961af486e4c01f0ce2b8b92e60ce209\",\n    \"live_inference_reexecuted\": false\n  },\n  \"limits\": [\n    \"category correctness is declared, not inferred from the face\",\n    \"routing never chooses a radius by inspecting evaluation or pair similarity\",\n    \"unsupported conditions abstain without deleting their evaluation denominator\",\n    \"real detector inference and independently labeled portraits remain unvalidated\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    "final-wheel-build": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-deps",
+        "--no-build-isolation",
+        "--no-index",
+        "--wheel-dir",
+        "/mnt/data/facemath_wave_08/dist",
+        "/mnt/data/facemath_wave_08"
+      ],
+      "cwd": "/mnt/data/facemath_wave_08",
+      "started_utc": "2026-09-20T07:07:07.165045+00:00",
+      "finished_utc": "2026-09-20T07:07:09.724003+00:00",
+      "returncode": 0,
+      "stdout": "Processing /mnt/data/facemath_wave_08\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: facemath\n  Building wheel for facemath (pyproject.toml): started\n  Building wheel for facemath (pyproject.toml): finished with status 'done'\n  Created wheel for facemath: filename=facemath-0.8.0-py3-none-any.whl size=219004 sha256=a7db36f60569ee7574e510b85481ace006a9be11f4962e7570783a1e571af513\n  Stored in directory: /tmp/pip-ephem-wheel-cache-o74jju8w/wheels/37/7f/23/47c8d2f9e63b242224fdae83352ae92e10294b0d8a37d27334\nSuccessfully built facemath\n",
+      "stderr": "WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+    }
+  },
+  "installed_wheel_commands": {
+    "command-04": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px",
+        "--out",
+        "/mnt/data/facemath_wave_08/evidence/wave8/wheel-check/pair-replayed"
+      ],
+      "cwd": "/tmp/facemath-installed-v3hxzzlv",
+      "started_utc": "2026-09-20T07:08:27.085112+00:00",
+      "finished_utc": "2026-09-20T07:08:28.916472+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"replay_verified\": true,\n  \"source_bundle\": \"/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px\",\n  \"new_bundle\": \"/mnt/data/facemath_wave_08/evidence/wave8/wheel-check/pair-replayed\",\n  \"numerical_tolerance\": \"arrays atol=1e-9, rtol=1e-7; measurements atol=1e-10, rtol=1e-8\"\n}\n",
+      "stderr": ""
+    },
+    "command-03": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification",
+        "--out",
+        "/mnt/data/facemath_wave_08/evidence/wave8/wheel-check/replayed"
+      ],
+      "cwd": "/tmp/facemath-installed-v3hxzzlv",
+      "started_utc": "2026-09-20T07:08:21.673222+00:00",
+      "finished_utc": "2026-09-20T07:08:27.084764+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"replay_verified\": true,\n  \"bundle\": \"/mnt/data/facemath_wave_08/evidence/wave8/wheel-check/replayed\",\n  \"comparison\": \"exact qualification/calibration JSON and numerical array equality\",\n  \"live_inference_reexecuted\": false\n}\n",
+      "stderr": ""
+    },
+    "command-02": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "/mnt/data/facemath_wave_08/tests",
+        "-c",
+        "/tmp/facemath-installed-v3hxzzlv/pytest.ini",
+        "--junitxml=/mnt/data/facemath_wave_08/evidence/wave8/wheel-check/pytest.xml"
+      ],
+      "cwd": "/tmp/facemath-installed-v3hxzzlv",
+      "started_utc": "2026-09-20T07:07:11.905852+00:00",
+      "finished_utc": "2026-09-20T07:08:21.672895+00:00",
+      "returncode": 0,
+      "stdout": "........................................................................ [ 10%]\n........................................................................ [ 20%]\ns....................................................................... [ 31%]\n........................................................................ [ 41%]\n........................................................................ [ 52%]\n........................................................................ [ 62%]\n........................................................................ [ 72%]\n........................................................................ [ 83%]\n........................................................................ [ 93%]\n............................................                             [100%]\n691 passed, 1 skipped in 67.59s (0:01:07)\n",
+      "stderr": ""
+    },
+    "command-00": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-deps",
+        "--no-index",
+        "--target",
+        "/tmp/facemath-installed-v3hxzzlv/installed",
+        "/mnt/data/facemath_wave_08/dist/facemath-0.8.0-py3-none-any.whl"
+      ],
+      "cwd": "/tmp/facemath-installed-v3hxzzlv",
+      "started_utc": "2026-09-20T07:07:10.153680+00:00",
+      "finished_utc": "2026-09-20T07:07:11.048502+00:00",
+      "returncode": 0,
+      "stdout": "Processing /mnt/data/facemath_wave_08/dist/facemath-0.8.0-py3-none-any.whl\nInstalling collected packages: facemath\nSuccessfully installed facemath-0.8.0\n",
+      "stderr": "WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+    },
+    "command-01": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-c",
+        "import facemath,json; from facemath.observation.journal import code_fingerprint; print(json.dumps({\"file\":facemath.__file__,\"version\":facemath.__version__,\"code_sha256\":code_fingerprint()}))"
+      ],
+      "cwd": "/tmp/facemath-installed-v3hxzzlv",
+      "started_utc": "2026-09-20T07:07:11.048770+00:00",
+      "finished_utc": "2026-09-20T07:07:11.905459+00:00",
+      "returncode": 0,
+      "stdout": "{\"file\": \"/tmp/facemath-installed-v3hxzzlv/installed/facemath/__init__.py\", \"version\": \"0.8.0\", \"code_sha256\": \"94c9b9484f05877d59f2f5e2a25be508a9ecb0aa3f8d9df6f6625d570077e023\"}\n",
+      "stderr": ""
+    }
+  },
+  "laboratory": {
+    "acquisition": {
+      "enrolled": 155,
+      "eligible": 154,
+      "calls_after_first_batch": 7,
+      "calls_after_complete": 154,
+      "calls_after_resume": 154,
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 2,
+        "observed": 152,
+        "runtime_error": 0,
+        "timeout": 0
+      },
+      "excluded": 1
+    },
+    "radii": [
+      {
+        "stratum": "clear",
+        "quantile": 3.990515730848953,
+        "calibration_groups": 60,
+        "rank": 55,
+        "status": "supported"
+      },
+      {
+        "stratum": "degraded",
+        "quantile": 9.152608775526309,
+        "calibration_groups": 20,
+        "rank": 19,
+        "status": "supported"
+      },
+      {
+        "stratum": "sparse",
+        "quantile": null,
+        "calibration_groups": 4,
+        "rank": 5,
+        "status": "below_frozen_minimum_groups"
+      },
+      {
+        "stratum": "unseen",
+        "quantile": null,
+        "calibration_groups": 0,
+        "rank": 1,
+        "status": "no_calibration_groups"
+      }
+    ],
+    "hidden_shift": {
+      "prespecified_groups": 8,
+      "covered": 0,
+      "not_detected_by_category_label": true
+    },
+    "queries": [
+      {
+        "bundle": "pair_00_mouth_0px",
+        "mouth_expansion_px": 0.0,
+        "query_strata": [
+          "clear",
+          "degraded"
+        ],
+        "source_quantiles": [
+          3.990515730848953,
+          9.152608775526309
+        ],
+        "known_reference_shape_rms": 0.0,
+        "shape_range": {
+          "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+          "observed_rms": 0.009096453373681673,
+          "reference_set_center_rms": 0.009082627515732883,
+          "lower": 0.0,
+          "upper": 0.16041083632722306,
+          "available": true,
+          "reason": "bounded",
+          "distance_matrix_lower": 0.0,
+          "quotient_lipschitz_lower": 0.0,
+          "quotient_lipschitz_upper": 0.16083718390948704,
+          "candidate_rotation_upper": 0.16041083632719463,
+          "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+          "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+          "arrays": [
+            "intrinsic_shape_deviation_radii",
+            "intrinsic_shape_candidate_rotation"
+          ]
+        },
+        "known_shape_enclosed": true,
+        "bounded_relations": 256,
+        "known_relation_gap_violations": 0,
+        "raw_arrays_unchanged": true,
+        "raw_array_count": 135,
+        "array_count": 176,
+        "verification": {
+          "verified": true,
+          "files": 14,
+          "arrays": 176,
+          "events": 19,
+          "manifest_content_sha256": "2c1b09ba1061c3565581424ee3f846d5afefaf07abed6b3ed54c6fb246a484c1",
+          "limit": "self-consistency hashes; not an externally signed execution attestation"
+        }
+      },
+      {
+        "bundle": "pair_01_mouth_4px",
+        "mouth_expansion_px": 4.0,
+        "query_strata": [
+          "clear",
+          "degraded"
+        ],
+        "source_quantiles": [
+          3.990515730848953,
+          9.152608775526309
+        ],
+        "known_reference_shape_rms": 0.041666666666669926,
+        "shape_range": {
+          "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+          "observed_rms": 0.0421738842318254,
+          "reference_set_center_rms": 0.04214987055744872,
+          "lower": 0.0,
+          "upper": 0.18241836166058403,
+          "available": true,
+          "reason": "bounded",
+          "distance_matrix_lower": 0.0,
+          "quotient_lipschitz_lower": 0.0,
+          "quotient_lipschitz_upper": 0.19431509245289186,
+          "candidate_rotation_upper": 0.1824183616605556,
+          "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+          "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+          "arrays": [
+            "intrinsic_shape_deviation_radii",
+            "intrinsic_shape_candidate_rotation"
+          ]
+        },
+        "known_shape_enclosed": true,
+        "bounded_relations": 256,
+        "known_relation_gap_violations": 0,
+        "raw_arrays_unchanged": true,
+        "raw_array_count": 135,
+        "array_count": 176,
+        "verification": {
+          "verified": true,
+          "files": 14,
+          "arrays": 176,
+          "events": 19,
+          "manifest_content_sha256": "7e444aa8f6790020723327f7d9effdb4329466503d6b7138302dd0ad3de41c89",
+          "limit": "self-consistency hashes; not an externally signed execution attestation"
+        }
+      },
+      {
+        "bundle": "pair_02_mouth_8px",
+        "mouth_expansion_px": 8.0,
+        "query_strata": [
+          "clear",
+          "degraded"
+        ],
+        "source_quantiles": [
+          3.990515730848953,
+          9.152608775526309
+        ],
+        "known_reference_shape_rms": 0.08333333333333319,
+        "shape_range": {
+          "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+          "observed_rms": 0.08293613811615588,
+          "reference_set_center_rms": 0.08288716862194673,
+          "lower": 0.01705960209870187,
+          "upper": 0.2112280597191004,
+          "available": true,
+          "reason": "bounded",
+          "distance_matrix_lower": 0.01705960209873029,
+          "quotient_lipschitz_lower": 0.0,
+          "quotient_lipschitz_upper": 0.23553971124450496,
+          "candidate_rotation_upper": 0.21122805971907196,
+          "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+          "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+          "arrays": [
+            "intrinsic_shape_deviation_radii",
+            "intrinsic_shape_candidate_rotation"
+          ]
+        },
+        "known_shape_enclosed": true,
+        "bounded_relations": 256,
+        "known_relation_gap_violations": 0,
+        "raw_arrays_unchanged": true,
+        "raw_array_count": 135,
+        "array_count": 176,
+        "verification": {
+          "verified": true,
+          "files": 14,
+          "arrays": 176,
+          "events": 19,
+          "manifest_content_sha256": "4652ef8bb726ea4aa606afeb430060c240da7341db10139b74ac713b8f62451b",
+          "limit": "self-consistency hashes; not an externally signed execution attestation"
+        }
+      },
+      {
+        "bundle": "pair_03_mouth_12px",
+        "mouth_expansion_px": 12.0,
+        "query_strata": [
+          "clear",
+          "degraded"
+        ],
+        "source_quantiles": [
+          3.990515730848953,
+          9.152608775526309
+        ],
+        "known_reference_shape_rms": 0.125,
+        "shape_range": {
+          "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+          "observed_rms": 0.13207284941332123,
+          "reference_set_center_rms": 0.1319990411162596,
+          "lower": 0.04055352053818143,
+          "upper": 0.2544585688731014,
+          "available": true,
+          "reason": "bounded",
+          "distance_matrix_lower": 0.040553520538209854,
+          "quotient_lipschitz_lower": 0.0,
+          "quotient_lipschitz_upper": 0.2857168126956446,
+          "candidate_rotation_upper": 0.254458568873073,
+          "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+          "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+          "arrays": [
+            "intrinsic_shape_deviation_radii",
+            "intrinsic_shape_candidate_rotation"
+          ]
+        },
+        "known_shape_enclosed": true,
+        "bounded_relations": 256,
+        "known_relation_gap_violations": 0,
+        "raw_arrays_unchanged": true,
+        "raw_array_count": 135,
+        "array_count": 176,
+        "verification": {
+          "verified": true,
+          "files": 14,
+          "arrays": 176,
+          "events": 19,
+          "manifest_content_sha256": "e6b15f24f127d79ee8c0226a2f84620d9d7a676b879ffa3d2c4f74a0c8f569cd",
+          "limit": "self-consistency hashes; not an externally signed execution attestation"
+        }
+      }
+    ],
+    "set_controls": {
+      "format": "facemath.mixed_source_radius_controls.v8",
+      "kind": "analytic_and_synthetic_NOT_HUMAN",
+      "seed": 28801,
+      "sampled_shape_pairs": 1024,
+      "scalar_relation_checks": 262144,
+      "sampled_relation_violations": 0,
+      "sampled_shape_violations": 0,
+      "shape_bound": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.04999972298708903,
+        "reference_set_center_rms": 0.04999972298708903,
+        "lower": 0.02428640423154512,
+        "upper": 0.06634270166002348,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.0233635065375299,
+        "quotient_lipschitz_lower": 0.024286404231573543,
+        "quotient_lipschitz_upper": 0.07571304174260451,
+        "candidate_rotation_upper": 0.06634270165999506,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "circle_counterexample": {
+        "source_radii": [
+          1.0,
+          3.0
+        ],
+        "admissible_witness_gap": 1.2,
+        "correct_source_specific_upper": 1.2000000000000173,
+        "unsafe_smaller_single_radius_upper": 0.8000000000000143,
+        "overconservative_larger_single_radius_upper": 1.4000000000000201
+      },
+      "arrays": {
+        "source_centers": {
+          "shape": [
+            2,
+            8,
+            2
+          ],
+          "dtype": "float64",
+          "sha256": "495101ca8266efbfe6c6ec02051ad331b4facb55d192099ba8e9d6f5500f3b65"
+        },
+        "source_covariance": {
+          "shape": [
+            2,
+            16,
+            16
+          ],
+          "dtype": "float64",
+          "sha256": "4b9e0e415291ef7249ba90a44a2035b35176fa408819776f12d0db693e119d8a"
+        },
+        "source_factors": {
+          "shape": [
+            2,
+            8,
+            2,
+            16
+          ],
+          "dtype": "float64",
+          "sha256": "5267f31980069c8c950c2c68af915e7c2e684a2e94a1c04f883a7f1abeb6eaf0"
+        },
+        "source_radii": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64",
+          "sha256": "c70124d34f3c6fd97aefa319957e0d71ba85b80c664ac9ecede6785f615b2c05"
+        },
+        "latent_draws": {
+          "shape": [
+            2,
+            1024,
+            16
+          ],
+          "dtype": "float64",
+          "sha256": "5d2fc9d471bd73b62a714ec27282a384b6bd2e756c1626cdc4d382503cdc1cce"
+        },
+        "shape_draws": {
+          "shape": [
+            2,
+            1024,
+            8,
+            2
+          ],
+          "dtype": "float64",
+          "sha256": "9a3125eae6b9e98a23bc51e8ef747969ecbc09b771fa96270f68e9f828dc4cbd"
+        },
+        "exact_relation_values": {
+          "shape": [
+            2,
+            1024,
+            256
+          ],
+          "dtype": "float64",
+          "sha256": "f3eb81f50548496e62aff442b4d7af11ce2bafd1b19459cf3df4a39d62931f69"
+        },
+        "exact_relation_gaps": {
+          "shape": [
+            1024,
+            256
+          ],
+          "dtype": "float64",
+          "sha256": "b1143d6885c1e2b80537a65a78d2ebcfe2adbaea7051d8cbb9c9623ec72db4e1"
+        },
+        "gap_lower": {
+          "shape": [
+            256
+          ],
+          "dtype": "float64",
+          "sha256": "59877682e5827cb684b14e417bbbb4c3f1408a55295966ab0174787e90593798"
+        },
+        "gap_upper": {
+          "shape": [
+            256
+          ],
+          "dtype": "float64",
+          "sha256": "288cf913f6e51b7741b9286e63a91b8a59ac107aeeca2056e5735fad7e5484e8"
+        },
+        "gap_available": {
+          "shape": [
+            256
+          ],
+          "dtype": "bool",
+          "sha256": "f9484b9c5a5151fdd263b1925dc6dbeeb7b7d99b60bd555a5fbfbf492661e1ad"
+        },
+        "exact_refitted_shape": {
+          "shape": [
+            1024
+          ],
+          "dtype": "float64",
+          "sha256": "51abdd1ab6f338eca9e1605d723a3a3b1f304ceb9eb2d31d1eba508c9c6979ab"
+        },
+        "shape_bounds": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64",
+          "sha256": "6767f7571242244b7cb9271563d4d473b9fa572413de206a198ec668279d97f9"
+        },
+        "circle_delta": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "float64",
+          "sha256": "739236a6acf2507c9b12f40d51728d57ac9fc90c4927a12ee6238723550da2ee"
+        },
+        "circle_covariances": {
+          "shape": [
+            2,
+            1,
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "sha256": "aa3c969a6f11a9c88dd545634528083a34bb007955525500d38eef997ac2e99a"
+        },
+        "circle_source_radii": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64",
+          "sha256": "c3c7e70f0287dbcf738f14e45cc97cb1ed6af16a1701d1895a7c1449ab457cf6"
+        },
+        "circle_witness": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64",
+          "sha256": "56dc728216c1976bd451867d21bbe94b9d2ddfc49e3d5de51f4f3def11b7089b"
+        }
+      },
+      "limit": "sampling tests the analytic outer bounds; it is not proof by sampling or real reference calibration"
+    },
+    "unsupported_queries": [
+      {
+        "stratum": "unseen",
+        "reason": "acquisition category 'unseen' is unsupported: no_calibration_groups; no pooled fallback",
+        "actual_events": "refused_unseen.events.jsonl",
+        "no_measurement_bundle_created": true
+      },
+      {
+        "stratum": "sparse",
+        "reason": "acquisition category 'sparse' is unsupported: below_frozen_minimum_groups; no pooled fallback",
+        "actual_events": "refused_sparse.events.jsonl",
+        "no_measurement_bundle_created": true
+      }
+    ]
+  },
+  "browser": {
+    "browser": {
+      "format": "facemath.browser_qa.v8",
+      "started_utc": "2026-09-20T07:06:59.957071+00:00",
+      "reports": {
+        "study": {
+          "loading": "emitted HTML in memory after local file navigation was blocked",
+          "source": "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification/report.html",
+          "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification/report.html\", waiting until \"load\"\n"
+        },
+        "pair": {
+          "loading": "emitted HTML in memory after local file navigation was blocked",
+          "source": "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html",
+          "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\", waiting until \"load\"\n"
+        }
+      },
+      "checks": {
+        "all_retained_group_scores_export_exactly": true,
+        "unsupported_case_rows_remain_visible": 3,
+        "no_source_route_selector": true,
+        "reference_geometry_enabled_with_two_radii": true,
+        "display_preserves_measurement_payload": true,
+        "local_evidence_paths_exist": true
+      },
+      "viewports": [
+        {
+          "report": "study",
+          "viewport": {
+            "width": 1440,
+            "height": 1050
+          },
+          "screenshot": "desktop_acquisition.png",
+          "categories_checked": 4
+        },
+        {
+          "report": "study",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "screenshot": "mobile_acquisition.png",
+          "categories_checked": 4
+        },
+        {
+          "report": "pair",
+          "viewport": {
+            "width": 1440,
+            "height": 1050
+          },
+          "screenshot": "desktop_source_radii.png",
+          "query_radii": [
+            3.990515730848953,
+            9.152608775526309
+          ]
+        },
+        {
+          "report": "pair",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "screenshot": "mobile_source_radii.png",
+          "query_radii": [
+            3.990515730848953,
+            9.152608775526309
+          ]
+        }
+      ],
+      "errors": [],
+      "remote_requests": [],
+      "finished_utc": "2026-09-20T07:07:02.176335+00:00",
+      "passed": true
+    },
+    "joint-browser": {
+      "format": "facemath.browser_qa.v7",
+      "started_utc": "2026-09-20T07:07:02.784319+00:00",
+      "source": "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html",
+      "checks": {
+        "retained_mode_and_covariance_inventory": [
+          16,
+          256,
+          8
+        ],
+        "display_operations_preserve_measurements": true,
+        "csv_exact_full_covariance": true,
+        "local_evidence_links": true,
+        "no_horizontal_overflow": true
+      },
+      "viewports": [
+        {
+          "size": {
+            "width": 1440,
+            "height": 1150
+          },
+          "csv_rows": 256,
+          "interactive": true,
+          "screenshot": "desktop_joint.png"
+        },
+        {
+          "size": {
+            "width": 390,
+            "height": 844
+          },
+          "csv_rows": 256,
+          "interactive": true,
+          "screenshot": "mobile_joint.png"
+        }
+      ],
+      "loading": "emitted HTML in memory; local file navigation blocked",
+      "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\", waiting until \"load\"\n",
+      "errors": [],
+      "remote_requests": [],
+      "finished_utc": "2026-09-20T07:07:04.545429+00:00",
+      "passed": true
+    },
+    "relation-browser": {
+      "format": "facemath.browser_qa.v6",
+      "report": "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html",
+      "started_at": "2026-09-20T07:07:05.163289+00:00",
+      "checks": {
+        "distance_rows": 28,
+        "angle_rows": 168,
+        "signed_double_area_rows": 56,
+        "asymmetry_rows": 4,
+        "anatomical_name_filter_rows": 63,
+        "selection_links_same_raw_array_row": true,
+        "csv_matches_exact_selected_frozen_values": true,
+        "status_filter_rows": 1,
+        "full_covariance_ellipse_display": true,
+        "display_zoom_not_measurement_rescale": true,
+        "local_evidence_links_exist": true,
+        "controls_do_not_change_measurements": true
+      },
+      "viewports": [
+        {
+          "width": 1440,
+          "height": 1150,
+          "document_width": 1440,
+          "body_overflow": false
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "document_width": 390,
+          "body_overflow": false
+        }
+      ],
+      "loading": "in-memory emitted HTML; local navigation unavailable",
+      "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\", waiting until \"load\"\n",
+      "page_errors": [],
+      "remote_requests": [],
+      "passed": true,
+      "finished_at": "2026-09-20T07:07:07.016992+00:00"
+    }
+  },
+  "limits": [
+    "synthetic observations; no live MediaPipe inference or independently labeled human performance",
+    "source/wheel tests reuse this numerical dependency stack, not a clean dependency installation or Windows execution",
+    "numerical replay uses captured observations, not detector reexecution",
+    "category declarations do not detect hidden shift or establish exchangeability",
+    "hashes establish self-consistency, not external provenance or historical model telemetry"
+  ]
+}

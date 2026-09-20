@@ -11,7 +11,7 @@ def render_joint_section(profile: IntrinsicProfile) -> str:
     if audit is None:
         return ""
     data = {"names": list(REFERENCE_NAMES), "centers": profile.source_centers.tolist(),
-            "support": profile.source_supported.tolist(), "q": profile.quantile,
+            "support": profile.source_supported.tolist(), "q": list(profile.source_quantiles),
             "covariance": audit.covariance.tolist(), "eigenvalues": audit.mode_eigenvalues.tolist(),
             "modes": audit.mode_vectors.tolist(), "joint_shape": profile.shape.to_dict(),
             "marginal_shape": audit.marginal_shape.to_dict(), "audit": audit.to_dict(),
@@ -43,7 +43,7 @@ function inspect(s,i,j){const c=d.covariance[s],den=Math.sqrt(Math.max(0,c[i][i]
 function heat(s){const svg=el('joint-correlation');svg.replaceChildren();const c=d.covariance[s],size=19,x0=62,y0=35;
 for(let i=0;i<16;i++){svg.append(node('text',{x:x0+i*size+size/2,y:y0-8,'text-anchor':'middle',fill:'#b4c6d3','font-size':10},i));svg.append(node('text',{x:x0-9,y:y0+i*size+13,'text-anchor':'end',fill:'#b4c6d3','font-size':10},i));for(let j=0;j<16;j++){let den=Math.sqrt(Math.max(0,c[i][i]*c[j][j])),r=den?Math.max(-1,Math.min(1,c[i][j]/den)):0;let cell=node('rect',{x:x0+j*size,y:y0+i*size,width:size-1,height:size-1,fill:r>=0?'#6de2c4':'#f3bd77',opacity:0.12+0.88*Math.abs(r),class:'heat-cell','data-i':i,'data-j':j,tabindex:0,role:'button','aria-label':label(i)+' with '+label(j)});cell.addEventListener('click',()=>inspect(s,i,j));cell.addEventListener('focus',()=>inspect(s,i,j));cell.addEventListener('mouseenter',()=>inspect(s,i,j));svg.append(cell);}}
 svg.append(node('text',{x:210,y:374,'text-anchor':'middle',fill:'#b4c6d3','font-size':11},'0x 0y 1x 1y … 7x 7y · reference8 order'));inspect(s,...active);}
-function draw(){const s=+el('joint-source').value,k=+el('joint-mode').value,a=+el('joint-amplitude').value,q=d.q||0,lam=Math.max(0,d.eigenvalues[s][k]),base=d.centers[s],v=d.modes[s].map(row=>row[k]),scale=q*Math.sqrt(lam);let p=base.map((x,i)=>[x[0]+a*scale*v[2*i],x[1]+a*scale*v[2*i+1]]);
+function draw(){const s=+el('joint-source').value,k=+el('joint-mode').value,a=+el('joint-amplitude').value,q=d.q[s]||0,lam=Math.max(0,d.eigenvalues[s][k]),base=d.centers[s],v=d.modes[s].map(row=>row[k]),scale=q*Math.sqrt(lam);let p=base.map((x,i)=>[x[0]+a*scale*v[2*i],x[1]+a*scale*v[2*i+1]]);
 const all=base.flatMap((x,i)=>[x,[x[0]+scale*v[2*i],x[1]+scale*v[2*i+1]],[x[0]-scale*v[2*i],x[1]-scale*v[2*i+1]]]);let xs=all.map(x=>x[0]),ys=all.map(x=>x[1]),xmin=Math.min(...xs)-.2,xmax=Math.max(...xs)+.2,ymin=Math.min(...ys)-.2,ymax=Math.max(...ys)+.2,z=Math.min(390/(xmax-xmin),345/(ymax-ymin)),px=x=>[230+(x[0]-(xmin+xmax)/2)*z,195+(x[1]-(ymin+ymax)/2)*z];let svg=el('joint-shape');svg.replaceChildren();
 for(const [i,j]of [[0,1],[2,3],[0,4],[3,4],[4,5],[4,6],[5,6],[5,7],[6,7]]){let b=px(base[i]),c=px(base[j]);svg.append(node('line',{x1:b[0],y1:b[1],x2:c[0],y2:c[1],stroke:'#607d90','stroke-width':1.3}));}
 for(let i=0;i<8;i++){let b=px(base[i]),c=px(p[i]);svg.append(node('line',{x1:b[0],y1:b[1],x2:c[0],y2:c[1],stroke:'#6de2c4','stroke-width':1.5,'stroke-dasharray':'3 3'}));svg.append(node('circle',{cx:b[0],cy:b[1],r:4,fill:'#b4c6d3'}));svg.append(node('circle',{cx:c[0],cy:c[1],r:5,fill:'#6de2c4','data-point':i}));svg.append(node('text',{x:c[0]+9,y:c[1]-7,fill:'#ecf6fb','font-size':11},i));}

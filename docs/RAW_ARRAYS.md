@@ -121,3 +121,22 @@ The displayed coherent mode is `center + amplitude * q * sqrt(eigenvalue) * eige
 The qualification bundle adds `development_joint_group_second_moments[G,16,16]`, `development_joint_covariance[16,16]`, and `development_joint_group_case_counts[G]`, alongside retained group bias vectors and beta. Their ocular-frame units and regularization are specified in `WAVE7_MATHEMATICS.md`. Raw per-case prediction errors, reference coordinates and covariance remain separate.
 
 The set laboratory's `controls.npz` stores both unit-ball latent draws and their resulting [sample,8,2] source coordinates, factors, full matrices, exact scalar values, reported outer bounds and independently evaluated proper-rotation discrepancies. Latent draws are mathematical control inputs, not captured neural-network activations.
+
+## Wave 08 additions: ordered source radii and category provenance
+
+Pair bundles add `localization_source_quantiles` and `intrinsic_source_quantiles`, each float64 `[2]` in source A/B order, plus `intrinsic_source_quantile_available` boolean `[2]`. Missing intrinsic radii use zero sentinels with false masks. The authoritative available-state field is explicit; a null legacy common scalar merely means A and B have different radii when both source masks are true.
+
+Study qualification arrays add:
+
+| Name | Shape / interpretation |
+|---|---|
+| `routing_category_per_case` | int64 `[N_cases]`; category indices in frozen policy order; case IDs in `array_order.cases` |
+| `routing_category_quantiles` | float64 `[N_categories]`; zero sentinel when unavailable |
+| `routing_category_available` | bool `[N_categories]`; selects actual finite radii |
+| `routing_calibration_group_category` | int64 `[N_calibration_groups]`; category of each group score |
+| `routing_calibration_group_score` | float64 `[N_calibration_groups]`; zero sentinel for infinite/unavailable score |
+| `routing_calibration_group_score_available` | bool `[N_calibration_groups]`; false means retained failure, not zero error |
+
+`acquisition_routing.group_array_order` binds group IDs to these columns. `localization_calibration.json` preserves the complete category inventories, selected ranks, policy and original shared joint model. In pair bundles it additionally binds both source observations, images, groups and lineages. No radius is encoded by silently modifying the covariance matrix.
+
+`set_controls/controls.npz` contains the synthetic unequal-radius source centers, full16 covariance/factors, `source_radii`, unit-ball draws, shape draws, every exact scalar relation value/gap, bounding arrays and proper-rotation values. Shapes and factors use the same reference8 interleaved coordinate order. Its separate circle counterexample saves delta, source covariances, radii and an explicit admissible witness. This is a control dataset, not a native-observer evidence bundle.

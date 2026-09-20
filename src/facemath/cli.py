@@ -97,6 +97,8 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--lineage-b", action="append", default=[], help="declared source B acquisition lineage; repeatable")
     p.add_argument("--localization-calibration", help="independent reference error calibration JSON")
     p.add_argument("--query-groups", nargs=2, metavar=("GROUP_A", "GROUP_B"))
+    p.add_argument("--query-strata", nargs=2, metavar=("CATEGORY_A", "CATEGORY_B"),
+                   help="prespecified acquisition categories for a stratified error model; never inferred from similarity")
     p.add_argument("--domain", default="", help="calibration acquisition domain, not inferred")
     p.add_argument("--out", required=True, help="new evidence bundle directory")
     _add_config(p)
@@ -217,6 +219,10 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--out", required=True)
     p.add_argument("--seed", type=int, default=27091)
 
+    p = sub.add_parser("stratified-lab", help="execute acquisition-category calibration and mixed-source geometry controls; synthetic only")
+    p.add_argument("--out", required=True)
+    p.add_argument("--seed", type=int, default=28091)
+
     p = sub.add_parser("doctor", help="report runtime/model availability; never claims inference was run")
     p.add_argument("--model")
     p.add_argument("--out")
@@ -235,7 +241,8 @@ def _analyze(args: argparse.Namespace) -> dict:
         if not args.query_groups or not args.domain:
             raise ObservationError("calibrated analysis requires --query-groups and --domain")
     extra = dict(localization_calibration=calibration, query_groups=tuple(args.query_groups or ("", "")), domain=args.domain,
-                 query_lineages=(tuple(args.lineage_a), tuple(args.lineage_b)))
+                 query_lineages=(tuple(args.lineage_a), tuple(args.lineage_b)),
+                 query_strata=tuple(args.query_strata or ("", "")))
     if obs_a is not None and obs_b is not None:
         result = FacialInstrument(config, **extra).run(image_a, image_b, obs_a, obs_b)
     else:
@@ -504,6 +511,9 @@ def execute(args: argparse.Namespace) -> dict:
         from .observation.study_io import finalize_session, verify_qualification_bundle
         target = finalize_session(args.session, args.out)
         return {"bundle": str(target), **verify_qualification_bundle(target)}
+    if args.command == "stratified-lab":
+        from .observation.stratified_lab import run_stratified_laboratory
+        return run_stratified_laboratory(args.out, seed=args.seed)
     if args.command == "joint-lab":
         from .observation.joint_lab import run_joint_laboratory
         return run_joint_laboratory(args.out, seed=args.seed)

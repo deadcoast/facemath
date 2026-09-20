@@ -306,6 +306,7 @@ class IntrinsicProfile:
     scope: str
     directions: int
     joint: JointRelationAudit | None = None
+    source_quantiles: tuple[float | None, float | None] | None = None
     recipe_sha256: str = field(init=False)
 
     def __post_init__(self) -> None:
@@ -339,7 +340,13 @@ class IntrinsicProfile:
             raise ObservationError("intrinsic interval endpoints are reversed")
         if self.quantile is not None and (not np.isfinite(self.quantile) or self.quantile < 0):
             raise ObservationError("invalid intrinsic localization multiplier")
-        recipe = {"implementation": "intrinsic.reference8.outer_relations.v7",
+        qs = tuple(self.source_quantiles) if self.source_quantiles is not None else (self.quantile, self.quantile)
+        if len(qs) != 2 or any(q is not None and (not np.isfinite(q) or q < 0) for q in qs):
+            raise ObservationError("intrinsic source radii must contain two nonnegative values or explicit missingness")
+        if self.quantile is not None and qs != (self.quantile, self.quantile):
+            raise ObservationError("legacy common radius conflicts with source radii")
+        object.__setattr__(self, "source_quantiles", qs)
+        recipe = {"implementation": "intrinsic.reference8.outer_relations.v8",
                   "error_set": "joint_full16" if self.joint is not None else "product_marginals", "protocol": REFERENCE_PROTOCOL_SHA256,
                   "directions": self.directions, "relations": [r.metadata() for r in self.relations]}
         object.__setattr__(self, "recipe_sha256", object_digest(recipe))
@@ -356,6 +363,8 @@ class IntrinsicProfile:
                       intrinsic_shape_candidate_rotation=self.shape.candidate_rotation)
         theta = np.arange(self.directions)*(2*pi/self.directions)
         result["intrinsic_support_normals"] = frozen_array(np.column_stack((np.cos(theta), np.sin(theta))))
+        result["intrinsic_source_quantiles"] = frozen_array([q if q is not None else 0. for q in self.source_quantiles])
+        result["intrinsic_source_quantile_available"] = frozen_array([q is not None for q in self.source_quantiles], bool)
         if self.joint is not None:
             result.update(self.joint.arrays())
         return result
@@ -398,7 +407,9 @@ class IntrinsicProfile:
             "observation_digests": list(self.observation_digests), "reference_names": list(REFERENCE_NAMES),
             "calibration_sha256": self.calibration_sha256, "scope": self.scope,
             "calibrated": self.calibration_sha256 is not None, "quantile": self.quantile,
-            "calibration_bound_state": "absent" if self.calibration_sha256 is None else "unbounded" if self.quantile is None else "finite",
+            "source_quantiles": list(self.source_quantiles),
+            "quantile_meaning": "legacy scalar exists only when both sources share a radius; source_quantiles is authoritative",
+            "calibration_bound_state": "absent" if self.calibration_sha256 is None else "unbounded" if any(q is None for q in self.source_quantiles) else "finite",
             "conditional_pair_coverage_lower_bound": self.conditional_pair_coverage,
             "coverage_condition": "only if both sources satisfy their frozen calibration assumptions; no new coverage from more relations",
             "gauge": "intrinsic source relations; uncertain reference eye-span normalization, NOT a fixed observed pair alignment",
@@ -417,7 +428,10 @@ def measure_intrinsic(state: CanonicalState, localization: LocalizationEnvelope 
     specs = relation_registry(state.config)
     raw, centers, covariances, charts, supports = [], [], [], [], []
     error_covariances, joint_covariances = [], []
-    q = localization.calibration.quantile if localization is not None else None
+    quantiles = tuple(localization.calibration.source_quantile(o) for o in
+                      (state.observation_a, state.observation_b)) if localization is not None else (None, None)
+    finite = all(q is not None for q in quantiles)
+    q = quantiles[0] if quantiles[0] == quantiles[1] else None
     unavailable_reason = "no_localization_calibration" if localization is None else "unbounded_localization_calibration"
     for s, observation in enumerate((state.observation_a, state.observation_b)):
         xy, covariance, support = mapped_prediction(observation)
@@ -441,7 +455,7 @@ def measure_intrinsic(state: CanonicalState, localization: LocalizationEnvelope 
         charts.append(chart)
         supports.append(support)
     raw, centers, covariance, charts, supports = map(np.stack, (raw, centers, covariances, charts, supports))
-    evaluators = tuple(SourceRelations(EllipticSource(centers[s], error_covariances[s], supports[s], q if q is not None else 0.,
+    evaluators = tuple(SourceRelations(EllipticSource(centers[s], error_covariances[s], supports[s], quantiles[s] if quantiles[s] is not None else 0.,
                                                      state.config.intrinsic_directions, joint_covariances[s])) for s in range(2))
     nominal, nominal_valid, center_values, center_valid = [], [], [], []
     lower, upper, available = np.zeros((2, len(specs))), np.zeros((2, len(specs))), np.zeros((2, len(specs)), bool)
@@ -451,7 +465,7 @@ def measure_intrinsic(state: CanonicalState, localization: LocalizationEnvelope 
         nominal.append(values); nominal_valid.append(valid)
         values, valid = nominal_values(centers[s], supports[s], specs)
         center_values.append(values); center_valid.append(valid)
-        bounds = [_bound(evaluator, r) if q is not None else Interval.missing(unavailable_reason) for r in specs]
+        bounds = [_bound(evaluator, r) if finite else Interval.missing(unavailable_reason) for r in specs]
         lower[s] = [b.lower for b in bounds]
         upper[s] = [b.upper for b in bounds]
         available[s] = [b.available for b in bounds]
@@ -459,7 +473,7 @@ def measure_intrinsic(state: CanonicalState, localization: LocalizationEnvelope 
     gap_lower, gap_upper, gap_available = np.zeros(len(specs)), np.zeros(len(specs)), np.zeros(len(specs), bool)
     statuses = np.zeros(len(specs), np.int64)
     for i, spec in enumerate(specs):
-        if q is None:
+        if not finite:
             statuses[i] = 0 if localization is None else 4
             continue
         if not np.all(available[:, i]):
@@ -468,22 +482,22 @@ def measure_intrinsic(state: CanonicalState, localization: LocalizationEnvelope 
         gap = absolute_difference(Interval(lower[0, i], upper[0, i]), Interval(lower[1, i], upper[1, i]))
         gap_lower[i], gap_upper[i], gap_available[i] = gap.lower, gap.upper, gap.available
         statuses[i] = 1 if gap.upper <= spec.tolerance else 2 if gap.lower > spec.tolerance else 3
-    shape = bound_refitted_shape(raw, evaluators, gap_lower, q is not None)
-    if localization is not None and q is None:
+    shape = bound_refitted_shape(raw, evaluators, gap_lower, finite)
+    if localization is not None and not finite:
         shape = replace(shape, reason=unavailable_reason)
-    span_intervals = [e.eye_span if q is not None else Interval.missing(unavailable_reason) for e in evaluators]
+    span_intervals = [e.eye_span if finite else Interval.missing(unavailable_reason) for e in evaluators]
     joint_audit = None
     if all(c is not None for c in joint_covariances):
         marginal_evaluators = tuple(SourceRelations(EllipticSource(centers[s], error_covariances[s],
-            supports[s], q if q is not None else 0., state.config.intrinsic_directions)) for s in range(2))
-        marginal_bounds = [[_bound(e, r) if q is not None else Interval.missing(unavailable_reason)
+            supports[s], quantiles[s] if quantiles[s] is not None else 0., state.config.intrinsic_directions)) for s in range(2))
+        marginal_bounds = [[_bound(e, r) if finite else Interval.missing(unavailable_reason)
                             for r in specs] for e in marginal_evaluators]
         ml = np.array([[b.lower for b in row] for row in marginal_bounds])
         mu = np.array([[b.upper for b in row] for row in marginal_bounds])
         mv = np.array([[b.available for b in row] for row in marginal_bounds])
         marginal_gaps = np.array([absolute_difference(marginal_bounds[0][i], marginal_bounds[1][i]).lower
                                  for i in range(len(specs))])
-        marginal_shape = bound_refitted_shape(raw, marginal_evaluators, marginal_gaps, q is not None)
+        marginal_shape = bound_refitted_shape(raw, marginal_evaluators, marginal_gaps, finite)
         joint_audit = JointRelationAudit(np.stack(joint_covariances), np.stack(error_covariances),
                                         ml, mu, mv, marginal_shape)
     return IntrinsicProfile(specs, raw, centers, covariance, charts, supports, q,
@@ -496,4 +510,4 @@ def measure_intrinsic(state: CanonicalState, localization: LocalizationEnvelope 
         (state.observation_a.digest, state.observation_b.digest),
         "nominal_observation_only" if localization is None else
         "synthetic_only" if localization.calibration.reference_kind == "synthetic_fixture" else "conditional_reference_domain",
-        state.config.intrinsic_directions, joint=joint_audit)
+        state.config.intrinsic_directions, joint=joint_audit, source_quantiles=quantiles)

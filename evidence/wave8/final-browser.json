@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/facemath_wave_08/scripts/browser_qa_wave8.py",
+    "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification/report.html",
+    "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html",
+    "--out",
+    "/mnt/data/facemath_wave_08/evidence/wave8/browser"
+  ],
+  "cwd": "/mnt/data/facemath_wave_08",
+  "started_utc": "2026-09-20T07:06:59.474996+00:00",
+  "finished_utc": "2026-09-20T07:07:02.321140+00:00",
+  "returncode": 0,
+  "stdout": "{\n  \"format\": \"facemath.browser_qa.v8\",\n  \"started_utc\": \"2026-09-20T07:06:59.957071+00:00\",\n  \"reports\": {\n    \"study\": {\n      \"loading\": \"emitted HTML in memory after local file navigation was blocked\",\n      \"source\": \"/mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification/report.html\",\n      \"navigation_error\": \"Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification/report.html\\nCall log:\\n  - navigating to \\\"file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification/report.html\\\", waiting until \\\"load\\\"\\n\"\n    },\n    \"pair\": {\n      \"loading\": \"emitted HTML in memory after local file navigation was blocked\",\n      \"source\": \"/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\",\n      \"navigation_error\": \"Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\\nCall log:\\n  - navigating to \\\"file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\\\", waiting until \\\"load\\\"\\n\"\n    }\n  },\n  \"checks\": {\n    \"all_retained_group_scores_export_exactly\": true,\n    \"unsupported_case_rows_remain_visible\": 3,\n    \"no_source_route_selector\": true,\n    \"reference_geometry_enabled_with_two_radii\": true,\n    \"display_preserves_measurement_payload\": true,\n    \"local_evidence_paths_exist\": true\n  },\n  \"viewports\": [\n    {\n      \"report\": \"study\",\n      \"viewport\": {\n        \"width\": 1440,\n        \"height\": 1050\n      },\n      \"screenshot\": \"desktop_acquisition.png\",\n      \"categories_checked\": 4\n    },\n    {\n      \"report\": \"study\",\n      \"viewport\": {\n        \"width\": 390,\n        \"height\": 844\n      },\n      \"screenshot\": \"mobile_acquisition.png\",\n      \"categories_checked\": 4\n    },\n    {\n      \"report\": \"pair\",\n      \"viewport\": {\n        \"width\": 1440,\n        \"height\": 1050\n      },\n      \"screenshot\": \"desktop_source_radii.png\",\n      \"query_radii\": [\n        3.990515730848953,\n        9.152608775526309\n      ]\n    },\n    {\n      \"report\": \"pair\",\n      \"viewport\": {\n        \"width\": 390,\n        \"height\": 844\n      },\n      \"screenshot\": \"mobile_source_radii.png\",\n      \"query_radii\": [\n        3.990515730848953,\n        9.152608775526309\n      ]\n    }\n  ],\n  \"errors\": [],\n  \"remote_requests\": [],\n  \"finished_utc\": \"2026-09-20T07:07:02.176335+00:00\",\n  \"passed\": true\n}\n",
+  "stderr": ""
+}

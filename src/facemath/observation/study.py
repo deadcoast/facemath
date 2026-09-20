@@ -202,6 +202,14 @@ def load_study(path: str | Path) -> FrozenStudy:
     if data.get("format") != STUDY_FORMAT or object_digest(data) != manifest["study_sha256"]:
         raise ObservationError("study lock mismatch")
     ObserverDeclaration.from_dict(data["observer"])
+    if data.get("bias_mode") == "development_joint_ocular_stratified":
+        from .stratified import RoutingPolicy, validate_routes
+        policy = RoutingPolicy.from_dict(data["stratified_error"])
+        if policy.strata != tuple(data["strata"]):
+            raise ObservationError("loaded routing policy differs from frozen acquisition inventory")
+        validate_routes(tuple(data["cases"]), policy)
+    elif "stratified_error" in data:
+        raise ObservationError("loaded routing policy does not match frozen estimator mode")
     return FrozenStudy(root, canonical_json(data))
 
 
@@ -233,10 +241,10 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
     from .error_model import corrected_quantile
     corrected_quantile(np.zeros(1), alpha)
     mode = spec.get("bias_mode", "none")
-    if mode not in ("none", "development_ocular", "development_joint_ocular"):
+    if mode not in ("none", "development_ocular", "development_joint_ocular", "development_joint_ocular_stratified"):
         raise ObservationError("bias_mode must be frozen as none, development_ocular or development_joint_ocular")
     joint_config = None
-    if mode == "development_joint_ocular":
+    if mode in ("development_joint_ocular", "development_joint_ocular_stratified"):
         from .joint import regularized_scatter
         joint_config = spec.get("joint_error", {"shrinkage": .02, "floor_eye_spans": .001})
         if not isinstance(joint_config, dict) or set(joint_config) != {"shrinkage", "floor_eye_spans"}:
@@ -247,9 +255,20 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
     strata = spec.get("strata", ["all"])
     if not isinstance(strata, list) or not strata or len(set(strata)) != len(strata) or any(not isinstance(s, str) or not s for s in strata):
         raise ObservationError("declare unique nonempty strata before acquisition")
+    routing_policy = None
+    if mode == "development_joint_ocular_stratified":
+        from .stratified import RoutingPolicy, validate_routes
+        route_spec = spec.get("stratified_error")
+        if not isinstance(route_spec, dict) or set(route_spec) != {"definition", "minimum_calibration_groups"}:
+            raise ObservationError("stratified_error needs a pre-observation definition and minimum_calibration_groups")
+        routing_policy = RoutingPolicy(tuple(strata), **route_spec)
+    elif "stratified_error" in spec:
+        raise ObservationError("stratified_error requires development_joint_ocular_stratified mode")
     entries = spec.get("cases")
     if not isinstance(entries, list) or not entries:
         raise ObservationError("study needs an enrolled case inventory")
+    if routing_policy is not None:
+        validate_routes(tuple(entries), routing_policy)
     loaded, cases = [], []
     ids, images, tokens, group_sizes = set(), set(), {}, {}
     for e in entries:
@@ -299,7 +318,7 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
             cases.append(ValidationCase(case_id, group, split, refs, None, "prospective_not_attempted", tuple(lineages)))
         loaded.append((e, image, refs, sha256(image_file.read_bytes()).hexdigest()))
     validate_study(tuple(cases))
-    if mode in ("development_ocular", "development_joint_ocular") and len({c.group_id for c in cases if c.split == "development"}) < min_dev:
+    if mode in ("development_ocular", "development_joint_ocular", "development_joint_ocular_stratified") and len({c.group_id for c in cases if c.split == "development"}) < min_dev:
         raise ObservationError("too few prospectively enrolled development groups for selected bias mode")
     if not any(c.split == "calibration" for c in cases) or not any(c.split == "evaluation" for c in cases):
         raise ObservationError("prospective qualification requires calibration and evaluation groups")
@@ -332,6 +351,8 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
                                  "model_receives": "source raster only; not reference coordinates, split or stratum"}}
         if joint_config is not None:
             lock["joint_error"] = joint_config
+        if routing_policy is not None:
+            lock["stratified_error"] = routing_policy.to_dict()
         write_json_new(temp / "study.lock.json", lock)
         manifest = {"format": "facemath.study_lock_manifest.v5", "study_sha256": object_digest(lock),
                     "files": file_inventory(temp)}

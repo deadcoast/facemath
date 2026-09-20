@@ -1,58 +1,55 @@
-# FACEMATH · Wave 07
+# FACEMATH · Wave 08
 
-An integrated Python instrument for **facial geometry and observation error**, not identity recognition.
+One integrated Python instrument for **facial geometry and observation error**, not identity recognition.
 
-Wave 07 keeps a whole face's localization errors connected. A development-fitted 16-dimensional error ellipsoid over eight reference landmarks feeds the existing frozen study, calibration, canonical state, geometric relationship graph, proper-rotation shape bounds, report and numerical replay. Shared translation can cancel before it is mistaken for deformation. Observed coordinates and measured geometry do not change.
+Wave 08 binds localization uncertainty to prespecified acquisition conditions. One development-fitted full16 mean/covariance feeds category-local group calibration, two immutable query routes, and the same canonical geometry, shape-relation graph, evidence bundle and replay. A clear source and a degraded source can carry different error radii without altering their observed coordinates or rescaling the stored covariance. Unsupported categories never inherit a pooled fallback.
 
-## Execute the integrated development laboratory
+## Execute the integrated laboratory
 
 ```shell
 python -m pip install -e ".[dev]"
-python -m facemath joint-lab --out runs/wave7
-python -m facemath verify runs/wave7/pair_02_mouth_8px
-python -m facemath replay runs/wave7/pair_02_mouth_8px --out runs/pair-replay
+python -m facemath stratified-lab --out runs/wave8
+python -m facemath verify runs/wave8/qualification
+python -m facemath replay runs/wave8/pair_02_mouth_8px --out runs/pair-replay
 python -m pytest -q
 ```
 
-Open `runs/wave7/pair_02_mouth_8px/report.html`. The appended joint-error inspector shows coherent displacement modes, the full coordinate-correlation matrix, and joint versus same-set marginal-relaxation shape ranges. Sliders are display-only; exact matrices and mode vectors are exported.
+Open `runs/wave8/qualification/report.html` to inspect category calibration, retained group scores and held-out failures. Open `runs/wave8/pair_02_mouth_8px/report.html` to inspect source-bound qA/qB, the unchanged geometry, coherent error modes and the full relationship inventory. Reports use embedded data and make no remote requests.
 
-The laboratory is **synthetic**, with 97 enrolled renderer sources, a scripted observer, frozen split/regularization, retained failures and an intentionally shifted held-out category. Its 1,024-pair set control saves every sampled shape and 256 exact relationships. Samples test conservative bounds, not establish universal containment or human performance.
+The default laboratory enrolls 155 schematic sources, with 154 eligible scripted attempts, frozen exclusions/failures, sparse and absent categories, and a deliberately hidden within-category error shift. Four fresh geometric queries and a separate 1,024-pair admitted-set control retain raw numerical inputs and outputs. These are synthetic controls, not human detection results.
 
-## One instrument, two error-set representations
+## Shared computational path
 
 ```text
-Image-bound predictions + independent source references
-                         │
-               Frozen prospective study
-                         │
-            Development-only mean and scatter
-                         │
-          Group-calibrated full16 error radius
-                         │
-                 Existing CanonicalState
-           ┌─────────────┼─────────────────┐
-           │             │                 │
-      Raw geometry   Fixed-gauge      Intrinsic relations
-      unchanged      point bounds    + refitted shape bounds
-           └─────────────┼─────────────────┘
-               Same evidence bundle / replay
+Frozen source inventory + independent references + acquisition categories
+                                ↓
+                 Existing resumable observation runner
+                                ↓
+              One development-only mean / full16 scatter
+                                ↓
+               Prespecified category group order statistics
+                                ↓
+            Exact source-bound routes and separate q_A / q_B
+                                ↓
+                      Existing CanonicalState
+                   ┌────────────┼────────────┐
+                   ↓            ↓            ↓
+             Raw geometry  Fixed-gauge    Intrinsic relations
+              unchanged    point bounds  + refitted shape range
+                   └────────────┼────────────┘
+                       Same bundle / replay
 ```
 
-A full16 ellipsoid is not a product of eight independent balls. The diagnostic product relaxation uses the same center, q and marginal blocks; comparing their widths isolates the cost of discarding the shared latent constraint (cross-point correlation and the single ellipsoid norm budget), not a population-calibration improvement.
+A declared category is not an automatic domain-shift detector. The hidden-shift control remains a failure, not an occasion to tune the policy using held-out labels. Coverage among finite delivered outputs is not silently substituted for performance across all enrollment.
 
 ## Real inputs
 
-The existing `analyze`, `annotate`, `observer-pin`, `study-freeze`, `study-run` and `study-finalize` commands remain the workflow. Select `bias_mode: "development_joint_ocular"` and frozen `joint_error` settings in a complete study manifest. Attach its model through the existing `--localization-calibration` option. See [operations](docs/WAVE7_OPERATIONS.md).
+The existing `annotate`, `observer-pin`, `study-freeze`, `study-run`, `study-finalize` and `analyze` commands remain the workflow. The new mode is `development_joint_ocular_stratified`; calibrated query pairs supply `--query-strata` for A and B. Full instructions: [operations](docs/WAVE8_OPERATIONS.md).
 
-**Execution boundary:** the local MediaPipe package and model could not be acquired in this environment. Live detector inference remains explicitly skipped. No human accuracy, original-video comparison, population resemblance score, or private model telemetry is manufactured by these controls.
+**Execution boundary:** MediaPipe was not installed and actual host lookup/model-download attempts failed in this environment. The live integration test remains explicitly skipped. Independent real reference annotations and native observer evaluation are still required; no original-face score or human accuracy claim is supplied by the synthetic laboratory.
 
-## Inspect the release
+## Inspect
 
-- [Design, integration and audit](docs/WAVE7_DESIGN.md)
-- [Mathematical definitions and bounds](docs/WAVE7_MATHEMATICS.md)
-- [Commands and interpretation](docs/WAVE7_OPERATIONS.md)
-- [Raw array definitions](docs/RAW_ARRAYS.md)
-- [Prior release README](docs/README_WAVE6.md)
-- [Historical mathematical-completeness audit](docs/WAVE3_AUDIT.md)
+[Design and audit](docs/WAVE8_DESIGN.md) · [Mathematics](docs/WAVE8_MATHEMATICS.md) · [Operator guide](docs/WAVE8_OPERATIONS.md) · [Raw array definitions](docs/RAW_ARRAYS.md) · [Previous README](docs/README_WAVE7.md)
 
-`evidence/WAVE7_VALIDATION.json` records the actual tested artifacts and execution results. Hashes establish self-consistency, not independent attestation. Numerical replay recomputes from captured observations; it does not rerun the detector. Independent real annotations and held-out acquisition-domain evaluation remain essential to human performance claims.
+`evidence/WAVE8_VALIDATION.json` records executed commands, test counts, distribution equivalence and replay results. Hashes establish internal consistency, not independently attested authorship. Replay recomputes from captured observations; it does not rerun a detector or expose proprietary neural telemetry. The inherited mathematical section registry remains an inventory, not proof that every historical analogy has been implemented.

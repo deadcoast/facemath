@@ -36,9 +36,9 @@ def render_intrinsic_section(profile: IntrinsicProfile) -> str:
         "raw": profile.raw_points.tolist(), "centers": profile.source_centers.tolist(),
         "support": profile.source_supported.tolist(), "ellipse": [],
     }
-    for covariance in profile.reference_error_covariance:
+    for source_index, covariance in enumerate(profile.reference_error_covariance):
         eig, vec = np.linalg.eigh(covariance)
-        q = profile.quantile or 0.
+        q = profile.source_quantiles[source_index] or 0.
         data["display"]["ellipse"].append([
             [float(q*np.sqrt(max(0., e[1]))), float(q*np.sqrt(max(0., e[0]))),
              float(np.degrees(np.arctan2(v[1,1],v[0,1])))] for e,v in zip(eig,vec)
@@ -185,7 +185,7 @@ The finite directional calculations use conservative corrections and float64 pad
     const content=[fields.map(cell).join(','),...visible.map(r=>fields.map(f=>cell(r[f])).join(','))].join('\\r\\n')+'\\r\\n';
     const url=URL.createObjectURL(new Blob([content],{type:'text/csv;charset=utf-8'})),link=document.createElement('a');link.href=url;link.download='intrinsic-selected.csv';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   });
-  if(data.quantile===null)el('intrinsic-display').querySelector('option[value=reference]').disabled=true;
+  if(data.calibration_bound_state!=='finite')el('intrinsic-display').querySelector('option[value=reference]').disabled=true;
   render();
 })();
 </script></section>'''

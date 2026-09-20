@@ -1,0 +1,74 @@
+....F......................F.                                            [100%]
+=================================== FAILURES ===================================
+_ test_fixed_and_refitted_state_use_source_specific_radii_without_rescaling_covariance _
+
+pair = (InstrumentResult(state=CanonicalState(observation_a=Observation(image_sha256='12098acbb15ad5249f84dc7b79b76c0fcdcaa1a...,"name":"synthetic_acquisition_stratified_observer","noise_floor_px":0.18,"sample_jitter_px":0.015,"version":8}'), ...)
+
+    def test_fixed_and_refitted_state_use_source_specific_radii_without_rescaling_covariance(pair):
+        r,_,_,_,oa,ob,*_=pair;c=r.localization.calibration
+        q=[c.source_quantile(oa),c.source_quantile(ob)]
+        assert q[0]<q[1] and c.quantile is None
+        np.testing.assert_array_equal(r.localization.base.source_quantiles,q)
+        np.testing.assert_array_equal(r.intrinsic.source_quantiles,q)
+>       assert r.intrinsic.to_dict()['bound_state']=='finite'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'bound_state'
+
+tests/test_wave8_integration.py:94: KeyError
+__________ test_group_category_cannot_change_within_prospective_study __________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_group_category_cannot_cha0')
+
+    def test_group_category_cannot_change_within_prospective_study(tmp_path):
+        p,e=make_stratified_study(tmp_path/'inputs',compact=True)
+        spec=read_json(p);spec['cases'][1]['group_id']=spec['cases'][0]['group_id'];spec['maximum_cases_per_group']=2
+        p.write_text(json.dumps(spec))
+>       with pytest.raises(ObservationError,match='one acquisition category'):freeze_study(p,tmp_path/'frozen')
+                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_wave8_integration.py:219: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/study.py:263: in freeze_study
+    validate_routes(tuple(entries), routing_policy)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cases = ({'case_id': 'acquisition_0000', 'group_id': 'group_28091_0', 'image': 'source_0000.png', 'lineage_ids': ['source_line...n_0005', 'group_id': 'group_28091_5', 'image': 'source_0005.png', 'lineage_ids': ['source_lineage_28091_5'], ...}, ...)
+policy = RoutingPolicy(strata=('clear', 'degraded', 'sparse', 'unseen'), definition='clear=no blur; degraded=fixed Gaussian blu...d experimental acquisition configurations; assigned before observer errors are computed', minimum_calibration_groups=9)
+
+    def validate_routes(cases: tuple[Mapping[str, Any], ...], policy: RoutingPolicy) -> dict[str, str]:
+        """Validate routing before predictions; no labels/errors are read by this function."""
+        by_case: dict[str, str] = {}
+        by_group: dict[str, str] = {}
+        for case in cases:
+            case_id = _label(case["case_id"], "case ID")
+            group = _label(case["group_id"], "acquisition group")
+            category = _label(case["stratum"], "acquisition stratum")
+            if case_id in by_case or category not in policy.strata:
+                raise ObservationError("duplicate case or undeclared acquisition stratum")
+            if group in by_group and by_group[group] != category:
+>               raise ObservationError("dependent acquisition group crosses routing strata")
+E               facemath.observation.contracts.ObservationError: dependent acquisition group crosses routing strata
+
+src/facemath/observation/stratified.py:83: ObservationError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_group_category_cannot_cha0')
+
+    def test_group_category_cannot_change_within_prospective_study(tmp_path):
+        p,e=make_stratified_study(tmp_path/'inputs',compact=True)
+        spec=read_json(p);spec['cases'][1]['group_id']=spec['cases'][0]['group_id'];spec['maximum_cases_per_group']=2
+        p.write_text(json.dumps(spec))
+>       with pytest.raises(ObservationError,match='one acquisition category'):freeze_study(p,tmp_path/'frozen')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'one acquisition category'
+E         Actual message: 'dependent acquisition group crosses routing strata'
+
+tests/test_wave8_integration.py:219: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_wave8_integration.py::test_fixed_and_refitted_state_use_source_specific_radii_without_rescaling_covariance - KeyError: 'bound_state'
+FAILED tests/test_wave8_integration.py::test_group_category_cannot_change_within_prospective_study - AssertionError: Regex pattern did not match.
+  Expected regex: 'one acquisition category'
+  Actual message: 'dependent acquisition group crosses routing strata'
+2 failed, 27 passed in 8.56s

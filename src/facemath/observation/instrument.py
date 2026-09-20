@@ -121,13 +121,15 @@ class FacialInstrument:
     def __init__(self, config: InstrumentConfig | None = None, provider: LandmarkProvider | None = None,
                  *, localization_calibration: LocalizationCalibration | BiasCalibration | None = None,
                  query_groups: tuple[str, str] = ("", ""), domain: str = "",
-                 query_lineages: tuple[tuple[str, ...], tuple[str, ...]] = ((), ())) -> None:
+                 query_lineages: tuple[tuple[str, ...], tuple[str, ...]] = ((), ()),
+                 query_strata: tuple[str, str] = ("", "")) -> None:
         self.config = config or InstrumentConfig()
         self.provider = provider
         self.localization_calibration = localization_calibration
         self.query_groups = tuple(query_groups)
         self.query_lineages = tuple(tuple(x) for x in query_lineages)
         self.domain = domain
+        self.query_strata = tuple(query_strata)
 
     def run(self, image_a: np.ndarray, image_b: np.ndarray,
             observation_a: Observation | None = None,
@@ -155,6 +157,29 @@ class FacialInstrument:
             output.update(observation_a_sha256=observation_a.digest, observation_b_sha256=observation_b.digest,
                           provider_a=observation_a.provider, provider_b=observation_b.provider,
                           samples_a=len(observation_a.samples), samples_b=len(observation_b.samples))
+        calibration = self.localization_calibration
+        from .stratified import StratifiedJointCalibration, BoundStratifiedCalibration
+        if isinstance(calibration, StratifiedJointCalibration):
+            with journal.step("calibration.route_acquisition_sources", {
+                "model_sha256": calibration.digest, "declared_strata": self.query_strata,
+                "routing_uses_reference_or_pair_error": False}) as output:
+                calibration = calibration.bind((observation_a, observation_b), self.query_groups,
+                    self.query_strata, self.domain, self.query_lineages)
+                output.update(calibration.routing_evidence())
+        elif isinstance(calibration, BoundStratifiedCalibration):
+            expected_strata = tuple(r.stratum for r in calibration.routes)
+            if self.query_strata not in (("", ""), expected_strata):
+                raise ObservationError("query strata conflict with bound acquisition routes")
+            with journal.step("calibration.route_acquisition_sources", {
+                "model_sha256": calibration.model.digest, "declared_strata": expected_strata,
+                "routing_uses_reference_or_pair_error": False}) as output:
+                for observation, group, ids in zip((observation_a, observation_b), self.query_groups, self.query_lineages):
+                    calibration.require_query(observation, group, self.domain, ids)
+                output.update(calibration.routing_evidence())
+        elif self.query_strata != ("", ""):
+            if (not isinstance(calibration, BoundStratifiedCalibration)
+                    or self.query_strata != tuple(r.stratum for r in calibration.routes)):
+                raise ObservationError("query strata require a matching category-conditioned calibration")
         with journal.step("canonical.shared_state", self.config.recipe()) as output:
             state = canonicalize(a, b, observation_a, observation_b, anatomy, self.config)
             output.update(recipe_sha256=state.recipe_sha256, a_matrix=state.source_to_canonical_a.tolist(),
@@ -182,10 +207,10 @@ class FacialInstrument:
                 edges = diagnose_edges(state)
                 output.update(edges.summary())
         localization = None
-        if self.localization_calibration is not None:
-            with journal.step("validation.localization_envelope", {"calibration_sha256": self.localization_calibration.digest}) as output:
-                assessor = assess_bias_pair if isinstance(self.localization_calibration, BiasCalibration) else assess_pair
-                localization = assessor(state, self.localization_calibration,
+        if calibration is not None:
+            with journal.step("validation.localization_envelope", {"calibration_sha256": calibration.digest}) as output:
+                assessor = assess_bias_pair if isinstance(calibration, BiasCalibration) else assess_pair
+                localization = assessor(state, calibration,
                                           query_groups=self.query_groups, domain=self.domain, query_lineages=self.query_lineages)
                 output.update(supported_points=int(localization.supported.sum()),
                               kind="fixed_observed_gauge_error_envelope_not_shape_confidence")

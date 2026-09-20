@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/facemath_wave_08/scripts/browser_qa_wave6.py",
+    "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html",
+    "--out",
+    "/mnt/data/facemath_wave_08/evidence/wave8/relation-browser"
+  ],
+  "cwd": "/mnt/data/facemath_wave_08",
+  "started_utc": "2026-09-20T07:07:04.709761+00:00",
+  "finished_utc": "2026-09-20T07:07:07.164657+00:00",
+  "returncode": 0,
+  "stdout": "{\n  \"format\": \"facemath.browser_qa.v6\",\n  \"report\": \"/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\",\n  \"started_at\": \"2026-09-20T07:07:05.163289+00:00\",\n  \"checks\": {\n    \"distance_rows\": 28,\n    \"angle_rows\": 168,\n    \"signed_double_area_rows\": 56,\n    \"asymmetry_rows\": 4,\n    \"anatomical_name_filter_rows\": 63,\n    \"selection_links_same_raw_array_row\": true,\n    \"csv_matches_exact_selected_frozen_values\": true,\n    \"status_filter_rows\": 1,\n    \"full_covariance_ellipse_display\": true,\n    \"display_zoom_not_measurement_rescale\": true,\n    \"local_evidence_links_exist\": true,\n    \"controls_do_not_change_measurements\": true\n  },\n  \"viewports\": [\n    {\n      \"width\": 1440,\n      \"height\": 1150,\n      \"document_width\": 1440,\n      \"body_overflow\": false\n    },\n    {\n      \"width\": 390,\n      \"height\": 844,\n      \"document_width\": 390,\n      \"body_overflow\": false\n    }\n  ],\n  \"loading\": \"in-memory emitted HTML; local navigation unavailable\",\n  \"navigation_error\": \"Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\\nCall log:\\n  - navigating to \\\"file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\\\", waiting until \\\"load\\\"\\n\",\n  \"page_errors\": [],\n  \"remote_requests\": [],\n  \"passed\": true,\n  \"finished_at\": \"2026-09-20T07:07:07.016992+00:00\"\n}\n",
+  "stderr": ""
+}

@@ -1,0 +1,73 @@
+{
+  "format": "facemath.browser_qa.v8",
+  "started_utc": "2026-09-20T07:06:59.957071+00:00",
+  "reports": {
+    "study": {
+      "loading": "emitted HTML in memory after local file navigation was blocked",
+      "source": "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification/report.html",
+      "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/qualification/report.html\", waiting until \"load\"\n"
+    },
+    "pair": {
+      "loading": "emitted HTML in memory after local file navigation was blocked",
+      "source": "/mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html",
+      "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_08/evidence/wave8/laboratory/pair_02_mouth_8px/report.html\", waiting until \"load\"\n"
+    }
+  },
+  "checks": {
+    "all_retained_group_scores_export_exactly": true,
+    "unsupported_case_rows_remain_visible": 3,
+    "no_source_route_selector": true,
+    "reference_geometry_enabled_with_two_radii": true,
+    "display_preserves_measurement_payload": true,
+    "local_evidence_paths_exist": true
+  },
+  "viewports": [
+    {
+      "report": "study",
+      "viewport": {
+        "width": 1440,
+        "height": 1050
+      },
+      "screenshot": "desktop_acquisition.png",
+      "categories_checked": 4
+    },
+    {
+      "report": "study",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "mobile_acquisition.png",
+      "categories_checked": 4
+    },
+    {
+      "report": "pair",
+      "viewport": {
+        "width": 1440,
+        "height": 1050
+      },
+      "screenshot": "desktop_source_radii.png",
+      "query_radii": [
+        3.990515730848953,
+        9.152608775526309
+      ]
+    },
+    {
+      "report": "pair",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "mobile_source_radii.png",
+      "query_radii": [
+        3.990515730848953,
+        9.152608775526309
+      ]
+    }
+  ],
+  "errors": [],
+  "remote_requests": [],
+  "finished_utc": "2026-09-20T07:07:02.176335+00:00",
+  "passed": true
+}
+

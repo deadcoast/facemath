@@ -1,0 +1,67 @@
+{
+  "format": "facemath.native_environment_check.v8",
+  "utc": "2026-09-20T07:05:20.409696+00:00",
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "packages": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "opencv-python": "4.13.0.92",
+      "mediapipe": null,
+      "pytest": "9.0.2"
+    },
+    "numeric_environment": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "opencv": "4.13.0"
+    },
+    "engine_code_sha256": "94c9b9484f05877d59f2f5e2a25be508a9ecb0aa3f8d9df6f6625d570077e023"
+  },
+  "mediapipe_installed": false,
+  "network_attempts": [
+    {
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-c",
+        "import socket; print(socket.getaddrinfo('pypi.org',443))"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import socket; print(socket.getaddrinfo('pypi.org',443))\n                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.13/socket.py\", line 977, in getaddrinfo\n    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):\n               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsocket.gaierror: [Errno -3] Temporary failure in name resolution\n",
+      "started_utc": "2026-09-20T07:05:20.423793+00:00",
+      "finished_utc": "2026-09-20T07:05:21.149337+00:00"
+    },
+    {
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-c",
+        "import socket; print(socket.getaddrinfo('storage.googleapis.com',443))"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import socket; print(socket.getaddrinfo('storage.googleapis.com',443))\n                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.13/socket.py\", line 977, in getaddrinfo\n    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):\n               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsocket.gaierror: [Errno -3] Temporary failure in name resolution\n",
+      "started_utc": "2026-09-20T07:05:21.149364+00:00",
+      "finished_utc": "2026-09-20T07:05:26.748490+00:00"
+    },
+    {
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-c",
+        "import socket; print(socket.getaddrinfo('raw.githubusercontent.com',443))"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import socket; print(socket.getaddrinfo('raw.githubusercontent.com',443))\n                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.13/socket.py\", line 977, in getaddrinfo\n    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):\n               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsocket.gaierror: [Errno -3] Temporary failure in name resolution\n",
+      "started_utc": "2026-09-20T07:05:26.748517+00:00",
+      "finished_utc": "2026-09-20T07:05:27.369807+00:00"
+    }
+  ],
+  "live_inference_executed": false,
+  "attempted_tool_download": {
+    "mechanism": "container.download",
+    "url": "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task",
+    "tool_result": "ERROR: download failed",
+    "provenance": "description of actual visible tool response earlier in this turn; not a Python-generated download receipt"
+  }
+}

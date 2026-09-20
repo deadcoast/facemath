@@ -67,6 +67,8 @@ def _html(result: InstrumentResult, arrays: dict[str, np.ndarray]) -> str:
         summaries = result.edges.summary()
         erows = "".join(f"<tr><td>{escape(k)}</td><td>{v['accepted']} / {v['rays']}</td><td>{v['source_supported']}</td><td>{v['median_absolute_offset_px']:.3f}</td></tr>" if v['median_absolute_offset_px'] is not None else f"<tr><td>{escape(k)}</td><td>0 / {v['rays']}</td><td>{v['source_supported']}</td><td>withheld</td></tr>" for k, v in summaries['profiles'].items())
         edge_section = f"<h2>Image-edge support</h2><p>Landmark-guided normal-ray searches. Matching image gradients are diagnostic, not proof of correct anatomy. Landmarks are never moved to an edge candidate. Complete ray responses and rejection masks are in arrays.npz.</p><div class='scroll'><table><tr><th>Source / region</th><th>Accepted / attempted rays</th><th>Full source support</th><th>Median |normal offset| · px</th></tr>{erows}</table></div>"
+    from .stratified_report import render_routing_pair
+    routing_section = render_routing_pair(result.localization.calibration) if result.localization else ""
     localization_section = ""
     if result.localization:
         info = result.localization.to_dict()
@@ -92,7 +94,7 @@ small{{display:block;color:var(--muted);font-size:12px;max-width:68ch}}code{{fon
 a{{color:var(--accent)}}summary{{cursor:pointer;font-weight:600}}input[type=range]{{width:min(100%,500px)}}.blend{{position:relative;max-width:360px}}.blend img{{width:100%;display:block}}.blend img:last-child{{position:absolute;inset:0;opacity:.5}}
 footer{{margin-top:40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:18px}}
 @media(max-width:760px){{.gallery{{grid-template-columns:1fr}}main{{padding:20px 14px}}h1{{font-size:28px}}}}
-</style><main><header><div class="eyebrow">FACEMATH / WAVE 06 / OBSERVATION → FIELD → EVIDENCE</div>
+</style><main><header><div class="eyebrow">FACEMATH / WAVE 08 / OBSERVATION → FIELD → EVIDENCE</div>
 <h1>Anatomical correspondence, exposed.</h1>
 <span class="tag">{escape(result.state.observation_a.provider)}</span><span class="tag">{len(result.state.xy_a)} observed landmarks</span>
 <span class="tag">No identity scoring</span><span class="tag">No population calibration attached</span>
@@ -106,7 +108,7 @@ footer{{margin-top:40px;color:var(--muted);font-size:12px;border-top:1px solid v
 <label>A → B <input id="opacity" type="range" min="0" max="100" value="50" aria-label="B opacity"></label></details>
 <div class="panel"><strong>Read the units before the number.</strong><br>
 Landmark residuals are normalized by the geometric mean of registered interocular spans. A within-tolerance fraction counts landmarks below the declared threshold ({result.state.config.tolerance_ipd:g} spans). Neither quantity is an identity probability. The intervals below measure conditional observation sensitivity, not established detector accuracy.</div>
-{intrinsic_section}<h2>Measured profile</h2><div class="scroll"><table><thead><tr><th>Measurement / interpretation</th><th>Value</th><th>Unit</th><th>Support / denominator</th><th>95% sensitivity interval</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
+{routing_section}{intrinsic_section}<h2>Measured profile</h2><div class="scroll"><table><thead><tr><th>Measurement / interpretation</th><th>Value</th><th>Unit</th><th>Support / denominator</th><th>95% sensitivity interval</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
 {edge_section}{localization_section}<h2>Raw numerical state</h2><p><a href="arrays.npz">arrays.npz</a> · <a href="evidence.json">evidence.json</a> · <a href="observations.json">observations.json</a> · <a href="events.jsonl">actual execution events</a> · <a href="manifest.json">byte manifest</a></p>
 <div class="scroll"><table><thead><tr><th>Array</th><th>Shape</th><th>dtype</th><th>Content digest</th></tr></thead><tbody>{array_rows}</tbody></table></div>
 <h2>Observation constraints</h2><ul>{warnings or '<li>No additional source warnings.</li>'}</ul><ul>{limits}</ul>

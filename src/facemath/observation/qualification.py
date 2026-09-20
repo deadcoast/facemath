@@ -75,7 +75,7 @@ def qualify(study: FrozenStudy, raw_report: dict[str, Any], session_status: dict
     baseline_coverage = evaluate_coverage(baseline, rows)
     bias = None
     arrays: dict[str, np.ndarray] = {}
-    if data["bias_mode"] == "development_joint_ocular":
+    if data["bias_mode"] in ("development_joint_ocular", "development_joint_ocular_stratified"):
         selected, scored = fit_joint_calibration(rows, study_sha256=raw_report["content_sha256"],
             domain=data["domain"], alpha=data["alpha"], minimum_raters=data["minimum_raters"],
             minimum_development_groups=data["minimum_development_groups"], **data["joint_error"])
@@ -95,6 +95,27 @@ def qualify(study: FrozenStudy, raw_report: dict[str, Any], session_status: dict
         arrays["development_bias_beta"] = bias.beta
     else:
         selected, scored, coverage = baseline, tuple(r for r in rows if r.split != "development"), baseline_coverage
+    routing_report = None
+    pooled_joint_diagnostic = None
+    if data["bias_mode"] == "development_joint_ocular_stratified":
+        from .stratified import RoutingPolicy, stratify_joint, evaluate_stratified
+        pooled_joint_diagnostic = {"quantile": selected.quantile, "coverage": coverage,
+            "meaning": "same development fit with pooled calibration; diagnostic only, never a deployment fallback"}
+        selected = stratify_joint(selected, scored, study.cases, RoutingPolicy.from_dict(data["stratified_error"]))
+        coverage = evaluate_stratified(selected, scored, study.cases)
+        routing_report = {"policy": selected.policy.to_dict(), "policy_sha256": selected.policy.digest,
+            "categories": [r.to_dict() for r in selected.radii],
+            "coverage": coverage, "pooled_joint_diagnostic": pooled_joint_diagnostic}
+        order = {name: i for i, name in enumerate(selected.policy.strata)}
+        entry_lookup = {c["case_id"]: c for c in study.cases}
+        groups = [(category, g, score) for category, r in enumerate(selected.radii) for g, score in r.group_scores]
+        arrays.update(routing_category_per_case=np.array([order[entry_lookup[r.case_id]["stratum"]] for r in rows], dtype=np.int64),
+            routing_category_quantiles=np.array([r.quantile if r.quantile is not None else 0. for r in selected.radii]),
+            routing_category_available=np.array([r.quantile is not None for r in selected.radii]),
+            routing_calibration_group_category=np.array([s for s, g, v in groups], dtype=np.int64),
+            routing_calibration_group_score=np.array([v if v is not None else 0. for s, g, v in groups]),
+            routing_calibration_group_score_available=np.array([v is not None for s, g, v in groups]))
+        routing_report["group_array_order"] = [g for s, g, v in groups]
     source_bias = np.zeros((len(rows), 8, 2))
     centered = np.zeros_like(source_bias)
     centered_valid = np.zeros((len(rows), 8), dtype=bool)
@@ -135,12 +156,17 @@ def qualify(study: FrozenStudy, raw_report: dict[str, Any], session_status: dict
         evaluation = tuple(r for r in scored if r.split == "evaluation" and by_case[r.case_id]["stratum"] == name)
         slices.append({"stratum": name, "prespecified": True, "calibration_groups": len({r.group_id for r in cal}),
             "has_calibration_representation": bool(cal),
-            "evaluation": _slice_coverage(evaluation, selected.quantile, data["minimum_raters"]),
+            "evaluation": _slice_coverage(evaluation, selected.radius(name).quantile if routing_report else selected.quantile, data["minimum_raters"]),
+            "route_status": selected.radius(name).status if routing_report else "pooled_diagnostic_slice",
+            "deployed_quantile": selected.radius(name).quantile if routing_report else selected.quantile,
             "raw_localization": summarize(evaluation) if evaluation else None,
             "conditional_coverage_guaranteed": False})
     coverage["full_error_model_sha256"] = selected.digest
     coverage["score_centering"] = data["bias_mode"]
-    coverage["binomial_95_interval"] = binomial_interval(coverage["covered_groups"], coverage["evaluation_groups"]) if coverage["covered_groups"] is not None else None
+    coverage["binomial_95_interval"] = (binomial_interval(coverage["covered_groups"], coverage["evaluation_groups"])
+        if not routing_report and coverage["covered_groups"] is not None else None)
+    if routing_report:
+        coverage["aggregate_interval_limit"] = "heterogeneous category mixtures and abstentions are not asserted to be iid Bernoulli trials; no aggregate binomial interval"
     per_landmark = []
     for k, name in enumerate(REFERENCE_NAMES):
         eligible = np.array([r.split == "evaluation" for r in rows]) & centered_valid[:, k]
@@ -148,7 +174,11 @@ def qualify(study: FrozenStudy, raw_report: dict[str, Any], session_status: dict
             "raw_mean_error_px": float(np.linalg.norm(arrays["raw_error_vectors_px"][eligible, k], axis=1).mean()) if eligible.any() else None,
             "centered_mean_error_px": float(np.linalg.norm(centered[eligible, k], axis=1).mean()) if eligible.any() else None})
     warnings = []
-    if selected.quantile is None:
+    if routing_report:
+        if any(r.quantile is None for r in selected.radii):
+            warnings.append("Some frozen acquisition categories lack a finite deployable radius. Queries in them are rejected without pooled fallback; evaluation retains them.")
+        warnings.append("Category membership is declared acquisition metadata. Matching a label does not detect hidden within-category distribution shift.")
+    elif selected.quantile is None:
         warnings.append("Selected reference envelope is unbounded; it cannot qualify a pair.")
     if any(s["evaluation"]["cases"] and not s["has_calibration_representation"] for s in slices):
         warnings.append("At least one evaluation stratum has no calibration groups: no deployment coverage transfer is justified for that stratum.")
@@ -167,9 +197,11 @@ def qualify(study: FrozenStudy, raw_report: dict[str, Any], session_status: dict
         "enrollment": {k: session_status[k] for k in ("enrolled", "eligible", "prospectively_excluded", "committed", "outcomes")},
         "excluded_cases": [{k: c[k] for k in ("case_id", "group_id", "split", "stratum", "exclusion_reason")}
                             for c in study.cases if c["eligibility"] == "excluded"],
+        "acquisition_routing": routing_report,
         "raw_baseline": {"quantile": baseline.quantile, "rank": baseline.rank, "coverage": baseline_coverage},
         "selected_error_model": {"calibration_sha256": selected.digest, "quantile": selected.quantile,
-            "rank": selected.residual.rank if isinstance(selected, BiasCalibration) else selected.rank,
+            "rank": None if routing_report else selected.residual.rank if isinstance(selected, BiasCalibration) else selected.rank,
+            "radius_mode": "per_source_acquisition_category" if routing_report else "one_pooled_radius",
             "bias_sha256": bias.digest if bias else None,
             "joint_scatter_sha256": selected.scatter.digest if isinstance(selected, JointCalibration) else None,
             "error_geometry": "full16_shared_latent_ellipsoid" if isinstance(selected, JointCalibration) else "marginal_product_ellipses",
@@ -181,7 +213,8 @@ def qualify(study: FrozenStudy, raw_report: dict[str, Any], session_status: dict
         "slices": slices, "cases": per_case, "per_landmark": per_landmark,
         "warnings": warnings,
         "interpretation": "error-to-independent-reference study; centered residuals describe the error model, not changed detector outputs or facial resemblance",
-        "guarantee_limit": "marginal new-group conformal rank argument needs exchangeable groups under the frozen protocol; no per-image or conditional-slice guarantee",
+        "guarantee_limit": ("category-local new-group rank argument requires exchangeable whole groups within each frozen acquisition category; no per-image or hidden-shift guarantee" if routing_report else
+            "marginal new-group conformal rank argument needs exchangeable groups under the frozen protocol; no per-image or conditional-slice guarantee"),
         "array_order": {"cases": [r.case_id for r in rows], "reference_points": list(REFERENCE_NAMES)}}
     report["content_sha256"] = object_digest(report)
     return report, arrays, selected

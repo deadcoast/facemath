@@ -9,7 +9,10 @@ def render_study_report(report: dict[str, Any]) -> str:
     def number(x, digits=3):
         return "—" if x is None else f"{x:.{digits}f}"
     def fraction(x):
-        return "UNBOUNDED" if x is None else f"{100*x:.1f}%"
+        return "NOT AVAILABLE" if x is None else f"{100*x:.1f}%"
+    from .stratified_report import render_routing_study
+    routing_section = render_routing_study(report.get("acquisition_routing"))
+    heading = "Match uncertainty<br>to acquisition." if routing_section else "Separate the bias.<br>Keep the observation."
     model = report["selected_error_model"]
     coverage = model["coverage"]
     fixture = report["execution_kind"] == "synthetic_fixture"
@@ -26,6 +29,8 @@ def render_study_report(report: dict[str, Any]) -> str:
         interval = e["binomial_95_interval"]
         ci = "—" if interval is None else f"{fraction(interval[0])}–{fraction(interval[1])}"
         flag = "represented" if s["has_calibration_representation"] else "NO CALIBRATION SUPPORT"
+        if report.get("acquisition_routing"):
+            flag = s["route_status"].replace("_", " ")
         slice_rows.append(f"<tr><td>{escape(s['stratum'])}<small>{flag}</small></td><td>{s['calibration_groups']}</td><td>{e['groups']}</td><td class='num'>{fraction(e['empirical_coverage']) if e['groups'] else '—'}</td><td class='num'>{ci}</td></tr>")
     landmark_rows = []
     for row in report["per_landmark"]:
@@ -36,31 +41,31 @@ def render_study_report(report: dict[str, Any]) -> str:
     warnings = ''.join(f"<li>{escape(w)}</li>" for w in report['warnings'])
     excluded = ''.join(f"<li><code>{escape(c['case_id'])}</code> — {escape(c['exclusion_reason'])}</li>" for c in report['excluded_cases']) or '<li>None.</li>'
     scope = 'SYNTHETIC CONTROL / NO LIVE DETECTOR VALIDATION' if fixture else 'NATIVE OBSERVATION / REFERENCE-BASED STUDY'
-    rawq = number(report['raw_baseline']['quantile']); newq = number(model['quantile'])
+    rawq = number(report['raw_baseline']['quantile']); newq = 'SOURCE-SPECIFIC' if report.get('acquisition_routing') else number(model['quantile'])
     payload = json.dumps(report, allow_nan=False).replace('<','\\u003c').replace('&','\\u0026')
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FACEMATH 07 · Observer qualification</title><style>
+<title>FACEMATH 08 · Observer qualification</title><style>
 :root{{--bg:#0c1218;--panel:#131e28;--muted:#acbccb;--ink:#edf5fb;--line:#304553;--accent:#6de2c4;--warn:#ffd08a}}
 *{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,sans-serif}}a{{color:var(--accent)}}
 main{{max-width:1320px;margin:auto;padding:38px 32px 70px}}header{{border-top:3px solid var(--accent);border-bottom:1px solid var(--line);padding:25px 0 30px}}
 .eyebrow,code{{font:12px ui-monospace,monospace}}.eyebrow{{letter-spacing:.16em;color:var(--accent)}}h1{{font-size:clamp(28px,4vw,44px);letter-spacing:-.045em;line-height:1.1;margin:16px 0}}h2{{font-size:24px;letter-spacing:-.025em;margin:32px 0 12px}}
 p{{color:var(--muted);max-width:93ch}}small{{display:block;color:var(--muted);font-size:12px}}.tag{{display:inline-block;border:1px solid var(--line);padding:7px 12px;font:11px ui-monospace,monospace;margin:6px 8px 0 0;overflow-wrap:anywhere}}
 .scope{{color:var(--warn)}}.flow{{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:26px 0}}.flow div{{padding:18px;border:1px solid var(--line);background:var(--panel)}}.flow strong{{display:block;font:30px ui-monospace,monospace;line-height:1.6}}
-.grid{{display:grid;grid-template-columns:1fr 1fr;gap:24px}}.panel{{border:1px solid var(--line);padding:22px;background:var(--panel)}}.panel h2{{margin:0 0 12px}}.q{{display:flex;justify-content:space-between;gap:15px;font:32px ui-monospace,monospace;padding:15px 0}}.q small{{font:12px system-ui,sans-serif}}
+.grid{{display:grid;grid-template-columns:1fr 1fr;gap:24px}}.panel{{border:1px solid var(--line);padding:22px;background:var(--panel)}}.panel h2{{margin:0 0 12px}}.q{{display:flex;justify-content:space-between;gap:15px;font:32px ui-monospace,monospace;padding:15px 0}}.q div{{min-width:0;overflow-wrap:anywhere}}.q small{{font:12px system-ui,sans-serif}}
 .landmark{{display:grid;grid-template-columns:1.25fr 1fr auto;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:12px}}.track{{height:6px;background:#41566a}}.track i{{display:block;height:100%;background:var(--accent)}}.notice{{border-left:3px solid var(--warn);padding:16px 20px;background:var(--panel);margin:24px 0}}
 .scroll{{overflow:auto;border:1px solid var(--line)}}table{{width:100%;border-collapse:collapse;font-size:13px;min-width:600px}}th,td{{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}}th{{background:var(--panel)}}.num{{font-variant-numeric:tabular-nums;white-space:nowrap}}code{{overflow-wrap:anywhere}}tr[hidden]{{display:none}}
 .controls{{display:flex;align-items:end;flex-wrap:wrap;gap:12px;margin:18px 0}}label{{font-size:12px;color:var(--muted)}}select,button{{display:block;background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:11px 14px;border-radius:3px;font:13px system-ui}}button{{cursor:pointer;color:var(--accent)}}:focus-visible{{outline:2px solid var(--accent);outline-offset:3px}}
 .links{{display:flex;flex-wrap:wrap;gap:12px}}.links a{{padding:9px 12px;border:1px solid var(--line)}}footer{{margin-top:38px;border-top:1px solid var(--line);padding-top:18px;font-size:12px;color:var(--muted)}}
 @media(max-width:800px){{main{{padding:20px 14px 40px}}.grid{{grid-template-columns:1fr}}.flow{{grid-template-columns:repeat(2,1fr)}}.landmark{{grid-template-columns:1.1fr .7fr auto;gap:6px}}.landmark code{{font-size:10px}}.panel{{padding:16px}}}}
 </style></head><body><main>
-<header><div class="eyebrow">FACEMATH / WAVE 07 / OBSERVER QUALIFICATION</div><h1>Separate the bias.<br>Keep the observation.</h1><p>Frozen enrollment → committed observation attempts → development-only error model → untouched held-out evaluation. The registered anatomy is never moved to make these results improve.</p>
+<header><div class="eyebrow">FACEMATH / WAVE 08 / OBSERVER QUALIFICATION</div><h1>{heading}</h1><p>Frozen enrollment → committed observation attempts → development-only error model → untouched held-out evaluation. The registered anatomy is never moved to make these results improve.</p>
 <div class="tag scope">{scope}</div><div class="tag">{escape(report['domain'])}</div></header>
 <section class="flow" aria-label="Study counts"><div><small>01 · Enrolled</small><strong>{report['enrollment']['enrolled']}</strong><small>{report['enrollment']['prospectively_excluded']} excluded before acquisition</small></div>
 <div><small>02 · Committed attempts</small><strong>{report['enrollment']['committed']}</strong><small>no hidden retries</small></div><div><small>03 · Bias-fit groups</small><strong>{model['fitted_development_groups']}</strong><small>development split only</small></div><div><small>04 · Held-out group coverage</small><strong>{fraction(coverage['empirical_group_coverage'])}</strong><small>{coverage['evaluation_groups']} evaluation groups; not resemblance</small></div></section>
 <div class="grid"><section class="panel"><h2>What calibration changed</h2><p>Multipliers from two different score recipes. Their numerical sizes are not directly comparable; compare held-out coverage and physical uncertainty widths.</p><div class="q"><div>{rawq}<small>zero-centered baseline</small></div><div>→</div><div>{newq}<small>selected residual model</small></div></div><p>Estimator chosen before acquisition: <code>{escape(report['bias_mode_selected_before_acquisition'])}</code>. Raw image coordinates and the geometry profile remain unchanged. Neither a smaller multiplier nor a narrower modeled set establishes better coverage. Joint error geometry is fitted on development groups only.</p></section>
 <section class="panel"><h2>Where the errors remain</h2><p>Held-out mean error: raw prediction → centered error-model residual. Bars show the residual fraction of each raw error.</p>{''.join(landmark_rows)}</section></div>
-<div class="notice"><strong>Evidence constraints</strong><ul>{warnings or '<li>No additional acquisition warning.</li>'}</ul></div>
-<h2>Prespecified acquisition slices</h2><p>These expose undercoverage and missing calibration representation. A global conformal rank does not establish conditional coverage in every slice. The binomial intervals require independent, comparable groups.</p><div class="scroll"><table><thead><tr><th>Stratum</th><th>Calibration groups</th><th>Evaluation groups</th><th>Empirical coverage</th><th>Binomial 95% interval</th></tr></thead><tbody>{''.join(slice_rows)}</tbody></table></div>
+{routing_section}<div class="notice"><strong>Evidence constraints</strong><ul>{warnings or '<li>No additional acquisition warning.</li>'}</ul></div>
+<h2>Prespecified acquisition slices</h2><p>These expose undercoverage and missing calibration representation. Read the frozen model selection: pooled ranks do not establish conditional slice coverage; category-local ranks still require within-category exchangeability. The binomial intervals require independent, comparable groups.</p><div class="scroll"><table><thead><tr><th>Stratum</th><th>Calibration groups</th><th>Evaluation groups</th><th>Empirical coverage</th><th>Binomial 95% interval</th></tr></thead><tbody>{''.join(slice_rows)}</tbody></table></div>
 <h2>Every eligible attempt</h2><p>Click a case for its source raster or its outcome for the original execution receipt. Failed outputs remain in the denominator.</p>
 <div class="controls"><label>Split<select id="split"><option value="all">All splits</option><option>development</option><option>calibration</option><option>evaluation</option></select></label>
 <label>Stratum<select id="stratum"><option value="all">All strata</option>{options}</select></label><label>Outcome<select id="outcome"><option value="all">All outcomes</option><option value="observed">Observed</option><option value="failed">Failed / unavailable</option></select></label>

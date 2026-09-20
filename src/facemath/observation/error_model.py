@@ -40,6 +40,8 @@ class ErrorCalibration(Protocol):
     def require_query(self, observation: Observation, group_id: str, domain: str,
                       lineage_ids: tuple[str, ...] = ()) -> None: ...
 
+    def source_quantile(self, observation: Observation) -> float | None: ...
+
     def source_covariance(self, observation: Observation) -> np.ndarray: ...
 
     def source_joint_covariance(self, observation: Observation) -> np.ndarray | None: ...
@@ -123,6 +125,9 @@ class LocalizationCalibration:
         from dataclasses import fields
         return cls(**{f.name: obj[f.name] for f in fields(cls)})
 
+    def source_quantile(self, observation: Observation) -> float | None:
+        return self.quantile
+
     def source_covariance(self, observation: Observation) -> np.ndarray:
         return mapped_prediction(observation)[1]
 
@@ -132,6 +137,11 @@ class LocalizationCalibration:
     def require_query(self, observation: Any, group_id: str, domain: str, lineage_ids: tuple[str, ...] = ()) -> None:
         if self.quantile is None:
             raise ObservationError("localization calibration is unbounded: insufficient groups or failure mass")
+        self.require_query_context(observation, group_id, domain, lineage_ids)
+
+    def require_query_context(self, observation: Any, group_id: str, domain: str,
+                              lineage_ids: tuple[str, ...] = ()) -> None:
+        """Recipe/provenance checks shared by pooled and category-conditioned radii."""
         if not group_id or domain != self.domain:
             raise ObservationError("explicit query group and matching acquisition domain required")
         if observer_recipe(observation) != self.observer_recipe_sha256:
@@ -242,7 +252,7 @@ class DirectionalBounds:
                 ("normalized_covariances", "normals", "combined_support", "lower_ipd", "upper_ipd")}
 
 
-def ellipse_gap_bounds(delta: np.ndarray, covariances: np.ndarray, quantile: float,
+def ellipse_gap_bounds(delta: np.ndarray, covariances: np.ndarray, quantile: float | np.ndarray,
                        directions: int = 128) -> DirectionalBounds:
     """Two [N,2,2] covariance fields, already pushed into normalized canonical units."""
     d, c = np.asarray(delta, float), np.asarray(covariances, float)
@@ -251,15 +261,27 @@ def ellipse_gap_bounds(delta: np.ndarray, covariances: np.ndarray, quantile: flo
         raise ObservationError("ellipse bounds require finite [N,2] deltas and [2,N,2,2] covariance")
     if not np.allclose(c, c.swapaxes(-1, -2), rtol=1e-10, atol=1e-12) or np.any(np.linalg.eigvalsh(c) <= 0):
         raise ObservationError("ellipse covariance must be symmetric positive definite")
-    if not np.isfinite(quantile) or quantile < 0 or type(directions) is not int or not 8 <= directions <= 4096:
+    try:
+        original = np.asarray(quantile)
+        mixed_bool = isinstance(quantile, (list, tuple)) and any(isinstance(v, (bool, np.bool_)) for v in quantile)
+        if original.dtype.kind not in "iuf" or mixed_bool:
+            raise ObservationError("ellipse radii must be numeric, not boolean/string values")
+        q = np.asarray(quantile, float)
+    except (ValueError, TypeError, OverflowError) as exc:
+        raise ObservationError("invalid ellipse radius representation") from exc
+    if q.ndim == 0:
+        q = np.repeat(q, 2)
+    if q.shape != (2,) or not np.isfinite(q).all() or np.any(q < 0) or type(directions) is not int or not 8 <= directions <= 4096:
         raise ObservationError("invalid ellipse radius or angular resolution")
     angles = np.arange(directions) * (2*np.pi/directions)
     normals = np.column_stack((np.cos(angles), np.sin(angles)))
     variance = np.einsum("mi,anij,mj->anm", normals, c, normals)
-    support = quantile * np.sqrt(np.maximum(0, variance)).sum(axis=0)
+    support = (q[:, None, None] * np.sqrt(np.maximum(0, variance))).sum(axis=0)
     projection = d @ normals.T
     gap = np.linalg.norm(d, axis=1)
-    radii = quantile * np.sqrt(np.linalg.eigvalsh(c)[..., -1]).sum(axis=0)
+    radii = (q[:, None] * np.sqrt(np.linalg.eigvalsh(c)[..., -1])).sum(axis=0)
+    if not np.isfinite(support).all() or not np.isfinite(radii).all() or not np.isfinite(gap+radii).all():
+        raise ObservationError("ellipse radius exceeds representable geometric bounds")
     roundoff = 64*np.finfo(float).eps * np.maximum(1, gap+radii)
     lower = np.maximum(0, np.maximum(gap-radii, np.max(projection-support, axis=1))-roundoff)
     # Every point in the uncertainty set projects at least ||point|| cos(pi/M)
@@ -285,8 +307,14 @@ class LocalizationEnvelope:
     tolerance_ipd: float
     query_lineages: tuple[tuple[str, ...], tuple[str, ...]] = ((), ())
     directional: DirectionalBounds | None = None
+    source_quantiles: np.ndarray | None = None
 
     def __post_init__(self) -> None:
+        q = np.asarray(self.source_quantiles if self.source_quantiles is not None else
+                       [self.calibration.quantile, self.calibration.quantile], float)
+        if q.shape != (2,) or not np.isfinite(q).all() or np.any(q < 0):
+            raise ObservationError("localization envelope needs two finite source radii")
+        object.__setattr__(self, "source_quantiles", frozen_array(q))
         for name in ("source_radii_px", "canonical_radii_px", "canonical_points", "radial_budget_ipd", "observed_gap_ipd", "lower_ipd", "upper_ipd"):
             object.__setattr__(self, name, frozen_array(getattr(self, name)))
         object.__setattr__(self, "supported", frozen_array(self.supported, bool))
@@ -294,11 +322,13 @@ class LocalizationEnvelope:
     def arrays(self) -> dict[str, np.ndarray]:
         return {"localization_" + n: getattr(self, n) for n in (
             "source_radii_px", "canonical_radii_px", "canonical_points", "radial_budget_ipd",
-            "observed_gap_ipd", "lower_ipd", "upper_ipd", "supported")}
+            "observed_gap_ipd", "lower_ipd", "upper_ipd", "supported", "source_quantiles")}
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "calibration_sha256": self.calibration.digest, "names": list(REFERENCE_NAMES),
+            "source_quantiles": self.source_quantiles.tolist(),
+            "acquisition_routing": self.calibration.routing_evidence() if hasattr(self.calibration, "routing_evidence") else None,
             "bound_method": "ellipse_support_outer_bounds_with_finite_angle_correction_and_radial_intersection",
             "angular_directions": len(self.directional.normals) if self.directional else None,
             "query_groups": list(self.query_groups), "query_lineages": [list(x) for x in self.query_lineages], "domain": self.domain,
@@ -324,7 +354,7 @@ def assess_pair(state: Any, calibration: ErrorCalibration, *, query_groups: tupl
         raise ObservationError("provide two explicit acquisition-group IDs; no identity is inferred")
     if len(query_lineages) != 2 or any(not isinstance(x, str) or not x for group in query_lineages for x in group):
         raise ObservationError("query lineages require two collections of nonempty IDs")
-    points, radii, mapped_radii, valid, pushed_covariances = [], [], [], [], []
+    points, radii, mapped_radii, valid, pushed_covariances, quantiles = [], [], [], [], [], []
     for observation, matrix, group, lineages in zip(
         (state.observation_a, state.observation_b),
         (state.source_to_canonical_a, state.source_to_canonical_b), query_groups, query_lineages,
@@ -334,7 +364,11 @@ def assess_pair(state: Any, calibration: ErrorCalibration, *, query_groups: tupl
         cov = calibration.source_covariance(observation)
         points.append(apply_points(xy, matrix))
         pushed_covariances.append(np.einsum("ij,njk,lk->nil", matrix[:2,:2], cov, matrix[:2,:2]))
-        radius = calibration.quantile * np.sqrt(np.linalg.eigvalsh(cov)[:, -1])
+        q = calibration.source_quantile(observation)
+        if q is None:
+            raise ObservationError("selected source error radius is unbounded")
+        quantiles.append(q)
+        radius = q * np.sqrt(np.linalg.eigvalsh(cov)[:, -1])
         # Similarity map has exactly one isotropic scale. Largest singular value
         # remains a safe bound should a general affine gauge be supplied later.
         radii.append(radius)
@@ -345,8 +379,8 @@ def assess_pair(state: Any, calibration: ErrorCalibration, *, query_groups: tupl
     span = state.normalization_span_px
     gap = np.linalg.norm(pts[0]-pts[1], axis=1)/span
     budget = cr.sum(axis=0)/span
-    directional = ellipse_gap_bounds((pts[0]-pts[1])/span, np.stack(pushed_covariances)/span**2, calibration.quantile)
+    directional = ellipse_gap_bounds((pts[0]-pts[1])/span, np.stack(pushed_covariances)/span**2, np.asarray(quantiles))
     lower, upper = directional.lower_ipd.copy(), directional.upper_ipd.copy()
     lower[~support], upper[~support] = 0, 0
     return LocalizationEnvelope(calibration, tuple(query_groups), domain, sr, cr, pts, budget, gap,
-                                lower, upper, support, state.config.tolerance_ipd, tuple(tuple(x) for x in query_lineages), directional)
+                                lower, upper, support, state.config.tolerance_ipd, tuple(tuple(x) for x in query_lineages), directional, np.asarray(quantiles))
