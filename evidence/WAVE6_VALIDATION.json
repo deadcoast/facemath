@@ -1,0 +1,1031 @@
+{
+  "format": "facemath.release_validation.v6",
+  "version": "0.6.0",
+  "created_utc": "2026-09-13T01:02:12.340770+00:00",
+  "scope": "actual executed source/wheel tests, frozen-observation replay and synthetic controls; not live human validation or external attestation",
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "packages": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "opencv-python": "4.13.0.92",
+      "mediapipe": null,
+      "pytest": "9.0.2"
+    },
+    "numeric_environment": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "opencv": "4.13.0"
+    },
+    "engine_code_sha256": "c34ba7a27d159b9b71730cf2fa771fe42adaf42c6d7426b5ac9db47f469ccf3b"
+  },
+  "code_sha256": "c34ba7a27d159b9b71730cf2fa771fe42adaf42c6d7426b5ac9db47f469ccf3b",
+  "lineage": {
+    "parent_archive": "facemath_wave_05.zip",
+    "parent_archive_sha256": "b7b7e465383c2da0c4328b0b02ea823cdd9f6278addaccdc94d020ffa109df72",
+    "new_modules": [
+      "observation/intrinsic.py",
+      "observation/intrinsic_lab.py",
+      "observation/intrinsic_report.py",
+      "observation/intrinsic_sets.py"
+    ],
+    "modified_modules": [
+      "__init__.py",
+      "cli.py",
+      "observation/artifacts.py",
+      "observation/canonical.py",
+      "observation/instrument.py",
+      "observation/study_lab.py"
+    ],
+    "unchanged_modules": [
+      "__main__.py",
+      "calibration.py",
+      "core.py",
+      "correspondence.py",
+      "coverage.py",
+      "deformation.py",
+      "fusion.py",
+      "geometry.py",
+      "information.py",
+      "legacy_cli.py",
+      "observation/__init__.py",
+      "observation/anatomy.py",
+      "observation/annotation_ui.py",
+      "observation/bias.py",
+      "observation/capabilities.py",
+      "observation/cohort.py",
+      "observation/contracts.py",
+      "observation/edge_support.py",
+      "observation/error_model.py",
+      "observation/field.py",
+      "observation/journal.py",
+      "observation/lab.py",
+      "observation/measure.py",
+      "observation/provider.py",
+      "observation/qualification.py",
+      "observation/reference.py",
+      "observation/sequence_guard.py",
+      "observation/study.py",
+      "observation/study_io.py",
+      "observation/study_report.py",
+      "observation/study_runner.py",
+      "observation/validation.py",
+      "observation/validation_io.py",
+      "observation/validation_lab.py",
+      "observation/worker.py",
+      "perturbation.py",
+      "pipeline.py",
+      "quality.py",
+      "regions.py",
+      "registration.py",
+      "report.py",
+      "representation.py",
+      "sequence.py",
+      "shape.py",
+      "signal.py",
+      "state.py",
+      "statistics.py",
+      "surface3d.py",
+      "symmetry.py",
+      "temporal.py",
+      "topology.py",
+      "torch_attribution.py",
+      "video.py",
+      "wave2.py"
+    ],
+    "removed_modules": []
+  },
+  "source_files": {
+    "__init__.py": "0c0dbab5147a1f4d4fb20fdeeff08a79d19dafd2aef8cc31e1440b6f13a0e7e8",
+    "__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+    "calibration.py": "e250ddccf702f848951a629759f98d1e812052e4a0e1dd693c8545958ff5eedd",
+    "cli.py": "fcfc449aafaa2b11ea376440f0c148e61979b9812f34a8552b3a9cd7e64dd8de",
+    "core.py": "b8e14bd8b5eeaee1b15390d7c31b82c8c4520eac5347bfbc811eea34c4acb576",
+    "correspondence.py": "29938b08b495653327675e58c2e7d359103cb733b140c47539cb9d91d816f80f",
+    "coverage.py": "ba1786739debb0efffadd5d1f3df69e5f2aaa9f2e793c1e6ffc549655a220346",
+    "deformation.py": "4368188fb9fd0dbb1f3238549d3fbf0fbac9ddaf3b6dfb3dda19a59226e399bf",
+    "fusion.py": "249a7b9ea88433ccfea3378254f13d856cb4896d8249d9caada2009b9fb764e0",
+    "geometry.py": "22dfa9c9d4745ad517b947d0595a51cba1b2d6ddfbb6369a6b2e5ca3b04155e9",
+    "information.py": "7aab4e1ddba064fe05463de9b790473be094b2ca282c64a346402aaac1f4fc59",
+    "legacy_cli.py": "4ea0dd14ad4d2fed4605eed8df62cd57cf4edc43febdafe0ac044f29af07b148",
+    "observation/__init__.py": "fdfa47265a68fb008270bdac62f381efae1844c084b05452a824f3d0c71f6ab5",
+    "observation/anatomy.py": "e4341cab848edc4236ab8fbbcd76783e6cb66bfcb69ece4df75bedb201d1ba31",
+    "observation/annotation_ui.py": "737db83d5e611bcb4a3e7b97d62b3081a8b0c173854e30d347a3b2b8e96ea1e8",
+    "observation/artifacts.py": "e54dfd053add3f26576ea5ce9d3779b01f83f223faac9069288208acfb75bec2",
+    "observation/bias.py": "219333f1c0cb82b976d378cf0c16e10afb7e4d9cabbf779c7279421c0cfbad4a",
+    "observation/canonical.py": "3d4fb848f5d939b95c83313067e6630dfc9ffa6ca9548f0fe993e73e7a8753a7",
+    "observation/capabilities.py": "57390c3270860b2a2f99dd045bfdcc0a381e2aed32fcdf45bbb5dc715c77beff",
+    "observation/cohort.py": "6b5eb89c591a13336057ce590586263339078d13292862092f50e25ee61eeb7a",
+    "observation/contracts.py": "c1c6458bbd0e701fcfa6f1e9f48fed4b3e760cb2c2c4586565960e0b33042b84",
+    "observation/edge_support.py": "740e8fb92b508a82f95e72a6373ce3a16bd0fd588e7a6989dcce99459a5b6b22",
+    "observation/error_model.py": "d10eca40fcc4e9780fe6f2c894584074fd27ccc1dbe5de9b67aa0a31fb361e48",
+    "observation/field.py": "3bb389f78f4fd3a199cb0cfc8e789a54375f714035489abbe3f9712b9b3645c0",
+    "observation/instrument.py": "a15a39451ff1c06d04973ceeac8b5da2e2db3c9b644bc8cd9227c8051e60bd5e",
+    "observation/intrinsic.py": "216eeaf17c6cf909b38eefcaad60b744f3176592756c51778e5826d162b8371a",
+    "observation/intrinsic_lab.py": "fe2730b47eded66ccde2ac61159aac2333d0af905ff9544da27a46e8632574be",
+    "observation/intrinsic_report.py": "afd17bdb40072b0f526963acbd81c1f66fb682cfa4e27a59a3b5c28aed076319",
+    "observation/intrinsic_sets.py": "5354ecc2bdf4f4edae4539bd6fd2550156294ffeb0ecd446661b25607d1aacac",
+    "observation/journal.py": "8bdac0f5499502b13448968dd5c2d74d8677b898c3e5e4c675c1d774d5ec2dd9",
+    "observation/lab.py": "211e4e768a68885c052f3bee1b53c95edb2b8dfd00669ca8870f41505578b5ce",
+    "observation/measure.py": "b27815eab351fe4f41ca23b2e9874de240858da33b2364893622f526b84c3b6f",
+    "observation/provider.py": "c7f8843fcd7b26f2f6272553e91f38ef7b1ab78ccaf9ae9c3b3f540a42ffaaf6",
+    "observation/qualification.py": "0eb267817ca24d058ef279206171f340d791c15b46ed64d978813a050ef5386f",
+    "observation/reference.py": "1cc15c84747433495ef9058ca735f85265423700f0b413aa96a65c6affca9780",
+    "observation/sequence_guard.py": "8c633f71a609fb81a2c75569451cbf0026aa4d68007f4b51ccd542cc98b2303c",
+    "observation/study.py": "95bd28dddff6bc04dbf42ba9b5d2950ac53a9b3f986ebbd6e837b0bf9dc9e2a4",
+    "observation/study_io.py": "c900cb210a0e20cc7b1579b3186ecb6127b5bddc27b841a47426a0d82d9c084e",
+    "observation/study_lab.py": "2361217b14cf6eeca3736b1b40653c846dd458ce06ce5de35371ac32fe4db3b4",
+    "observation/study_report.py": "533ac9afae5c9572cdc934bcf2be576c0ff1aa414fe8110a91c2cdea43b36df5",
+    "observation/study_runner.py": "e8e848a7bf6a1103b2a6b319c08d8e16a0899b3520a28844575a212dfacba47a",
+    "observation/validation.py": "741a5eb339540022d369f1a6f753f4d8115b52cd15b796004e402fc0b449d9cf",
+    "observation/validation_io.py": "baab032659520ecc509005d49c6a9585cafb43e8dd5a737647f2dfe1599a3d48",
+    "observation/validation_lab.py": "9d39f2c3d820e6f27a93544b301f68e5da845a266a585bd847a1843b01ec98d4",
+    "observation/worker.py": "aaf98bdc7dd368fd02e5b45cd0910f9f150760f52414de46aaa7788a62c18d11",
+    "perturbation.py": "ff11412a5340cdbd633c87992ab450cf5fc2a66d807e0c09ffe87799a13d3414",
+    "pipeline.py": "9df6314135c2ef2d0be507d32b477a8204b4c96ecc28625503afa36a7c86739e",
+    "quality.py": "41050e7bc785c9c47d804840b291aa4dd2727f5c876807fd7308094b4c341baf",
+    "regions.py": "522fa6163c3f1f4c5854c89a89908adcfdb436dcb097b96bef6337e08493d45b",
+    "registration.py": "7f3d33c2cfea5e4166b97567caf97a0a193e9846d98ba1a9719240681959e53c",
+    "report.py": "46512b78efd1f0bb33a26c86cd2a0a6d3311dc2b59b537bc4986c8965b4927fe",
+    "representation.py": "e633159df99ea731a823affc32412faa550bdbd2aa7fc47686d9b0ccff7665b2",
+    "sequence.py": "46bfe47f421ea6116293a5f9be015b3fd8f2181d1423b46bd284b001ec8ee8ac",
+    "shape.py": "9a6e516dae972478993d0060245e15c6819e3ee2aab51f04da9d890ccf95d9a5",
+    "signal.py": "46cd755b6bffd2e7bd45ad06d31f46b49842499aed419995172aca5fabf89ea5",
+    "state.py": "a45de992b20f89696c8b535c24f5319421e1a058065215b65dac78d4408f0e06",
+    "statistics.py": "8fbcd6b6b8efc8c25be950e7d730fd9d7ee477a0706be530c78628fc407a40ae",
+    "surface3d.py": "c774637b7b05cf17658c3672c1edd750ef76ad2af75eafb549728bffd9c3a50c",
+    "symmetry.py": "c861830e9186f9c6d943f632b0798fd19ee8f7e7d7426f4acfa8beb438d5f15b",
+    "temporal.py": "2eb99baa70601c755a741ace79a8fa54e68027082ccf4dcfe7ae786b0dc4264c",
+    "topology.py": "44e5fad29ad7b38702a555e7fbf69d1739b4577e597a30b030c6232ef8f857e2",
+    "torch_attribution.py": "ece4814667dbb8bfb839548f903028bfbd2a3b5bd1d834b30d17ea921ac757cf",
+    "video.py": "b93ea4008e45a577981b39a9e06d5789be5dfbf569c9bfaf2100bbfbc4860249",
+    "wave2.py": "c8a970f2d14beb17249ee77d8b5c1982fbdf3a618cb05908f9a9fb1e1d62cfa9"
+  },
+  "wheel_sha256": "c5fb6edc9d9d437f67b10980bd9e5bfa055bc32c72e629f19882bf6be3c2c0e8",
+  "wheel_source_equivalence": {
+    "files": 64,
+    "byte_identical": true
+  },
+  "tests": {
+    "source": {
+      "tests": 493,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 492,
+      "elapsed_seconds": 50.619
+    },
+    "installed_wheel": {
+      "tests": 493,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 492,
+      "elapsed_seconds": 50.518
+    }
+  },
+  "baseline_tests": {
+    "tests": 371,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "passed": 370,
+    "elapsed_seconds": 39.834
+  },
+  "retained_development_failures": {
+    "uninstalled_parent": {
+      "result": {
+        "tests": 371,
+        "failures": 6,
+        "errors": 0,
+        "skipped": 1,
+        "passed": 364,
+        "elapsed_seconds": 28.889
+      },
+      "cause": "six subprocess imports failed before editable installation; source parent then passed 370 tests"
+    },
+    "unsupported_chin": {
+      "log": "wave6/intrinsic-first.txt",
+      "cause": "off-image chin influenced canonical orientation; supported-anchor fallback fixed"
+    },
+    "old_version_assertions": {
+      "result": {
+        "tests": 470,
+        "failures": 2,
+        "errors": 0,
+        "skipped": 1,
+        "passed": 467,
+        "elapsed_seconds": 46.083
+      },
+      "cause": "two assertions expected old 0.5.0; version expectations updated without weakening math checks"
+    },
+    "unbounded_error_gate": {
+      "log": "wave6/intrinsic-v3.txt",
+      "cause": "new test expected processing despite inherited unbounded-calibration gate; revised test verifies refusal and low-level bound-state separately"
+    }
+  },
+  "commands": {
+    "final-browser.json": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_06/scripts/browser_qa_wave6.py",
+        "/mnt/data/facemath_wave_06/evidence/wave6/laboratory/pair_02_mouth_8px/report.html",
+        "--out",
+        "/mnt/data/facemath_wave_06/evidence/wave6/browser"
+      ],
+      "cwd": "/mnt/data/facemath_wave_06",
+      "started_utc": "2026-09-13T01:00:27.635344+00:00",
+      "finished_utc": "2026-09-13T01:00:30.127882+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"format\": \"facemath.browser_qa.v6\",\n  \"report\": \"/mnt/data/facemath_wave_06/evidence/wave6/laboratory/pair_02_mouth_8px/report.html\",\n  \"started_at\": \"2026-09-13T01:00:28.155679+00:00\",\n  \"checks\": {\n    \"distance_rows\": 28,\n    \"angle_rows\": 168,\n    \"signed_double_area_rows\": 56,\n    \"asymmetry_rows\": 4,\n    \"anatomical_name_filter_rows\": 63,\n    \"selection_links_same_raw_array_row\": true,\n    \"csv_matches_exact_selected_frozen_values\": true,\n    \"status_filter_rows\": 9,\n    \"full_covariance_ellipse_display\": true,\n    \"display_zoom_not_measurement_rescale\": true,\n    \"local_evidence_links_exist\": true,\n    \"controls_do_not_change_measurements\": true\n  },\n  \"viewports\": [\n    {\n      \"width\": 1440,\n      \"height\": 1150,\n      \"document_width\": 1440,\n      \"body_overflow\": false\n    },\n    {\n      \"width\": 390,\n      \"height\": 844,\n      \"document_width\": 390,\n      \"body_overflow\": false\n    }\n  ],\n  \"loading\": \"in-memory emitted HTML; local navigation unavailable\",\n  \"navigation_error\": \"Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_06/evidence/wave6/laboratory/pair_02_mouth_8px/report.html\\nCall log:\\n  - navigating to \\\"file:///mnt/data/facemath_wave_06/evidence/wave6/laboratory/pair_02_mouth_8px/report.html\\\", waiting until \\\"load\\\"\\n\",\n  \"page_errors\": [],\n  \"remote_requests\": [],\n  \"passed\": true,\n  \"finished_at\": \"2026-09-13T01:00:29.989857+00:00\"\n}\n",
+      "stderr": ""
+    },
+    "final-doctor.json": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "doctor"
+      ],
+      "cwd": "/mnt/data/facemath_wave_06",
+      "started_utc": "2026-09-13T00:59:23.818280+00:00",
+      "finished_utc": "2026-09-13T00:59:24.992361+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"format\": \"facemath.runtime_check.v4\",\n  \"packages\": {\n    \"facemath\": \"0.6.0\",\n    \"mediapipe\": null,\n    \"numpy\": \"2.3.5\",\n    \"scipy\": \"1.17.0\",\n    \"opencv-python\": \"4.13.0.92\"\n  },\n  \"model_present\": false,\n  \"model_sha256\": null,\n  \"inference_executed\": false,\n  \"live_validation\": \"not established by availability checks\",\n  \"network_policy\": \"FACEMATH never implicitly downloads a model; third-party runtime telemetry is not attested\"\n}\n",
+      "stderr": ""
+    },
+    "final-laboratory.json": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "intrinsic-lab",
+        "--out",
+        "/mnt/data/facemath_wave_06/evidence/wave6/laboratory"
+      ],
+      "cwd": "/mnt/data/facemath_wave_06",
+      "started_utc": "2026-09-13T01:00:17.213869+00:00",
+      "finished_utc": "2026-09-13T01:00:23.571673+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"format\": \"facemath.intrinsic_lab.v6\",\n  \"seed\": 26091,\n  \"kind\": \"synthetic_controls_NOT_HUMAN_ACCURACY\",\n  \"prior_study_preserved\": {\n    \"development_groups\": 12,\n    \"calibration_groups\": 24,\n    \"evaluation_groups\": 12,\n    \"enrolled\": 49,\n    \"outcomes\": {\n      \"contract_error\": 0,\n      \"interrupted\": 0,\n      \"multiple_faces\": 0,\n      \"no_face\": 2,\n      \"observed\": 46,\n      \"runtime_error\": 0,\n      \"timeout\": 0\n    },\n    \"scripted_calls\": 48\n  },\n  \"selected_quantile\": 3.160667736120253,\n  \"heldout_study_coverage\": {\n    \"calibration_sha256\": \"67bbe9c35ec8446255a0ed4a84f42027ebe721ab7f19da42dd214ea96cce7905\",\n    \"quantile\": 3.160667736120253,\n    \"rank\": 23,\n    \"bias_sha256\": \"6d1e6c36daa15df4e68c04146334e65a7c20ed0ecab684e3d89706ce2c1e76ba\",\n    \"development_groups\": 12,\n    \"fitted_development_groups\": 12,\n    \"development_cases_rejected\": [],\n    \"coverage\": {\n      \"calibration_sha256\": \"499f168007308513061aac944f8ff57aacc24bbb54a3888248d30cec2084cf63\",\n      \"nominal_coverage\": 0.9,\n      \"finite_envelope\": true,\n      \"evaluation_cases\": 12,\n      \"evaluation_groups\": 12,\n      \"covered_groups\": 7,\n      \"empirical_group_coverage\": 0.5833333333333334,\n      \"failures\": 1,\n      \"cases\": [\n        {\n          \"case_id\": \"control_036\",\n          \"group_id\": \"independent_draw_036\",\n          \"score\": 2.104622944882403,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"control_037\",\n          \"group_id\": \"independent_draw_037\",\n          \"score\": 1.156543956404779,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"control_038\",\n          \"group_id\": \"independent_draw_038\",\n          \"score\": 1.9542736607820987,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"control_039\",\n          \"group_id\": \"independent_draw_039\",\n          \"score\": 1.9444226880500477,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"control_040\",\n          \"group_id\": \"independent_draw_040\",\n          \"score\": 1.0621725954461938,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"control_041\",\n          \"group_id\": \"independent_draw_041\",\n          \"score\": 1.9463914441756858,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"control_042\",\n          \"group_id\": \"independent_draw_042\",\n          \"score\": 2.1131291688804845,\n          \"assessable\": true,\n          \"covered\": true\n        },\n        {\n          \"case_id\": \"control_043\",\n          \"group_id\": \"independent_draw_043\",\n          \"score\": null,\n          \"assessable\": false,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"control_044\",\n          \"group_id\": \"independent_draw_044\",\n          \"score\": 20.84830001279423,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"control_045\",\n          \"group_id\": \"independent_draw_045\",\n          \"score\": 24.098698806289395,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"control_046\",\n          \"group_id\": \"independent_draw_046\",\n          \"score\": 20.477936769784673,\n          \"assessable\": true,\n          \"covered\": false\n        },\n        {\n          \"case_id\": \"control_047\",\n          \"group_id\": \"independent_draw_047\",\n          \"score\": 27.49649556976076,\n          \"assessable\": true,\n          \"covered\": false\n        }\n      ],\n      \"interpretation\": \"held-out reference coverage, not facial resemblance or a guarantee of deployment coverage\",\n      \"full_error_model_sha256\": \"67bbe9c35ec8446255a0ed4a84f42027ebe721ab7f19da42dd214ea96cce7905\",\n      \"score_centering\": \"development_ocular\",\n      \"binomial_95_interval\": [\n        0.2766696856821058,\n        0.8483477701915698\n      ]\n    }\n  },\n  \"set_controls\": {\n    \"format\": \"facemath.intrinsic_set_controls.v6\",\n    \"seed\": 26091,\n    \"kind\": \"analytic_and_synthetic_set_falsification_NOT_HUMAN_DATA\",\n    \"sampled_shape_pairs\": 1024,\n    \"relation_checks\": 262144,\n    \"bounded_relation_count\": 256,\n    \"sampled_relation_violations\": 0,\n    \"sampled_refit_violations\": 0,\n    \"refitted_shape_bounds\": {\n      \"metric\": \"intrinsic.eye_normalized_proper_procrustes_rms\",\n      \"observed_rms\": 0.0699996145056126,\n      \"reference_set_center_rms\": 0.0699996145056126,\n      \"lower\": 0.012004176869997841,\n      \"upper\": 0.21297134840557203,\n      \"available\": true,\n      \"reason\": \"bounded\",\n      \"distance_matrix_lower\": 0.012004176870026263,\n      \"quotient_lipschitz_lower\": 0.0,\n      \"quotient_lipschitz_upper\": 0.24042843027265592,\n      \"candidate_rotation_upper\": 0.2129713484055436,\n      \"meaning\": \"outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans\",\n      \"not\": \"not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage\",\n      \"arrays\": [\n        \"intrinsic_shape_deviation_radii\",\n        \"intrinsic_shape_candidate_rotation\"\n      ]\n    },\n    \"sampled_refit_range\": [\n      0.04747050289285807,\n      0.11104390445278915\n    ],\n    \"normalizer_counterexample\": {\n      \"frozen_denominator_value\": 0.6800735254367721,\n      \"actual_value\": 0.8500919067959652,\n      \"absolute_frozen_error\": 0.17001838135919312,\n      \"propagated_bounds\": {\n        \"lower\": 0.5667279378639082,\n        \"upper\": 0.8500919067960656,\n        \"available\": true,\n        \"reason\": \"bounded\"\n      },\n      \"contains_actual\": true\n    },\n    \"reflection_control\": {\n      \"distance_matrix_max_gap\": 0.0,\n      \"proper_shape_rms\": 0.833715399896535\n    },\n    \"zero_radius_limit\": {\n      \"range_width\": 2.022687572988957e-13,\n      \"true_rms\": 0.0699996145056117\n    },\n    \"collapsed_normalizer\": {\n      \"eye_span\": {\n        \"lower\": 0.0,\n        \"upper\": 2.2000000000000632,\n        \"available\": true,\n        \"reason\": \"bounded\"\n      },\n      \"mouth_ratio\": {\n        \"lower\": null,\n        \"upper\": null,\n        \"available\": false,\n        \"reason\": \"denominator_may_vanish\"\n      }\n    },\n    \"cancellation\": {\n      \"same_length_divisor\": {\n        \"lower\": 1.0,\n        \"upper\": 1.0,\n        \"available\": true,\n        \"reason\": \"shared_expression_cancels\"\n      },\n      \"repeated_vector_cross\": {\n        \"lower\": 0.0,\n        \"upper\": 0.0,\n        \"available\": true,\n        \"reason\": \"shared_expression_cancels\"\n      }\n    },\n    \"limitations\": [\n      \"samples falsify violations but do not prove global containment\",\n      \"analytic outer bounds, not exact extrema or formally validated interval arithmetic\",\n      \"product error sets do not assert independent landmarks\",\n      \"no model inference, human annotations, or population similarity calibration\"\n    ],\n    \"array_axes\": {\n      \"draws_a\": \"[sample, reference8, xy]\",\n      \"draws_b\": \"[sample, reference8, xy]\",\n      \"values_a\": \"[sample, relation256]\",\n      \"values_b\": \"[sample, relation256]\",\n      \"source_lower\": \"[source, relation256]\",\n      \"source_upper\": \"[source, relation256]\",\n      \"refitted_rms\": \"[sample]\",\n      \"relation_gap\": \"[sample, relation256]\"\n    }\n  },\n  \"queries\": [\n    {\n      \"pair\": \"pair_00_mouth_0px\",\n      \"mouth_expansion_per_side_px\": 0.0,\n      \"true_reference_proper_shape_rms\": 0.0,\n      \"observed_proper_shape_rms\": 0.004143275195064172,\n      \"outer_shape_range\": [\n        0.0,\n        0.0838601397523178\n      ],\n      \"known_shape_contained\": true,\n      \"finite_relation_count\": 256,\n      \"known_relation_violations\": 0,\n      \"raw_array_count_unchanged\": 135,\n      \"raw_arrays_unchanged\": true,\n      \"families\": [\n        {\n          \"family\": \"distance\",\n          \"prespecified_relations\": 28,\n          \"nominally_observable\": 28,\n          \"bounded_relations\": 28,\n          \"within\": 0,\n          \"outside\": 0,\n          \"unresolved_or_unavailable\": 28,\n          \"within_tolerance_fraction_bounds\": [\n            0.0,\n            1.0\n          ],\n          \"fraction_meaning\": \"deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability\"\n        },\n        {\n          \"family\": \"angle\",\n          \"prespecified_relations\": 168,\n          \"nominally_observable\": 168,\n          \"bounded_relations\": 168,\n          \"within\": 5,\n          \"outside\": 0,\n          \"unresolved_or_unavailable\": 163,\n          \"within_tolerance_fraction_bounds\": [\n            0.02976190476190476,\n            1.0\n          ],\n          \"fraction_meaning\": \"deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability\"\n        },\n        {\n          \"family\": \"signed_double_area\",\n          \"prespecified_relations\": 56,\n          \"nominally_observable\": 56,\n          \"bounded_relations\": 56,\n          \"within\": 0,\n          \"outside\": 0,\n          \"unresolved_or_unavailable\": 56,\n          \"within_tolerance_fraction_bounds\": [\n            0.0,\n            1.0\n          ],\n          \"fraction_meaning\": \"deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability\"\n        },\n        {\n          \"family\": \"asymmetry\",\n          \"prespecified_relations\": 4,\n          \"nominally_observable\": 4,\n          \"bounded_relations\": 4,\n          \"within\": 1,\n          \"outside\": 0,\n          \"unresolved_or_unavailable\": 3,\n          \"within_tolerance_fraction_bounds\": [\n            0.25,\n            1.0\n          ],\n          \"fraction_meaning\": \"deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability\"\n        }\n      ],\n      \"verification\": {\n        \"verified\": true,\n        \"files\": 14,\n        \"arrays\": 166,\n        \"events\": 17,\n        \"manifest_content_sha256\": \"f7e3c9c28c1770c2b9c712b68fbc395f1f135c69b06627f5beb52b84b3a90b24\",\n        \"limit\": \"self-consistency hashes; not an externally signed execution attestation\"\n      }\n    },\n    {\n      \"pair\": \"pair_01_mouth_4px\",\n      \"mouth_expansion_per_side_px\": 4.0,\n      \"true_reference_proper_shape_rms\": 0.04166666666666726,\n      \"observed_proper_shape_rms\": 0.03986467942736448,\n      \"outer_shape_range\": [\n        0.009422705803818,\n        0.10742224955088651\n      ],\n      \"known_shape_contained\": true,\n      \"finite_relation_count\": 256,\n      \"known_relation_violations\": 0,\n      \"raw_array_count_unchanged\": 135,\n      \"raw_arrays_unchanged\": true,\n      \"families\": [\n        {\n          \"family\": \"distance\",\n          \"prespecified_relations\": 28,\n          \"nominally_observable\": 28,\n          \"bounded_relations\": 28,\n          \"within\": 0,\n          \"outside\": 1,\n          \"unresolved_or_unavailable\": 27,\n          \"within_tolerance_fraction_bounds\": [\n            0.0,\n            0.9642857142857143\n          ],\n          \"fraction_meaning\": \"deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability\"\n        },\n        {\n          \"family\": \"angle\",\n          \"prespecified_relations\": 168,\n          \"nominally_observable\": 168,\n          \"bounded_relations\": 168,\n          \"within\": 4,\n          \"outside\": 0,\n          \"unresolved_or_unavailable\": 164,\n          \"within_tolerance_fraction_bounds\": [\n            0.023809523809523808,\n            1.0\n          ],\n          \"fraction_meaning\": \"deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability\"\n        },\n        {\n          \"family\": \"signed_double_area\",\n          \"prespecified_relations\": 56,\n          \"nominally_observable\": 56,\n          \"bounded_relations\": 56,\n          \"within\": 0,\n          \"outside\": 0,\n          \"unresolved_or_unavailable\": 56,\n          \"within_tolerance_fraction_bounds\": [\n            0.0,\n            1.0\n          ],\n          \"fraction_meaning\": \"deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability\"\n        },\n        {\n          \"family\": \"asymmetry\",\n          \"prespecified_relations\": 4,\n          \"nominally_observable\": 4,\n          \"bounded_relations\": 4,\n          \"within\": 1,\n          \"outside\": 0,\n          \"unresolved_or_unavailable\": 3,\n          \"within_tolerance_fraction_bounds\": [\n            0.25,\n            1.0\n          ],\n          \"fraction_meaning\": \"deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability\"\n        }\n      ],\n      \"verification\": {\n        \"verified\": true,\n        \"files\": 14,\n        \"arrays\": 166,\n        \"events\": 17,\n        \"manifest_content_sha256\": \"dc5eee9ea2cab05c66bd1183e94a83b688fab131ab43f7a34b8a5cf856cf28d6\",\n        \"limit\": \"self-consistency hashes; not an externally signed execution attestation\"\n      }\n    },\n    {\n      \"pair\": \"pair_02_mouth_8px\",\n      \"mouth_expansion_per_side_px\": 8.0,\n      \"true_reference_proper_shape_rms\": 0.08333333333333452,\n      \"observed_proper_shape_rms\": 0.08170198481373019,\n      \"outer_shape_range\": [\n        0.030164716394870016,\n        0.14140529579628758\n      ],\n      \"known_shape_contained\": true,\n      \"finite_relation_count\": 256,\n      \"known_relation_violations\": 0,\n      \"raw_array_count_unchanged\": 135,\n      \"raw_arrays_unchanged\": true,\n      \"families\": [\n        {\n          \"family\": \"distance\",\n          \"prespecified_relations\": 28,\n          \"nominally_observable\": 28,\n          \"bounded_relations\": 28,\n          \"within\": 0,\n          \"outside\": 1,\n          \"unresolved_or_unavailable\": 27,\n          \"within_tolerance_fraction_bounds\": [\n            0.0,\n            0.9642857142857143\n          ],\n          \"fraction_meaning\": \"deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability\"\n        },\n        {\n          \"family\": \"angle\",\n          \"prespecified_relations\": 168,\n          \"nominally_observable\": 168,\n          \"bounded_relations\": 168,\n          \"within\": 4,\n          \"outside\": 9,\n          \"unresolved_or_unavailable\": 155,\n          \"within_tolerance_fraction_bounds\": [\n            0.023809523809523808,\n            0.9464285714285714\n          ],\n          \"fraction_meaning\": \"deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability\"\n        },\n        {\n          \"family\": \"signed_double_area\",\n          \"prespecified_relations\": 56,\n          \"nominally_observable\": 56,\n          \"bounded_relations\": 56,\n          \"within\": 0,\n          \"outside\": 16,\n          \"unresolved_or_unavailable\": 40,\n          \"within_tolerance_fraction_bounds\": [\n            0.0,\n            0.7142857142857143\n          ],\n          \"fraction_meaning\": \"deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability\"\n        },\n        {\n          \"family\": \"asymmetry\",\n          \"prespecified_relations\": 4,\n          \"nominally_observable\": 4,\n          \"bounded_relations\": 4,\n          \"within\": 1,\n          \"outside\": 0,\n          \"unresolved_or_unavailable\": 3,\n          \"within_tolerance_fraction_bounds\": [\n            0.25,\n            1.0\n          ],\n          \"fraction_meaning\": \"deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability\"\n        }\n      ],\n      \"verification\": {\n        \"verified\": true,\n        \"files\": 14,\n        \"arrays\": 166,\n        \"events\": 17,\n        \"manifest_content_sha256\": \"c164715be6dd38823635c1dc92ce49fdbd32a02a37272b877018fa0db88db977\",\n        \"limit\": \"self-consistency hashes; not an externally signed execution attestation\"\n      }\n    },\n    {\n      \"pair\": \"pair_03_mouth_12px\",\n      \"mouth_expansion_per_side_px\": 12.0,\n      \"true_reference_proper_shape_rms\": 0.1250000000000009,\n      \"observed_proper_shape_rms\": 0.12300217449340749,\n      \"outer_shape_range\": [\n        0.05351005311810027,\n        0.17855098660228375\n      ],\n      \"known_shape_contained\": true,\n      \"finite_relation_count\": 256,\n      \"known_relation_violations\": 0,\n      \"raw_array_count_unchanged\": 135,\n      \"raw_arrays_unchanged\": true,\n      \"families\": [\n        {\n          \"family\": \"distance\",\n          \"prespecified_relations\": 28,\n          \"nominally_observable\": 28,\n          \"bounded_relations\": 28,\n          \"within\": 0,\n          \"outside\": 5,\n          \"unresolved_or_unavailable\": 23,\n          \"within_tolerance_fraction_bounds\": [\n            0.0,\n            0.8214285714285714\n          ],\n          \"fraction_meaning\": \"deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability\"\n        },\n        {\n          \"family\": \"angle\",\n          \"prespecified_relations\": 168,\n          \"nominally_observable\": 168,\n          \"bounded_relations\": 168,\n          \"within\": 4,\n          \"outside\": 27,\n          \"unresolved_or_unavailable\": 137,\n          \"within_tolerance_fraction_bounds\": [\n            0.023809523809523808,\n            0.8392857142857143\n          ],\n          \"fraction_meaning\": \"deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability\"\n        },\n        {\n          \"family\": \"signed_double_area\",\n          \"prespecified_relations\": 56,\n          \"nominally_observable\": 56,\n          \"bounded_relations\": 56,\n          \"within\": 0,\n          \"outside\": 22,\n          \"unresolved_or_unavailable\": 34,\n          \"within_tolerance_fraction_bounds\": [\n            0.0,\n            0.6071428571428571\n          ],\n          \"fraction_meaning\": \"deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability\"\n        },\n        {\n          \"family\": \"asymmetry\",\n          \"prespecified_relations\": 4,\n          \"nominally_observable\": 4,\n          \"bounded_relations\": 4,\n          \"within\": 1,\n          \"outside\": 0,\n          \"unresolved_or_unavailable\": 3,\n          \"within_tolerance_fraction_bounds\": [\n            0.25,\n            1.0\n          ],\n          \"fraction_meaning\": \"deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability\"\n        }\n      ],\n      \"verification\": {\n        \"verified\": true,\n        \"files\": 14,\n        \"arrays\": 166,\n        \"events\": 17,\n        \"manifest_content_sha256\": \"b36b2e95566f1a5793a62c4e1a63a644d62288febbf55c6624901d824d4e382e\",\n        \"limit\": \"self-consistency hashes; not an externally signed execution attestation\"\n      }\n    }\n  ],\n  \"qualification_verification\": {\n    \"verified\": true,\n    \"kind\": \"observer_qualification\",\n    \"files\": 451,\n    \"arrays\": 9,\n    \"study_sha256\": \"58ca9c5339afc7ef0c6b8d8b7d8f3c3d78c60aef42427362a6684b1607c42df5\",\n    \"manifest_content_sha256\": \"77d0e96d0e4e359dd399d692b2c5eb5fb89e5fb528911d53b7c88f25f782ba5c\",\n    \"live_inference_reexecuted\": false\n  },\n  \"environment\": {\n    \"python\": \"3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]\",\n    \"platform\": \"Linux-6.18.35-x86_64-with-glibc2.41\",\n    \"packages\": {\n      \"numpy\": \"2.3.5\",\n      \"scipy\": \"1.17.0\",\n      \"opencv-python\": \"4.13.0.92\",\n      \"mediapipe\": null,\n      \"pytest\": \"9.0.2\"\n    },\n    \"numeric_environment\": {\n      \"numpy\": \"2.3.5\",\n      \"scipy\": \"1.17.0\",\n      \"opencv\": \"4.13.0\"\n    },\n    \"engine_code_sha256\": \"c34ba7a27d159b9b71730cf2fa771fe42adaf42c6d7426b5ac9db47f469ccf3b\"\n  },\n  \"no_population_similarity_score\": true,\n  \"interpretation\": \"new structural relations and refit bounds consume the same source observations and independently fitted error model; all known query coordinates are retained; no best-case selection\"\n}\n",
+      "stderr": ""
+    },
+    "final-pair-replay.json": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_06/evidence/wave6/laboratory/pair_02_mouth_8px",
+        "--out",
+        "/mnt/data/facemath_wave_06/evidence/wave6/source-pair-replay"
+      ],
+      "cwd": "/mnt/data/facemath_wave_06",
+      "started_utc": "2026-09-13T01:00:23.572117+00:00",
+      "finished_utc": "2026-09-13T01:00:25.151469+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"replay_verified\": true,\n  \"source_bundle\": \"/mnt/data/facemath_wave_06/evidence/wave6/laboratory/pair_02_mouth_8px\",\n  \"new_bundle\": \"/mnt/data/facemath_wave_06/evidence/wave6/source-pair-replay\",\n  \"numerical_tolerance\": \"arrays atol=1e-9, rtol=1e-7; measurements atol=1e-10, rtol=1e-8\"\n}\n",
+      "stderr": ""
+    },
+    "final-source-tests.json": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=/mnt/data/facemath_wave_06/evidence/wave6/final-source-tests.xml"
+      ],
+      "cwd": "/mnt/data/facemath_wave_06",
+      "started_utc": "2026-09-13T00:59:24.992897+00:00",
+      "finished_utc": "2026-09-13T01:00:17.213205+00:00",
+      "returncode": 0,
+      "stdout": "........................................................................ [ 14%]\n........................................................................ [ 29%]\ns....................................................................... [ 43%]\n........................................................................ [ 58%]\n........................................................................ [ 73%]\n........................................................................ [ 87%]\n.............................................................            [100%]\n492 passed, 1 skipped in 50.62s\n",
+      "stderr": ""
+    },
+    "final-study-replay.json": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_06/evidence/wave6/laboratory/qualification",
+        "--out",
+        "/mnt/data/facemath_wave_06/evidence/wave6/source-study-replay"
+      ],
+      "cwd": "/mnt/data/facemath_wave_06",
+      "started_utc": "2026-09-13T01:00:25.151896+00:00",
+      "finished_utc": "2026-09-13T01:00:27.634918+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"replay_verified\": true,\n  \"bundle\": \"/mnt/data/facemath_wave_06/evidence/wave6/source-study-replay\",\n  \"comparison\": \"exact qualification/calibration JSON and numerical array equality\",\n  \"live_inference_reexecuted\": false\n}\n",
+      "stderr": ""
+    },
+    "final-wheel-build.json": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-deps",
+        "--no-build-isolation",
+        "--no-index",
+        "--wheel-dir",
+        "/mnt/data/facemath_wave_06/dist",
+        "/mnt/data/facemath_wave_06"
+      ],
+      "cwd": "/mnt/data/facemath_wave_06",
+      "started_utc": "2026-09-13T01:00:30.128195+00:00",
+      "finished_utc": "2026-09-13T01:00:32.845217+00:00",
+      "returncode": 0,
+      "stdout": "Processing /mnt/data/facemath_wave_06\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: facemath\n  Building wheel for facemath (pyproject.toml): started\n  Building wheel for facemath (pyproject.toml): finished with status 'done'\n  Created wheel for facemath: filename=facemath-0.6.0-py3-none-any.whl size=182534 sha256=c5fb6edc9d9d437f67b10980bd9e5bfa055bc32c72e629f19882bf6be3c2c0e8\n  Stored in directory: /tmp/pip-ephem-wheel-cache-qlr5g65z/wheels/07/80/22/ad9168957e7cc19d5598d6204e71d94bf70cce665a468ba691\nSuccessfully built facemath\n",
+      "stderr": "WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+    },
+    "final-wheel-validation.json": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_06/scripts/check_wheel.py",
+        "/mnt/data/facemath_wave_06/dist/facemath-0.6.0-py3-none-any.whl",
+        "--tests",
+        "/mnt/data/facemath_wave_06/tests",
+        "--bundle",
+        "/mnt/data/facemath_wave_06/evidence/wave6/laboratory/qualification",
+        "--pair-bundle",
+        "/mnt/data/facemath_wave_06/evidence/wave6/laboratory/pair_02_mouth_8px",
+        "--out",
+        "/mnt/data/facemath_wave_06/evidence/wave6/wheel-check"
+      ],
+      "cwd": "/mnt/data/facemath_wave_06",
+      "started_utc": "2026-09-13T01:00:32.845593+00:00",
+      "finished_utc": "2026-09-13T01:01:31.644341+00:00",
+      "returncode": 0,
+      "stdout": "Processing /mnt/data/facemath_wave_06/dist/facemath-0.6.0-py3-none-any.whl\nInstalling collected packages: facemath\nSuccessfully installed facemath-0.6.0\n{\"file\": \"/tmp/facemath-installed-gercjkzx/installed/facemath/__init__.py\", \"version\": \"0.6.0\", \"code_sha256\": \"c34ba7a27d159b9b71730cf2fa771fe42adaf42c6d7426b5ac9db47f469ccf3b\"}\n........................................................................ [ 14%]\n........................................................................ [ 29%]\ns....................................................................... [ 43%]\n........................................................................ [ 58%]\n........................................................................ [ 73%]\n........................................................................ [ 87%]\n.............................................................            [100%]\n492 passed, 1 skipped in 50.52s\n{\n  \"replay_verified\": true,\n  \"bundle\": \"/mnt/data/facemath_wave_06/evidence/wave6/wheel-check/replayed\",\n  \"comparison\": \"exact qualification/calibration JSON and numerical array equality\",\n  \"live_inference_reexecuted\": false\n}\n{\n  \"replay_verified\": true,\n  \"source_bundle\": \"/mnt/data/facemath_wave_06/evidence/wave6/laboratory/pair_02_mouth_8px\",\n  \"new_bundle\": \"/mnt/data/facemath_wave_06/evidence/wave6/wheel-check/pair-replayed\",\n  \"numerical_tolerance\": \"arrays atol=1e-9, rtol=1e-7; measurements atol=1e-10, rtol=1e-8\"\n}\n",
+      "stderr": "WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+    }
+  },
+  "laboratory": {
+    "format": "facemath.intrinsic_lab.v6",
+    "seed": 26091,
+    "kind": "synthetic_controls_NOT_HUMAN_ACCURACY",
+    "prior_study_preserved": {
+      "development_groups": 12,
+      "calibration_groups": 24,
+      "evaluation_groups": 12,
+      "enrolled": 49,
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 2,
+        "observed": 46,
+        "runtime_error": 0,
+        "timeout": 0
+      },
+      "scripted_calls": 48
+    },
+    "selected_quantile": 3.160667736120253,
+    "heldout_study_coverage": {
+      "calibration_sha256": "67bbe9c35ec8446255a0ed4a84f42027ebe721ab7f19da42dd214ea96cce7905",
+      "quantile": 3.160667736120253,
+      "rank": 23,
+      "bias_sha256": "6d1e6c36daa15df4e68c04146334e65a7c20ed0ecab684e3d89706ce2c1e76ba",
+      "development_groups": 12,
+      "fitted_development_groups": 12,
+      "development_cases_rejected": [],
+      "coverage": {
+        "calibration_sha256": "499f168007308513061aac944f8ff57aacc24bbb54a3888248d30cec2084cf63",
+        "nominal_coverage": 0.9,
+        "finite_envelope": true,
+        "evaluation_cases": 12,
+        "evaluation_groups": 12,
+        "covered_groups": 7,
+        "empirical_group_coverage": 0.5833333333333334,
+        "failures": 1,
+        "cases": [
+          {
+            "case_id": "control_036",
+            "group_id": "independent_draw_036",
+            "score": 2.104622944882403,
+            "assessable": true,
+            "covered": true
+          },
+          {
+            "case_id": "control_037",
+            "group_id": "independent_draw_037",
+            "score": 1.156543956404779,
+            "assessable": true,
+            "covered": true
+          },
+          {
+            "case_id": "control_038",
+            "group_id": "independent_draw_038",
+            "score": 1.9542736607820987,
+            "assessable": true,
+            "covered": true
+          },
+          {
+            "case_id": "control_039",
+            "group_id": "independent_draw_039",
+            "score": 1.9444226880500477,
+            "assessable": true,
+            "covered": true
+          },
+          {
+            "case_id": "control_040",
+            "group_id": "independent_draw_040",
+            "score": 1.0621725954461938,
+            "assessable": true,
+            "covered": true
+          },
+          {
+            "case_id": "control_041",
+            "group_id": "independent_draw_041",
+            "score": 1.9463914441756858,
+            "assessable": true,
+            "covered": true
+          },
+          {
+            "case_id": "control_042",
+            "group_id": "independent_draw_042",
+            "score": 2.1131291688804845,
+            "assessable": true,
+            "covered": true
+          },
+          {
+            "case_id": "control_043",
+            "group_id": "independent_draw_043",
+            "score": null,
+            "assessable": false,
+            "covered": false
+          },
+          {
+            "case_id": "control_044",
+            "group_id": "independent_draw_044",
+            "score": 20.84830001279423,
+            "assessable": true,
+            "covered": false
+          },
+          {
+            "case_id": "control_045",
+            "group_id": "independent_draw_045",
+            "score": 24.098698806289395,
+            "assessable": true,
+            "covered": false
+          },
+          {
+            "case_id": "control_046",
+            "group_id": "independent_draw_046",
+            "score": 20.477936769784673,
+            "assessable": true,
+            "covered": false
+          },
+          {
+            "case_id": "control_047",
+            "group_id": "independent_draw_047",
+            "score": 27.49649556976076,
+            "assessable": true,
+            "covered": false
+          }
+        ],
+        "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage",
+        "full_error_model_sha256": "67bbe9c35ec8446255a0ed4a84f42027ebe721ab7f19da42dd214ea96cce7905",
+        "score_centering": "development_ocular",
+        "binomial_95_interval": [
+          0.2766696856821058,
+          0.8483477701915698
+        ]
+      }
+    },
+    "set_controls": {
+      "format": "facemath.intrinsic_set_controls.v6",
+      "seed": 26091,
+      "kind": "analytic_and_synthetic_set_falsification_NOT_HUMAN_DATA",
+      "sampled_shape_pairs": 1024,
+      "relation_checks": 262144,
+      "bounded_relation_count": 256,
+      "sampled_relation_violations": 0,
+      "sampled_refit_violations": 0,
+      "refitted_shape_bounds": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.0699996145056126,
+        "reference_set_center_rms": 0.0699996145056126,
+        "lower": 0.012004176869997841,
+        "upper": 0.21297134840557203,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.012004176870026263,
+        "quotient_lipschitz_lower": 0.0,
+        "quotient_lipschitz_upper": 0.24042843027265592,
+        "candidate_rotation_upper": 0.2129713484055436,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "sampled_refit_range": [
+        0.04747050289285807,
+        0.11104390445278915
+      ],
+      "normalizer_counterexample": {
+        "frozen_denominator_value": 0.6800735254367721,
+        "actual_value": 0.8500919067959652,
+        "absolute_frozen_error": 0.17001838135919312,
+        "propagated_bounds": {
+          "lower": 0.5667279378639082,
+          "upper": 0.8500919067960656,
+          "available": true,
+          "reason": "bounded"
+        },
+        "contains_actual": true
+      },
+      "reflection_control": {
+        "distance_matrix_max_gap": 0.0,
+        "proper_shape_rms": 0.833715399896535
+      },
+      "zero_radius_limit": {
+        "range_width": 2.022687572988957e-13,
+        "true_rms": 0.0699996145056117
+      },
+      "collapsed_normalizer": {
+        "eye_span": {
+          "lower": 0.0,
+          "upper": 2.2000000000000632,
+          "available": true,
+          "reason": "bounded"
+        },
+        "mouth_ratio": {
+          "lower": null,
+          "upper": null,
+          "available": false,
+          "reason": "denominator_may_vanish"
+        }
+      },
+      "cancellation": {
+        "same_length_divisor": {
+          "lower": 1.0,
+          "upper": 1.0,
+          "available": true,
+          "reason": "shared_expression_cancels"
+        },
+        "repeated_vector_cross": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "available": true,
+          "reason": "shared_expression_cancels"
+        }
+      },
+      "limitations": [
+        "samples falsify violations but do not prove global containment",
+        "analytic outer bounds, not exact extrema or formally validated interval arithmetic",
+        "product error sets do not assert independent landmarks",
+        "no model inference, human annotations, or population similarity calibration"
+      ],
+      "array_axes": {
+        "draws_a": "[sample, reference8, xy]",
+        "draws_b": "[sample, reference8, xy]",
+        "values_a": "[sample, relation256]",
+        "values_b": "[sample, relation256]",
+        "source_lower": "[source, relation256]",
+        "source_upper": "[source, relation256]",
+        "refitted_rms": "[sample]",
+        "relation_gap": "[sample, relation256]"
+      }
+    },
+    "queries": [
+      {
+        "pair": "pair_00_mouth_0px",
+        "mouth_expansion_per_side_px": 0.0,
+        "true_reference_proper_shape_rms": 0.0,
+        "observed_proper_shape_rms": 0.004143275195064172,
+        "outer_shape_range": [
+          0.0,
+          0.0838601397523178
+        ],
+        "known_shape_contained": true,
+        "finite_relation_count": 256,
+        "known_relation_violations": 0,
+        "raw_array_count_unchanged": 135,
+        "raw_arrays_unchanged": true,
+        "families": [
+          {
+            "family": "distance",
+            "prespecified_relations": 28,
+            "nominally_observable": 28,
+            "bounded_relations": 28,
+            "within": 0,
+            "outside": 0,
+            "unresolved_or_unavailable": 28,
+            "within_tolerance_fraction_bounds": [
+              0.0,
+              1.0
+            ],
+            "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+          },
+          {
+            "family": "angle",
+            "prespecified_relations": 168,
+            "nominally_observable": 168,
+            "bounded_relations": 168,
+            "within": 5,
+            "outside": 0,
+            "unresolved_or_unavailable": 163,
+            "within_tolerance_fraction_bounds": [
+              0.02976190476190476,
+              1.0
+            ],
+            "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+          },
+          {
+            "family": "signed_double_area",
+            "prespecified_relations": 56,
+            "nominally_observable": 56,
+            "bounded_relations": 56,
+            "within": 0,
+            "outside": 0,
+            "unresolved_or_unavailable": 56,
+            "within_tolerance_fraction_bounds": [
+              0.0,
+              1.0
+            ],
+            "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+          },
+          {
+            "family": "asymmetry",
+            "prespecified_relations": 4,
+            "nominally_observable": 4,
+            "bounded_relations": 4,
+            "within": 1,
+            "outside": 0,
+            "unresolved_or_unavailable": 3,
+            "within_tolerance_fraction_bounds": [
+              0.25,
+              1.0
+            ],
+            "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+          }
+        ],
+        "verification": {
+          "verified": true,
+          "files": 14,
+          "arrays": 166,
+          "events": 17,
+          "manifest_content_sha256": "f7e3c9c28c1770c2b9c712b68fbc395f1f135c69b06627f5beb52b84b3a90b24",
+          "limit": "self-consistency hashes; not an externally signed execution attestation"
+        }
+      },
+      {
+        "pair": "pair_01_mouth_4px",
+        "mouth_expansion_per_side_px": 4.0,
+        "true_reference_proper_shape_rms": 0.04166666666666726,
+        "observed_proper_shape_rms": 0.03986467942736448,
+        "outer_shape_range": [
+          0.009422705803818,
+          0.10742224955088651
+        ],
+        "known_shape_contained": true,
+        "finite_relation_count": 256,
+        "known_relation_violations": 0,
+        "raw_array_count_unchanged": 135,
+        "raw_arrays_unchanged": true,
+        "families": [
+          {
+            "family": "distance",
+            "prespecified_relations": 28,
+            "nominally_observable": 28,
+            "bounded_relations": 28,
+            "within": 0,
+            "outside": 1,
+            "unresolved_or_unavailable": 27,
+            "within_tolerance_fraction_bounds": [
+              0.0,
+              0.9642857142857143
+            ],
+            "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+          },
+          {
+            "family": "angle",
+            "prespecified_relations": 168,
+            "nominally_observable": 168,
+            "bounded_relations": 168,
+            "within": 4,
+            "outside": 0,
+            "unresolved_or_unavailable": 164,
+            "within_tolerance_fraction_bounds": [
+              0.023809523809523808,
+              1.0
+            ],
+            "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+          },
+          {
+            "family": "signed_double_area",
+            "prespecified_relations": 56,
+            "nominally_observable": 56,
+            "bounded_relations": 56,
+            "within": 0,
+            "outside": 0,
+            "unresolved_or_unavailable": 56,
+            "within_tolerance_fraction_bounds": [
+              0.0,
+              1.0
+            ],
+            "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+          },
+          {
+            "family": "asymmetry",
+            "prespecified_relations": 4,
+            "nominally_observable": 4,
+            "bounded_relations": 4,
+            "within": 1,
+            "outside": 0,
+            "unresolved_or_unavailable": 3,
+            "within_tolerance_fraction_bounds": [
+              0.25,
+              1.0
+            ],
+            "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+          }
+        ],
+        "verification": {
+          "verified": true,
+          "files": 14,
+          "arrays": 166,
+          "events": 17,
+          "manifest_content_sha256": "dc5eee9ea2cab05c66bd1183e94a83b688fab131ab43f7a34b8a5cf856cf28d6",
+          "limit": "self-consistency hashes; not an externally signed execution attestation"
+        }
+      },
+      {
+        "pair": "pair_02_mouth_8px",
+        "mouth_expansion_per_side_px": 8.0,
+        "true_reference_proper_shape_rms": 0.08333333333333452,
+        "observed_proper_shape_rms": 0.08170198481373019,
+        "outer_shape_range": [
+          0.030164716394870016,
+          0.14140529579628758
+        ],
+        "known_shape_contained": true,
+        "finite_relation_count": 256,
+        "known_relation_violations": 0,
+        "raw_array_count_unchanged": 135,
+        "raw_arrays_unchanged": true,
+        "families": [
+          {
+            "family": "distance",
+            "prespecified_relations": 28,
+            "nominally_observable": 28,
+            "bounded_relations": 28,
+            "within": 0,
+            "outside": 1,
+            "unresolved_or_unavailable": 27,
+            "within_tolerance_fraction_bounds": [
+              0.0,
+              0.9642857142857143
+            ],
+            "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+          },
+          {
+            "family": "angle",
+            "prespecified_relations": 168,
+            "nominally_observable": 168,
+            "bounded_relations": 168,
+            "within": 4,
+            "outside": 9,
+            "unresolved_or_unavailable": 155,
+            "within_tolerance_fraction_bounds": [
+              0.023809523809523808,
+              0.9464285714285714
+            ],
+            "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+          },
+          {
+            "family": "signed_double_area",
+            "prespecified_relations": 56,
+            "nominally_observable": 56,
+            "bounded_relations": 56,
+            "within": 0,
+            "outside": 16,
+            "unresolved_or_unavailable": 40,
+            "within_tolerance_fraction_bounds": [
+              0.0,
+              0.7142857142857143
+            ],
+            "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+          },
+          {
+            "family": "asymmetry",
+            "prespecified_relations": 4,
+            "nominally_observable": 4,
+            "bounded_relations": 4,
+            "within": 1,
+            "outside": 0,
+            "unresolved_or_unavailable": 3,
+            "within_tolerance_fraction_bounds": [
+              0.25,
+              1.0
+            ],
+            "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+          }
+        ],
+        "verification": {
+          "verified": true,
+          "files": 14,
+          "arrays": 166,
+          "events": 17,
+          "manifest_content_sha256": "c164715be6dd38823635c1dc92ce49fdbd32a02a37272b877018fa0db88db977",
+          "limit": "self-consistency hashes; not an externally signed execution attestation"
+        }
+      },
+      {
+        "pair": "pair_03_mouth_12px",
+        "mouth_expansion_per_side_px": 12.0,
+        "true_reference_proper_shape_rms": 0.1250000000000009,
+        "observed_proper_shape_rms": 0.12300217449340749,
+        "outer_shape_range": [
+          0.05351005311810027,
+          0.17855098660228375
+        ],
+        "known_shape_contained": true,
+        "finite_relation_count": 256,
+        "known_relation_violations": 0,
+        "raw_array_count_unchanged": 135,
+        "raw_arrays_unchanged": true,
+        "families": [
+          {
+            "family": "distance",
+            "prespecified_relations": 28,
+            "nominally_observable": 28,
+            "bounded_relations": 28,
+            "within": 0,
+            "outside": 5,
+            "unresolved_or_unavailable": 23,
+            "within_tolerance_fraction_bounds": [
+              0.0,
+              0.8214285714285714
+            ],
+            "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+          },
+          {
+            "family": "angle",
+            "prespecified_relations": 168,
+            "nominally_observable": 168,
+            "bounded_relations": 168,
+            "within": 4,
+            "outside": 27,
+            "unresolved_or_unavailable": 137,
+            "within_tolerance_fraction_bounds": [
+              0.023809523809523808,
+              0.8392857142857143
+            ],
+            "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+          },
+          {
+            "family": "signed_double_area",
+            "prespecified_relations": 56,
+            "nominally_observable": 56,
+            "bounded_relations": 56,
+            "within": 0,
+            "outside": 22,
+            "unresolved_or_unavailable": 34,
+            "within_tolerance_fraction_bounds": [
+              0.0,
+              0.6071428571428571
+            ],
+            "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+          },
+          {
+            "family": "asymmetry",
+            "prespecified_relations": 4,
+            "nominally_observable": 4,
+            "bounded_relations": 4,
+            "within": 1,
+            "outside": 0,
+            "unresolved_or_unavailable": 3,
+            "within_tolerance_fraction_bounds": [
+              0.25,
+              1.0
+            ],
+            "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+          }
+        ],
+        "verification": {
+          "verified": true,
+          "files": 14,
+          "arrays": 166,
+          "events": 17,
+          "manifest_content_sha256": "b36b2e95566f1a5793a62c4e1a63a644d62288febbf55c6624901d824d4e382e",
+          "limit": "self-consistency hashes; not an externally signed execution attestation"
+        }
+      }
+    ],
+    "qualification_verification": {
+      "verified": true,
+      "kind": "observer_qualification",
+      "files": 451,
+      "arrays": 9,
+      "study_sha256": "58ca9c5339afc7ef0c6b8d8b7d8f3c3d78c60aef42427362a6684b1607c42df5",
+      "manifest_content_sha256": "77d0e96d0e4e359dd399d692b2c5eb5fb89e5fb528911d53b7c88f25f782ba5c",
+      "live_inference_reexecuted": false
+    },
+    "environment": {
+      "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+      "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+      "packages": {
+        "numpy": "2.3.5",
+        "scipy": "1.17.0",
+        "opencv-python": "4.13.0.92",
+        "mediapipe": null,
+        "pytest": "9.0.2"
+      },
+      "numeric_environment": {
+        "numpy": "2.3.5",
+        "scipy": "1.17.0",
+        "opencv": "4.13.0"
+      },
+      "engine_code_sha256": "c34ba7a27d159b9b71730cf2fa771fe42adaf42c6d7426b5ac9db47f469ccf3b"
+    },
+    "no_population_similarity_score": true,
+    "interpretation": "new structural relations and refit bounds consume the same source observations and independently fitted error model; all known query coordinates are retained; no best-case selection"
+  },
+  "browser": {
+    "format": "facemath.browser_qa.v6",
+    "report": "/mnt/data/facemath_wave_06/evidence/wave6/laboratory/pair_02_mouth_8px/report.html",
+    "started_at": "2026-09-13T01:00:28.155679+00:00",
+    "checks": {
+      "distance_rows": 28,
+      "angle_rows": 168,
+      "signed_double_area_rows": 56,
+      "asymmetry_rows": 4,
+      "anatomical_name_filter_rows": 63,
+      "selection_links_same_raw_array_row": true,
+      "csv_matches_exact_selected_frozen_values": true,
+      "status_filter_rows": 9,
+      "full_covariance_ellipse_display": true,
+      "display_zoom_not_measurement_rescale": true,
+      "local_evidence_links_exist": true,
+      "controls_do_not_change_measurements": true
+    },
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 1150,
+        "document_width": 1440,
+        "body_overflow": false
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "document_width": 390,
+        "body_overflow": false
+      }
+    ],
+    "loading": "in-memory emitted HTML; local navigation unavailable",
+    "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_06/evidence/wave6/laboratory/pair_02_mouth_8px/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_06/evidence/wave6/laboratory/pair_02_mouth_8px/report.html\", waiting until \"load\"\n",
+    "page_errors": [],
+    "remote_requests": [],
+    "passed": true,
+    "finished_at": "2026-09-13T01:00:29.989857+00:00"
+  },
+  "native_environment": {
+    "checked_utc": "2026-09-13T00:59:41.605276+00:00",
+    "mediapipe_installed": false,
+    "hosts": {
+      "pypi.org": {
+        "resolved": false,
+        "exception": "gaierror",
+        "message": "[Errno -3] Temporary failure in name resolution"
+      },
+      "storage.googleapis.com": {
+        "resolved": false,
+        "exception": "gaierror",
+        "message": "[Errno -3] Temporary failure in name resolution"
+      }
+    },
+    "model_fetch_probe": {
+      "url": "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/latest/face_landmarker.task",
+      "succeeded": false,
+      "exception": "URLError",
+      "message": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+      "full_model_obtained": false
+    },
+    "live_inference_executed": false,
+    "human_observer_validation": false
+  },
+  "replay": {
+    "source_qualification": true,
+    "source_pair": true,
+    "wheel_qualification": true,
+    "wheel_pair": true,
+    "scope": "recomputed from saved observations and original rasters; not detector reinvocation"
+  },
+  "limits": [
+    "live MediaPipe integration remains skipped; model not obtained",
+    "known-coordinate synthetic controls are not human accuracy or resemblance estimates",
+    "source uncertainty assumptions remain necessary; domain-shift undercoverage retained",
+    "conservative float64 analytic enclosures, not formal interval arithmetic or exact extrema",
+    "wheel tests reuse installed numerical dependencies, not a fresh dependency-stack or Windows test",
+    "browser rendering used in-memory HTML after local navigation failed",
+    "superseded development bundles are separate from the final evidence to avoid mixed code fingerprints",
+    "fresh archive extraction results are recorded beside the ZIP after packaging"
+  ]
+}

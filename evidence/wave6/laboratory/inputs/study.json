@@ -1,0 +1,665 @@
+{
+  "format": "facemath.prospective_study.v5",
+  "domain": "schematic-ocular-bias-and-unseen-shift-controls-v5-NOT-HUMAN",
+  "observer": {
+    "provider": "synthetic_ocular_bias_observer",
+    "provider_fingerprint": "d2a647af949d4b6f047c0d6bcd25c2d650b3fb6dbf52f7ebcaae1dab32cc1321",
+    "schema": "semantic21.v1",
+    "noise_floor_px": 0.18,
+    "attempted_samples": 7,
+    "execution_kind": "synthetic_fixture",
+    "model_sha256": null,
+    "runtime_version": null
+  },
+  "minimum_raters": 1,
+  "maximum_cases_per_group": 1,
+  "minimum_development_groups": 5,
+  "alpha": 0.1,
+  "bias_mode": "development_ocular",
+  "strata": [
+    "clear",
+    "degraded",
+    "unseen_shift"
+  ],
+  "cases": [
+    {
+      "case_id": "control_000",
+      "group_id": "independent_draw_000",
+      "split": "development",
+      "lineage_ids": [
+        "render_26091_0"
+      ],
+      "image": "control_000.png",
+      "references": [
+        "control_000_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_001",
+      "group_id": "independent_draw_001",
+      "split": "development",
+      "lineage_ids": [
+        "render_26091_1"
+      ],
+      "image": "control_001.png",
+      "references": [
+        "control_001_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_002",
+      "group_id": "independent_draw_002",
+      "split": "development",
+      "lineage_ids": [
+        "render_26091_2"
+      ],
+      "image": "control_002.png",
+      "references": [
+        "control_002_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_003",
+      "group_id": "independent_draw_003",
+      "split": "development",
+      "lineage_ids": [
+        "render_26091_3"
+      ],
+      "image": "control_003.png",
+      "references": [
+        "control_003_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_004",
+      "group_id": "independent_draw_004",
+      "split": "development",
+      "lineage_ids": [
+        "render_26091_4"
+      ],
+      "image": "control_004.png",
+      "references": [
+        "control_004_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_005",
+      "group_id": "independent_draw_005",
+      "split": "development",
+      "lineage_ids": [
+        "render_26091_5"
+      ],
+      "image": "control_005.png",
+      "references": [
+        "control_005_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_006",
+      "group_id": "independent_draw_006",
+      "split": "development",
+      "lineage_ids": [
+        "render_26091_6"
+      ],
+      "image": "control_006.png",
+      "references": [
+        "control_006_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_007",
+      "group_id": "independent_draw_007",
+      "split": "development",
+      "lineage_ids": [
+        "render_26091_7"
+      ],
+      "image": "control_007.png",
+      "references": [
+        "control_007_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_008",
+      "group_id": "independent_draw_008",
+      "split": "development",
+      "lineage_ids": [
+        "render_26091_8"
+      ],
+      "image": "control_008.png",
+      "references": [
+        "control_008_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_009",
+      "group_id": "independent_draw_009",
+      "split": "development",
+      "lineage_ids": [
+        "render_26091_9"
+      ],
+      "image": "control_009.png",
+      "references": [
+        "control_009_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_010",
+      "group_id": "independent_draw_010",
+      "split": "development",
+      "lineage_ids": [
+        "render_26091_10"
+      ],
+      "image": "control_010.png",
+      "references": [
+        "control_010_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_011",
+      "group_id": "independent_draw_011",
+      "split": "development",
+      "lineage_ids": [
+        "render_26091_11"
+      ],
+      "image": "control_011.png",
+      "references": [
+        "control_011_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_012",
+      "group_id": "independent_draw_012",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_12"
+      ],
+      "image": "control_012.png",
+      "references": [
+        "control_012_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_013",
+      "group_id": "independent_draw_013",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_13"
+      ],
+      "image": "control_013.png",
+      "references": [
+        "control_013_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_014",
+      "group_id": "independent_draw_014",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_14"
+      ],
+      "image": "control_014.png",
+      "references": [
+        "control_014_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_015",
+      "group_id": "independent_draw_015",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_15"
+      ],
+      "image": "control_015.png",
+      "references": [
+        "control_015_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_016",
+      "group_id": "independent_draw_016",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_16"
+      ],
+      "image": "control_016.png",
+      "references": [
+        "control_016_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_017",
+      "group_id": "independent_draw_017",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_17"
+      ],
+      "image": "control_017.png",
+      "references": [
+        "control_017_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_018",
+      "group_id": "independent_draw_018",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_18"
+      ],
+      "image": "control_018.png",
+      "references": [
+        "control_018_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_019",
+      "group_id": "independent_draw_019",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_19"
+      ],
+      "image": "control_019.png",
+      "references": [
+        "control_019_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_020",
+      "group_id": "independent_draw_020",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_20"
+      ],
+      "image": "control_020.png",
+      "references": [
+        "control_020_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_021",
+      "group_id": "independent_draw_021",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_21"
+      ],
+      "image": "control_021.png",
+      "references": [
+        "control_021_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_022",
+      "group_id": "independent_draw_022",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_22"
+      ],
+      "image": "control_022.png",
+      "references": [
+        "control_022_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_023",
+      "group_id": "independent_draw_023",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_23"
+      ],
+      "image": "control_023.png",
+      "references": [
+        "control_023_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_024",
+      "group_id": "independent_draw_024",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_24"
+      ],
+      "image": "control_024.png",
+      "references": [
+        "control_024_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_025",
+      "group_id": "independent_draw_025",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_25"
+      ],
+      "image": "control_025.png",
+      "references": [
+        "control_025_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_026",
+      "group_id": "independent_draw_026",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_26"
+      ],
+      "image": "control_026.png",
+      "references": [
+        "control_026_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_027",
+      "group_id": "independent_draw_027",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_27"
+      ],
+      "image": "control_027.png",
+      "references": [
+        "control_027_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_028",
+      "group_id": "independent_draw_028",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_28"
+      ],
+      "image": "control_028.png",
+      "references": [
+        "control_028_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_029",
+      "group_id": "independent_draw_029",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_29"
+      ],
+      "image": "control_029.png",
+      "references": [
+        "control_029_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_030",
+      "group_id": "independent_draw_030",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_30"
+      ],
+      "image": "control_030.png",
+      "references": [
+        "control_030_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_031",
+      "group_id": "independent_draw_031",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_31"
+      ],
+      "image": "control_031.png",
+      "references": [
+        "control_031_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_032",
+      "group_id": "independent_draw_032",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_32"
+      ],
+      "image": "control_032.png",
+      "references": [
+        "control_032_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_033",
+      "group_id": "independent_draw_033",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_33"
+      ],
+      "image": "control_033.png",
+      "references": [
+        "control_033_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_034",
+      "group_id": "independent_draw_034",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_34"
+      ],
+      "image": "control_034.png",
+      "references": [
+        "control_034_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_035",
+      "group_id": "independent_draw_035",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_26091_35"
+      ],
+      "image": "control_035.png",
+      "references": [
+        "control_035_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_036",
+      "group_id": "independent_draw_036",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_26091_36"
+      ],
+      "image": "control_036.png",
+      "references": [
+        "control_036_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_037",
+      "group_id": "independent_draw_037",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_26091_37"
+      ],
+      "image": "control_037.png",
+      "references": [
+        "control_037_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_038",
+      "group_id": "independent_draw_038",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_26091_38"
+      ],
+      "image": "control_038.png",
+      "references": [
+        "control_038_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_039",
+      "group_id": "independent_draw_039",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_26091_39"
+      ],
+      "image": "control_039.png",
+      "references": [
+        "control_039_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_040",
+      "group_id": "independent_draw_040",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_26091_40"
+      ],
+      "image": "control_040.png",
+      "references": [
+        "control_040_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_041",
+      "group_id": "independent_draw_041",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_26091_41"
+      ],
+      "image": "control_041.png",
+      "references": [
+        "control_041_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_042",
+      "group_id": "independent_draw_042",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_26091_42"
+      ],
+      "image": "control_042.png",
+      "references": [
+        "control_042_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_043",
+      "group_id": "independent_draw_043",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_26091_43"
+      ],
+      "image": "control_043.png",
+      "references": [
+        "control_043_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_044",
+      "group_id": "independent_draw_044",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_26091_44"
+      ],
+      "image": "control_044.png",
+      "references": [
+        "control_044_reference.json"
+      ],
+      "stratum": "unseen_shift"
+    },
+    {
+      "case_id": "control_045",
+      "group_id": "independent_draw_045",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_26091_45"
+      ],
+      "image": "control_045.png",
+      "references": [
+        "control_045_reference.json"
+      ],
+      "stratum": "unseen_shift"
+    },
+    {
+      "case_id": "control_046",
+      "group_id": "independent_draw_046",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_26091_46"
+      ],
+      "image": "control_046.png",
+      "references": [
+        "control_046_reference.json"
+      ],
+      "stratum": "unseen_shift"
+    },
+    {
+      "case_id": "control_047",
+      "group_id": "independent_draw_047",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_26091_47"
+      ],
+      "image": "control_047.png",
+      "references": [
+        "control_047_reference.json"
+      ],
+      "stratum": "unseen_shift"
+    },
+    {
+      "case_id": "control_048",
+      "group_id": "independent_draw_048",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_26091_48"
+      ],
+      "image": "control_048.png",
+      "references": [
+        "control_048_reference.json"
+      ],
+      "stratum": "unseen_shift",
+      "eligibility": "excluded",
+      "exclusion_reason": "prespecified excluded enrollment control; never sent to observer"
+    }
+  ]
+}

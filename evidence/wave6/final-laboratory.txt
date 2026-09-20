@@ -1,0 +1,586 @@
+{
+  "format": "facemath.intrinsic_lab.v6",
+  "seed": 26091,
+  "kind": "synthetic_controls_NOT_HUMAN_ACCURACY",
+  "prior_study_preserved": {
+    "development_groups": 12,
+    "calibration_groups": 24,
+    "evaluation_groups": 12,
+    "enrolled": 49,
+    "outcomes": {
+      "contract_error": 0,
+      "interrupted": 0,
+      "multiple_faces": 0,
+      "no_face": 2,
+      "observed": 46,
+      "runtime_error": 0,
+      "timeout": 0
+    },
+    "scripted_calls": 48
+  },
+  "selected_quantile": 3.160667736120253,
+  "heldout_study_coverage": {
+    "calibration_sha256": "67bbe9c35ec8446255a0ed4a84f42027ebe721ab7f19da42dd214ea96cce7905",
+    "quantile": 3.160667736120253,
+    "rank": 23,
+    "bias_sha256": "6d1e6c36daa15df4e68c04146334e65a7c20ed0ecab684e3d89706ce2c1e76ba",
+    "development_groups": 12,
+    "fitted_development_groups": 12,
+    "development_cases_rejected": [],
+    "coverage": {
+      "calibration_sha256": "499f168007308513061aac944f8ff57aacc24bbb54a3888248d30cec2084cf63",
+      "nominal_coverage": 0.9,
+      "finite_envelope": true,
+      "evaluation_cases": 12,
+      "evaluation_groups": 12,
+      "covered_groups": 7,
+      "empirical_group_coverage": 0.5833333333333334,
+      "failures": 1,
+      "cases": [
+        {
+          "case_id": "control_036",
+          "group_id": "independent_draw_036",
+          "score": 2.104622944882403,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_037",
+          "group_id": "independent_draw_037",
+          "score": 1.156543956404779,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_038",
+          "group_id": "independent_draw_038",
+          "score": 1.9542736607820987,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_039",
+          "group_id": "independent_draw_039",
+          "score": 1.9444226880500477,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_040",
+          "group_id": "independent_draw_040",
+          "score": 1.0621725954461938,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_041",
+          "group_id": "independent_draw_041",
+          "score": 1.9463914441756858,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_042",
+          "group_id": "independent_draw_042",
+          "score": 2.1131291688804845,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_043",
+          "group_id": "independent_draw_043",
+          "score": null,
+          "assessable": false,
+          "covered": false
+        },
+        {
+          "case_id": "control_044",
+          "group_id": "independent_draw_044",
+          "score": 20.84830001279423,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_045",
+          "group_id": "independent_draw_045",
+          "score": 24.098698806289395,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_046",
+          "group_id": "independent_draw_046",
+          "score": 20.477936769784673,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_047",
+          "group_id": "independent_draw_047",
+          "score": 27.49649556976076,
+          "assessable": true,
+          "covered": false
+        }
+      ],
+      "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage",
+      "full_error_model_sha256": "67bbe9c35ec8446255a0ed4a84f42027ebe721ab7f19da42dd214ea96cce7905",
+      "score_centering": "development_ocular",
+      "binomial_95_interval": [
+        0.2766696856821058,
+        0.8483477701915698
+      ]
+    }
+  },
+  "set_controls": {
+    "format": "facemath.intrinsic_set_controls.v6",
+    "seed": 26091,
+    "kind": "analytic_and_synthetic_set_falsification_NOT_HUMAN_DATA",
+    "sampled_shape_pairs": 1024,
+    "relation_checks": 262144,
+    "bounded_relation_count": 256,
+    "sampled_relation_violations": 0,
+    "sampled_refit_violations": 0,
+    "refitted_shape_bounds": {
+      "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+      "observed_rms": 0.0699996145056126,
+      "reference_set_center_rms": 0.0699996145056126,
+      "lower": 0.012004176869997841,
+      "upper": 0.21297134840557203,
+      "available": true,
+      "reason": "bounded",
+      "distance_matrix_lower": 0.012004176870026263,
+      "quotient_lipschitz_lower": 0.0,
+      "quotient_lipschitz_upper": 0.24042843027265592,
+      "candidate_rotation_upper": 0.2129713484055436,
+      "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+      "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+      "arrays": [
+        "intrinsic_shape_deviation_radii",
+        "intrinsic_shape_candidate_rotation"
+      ]
+    },
+    "sampled_refit_range": [
+      0.04747050289285807,
+      0.11104390445278915
+    ],
+    "normalizer_counterexample": {
+      "frozen_denominator_value": 0.6800735254367721,
+      "actual_value": 0.8500919067959652,
+      "absolute_frozen_error": 0.17001838135919312,
+      "propagated_bounds": {
+        "lower": 0.5667279378639082,
+        "upper": 0.8500919067960656,
+        "available": true,
+        "reason": "bounded"
+      },
+      "contains_actual": true
+    },
+    "reflection_control": {
+      "distance_matrix_max_gap": 0.0,
+      "proper_shape_rms": 0.833715399896535
+    },
+    "zero_radius_limit": {
+      "range_width": 2.022687572988957e-13,
+      "true_rms": 0.0699996145056117
+    },
+    "collapsed_normalizer": {
+      "eye_span": {
+        "lower": 0.0,
+        "upper": 2.2000000000000632,
+        "available": true,
+        "reason": "bounded"
+      },
+      "mouth_ratio": {
+        "lower": null,
+        "upper": null,
+        "available": false,
+        "reason": "denominator_may_vanish"
+      }
+    },
+    "cancellation": {
+      "same_length_divisor": {
+        "lower": 1.0,
+        "upper": 1.0,
+        "available": true,
+        "reason": "shared_expression_cancels"
+      },
+      "repeated_vector_cross": {
+        "lower": 0.0,
+        "upper": 0.0,
+        "available": true,
+        "reason": "shared_expression_cancels"
+      }
+    },
+    "limitations": [
+      "samples falsify violations but do not prove global containment",
+      "analytic outer bounds, not exact extrema or formally validated interval arithmetic",
+      "product error sets do not assert independent landmarks",
+      "no model inference, human annotations, or population similarity calibration"
+    ],
+    "array_axes": {
+      "draws_a": "[sample, reference8, xy]",
+      "draws_b": "[sample, reference8, xy]",
+      "values_a": "[sample, relation256]",
+      "values_b": "[sample, relation256]",
+      "source_lower": "[source, relation256]",
+      "source_upper": "[source, relation256]",
+      "refitted_rms": "[sample]",
+      "relation_gap": "[sample, relation256]"
+    }
+  },
+  "queries": [
+    {
+      "pair": "pair_00_mouth_0px",
+      "mouth_expansion_per_side_px": 0.0,
+      "true_reference_proper_shape_rms": 0.0,
+      "observed_proper_shape_rms": 0.004143275195064172,
+      "outer_shape_range": [
+        0.0,
+        0.0838601397523178
+      ],
+      "known_shape_contained": true,
+      "finite_relation_count": 256,
+      "known_relation_violations": 0,
+      "raw_array_count_unchanged": 135,
+      "raw_arrays_unchanged": true,
+      "families": [
+        {
+          "family": "distance",
+          "prespecified_relations": 28,
+          "nominally_observable": 28,
+          "bounded_relations": 28,
+          "within": 0,
+          "outside": 0,
+          "unresolved_or_unavailable": 28,
+          "within_tolerance_fraction_bounds": [
+            0.0,
+            1.0
+          ],
+          "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+        },
+        {
+          "family": "angle",
+          "prespecified_relations": 168,
+          "nominally_observable": 168,
+          "bounded_relations": 168,
+          "within": 5,
+          "outside": 0,
+          "unresolved_or_unavailable": 163,
+          "within_tolerance_fraction_bounds": [
+            0.02976190476190476,
+            1.0
+          ],
+          "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+        },
+        {
+          "family": "signed_double_area",
+          "prespecified_relations": 56,
+          "nominally_observable": 56,
+          "bounded_relations": 56,
+          "within": 0,
+          "outside": 0,
+          "unresolved_or_unavailable": 56,
+          "within_tolerance_fraction_bounds": [
+            0.0,
+            1.0
+          ],
+          "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+        },
+        {
+          "family": "asymmetry",
+          "prespecified_relations": 4,
+          "nominally_observable": 4,
+          "bounded_relations": 4,
+          "within": 1,
+          "outside": 0,
+          "unresolved_or_unavailable": 3,
+          "within_tolerance_fraction_bounds": [
+            0.25,
+            1.0
+          ],
+          "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+        }
+      ],
+      "verification": {
+        "verified": true,
+        "files": 14,
+        "arrays": 166,
+        "events": 17,
+        "manifest_content_sha256": "f7e3c9c28c1770c2b9c712b68fbc395f1f135c69b06627f5beb52b84b3a90b24",
+        "limit": "self-consistency hashes; not an externally signed execution attestation"
+      }
+    },
+    {
+      "pair": "pair_01_mouth_4px",
+      "mouth_expansion_per_side_px": 4.0,
+      "true_reference_proper_shape_rms": 0.04166666666666726,
+      "observed_proper_shape_rms": 0.03986467942736448,
+      "outer_shape_range": [
+        0.009422705803818,
+        0.10742224955088651
+      ],
+      "known_shape_contained": true,
+      "finite_relation_count": 256,
+      "known_relation_violations": 0,
+      "raw_array_count_unchanged": 135,
+      "raw_arrays_unchanged": true,
+      "families": [
+        {
+          "family": "distance",
+          "prespecified_relations": 28,
+          "nominally_observable": 28,
+          "bounded_relations": 28,
+          "within": 0,
+          "outside": 1,
+          "unresolved_or_unavailable": 27,
+          "within_tolerance_fraction_bounds": [
+            0.0,
+            0.9642857142857143
+          ],
+          "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+        },
+        {
+          "family": "angle",
+          "prespecified_relations": 168,
+          "nominally_observable": 168,
+          "bounded_relations": 168,
+          "within": 4,
+          "outside": 0,
+          "unresolved_or_unavailable": 164,
+          "within_tolerance_fraction_bounds": [
+            0.023809523809523808,
+            1.0
+          ],
+          "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+        },
+        {
+          "family": "signed_double_area",
+          "prespecified_relations": 56,
+          "nominally_observable": 56,
+          "bounded_relations": 56,
+          "within": 0,
+          "outside": 0,
+          "unresolved_or_unavailable": 56,
+          "within_tolerance_fraction_bounds": [
+            0.0,
+            1.0
+          ],
+          "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+        },
+        {
+          "family": "asymmetry",
+          "prespecified_relations": 4,
+          "nominally_observable": 4,
+          "bounded_relations": 4,
+          "within": 1,
+          "outside": 0,
+          "unresolved_or_unavailable": 3,
+          "within_tolerance_fraction_bounds": [
+            0.25,
+            1.0
+          ],
+          "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+        }
+      ],
+      "verification": {
+        "verified": true,
+        "files": 14,
+        "arrays": 166,
+        "events": 17,
+        "manifest_content_sha256": "dc5eee9ea2cab05c66bd1183e94a83b688fab131ab43f7a34b8a5cf856cf28d6",
+        "limit": "self-consistency hashes; not an externally signed execution attestation"
+      }
+    },
+    {
+      "pair": "pair_02_mouth_8px",
+      "mouth_expansion_per_side_px": 8.0,
+      "true_reference_proper_shape_rms": 0.08333333333333452,
+      "observed_proper_shape_rms": 0.08170198481373019,
+      "outer_shape_range": [
+        0.030164716394870016,
+        0.14140529579628758
+      ],
+      "known_shape_contained": true,
+      "finite_relation_count": 256,
+      "known_relation_violations": 0,
+      "raw_array_count_unchanged": 135,
+      "raw_arrays_unchanged": true,
+      "families": [
+        {
+          "family": "distance",
+          "prespecified_relations": 28,
+          "nominally_observable": 28,
+          "bounded_relations": 28,
+          "within": 0,
+          "outside": 1,
+          "unresolved_or_unavailable": 27,
+          "within_tolerance_fraction_bounds": [
+            0.0,
+            0.9642857142857143
+          ],
+          "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+        },
+        {
+          "family": "angle",
+          "prespecified_relations": 168,
+          "nominally_observable": 168,
+          "bounded_relations": 168,
+          "within": 4,
+          "outside": 9,
+          "unresolved_or_unavailable": 155,
+          "within_tolerance_fraction_bounds": [
+            0.023809523809523808,
+            0.9464285714285714
+          ],
+          "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+        },
+        {
+          "family": "signed_double_area",
+          "prespecified_relations": 56,
+          "nominally_observable": 56,
+          "bounded_relations": 56,
+          "within": 0,
+          "outside": 16,
+          "unresolved_or_unavailable": 40,
+          "within_tolerance_fraction_bounds": [
+            0.0,
+            0.7142857142857143
+          ],
+          "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+        },
+        {
+          "family": "asymmetry",
+          "prespecified_relations": 4,
+          "nominally_observable": 4,
+          "bounded_relations": 4,
+          "within": 1,
+          "outside": 0,
+          "unresolved_or_unavailable": 3,
+          "within_tolerance_fraction_bounds": [
+            0.25,
+            1.0
+          ],
+          "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+        }
+      ],
+      "verification": {
+        "verified": true,
+        "files": 14,
+        "arrays": 166,
+        "events": 17,
+        "manifest_content_sha256": "c164715be6dd38823635c1dc92ce49fdbd32a02a37272b877018fa0db88db977",
+        "limit": "self-consistency hashes; not an externally signed execution attestation"
+      }
+    },
+    {
+      "pair": "pair_03_mouth_12px",
+      "mouth_expansion_per_side_px": 12.0,
+      "true_reference_proper_shape_rms": 0.1250000000000009,
+      "observed_proper_shape_rms": 0.12300217449340749,
+      "outer_shape_range": [
+        0.05351005311810027,
+        0.17855098660228375
+      ],
+      "known_shape_contained": true,
+      "finite_relation_count": 256,
+      "known_relation_violations": 0,
+      "raw_array_count_unchanged": 135,
+      "raw_arrays_unchanged": true,
+      "families": [
+        {
+          "family": "distance",
+          "prespecified_relations": 28,
+          "nominally_observable": 28,
+          "bounded_relations": 28,
+          "within": 0,
+          "outside": 5,
+          "unresolved_or_unavailable": 23,
+          "within_tolerance_fraction_bounds": [
+            0.0,
+            0.8214285714285714
+          ],
+          "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+        },
+        {
+          "family": "angle",
+          "prespecified_relations": 168,
+          "nominally_observable": 168,
+          "bounded_relations": 168,
+          "within": 4,
+          "outside": 27,
+          "unresolved_or_unavailable": 137,
+          "within_tolerance_fraction_bounds": [
+            0.023809523809523808,
+            0.8392857142857143
+          ],
+          "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+        },
+        {
+          "family": "signed_double_area",
+          "prespecified_relations": 56,
+          "nominally_observable": 56,
+          "bounded_relations": 56,
+          "within": 0,
+          "outside": 22,
+          "unresolved_or_unavailable": 34,
+          "within_tolerance_fraction_bounds": [
+            0.0,
+            0.6071428571428571
+          ],
+          "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+        },
+        {
+          "family": "asymmetry",
+          "prespecified_relations": 4,
+          "nominally_observable": 4,
+          "bounded_relations": 4,
+          "within": 1,
+          "outside": 0,
+          "unresolved_or_unavailable": 3,
+          "within_tolerance_fraction_bounds": [
+            0.25,
+            1.0
+          ],
+          "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"
+        }
+      ],
+      "verification": {
+        "verified": true,
+        "files": 14,
+        "arrays": 166,
+        "events": 17,
+        "manifest_content_sha256": "b36b2e95566f1a5793a62c4e1a63a644d62288febbf55c6624901d824d4e382e",
+        "limit": "self-consistency hashes; not an externally signed execution attestation"
+      }
+    }
+  ],
+  "qualification_verification": {
+    "verified": true,
+    "kind": "observer_qualification",
+    "files": 451,
+    "arrays": 9,
+    "study_sha256": "58ca9c5339afc7ef0c6b8d8b7d8f3c3d78c60aef42427362a6684b1607c42df5",
+    "manifest_content_sha256": "77d0e96d0e4e359dd399d692b2c5eb5fb89e5fb528911d53b7c88f25f782ba5c",
+    "live_inference_reexecuted": false
+  },
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "packages": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "opencv-python": "4.13.0.92",
+      "mediapipe": null,
+      "pytest": "9.0.2"
+    },
+    "numeric_environment": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "opencv": "4.13.0"
+    },
+    "engine_code_sha256": "c34ba7a27d159b9b71730cf2fa771fe42adaf42c6d7426b5ac9db47f469ccf3b"
+  },
+  "no_population_similarity_score": true,
+  "interpretation": "new structural relations and refit bounds consume the same source observations and independently fitted error model; all known query coordinates are retained; no best-case selection"
+}
+

@@ -1,0 +1,128 @@
+...........................F.........                                    [100%]
+=================================== FAILURES ===================================
+_ test_missing_reference_vertex_does_not_shrink_denominators_or_imply_agreement _
+
+self = <facemath.observation.instrument.FacialInstrument object at 0x7f16efe73800>
+image_a = array([[[73, 73, 73],
+        [71, 71, 71],
+        [74, 74, 74],
+        ...,
+        [78, 78, 78],
+        [76, 76, ...73],
+        ...,
+        [68, 68, 68],
+        [64, 64, 64],
+        [69, 69, 69]]], shape=(224, 256, 3), dtype=uint8)
+image_b = array([[[82, 82, 82],
+        [73, 73, 73],
+        [70, 70, 70],
+        ...,
+        [78, 78, 78],
+        [76, 76, ...67],
+        ...,
+        [67, 67, 67],
+        [63, 63, 63],
+        [62, 62, 62]]], shape=(224, 256, 3), dtype=uint8)
+observation_a = Observation(image_sha256='017456d87ba667e259b43be52cbbd7b61c915ef9547df245a01ce7f6721340df', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+observation_b = Observation(image_sha256='d313b50bec46b67b1be1dd260a2bbdeb23b06af105829fbe96a8d38afd549300', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+
+    def run(self, image_a: np.ndarray, image_b: np.ndarray,
+            observation_a: Observation | None = None,
+            observation_b: Observation | None = None) -> InstrumentResult:
+        journal = Journal()
+        try:
+>           return self._execute(image_a, image_b, observation_a, observation_b, journal)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+src/facemath/observation/instrument.py:121: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/instrument.py:143: in _execute
+    state = canonicalize(a, b, observation_a, observation_b, anatomy, self.config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/canonical.py:283: in canonicalize
+    cb = eye_chart(b.xy, anatomy, config)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+xy = array([[ 84.,  48.],
+       [172.,  48.],
+       [ 94.,  80.],
+       [114.,  80.],
+       [104.,  74.],
+       [104.,...[144., 138.],
+       [128., 134.],
+       [128., 144.],
+       [ -1.,  -1.],
+       [ 92., 152.],
+       [164., 152.]])
+anatomy = Anatomy(schema='semantic21.v1', anchors=mappingproxy({'temple_left': (0,), 'temple_right': (1,), 'left_eye_outer': (2,...ose_tip', 'mouth_left', 'mouth_right', 'temple_left', 'temple_right', 'jaw_left', 'jaw_right', 'chin'), point_count=21)
+config = InstrumentConfig(canvas_size=256, eye_span_px=80.0, minimum_source_eye_span_px=8.0, huber_delta_ipd=0.04, fit_iteratio...e_rad=0.08726646259971647, intrinsic_area_tolerance=0.05, intrinsic_asymmetry_tolerance=0.05, intrinsic_directions=128)
+
+    def eye_chart(xy: np.ndarray, anatomy: Anatomy, config: InstrumentConfig) -> np.ndarray:
+        anchors = anatomy.points(xy)
+        left, right = anchors["left_eye"], anchors["right_eye"]
+        d = eye_span(xy, anatomy)
+        x = (right - left) / d
+        rotation = np.array([[x[0], x[1]], [-x[1], x[0]]])
+        matrix = np.eye(3)
+        matrix[:2, :2] = (config.eye_span_px / d) * rotation
+        origin = np.array([config.canvas_size / 2, .34 * config.canvas_size])
+        matrix[:2, 2] = origin - matrix[:2, :2] @ ((left + right) / 2)
+        if apply_points(np.array([anchors["chin"]]), matrix)[0, 1] <= origin[1]:
+>           raise ObservationError("face side/orientation convention inconsistent; do not silently reflect")
+E           facemath.observation.contracts.ObservationError: face side/orientation convention inconsistent; do not silently reflect
+
+src/facemath/observation/canonical.py:206: ObservationError
+
+The above exception was the direct cause of the following exception:
+
+    def test_missing_reference_vertex_does_not_shrink_denominators_or_imply_agreement():
+        r,args=run_pair()
+        a,b,oa,ob=args
+        p=ob.xy.copy();p[ob.names.index('chin')]=[-1,-1]
+        ob=replace(ob,xy=p,samples=p[None])
+        bad=FacialInstrument(configuration(),localization_calibration=calibration(oa),
+>           query_groups=('a','b'),domain='analytic-test-only').run(a,b,oa,ob)
+                                                                ^^^^^^^^^^^^^^
+
+tests/test_wave6_intrinsic.py:196: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <facemath.observation.instrument.FacialInstrument object at 0x7f16efe73800>
+image_a = array([[[73, 73, 73],
+        [71, 71, 71],
+        [74, 74, 74],
+        ...,
+        [78, 78, 78],
+        [76, 76, ...73],
+        ...,
+        [68, 68, 68],
+        [64, 64, 64],
+        [69, 69, 69]]], shape=(224, 256, 3), dtype=uint8)
+image_b = array([[[82, 82, 82],
+        [73, 73, 73],
+        [70, 70, 70],
+        ...,
+        [78, 78, 78],
+        [76, 76, ...67],
+        ...,
+        [67, 67, 67],
+        [63, 63, 63],
+        [62, 62, 62]]], shape=(224, 256, 3), dtype=uint8)
+observation_a = Observation(image_sha256='017456d87ba667e259b43be52cbbd7b61c915ef9547df245a01ce7f6721340df', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+observation_b = Observation(image_sha256='d313b50bec46b67b1be1dd260a2bbdeb23b06af105829fbe96a8d38afd549300', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+
+    def run(self, image_a: np.ndarray, image_b: np.ndarray,
+            observation_a: Observation | None = None,
+            observation_b: Observation | None = None) -> InstrumentResult:
+        journal = Journal()
+        try:
+            return self._execute(image_a, image_b, observation_a, observation_b, journal)
+        except ObservationError as exc:
+>           raise InstrumentFailure(str(exc), journal.jsonl()) from exc
+E           facemath.observation.instrument.InstrumentFailure: face side/orientation convention inconsistent; do not silently reflect
+
+src/facemath/observation/instrument.py:123: InstrumentFailure
+=========================== short test summary info ============================
+FAILED tests/test_wave6_intrinsic.py::test_missing_reference_vertex_does_not_shrink_denominators_or_imply_agreement - facemath.observation.instrument.InstrumentFailure: face side/orientation convention inconsistent; do not silently reflect
+1 failed, 36 passed in 2.84s

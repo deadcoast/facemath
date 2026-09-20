@@ -1,0 +1,97 @@
+{
+  "format": "facemath.intrinsic_set_controls.v6",
+  "seed": 26091,
+  "kind": "analytic_and_synthetic_set_falsification_NOT_HUMAN_DATA",
+  "sampled_shape_pairs": 1024,
+  "relation_checks": 262144,
+  "bounded_relation_count": 256,
+  "sampled_relation_violations": 0,
+  "sampled_refit_violations": 0,
+  "refitted_shape_bounds": {
+    "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+    "observed_rms": 0.0699996145056126,
+    "reference_set_center_rms": 0.0699996145056126,
+    "lower": 0.012004176869997841,
+    "upper": 0.21297134840557203,
+    "available": true,
+    "reason": "bounded",
+    "distance_matrix_lower": 0.012004176870026263,
+    "quotient_lipschitz_lower": 0.0,
+    "quotient_lipschitz_upper": 0.24042843027265592,
+    "candidate_rotation_upper": 0.2129713484055436,
+    "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+    "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+    "arrays": [
+      "intrinsic_shape_deviation_radii",
+      "intrinsic_shape_candidate_rotation"
+    ]
+  },
+  "sampled_refit_range": [
+    0.04747050289285807,
+    0.11104390445278915
+  ],
+  "normalizer_counterexample": {
+    "frozen_denominator_value": 0.6800735254367721,
+    "actual_value": 0.8500919067959652,
+    "absolute_frozen_error": 0.17001838135919312,
+    "propagated_bounds": {
+      "lower": 0.5667279378639082,
+      "upper": 0.8500919067960656,
+      "available": true,
+      "reason": "bounded"
+    },
+    "contains_actual": true
+  },
+  "reflection_control": {
+    "distance_matrix_max_gap": 0.0,
+    "proper_shape_rms": 0.833715399896535
+  },
+  "zero_radius_limit": {
+    "range_width": 2.022687572988957e-13,
+    "true_rms": 0.0699996145056117
+  },
+  "collapsed_normalizer": {
+    "eye_span": {
+      "lower": 0.0,
+      "upper": 2.2000000000000632,
+      "available": true,
+      "reason": "bounded"
+    },
+    "mouth_ratio": {
+      "lower": null,
+      "upper": null,
+      "available": false,
+      "reason": "denominator_may_vanish"
+    }
+  },
+  "cancellation": {
+    "same_length_divisor": {
+      "lower": 1.0,
+      "upper": 1.0,
+      "available": true,
+      "reason": "shared_expression_cancels"
+    },
+    "repeated_vector_cross": {
+      "lower": 0.0,
+      "upper": 0.0,
+      "available": true,
+      "reason": "shared_expression_cancels"
+    }
+  },
+  "limitations": [
+    "samples falsify violations but do not prove global containment",
+    "analytic outer bounds, not exact extrema or formally validated interval arithmetic",
+    "product error sets do not assert independent landmarks",
+    "no model inference, human annotations, or population similarity calibration"
+  ],
+  "array_axes": {
+    "draws_a": "[sample, reference8, xy]",
+    "draws_b": "[sample, reference8, xy]",
+    "values_a": "[sample, relation256]",
+    "values_b": "[sample, relation256]",
+    "source_lower": "[source, relation256]",
+    "source_upper": "[source, relation256]",
+    "refitted_rms": "[sample]",
+    "relation_gap": "[sample, relation256]"
+  }
+}

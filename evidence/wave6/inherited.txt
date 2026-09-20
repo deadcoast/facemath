@@ -1,0 +1,251 @@
+...........................................................F............ [ 19%]
+........................................................................ [ 38%]
+s....................................................................... [ 58%]
+.................................................FFF.................... [ 77%]
+....................................F..............F.................... [ 97%]
+...........                                                              [100%]
+=================================== FAILURES ===================================
+________ test_module_entrypoint_reports_version_from_another_directory _________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_module_entrypoint_reports0')
+
+    def test_module_entrypoint_reports_version_from_another_directory(tmp_path):
+>       result = subprocess.run([sys.executable, '-m', 'facemath', '--version'], cwd=tmp_path,
+                                text=True, capture_output=True, check=True)
+
+tests/test_wave3_cli.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/opt/pyvenv/bin/python', '-m', 'facemath', '--version'],)
+kwargs = {'cwd': PosixPath('/tmp/pytest-of-root/pytest-0/test_module_entrypoint_reports0'), 'stderr': -1, 'stdout': -1, 'text': True}
+process = <Popen: returncode: 1 args: ['/opt/pyvenv/bin/python', '-m', 'facemath', '--...>
+stdout = '', stderr = '/opt/pyvenv/bin/python: No module named facemath\n'
+retcode = 1
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/opt/pyvenv/bin/python', '-m', 'facemath', '--version']' returned non-zero exit status 1.
+
+/usr/lib/python3.13/subprocess.py:577: CalledProcessError
+___________________ test_validation_cli_and_replay_dispatch ____________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_validation_cli_and_replay0')
+
+    def test_validation_cli_and_replay_dispatch(tmp_path):
+        source=study(tmp_path/'inputs');run=tmp_path/'run'
+        cmd=[sys.executable,'-m','facemath']
+        for args in [ ['validate-observer',str(source),'--out',str(run)],
+                      ['verify',str(run)],['replay',str(run),'--out',str(tmp_path/'replay')]]:
+            p=subprocess.run(cmd+args,capture_output=True,text=True)
+>           assert p.returncode==0,p.stderr
+E           AssertionError: /opt/pyvenv/bin/python: No module named facemath
+E             
+E           assert 1 == 0
+E            +  where 1 = CompletedProcess(args=['/opt/pyvenv/bin/python', '-m', 'facemath', 'validate-observer', '/tmp/pytest-of-root/pytest-0/...validation_cli_and_replay0/run'], returncode=1, stdout='', stderr='/opt/pyvenv/bin/python: No module named facemath\n').returncode
+
+tests/test_wave4_io.py:140: AssertionError
+______________________ test_doctor_never_claims_inference ______________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_doctor_never_claims_infer0')
+
+    def test_doctor_never_claims_inference(tmp_path):
+        p=subprocess.run([sys.executable,'-m','facemath','doctor','--model',str(tmp_path/'missing.task')],capture_output=True,text=True)
+>       assert p.returncode==0,p.stderr
+E       AssertionError: /opt/pyvenv/bin/python: No module named facemath
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/opt/pyvenv/bin/python', '-m', 'facemath', 'doctor', '--model', '/tmp/pytest-of-root/pytest-0/...ver_claims_infer0/missing.task'], returncode=1, stdout='', stderr='/opt/pyvenv/bin/python: No module named facemath\n').returncode
+
+tests/test_wave4_io.py:147: AssertionError
+_ test_biased_but_repeatable_observer_is_not_mistaken_for_precise_localization _
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_biased_but_repeatable_obs0')
+
+    def test_biased_but_repeatable_observer_is_not_mistaken_for_precise_localization(tmp_path):
+        result=run_localization_laboratory(tmp_path/'lab')
+        assert result['mean_perturbation_rms_px']<.025
+        assert result['heldout_mean_localization_error_px']>1.0
+        assert result['bias_to_repeatability_ratio']>50
+        assert result['naive_3sigma_simultaneous_hit_fraction_including_failures']==0
+        assert result['calibration_failed_groups']==1
+        assert result['evaluation_failed_cases']==1
+        assert result['conformal_rank']==37
+        assert result['fixed_gauge_bounds_contain_rendered_reference']
+        assert set(result['pair_localization_statuses'])=={'unresolved_at_tolerance'}
+        validation=tmp_path/'lab/validation'
+        assert replay_validation_bundle(validation,tmp_path/'validation_replay')['replay_verified']
+        p=subprocess.run([sys.executable,'-m','facemath','replay',str(tmp_path/'lab/qualified_pair'),
+                          '--out',str(tmp_path/'pair_replay')],capture_output=True,text=True)
+>       assert p.returncode==0,p.stderr
+E       AssertionError: /opt/pyvenv/bin/python: No module named facemath
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/opt/pyvenv/bin/python', '-m', 'facemath', 'replay', '/tmp/pytest-of-root/pytest-0/test_biased...ut_repeatable_obs0/pair_replay'], returncode=1, stdout='', stderr='/opt/pyvenv/bin/python: No module named facemath\n').returncode
+
+tests/test_wave4_lab.py:26: AssertionError
+___ test_native_worker_actually_executes_failure_path_without_fake_landmarks ___
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_native_worker_actually_ex0')
+
+    def test_native_worker_actually_executes_failure_path_without_fake_landmarks(tmp_path):
+        image = np.full((32, 48, 3), 140, np.uint8)
+        save_rgb(tmp_path/'source.png', image)
+        out = tmp_path/'attempt'; out.mkdir()
+        executor = NativeExecutor(tmp_path/'does-not-exist.task', timeout_seconds=15)
+        result = executor.execute(tmp_path/'source.png', ObserverDeclaration.mediapipe('1'*64, '1.0.1'), out)
+        assert result.observation is None and result.status in ('contract_error', 'runtime_error')
+        assert (out/'stderr.txt').exists() and (out/'stdout.txt').exists()
+        process = read_json(out/'process.json')
+        assert process['returncode'] != 0 and not process['timed_out']
+        request = read_json(out/'request.json')
+        assert set(request) == {'format', 'image', 'model', 'observer', 'engine_code_sha256', 'numeric_environment'}
+        assert 'references' not in request and 'split' not in request and 'stratum' not in request
+>       response = read_json(out/'response.json')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_wave5_execution.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/study.py:32: in read_json
+    return json.loads(Path(path).read_text(encoding="utf-8"), parse_constant=reject_constant)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_local.py:548: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/tmp/pytest-of-root/pytest-0/test_native_worker_actually_ex0/attempt/response.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/tmp/pytest-of-root/pytest-0/test_native_worker_actually_ex0/attempt/response.json'
+
+/usr/lib/python3.13/pathlib/_local.py:539: FileNotFoundError
+________________ test_prospective_cli_freeze_verify_and_status _________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_prospective_cli_freeze_ve0')
+
+    def test_prospective_cli_freeze_verify_and_status(tmp_path):
+        spec, executor, _=make_fixture_study(tmp_path/'inputs',development=5,calibration=2,evaluation=2)
+        def command(*args):
+            p=subprocess.run([sys.executable,'-m','facemath',*map(str,args)],cwd=tmp_path,
+                             capture_output=True,text=True,timeout=30)
+            assert p.returncode==0,p.stderr
+            return json.loads(p.stdout)
+>       result=command('study-freeze',spec,'--out',tmp_path/'frozen')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_wave5_execution.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('study-freeze', PosixPath('/tmp/pytest-of-root/pytest-0/test_prospective_cli_freeze_ve0/inputs/study.json'), '--out', PosixPath('/tmp/pytest-of-root/pytest-0/test_prospective_cli_freeze_ve0/frozen'))
+p = CompletedProcess(args=['/opt/pyvenv/bin/python', '-m', 'facemath', 'study-freeze', '/tmp/pytest-of-root/pytest-0/test_...spective_cli_freeze_ve0/frozen'], returncode=1, stdout='', stderr='/opt/pyvenv/bin/python: No module named facemath\n')
+@py_assert1 = 1, @py_assert4 = 0
+
+    def command(*args):
+        p=subprocess.run([sys.executable,'-m','facemath',*map(str,args)],cwd=tmp_path,
+                         capture_output=True,text=True,timeout=30)
+>       assert p.returncode==0,p.stderr
+E       AssertionError: /opt/pyvenv/bin/python: No module named facemath
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/opt/pyvenv/bin/python', '-m', 'facemath', 'study-freeze', '/tmp/pytest-of-root/pytest-0/test_...spective_cli_freeze_ve0/frozen'], returncode=1, stdout='', stderr='/opt/pyvenv/bin/python: No module named facemath\n').returncode
+
+tests/test_wave5_execution.py:142: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_wave3_cli.py::test_module_entrypoint_reports_version_from_another_directory - subprocess.CalledProcessError: Command '['/opt/pyvenv/bin/python', '-m', 'facemath', '--version']' returned non-zero exit status 1.
+FAILED tests/test_wave4_io.py::test_validation_cli_and_replay_dispatch - AssertionError: /opt/pyvenv/bin/python: No module named facemath
+  
+assert 1 == 0
+ +  where 1 = CompletedProcess(args=['/opt/pyvenv/bin/python', '-m', 'facemath', 'validate-observer', '/tmp/pytest-of-root/pytest-0/...validation_cli_and_replay0/run'], returncode=1, stdout='', stderr='/opt/pyvenv/bin/python: No module named facemath\n').returncode
+FAILED tests/test_wave4_io.py::test_doctor_never_claims_inference - AssertionError: /opt/pyvenv/bin/python: No module named facemath
+  
+assert 1 == 0
+ +  where 1 = CompletedProcess(args=['/opt/pyvenv/bin/python', '-m', 'facemath', 'doctor', '--model', '/tmp/pytest-of-root/pytest-0/...ver_claims_infer0/missing.task'], returncode=1, stdout='', stderr='/opt/pyvenv/bin/python: No module named facemath\n').returncode
+FAILED tests/test_wave4_lab.py::test_biased_but_repeatable_observer_is_not_mistaken_for_precise_localization - AssertionError: /opt/pyvenv/bin/python: No module named facemath
+  
+assert 1 == 0
+ +  where 1 = CompletedProcess(args=['/opt/pyvenv/bin/python', '-m', 'facemath', 'replay', '/tmp/pytest-of-root/pytest-0/test_biased...ut_repeatable_obs0/pair_replay'], returncode=1, stdout='', stderr='/opt/pyvenv/bin/python: No module named facemath\n').returncode
+FAILED tests/test_wave5_execution.py::test_native_worker_actually_executes_failure_path_without_fake_landmarks - FileNotFoundError: [Errno 2] No such file or directory: '/tmp/pytest-of-root/pytest-0/test_native_worker_actually_ex0/attempt/response.json'
+FAILED tests/test_wave5_execution.py::test_prospective_cli_freeze_verify_and_status - AssertionError: /opt/pyvenv/bin/python: No module named facemath
+  
+assert 1 == 0
+ +  where 1 = CompletedProcess(args=['/opt/pyvenv/bin/python', '-m', 'facemath', 'study-freeze', '/tmp/pytest-of-root/pytest-0/test_...spective_cli_freeze_ve0/frozen'], returncode=1, stdout='', stderr='/opt/pyvenv/bin/python: No module named facemath\n').returncode
+6 failed, 364 passed, 1 skipped in 28.89s

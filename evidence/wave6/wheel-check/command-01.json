@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "-c",
+    "import facemath,json; from facemath.observation.journal import code_fingerprint; print(json.dumps({\"file\":facemath.__file__,\"version\":facemath.__version__,\"code_sha256\":code_fingerprint()}))"
+  ],
+  "cwd": "/tmp/facemath-installed-gercjkzx",
+  "started_utc": "2026-09-13T01:00:34.271819+00:00",
+  "finished_utc": "2026-09-13T01:00:35.118960+00:00",
+  "returncode": 0,
+  "stdout": "{\"file\": \"/tmp/facemath-installed-gercjkzx/installed/facemath/__init__.py\", \"version\": \"0.6.0\", \"code_sha256\": \"c34ba7a27d159b9b71730cf2fa771fe42adaf42c6d7426b5ac9db47f469ccf3b\"}\n",
+  "stderr": ""
+}

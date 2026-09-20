@@ -1,0 +1,1420 @@
+{
+  "format": "facemath.qualification.v5",
+  "study_sha256": "58ca9c5339afc7ef0c6b8d8b7d8f3c3d78c60aef42427362a6684b1607c42df5",
+  "raw_validation_sha256": "ac4f3541cbf71d251f38bcd4a42bd3f9fed693eb379d80c9d9433ce7654ae691",
+  "observer_recipe_sha256": "1810e953805e27fd960a285fbaf2a2f765653e957541ea8c4307b75c6afc76c9",
+  "execution_kind": "synthetic_fixture",
+  "live_human_observer_validation": false,
+  "domain": "schematic-ocular-bias-and-unseen-shift-controls-v5-NOT-HUMAN",
+  "bias_mode_selected_before_acquisition": "development_ocular",
+  "raw_coordinates_changed": false,
+  "estimator_selected_using_evaluation": false,
+  "enrollment": {
+    "enrolled": 49,
+    "eligible": 48,
+    "prospectively_excluded": 1,
+    "committed": 48,
+    "outcomes": {
+      "contract_error": 0,
+      "interrupted": 0,
+      "multiple_faces": 0,
+      "no_face": 2,
+      "observed": 46,
+      "runtime_error": 0,
+      "timeout": 0
+    }
+  },
+  "excluded_cases": [
+    {
+      "case_id": "control_048",
+      "group_id": "independent_draw_048",
+      "split": "evaluation",
+      "stratum": "unseen_shift",
+      "exclusion_reason": "prespecified excluded enrollment control; never sent to observer"
+    }
+  ],
+  "raw_baseline": {
+    "quantile": 17.76821803687791,
+    "rank": 23,
+    "coverage": {
+      "calibration_sha256": "cf04ec695a208ca8ba86ba6e25e9105a0a6698ecc42496248dc1469ce482fa50",
+      "nominal_coverage": 0.9,
+      "finite_envelope": true,
+      "evaluation_cases": 12,
+      "evaluation_groups": 12,
+      "covered_groups": 6,
+      "empirical_group_coverage": 0.5,
+      "failures": 1,
+      "cases": [
+        {
+          "case_id": "control_036",
+          "group_id": "independent_draw_036",
+          "score": 19.298796613291316,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_037",
+          "group_id": "independent_draw_037",
+          "score": 14.920112022919096,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_038",
+          "group_id": "independent_draw_038",
+          "score": 16.251007472440914,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_039",
+          "group_id": "independent_draw_039",
+          "score": 15.929603895484279,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_040",
+          "group_id": "independent_draw_040",
+          "score": 15.981411255131192,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_041",
+          "group_id": "independent_draw_041",
+          "score": 14.005049813445655,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_042",
+          "group_id": "independent_draw_042",
+          "score": 12.270302987097207,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_043",
+          "group_id": "independent_draw_043",
+          "score": null,
+          "assessable": false,
+          "covered": false
+        },
+        {
+          "case_id": "control_044",
+          "group_id": "independent_draw_044",
+          "score": 29.48427327089417,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_045",
+          "group_id": "independent_draw_045",
+          "score": 32.90594481681995,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_046",
+          "group_id": "independent_draw_046",
+          "score": 29.068770262159795,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_047",
+          "group_id": "independent_draw_047",
+          "score": 38.624889914854855,
+          "assessable": true,
+          "covered": false
+        }
+      ],
+      "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage"
+    }
+  },
+  "selected_error_model": {
+    "calibration_sha256": "67bbe9c35ec8446255a0ed4a84f42027ebe721ab7f19da42dd214ea96cce7905",
+    "quantile": 3.160667736120253,
+    "rank": 23,
+    "bias_sha256": "6d1e6c36daa15df4e68c04146334e65a7c20ed0ecab684e3d89706ce2c1e76ba",
+    "development_groups": 12,
+    "fitted_development_groups": 12,
+    "development_cases_rejected": [],
+    "coverage": {
+      "calibration_sha256": "499f168007308513061aac944f8ff57aacc24bbb54a3888248d30cec2084cf63",
+      "nominal_coverage": 0.9,
+      "finite_envelope": true,
+      "evaluation_cases": 12,
+      "evaluation_groups": 12,
+      "covered_groups": 7,
+      "empirical_group_coverage": 0.5833333333333334,
+      "failures": 1,
+      "cases": [
+        {
+          "case_id": "control_036",
+          "group_id": "independent_draw_036",
+          "score": 2.104622944882403,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_037",
+          "group_id": "independent_draw_037",
+          "score": 1.156543956404779,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_038",
+          "group_id": "independent_draw_038",
+          "score": 1.9542736607820987,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_039",
+          "group_id": "independent_draw_039",
+          "score": 1.9444226880500477,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_040",
+          "group_id": "independent_draw_040",
+          "score": 1.0621725954461938,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_041",
+          "group_id": "independent_draw_041",
+          "score": 1.9463914441756858,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_042",
+          "group_id": "independent_draw_042",
+          "score": 2.1131291688804845,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "control_043",
+          "group_id": "independent_draw_043",
+          "score": null,
+          "assessable": false,
+          "covered": false
+        },
+        {
+          "case_id": "control_044",
+          "group_id": "independent_draw_044",
+          "score": 20.84830001279423,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_045",
+          "group_id": "independent_draw_045",
+          "score": 24.098698806289395,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_046",
+          "group_id": "independent_draw_046",
+          "score": 20.477936769784673,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "control_047",
+          "group_id": "independent_draw_047",
+          "score": 27.49649556976076,
+          "assessable": true,
+          "covered": false
+        }
+      ],
+      "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage",
+      "full_error_model_sha256": "67bbe9c35ec8446255a0ed4a84f42027ebe721ab7f19da42dd214ea96cce7905",
+      "score_centering": "development_ocular",
+      "binomial_95_interval": [
+        0.2766696856821058,
+        0.8483477701915698
+      ]
+    }
+  },
+  "slices": [
+    {
+      "stratum": "clear",
+      "prespecified": true,
+      "calibration_groups": 16,
+      "has_calibration_representation": true,
+      "evaluation": {
+        "cases": 5,
+        "groups": 5,
+        "covered_groups": 4,
+        "empirical_coverage": 0.8,
+        "binomial_95_interval": [
+          0.2835820638819105,
+          0.9949492366205319
+        ],
+        "case_count_per_group": {
+          "independent_draw_037": 1,
+          "independent_draw_038": 1,
+          "independent_draw_040": 1,
+          "independent_draw_041": 1,
+          "independent_draw_043": 1
+        },
+        "scope": "all scored reference points in this slice's cases per group; overlapping slices are not pooled",
+        "interval_assumption": "independent comparable Bernoulli groups; not implied by marginal conformal exchangeability"
+      },
+      "raw_localization": {
+        "attempted_cases": 5,
+        "complete_cases": 4,
+        "failed_cases": 1,
+        "groups": 5,
+        "reference_kind": "synthetic_fixture",
+        "successful_case_mean_nme": 0.03004417455036142,
+        "unconditional_auc": 0.5596466035971087,
+        "auc_threshold_ipd": 0.1,
+        "pck_threshold_ipd": 0.05,
+        "eligible_landmarks": 40,
+        "observed_landmarks": 32,
+        "pck_including_failures": 0.7,
+        "per_landmark": [
+          {
+            "name": "left_eye_outer",
+            "eligible": 5,
+            "observed": 4,
+            "within_tolerance": 4,
+            "pck": 0.8,
+            "median_error_px": 1.0274613091347296
+          },
+          {
+            "name": "left_eye_inner",
+            "eligible": 5,
+            "observed": 4,
+            "within_tolerance": 4,
+            "pck": 0.8,
+            "median_error_px": 1.0195635877083564
+          },
+          {
+            "name": "right_eye_inner",
+            "eligible": 5,
+            "observed": 4,
+            "within_tolerance": 4,
+            "pck": 0.8,
+            "median_error_px": 1.0180109827956365
+          },
+          {
+            "name": "right_eye_outer",
+            "eligible": 5,
+            "observed": 4,
+            "within_tolerance": 4,
+            "pck": 0.8,
+            "median_error_px": 1.0857566537670054
+          },
+          {
+            "name": "nose_tip",
+            "eligible": 5,
+            "observed": 4,
+            "within_tolerance": 4,
+            "pck": 0.8,
+            "median_error_px": 1.9914102808348058
+          },
+          {
+            "name": "mouth_left",
+            "eligible": 5,
+            "observed": 4,
+            "within_tolerance": 4,
+            "pck": 0.8,
+            "median_error_px": 1.4776966465576304
+          },
+          {
+            "name": "mouth_right",
+            "eligible": 5,
+            "observed": 4,
+            "within_tolerance": 4,
+            "pck": 0.8,
+            "median_error_px": 1.4231910184039411
+          },
+          {
+            "name": "chin",
+            "eligible": 5,
+            "observed": 4,
+            "within_tolerance": 0,
+            "pck": 0.0,
+            "median_error_px": 2.7925054202767785
+          }
+        ],
+        "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+        "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+        "covariance_limit": "perturbation repeatability is not localization accuracy",
+        "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+      },
+      "conditional_coverage_guaranteed": false
+    },
+    {
+      "stratum": "degraded",
+      "prespecified": true,
+      "calibration_groups": 8,
+      "has_calibration_representation": true,
+      "evaluation": {
+        "cases": 3,
+        "groups": 3,
+        "covered_groups": 3,
+        "empirical_coverage": 1.0,
+        "binomial_95_interval": [
+          0.2924017738212866,
+          1.0
+        ],
+        "case_count_per_group": {
+          "independent_draw_036": 1,
+          "independent_draw_039": 1,
+          "independent_draw_042": 1
+        },
+        "scope": "all scored reference points in this slice's cases per group; overlapping slices are not pooled",
+        "interval_assumption": "independent comparable Bernoulli groups; not implied by marginal conformal exchangeability"
+      },
+      "raw_localization": {
+        "attempted_cases": 3,
+        "complete_cases": 3,
+        "failed_cases": 0,
+        "groups": 3,
+        "reference_kind": "synthetic_fixture",
+        "successful_case_mean_nme": 0.03124582419020229,
+        "unconditional_auc": 0.6875417580979771,
+        "auc_threshold_ipd": 0.1,
+        "pck_threshold_ipd": 0.05,
+        "eligible_landmarks": 24,
+        "observed_landmarks": 24,
+        "pck_including_failures": 0.875,
+        "per_landmark": [
+          {
+            "name": "left_eye_outer",
+            "eligible": 3,
+            "observed": 3,
+            "within_tolerance": 3,
+            "pck": 1.0,
+            "median_error_px": 1.3481661709316597
+          },
+          {
+            "name": "left_eye_inner",
+            "eligible": 3,
+            "observed": 3,
+            "within_tolerance": 3,
+            "pck": 1.0,
+            "median_error_px": 1.2548248023480482
+          },
+          {
+            "name": "right_eye_inner",
+            "eligible": 3,
+            "observed": 3,
+            "within_tolerance": 3,
+            "pck": 1.0,
+            "median_error_px": 0.9283942897669006
+          },
+          {
+            "name": "right_eye_outer",
+            "eligible": 3,
+            "observed": 3,
+            "within_tolerance": 3,
+            "pck": 1.0,
+            "median_error_px": 1.0758806195789437
+          },
+          {
+            "name": "nose_tip",
+            "eligible": 3,
+            "observed": 3,
+            "within_tolerance": 3,
+            "pck": 1.0,
+            "median_error_px": 2.074325633528131
+          },
+          {
+            "name": "mouth_left",
+            "eligible": 3,
+            "observed": 3,
+            "within_tolerance": 3,
+            "pck": 1.0,
+            "median_error_px": 1.7337787073616218
+          },
+          {
+            "name": "mouth_right",
+            "eligible": 3,
+            "observed": 3,
+            "within_tolerance": 3,
+            "pck": 1.0,
+            "median_error_px": 1.777700318781721
+          },
+          {
+            "name": "chin",
+            "eligible": 3,
+            "observed": 3,
+            "within_tolerance": 0,
+            "pck": 0.0,
+            "median_error_px": 2.8693888125715015
+          }
+        ],
+        "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+        "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+        "covariance_limit": "perturbation repeatability is not localization accuracy",
+        "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+      },
+      "conditional_coverage_guaranteed": false
+    },
+    {
+      "stratum": "unseen_shift",
+      "prespecified": true,
+      "calibration_groups": 0,
+      "has_calibration_representation": false,
+      "evaluation": {
+        "cases": 4,
+        "groups": 4,
+        "covered_groups": 0,
+        "empirical_coverage": 0.0,
+        "binomial_95_interval": [
+          0.0,
+          0.6023646356164746
+        ],
+        "case_count_per_group": {
+          "independent_draw_044": 1,
+          "independent_draw_045": 1,
+          "independent_draw_046": 1,
+          "independent_draw_047": 1
+        },
+        "scope": "all scored reference points in this slice's cases per group; overlapping slices are not pooled",
+        "interval_assumption": "independent comparable Bernoulli groups; not implied by marginal conformal exchangeability"
+      },
+      "raw_localization": {
+        "attempted_cases": 4,
+        "complete_cases": 4,
+        "failed_cases": 0,
+        "groups": 4,
+        "reference_kind": "synthetic_fixture",
+        "successful_case_mean_nme": 0.06963924233910627,
+        "unconditional_auc": 0.30360757660893734,
+        "auc_threshold_ipd": 0.1,
+        "pck_threshold_ipd": 0.05,
+        "eligible_landmarks": 32,
+        "observed_landmarks": 32,
+        "pck_including_failures": 0.5,
+        "per_landmark": [
+          {
+            "name": "left_eye_outer",
+            "eligible": 4,
+            "observed": 4,
+            "within_tolerance": 4,
+            "pck": 1.0,
+            "median_error_px": 0.9752994280085234
+          },
+          {
+            "name": "left_eye_inner",
+            "eligible": 4,
+            "observed": 4,
+            "within_tolerance": 4,
+            "pck": 1.0,
+            "median_error_px": 1.048368261171034
+          },
+          {
+            "name": "right_eye_inner",
+            "eligible": 4,
+            "observed": 4,
+            "within_tolerance": 4,
+            "pck": 1.0,
+            "median_error_px": 0.9409387244403485
+          },
+          {
+            "name": "right_eye_outer",
+            "eligible": 4,
+            "observed": 4,
+            "within_tolerance": 4,
+            "pck": 1.0,
+            "median_error_px": 1.064645824686997
+          },
+          {
+            "name": "nose_tip",
+            "eligible": 4,
+            "observed": 4,
+            "within_tolerance": 0,
+            "pck": 0.0,
+            "median_error_px": 4.818687276327404
+          },
+          {
+            "name": "mouth_left",
+            "eligible": 4,
+            "observed": 4,
+            "within_tolerance": 0,
+            "pck": 0.0,
+            "median_error_px": 5.42189426475209
+          },
+          {
+            "name": "mouth_right",
+            "eligible": 4,
+            "observed": 4,
+            "within_tolerance": 0,
+            "pck": 0.0,
+            "median_error_px": 5.249549735427182
+          },
+          {
+            "name": "chin",
+            "eligible": 4,
+            "observed": 4,
+            "within_tolerance": 0,
+            "pck": 0.0,
+            "median_error_px": 5.645214997931243
+          }
+        ],
+        "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+        "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+        "covariance_limit": "perturbation repeatability is not localization accuracy",
+        "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+      },
+      "conditional_coverage_guaranteed": false
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "control_000",
+      "group_id": "independent_draw_000",
+      "split": "development",
+      "stratum": "degraded",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.5294709384821314,
+      "centered_mean_error_px": 0.27536634584131114,
+      "raw_simultaneous_score": 15.039258610180251,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00000.png",
+      "receipt": "acquisition/cases/case_00000/receipt.json"
+    },
+    {
+      "case_id": "control_001",
+      "group_id": "independent_draw_001",
+      "split": "development",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.4150669553521906,
+      "centered_mean_error_px": 0.16839864949917976,
+      "raw_simultaneous_score": 15.580126572768352,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00001.png",
+      "receipt": "acquisition/cases/case_00001/receipt.json"
+    },
+    {
+      "case_id": "control_002",
+      "group_id": "independent_draw_002",
+      "split": "development",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.7003944502656134,
+      "centered_mean_error_px": 0.18829041526261256,
+      "raw_simultaneous_score": 17.89045779463998,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00002.png",
+      "receipt": "acquisition/cases/case_00002/receipt.json"
+    },
+    {
+      "case_id": "control_003",
+      "group_id": "independent_draw_003",
+      "split": "development",
+      "stratum": "degraded",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.4012793211369838,
+      "centered_mean_error_px": 0.21046934168777398,
+      "raw_simultaneous_score": 13.226088395324256,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00003.png",
+      "receipt": "acquisition/cases/case_00003/receipt.json"
+    },
+    {
+      "case_id": "control_004",
+      "group_id": "independent_draw_004",
+      "split": "development",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.4936959246712398,
+      "centered_mean_error_px": 0.2098215662761374,
+      "raw_simultaneous_score": 14.863232854357383,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00004.png",
+      "receipt": "acquisition/cases/case_00004/receipt.json"
+    },
+    {
+      "case_id": "control_005",
+      "group_id": "independent_draw_005",
+      "split": "development",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.3690815445944073,
+      "centered_mean_error_px": 0.1886859287585489,
+      "raw_simultaneous_score": 14.386454411046499,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00005.png",
+      "receipt": "acquisition/cases/case_00005/receipt.json"
+    },
+    {
+      "case_id": "control_006",
+      "group_id": "independent_draw_006",
+      "split": "development",
+      "stratum": "degraded",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.2436295039013752,
+      "centered_mean_error_px": 0.25468619613946636,
+      "raw_simultaneous_score": 11.804061775166572,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00006.png",
+      "receipt": "acquisition/cases/case_00006/receipt.json"
+    },
+    {
+      "case_id": "control_007",
+      "group_id": "independent_draw_007",
+      "split": "development",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.4250911903630188,
+      "centered_mean_error_px": 0.18877704900819595,
+      "raw_simultaneous_score": 13.798779770368657,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00007.png",
+      "receipt": "acquisition/cases/case_00007/receipt.json"
+    },
+    {
+      "case_id": "control_008",
+      "group_id": "independent_draw_008",
+      "split": "development",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.2405154637293019,
+      "centered_mean_error_px": 0.10358831907211384,
+      "raw_simultaneous_score": 12.83539304298044,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00008.png",
+      "receipt": "acquisition/cases/case_00008/receipt.json"
+    },
+    {
+      "case_id": "control_009",
+      "group_id": "independent_draw_009",
+      "split": "development",
+      "stratum": "degraded",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.606128083043775,
+      "centered_mean_error_px": 0.20805623283545355,
+      "raw_simultaneous_score": 16.44033807549018,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00009.png",
+      "receipt": "acquisition/cases/case_00009/receipt.json"
+    },
+    {
+      "case_id": "control_010",
+      "group_id": "independent_draw_010",
+      "split": "development",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.6818100852702802,
+      "centered_mean_error_px": 0.2042316991818256,
+      "raw_simultaneous_score": 16.871604640321774,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00010.png",
+      "receipt": "acquisition/cases/case_00010/receipt.json"
+    },
+    {
+      "case_id": "control_011",
+      "group_id": "independent_draw_011",
+      "split": "development",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.1986809455386027,
+      "centered_mean_error_px": 0.23057762379442825,
+      "raw_simultaneous_score": 13.746408127080386,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00011.png",
+      "receipt": "acquisition/cases/case_00011/receipt.json"
+    },
+    {
+      "case_id": "control_012",
+      "group_id": "independent_draw_012",
+      "split": "calibration",
+      "stratum": "degraded",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.288617881880831,
+      "centered_mean_error_px": 0.265302680383243,
+      "raw_simultaneous_score": 13.860946455110158,
+      "selected_simultaneous_score": 2.429470776034589,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00012.png",
+      "receipt": "acquisition/cases/case_00012/receipt.json"
+    },
+    {
+      "case_id": "control_013",
+      "group_id": "independent_draw_013",
+      "split": "calibration",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.2365481798370248,
+      "centered_mean_error_px": 0.20912733056148142,
+      "raw_simultaneous_score": 13.671370890908708,
+      "selected_simultaneous_score": 1.8791300893722982,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00013.png",
+      "receipt": "acquisition/cases/case_00013/receipt.json"
+    },
+    {
+      "case_id": "control_014",
+      "group_id": "independent_draw_014",
+      "split": "calibration",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.4268575502270435,
+      "centered_mean_error_px": 0.16545270473651302,
+      "raw_simultaneous_score": 14.677317833933685,
+      "selected_simultaneous_score": 2.5474669071347034,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00014.png",
+      "receipt": "acquisition/cases/case_00014/receipt.json"
+    },
+    {
+      "case_id": "control_015",
+      "group_id": "independent_draw_015",
+      "split": "calibration",
+      "stratum": "degraded",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.3698098483000276,
+      "centered_mean_error_px": 0.20400538891313852,
+      "raw_simultaneous_score": 15.155920734267166,
+      "selected_simultaneous_score": 1.7772452573295836,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00015.png",
+      "receipt": "acquisition/cases/case_00015/receipt.json"
+    },
+    {
+      "case_id": "control_016",
+      "group_id": "independent_draw_016",
+      "split": "calibration",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.4196440005070297,
+      "centered_mean_error_px": 0.1985889153951282,
+      "raw_simultaneous_score": 13.032638124242977,
+      "selected_simultaneous_score": 2.409641057690282,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00016.png",
+      "receipt": "acquisition/cases/case_00016/receipt.json"
+    },
+    {
+      "case_id": "control_017",
+      "group_id": "independent_draw_017",
+      "split": "calibration",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.647740862874738,
+      "centered_mean_error_px": 0.169298882122979,
+      "raw_simultaneous_score": 16.219558500256145,
+      "selected_simultaneous_score": 2.386356230402978,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00017.png",
+      "receipt": "acquisition/cases/case_00017/receipt.json"
+    },
+    {
+      "case_id": "control_018",
+      "group_id": "independent_draw_018",
+      "split": "calibration",
+      "stratum": "degraded",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.1667274918285258,
+      "centered_mean_error_px": 0.19950979921873774,
+      "raw_simultaneous_score": 12.179383132920558,
+      "selected_simultaneous_score": 2.16257850841693,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00018.png",
+      "receipt": "acquisition/cases/case_00018/receipt.json"
+    },
+    {
+      "case_id": "control_019",
+      "group_id": "independent_draw_019",
+      "split": "calibration",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.6387223066600582,
+      "centered_mean_error_px": 0.16273503867957384,
+      "raw_simultaneous_score": 17.76821803687791,
+      "selected_simultaneous_score": 1.9585351096630195,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00019.png",
+      "receipt": "acquisition/cases/case_00019/receipt.json"
+    },
+    {
+      "case_id": "control_020",
+      "group_id": "independent_draw_020",
+      "split": "calibration",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.6568988624464787,
+      "centered_mean_error_px": 0.12248243413386636,
+      "raw_simultaneous_score": 16.57096776947841,
+      "selected_simultaneous_score": 1.2493320224604125,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00020.png",
+      "receipt": "acquisition/cases/case_00020/receipt.json"
+    },
+    {
+      "case_id": "control_021",
+      "group_id": "independent_draw_021",
+      "split": "calibration",
+      "stratum": "degraded",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.508513779549473,
+      "centered_mean_error_px": 0.27424576133314527,
+      "raw_simultaneous_score": 15.791481098429864,
+      "selected_simultaneous_score": 2.287991782261069,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00021.png",
+      "receipt": "acquisition/cases/case_00021/receipt.json"
+    },
+    {
+      "case_id": "control_022",
+      "group_id": "independent_draw_022",
+      "split": "calibration",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.1952854206989683,
+      "centered_mean_error_px": 0.14779441962763923,
+      "raw_simultaneous_score": 12.520176050682078,
+      "selected_simultaneous_score": 1.3706570052837725,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00022.png",
+      "receipt": "acquisition/cases/case_00022/receipt.json"
+    },
+    {
+      "case_id": "control_023",
+      "group_id": "independent_draw_023",
+      "split": "calibration",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.2624201016001342,
+      "centered_mean_error_px": 0.10180938493010913,
+      "raw_simultaneous_score": 13.88983344036499,
+      "selected_simultaneous_score": 1.136454760788189,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00023.png",
+      "receipt": "acquisition/cases/case_00023/receipt.json"
+    },
+    {
+      "case_id": "control_024",
+      "group_id": "independent_draw_024",
+      "split": "calibration",
+      "stratum": "degraded",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.620311869630441,
+      "centered_mean_error_px": 0.36666856162034667,
+      "raw_simultaneous_score": 16.224525902635833,
+      "selected_simultaneous_score": 3.160667736120253,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00024.png",
+      "receipt": "acquisition/cases/case_00024/receipt.json"
+    },
+    {
+      "case_id": "control_025",
+      "group_id": "independent_draw_025",
+      "split": "calibration",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.3713738812502332,
+      "centered_mean_error_px": 0.14203773144543144,
+      "raw_simultaneous_score": 14.803235759934775,
+      "selected_simultaneous_score": 1.5176819995952084,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00025.png",
+      "receipt": "acquisition/cases/case_00025/receipt.json"
+    },
+    {
+      "case_id": "control_026",
+      "group_id": "independent_draw_026",
+      "split": "calibration",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.5120957596864786,
+      "centered_mean_error_px": 0.17886925503911896,
+      "raw_simultaneous_score": 15.085459906279091,
+      "selected_simultaneous_score": 1.8225347845724,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00026.png",
+      "receipt": "acquisition/cases/case_00026/receipt.json"
+    },
+    {
+      "case_id": "control_027",
+      "group_id": "independent_draw_027",
+      "split": "calibration",
+      "stratum": "degraded",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.220316654147082,
+      "centered_mean_error_px": 0.20693989057008394,
+      "raw_simultaneous_score": 12.33780769162405,
+      "selected_simultaneous_score": 1.9326434186240267,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00027.png",
+      "receipt": "acquisition/cases/case_00027/receipt.json"
+    },
+    {
+      "case_id": "control_028",
+      "group_id": "independent_draw_028",
+      "split": "calibration",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.2361661015773997,
+      "centered_mean_error_px": 0.167574901721713,
+      "raw_simultaneous_score": 13.369509571143476,
+      "selected_simultaneous_score": 1.685366873483873,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00028.png",
+      "receipt": "acquisition/cases/case_00028/receipt.json"
+    },
+    {
+      "case_id": "control_029",
+      "group_id": "independent_draw_029",
+      "split": "calibration",
+      "stratum": "clear",
+      "attempt_outcome": "no_face",
+      "raw_mean_error_px": null,
+      "centered_mean_error_px": null,
+      "raw_simultaneous_score": null,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": false,
+      "observed_reference_points": 0,
+      "image": "acquisition/study/inputs/case_00029.png",
+      "receipt": "acquisition/cases/case_00029/receipt.json"
+    },
+    {
+      "case_id": "control_030",
+      "group_id": "independent_draw_030",
+      "split": "calibration",
+      "stratum": "degraded",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.6709892836800118,
+      "centered_mean_error_px": 0.25756641944550607,
+      "raw_simultaneous_score": 17.554109413434407,
+      "selected_simultaneous_score": 2.5433099000706516,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00030.png",
+      "receipt": "acquisition/cases/case_00030/receipt.json"
+    },
+    {
+      "case_id": "control_031",
+      "group_id": "independent_draw_031",
+      "split": "calibration",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.5791604894082205,
+      "centered_mean_error_px": 0.2337467685804229,
+      "raw_simultaneous_score": 17.12580157039833,
+      "selected_simultaneous_score": 2.1662630142100903,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00031.png",
+      "receipt": "acquisition/cases/case_00031/receipt.json"
+    },
+    {
+      "case_id": "control_032",
+      "group_id": "independent_draw_032",
+      "split": "calibration",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.5246835113110775,
+      "centered_mean_error_px": 0.17669470410174526,
+      "raw_simultaneous_score": 15.72643976126719,
+      "selected_simultaneous_score": 1.3898410364548688,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00032.png",
+      "receipt": "acquisition/cases/case_00032/receipt.json"
+    },
+    {
+      "case_id": "control_033",
+      "group_id": "independent_draw_033",
+      "split": "calibration",
+      "stratum": "degraded",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.3007291423076808,
+      "centered_mean_error_px": 0.12986522526339528,
+      "raw_simultaneous_score": 13.687693579567691,
+      "selected_simultaneous_score": 1.2532664561904387,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00033.png",
+      "receipt": "acquisition/cases/case_00033/receipt.json"
+    },
+    {
+      "case_id": "control_034",
+      "group_id": "independent_draw_034",
+      "split": "calibration",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.750201645863751,
+      "centered_mean_error_px": 0.15727470285575784,
+      "raw_simultaneous_score": 17.55591481324571,
+      "selected_simultaneous_score": 1.3109657448135432,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00034.png",
+      "receipt": "acquisition/cases/case_00034/receipt.json"
+    },
+    {
+      "case_id": "control_035",
+      "group_id": "independent_draw_035",
+      "split": "calibration",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.2637567522518625,
+      "centered_mean_error_px": 0.18412528779709433,
+      "raw_simultaneous_score": 12.519111690986508,
+      "selected_simultaneous_score": 1.8943683075576812,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00035.png",
+      "receipt": "acquisition/cases/case_00035/receipt.json"
+    },
+    {
+      "case_id": "control_036",
+      "group_id": "independent_draw_036",
+      "split": "evaluation",
+      "stratum": "degraded",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.7906933464002446,
+      "centered_mean_error_px": 0.2544515658601347,
+      "raw_simultaneous_score": 19.298796613291316,
+      "selected_simultaneous_score": 2.104622944882403,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00036.png",
+      "receipt": "acquisition/cases/case_00036/receipt.json"
+    },
+    {
+      "case_id": "control_037",
+      "group_id": "independent_draw_037",
+      "split": "evaluation",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.3321158527543524,
+      "centered_mean_error_px": 0.13393969211744083,
+      "raw_simultaneous_score": 14.920112022919096,
+      "selected_simultaneous_score": 1.156543956404779,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00037.png",
+      "receipt": "acquisition/cases/case_00037/receipt.json"
+    },
+    {
+      "case_id": "control_038",
+      "group_id": "independent_draw_038",
+      "split": "evaluation",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.627416942654058,
+      "centered_mean_error_px": 0.11710045919866828,
+      "raw_simultaneous_score": 16.251007472440914,
+      "selected_simultaneous_score": 1.9542736607820987,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00038.png",
+      "receipt": "acquisition/cases/case_00038/receipt.json"
+    },
+    {
+      "case_id": "control_039",
+      "group_id": "independent_draw_039",
+      "split": "evaluation",
+      "stratum": "degraded",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.6357914577193973,
+      "centered_mean_error_px": 0.23843660902800196,
+      "raw_simultaneous_score": 15.929603895484279,
+      "selected_simultaneous_score": 1.9444226880500477,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00039.png",
+      "receipt": "acquisition/cases/case_00039/receipt.json"
+    },
+    {
+      "case_id": "control_040",
+      "group_id": "independent_draw_040",
+      "split": "evaluation",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.5589047192506365,
+      "centered_mean_error_px": 0.11204507906663667,
+      "raw_simultaneous_score": 15.981411255131192,
+      "selected_simultaneous_score": 1.0621725954461938,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00040.png",
+      "receipt": "acquisition/cases/case_00040/receipt.json"
+    },
+    {
+      "case_id": "control_041",
+      "group_id": "independent_draw_041",
+      "split": "evaluation",
+      "stratum": "clear",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.3350379047247867,
+      "centered_mean_error_px": 0.14933244787805,
+      "raw_simultaneous_score": 14.005049813445655,
+      "selected_simultaneous_score": 1.9463914441756858,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00041.png",
+      "receipt": "acquisition/cases/case_00041/receipt.json"
+    },
+    {
+      "case_id": "control_042",
+      "group_id": "independent_draw_042",
+      "split": "evaluation",
+      "stratum": "degraded",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 1.3003210922322155,
+      "centered_mean_error_px": 0.25164762618326303,
+      "raw_simultaneous_score": 12.270302987097207,
+      "selected_simultaneous_score": 2.1131291688804845,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00042.png",
+      "receipt": "acquisition/cases/case_00042/receipt.json"
+    },
+    {
+      "case_id": "control_043",
+      "group_id": "independent_draw_043",
+      "split": "evaluation",
+      "stratum": "clear",
+      "attempt_outcome": "no_face",
+      "raw_mean_error_px": null,
+      "centered_mean_error_px": null,
+      "raw_simultaneous_score": null,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": false,
+      "observed_reference_points": 0,
+      "image": "acquisition/study/inputs/case_00043.png",
+      "receipt": "acquisition/cases/case_00043/receipt.json"
+    },
+    {
+      "case_id": "control_044",
+      "group_id": "independent_draw_044",
+      "split": "evaluation",
+      "stratum": "unseen_shift",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 2.905007176414318,
+      "centered_mean_error_px": 1.937803830331967,
+      "raw_simultaneous_score": 29.48427327089417,
+      "selected_simultaneous_score": 20.84830001279423,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00044.png",
+      "receipt": "acquisition/cases/case_00044/receipt.json"
+    },
+    {
+      "case_id": "control_045",
+      "group_id": "independent_draw_045",
+      "split": "evaluation",
+      "stratum": "unseen_shift",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 3.3242806660461133,
+      "centered_mean_error_px": 2.156679069765938,
+      "raw_simultaneous_score": 32.90594481681995,
+      "selected_simultaneous_score": 24.098698806289395,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00045.png",
+      "receipt": "acquisition/cases/case_00045/receipt.json"
+    },
+    {
+      "case_id": "control_046",
+      "group_id": "independent_draw_046",
+      "split": "evaluation",
+      "stratum": "unseen_shift",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 2.820211987062474,
+      "centered_mean_error_px": 1.849717338313917,
+      "raw_simultaneous_score": 29.068770262159795,
+      "selected_simultaneous_score": 20.477936769784673,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00046.png",
+      "receipt": "acquisition/cases/case_00046/receipt.json"
+    },
+    {
+      "case_id": "control_047",
+      "group_id": "independent_draw_047",
+      "split": "evaluation",
+      "stratum": "unseen_shift",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 3.885840138327954,
+      "centered_mean_error_px": 2.4956668652198695,
+      "raw_simultaneous_score": 38.624889914854855,
+      "selected_simultaneous_score": 27.49649556976076,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00047.png",
+      "receipt": "acquisition/cases/case_00047/receipt.json"
+    }
+  ],
+  "per_landmark": [
+    {
+      "name": "left_eye_outer",
+      "observed_evaluation_cases": 11,
+      "raw_mean_error_px": 1.0499633425456245,
+      "centered_mean_error_px": 0.16707635270240326
+    },
+    {
+      "name": "left_eye_inner",
+      "observed_evaluation_cases": 11,
+      "raw_mean_error_px": 1.0608906348282017,
+      "centered_mean_error_px": 0.1752346691039463
+    },
+    {
+      "name": "right_eye_inner",
+      "observed_evaluation_cases": 11,
+      "raw_mean_error_px": 1.007443276199933,
+      "centered_mean_error_px": 0.15574799853247978
+    },
+    {
+      "name": "right_eye_outer",
+      "observed_evaluation_cases": 11,
+      "raw_mean_error_px": 1.068430338998371,
+      "centered_mean_error_px": 0.12979103006833972
+    },
+    {
+      "name": "nose_tip",
+      "observed_evaluation_cases": 11,
+      "raw_mean_error_px": 3.064433719311641,
+      "centered_mean_error_px": 1.569666078147474
+    },
+    {
+      "name": "mouth_left",
+      "observed_evaluation_cases": 11,
+      "raw_mean_error_px": 2.9449381132931864,
+      "centered_mean_error_px": 1.606566442546348
+    },
+    {
+      "name": "mouth_right",
+      "observed_evaluation_cases": 11,
+      "raw_mean_error_px": 2.982674477199092,
+      "centered_mean_error_px": 1.6265551138650034
+    },
+    {
+      "name": "chin",
+      "observed_evaluation_cases": 11,
+      "raw_mean_error_px": 3.9234961220505316,
+      "centered_mean_error_px": 1.621595466280469
+    }
+  ],
+  "warnings": [
+    "At least one evaluation stratum has no calibration groups: no deployment coverage transfer is justified for that stratum.",
+    "Empirical aggregate coverage is below the nominal target; this is reported, not repaired using evaluation labels.",
+    "Every observation in this study is a controlled synthetic fixture, not live human-landmark inference."
+  ],
+  "interpretation": "error-to-independent-reference study; centered residuals describe the error model, not changed detector outputs or facial resemblance",
+  "guarantee_limit": "marginal new-group conformal rank argument needs exchangeable groups under the frozen protocol; no per-image or conditional-slice guarantee",
+  "array_order": {
+    "cases": [
+      "control_000",
+      "control_001",
+      "control_002",
+      "control_003",
+      "control_004",
+      "control_005",
+      "control_006",
+      "control_007",
+      "control_008",
+      "control_009",
+      "control_010",
+      "control_011",
+      "control_012",
+      "control_013",
+      "control_014",
+      "control_015",
+      "control_016",
+      "control_017",
+      "control_018",
+      "control_019",
+      "control_020",
+      "control_021",
+      "control_022",
+      "control_023",
+      "control_024",
+      "control_025",
+      "control_026",
+      "control_027",
+      "control_028",
+      "control_029",
+      "control_030",
+      "control_031",
+      "control_032",
+      "control_033",
+      "control_034",
+      "control_035",
+      "control_036",
+      "control_037",
+      "control_038",
+      "control_039",
+      "control_040",
+      "control_041",
+      "control_042",
+      "control_043",
+      "control_044",
+      "control_045",
+      "control_046",
+      "control_047"
+    ],
+    "reference_points": [
+      "left_eye_outer",
+      "left_eye_inner",
+      "right_eye_inner",
+      "right_eye_outer",
+      "nose_tip",
+      "mouth_left",
+      "mouth_right",
+      "chin"
+    ]
+  },
+  "content_sha256": "78a519e8da26962267f448739cb8c4ae6c36b0e47ed8abe961d788ab87591518"
+}

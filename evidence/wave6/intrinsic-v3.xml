@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="44" time="3.843" timestamp="2026-09-13T00:53:18.385102+00:00" hostname="localhost"><testcase classname="tests.test_wave6_intrinsic" name="test_proper_shape_distance_matches_independent_so2_solution[0]" time="0.021" /><testcase classname="tests.test_wave6_intrinsic" name="test_proper_shape_distance_matches_independent_so2_solution[1]" time="0.001" /><testcase classname="tests.test_wave6_intrinsic" name="test_proper_shape_distance_matches_independent_so2_solution[2]" time="0.001" /><testcase classname="tests.test_wave6_intrinsic" name="test_proper_shape_distance_matches_independent_so2_solution[3]" time="0.001" /><testcase classname="tests.test_wave6_intrinsic" name="test_proper_shape_distance_matches_independent_so2_solution[4]" time="0.001" /><testcase classname="tests.test_wave6_intrinsic" name="test_proper_shape_distance_matches_independent_so2_solution[5]" time="0.001" /><testcase classname="tests.test_wave6_intrinsic" name="test_proper_shape_distance_matches_independent_so2_solution[6]" time="0.001" /><testcase classname="tests.test_wave6_intrinsic" name="test_proper_shape_distance_matches_independent_so2_solution[7]" time="0.001" /><testcase classname="tests.test_wave6_intrinsic" name="test_reflection_is_not_normalized_away" time="0.011" /><testcase classname="tests.test_wave6_intrinsic" name="test_refitted_shape_outer_bounds_contain_independently_refitted_reference_draws[0]" time="0.016" /><testcase classname="tests.test_wave6_intrinsic" name="test_refitted_shape_outer_bounds_contain_independently_refitted_reference_draws[1]" time="0.015" /><testcase classname="tests.test_wave6_intrinsic" name="test_refitted_shape_outer_bounds_contain_independently_refitted_reference_draws[2]" time="0.015" /><testcase classname="tests.test_wave6_intrinsic" name="test_refitted_shape_outer_bounds_contain_independently_refitted_reference_draws[3]" time="0.015" /><testcase classname="tests.test_wave6_intrinsic" name="test_refitted_shape_outer_bounds_contain_independently_refitted_reference_draws[4]" time="0.015" /><testcase classname="tests.test_wave6_intrinsic" name="test_refitted_shape_outer_bounds_contain_independently_refitted_reference_draws[5]" time="0.014" /><testcase classname="tests.test_wave6_intrinsic" name="test_refitted_shape_outer_bounds_contain_independently_refitted_reference_draws[6]" time="0.016" /><testcase classname="tests.test_wave6_intrinsic" name="test_exact_set_limit_collapses_to_refitted_metric_not_just_edm_lower_bound" time="0.008" /><testcase classname="tests.test_wave6_intrinsic" name="test_all_relations_share_one_eight_point_state_not_independent_scores" time="0.170" /><testcase classname="tests.test_wave6_intrinsic" name="test_uncalibrated_observed_relations_stay_available_without_fake_error_bounds" time="0.093" /><testcase classname="tests.test_wave6_intrinsic" name="test_attaching_intrinsic_profile_does_not_change_original_raw_arrays" time="0.234" /><testcase classname="tests.test_wave6_intrinsic" name="test_raw_intrinsic_values_do_not_change_on_calibration_attachment" time="0.208" /><testcase classname="tests.test_wave6_intrinsic" name="test_exchange_order_preserves_abs_relation_gaps_and_refitted_shape_range" time="0.258" /><testcase classname="tests.test_wave6_intrinsic" name="test_canonical_display_size_and_robust_fit_settings_do_not_change_intrinsic_relations" time="0.292" /><testcase classname="tests.test_wave6_intrinsic" name="test_raw_intrinsic_relations_ignore_separate_global_similarity_transforms[0.8--0.1]" time="0.146" /><testcase classname="tests.test_wave6_intrinsic" name="test_raw_intrinsic_relations_ignore_separate_global_similarity_transforms[1.2-0.2]" time="0.144" /><testcase classname="tests.test_wave6_intrinsic" name="test_raw_intrinsic_relations_ignore_separate_global_similarity_transforms[1.0-0.5]" time="0.145" /><testcase classname="tests.test_wave6_intrinsic" name="test_normalizer_uncertainty_collapse_does_not_emit_finite_shape_bounds" time="0.081" /><testcase classname="tests.test_wave6_intrinsic" name="test_missing_reference_vertex_does_not_shrink_denominators_or_imply_agreement" time="0.242" /><testcase classname="tests.test_wave6_intrinsic" name="test_new_configuration_contracts[change0]" time="0.000" /><testcase classname="tests.test_wave6_intrinsic" name="test_new_configuration_contracts[change1]" time="0.000" /><testcase classname="tests.test_wave6_intrinsic" name="test_new_configuration_contracts[change2]" time="0.000" /><testcase classname="tests.test_wave6_intrinsic" name="test_new_configuration_contracts[change3]" time="0.000" /><testcase classname="tests.test_wave6_intrinsic" name="test_new_configuration_contracts[change4]" time="0.000" /><testcase classname="tests.test_wave6_intrinsic" name="test_new_configuration_contracts[change5]" time="0.000" /><testcase classname="tests.test_wave6_intrinsic" name="test_new_configuration_contracts[change6]" time="0.000" /><testcase classname="tests.test_wave6_intrinsic" name="test_output_arrays_cannot_be_mutated_or_unfrozen" time="0.131" /><testcase classname="tests.test_wave6_intrinsic" name="test_identical_exact_points_all_relations_agree_without_becoming_similarity_probability" time="0.139" /><testcase classname="tests.test_wave6_intrinsic" name="test_unbounded_calibration_is_not_misrepresented_as_no_calibration" time="0.046"><failure message="facemath.observation.instrument.InstrumentFailure: localization calibration is unbounded: insufficient groups or failure mass">self = &lt;facemath.observation.instrument.FacialInstrument object at 0x7fc5bd6b7800&gt;
+image_a = array([[[73, 73, 73],
+        [71, 71, 71],
+        [74, 74, 74],
+        ...,
+        [78, 78, 78],
+        [76, 76, ...73],
+        ...,
+        [68, 68, 68],
+        [64, 64, 64],
+        [69, 69, 69]]], shape=(224, 256, 3), dtype=uint8)
+image_b = array([[[82, 82, 82],
+        [73, 73, 73],
+        [70, 70, 70],
+        ...,
+        [78, 78, 78],
+        [76, 76, ...67],
+        ...,
+        [67, 67, 67],
+        [63, 63, 63],
+        [62, 62, 62]]], shape=(224, 256, 3), dtype=uint8)
+observation_a = Observation(image_sha256='017456d87ba667e259b43be52cbbd7b61c915ef9547df245a01ce7f6721340df', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+observation_b = Observation(image_sha256='d313b50bec46b67b1be1dd260a2bbdeb23b06af105829fbe96a8d38afd549300', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+
+    def run(self, image_a: np.ndarray, image_b: np.ndarray,
+            observation_a: Observation | None = None,
+            observation_b: Observation | None = None) -&gt; InstrumentResult:
+        journal = Journal()
+        try:
+&gt;           return self._execute(image_a, image_b, observation_a, observation_b, journal)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+src/facemath/observation/instrument.py:137: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/instrument.py:188: in _execute
+    localization = assessor(state, self.localization_calibration,
+src/facemath/observation/error_model.py:322: in assess_pair
+    calibration.require_query(observation, group, domain, tuple(lineages))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = LocalizationCalibration(alpha=0.1, quantile=None, rank=9, group_scores=(('cal-0', None), ('cal-1', None), ('cal-2', No...rence_kind='synthetic_fixture', calibration_images=(), calibration_lineages=(), reference_digests=(), minimum_raters=1)
+observation = Observation(image_sha256='017456d87ba667e259b43be52cbbd7b61c915ef9547df245a01ce7f6721340df', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+group_id = 'query-a', domain = 'analytic-test-only', lineage_ids = ()
+
+    def require_query(self, observation: Any, group_id: str, domain: str, lineage_ids: tuple[str, ...] = ()) -&gt; None:
+        if self.quantile is None:
+&gt;           raise ObservationError("localization calibration is unbounded: insufficient groups or failure mass")
+E           facemath.observation.contracts.ObservationError: localization calibration is unbounded: insufficient groups or failure mass
+
+src/facemath/observation/error_model.py:124: ObservationError
+
+The above exception was the direct cause of the following exception:
+
+    def test_unbounded_calibration_is_not_misrepresented_as_no_calibration():
+        a,b,oa,ob=inputs()
+        c=calibration(oa,None)
+        result=FacialInstrument(configuration(),localization_calibration=c,
+&gt;           query_groups=('query-a','query-b'),domain='analytic-test-only').run(a,b,oa,ob)
+                                                                            ^^^^^^^^^^^^^^
+
+tests/test_wave6_intrinsic.py:232: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;facemath.observation.instrument.FacialInstrument object at 0x7fc5bd6b7800&gt;
+image_a = array([[[73, 73, 73],
+        [71, 71, 71],
+        [74, 74, 74],
+        ...,
+        [78, 78, 78],
+        [76, 76, ...73],
+        ...,
+        [68, 68, 68],
+        [64, 64, 64],
+        [69, 69, 69]]], shape=(224, 256, 3), dtype=uint8)
+image_b = array([[[82, 82, 82],
+        [73, 73, 73],
+        [70, 70, 70],
+        ...,
+        [78, 78, 78],
+        [76, 76, ...67],
+        ...,
+        [67, 67, 67],
+        [63, 63, 63],
+        [62, 62, 62]]], shape=(224, 256, 3), dtype=uint8)
+observation_a = Observation(image_sha256='017456d87ba667e259b43be52cbbd7b61c915ef9547df245a01ce7f6721340df', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+observation_b = Observation(image_sha256='d313b50bec46b67b1be1dd260a2bbdeb23b06af105829fbe96a8d38afd549300', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+
+    def run(self, image_a: np.ndarray, image_b: np.ndarray,
+            observation_a: Observation | None = None,
+            observation_b: Observation | None = None) -&gt; InstrumentResult:
+        journal = Journal()
+        try:
+            return self._execute(image_a, image_b, observation_a, observation_b, journal)
+        except ObservationError as exc:
+&gt;           raise InstrumentFailure(str(exc), journal.jsonl()) from exc
+E           facemath.observation.instrument.InstrumentFailure: localization calibration is unbounded: insufficient groups or failure mass
+
+src/facemath/observation/instrument.py:139: InstrumentFailure</failure></testcase><testcase classname="tests.test_wave6_intrinsic" name="test_malformed_profile_arrays_are_rejected[raw_points]" time="0.127" /><testcase classname="tests.test_wave6_intrinsic" name="test_malformed_profile_arrays_are_rejected[source_centers]" time="0.126" /><testcase classname="tests.test_wave6_intrinsic" name="test_malformed_profile_arrays_are_rejected[source_chart]" time="0.153" /><testcase classname="tests.test_wave6_intrinsic" name="test_malformed_profile_arrays_are_rejected[gap_available]" time="0.132" /><testcase classname="tests.test_wave6_intrinsic" name="test_malformed_profile_arrays_are_rejected[statuses]" time="0.132" /><testcase classname="tests.test_wave6_intrinsic" name="test_exported_intrinsic_array_collection_is_immutable" time="0.135" /></testsuite></testsuites>

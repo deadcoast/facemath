@@ -1,0 +1,105 @@
+.....................................F......                             [100%]
+=================================== FAILURES ===================================
+______ test_unbounded_calibration_is_not_misrepresented_as_no_calibration ______
+
+self = <facemath.observation.instrument.FacialInstrument object at 0x7fc5bd6b7800>
+image_a = array([[[73, 73, 73],
+        [71, 71, 71],
+        [74, 74, 74],
+        ...,
+        [78, 78, 78],
+        [76, 76, ...73],
+        ...,
+        [68, 68, 68],
+        [64, 64, 64],
+        [69, 69, 69]]], shape=(224, 256, 3), dtype=uint8)
+image_b = array([[[82, 82, 82],
+        [73, 73, 73],
+        [70, 70, 70],
+        ...,
+        [78, 78, 78],
+        [76, 76, ...67],
+        ...,
+        [67, 67, 67],
+        [63, 63, 63],
+        [62, 62, 62]]], shape=(224, 256, 3), dtype=uint8)
+observation_a = Observation(image_sha256='017456d87ba667e259b43be52cbbd7b61c915ef9547df245a01ce7f6721340df', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+observation_b = Observation(image_sha256='d313b50bec46b67b1be1dd260a2bbdeb23b06af105829fbe96a8d38afd549300', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+
+    def run(self, image_a: np.ndarray, image_b: np.ndarray,
+            observation_a: Observation | None = None,
+            observation_b: Observation | None = None) -> InstrumentResult:
+        journal = Journal()
+        try:
+>           return self._execute(image_a, image_b, observation_a, observation_b, journal)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+src/facemath/observation/instrument.py:137: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/instrument.py:188: in _execute
+    localization = assessor(state, self.localization_calibration,
+src/facemath/observation/error_model.py:322: in assess_pair
+    calibration.require_query(observation, group, domain, tuple(lineages))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = LocalizationCalibration(alpha=0.1, quantile=None, rank=9, group_scores=(('cal-0', None), ('cal-1', None), ('cal-2', No...rence_kind='synthetic_fixture', calibration_images=(), calibration_lineages=(), reference_digests=(), minimum_raters=1)
+observation = Observation(image_sha256='017456d87ba667e259b43be52cbbd7b61c915ef9547df245a01ce7f6721340df', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+group_id = 'query-a', domain = 'analytic-test-only', lineage_ids = ()
+
+    def require_query(self, observation: Any, group_id: str, domain: str, lineage_ids: tuple[str, ...] = ()) -> None:
+        if self.quantile is None:
+>           raise ObservationError("localization calibration is unbounded: insufficient groups or failure mass")
+E           facemath.observation.contracts.ObservationError: localization calibration is unbounded: insufficient groups or failure mass
+
+src/facemath/observation/error_model.py:124: ObservationError
+
+The above exception was the direct cause of the following exception:
+
+    def test_unbounded_calibration_is_not_misrepresented_as_no_calibration():
+        a,b,oa,ob=inputs()
+        c=calibration(oa,None)
+        result=FacialInstrument(configuration(),localization_calibration=c,
+>           query_groups=('query-a','query-b'),domain='analytic-test-only').run(a,b,oa,ob)
+                                                                            ^^^^^^^^^^^^^^
+
+tests/test_wave6_intrinsic.py:232: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <facemath.observation.instrument.FacialInstrument object at 0x7fc5bd6b7800>
+image_a = array([[[73, 73, 73],
+        [71, 71, 71],
+        [74, 74, 74],
+        ...,
+        [78, 78, 78],
+        [76, 76, ...73],
+        ...,
+        [68, 68, 68],
+        [64, 64, 64],
+        [69, 69, 69]]], shape=(224, 256, 3), dtype=uint8)
+image_b = array([[[82, 82, 82],
+        [73, 73, 73],
+        [70, 70, 70],
+        ...,
+        [78, 78, 78],
+        [76, 76, ...67],
+        ...,
+        [67, 67, 67],
+        [63, 63, 63],
+        [62, 62, 62]]], shape=(224, 256, 3), dtype=uint8)
+observation_a = Observation(image_sha256='017456d87ba667e259b43be52cbbd7b61c915ef9547df245a01ce7f6721340df', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+observation_b = Observation(image_sha256='d313b50bec46b67b1be1dd260a2bbdeb23b06af105829fbe96a8d38afd549300', image_shape=(224, 256), s...n face or population sample',), metadata_json='{"sigma":"assumed_sensor_noise","truth":"explicit_render_coordinates"}')
+
+    def run(self, image_a: np.ndarray, image_b: np.ndarray,
+            observation_a: Observation | None = None,
+            observation_b: Observation | None = None) -> InstrumentResult:
+        journal = Journal()
+        try:
+            return self._execute(image_a, image_b, observation_a, observation_b, journal)
+        except ObservationError as exc:
+>           raise InstrumentFailure(str(exc), journal.jsonl()) from exc
+E           facemath.observation.instrument.InstrumentFailure: localization calibration is unbounded: insufficient groups or failure mass
+
+src/facemath/observation/instrument.py:139: InstrumentFailure
+=========================== short test summary info ============================
+FAILED tests/test_wave6_intrinsic.py::test_unbounded_calibration_is_not_misrepresented_as_no_calibration - facemath.observation.instrument.InstrumentFailure: localization calibration is unbounded: insufficient groups or failure mass
+1 failed, 43 passed in 3.84s
