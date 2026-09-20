@@ -1,0 +1,1292 @@
+{
+  "format": "facemath.prospective_study.v5",
+  "domain": "schematic-joint-ocular-error-and-heldout-shift-v7-NOT-HUMAN",
+  "observer": {
+    "provider": "synthetic_joint_shape_observer",
+    "provider_fingerprint": "ca594aa8cd47a4ba8c075653249b40685caaa04589b611233eff65bead7bd1cd",
+    "schema": "semantic21.v1",
+    "noise_floor_px": 0.18,
+    "attempted_samples": 7,
+    "execution_kind": "synthetic_fixture",
+    "model_sha256": null,
+    "runtime_version": null
+  },
+  "minimum_raters": 1,
+  "maximum_cases_per_group": 1,
+  "minimum_development_groups": 5,
+  "alpha": 0.1,
+  "bias_mode": "development_joint_ocular",
+  "joint_error": {
+    "shrinkage": 0.02,
+    "floor_eye_spans": 0.001
+  },
+  "strata": [
+    "stationary",
+    "unseen_shift"
+  ],
+  "cases": [
+    {
+      "case_id": "joint_000",
+      "group_id": "joint_draw_27091_0",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_0"
+      ],
+      "image": "joint_000.png",
+      "references": [
+        "joint_000_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_001",
+      "group_id": "joint_draw_27091_1",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_1"
+      ],
+      "image": "joint_001.png",
+      "references": [
+        "joint_001_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_002",
+      "group_id": "joint_draw_27091_2",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_2"
+      ],
+      "image": "joint_002.png",
+      "references": [
+        "joint_002_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_003",
+      "group_id": "joint_draw_27091_3",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_3"
+      ],
+      "image": "joint_003.png",
+      "references": [
+        "joint_003_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_004",
+      "group_id": "joint_draw_27091_4",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_4"
+      ],
+      "image": "joint_004.png",
+      "references": [
+        "joint_004_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_005",
+      "group_id": "joint_draw_27091_5",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_5"
+      ],
+      "image": "joint_005.png",
+      "references": [
+        "joint_005_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_006",
+      "group_id": "joint_draw_27091_6",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_6"
+      ],
+      "image": "joint_006.png",
+      "references": [
+        "joint_006_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_007",
+      "group_id": "joint_draw_27091_7",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_7"
+      ],
+      "image": "joint_007.png",
+      "references": [
+        "joint_007_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_008",
+      "group_id": "joint_draw_27091_8",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_8"
+      ],
+      "image": "joint_008.png",
+      "references": [
+        "joint_008_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_009",
+      "group_id": "joint_draw_27091_9",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_9"
+      ],
+      "image": "joint_009.png",
+      "references": [
+        "joint_009_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_010",
+      "group_id": "joint_draw_27091_10",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_10"
+      ],
+      "image": "joint_010.png",
+      "references": [
+        "joint_010_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_011",
+      "group_id": "joint_draw_27091_11",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_11"
+      ],
+      "image": "joint_011.png",
+      "references": [
+        "joint_011_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_012",
+      "group_id": "joint_draw_27091_12",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_12"
+      ],
+      "image": "joint_012.png",
+      "references": [
+        "joint_012_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_013",
+      "group_id": "joint_draw_27091_13",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_13"
+      ],
+      "image": "joint_013.png",
+      "references": [
+        "joint_013_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_014",
+      "group_id": "joint_draw_27091_14",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_14"
+      ],
+      "image": "joint_014.png",
+      "references": [
+        "joint_014_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_015",
+      "group_id": "joint_draw_27091_15",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_15"
+      ],
+      "image": "joint_015.png",
+      "references": [
+        "joint_015_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_016",
+      "group_id": "joint_draw_27091_16",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_16"
+      ],
+      "image": "joint_016.png",
+      "references": [
+        "joint_016_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_017",
+      "group_id": "joint_draw_27091_17",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_17"
+      ],
+      "image": "joint_017.png",
+      "references": [
+        "joint_017_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_018",
+      "group_id": "joint_draw_27091_18",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_18"
+      ],
+      "image": "joint_018.png",
+      "references": [
+        "joint_018_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_019",
+      "group_id": "joint_draw_27091_19",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_19"
+      ],
+      "image": "joint_019.png",
+      "references": [
+        "joint_019_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_020",
+      "group_id": "joint_draw_27091_20",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_20"
+      ],
+      "image": "joint_020.png",
+      "references": [
+        "joint_020_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_021",
+      "group_id": "joint_draw_27091_21",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_21"
+      ],
+      "image": "joint_021.png",
+      "references": [
+        "joint_021_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_022",
+      "group_id": "joint_draw_27091_22",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_22"
+      ],
+      "image": "joint_022.png",
+      "references": [
+        "joint_022_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_023",
+      "group_id": "joint_draw_27091_23",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_23"
+      ],
+      "image": "joint_023.png",
+      "references": [
+        "joint_023_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_024",
+      "group_id": "joint_draw_27091_24",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_24"
+      ],
+      "image": "joint_024.png",
+      "references": [
+        "joint_024_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_025",
+      "group_id": "joint_draw_27091_25",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_25"
+      ],
+      "image": "joint_025.png",
+      "references": [
+        "joint_025_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_026",
+      "group_id": "joint_draw_27091_26",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_26"
+      ],
+      "image": "joint_026.png",
+      "references": [
+        "joint_026_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_027",
+      "group_id": "joint_draw_27091_27",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_27"
+      ],
+      "image": "joint_027.png",
+      "references": [
+        "joint_027_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_028",
+      "group_id": "joint_draw_27091_28",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_28"
+      ],
+      "image": "joint_028.png",
+      "references": [
+        "joint_028_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_029",
+      "group_id": "joint_draw_27091_29",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_29"
+      ],
+      "image": "joint_029.png",
+      "references": [
+        "joint_029_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_030",
+      "group_id": "joint_draw_27091_30",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_30"
+      ],
+      "image": "joint_030.png",
+      "references": [
+        "joint_030_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_031",
+      "group_id": "joint_draw_27091_31",
+      "split": "development",
+      "lineage_ids": [
+        "joint_source_27091_31"
+      ],
+      "image": "joint_031.png",
+      "references": [
+        "joint_031_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_032",
+      "group_id": "joint_draw_27091_32",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_32"
+      ],
+      "image": "joint_032.png",
+      "references": [
+        "joint_032_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_033",
+      "group_id": "joint_draw_27091_33",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_33"
+      ],
+      "image": "joint_033.png",
+      "references": [
+        "joint_033_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_034",
+      "group_id": "joint_draw_27091_34",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_34"
+      ],
+      "image": "joint_034.png",
+      "references": [
+        "joint_034_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_035",
+      "group_id": "joint_draw_27091_35",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_35"
+      ],
+      "image": "joint_035.png",
+      "references": [
+        "joint_035_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_036",
+      "group_id": "joint_draw_27091_36",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_36"
+      ],
+      "image": "joint_036.png",
+      "references": [
+        "joint_036_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_037",
+      "group_id": "joint_draw_27091_37",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_37"
+      ],
+      "image": "joint_037.png",
+      "references": [
+        "joint_037_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_038",
+      "group_id": "joint_draw_27091_38",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_38"
+      ],
+      "image": "joint_038.png",
+      "references": [
+        "joint_038_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_039",
+      "group_id": "joint_draw_27091_39",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_39"
+      ],
+      "image": "joint_039.png",
+      "references": [
+        "joint_039_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_040",
+      "group_id": "joint_draw_27091_40",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_40"
+      ],
+      "image": "joint_040.png",
+      "references": [
+        "joint_040_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_041",
+      "group_id": "joint_draw_27091_41",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_41"
+      ],
+      "image": "joint_041.png",
+      "references": [
+        "joint_041_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_042",
+      "group_id": "joint_draw_27091_42",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_42"
+      ],
+      "image": "joint_042.png",
+      "references": [
+        "joint_042_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_043",
+      "group_id": "joint_draw_27091_43",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_43"
+      ],
+      "image": "joint_043.png",
+      "references": [
+        "joint_043_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_044",
+      "group_id": "joint_draw_27091_44",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_44"
+      ],
+      "image": "joint_044.png",
+      "references": [
+        "joint_044_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_045",
+      "group_id": "joint_draw_27091_45",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_45"
+      ],
+      "image": "joint_045.png",
+      "references": [
+        "joint_045_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_046",
+      "group_id": "joint_draw_27091_46",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_46"
+      ],
+      "image": "joint_046.png",
+      "references": [
+        "joint_046_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_047",
+      "group_id": "joint_draw_27091_47",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_47"
+      ],
+      "image": "joint_047.png",
+      "references": [
+        "joint_047_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_048",
+      "group_id": "joint_draw_27091_48",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_48"
+      ],
+      "image": "joint_048.png",
+      "references": [
+        "joint_048_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_049",
+      "group_id": "joint_draw_27091_49",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_49"
+      ],
+      "image": "joint_049.png",
+      "references": [
+        "joint_049_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_050",
+      "group_id": "joint_draw_27091_50",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_50"
+      ],
+      "image": "joint_050.png",
+      "references": [
+        "joint_050_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_051",
+      "group_id": "joint_draw_27091_51",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_51"
+      ],
+      "image": "joint_051.png",
+      "references": [
+        "joint_051_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_052",
+      "group_id": "joint_draw_27091_52",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_52"
+      ],
+      "image": "joint_052.png",
+      "references": [
+        "joint_052_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_053",
+      "group_id": "joint_draw_27091_53",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_53"
+      ],
+      "image": "joint_053.png",
+      "references": [
+        "joint_053_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_054",
+      "group_id": "joint_draw_27091_54",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_54"
+      ],
+      "image": "joint_054.png",
+      "references": [
+        "joint_054_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_055",
+      "group_id": "joint_draw_27091_55",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_55"
+      ],
+      "image": "joint_055.png",
+      "references": [
+        "joint_055_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_056",
+      "group_id": "joint_draw_27091_56",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_56"
+      ],
+      "image": "joint_056.png",
+      "references": [
+        "joint_056_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_057",
+      "group_id": "joint_draw_27091_57",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_57"
+      ],
+      "image": "joint_057.png",
+      "references": [
+        "joint_057_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_058",
+      "group_id": "joint_draw_27091_58",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_58"
+      ],
+      "image": "joint_058.png",
+      "references": [
+        "joint_058_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_059",
+      "group_id": "joint_draw_27091_59",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_59"
+      ],
+      "image": "joint_059.png",
+      "references": [
+        "joint_059_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_060",
+      "group_id": "joint_draw_27091_60",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_60"
+      ],
+      "image": "joint_060.png",
+      "references": [
+        "joint_060_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_061",
+      "group_id": "joint_draw_27091_61",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_61"
+      ],
+      "image": "joint_061.png",
+      "references": [
+        "joint_061_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_062",
+      "group_id": "joint_draw_27091_62",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_62"
+      ],
+      "image": "joint_062.png",
+      "references": [
+        "joint_062_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_063",
+      "group_id": "joint_draw_27091_63",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_63"
+      ],
+      "image": "joint_063.png",
+      "references": [
+        "joint_063_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_064",
+      "group_id": "joint_draw_27091_64",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_64"
+      ],
+      "image": "joint_064.png",
+      "references": [
+        "joint_064_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_065",
+      "group_id": "joint_draw_27091_65",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_65"
+      ],
+      "image": "joint_065.png",
+      "references": [
+        "joint_065_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_066",
+      "group_id": "joint_draw_27091_66",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_66"
+      ],
+      "image": "joint_066.png",
+      "references": [
+        "joint_066_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_067",
+      "group_id": "joint_draw_27091_67",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_67"
+      ],
+      "image": "joint_067.png",
+      "references": [
+        "joint_067_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_068",
+      "group_id": "joint_draw_27091_68",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_68"
+      ],
+      "image": "joint_068.png",
+      "references": [
+        "joint_068_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_069",
+      "group_id": "joint_draw_27091_69",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_69"
+      ],
+      "image": "joint_069.png",
+      "references": [
+        "joint_069_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_070",
+      "group_id": "joint_draw_27091_70",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_70"
+      ],
+      "image": "joint_070.png",
+      "references": [
+        "joint_070_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_071",
+      "group_id": "joint_draw_27091_71",
+      "split": "calibration",
+      "lineage_ids": [
+        "joint_source_27091_71"
+      ],
+      "image": "joint_071.png",
+      "references": [
+        "joint_071_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_072",
+      "group_id": "joint_draw_27091_72",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_72"
+      ],
+      "image": "joint_072.png",
+      "references": [
+        "joint_072_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_073",
+      "group_id": "joint_draw_27091_73",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_73"
+      ],
+      "image": "joint_073.png",
+      "references": [
+        "joint_073_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_074",
+      "group_id": "joint_draw_27091_74",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_74"
+      ],
+      "image": "joint_074.png",
+      "references": [
+        "joint_074_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_075",
+      "group_id": "joint_draw_27091_75",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_75"
+      ],
+      "image": "joint_075.png",
+      "references": [
+        "joint_075_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_076",
+      "group_id": "joint_draw_27091_76",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_76"
+      ],
+      "image": "joint_076.png",
+      "references": [
+        "joint_076_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_077",
+      "group_id": "joint_draw_27091_77",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_77"
+      ],
+      "image": "joint_077.png",
+      "references": [
+        "joint_077_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_078",
+      "group_id": "joint_draw_27091_78",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_78"
+      ],
+      "image": "joint_078.png",
+      "references": [
+        "joint_078_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_079",
+      "group_id": "joint_draw_27091_79",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_79"
+      ],
+      "image": "joint_079.png",
+      "references": [
+        "joint_079_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_080",
+      "group_id": "joint_draw_27091_80",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_80"
+      ],
+      "image": "joint_080.png",
+      "references": [
+        "joint_080_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_081",
+      "group_id": "joint_draw_27091_81",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_81"
+      ],
+      "image": "joint_081.png",
+      "references": [
+        "joint_081_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_082",
+      "group_id": "joint_draw_27091_82",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_82"
+      ],
+      "image": "joint_082.png",
+      "references": [
+        "joint_082_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_083",
+      "group_id": "joint_draw_27091_83",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_83"
+      ],
+      "image": "joint_083.png",
+      "references": [
+        "joint_083_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_084",
+      "group_id": "joint_draw_27091_84",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_84"
+      ],
+      "image": "joint_084.png",
+      "references": [
+        "joint_084_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_085",
+      "group_id": "joint_draw_27091_85",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_85"
+      ],
+      "image": "joint_085.png",
+      "references": [
+        "joint_085_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_086",
+      "group_id": "joint_draw_27091_86",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_86"
+      ],
+      "image": "joint_086.png",
+      "references": [
+        "joint_086_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_087",
+      "group_id": "joint_draw_27091_87",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_87"
+      ],
+      "image": "joint_087.png",
+      "references": [
+        "joint_087_reference.json"
+      ],
+      "stratum": "stationary"
+    },
+    {
+      "case_id": "joint_088",
+      "group_id": "joint_draw_27091_88",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_88"
+      ],
+      "image": "joint_088.png",
+      "references": [
+        "joint_088_reference.json"
+      ],
+      "stratum": "unseen_shift"
+    },
+    {
+      "case_id": "joint_089",
+      "group_id": "joint_draw_27091_89",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_89"
+      ],
+      "image": "joint_089.png",
+      "references": [
+        "joint_089_reference.json"
+      ],
+      "stratum": "unseen_shift"
+    },
+    {
+      "case_id": "joint_090",
+      "group_id": "joint_draw_27091_90",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_90"
+      ],
+      "image": "joint_090.png",
+      "references": [
+        "joint_090_reference.json"
+      ],
+      "stratum": "unseen_shift"
+    },
+    {
+      "case_id": "joint_091",
+      "group_id": "joint_draw_27091_91",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_91"
+      ],
+      "image": "joint_091.png",
+      "references": [
+        "joint_091_reference.json"
+      ],
+      "stratum": "unseen_shift"
+    },
+    {
+      "case_id": "joint_092",
+      "group_id": "joint_draw_27091_92",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_92"
+      ],
+      "image": "joint_092.png",
+      "references": [
+        "joint_092_reference.json"
+      ],
+      "stratum": "unseen_shift"
+    },
+    {
+      "case_id": "joint_093",
+      "group_id": "joint_draw_27091_93",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_93"
+      ],
+      "image": "joint_093.png",
+      "references": [
+        "joint_093_reference.json"
+      ],
+      "stratum": "unseen_shift"
+    },
+    {
+      "case_id": "joint_094",
+      "group_id": "joint_draw_27091_94",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_94"
+      ],
+      "image": "joint_094.png",
+      "references": [
+        "joint_094_reference.json"
+      ],
+      "stratum": "unseen_shift"
+    },
+    {
+      "case_id": "joint_095",
+      "group_id": "joint_draw_27091_95",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_95"
+      ],
+      "image": "joint_095.png",
+      "references": [
+        "joint_095_reference.json"
+      ],
+      "stratum": "unseen_shift"
+    },
+    {
+      "case_id": "joint_096",
+      "group_id": "joint_draw_27091_96",
+      "split": "evaluation",
+      "lineage_ids": [
+        "joint_source_27091_96"
+      ],
+      "image": "joint_096.png",
+      "references": [
+        "joint_096_reference.json"
+      ],
+      "stratum": "unseen_shift",
+      "eligibility": "excluded",
+      "exclusion_reason": "prespecified enrollment control; never observed"
+    }
+  ]
+}

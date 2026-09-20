@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "--junitxml=/mnt/data/wave7_work/logs/full-source-first.xml"
+  ],
+  "cwd": "/mnt/data/facemath_wave_07",
+  "started_utc": "2026-09-13T04:17:46.010145+00:00",
+  "finished_utc": "2026-09-13T04:18:49.634176+00:00",
+  "duration_seconds": 63.624034316999996,
+  "returncode": 1,
+  "stdout": "...........................................................F............ [ 12%]\n........................................................................ [ 24%]\ns....................................................................... [ 36%]\n........................................................................ [ 48%]\n........................................................................ [ 60%]\n........................................................................ [ 73%]\n........................................................................ [ 85%]\n........................................................................ [ 97%]\n...............                                                          [100%]\n=================================== FAILURES ===================================\n________ test_module_entrypoint_reports_version_from_another_directory _________\n\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_module_entrypoint_reports0')\n\n    def test_module_entrypoint_reports_version_from_another_directory(tmp_path):\n        result = subprocess.run([sys.executable, '-m', 'facemath', '--version'], cwd=tmp_path,\n                                text=True, capture_output=True, check=True)\n>       assert result.stdout.strip() == 'facemath 0.7.0'\nE       AssertionError: assert 'facemath 0.6.0' == 'facemath 0.7.0'\nE         \nE         - facemath 0.7.0\nE         ?            ^\nE         + facemath 0.6.0\nE         ?            ^\n\ntests/test_wave3_cli.py:36: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_wave3_cli.py::test_module_entrypoint_reports_version_from_another_directory - AssertionError: assert 'facemath 0.6.0' == 'facemath 0.7.0'\n  \n  - facemath 0.7.0\n  ?            ^\n  + facemath 0.6.0\n  ?            ^\n1 failed, 589 passed, 1 skipped in 60.61s (0:01:00)\n",
+  "stderr": ""
+}

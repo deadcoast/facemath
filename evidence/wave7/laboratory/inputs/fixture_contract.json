@@ -1,0 +1,55 @@
+{
+  "seed": 27091,
+  "spec": {
+    "name": "synthetic_joint_shape_observer",
+    "version": 7,
+    "beta": [
+      [
+        0.012,
+        -0.008
+      ],
+      [
+        0.012,
+        -0.008
+      ],
+      [
+        0.012,
+        -0.008
+      ],
+      [
+        0.012,
+        -0.008
+      ],
+      [
+        0.018,
+        -0.012
+      ],
+      [
+        0.01,
+        0.018
+      ],
+      [
+        0.01,
+        0.018
+      ],
+      [
+        -0.008,
+        0.025
+      ]
+    ],
+    "common_translation_std_eye_spans": 0.035,
+    "local_std_eye_spans": 0.0015,
+    "sample_jitter_px": 0.015,
+    "noise_floor_px": 0.18,
+    "execution": "scripted renderer errors, NOT live detector inference"
+  },
+  "development": 32,
+  "calibration": 40,
+  "evaluation": 24,
+  "fixed_shifted_evaluation_fraction": "last third",
+  "injected_failures": [
+    49,
+    79
+  ],
+  "query_selection": "fresh seed+1000 and seed+2000..2003; fixed mouth expansion 0,4,8,12"
+}

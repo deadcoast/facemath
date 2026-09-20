@@ -1,0 +1,925 @@
+{
+  "format": "facemath.joint_lab.v7",
+  "kind": "scripted_synthetic_controls_NOT_HUMAN_INFERENCE",
+  "seed": 27091,
+  "calls_first_batch": 9,
+  "calls_complete": 96,
+  "calls_after_resume": 96,
+  "enrolled": 97,
+  "outcomes": {
+    "contract_error": 0,
+    "interrupted": 0,
+    "multiple_faces": 0,
+    "no_face": 2,
+    "observed": 94,
+    "runtime_error": 0,
+    "timeout": 0
+  },
+  "excluded": 1,
+  "selected_error_model": {
+    "calibration_sha256": "dce9609133e27d8edf004eb32f4271ff423ffc3569b7ff5a155ab358772cfdf1",
+    "quantile": 3.050496957188278,
+    "rank": 37,
+    "bias_sha256": "1e4ef060462a9050309acd208f5fbf5fbb625bedfe24ef25cfdee3aab65e4553",
+    "joint_scatter_sha256": "fe50b5ae284786a35649eb6ccc65bd0cde967dfc6116cabab8f8eb713f442e80",
+    "error_geometry": "full16_shared_latent_ellipsoid",
+    "q_comparability": "score definitions differ across model types; compare coverage and widths, not q alone",
+    "development_groups": 32,
+    "fitted_development_groups": 32,
+    "development_cases_rejected": [],
+    "coverage": {
+      "calibration_sha256": "d6d55cfda22d0aea8462aceb4e30cd1bdb5033e92b9f2a573047a4900207935c",
+      "nominal_coverage": 0.9,
+      "finite_envelope": true,
+      "evaluation_cases": 24,
+      "evaluation_groups": 24,
+      "covered_groups": 14,
+      "empirical_group_coverage": 0.5833333333333334,
+      "failures": 1,
+      "cases": [
+        {
+          "case_id": "joint_072",
+          "group_id": "joint_draw_27091_72",
+          "score": 1.9253214848222118,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "joint_073",
+          "group_id": "joint_draw_27091_73",
+          "score": 2.1412154866402524,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "joint_074",
+          "group_id": "joint_draw_27091_74",
+          "score": 1.143215918164489,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "joint_075",
+          "group_id": "joint_draw_27091_75",
+          "score": 1.5577446015976903,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "joint_076",
+          "group_id": "joint_draw_27091_76",
+          "score": 0.9811044803777921,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "joint_077",
+          "group_id": "joint_draw_27091_77",
+          "score": 1.2487505408772226,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "joint_078",
+          "group_id": "joint_draw_27091_78",
+          "score": 1.2905758579150237,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "joint_079",
+          "group_id": "joint_draw_27091_79",
+          "score": null,
+          "assessable": false,
+          "covered": false
+        },
+        {
+          "case_id": "joint_080",
+          "group_id": "joint_draw_27091_80",
+          "score": 1.84125173357397,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "joint_081",
+          "group_id": "joint_draw_27091_81",
+          "score": 1.226364506639715,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "joint_082",
+          "group_id": "joint_draw_27091_82",
+          "score": 3.6745551733937867,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "joint_083",
+          "group_id": "joint_draw_27091_83",
+          "score": 1.3854106720668715,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "joint_084",
+          "group_id": "joint_draw_27091_84",
+          "score": 1.6969906407250015,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "joint_085",
+          "group_id": "joint_draw_27091_85",
+          "score": 1.880135854532665,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "joint_086",
+          "group_id": "joint_draw_27091_86",
+          "score": 1.8011403083433026,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "joint_087",
+          "group_id": "joint_draw_27091_87",
+          "score": 2.0514631289506537,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "joint_088",
+          "group_id": "joint_draw_27091_88",
+          "score": 22.540706876797273,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "joint_089",
+          "group_id": "joint_draw_27091_89",
+          "score": 22.930506438335836,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "joint_090",
+          "group_id": "joint_draw_27091_90",
+          "score": 22.6475712299202,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "joint_091",
+          "group_id": "joint_draw_27091_91",
+          "score": 22.58856225920757,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "joint_092",
+          "group_id": "joint_draw_27091_92",
+          "score": 22.990960914165765,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "joint_093",
+          "group_id": "joint_draw_27091_93",
+          "score": 22.560451614771686,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "joint_094",
+          "group_id": "joint_draw_27091_94",
+          "score": 22.90142712505556,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "joint_095",
+          "group_id": "joint_draw_27091_95",
+          "score": 22.806213980563953,
+          "assessable": true,
+          "covered": false
+        }
+      ],
+      "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage",
+      "full_error_model_sha256": "dce9609133e27d8edf004eb32f4271ff423ffc3569b7ff5a155ab358772cfdf1",
+      "score_centering": "development_joint_ocular",
+      "binomial_95_interval": [
+        0.36643064565636235,
+        0.7789030946533215
+      ]
+    }
+  },
+  "slices": [
+    {
+      "stratum": "stationary",
+      "prespecified": true,
+      "calibration_groups": 40,
+      "has_calibration_representation": true,
+      "evaluation": {
+        "cases": 16,
+        "groups": 16,
+        "covered_groups": 14,
+        "empirical_coverage": 0.875,
+        "binomial_95_interval": [
+          0.6165237631507364,
+          0.9844863961845861
+        ],
+        "case_count_per_group": {
+          "joint_draw_27091_72": 1,
+          "joint_draw_27091_73": 1,
+          "joint_draw_27091_74": 1,
+          "joint_draw_27091_75": 1,
+          "joint_draw_27091_76": 1,
+          "joint_draw_27091_77": 1,
+          "joint_draw_27091_78": 1,
+          "joint_draw_27091_79": 1,
+          "joint_draw_27091_80": 1,
+          "joint_draw_27091_81": 1,
+          "joint_draw_27091_82": 1,
+          "joint_draw_27091_83": 1,
+          "joint_draw_27091_84": 1,
+          "joint_draw_27091_85": 1,
+          "joint_draw_27091_86": 1,
+          "joint_draw_27091_87": 1
+        },
+        "scope": "all scored reference points in this slice's cases per group; overlapping slices are not pooled",
+        "interval_assumption": "independent comparable Bernoulli groups; not implied by marginal conformal exchangeability"
+      },
+      "raw_localization": {
+        "attempted_cases": 16,
+        "complete_cases": 15,
+        "failed_cases": 1,
+        "groups": 16,
+        "reference_kind": "synthetic_fixture",
+        "successful_case_mean_nme": 0.04833638795232109,
+        "unconditional_auc": 0.4843463629469898,
+        "auc_threshold_ipd": 0.1,
+        "pck_threshold_ipd": 0.05,
+        "eligible_landmarks": 128,
+        "observed_landmarks": 120,
+        "pck_including_failures": 0.515625,
+        "per_landmark": [
+          {
+            "name": "left_eye_outer",
+            "eligible": 16,
+            "observed": 15,
+            "within_tolerance": 8,
+            "pck": 0.5,
+            "median_error_px": 2.177980677899483
+          },
+          {
+            "name": "left_eye_inner",
+            "eligible": 16,
+            "observed": 15,
+            "within_tolerance": 8,
+            "pck": 0.5,
+            "median_error_px": 2.0527068334090135
+          },
+          {
+            "name": "right_eye_inner",
+            "eligible": 16,
+            "observed": 15,
+            "within_tolerance": 8,
+            "pck": 0.5,
+            "median_error_px": 2.0675715266394747
+          },
+          {
+            "name": "right_eye_outer",
+            "eligible": 16,
+            "observed": 15,
+            "within_tolerance": 8,
+            "pck": 0.5,
+            "median_error_px": 2.1191720968263246
+          },
+          {
+            "name": "nose_tip",
+            "eligible": 16,
+            "observed": 15,
+            "within_tolerance": 7,
+            "pck": 0.4375,
+            "median_error_px": 2.3799234738557615
+          },
+          {
+            "name": "mouth_left",
+            "eligible": 16,
+            "observed": 15,
+            "within_tolerance": 9,
+            "pck": 0.5625,
+            "median_error_px": 1.9508243849038234
+          },
+          {
+            "name": "mouth_right",
+            "eligible": 16,
+            "observed": 15,
+            "within_tolerance": 9,
+            "pck": 0.5625,
+            "median_error_px": 2.0129280629073776
+          },
+          {
+            "name": "chin",
+            "eligible": 16,
+            "observed": 15,
+            "within_tolerance": 9,
+            "pck": 0.5625,
+            "median_error_px": 2.2207501010436355
+          }
+        ],
+        "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+        "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+        "covariance_limit": "perturbation repeatability is not localization accuracy",
+        "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+      },
+      "conditional_coverage_guaranteed": false
+    },
+    {
+      "stratum": "unseen_shift",
+      "prespecified": true,
+      "calibration_groups": 0,
+      "has_calibration_representation": false,
+      "evaluation": {
+        "cases": 8,
+        "groups": 8,
+        "covered_groups": 0,
+        "empirical_coverage": 0.0,
+        "binomial_95_interval": [
+          0.0,
+          0.3694166475528192
+        ],
+        "case_count_per_group": {
+          "joint_draw_27091_88": 1,
+          "joint_draw_27091_89": 1,
+          "joint_draw_27091_90": 1,
+          "joint_draw_27091_91": 1,
+          "joint_draw_27091_92": 1,
+          "joint_draw_27091_93": 1,
+          "joint_draw_27091_94": 1,
+          "joint_draw_27091_95": 1
+        },
+        "scope": "all scored reference points in this slice's cases per group; overlapping slices are not pooled",
+        "interval_assumption": "independent comparable Bernoulli groups; not implied by marginal conformal exchangeability"
+      },
+      "raw_localization": {
+        "attempted_cases": 8,
+        "complete_cases": 8,
+        "failed_cases": 0,
+        "groups": 8,
+        "reference_kind": "synthetic_fixture",
+        "successful_case_mean_nme": 0.0765563786652621,
+        "unconditional_auc": 0.259079973509563,
+        "auc_threshold_ipd": 0.1,
+        "pck_threshold_ipd": 0.05,
+        "eligible_landmarks": 64,
+        "observed_landmarks": 64,
+        "pck_including_failures": 0.265625,
+        "per_landmark": [
+          {
+            "name": "left_eye_outer",
+            "eligible": 8,
+            "observed": 8,
+            "within_tolerance": 5,
+            "pck": 0.625,
+            "median_error_px": 1.9090929808859483
+          },
+          {
+            "name": "left_eye_inner",
+            "eligible": 8,
+            "observed": 8,
+            "within_tolerance": 4,
+            "pck": 0.5,
+            "median_error_px": 1.9589952552096732
+          },
+          {
+            "name": "right_eye_inner",
+            "eligible": 8,
+            "observed": 8,
+            "within_tolerance": 4,
+            "pck": 0.5,
+            "median_error_px": 1.9925637463494015
+          },
+          {
+            "name": "right_eye_outer",
+            "eligible": 8,
+            "observed": 8,
+            "within_tolerance": 4,
+            "pck": 0.5,
+            "median_error_px": 1.90185226594849
+          },
+          {
+            "name": "nose_tip",
+            "eligible": 8,
+            "observed": 8,
+            "within_tolerance": 0,
+            "pck": 0.0,
+            "median_error_px": 4.856731904803034
+          },
+          {
+            "name": "mouth_left",
+            "eligible": 8,
+            "observed": 8,
+            "within_tolerance": 0,
+            "pck": 0.0,
+            "median_error_px": 5.540921341473956
+          },
+          {
+            "name": "mouth_right",
+            "eligible": 8,
+            "observed": 8,
+            "within_tolerance": 0,
+            "pck": 0.0,
+            "median_error_px": 5.484645897667285
+          },
+          {
+            "name": "chin",
+            "eligible": 8,
+            "observed": 8,
+            "within_tolerance": 0,
+            "pck": 0.0,
+            "median_error_px": 5.179062489592281
+          }
+        ],
+        "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+        "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+        "covariance_limit": "perturbation repeatability is not localization accuracy",
+        "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+      },
+      "conditional_coverage_guaranteed": false
+    }
+  ],
+  "queries": [
+    {
+      "pair": "pair_00_mouth_0px",
+      "mouth_expansion_per_side_px": 0.0,
+      "known_reference_shape_rms": 0.0,
+      "observed_shape_rms": 0.003543166175392224,
+      "joint_shape": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.003543166175392224,
+        "reference_set_center_rms": 0.0035447332935115107,
+        "lower": 0.0,
+        "upper": 0.06065401336596059,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.0,
+        "quotient_lipschitz_lower": 0.0,
+        "quotient_lipschitz_upper": 0.060834434147477974,
+        "candidate_rotation_upper": 0.060654013365932166,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "same_set_marginal_shape": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.003543166175392224,
+        "reference_set_center_rms": 0.0035447332935115107,
+        "lower": 0.0,
+        "upper": 0.8690012041116341,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.0,
+        "quotient_lipschitz_lower": 0.0,
+        "quotient_lipschitz_upper": 0.8691851455973316,
+        "candidate_rotation_upper": 0.8690012041116056,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "width_ratio_joint_to_relaxation": 0.06979738702199637,
+      "known_shape_contained": true,
+      "bounded_relations": 256,
+      "known_relation_violations": 0,
+      "raw_arrays_unchanged": true,
+      "raw_array_count": 135,
+      "total_arrays": 173,
+      "joint_audit": {
+        "set": "one calibrated full16 ellipsoid per source; shared latent ball across all points",
+        "coordinate_order": "reference8_interleaved_xy",
+        "common_translation_variance_fraction": [
+          0.9805194026328916,
+          0.9805194026328916
+        ],
+        "relaxation": "product of the SAME set's 8 marginal ellipses, SAME q; not a separately fitted model",
+        "relaxed_shape_distance": {
+          "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+          "observed_rms": 0.003543166175392224,
+          "reference_set_center_rms": 0.0035447332935115107,
+          "lower": 0.0,
+          "upper": 0.8690012041116341,
+          "available": true,
+          "reason": "bounded",
+          "distance_matrix_lower": 0.0,
+          "quotient_lipschitz_lower": 0.0,
+          "quotient_lipschitz_upper": 0.8691851455973316,
+          "candidate_rotation_upper": 0.8690012041116056,
+          "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+          "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+          "arrays": [
+            "intrinsic_shape_deviation_radii",
+            "intrinsic_shape_candidate_rotation"
+          ]
+        },
+        "statistical_status": "no Gaussian assumption or independent landmark/source errors; no extra coverage from tighter algebra",
+        "source_covariance_array": "intrinsic_joint_covariance[2,16,16]",
+        "raw_repeatability_preserved": "intrinsic_source_covariance remains the observed perturbation covariance"
+      },
+      "verification": {
+        "verified": true,
+        "files": 14,
+        "arrays": 173,
+        "events": 17,
+        "manifest_content_sha256": "2d765c16fbd4bf55b7d274926bc46b0584494c7ab050b930578987db2cfa2621",
+        "limit": "self-consistency hashes; not an externally signed execution attestation"
+      }
+    },
+    {
+      "pair": "pair_01_mouth_4px",
+      "mouth_expansion_per_side_px": 4.0,
+      "known_reference_shape_rms": 0.04166666666666726,
+      "observed_shape_rms": 0.04239267490726864,
+      "joint_shape": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.04239267490726864,
+        "reference_set_center_rms": 0.04237683517153305,
+        "lower": 0.012137090036530003,
+        "upper": 0.08761613214322969,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.012137090036558424,
+        "quotient_lipschitz_lower": 0.0,
+        "quotient_lipschitz_upper": 0.09982935494458046,
+        "candidate_rotation_upper": 0.08761613214320127,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "same_set_marginal_shape": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.04239267490726864,
+        "reference_set_center_rms": 0.04237683517153305,
+        "lower": 0.0,
+        "upper": 0.8909895201073981,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.0,
+        "quotient_lipschitz_lower": 0.0,
+        "quotient_lipschitz_upper": 0.9100169997411562,
+        "candidate_rotation_upper": 0.8909895201073696,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "width_ratio_joint_to_relaxation": 0.08471372603529792,
+      "known_shape_contained": true,
+      "bounded_relations": 256,
+      "known_relation_violations": 0,
+      "raw_arrays_unchanged": true,
+      "raw_array_count": 135,
+      "total_arrays": 173,
+      "joint_audit": {
+        "set": "one calibrated full16 ellipsoid per source; shared latent ball across all points",
+        "coordinate_order": "reference8_interleaved_xy",
+        "common_translation_variance_fraction": [
+          0.9805194026328916,
+          0.9805194026328916
+        ],
+        "relaxation": "product of the SAME set's 8 marginal ellipses, SAME q; not a separately fitted model",
+        "relaxed_shape_distance": {
+          "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+          "observed_rms": 0.04239267490726864,
+          "reference_set_center_rms": 0.04237683517153305,
+          "lower": 0.0,
+          "upper": 0.8909895201073981,
+          "available": true,
+          "reason": "bounded",
+          "distance_matrix_lower": 0.0,
+          "quotient_lipschitz_lower": 0.0,
+          "quotient_lipschitz_upper": 0.9100169997411562,
+          "candidate_rotation_upper": 0.8909895201073696,
+          "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+          "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+          "arrays": [
+            "intrinsic_shape_deviation_radii",
+            "intrinsic_shape_candidate_rotation"
+          ]
+        },
+        "statistical_status": "no Gaussian assumption or independent landmark/source errors; no extra coverage from tighter algebra",
+        "source_covariance_array": "intrinsic_joint_covariance[2,16,16]",
+        "raw_repeatability_preserved": "intrinsic_source_covariance remains the observed perturbation covariance"
+      },
+      "verification": {
+        "verified": true,
+        "files": 14,
+        "arrays": 173,
+        "events": 17,
+        "manifest_content_sha256": "20dc033f7b85e0408616ff6b4bad6a97eb03afa79a8e1086282fe98111043ee9",
+        "limit": "self-consistency hashes; not an externally signed execution attestation"
+      }
+    },
+    {
+      "pair": "pair_02_mouth_8px",
+      "mouth_expansion_per_side_px": 8.0,
+      "known_reference_shape_rms": 0.08333333333333319,
+      "observed_shape_rms": 0.08468803527770952,
+      "joint_shape": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.08468803527770952,
+        "reference_set_center_rms": 0.08465524394967829,
+        "lower": 0.0340486599784893,
+        "upper": 0.12432426852042433,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.03404865997851772,
+        "quotient_lipschitz_lower": 0.026976929415599607,
+        "quotient_lipschitz_upper": 0.14233355848375695,
+        "candidate_rotation_upper": 0.12432426852039591,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "same_set_marginal_shape": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.08468803527770952,
+        "reference_set_center_rms": 0.08465524394967829,
+        "lower": 0.0,
+        "upper": 0.9165778912133344,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.0,
+        "quotient_lipschitz_lower": 0.0,
+        "quotient_lipschitz_upper": 0.9550752724429016,
+        "candidate_rotation_upper": 0.916577891213306,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "width_ratio_joint_to_relaxation": 0.09849202059895998,
+      "known_shape_contained": true,
+      "bounded_relations": 256,
+      "known_relation_violations": 0,
+      "raw_arrays_unchanged": true,
+      "raw_array_count": 135,
+      "total_arrays": 173,
+      "joint_audit": {
+        "set": "one calibrated full16 ellipsoid per source; shared latent ball across all points",
+        "coordinate_order": "reference8_interleaved_xy",
+        "common_translation_variance_fraction": [
+          0.9805194026328916,
+          0.9805194026328918
+        ],
+        "relaxation": "product of the SAME set's 8 marginal ellipses, SAME q; not a separately fitted model",
+        "relaxed_shape_distance": {
+          "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+          "observed_rms": 0.08468803527770952,
+          "reference_set_center_rms": 0.08465524394967829,
+          "lower": 0.0,
+          "upper": 0.9165778912133344,
+          "available": true,
+          "reason": "bounded",
+          "distance_matrix_lower": 0.0,
+          "quotient_lipschitz_lower": 0.0,
+          "quotient_lipschitz_upper": 0.9550752724429016,
+          "candidate_rotation_upper": 0.916577891213306,
+          "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+          "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+          "arrays": [
+            "intrinsic_shape_deviation_radii",
+            "intrinsic_shape_candidate_rotation"
+          ]
+        },
+        "statistical_status": "no Gaussian assumption or independent landmark/source errors; no extra coverage from tighter algebra",
+        "source_covariance_array": "intrinsic_joint_covariance[2,16,16]",
+        "raw_repeatability_preserved": "intrinsic_source_covariance remains the observed perturbation covariance"
+      },
+      "verification": {
+        "verified": true,
+        "files": 14,
+        "arrays": 173,
+        "events": 17,
+        "manifest_content_sha256": "61ea9fdeaab44984ecf543f5bf995c38230ea1b041ff15435923a12f3b9b6257",
+        "limit": "self-consistency hashes; not an externally signed execution attestation"
+      }
+    },
+    {
+      "pair": "pair_03_mouth_12px",
+      "mouth_expansion_per_side_px": 12.0,
+      "known_reference_shape_rms": 0.125,
+      "observed_shape_rms": 0.1252551311130367,
+      "joint_shape": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.1252551311130367,
+        "reference_set_center_rms": 0.1252062013266707,
+        "lower": 0.0672997276225643,
+        "upper": 0.16245114965436241,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.05915241288907903,
+        "quotient_lipschitz_lower": 0.06729972762259272,
+        "quotient_lipschitz_upper": 0.18311267503074868,
+        "candidate_rotation_upper": 0.162451149654334,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "same_set_marginal_shape": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.1252551311130367,
+        "reference_set_center_rms": 0.1252062013266707,
+        "lower": 0.0,
+        "upper": 0.943092173744789,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.0,
+        "quotient_lipschitz_lower": 0.0,
+        "quotient_lipschitz_upper": 0.99840916259683,
+        "candidate_rotation_upper": 0.9430921737447606,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "width_ratio_joint_to_relaxation": 0.10089302475491344,
+      "known_shape_contained": true,
+      "bounded_relations": 256,
+      "known_relation_violations": 0,
+      "raw_arrays_unchanged": true,
+      "raw_array_count": 135,
+      "total_arrays": 173,
+      "joint_audit": {
+        "set": "one calibrated full16 ellipsoid per source; shared latent ball across all points",
+        "coordinate_order": "reference8_interleaved_xy",
+        "common_translation_variance_fraction": [
+          0.9805194026328916,
+          0.9805194026328918
+        ],
+        "relaxation": "product of the SAME set's 8 marginal ellipses, SAME q; not a separately fitted model",
+        "relaxed_shape_distance": {
+          "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+          "observed_rms": 0.1252551311130367,
+          "reference_set_center_rms": 0.1252062013266707,
+          "lower": 0.0,
+          "upper": 0.943092173744789,
+          "available": true,
+          "reason": "bounded",
+          "distance_matrix_lower": 0.0,
+          "quotient_lipschitz_lower": 0.0,
+          "quotient_lipschitz_upper": 0.99840916259683,
+          "candidate_rotation_upper": 0.9430921737447606,
+          "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+          "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+          "arrays": [
+            "intrinsic_shape_deviation_radii",
+            "intrinsic_shape_candidate_rotation"
+          ]
+        },
+        "statistical_status": "no Gaussian assumption or independent landmark/source errors; no extra coverage from tighter algebra",
+        "source_covariance_array": "intrinsic_joint_covariance[2,16,16]",
+        "raw_repeatability_preserved": "intrinsic_source_covariance remains the observed perturbation covariance"
+      },
+      "verification": {
+        "verified": true,
+        "files": 14,
+        "arrays": 173,
+        "events": 17,
+        "manifest_content_sha256": "52a19a74aab76fe3a598720143ebdbdc31b7e4d2d1cb018dbd33212a0a379f31",
+        "limit": "self-consistency hashes; not an externally signed execution attestation"
+      }
+    }
+  ],
+  "set_controls": {
+    "format": "facemath.joint_set_controls.v7",
+    "kind": "analytic_and_synthetic_NOT_HUMAN",
+    "seed": 27091,
+    "sampled_shape_pairs": 1024,
+    "scalar_relation_checks": 262144,
+    "sampled_relation_violations": 0,
+    "sampled_shape_violations": 0,
+    "bounds": {
+      "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+      "observed_rms": 0.04999972298708903,
+      "reference_set_center_rms": 0.04999972298708903,
+      "lower": 0.03654232852235274,
+      "upper": 0.057349071635370855,
+      "available": true,
+      "reason": "bounded",
+      "distance_matrix_lower": 0.02790398655080638,
+      "quotient_lipschitz_lower": 0.036542328522381165,
+      "quotient_lipschitz_upper": 0.0634571174517969,
+      "candidate_rotation_upper": 0.05734907163534243,
+      "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+      "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+      "arrays": [
+        "intrinsic_shape_deviation_radii",
+        "intrinsic_shape_candidate_rotation"
+      ]
+    },
+    "sampled_refit_range": [
+      0.04828681396588364,
+      0.05219817333358198
+    ],
+    "same_marginals_different_dependence": {
+      "marginal_blocks_identical": true,
+      "rigid_eye_vector_uncertainty_radius": 1.1657918327402505e-09,
+      "opposed_eye_vector_uncertainty_radius": 0.16000000000002843
+    },
+    "translation_cancellation": {
+      "joint_shape": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 1.3749393538832257e-16,
+        "reference_set_center_rms": 1.3749393538832257e-16,
+        "lower": 0.0,
+        "upper": 3.004310197252557e-09,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.0,
+        "quotient_lipschitz_lower": 0.0,
+        "quotient_lipschitz_upper": 3.004281780024636e-09,
+        "candidate_rotation_upper": 3.0042817755431264e-09,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "same_set_marginal_relaxation": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 1.3749393538832257e-16,
+        "reference_set_center_rms": 1.3749393538832257e-16,
+        "lower": 0.0,
+        "upper": 0.6051785567171252,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.0,
+        "quotient_lipschitz_lower": 0.0,
+        "quotient_lipschitz_upper": 0.6051785567170967,
+        "candidate_rotation_upper": 0.6051785567170967,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      }
+    },
+    "limits": [
+      "finite samples are falsification checks, not proofs",
+      "one latent ball per source, no statistical source independence asserted",
+      "conservative float bounds, not exact interval extrema or formal interval arithmetic"
+    ]
+  },
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "packages": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "opencv-python": "4.13.0.92",
+      "mediapipe": null,
+      "pytest": "9.0.2"
+    },
+    "numeric_environment": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "opencv": "4.13.0"
+    },
+    "engine_code_sha256": "07219654315bf5ca372eaff806b664b3d5c4d4e897b92827f29c052e3917c014"
+  },
+  "qualification_verification": {
+    "verified": true,
+    "kind": "observer_qualification",
+    "files": 884,
+    "arrays": 12,
+    "study_sha256": "1e224042e1095bd0a796805122a00b2576b1b33e259284d9556a82780d20ab99",
+    "manifest_content_sha256": "4be51b8f8c4b0e830b2656116c5ae07b39dc327597e3bd074207dbef0092538f",
+    "live_inference_reexecuted": false
+  },
+  "boundary": "no human annotations, real detector accuracy, original-face score, or Gaussian error claim"
+}

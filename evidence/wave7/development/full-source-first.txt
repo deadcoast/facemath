@@ -1,0 +1,36 @@
+...........................................................F............ [ 12%]
+........................................................................ [ 24%]
+s....................................................................... [ 36%]
+........................................................................ [ 48%]
+........................................................................ [ 60%]
+........................................................................ [ 73%]
+........................................................................ [ 85%]
+........................................................................ [ 97%]
+...............                                                          [100%]
+=================================== FAILURES ===================================
+________ test_module_entrypoint_reports_version_from_another_directory _________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_module_entrypoint_reports0')
+
+    def test_module_entrypoint_reports_version_from_another_directory(tmp_path):
+        result = subprocess.run([sys.executable, '-m', 'facemath', '--version'], cwd=tmp_path,
+                                text=True, capture_output=True, check=True)
+>       assert result.stdout.strip() == 'facemath 0.7.0'
+E       AssertionError: assert 'facemath 0.6.0' == 'facemath 0.7.0'
+E         
+E         - facemath 0.7.0
+E         ?            ^
+E         + facemath 0.6.0
+E         ?            ^
+
+tests/test_wave3_cli.py:36: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_wave3_cli.py::test_module_entrypoint_reports_version_from_another_directory - AssertionError: assert 'facemath 0.6.0' == 'facemath 0.7.0'
+  
+  - facemath 0.7.0
+  ?            ^
+  + facemath 0.6.0
+  ?            ^
+1 failed, 589 passed, 1 skipped in 60.61s (0:01:00)
+
+

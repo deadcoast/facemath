@@ -1,0 +1,37 @@
+.F...........F.......                                                    [100%]
+=================================== FAILURES ===================================
+_________________ test_qualification_replay_recomputes_new_fit _________________
+
+study = (PosixPath('/tmp/pytest-of-root/pytest-2/joint-study0'), JointFixtureExecutor(records={'91844bc1c5d959a19a4d36f8247e09...1698 , -0.00020796,  0.0021757 , -0.00021312,
+         0.00222327]]), shrinkage=0.02, floor_eye_spans=0.001)), (3, 56))
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_qualification_replay_reco0')
+
+    def test_qualification_replay_recomputes_new_fit(study,tmp_path):
+        root=study[0]
+        answer=_replay(argparse.Namespace(bundle=str(root/'qualification'),out=str(tmp_path/'replay')))
+>       assert answer['replayed']
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'replayed'
+
+tests/test_wave7_joint_integration.py:69: KeyError
+_______________ test_joint_bundle_roundtrip_and_numerical_replay _______________
+
+pair = (InstrumentResult(state=CanonicalState(observation_a=Observation(image_sha256='459ab2cfc740c237ee149f7e0b400cd998e87ec...ans":0.0015,"name":"synthetic_joint_shape_observer","noise_floor_px":0.18,"sample_jitter_px":0.015,"version":7}'), ...)
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_joint_bundle_roundtrip_an0')
+
+    def test_joint_bundle_roundtrip_and_numerical_replay(pair,tmp_path):
+        r,_,a,b,*_=pair
+        path=write_bundle(r,tmp_path/'pair',a['image'],b['image'])
+        assert verify_bundle(path)['verified']
+        with np.load(path/'arrays.npz',allow_pickle=False) as z:
+            for key,value in r.arrays().items():np.testing.assert_array_equal(z[key],value)
+        answer=_replay(argparse.Namespace(bundle=str(path),out=str(tmp_path/'replay')))
+>       assert answer['replayed']
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'replayed'
+
+tests/test_wave7_joint_integration.py:151: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_wave7_joint_integration.py::test_qualification_replay_recomputes_new_fit - KeyError: 'replayed'
+FAILED tests/test_wave7_joint_integration.py::test_joint_bundle_roundtrip_and_numerical_replay - KeyError: 'replayed'
+2 failed, 19 passed in 6.65s

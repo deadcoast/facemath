@@ -1,0 +1,4310 @@
+{
+  "relations": [
+    {
+      "key": "distance.0.1",
+      "family": "distance",
+      "indices": [
+        0,
+        1
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "left_eye_inner"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.0.2",
+      "family": "distance",
+      "indices": [
+        0,
+        2
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_inner"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.0.3",
+      "family": "distance",
+      "indices": [
+        0,
+        3
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_outer"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.0.4",
+      "family": "distance",
+      "indices": [
+        0,
+        4
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "nose_tip"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.0.5",
+      "family": "distance",
+      "indices": [
+        0,
+        5
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_left"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.0.6",
+      "family": "distance",
+      "indices": [
+        0,
+        6
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.0.7",
+      "family": "distance",
+      "indices": [
+        0,
+        7
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.1.2",
+      "family": "distance",
+      "indices": [
+        1,
+        2
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_inner"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.1.3",
+      "family": "distance",
+      "indices": [
+        1,
+        3
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_outer"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.1.4",
+      "family": "distance",
+      "indices": [
+        1,
+        4
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "nose_tip"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.1.5",
+      "family": "distance",
+      "indices": [
+        1,
+        5
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "mouth_left"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.1.6",
+      "family": "distance",
+      "indices": [
+        1,
+        6
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.1.7",
+      "family": "distance",
+      "indices": [
+        1,
+        7
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.2.3",
+      "family": "distance",
+      "indices": [
+        2,
+        3
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "right_eye_outer"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.2.4",
+      "family": "distance",
+      "indices": [
+        2,
+        4
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "nose_tip"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.2.5",
+      "family": "distance",
+      "indices": [
+        2,
+        5
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "mouth_left"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.2.6",
+      "family": "distance",
+      "indices": [
+        2,
+        6
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.2.7",
+      "family": "distance",
+      "indices": [
+        2,
+        7
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.3.4",
+      "family": "distance",
+      "indices": [
+        3,
+        4
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "nose_tip"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.3.5",
+      "family": "distance",
+      "indices": [
+        3,
+        5
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "mouth_left"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.3.6",
+      "family": "distance",
+      "indices": [
+        3,
+        6
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.3.7",
+      "family": "distance",
+      "indices": [
+        3,
+        7
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.4.5",
+      "family": "distance",
+      "indices": [
+        4,
+        5
+      ],
+      "point_names": [
+        "nose_tip",
+        "mouth_left"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.4.6",
+      "family": "distance",
+      "indices": [
+        4,
+        6
+      ],
+      "point_names": [
+        "nose_tip",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.4.7",
+      "family": "distance",
+      "indices": [
+        4,
+        7
+      ],
+      "point_names": [
+        "nose_tip",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.5.6",
+      "family": "distance",
+      "indices": [
+        5,
+        6
+      ],
+      "point_names": [
+        "mouth_left",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.5.7",
+      "family": "distance",
+      "indices": [
+        5,
+        7
+      ],
+      "point_names": [
+        "mouth_left",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "distance.6.7",
+      "family": "distance",
+      "indices": [
+        6,
+        7
+      ],
+      "point_names": [
+        "mouth_right",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans",
+      "tolerance": 0.05,
+      "description": "distance divided by this source's uncertain reference eye-midpoint span"
+    },
+    {
+      "key": "angle.1.0.2",
+      "family": "angle",
+      "indices": [
+        1,
+        0,
+        2
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "left_eye_outer",
+        "right_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.0.3",
+      "family": "angle",
+      "indices": [
+        1,
+        0,
+        3
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "left_eye_outer",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.0.4",
+      "family": "angle",
+      "indices": [
+        1,
+        0,
+        4
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "left_eye_outer",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.0.5",
+      "family": "angle",
+      "indices": [
+        1,
+        0,
+        5
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "left_eye_outer",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.0.6",
+      "family": "angle",
+      "indices": [
+        1,
+        0,
+        6
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "left_eye_outer",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.0.7",
+      "family": "angle",
+      "indices": [
+        1,
+        0,
+        7
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "left_eye_outer",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.0.3",
+      "family": "angle",
+      "indices": [
+        2,
+        0,
+        3
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "left_eye_outer",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.0.4",
+      "family": "angle",
+      "indices": [
+        2,
+        0,
+        4
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "left_eye_outer",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.0.5",
+      "family": "angle",
+      "indices": [
+        2,
+        0,
+        5
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "left_eye_outer",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.0.6",
+      "family": "angle",
+      "indices": [
+        2,
+        0,
+        6
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "left_eye_outer",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.0.7",
+      "family": "angle",
+      "indices": [
+        2,
+        0,
+        7
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "left_eye_outer",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.0.4",
+      "family": "angle",
+      "indices": [
+        3,
+        0,
+        4
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "left_eye_outer",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.0.5",
+      "family": "angle",
+      "indices": [
+        3,
+        0,
+        5
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "left_eye_outer",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.0.6",
+      "family": "angle",
+      "indices": [
+        3,
+        0,
+        6
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "left_eye_outer",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.0.7",
+      "family": "angle",
+      "indices": [
+        3,
+        0,
+        7
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "left_eye_outer",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.0.5",
+      "family": "angle",
+      "indices": [
+        4,
+        0,
+        5
+      ],
+      "point_names": [
+        "nose_tip",
+        "left_eye_outer",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.0.6",
+      "family": "angle",
+      "indices": [
+        4,
+        0,
+        6
+      ],
+      "point_names": [
+        "nose_tip",
+        "left_eye_outer",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.0.7",
+      "family": "angle",
+      "indices": [
+        4,
+        0,
+        7
+      ],
+      "point_names": [
+        "nose_tip",
+        "left_eye_outer",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.5.0.6",
+      "family": "angle",
+      "indices": [
+        5,
+        0,
+        6
+      ],
+      "point_names": [
+        "mouth_left",
+        "left_eye_outer",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.5.0.7",
+      "family": "angle",
+      "indices": [
+        5,
+        0,
+        7
+      ],
+      "point_names": [
+        "mouth_left",
+        "left_eye_outer",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.6.0.7",
+      "family": "angle",
+      "indices": [
+        6,
+        0,
+        7
+      ],
+      "point_names": [
+        "mouth_right",
+        "left_eye_outer",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.1.2",
+      "family": "angle",
+      "indices": [
+        0,
+        1,
+        2
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "left_eye_inner",
+        "right_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.1.3",
+      "family": "angle",
+      "indices": [
+        0,
+        1,
+        3
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "left_eye_inner",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.1.4",
+      "family": "angle",
+      "indices": [
+        0,
+        1,
+        4
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "left_eye_inner",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.1.5",
+      "family": "angle",
+      "indices": [
+        0,
+        1,
+        5
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "left_eye_inner",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.1.6",
+      "family": "angle",
+      "indices": [
+        0,
+        1,
+        6
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "left_eye_inner",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.1.7",
+      "family": "angle",
+      "indices": [
+        0,
+        1,
+        7
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "left_eye_inner",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.1.3",
+      "family": "angle",
+      "indices": [
+        2,
+        1,
+        3
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "left_eye_inner",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.1.4",
+      "family": "angle",
+      "indices": [
+        2,
+        1,
+        4
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "left_eye_inner",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.1.5",
+      "family": "angle",
+      "indices": [
+        2,
+        1,
+        5
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "left_eye_inner",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.1.6",
+      "family": "angle",
+      "indices": [
+        2,
+        1,
+        6
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "left_eye_inner",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.1.7",
+      "family": "angle",
+      "indices": [
+        2,
+        1,
+        7
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "left_eye_inner",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.1.4",
+      "family": "angle",
+      "indices": [
+        3,
+        1,
+        4
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "left_eye_inner",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.1.5",
+      "family": "angle",
+      "indices": [
+        3,
+        1,
+        5
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "left_eye_inner",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.1.6",
+      "family": "angle",
+      "indices": [
+        3,
+        1,
+        6
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "left_eye_inner",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.1.7",
+      "family": "angle",
+      "indices": [
+        3,
+        1,
+        7
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "left_eye_inner",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.1.5",
+      "family": "angle",
+      "indices": [
+        4,
+        1,
+        5
+      ],
+      "point_names": [
+        "nose_tip",
+        "left_eye_inner",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.1.6",
+      "family": "angle",
+      "indices": [
+        4,
+        1,
+        6
+      ],
+      "point_names": [
+        "nose_tip",
+        "left_eye_inner",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.1.7",
+      "family": "angle",
+      "indices": [
+        4,
+        1,
+        7
+      ],
+      "point_names": [
+        "nose_tip",
+        "left_eye_inner",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.5.1.6",
+      "family": "angle",
+      "indices": [
+        5,
+        1,
+        6
+      ],
+      "point_names": [
+        "mouth_left",
+        "left_eye_inner",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.5.1.7",
+      "family": "angle",
+      "indices": [
+        5,
+        1,
+        7
+      ],
+      "point_names": [
+        "mouth_left",
+        "left_eye_inner",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.6.1.7",
+      "family": "angle",
+      "indices": [
+        6,
+        1,
+        7
+      ],
+      "point_names": [
+        "mouth_right",
+        "left_eye_inner",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.2.1",
+      "family": "angle",
+      "indices": [
+        0,
+        2,
+        1
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_inner",
+        "left_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.2.3",
+      "family": "angle",
+      "indices": [
+        0,
+        2,
+        3
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_inner",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.2.4",
+      "family": "angle",
+      "indices": [
+        0,
+        2,
+        4
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_inner",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.2.5",
+      "family": "angle",
+      "indices": [
+        0,
+        2,
+        5
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_inner",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.2.6",
+      "family": "angle",
+      "indices": [
+        0,
+        2,
+        6
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_inner",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.2.7",
+      "family": "angle",
+      "indices": [
+        0,
+        2,
+        7
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_inner",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.2.3",
+      "family": "angle",
+      "indices": [
+        1,
+        2,
+        3
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_inner",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.2.4",
+      "family": "angle",
+      "indices": [
+        1,
+        2,
+        4
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_inner",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.2.5",
+      "family": "angle",
+      "indices": [
+        1,
+        2,
+        5
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_inner",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.2.6",
+      "family": "angle",
+      "indices": [
+        1,
+        2,
+        6
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_inner",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.2.7",
+      "family": "angle",
+      "indices": [
+        1,
+        2,
+        7
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_inner",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.2.4",
+      "family": "angle",
+      "indices": [
+        3,
+        2,
+        4
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "right_eye_inner",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.2.5",
+      "family": "angle",
+      "indices": [
+        3,
+        2,
+        5
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "right_eye_inner",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.2.6",
+      "family": "angle",
+      "indices": [
+        3,
+        2,
+        6
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "right_eye_inner",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.2.7",
+      "family": "angle",
+      "indices": [
+        3,
+        2,
+        7
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "right_eye_inner",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.2.5",
+      "family": "angle",
+      "indices": [
+        4,
+        2,
+        5
+      ],
+      "point_names": [
+        "nose_tip",
+        "right_eye_inner",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.2.6",
+      "family": "angle",
+      "indices": [
+        4,
+        2,
+        6
+      ],
+      "point_names": [
+        "nose_tip",
+        "right_eye_inner",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.2.7",
+      "family": "angle",
+      "indices": [
+        4,
+        2,
+        7
+      ],
+      "point_names": [
+        "nose_tip",
+        "right_eye_inner",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.5.2.6",
+      "family": "angle",
+      "indices": [
+        5,
+        2,
+        6
+      ],
+      "point_names": [
+        "mouth_left",
+        "right_eye_inner",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.5.2.7",
+      "family": "angle",
+      "indices": [
+        5,
+        2,
+        7
+      ],
+      "point_names": [
+        "mouth_left",
+        "right_eye_inner",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.6.2.7",
+      "family": "angle",
+      "indices": [
+        6,
+        2,
+        7
+      ],
+      "point_names": [
+        "mouth_right",
+        "right_eye_inner",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.3.1",
+      "family": "angle",
+      "indices": [
+        0,
+        3,
+        1
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_outer",
+        "left_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.3.2",
+      "family": "angle",
+      "indices": [
+        0,
+        3,
+        2
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_outer",
+        "right_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.3.4",
+      "family": "angle",
+      "indices": [
+        0,
+        3,
+        4
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_outer",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.3.5",
+      "family": "angle",
+      "indices": [
+        0,
+        3,
+        5
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_outer",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.3.6",
+      "family": "angle",
+      "indices": [
+        0,
+        3,
+        6
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_outer",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.3.7",
+      "family": "angle",
+      "indices": [
+        0,
+        3,
+        7
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_outer",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.3.2",
+      "family": "angle",
+      "indices": [
+        1,
+        3,
+        2
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_outer",
+        "right_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.3.4",
+      "family": "angle",
+      "indices": [
+        1,
+        3,
+        4
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_outer",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.3.5",
+      "family": "angle",
+      "indices": [
+        1,
+        3,
+        5
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_outer",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.3.6",
+      "family": "angle",
+      "indices": [
+        1,
+        3,
+        6
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_outer",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.3.7",
+      "family": "angle",
+      "indices": [
+        1,
+        3,
+        7
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_outer",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.3.4",
+      "family": "angle",
+      "indices": [
+        2,
+        3,
+        4
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "right_eye_outer",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.3.5",
+      "family": "angle",
+      "indices": [
+        2,
+        3,
+        5
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "right_eye_outer",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.3.6",
+      "family": "angle",
+      "indices": [
+        2,
+        3,
+        6
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "right_eye_outer",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.3.7",
+      "family": "angle",
+      "indices": [
+        2,
+        3,
+        7
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "right_eye_outer",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.3.5",
+      "family": "angle",
+      "indices": [
+        4,
+        3,
+        5
+      ],
+      "point_names": [
+        "nose_tip",
+        "right_eye_outer",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.3.6",
+      "family": "angle",
+      "indices": [
+        4,
+        3,
+        6
+      ],
+      "point_names": [
+        "nose_tip",
+        "right_eye_outer",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.3.7",
+      "family": "angle",
+      "indices": [
+        4,
+        3,
+        7
+      ],
+      "point_names": [
+        "nose_tip",
+        "right_eye_outer",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.5.3.6",
+      "family": "angle",
+      "indices": [
+        5,
+        3,
+        6
+      ],
+      "point_names": [
+        "mouth_left",
+        "right_eye_outer",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.5.3.7",
+      "family": "angle",
+      "indices": [
+        5,
+        3,
+        7
+      ],
+      "point_names": [
+        "mouth_left",
+        "right_eye_outer",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.6.3.7",
+      "family": "angle",
+      "indices": [
+        6,
+        3,
+        7
+      ],
+      "point_names": [
+        "mouth_right",
+        "right_eye_outer",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.4.1",
+      "family": "angle",
+      "indices": [
+        0,
+        4,
+        1
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "nose_tip",
+        "left_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.4.2",
+      "family": "angle",
+      "indices": [
+        0,
+        4,
+        2
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "nose_tip",
+        "right_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.4.3",
+      "family": "angle",
+      "indices": [
+        0,
+        4,
+        3
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "nose_tip",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.4.5",
+      "family": "angle",
+      "indices": [
+        0,
+        4,
+        5
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "nose_tip",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.4.6",
+      "family": "angle",
+      "indices": [
+        0,
+        4,
+        6
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "nose_tip",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.4.7",
+      "family": "angle",
+      "indices": [
+        0,
+        4,
+        7
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "nose_tip",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.4.2",
+      "family": "angle",
+      "indices": [
+        1,
+        4,
+        2
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "nose_tip",
+        "right_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.4.3",
+      "family": "angle",
+      "indices": [
+        1,
+        4,
+        3
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "nose_tip",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.4.5",
+      "family": "angle",
+      "indices": [
+        1,
+        4,
+        5
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "nose_tip",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.4.6",
+      "family": "angle",
+      "indices": [
+        1,
+        4,
+        6
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "nose_tip",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.4.7",
+      "family": "angle",
+      "indices": [
+        1,
+        4,
+        7
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "nose_tip",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.4.3",
+      "family": "angle",
+      "indices": [
+        2,
+        4,
+        3
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "nose_tip",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.4.5",
+      "family": "angle",
+      "indices": [
+        2,
+        4,
+        5
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "nose_tip",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.4.6",
+      "family": "angle",
+      "indices": [
+        2,
+        4,
+        6
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "nose_tip",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.4.7",
+      "family": "angle",
+      "indices": [
+        2,
+        4,
+        7
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "nose_tip",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.4.5",
+      "family": "angle",
+      "indices": [
+        3,
+        4,
+        5
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "nose_tip",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.4.6",
+      "family": "angle",
+      "indices": [
+        3,
+        4,
+        6
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "nose_tip",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.4.7",
+      "family": "angle",
+      "indices": [
+        3,
+        4,
+        7
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "nose_tip",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.5.4.6",
+      "family": "angle",
+      "indices": [
+        5,
+        4,
+        6
+      ],
+      "point_names": [
+        "mouth_left",
+        "nose_tip",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.5.4.7",
+      "family": "angle",
+      "indices": [
+        5,
+        4,
+        7
+      ],
+      "point_names": [
+        "mouth_left",
+        "nose_tip",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.6.4.7",
+      "family": "angle",
+      "indices": [
+        6,
+        4,
+        7
+      ],
+      "point_names": [
+        "mouth_right",
+        "nose_tip",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.5.1",
+      "family": "angle",
+      "indices": [
+        0,
+        5,
+        1
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_left",
+        "left_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.5.2",
+      "family": "angle",
+      "indices": [
+        0,
+        5,
+        2
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_left",
+        "right_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.5.3",
+      "family": "angle",
+      "indices": [
+        0,
+        5,
+        3
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_left",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.5.4",
+      "family": "angle",
+      "indices": [
+        0,
+        5,
+        4
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_left",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.5.6",
+      "family": "angle",
+      "indices": [
+        0,
+        5,
+        6
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_left",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.5.7",
+      "family": "angle",
+      "indices": [
+        0,
+        5,
+        7
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_left",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.5.2",
+      "family": "angle",
+      "indices": [
+        1,
+        5,
+        2
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "mouth_left",
+        "right_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.5.3",
+      "family": "angle",
+      "indices": [
+        1,
+        5,
+        3
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "mouth_left",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.5.4",
+      "family": "angle",
+      "indices": [
+        1,
+        5,
+        4
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "mouth_left",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.5.6",
+      "family": "angle",
+      "indices": [
+        1,
+        5,
+        6
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "mouth_left",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.5.7",
+      "family": "angle",
+      "indices": [
+        1,
+        5,
+        7
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "mouth_left",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.5.3",
+      "family": "angle",
+      "indices": [
+        2,
+        5,
+        3
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "mouth_left",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.5.4",
+      "family": "angle",
+      "indices": [
+        2,
+        5,
+        4
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "mouth_left",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.5.6",
+      "family": "angle",
+      "indices": [
+        2,
+        5,
+        6
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "mouth_left",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.5.7",
+      "family": "angle",
+      "indices": [
+        2,
+        5,
+        7
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "mouth_left",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.5.4",
+      "family": "angle",
+      "indices": [
+        3,
+        5,
+        4
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "mouth_left",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.5.6",
+      "family": "angle",
+      "indices": [
+        3,
+        5,
+        6
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "mouth_left",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.5.7",
+      "family": "angle",
+      "indices": [
+        3,
+        5,
+        7
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "mouth_left",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.5.6",
+      "family": "angle",
+      "indices": [
+        4,
+        5,
+        6
+      ],
+      "point_names": [
+        "nose_tip",
+        "mouth_left",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.5.7",
+      "family": "angle",
+      "indices": [
+        4,
+        5,
+        7
+      ],
+      "point_names": [
+        "nose_tip",
+        "mouth_left",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.6.5.7",
+      "family": "angle",
+      "indices": [
+        6,
+        5,
+        7
+      ],
+      "point_names": [
+        "mouth_right",
+        "mouth_left",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.6.1",
+      "family": "angle",
+      "indices": [
+        0,
+        6,
+        1
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_right",
+        "left_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.6.2",
+      "family": "angle",
+      "indices": [
+        0,
+        6,
+        2
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_right",
+        "right_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.6.3",
+      "family": "angle",
+      "indices": [
+        0,
+        6,
+        3
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_right",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.6.4",
+      "family": "angle",
+      "indices": [
+        0,
+        6,
+        4
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_right",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.6.5",
+      "family": "angle",
+      "indices": [
+        0,
+        6,
+        5
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_right",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.6.7",
+      "family": "angle",
+      "indices": [
+        0,
+        6,
+        7
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_right",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.6.2",
+      "family": "angle",
+      "indices": [
+        1,
+        6,
+        2
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "mouth_right",
+        "right_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.6.3",
+      "family": "angle",
+      "indices": [
+        1,
+        6,
+        3
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "mouth_right",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.6.4",
+      "family": "angle",
+      "indices": [
+        1,
+        6,
+        4
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "mouth_right",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.6.5",
+      "family": "angle",
+      "indices": [
+        1,
+        6,
+        5
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "mouth_right",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.6.7",
+      "family": "angle",
+      "indices": [
+        1,
+        6,
+        7
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "mouth_right",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.6.3",
+      "family": "angle",
+      "indices": [
+        2,
+        6,
+        3
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "mouth_right",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.6.4",
+      "family": "angle",
+      "indices": [
+        2,
+        6,
+        4
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "mouth_right",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.6.5",
+      "family": "angle",
+      "indices": [
+        2,
+        6,
+        5
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "mouth_right",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.6.7",
+      "family": "angle",
+      "indices": [
+        2,
+        6,
+        7
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "mouth_right",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.6.4",
+      "family": "angle",
+      "indices": [
+        3,
+        6,
+        4
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "mouth_right",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.6.5",
+      "family": "angle",
+      "indices": [
+        3,
+        6,
+        5
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "mouth_right",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.6.7",
+      "family": "angle",
+      "indices": [
+        3,
+        6,
+        7
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "mouth_right",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.6.5",
+      "family": "angle",
+      "indices": [
+        4,
+        6,
+        5
+      ],
+      "point_names": [
+        "nose_tip",
+        "mouth_right",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.6.7",
+      "family": "angle",
+      "indices": [
+        4,
+        6,
+        7
+      ],
+      "point_names": [
+        "nose_tip",
+        "mouth_right",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.5.6.7",
+      "family": "angle",
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "point_names": [
+        "mouth_left",
+        "mouth_right",
+        "chin"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.7.1",
+      "family": "angle",
+      "indices": [
+        0,
+        7,
+        1
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "chin",
+        "left_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.7.2",
+      "family": "angle",
+      "indices": [
+        0,
+        7,
+        2
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "chin",
+        "right_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.7.3",
+      "family": "angle",
+      "indices": [
+        0,
+        7,
+        3
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "chin",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.7.4",
+      "family": "angle",
+      "indices": [
+        0,
+        7,
+        4
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "chin",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.7.5",
+      "family": "angle",
+      "indices": [
+        0,
+        7,
+        5
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "chin",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.0.7.6",
+      "family": "angle",
+      "indices": [
+        0,
+        7,
+        6
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "chin",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.7.2",
+      "family": "angle",
+      "indices": [
+        1,
+        7,
+        2
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "chin",
+        "right_eye_inner"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.7.3",
+      "family": "angle",
+      "indices": [
+        1,
+        7,
+        3
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "chin",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.7.4",
+      "family": "angle",
+      "indices": [
+        1,
+        7,
+        4
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "chin",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.7.5",
+      "family": "angle",
+      "indices": [
+        1,
+        7,
+        5
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "chin",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.1.7.6",
+      "family": "angle",
+      "indices": [
+        1,
+        7,
+        6
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "chin",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.7.3",
+      "family": "angle",
+      "indices": [
+        2,
+        7,
+        3
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "chin",
+        "right_eye_outer"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.7.4",
+      "family": "angle",
+      "indices": [
+        2,
+        7,
+        4
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "chin",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.7.5",
+      "family": "angle",
+      "indices": [
+        2,
+        7,
+        5
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "chin",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.2.7.6",
+      "family": "angle",
+      "indices": [
+        2,
+        7,
+        6
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "chin",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.7.4",
+      "family": "angle",
+      "indices": [
+        3,
+        7,
+        4
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "chin",
+        "nose_tip"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.7.5",
+      "family": "angle",
+      "indices": [
+        3,
+        7,
+        5
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "chin",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.3.7.6",
+      "family": "angle",
+      "indices": [
+        3,
+        7,
+        6
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "chin",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.7.5",
+      "family": "angle",
+      "indices": [
+        4,
+        7,
+        5
+      ],
+      "point_names": [
+        "nose_tip",
+        "chin",
+        "mouth_left"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.4.7.6",
+      "family": "angle",
+      "indices": [
+        4,
+        7,
+        6
+      ],
+      "point_names": [
+        "nose_tip",
+        "chin",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "angle.5.7.6",
+      "family": "angle",
+      "indices": [
+        5,
+        7,
+        6
+      ],
+      "point_names": [
+        "mouth_left",
+        "chin",
+        "mouth_right"
+      ],
+      "unit": "radians",
+      "tolerance": 0.08726646259971647,
+      "description": "unsigned included angle at the middle listed landmark"
+    },
+    {
+      "key": "area.0.1.2",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        1,
+        2
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "left_eye_inner",
+        "right_eye_inner"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.1.3",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        1,
+        3
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "left_eye_inner",
+        "right_eye_outer"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.1.4",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        1,
+        4
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "left_eye_inner",
+        "nose_tip"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.1.5",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        1,
+        5
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "left_eye_inner",
+        "mouth_left"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.1.6",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        1,
+        6
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "left_eye_inner",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.1.7",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        1,
+        7
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "left_eye_inner",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.2.3",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        2,
+        3
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_inner",
+        "right_eye_outer"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.2.4",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        2,
+        4
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_inner",
+        "nose_tip"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.2.5",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        2,
+        5
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_inner",
+        "mouth_left"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.2.6",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        2,
+        6
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_inner",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.2.7",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        2,
+        7
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_inner",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.3.4",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        3,
+        4
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_outer",
+        "nose_tip"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.3.5",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        3,
+        5
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_outer",
+        "mouth_left"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.3.6",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        3,
+        6
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_outer",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.3.7",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        3,
+        7
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "right_eye_outer",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.4.5",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        4,
+        5
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "nose_tip",
+        "mouth_left"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.4.6",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        4,
+        6
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "nose_tip",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.4.7",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        4,
+        7
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "nose_tip",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.5.6",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        5,
+        6
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_left",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.5.7",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        5,
+        7
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_left",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.0.6.7",
+      "family": "signed_double_area",
+      "indices": [
+        0,
+        6,
+        7
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "mouth_right",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.1.2.3",
+      "family": "signed_double_area",
+      "indices": [
+        1,
+        2,
+        3
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_inner",
+        "right_eye_outer"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.1.2.4",
+      "family": "signed_double_area",
+      "indices": [
+        1,
+        2,
+        4
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_inner",
+        "nose_tip"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.1.2.5",
+      "family": "signed_double_area",
+      "indices": [
+        1,
+        2,
+        5
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_inner",
+        "mouth_left"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.1.2.6",
+      "family": "signed_double_area",
+      "indices": [
+        1,
+        2,
+        6
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_inner",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.1.2.7",
+      "family": "signed_double_area",
+      "indices": [
+        1,
+        2,
+        7
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_inner",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.1.3.4",
+      "family": "signed_double_area",
+      "indices": [
+        1,
+        3,
+        4
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_outer",
+        "nose_tip"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.1.3.5",
+      "family": "signed_double_area",
+      "indices": [
+        1,
+        3,
+        5
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_outer",
+        "mouth_left"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.1.3.6",
+      "family": "signed_double_area",
+      "indices": [
+        1,
+        3,
+        6
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_outer",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.1.3.7",
+      "family": "signed_double_area",
+      "indices": [
+        1,
+        3,
+        7
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "right_eye_outer",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.1.4.5",
+      "family": "signed_double_area",
+      "indices": [
+        1,
+        4,
+        5
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "nose_tip",
+        "mouth_left"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.1.4.6",
+      "family": "signed_double_area",
+      "indices": [
+        1,
+        4,
+        6
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "nose_tip",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.1.4.7",
+      "family": "signed_double_area",
+      "indices": [
+        1,
+        4,
+        7
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "nose_tip",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.1.5.6",
+      "family": "signed_double_area",
+      "indices": [
+        1,
+        5,
+        6
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "mouth_left",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.1.5.7",
+      "family": "signed_double_area",
+      "indices": [
+        1,
+        5,
+        7
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "mouth_left",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.1.6.7",
+      "family": "signed_double_area",
+      "indices": [
+        1,
+        6,
+        7
+      ],
+      "point_names": [
+        "left_eye_inner",
+        "mouth_right",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.2.3.4",
+      "family": "signed_double_area",
+      "indices": [
+        2,
+        3,
+        4
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "right_eye_outer",
+        "nose_tip"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.2.3.5",
+      "family": "signed_double_area",
+      "indices": [
+        2,
+        3,
+        5
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "right_eye_outer",
+        "mouth_left"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.2.3.6",
+      "family": "signed_double_area",
+      "indices": [
+        2,
+        3,
+        6
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "right_eye_outer",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.2.3.7",
+      "family": "signed_double_area",
+      "indices": [
+        2,
+        3,
+        7
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "right_eye_outer",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.2.4.5",
+      "family": "signed_double_area",
+      "indices": [
+        2,
+        4,
+        5
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "nose_tip",
+        "mouth_left"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.2.4.6",
+      "family": "signed_double_area",
+      "indices": [
+        2,
+        4,
+        6
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "nose_tip",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.2.4.7",
+      "family": "signed_double_area",
+      "indices": [
+        2,
+        4,
+        7
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "nose_tip",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.2.5.6",
+      "family": "signed_double_area",
+      "indices": [
+        2,
+        5,
+        6
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "mouth_left",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.2.5.7",
+      "family": "signed_double_area",
+      "indices": [
+        2,
+        5,
+        7
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "mouth_left",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.2.6.7",
+      "family": "signed_double_area",
+      "indices": [
+        2,
+        6,
+        7
+      ],
+      "point_names": [
+        "right_eye_inner",
+        "mouth_right",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.3.4.5",
+      "family": "signed_double_area",
+      "indices": [
+        3,
+        4,
+        5
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "nose_tip",
+        "mouth_left"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.3.4.6",
+      "family": "signed_double_area",
+      "indices": [
+        3,
+        4,
+        6
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "nose_tip",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.3.4.7",
+      "family": "signed_double_area",
+      "indices": [
+        3,
+        4,
+        7
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "nose_tip",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.3.5.6",
+      "family": "signed_double_area",
+      "indices": [
+        3,
+        5,
+        6
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "mouth_left",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.3.5.7",
+      "family": "signed_double_area",
+      "indices": [
+        3,
+        5,
+        7
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "mouth_left",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.3.6.7",
+      "family": "signed_double_area",
+      "indices": [
+        3,
+        6,
+        7
+      ],
+      "point_names": [
+        "right_eye_outer",
+        "mouth_right",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.4.5.6",
+      "family": "signed_double_area",
+      "indices": [
+        4,
+        5,
+        6
+      ],
+      "point_names": [
+        "nose_tip",
+        "mouth_left",
+        "mouth_right"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.4.5.7",
+      "family": "signed_double_area",
+      "indices": [
+        4,
+        5,
+        7
+      ],
+      "point_names": [
+        "nose_tip",
+        "mouth_left",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.4.6.7",
+      "family": "signed_double_area",
+      "indices": [
+        4,
+        6,
+        7
+      ],
+      "point_names": [
+        "nose_tip",
+        "mouth_right",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "area.5.6.7",
+      "family": "signed_double_area",
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "point_names": [
+        "mouth_left",
+        "mouth_right",
+        "chin"
+      ],
+      "unit": "own_reference_eye_spans_squared",
+      "tolerance": 0.05,
+      "description": "oriented double triangle area; proper-rotation invariant, reflection sensitive under fixed labels"
+    },
+    {
+      "key": "asymmetry.eye_width",
+      "family": "asymmetry",
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "left_eye_inner",
+        "right_eye_inner",
+        "right_eye_outer"
+      ],
+      "unit": "signed_length_contrast",
+      "tolerance": 0.05,
+      "description": "(viewer-left length - viewer-right length) / sum of both lengths"
+    },
+    {
+      "key": "asymmetry.nose_to_eye",
+      "family": "asymmetry",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "left_eye_inner",
+        "right_eye_inner",
+        "right_eye_outer",
+        "nose_tip"
+      ],
+      "unit": "signed_length_contrast",
+      "tolerance": 0.05,
+      "description": "(viewer-left length - viewer-right length) / sum of both lengths"
+    },
+    {
+      "key": "asymmetry.nose_to_mouth",
+      "family": "asymmetry",
+      "indices": [
+        4,
+        5,
+        6
+      ],
+      "point_names": [
+        "nose_tip",
+        "mouth_left",
+        "mouth_right"
+      ],
+      "unit": "signed_length_contrast",
+      "tolerance": 0.05,
+      "description": "(viewer-left length - viewer-right length) / sum of both lengths"
+    },
+    {
+      "key": "asymmetry.chin_to_eye",
+      "family": "asymmetry",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "point_names": [
+        "left_eye_outer",
+        "left_eye_inner",
+        "right_eye_inner",
+        "right_eye_outer",
+        "chin"
+      ],
+      "unit": "signed_length_contrast",
+      "tolerance": 0.05,
+      "description": "(viewer-left length - viewer-right length) / sum of both lengths"
+    }
+  ]
+}

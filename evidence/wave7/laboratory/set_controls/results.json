@@ -1,0 +1,82 @@
+{
+  "format": "facemath.joint_set_controls.v7",
+  "kind": "analytic_and_synthetic_NOT_HUMAN",
+  "seed": 27091,
+  "sampled_shape_pairs": 1024,
+  "scalar_relation_checks": 262144,
+  "sampled_relation_violations": 0,
+  "sampled_shape_violations": 0,
+  "bounds": {
+    "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+    "observed_rms": 0.04999972298708903,
+    "reference_set_center_rms": 0.04999972298708903,
+    "lower": 0.03654232852235274,
+    "upper": 0.057349071635370855,
+    "available": true,
+    "reason": "bounded",
+    "distance_matrix_lower": 0.02790398655080638,
+    "quotient_lipschitz_lower": 0.036542328522381165,
+    "quotient_lipschitz_upper": 0.0634571174517969,
+    "candidate_rotation_upper": 0.05734907163534243,
+    "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+    "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+    "arrays": [
+      "intrinsic_shape_deviation_radii",
+      "intrinsic_shape_candidate_rotation"
+    ]
+  },
+  "sampled_refit_range": [
+    0.04828681396588364,
+    0.05219817333358198
+  ],
+  "same_marginals_different_dependence": {
+    "marginal_blocks_identical": true,
+    "rigid_eye_vector_uncertainty_radius": 1.1657918327402505e-09,
+    "opposed_eye_vector_uncertainty_radius": 0.16000000000002843
+  },
+  "translation_cancellation": {
+    "joint_shape": {
+      "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+      "observed_rms": 1.3749393538832257e-16,
+      "reference_set_center_rms": 1.3749393538832257e-16,
+      "lower": 0.0,
+      "upper": 3.004310197252557e-09,
+      "available": true,
+      "reason": "bounded",
+      "distance_matrix_lower": 0.0,
+      "quotient_lipschitz_lower": 0.0,
+      "quotient_lipschitz_upper": 3.004281780024636e-09,
+      "candidate_rotation_upper": 3.0042817755431264e-09,
+      "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+      "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+      "arrays": [
+        "intrinsic_shape_deviation_radii",
+        "intrinsic_shape_candidate_rotation"
+      ]
+    },
+    "same_set_marginal_relaxation": {
+      "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+      "observed_rms": 1.3749393538832257e-16,
+      "reference_set_center_rms": 1.3749393538832257e-16,
+      "lower": 0.0,
+      "upper": 0.6051785567171252,
+      "available": true,
+      "reason": "bounded",
+      "distance_matrix_lower": 0.0,
+      "quotient_lipschitz_lower": 0.0,
+      "quotient_lipschitz_upper": 0.6051785567170967,
+      "candidate_rotation_upper": 0.6051785567170967,
+      "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+      "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+      "arrays": [
+        "intrinsic_shape_deviation_radii",
+        "intrinsic_shape_candidate_rotation"
+      ]
+    }
+  },
+  "limits": [
+    "finite samples are falsification checks, not proofs",
+    "one latent ball per source, no statistical source independence asserted",
+    "conservative float bounds, not exact interval extrema or formal interval arithmetic"
+  ]
+}
