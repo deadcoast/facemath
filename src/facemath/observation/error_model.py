@@ -40,6 +40,10 @@ class ErrorCalibration(Protocol):
     def require_query(self, observation: Observation, group_id: str, domain: str,
                       lineage_ids: tuple[str, ...] = ()) -> None: ...
 
+    def source_covariance(self, observation: Observation) -> np.ndarray: ...
+
+    def source_joint_covariance(self, observation: Observation) -> np.ndarray | None: ...
+
     def to_dict(self) -> dict[str, Any]: ...
 
 
@@ -118,6 +122,12 @@ class LocalizationCalibration:
             raise ObservationError("calibration name order differs")
         from dataclasses import fields
         return cls(**{f.name: obj[f.name] for f in fields(cls)})
+
+    def source_covariance(self, observation: Observation) -> np.ndarray:
+        return mapped_prediction(observation)[1]
+
+    def source_joint_covariance(self, observation: Observation) -> np.ndarray | None:
+        return None
 
     def require_query(self, observation: Any, group_id: str, domain: str, lineage_ids: tuple[str, ...] = ()) -> None:
         if self.quantile is None:
@@ -320,7 +330,8 @@ def assess_pair(state: Any, calibration: ErrorCalibration, *, query_groups: tupl
         (state.source_to_canonical_a, state.source_to_canonical_b), query_groups, query_lineages,
     ):
         calibration.require_query(observation, group, domain, tuple(lineages))
-        xy, cov, support = mapped_prediction(observation)
+        xy, _, support = mapped_prediction(observation)
+        cov = calibration.source_covariance(observation)
         points.append(apply_points(xy, matrix))
         pushed_covariances.append(np.einsum("ij,njk,lk->nil", matrix[:2,:2], cov, matrix[:2,:2]))
         radius = calibration.quantile * np.sqrt(np.linalg.eigvalsh(cov)[:, -1])

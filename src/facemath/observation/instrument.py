@@ -13,6 +13,7 @@ from .measure import MeasurementProfile, measure
 from .edge_support import EdgeDiagnostics, diagnose_edges
 from .error_model import LocalizationCalibration, LocalizationEnvelope, assess_pair
 from .bias import BiasCalibration, BiasEnvelope, assess_bias_pair
+from .intrinsic import IntrinsicProfile, measure_intrinsic
 
 
 @dataclass(frozen=True)
@@ -25,6 +26,7 @@ class InstrumentResult:
     environment: dict
     edges: EdgeDiagnostics | None = None
     localization: LocalizationEnvelope | BiasEnvelope | None = None
+    intrinsic: IntrinsicProfile | None = None
 
     def evidence(self) -> dict:
         return {
@@ -40,6 +42,7 @@ class InstrumentResult:
             "population_percentile": None,
             "edge_diagnostics": self.edges.summary() if self.edges is not None else None,
             "localization_envelope": self.localization.to_dict() if self.localization is not None else None,
+            "intrinsic_profile": self.intrinsic.to_dict() if self.intrinsic is not None else None,
             "limits": [
                 "2D projected geometry, not identity recognition or proof of 3D shape",
                 "model contours and interpolated fields derive from the same landmarks; not independent evidence",
@@ -85,7 +88,25 @@ class InstrumentResult:
             arrays.update(self.localization.arrays())
             if self.localization.directional is not None:
                 arrays.update(self.localization.directional.arrays())
+        if self.intrinsic is not None:
+            arrays.update(self.intrinsic.arrays())
         return arrays
+
+
+    def raw_geometry_arrays(self) -> dict[str, np.ndarray]:
+        """Arrays that adding localization qualification is forbidden to change.
+
+        New error-set centers, bounds and certificates are explicitly excluded;
+        the original diagnostic state and new observed relations are retained.
+        """
+        intrinsic_observed = {
+            "intrinsic_raw_points", "intrinsic_source_covariance", "intrinsic_source_chart",
+            "intrinsic_source_supported", "intrinsic_nominal", "intrinsic_nominal_valid",
+            "intrinsic_relation_a", "intrinsic_relation_b", "intrinsic_support_normals",
+        }
+        return {key: value for key, value in self.arrays().items()
+                if not key.startswith("localization_")
+                and (not key.startswith("intrinsic_") or key in intrinsic_observed)}
 
 
 class InstrumentFailure(ObservationError):
@@ -168,6 +189,18 @@ class FacialInstrument:
                                           query_groups=self.query_groups, domain=self.domain, query_lineages=self.query_lineages)
                 output.update(supported_points=int(localization.supported.sum()),
                               kind="fixed_observed_gauge_error_envelope_not_shape_confidence")
+        intrinsic = None
+        if self.config.enable_intrinsic:
+            with journal.step("measure.intrinsic_reference_shapes", {
+                "reference_points": 8, "changes_registration": False,
+                "uncertain_normalization": True,
+            }) as output:
+                intrinsic = measure_intrinsic(state, localization)
+                output.update(relations=len(intrinsic.relations),
+                              bounded_relations=int(intrinsic.gap_available.sum()),
+                              error_set="joint_full16" if intrinsic.joint is not None else "marginal_product",
+                              shape_bound_available=intrinsic.shape.available,
+                              recipe_sha256=intrinsic.recipe_sha256)
         env = environment()
         journal.record("execution.complete", {"environment": env, "recipe_sha256": state.recipe_sha256})
-        return InstrumentResult(state, field, flow, profile, journal.jsonl(), env, edges, localization)
+        return InstrumentResult(state, field, flow, profile, journal.jsonl(), env, edges, localization, intrinsic)

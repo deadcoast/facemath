@@ -47,6 +47,8 @@ def _html(result: InstrumentResult, arrays: dict[str, np.ndarray]) -> str:
     def uri(image: np.ndarray) -> str:
         return "data:image/png;base64," + b64encode(_png(image)).decode()
     ev = result.evidence()
+    from .intrinsic_report import render_intrinsic_section
+    intrinsic_section = render_intrinsic_section(result.intrinsic) if result.intrinsic is not None else ""
     rows = []
     for m in result.profile.measurements:
         value = "WITHHELD" if m.value is None else f"{m.value:.6g}"
@@ -90,7 +92,7 @@ small{{display:block;color:var(--muted);font-size:12px;max-width:68ch}}code{{fon
 a{{color:var(--accent)}}summary{{cursor:pointer;font-weight:600}}input[type=range]{{width:min(100%,500px)}}.blend{{position:relative;max-width:360px}}.blend img{{width:100%;display:block}}.blend img:last-child{{position:absolute;inset:0;opacity:.5}}
 footer{{margin-top:40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:18px}}
 @media(max-width:760px){{.gallery{{grid-template-columns:1fr}}main{{padding:20px 14px}}h1{{font-size:28px}}}}
-</style><main><header><div class="eyebrow">FACEMATH / WAVE 05 / OBSERVATION → FIELD → EVIDENCE</div>
+</style><main><header><div class="eyebrow">FACEMATH / WAVE 06 / OBSERVATION → FIELD → EVIDENCE</div>
 <h1>Anatomical correspondence, exposed.</h1>
 <span class="tag">{escape(result.state.observation_a.provider)}</span><span class="tag">{len(result.state.xy_a)} observed landmarks</span>
 <span class="tag">No identity scoring</span><span class="tag">No population calibration attached</span>
@@ -104,7 +106,7 @@ footer{{margin-top:40px;color:var(--muted);font-size:12px;border-top:1px solid v
 <label>A → B <input id="opacity" type="range" min="0" max="100" value="50" aria-label="B opacity"></label></details>
 <div class="panel"><strong>Read the units before the number.</strong><br>
 Landmark residuals are normalized by the geometric mean of registered interocular spans. A within-tolerance fraction counts landmarks below the declared threshold ({result.state.config.tolerance_ipd:g} spans). Neither quantity is an identity probability. The intervals below measure conditional observation sensitivity, not established detector accuracy.</div>
-<h2>Measured profile</h2><div class="scroll"><table><thead><tr><th>Measurement / interpretation</th><th>Value</th><th>Unit</th><th>Support / denominator</th><th>95% sensitivity interval</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
+{intrinsic_section}<h2>Measured profile</h2><div class="scroll"><table><thead><tr><th>Measurement / interpretation</th><th>Value</th><th>Unit</th><th>Support / denominator</th><th>95% sensitivity interval</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
 {edge_section}{localization_section}<h2>Raw numerical state</h2><p><a href="arrays.npz">arrays.npz</a> · <a href="evidence.json">evidence.json</a> · <a href="observations.json">observations.json</a> · <a href="events.jsonl">actual execution events</a> · <a href="manifest.json">byte manifest</a></p>
 <div class="scroll"><table><thead><tr><th>Array</th><th>Shape</th><th>dtype</th><th>Content digest</th></tr></thead><tbody>{array_rows}</tbody></table></div>
 <h2>Observation constraints</h2><ul>{warnings or '<li>No additional source warnings.</li>'}</ul><ul>{limits}</ul>
@@ -133,6 +135,10 @@ def write_bundle(result: InstrumentResult, destination: str | Path,
         (temp / "events.jsonl").write_text(result.journal_jsonl, encoding="utf-8")
         if result.localization is not None:
             (temp / "localization_calibration.json").write_text(json.dumps(result.localization.calibration.to_dict(), indent=2, allow_nan=False), encoding="utf-8")
+        if result.intrinsic is not None:
+            from .intrinsic_report import relation_csv
+            (temp / "intrinsic.json").write_text(json.dumps(result.intrinsic.to_dict(), indent=2, allow_nan=False), encoding="utf-8")
+            (temp / "intrinsic.csv").write_text(relation_csv(result.intrinsic), encoding="utf-8", newline="")
         for name, image in (("source_a.png", source_a), ("source_b.png", source_b),
                             ("canonical_a.png", result.state.image_a), ("canonical_b.png", result.state.image_b),
                             ("landmark_overlay.png", _overlay(result))):
@@ -155,6 +161,7 @@ def write_bundle(result: InstrumentResult, destination: str | Path,
                 "landmark_supported": "source-coordinate in-bounds intersection for both observations",
                 "flow_admissible": "heuristic texture/cycle/overlap support, not correctness probability",
                 "edge_*": "landmark-guided normal-ray gradient response; offsets are meaningful only where accepted; not independent anatomy or landmark corrections",
+                "intrinsic_*": "source-chart reference8 relations with uncertain eye-span normalization; arrays use the 256-row registry in intrinsic.json; source axes A,B; missing bounds use explicit masks; no independent votes",
                 "localization_*": "eight reference-protocol points only; source-ellipse-derived outer gap bounds in the fixed observed coordinate gauge; no extrapolation to 478 points",
             },
             "integrity_limit": "self-consistency hashes; not an externally signed execution attestation",
@@ -194,6 +201,12 @@ def verify_bundle(path: str | Path) -> dict[str, Any]:
             a = data[name]
             if list(a.shape) != spec["shape"] or a.dtype.str != spec["dtype"] or array_digest(a) != spec["sha256"]:
                 raise ObservationError(f"array contract mismatch: {name}")
+    evidence = json.loads((root / "evidence.json").read_text(encoding="utf-8"))
+    if evidence.get("intrinsic_profile") is not None:
+        if "intrinsic.json" not in manifest["files"] or "intrinsic.csv" not in manifest["files"]:
+            raise ObservationError("intrinsic profile lost its external data artifacts")
+        if json.loads((root / "intrinsic.json").read_text(encoding="utf-8")) != evidence["intrinsic_profile"]:
+            raise ObservationError("intrinsic report differs from instrument evidence")
     records = [json.loads(line) for line in (root / "events.jsonl").read_text().splitlines()]
     verify_journal(records)
     return {"verified": True, "files": len(manifest["files"]), "arrays": len(manifest["arrays"]),

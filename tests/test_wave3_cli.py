@@ -33,7 +33,7 @@ def demo(tmp_path):
 def test_module_entrypoint_reports_version_from_another_directory(tmp_path):
     result = subprocess.run([sys.executable, '-m', 'facemath', '--version'], cwd=tmp_path,
                             text=True, capture_output=True, check=True)
-    assert result.stdout.strip() == 'facemath 0.5.0'
+    assert result.stdout.strip() == 'facemath 0.7.0'
 
 
 def test_demo_verify_replay_roundtrip(demo, tmp_path):
@@ -146,7 +146,7 @@ def test_lazy_public_api_preserves_original_classes_and_exposes_version():
     assert facemath.Frame is Frame
     assert facemath.FacialInstrument is FacialInstrument
     assert facemath.InstrumentFailure is InstrumentFailure
-    assert facemath.__version__ == '0.5.0'
+    assert facemath.__version__ == '0.7.0'
     assert 'FacialInstrument' in dir(facemath)
     with pytest.raises(AttributeError):
         getattr(facemath, 'invented_symbol')

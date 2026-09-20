@@ -14,6 +14,7 @@ import numpy as np
 from scipy.stats import beta as beta_distribution
 
 from .bias import BiasCalibration, fit_bias_calibration
+from .joint import JointCalibration, fit_joint_calibration
 from .contracts import ObservationError, object_digest
 from .error_model import evaluate_coverage, fit_localization_calibration
 from .reference import REFERENCE_NAMES
@@ -74,7 +75,17 @@ def qualify(study: FrozenStudy, raw_report: dict[str, Any], session_status: dict
     baseline_coverage = evaluate_coverage(baseline, rows)
     bias = None
     arrays: dict[str, np.ndarray] = {}
-    if data["bias_mode"] == "development_ocular":
+    if data["bias_mode"] == "development_joint_ocular":
+        selected, scored = fit_joint_calibration(rows, study_sha256=raw_report["content_sha256"],
+            domain=data["domain"], alpha=data["alpha"], minimum_raters=data["minimum_raters"],
+            minimum_development_groups=data["minimum_development_groups"], **data["joint_error"])
+        bias = selected.bias
+        coverage = evaluate_coverage(selected.residual, scored)
+        arrays.update(development_group_bias_vectors=bias.group_vectors, development_bias_beta=bias.beta,
+            development_joint_group_second_moments=selected.scatter.group_second_moments,
+            development_joint_covariance=selected.scatter.covariance,
+            development_joint_group_case_counts=np.asarray(selected.scatter.group_case_counts, dtype=np.int64))
+    elif data["bias_mode"] == "development_ocular":
         selected, scored = fit_bias_calibration(rows, study_sha256=raw_report["content_sha256"],
             domain=data["domain"], alpha=data["alpha"], minimum_raters=data["minimum_raters"],
             minimum_development_groups=data["minimum_development_groups"])
@@ -160,6 +171,9 @@ def qualify(study: FrozenStudy, raw_report: dict[str, Any], session_status: dict
         "selected_error_model": {"calibration_sha256": selected.digest, "quantile": selected.quantile,
             "rank": selected.residual.rank if isinstance(selected, BiasCalibration) else selected.rank,
             "bias_sha256": bias.digest if bias else None,
+            "joint_scatter_sha256": selected.scatter.digest if isinstance(selected, JointCalibration) else None,
+            "error_geometry": "full16_shared_latent_ellipsoid" if isinstance(selected, JointCalibration) else "marginal_product_ellipses",
+            "q_comparability": "score definitions differ across model types; compare coverage and widths, not q alone",
             "development_groups": len(bias.development_groups) if bias else 0,
             "fitted_development_groups": len(bias.fitted_groups) if bias else 0,
             "development_cases_rejected": list(bias.rejected_cases) if bias else [],

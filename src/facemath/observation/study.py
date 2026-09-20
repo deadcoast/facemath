@@ -233,8 +233,17 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
     from .error_model import corrected_quantile
     corrected_quantile(np.zeros(1), alpha)
     mode = spec.get("bias_mode", "none")
-    if mode not in ("none", "development_ocular"):
-        raise ObservationError("bias_mode must be frozen as none or development_ocular")
+    if mode not in ("none", "development_ocular", "development_joint_ocular"):
+        raise ObservationError("bias_mode must be frozen as none, development_ocular or development_joint_ocular")
+    joint_config = None
+    if mode == "development_joint_ocular":
+        from .joint import regularized_scatter
+        joint_config = spec.get("joint_error", {"shrinkage": .02, "floor_eye_spans": .001})
+        if not isinstance(joint_config, dict) or set(joint_config) != {"shrinkage", "floor_eye_spans"}:
+            raise ObservationError("joint_error requires exactly shrinkage and floor_eye_spans")
+        regularized_scatter(np.zeros((1,16,16)), joint_config["shrinkage"], joint_config["floor_eye_spans"])
+    elif "joint_error" in spec:
+        raise ObservationError("joint_error parameters require development_joint_ocular mode")
     strata = spec.get("strata", ["all"])
     if not isinstance(strata, list) or not strata or len(set(strata)) != len(strata) or any(not isinstance(s, str) or not s for s in strata):
         raise ObservationError("declare unique nonempty strata before acquisition")
@@ -290,7 +299,7 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
             cases.append(ValidationCase(case_id, group, split, refs, None, "prospective_not_attempted", tuple(lineages)))
         loaded.append((e, image, refs, sha256(image_file.read_bytes()).hexdigest()))
     validate_study(tuple(cases))
-    if mode == "development_ocular" and len({c.group_id for c in cases if c.split == "development"}) < min_dev:
+    if mode in ("development_ocular", "development_joint_ocular") and len({c.group_id for c in cases if c.split == "development"}) < min_dev:
         raise ObservationError("too few prospectively enrolled development groups for selected bias mode")
     if not any(c.split == "calibration" for c in cases) or not any(c.split == "evaluation" for c in cases):
         raise ObservationError("prospective qualification requires calibration and evaluation groups")
@@ -321,6 +330,8 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
                 "source_manifest_sha256": sha256(spec_path.read_bytes()).hexdigest(),
                 "declarations": {"chronology_and_blinding": "curator-declared, not externally attested",
                                  "model_receives": "source raster only; not reference coordinates, split or stratum"}}
+        if joint_config is not None:
+            lock["joint_error"] = joint_config
         write_json_new(temp / "study.lock.json", lock)
         manifest = {"format": "facemath.study_lock_manifest.v5", "study_sha256": object_digest(lock),
                     "files": file_inventory(temp)}

@@ -139,7 +139,7 @@ def run_study_laboratory(destination: str | Path, *, seed: int = 25091) -> dict[
         query_lineages=(tuple(ca['entry']['lineage_ids']),tuple(cb['entry']['lineage_ids'])))
     qualified=instrument.run(ca['image'],cb['image'],oa,ob)
     write_bundle(qualified,root/"qualified_pair",ca['image'],cb['image'])
-    common=bare.arrays()
+    common=bare.raw_geometry_arrays()
     unchanged=all(np.array_equal(a,qualified.arrays()[k]) for k,a in common.items())
     ids=[SEMANTIC_21.index(n) for n in REFERENCE_NAMES]
     known_gap=np.linalg.norm(apply_points(ca['truth'][ids],qualified.state.source_to_canonical_a)-

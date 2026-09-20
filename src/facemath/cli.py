@@ -10,6 +10,8 @@ import sys
 import cv2
 import numpy as np
 
+from . import __version__
+
 from .observation import (
     FacialInstrument,
     InstrumentConfig,
@@ -53,6 +55,11 @@ def _configuration(args: argparse.Namespace) -> InstrumentConfig:
         tolerance_ipd=args.tolerance,
         enable_flow=not args.no_flow,
         enable_edges=not args.no_edges,
+        enable_intrinsic=not args.no_intrinsic,
+        intrinsic_length_tolerance=args.relation_length_tolerance,
+        intrinsic_angle_tolerance_rad=np.deg2rad(args.relation_angle_tolerance_deg),
+        intrinsic_area_tolerance=args.relation_area_tolerance,
+        intrinsic_asymmetry_tolerance=args.relation_asymmetry_tolerance,
     )
 
 
@@ -63,6 +70,12 @@ def _add_config(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--tolerance", type=float, default=.05, help="landmark tolerance in registered eye spans")
     parser.add_argument("--no-flow", action="store_true", help="disable independent optical-flow diagnostic")
     parser.add_argument("--no-edges", action="store_true", help="disable landmark-guided image edge diagnostics")
+    parser.add_argument("--no-intrinsic", action="store_true", help="disable reference8 intrinsic relations")
+    parser.add_argument("--relation-length-tolerance", type=float, default=.05,
+                        help="difference tolerance for lengths in each source's own reference eye spans")
+    parser.add_argument("--relation-angle-tolerance-deg", type=float, default=5., help="angular difference tolerance; stored in radians")
+    parser.add_argument("--relation-area-tolerance", type=float, default=.05, help="signed double-area difference in squared eye spans")
+    parser.add_argument("--relation-asymmetry-tolerance", type=float, default=.05, help="signed bilateral contrast difference tolerance")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -70,7 +83,7 @@ def build_parser() -> argparse.ArgumentParser:
         prog="facemath",
         description="One observed anatomy. One coordinate gauge. Raw, replayable evidence.",
     )
-    parser.add_argument("--version", action="version", version="facemath 0.5.0")
+    parser.add_argument("--version", action="version", version=f"facemath {__version__}")
     sub = parser.add_subparsers(dest="command", required=True)
 
     p = sub.add_parser("analyze", help="Wave 3 integrated pair instrument")
@@ -196,6 +209,14 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--out", required=True)
     p.add_argument("--seed", type=int, default=25091)
 
+    p = sub.add_parser("intrinsic-lab", help="execute uncertain-normalization and refitted-shape controls; synthetic only")
+    p.add_argument("--out", required=True)
+    p.add_argument("--seed", type=int, default=26091)
+
+    p = sub.add_parser("joint-lab", help="execute correlated-reference-error study and shape controls; synthetic only")
+    p.add_argument("--out", required=True)
+    p.add_argument("--seed", type=int, default=27091)
+
     p = sub.add_parser("doctor", help="report runtime/model availability; never claims inference was run")
     p.add_argument("--model")
     p.add_argument("--out")
@@ -288,6 +309,9 @@ def _replay(args: argparse.Namespace) -> dict:
         Observation.from_dict(observations["a"]),
         Observation.from_dict(observations["b"]),
     )
+    from .observation.contracts import object_digest
+    if object_digest(result.evidence().get("intrinsic_profile")) != object_digest(evidence.get("intrinsic_profile")):
+        raise ObservationError("replayed intrinsic profile differs")
     if result.state.recipe_sha256 != evidence["recipe_sha256"]:
         raise ObservationError("replayed measurement recipe differs")
     previous_metrics = {m["name"]: m for m in evidence["measurement_profile"]}
@@ -480,6 +504,12 @@ def execute(args: argparse.Namespace) -> dict:
         from .observation.study_io import finalize_session, verify_qualification_bundle
         target = finalize_session(args.session, args.out)
         return {"bundle": str(target), **verify_qualification_bundle(target)}
+    if args.command == "joint-lab":
+        from .observation.joint_lab import run_joint_laboratory
+        return run_joint_laboratory(args.out, seed=args.seed)
+    if args.command == "intrinsic-lab":
+        from .observation.intrinsic_lab import run_intrinsic_laboratory
+        return run_intrinsic_laboratory(args.out, seed=args.seed)
     if args.command == "study-lab":
         from .observation.study_lab import run_study_laboratory
         result = run_study_laboratory(args.out, seed=args.seed)

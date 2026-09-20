@@ -37,6 +37,12 @@ class InstrumentConfig:
     edge_radius_ipd: float = .05
     edge_gradient_floor: float = .025
     edge_maximum_ambiguity: float = .85
+    enable_intrinsic: bool = True
+    intrinsic_length_tolerance: float = .05
+    intrinsic_angle_tolerance_rad: float = .08726646259971647
+    intrinsic_area_tolerance: float = .05
+    intrinsic_asymmetry_tolerance: float = .05
+    intrinsic_directions: int = 128
 
     def __post_init__(self) -> None:
         integers = {"canvas_size": self.canvas_size, "fit_iterations": self.fit_iterations,
@@ -65,12 +71,23 @@ class InstrumentConfig:
             raise ObservationError("invalid edge gradient floor")
         if not np.isfinite(self.edge_maximum_ambiguity) or not 0 < self.edge_maximum_ambiguity < 1:
             raise ObservationError("invalid edge ambiguity threshold")
+        if type(self.enable_intrinsic) is not bool:
+            raise ObservationError("enable_intrinsic must be boolean")
+        if (type(self.intrinsic_directions) is not int or not 32 <= self.intrinsic_directions <= 2048
+                or self.intrinsic_directions % 2):
+            raise ObservationError("intrinsic_directions must be even and in [32,2048]")
+        for name in ("intrinsic_length_tolerance", "intrinsic_angle_tolerance_rad",
+                     "intrinsic_area_tolerance", "intrinsic_asymmetry_tolerance"):
+            if isinstance(getattr(self, name), bool) or not np.isfinite(getattr(self, name)) or getattr(self, name) <= 0:
+                raise ObservationError(f"{name} must be finite and positive")
+        if self.intrinsic_angle_tolerance_rad > np.pi or self.intrinsic_asymmetry_tolerance > 2:
+            raise ObservationError("intrinsic angle/asymmetry tolerance exceeds its range")
         if self.seed < 0:
             raise ObservationError("seed must be nonnegative")
 
     def recipe(self) -> dict:
         from dataclasses import asdict
-        return {"engine": "facemath-observation-4.0", **asdict(self)}
+        return {"engine": "facemath-observation-7.0", **asdict(self)}
 
 
 def proper_similarity(a: np.ndarray, b: np.ndarray, weights: np.ndarray | None = None) -> tuple[np.ndarray, float]:
@@ -175,7 +192,8 @@ def fit_anatomy(a: np.ndarray, b: np.ndarray, anatomy: Anatomy, config: Instrume
     return matrix, weights, names
 
 
-def eye_chart(xy: np.ndarray, anatomy: Anatomy, config: InstrumentConfig) -> np.ndarray:
+def eye_chart(xy: np.ndarray, anatomy: Anatomy, config: InstrumentConfig,
+              supported: np.ndarray | None = None) -> np.ndarray:
     anchors = anatomy.points(xy)
     left, right = anchors["left_eye"], anchors["right_eye"]
     d = eye_span(xy, anatomy)
@@ -185,7 +203,16 @@ def eye_chart(xy: np.ndarray, anatomy: Anatomy, config: InstrumentConfig) -> np.
     matrix[:2, :2] = (config.eye_span_px / d) * rotation
     origin = np.array([config.canvas_size / 2, .34 * config.canvas_size])
     matrix[:2, 2] = origin - matrix[:2, :2] @ ((left + right) / 2)
-    if apply_points(np.array([anchors["chin"]]), matrix)[0, 1] <= origin[1]:
+    # An off-image chin must not decide orientation for the observed face.
+    # Use the first supported lower-face anchor; never turn the image over to fit.
+    support = np.ones(len(xy), bool) if supported is None else np.asarray(supported, bool)
+    if support.shape != (len(xy),):
+        raise ObservationError("orientation support must match the landmark inventory")
+    lower_anchors = [name for name in ("chin", "mouth_left", "mouth_right", "nose_tip")
+                     if np.all(support[list(anatomy.anchors[name])])]
+    if not lower_anchors:
+        raise ObservationError("no observable lower-face anchor for orientation")
+    if apply_points(np.array([anchors[lower_anchors[0]]]), matrix)[0, 1] <= origin[1]:
         raise ObservationError("face side/orientation convention inconsistent; do not silently reflect")
     return matrix
 
@@ -263,7 +290,7 @@ def canonicalize(image_a: np.ndarray, image_b: np.ndarray, a: Observation, b: Ob
     if not np.all(joint_observed[list(eye_ids)]):
         raise ObservationError("canonical eye anchors must be inside both source images")
     m, weights, names = fit_anatomy(a.xy, b.xy, anatomy, config, supported=joint_observed)
-    cb = eye_chart(b.xy, anatomy, config)
+    cb = eye_chart(b.xy, anatomy, config, supported=b.in_bounds)
     ca = cb @ m
     aa, va = warp_with_support(image_a, ca, config.canvas_size)
     bb, vb = warp_with_support(image_b, cb, config.canvas_size)

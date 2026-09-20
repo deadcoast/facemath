@@ -227,6 +227,12 @@ class BiasCalibration:
     def reference_kind(self) -> str:
         return self.residual.reference_kind
 
+    def source_covariance(self, observation: Observation) -> np.ndarray:
+        return self.residual.source_covariance(observation)
+
+    def source_joint_covariance(self, observation: Observation) -> np.ndarray | None:
+        return None
+
     def require_query(self, observation: Observation, group_id: str, domain: str,
                       lineage_ids: tuple[str, ...] = ()) -> None:
         self.residual.require_query(observation, group_id, domain, lineage_ids)
@@ -336,6 +342,9 @@ def assess_bias_pair(state: Any, calibration: BiasCalibration, **kwargs: Any) ->
 
 
 def load_localization_calibration(obj: Mapping[str, Any]) -> LocalizationCalibration | BiasCalibration:
+    if obj.get("format") == "facemath.localization_calibration.v7":
+        from .joint import JointCalibration
+        return JointCalibration.from_dict(obj)
     if obj.get("format") == "facemath.localization_calibration.v5":
         return BiasCalibration.from_dict(obj)
     return LocalizationCalibration.from_dict(obj)
