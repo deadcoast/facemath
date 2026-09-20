@@ -1,3 +1,11 @@
+# Current priority after Wave 07
+
+Joint full-shape error sets now feed the active instrument. The next gate remains live native observation against independent real references; neither synthetic covariance controls nor interval tightening closes it. Freeze an observation study, check reference8 semantics and visibility, compare coverage across declared acquisition strata, then decide whether further contour/3D annotation and nonlinear error geometry are justified. Do not tune the selected model on final evaluation data or expand formula names as a substitute for observation validation.
+
+The previous roadmap is retained below as historical planning, not a claim that all items are complete.
+
+---
+
 > Retained Wave 3 record. Current extensions and priorities are in [Wave 4 design](WAVE4_DESIGN.md) and [Wave 4 roadmap](WAVE4_ROADMAP.md).
 
 # Next priorities after Wave 3
@@ -33,3 +41,9 @@ Use `capabilities` to select concrete missing methods only when they improve the
 ## Release discipline
 
 Future waves retain parent hashes, source-difference inventories, raw test logs, explicit skipped integrations, model/data fingerprints, and deterministic replay tolerances. Passing tests or a polished report never substitute for live observation validation or a correctly defined scientific claim.
+
+## Wave 06 continuation
+
+Implemented: uncertain-reference normalization, correlated-expression propagation, proper-rotation refit enclosures and interactive reference8 inspection integrated into the existing canonical evidence bundle. Parent geometry and prospective acquisition remain in place.
+
+The empirical priority remains unchanged: a real local observer run against independently annotated, group-disjoint portraits under a frozen domain. Only after that, evaluate whether conservative set widths should be tightened using justified joint error models, rather than increasing apparent confidence through additional dependent relations. Independently validated contours/visibility and 3D geometry follow their own evidence requirements.

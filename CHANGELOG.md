@@ -1,4 +1,12 @@
-# facemath: CHANGELOG
+# Wave 07 / 0.7.0
+
+- Added a development-only, equal-group full16 residual scatter model with frozen shrinkage/floor and independent group-max calibration. Failed observations and held-out shift remain visible.
+- Transported whole-shape covariance into the existing canonical state, point envelopes and cached intrinsic relationship graph. Shared latent constraints are retained in zero-sum linear expressions and bilinear geometry; no raw coordinates change.
+- Added a same-q marginal-product relaxation audit and an offline coherent-mode/covariance inspector with exact exports. It is not an independently fitted baseline or a human similarity score.
+- Added a prospective correlated-error laboratory, raw latent-set controls and full model/bundle replay tests. Existing native-observer integration remains unexecuted here.
+- Repaired CLI version duplication and bound ellipse display to the selected model rather than raw perturbation jitter. Added strict regularization and context-binding checks.
+
+---
 
 ## 0.5.0 — Wave 05
 
@@ -11,7 +19,7 @@
 - Full study console, raw case filters/CSV/receipt links, raw-array export and exact captured-observation replay.
 - Existing live inference gate is NOT marked passed; all new numerical demonstration data are explicit synthetic controls.
 
-## Wave 04 · v0.4.0
+# Wave 04 · v0.4.0
 
 - Independent eight-point references, strict source binding and prediction-blind annotation workbench with zoom, explicit visibility, rater isolation and export.
 - Source-coordinate localization evaluation, retained failures, declared group/lineage split checks, exact unconditional AUC and reference-aware denominators.
@@ -24,7 +32,7 @@
 
 ---
 
-## Changelog
+# Changelog
 
 ## 0.3.0 — Observed correspondence / Wave 3
 

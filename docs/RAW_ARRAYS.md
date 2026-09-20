@@ -74,3 +74,50 @@ The last two arrays exist only for `development_ocular`. Nested `raw_validation/
 ### Additional qualified-pair arrays
 
 `localization_source_bias_px` and `localization_canonical_bias_px` are 2 × 8 × 2 vectors before/after the observed transform. `localization_reference_center_points` stores the two shifted reference-set centers in canonical pixels. `localization_model_centered_gap_ipd` stores their normalized separation (8 values). Original `localization_observed_gap_ipd` remains the raw observed gap. All earlier support masks, full covariance matrices and directional bounds remain retained. No array supplies dense478 reference accuracy.
+
+## Wave 06 — shared intrinsic reference8 state
+
+The `intrinsic_` arrays are appended to the same pair bundle. Source index is A=0/B=1. Reference index is the exact `reference_names` ordering in `intrinsic.json`; relation index is its fixed 256-row inventory. The active implementation adds **23 arrays**:
+
+| Array suffix (prefix `intrinsic_`) | Shape | Meaning |
+|---|---|---|
+| `raw_points`, `source_centers` | (2,8,2) | Observed coordinates vs error-set centers in each observed source-eye chart; do not interchange |
+| `source_covariance` | (2,8,2,2) | Full observation covariance transported into that chart |
+| `source_chart` | (2,3,3) | Stored raster pixels → observed source-eye chart |
+| `source_supported` | (2,8) bool | Observable source points |
+| `nominal`, `centered` | (2,256) | Raw or model-center relation values, in each row's units |
+| `nominal_valid`, `centered_valid` | (2,256) bool | Validity of those point estimates |
+| `source_lower`, `source_upper` | (2,256) | Conservative source relation bounds |
+| `source_available` | (2,256) bool | Source bounds exist; zero sentinel alone is not an observation |
+| `eye_span_bounds` | (2,2) | Each reference eye-span outer range, in the observed source chart |
+| `eye_span_available` | (2,) bool | Eye-span range exists; positive lower bound is separately required for division |
+| `gap_lower`, `gap_upper` | (256,) | Absolute inter-source relation-gap bounds |
+| `gap_available` | (256,) bool | A finite relation-gap bound exists |
+| `statuses` | (256,) int | 0=no calibration, 1=within, 2=outside, 3=unresolved, 4=unbounded/unobserved |
+| `relation_a`, `relation_b` | (256,8) | Shared linear-expression coefficient vectors; dependent landmark appearances are not separate errors |
+| `shape_deviation_radii` | (2,8) | Bounds on recentered, true-eye-normalized point displacement from the set-center shape |
+| `shape_candidate_rotation` | (2,2) | Proper row-vector rotation for the nominal set-center shapes |
+| `support_normals` | (M,2), M=128 default | Actual sampled support directions, with finite-angle correction used by the bounds |
+
+Inspect the JSON's reason, units and calibration-bound-state fields before interpreting numerical sentinels. The original raw arrays and the observed-only intrinsic arrays must remain unchanged when a calibration is attached. All profile arrays own immutable storage in memory; NPZ is a persisted copy.
+
+The separate set laboratory's `controls.npz` records the actual sampled points, scalar relation values, independent refit values, source error sets and bounds. Those samples are not independent human observations or the source of the analytic enclosure.
+
+## Wave 07 · joint error geometry
+
+All coordinates below use the same source charts as the existing intrinsic profile. The original `intrinsic_source_covariance[2,8,2,2]` is still **raw perturbation covariance**, not the joint model's error matrix.
+
+| NPZ key | Shape | Interpretation |
+|---|---|---|
+| `intrinsic_joint_covariance` | [2,16,16] | Full transported score-shape matrix; interleaved reference8 x,y |
+| `intrinsic_joint_marginal_covariance` | [2,8,2,2] | Diagonal point blocks of that same full matrix |
+| `intrinsic_joint_marginal_lower` / `upper` | [2,256] | Source relation bounds for same-q marginal-product relaxation |
+| `intrinsic_joint_marginal_available` | [2,256] bool | False entries are unavailable sentinels, not zero error |
+| `intrinsic_joint_mode_eigenvalues` | [2,16] | Descending covariance eigenvalues in squared source-chart units |
+| `intrinsic_joint_mode_vectors` | [2,16,16] | Column eigenvectors, sign fixed by largest-magnitude entry |
+
+The displayed coherent mode is `center + amplitude * q * sqrt(eigenvalue) * eigenvector`, with amplitude between -1 and 1. Zero eigenvalues and tied subspaces require their ordinary linear-algebra interpretation, not anatomical labels.
+
+The qualification bundle adds `development_joint_group_second_moments[G,16,16]`, `development_joint_covariance[16,16]`, and `development_joint_group_case_counts[G]`, alongside retained group bias vectors and beta. Their ocular-frame units and regularization are specified in `WAVE7_MATHEMATICS.md`. Raw per-case prediction errors, reference coordinates and covariance remain separate.
+
+The set laboratory's `controls.npz` stores both unit-ball latent draws and their resulting [sample,8,2] source coordinates, factors, full matrices, exact scalar values, reported outer bounds and independently evaluated proper-rotation discrepancies. Latent draws are mathematical control inputs, not captured neural-network activations.
