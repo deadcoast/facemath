@@ -19,7 +19,7 @@
 - Full study console, raw case filters/CSV/receipt links, raw-array export and exact captured-observation replay.
 - Existing live inference gate is NOT marked passed; all new numerical demonstration data are explicit synthetic controls.
 
-# Wave 04 · v0.4.0
+## Wave 04 · v0.4.0
 
 - Independent eight-point references, strict source binding and prediction-blind annotation workbench with zoom, explicit visibility, rater isolation and export.
 - Source-coordinate localization evaluation, retained failures, declared group/lineage split checks, exact unconditional AUC and reference-aware denominators.
@@ -32,9 +32,9 @@
 
 ---
 
-# Changelog
+## Changelog
 
-## 0.3.0 — Observed correspondence / Wave 3
+### 0.3.0 — Observed correspondence / Wave 3
 
 Added strict immutable image-bound observations, a shared anatomical grammar, a local optional MediaPipe provider with complete-shape augmentation samples, symmetric robust registration, held-out regional gauge diagnostics, exact piecewise-affine finite-strain geometry, independent texture/cycle-qualified image flow, conditional sensitivity refitting, compatible-cohort ingestion, leakage/dependence checks, raw-state bundles, offline HTML inspection, integrity verification, numeric replay, partial failure journals, and analytic/synthetic falsification tests.
 
