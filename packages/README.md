@@ -1,5 +1,15 @@
 # Release archives
 
+## Package Version Update Workflow
+
+```ps1
+git lfs install --local
+git lfs track "packages/*.zip"
+git add --all
+git commit -m "Import FACEMATH Wave 8"
+git push origin main
+```
+
 The release ZIP files in this directory are stored with Git Large File Storage
 (Git LFS). Install Git LFS before cloning, or retrieve the archives in an existing
 checkout with:
