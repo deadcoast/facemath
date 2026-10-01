@@ -69,6 +69,10 @@ def _html(result: InstrumentResult, arrays: dict[str, np.ndarray]) -> str:
         edge_section = f"<h2>Image-edge support</h2><p>Landmark-guided normal-ray searches. Matching image gradients are diagnostic, not proof of correct anatomy. Landmarks are never moved to an edge candidate. Complete ray responses and rejection masks are in arrays.npz.</p><div class='scroll'><table><tr><th>Source / region</th><th>Accepted / attempted rays</th><th>Full source support</th><th>Median |normal offset| · px</th></tr>{erows}</table></div>"
     from .stratified_report import render_routing_pair
     routing_section = render_routing_pair(result.localization.calibration) if result.localization else ""
+    acquisition_section = ""
+    if result.acquisition_groups is not None:
+        from .acquisition_report import acquisition_panel
+        acquisition_section = acquisition_panel(result.acquisition_groups)
     localization_section = ""
     if result.localization:
         info = result.localization.to_dict()
@@ -94,7 +98,7 @@ small{{display:block;color:var(--muted);font-size:12px;max-width:68ch}}code{{fon
 a{{color:var(--accent)}}summary{{cursor:pointer;font-weight:600}}input[type=range]{{width:min(100%,500px)}}.blend{{position:relative;max-width:360px}}.blend img{{width:100%;display:block}}.blend img:last-child{{position:absolute;inset:0;opacity:.5}}
 footer{{margin-top:40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:18px}}
 @media(max-width:760px){{.gallery{{grid-template-columns:1fr}}main{{padding:20px 14px}}h1{{font-size:28px}}}}
-</style><main><header><div class="eyebrow">FACEMATH / WAVE 08 / OBSERVATION → FIELD → EVIDENCE</div>
+</style><main><header><div class="eyebrow">FACEMATH / WAVE 09 / OBSERVATION → FIELD → EVIDENCE</div>
 <h1>Anatomical correspondence, exposed.</h1>
 <span class="tag">{escape(result.state.observation_a.provider)}</span><span class="tag">{len(result.state.xy_a)} observed landmarks</span>
 <span class="tag">No identity scoring</span><span class="tag">No population calibration attached</span>
@@ -108,7 +112,7 @@ footer{{margin-top:40px;color:var(--muted);font-size:12px;border-top:1px solid v
 <label>A → B <input id="opacity" type="range" min="0" max="100" value="50" aria-label="B opacity"></label></details>
 <div class="panel"><strong>Read the units before the number.</strong><br>
 Landmark residuals are normalized by the geometric mean of registered interocular spans. A within-tolerance fraction counts landmarks below the declared threshold ({result.state.config.tolerance_ipd:g} spans). Neither quantity is an identity probability. The intervals below measure conditional observation sensitivity, not established detector accuracy.</div>
-{routing_section}{intrinsic_section}<h2>Measured profile</h2><div class="scroll"><table><thead><tr><th>Measurement / interpretation</th><th>Value</th><th>Unit</th><th>Support / denominator</th><th>95% sensitivity interval</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
+{acquisition_section}{routing_section}{intrinsic_section}<h2>Measured profile</h2><div class="scroll"><table><thead><tr><th>Measurement / interpretation</th><th>Value</th><th>Unit</th><th>Support / denominator</th><th>95% sensitivity interval</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
 {edge_section}{localization_section}<h2>Raw numerical state</h2><p><a href="arrays.npz">arrays.npz</a> · <a href="evidence.json">evidence.json</a> · <a href="observations.json">observations.json</a> · <a href="events.jsonl">actual execution events</a> · <a href="manifest.json">byte manifest</a></p>
 <div class="scroll"><table><thead><tr><th>Array</th><th>Shape</th><th>dtype</th><th>Content digest</th></tr></thead><tbody>{array_rows}</tbody></table></div>
 <h2>Observation constraints</h2><ul>{warnings or '<li>No additional source warnings.</li>'}</ul><ul>{limits}</ul>
@@ -130,6 +134,10 @@ def write_bundle(result: InstrumentResult, destination: str | Path,
     temp = Path(tempfile.mkdtemp(prefix=".facemath-", dir=destination.parent))
     try:
         arrays = result.arrays()
+        if result.acquisition_groups is not None:
+            from .acquisition import write_group_files
+            for name, group in zip(("a", "b"), result.acquisition_groups):
+                write_group_files(group, temp, f"acquisition_{name}_")
         np.savez_compressed(temp / "arrays.npz", **arrays)
         (temp / "evidence.json").write_text(json.dumps(result.evidence(), indent=2, allow_nan=False), encoding="utf-8")
         (temp / "observations.json").write_text(json.dumps({"a": result.state.observation_a.to_dict(), "b": result.state.observation_b.to_dict()}, indent=2, allow_nan=False), encoding="utf-8")
@@ -189,6 +197,7 @@ def verify_bundle(path: str | Path) -> dict[str, Any]:
         raise ObservationError("manifest content hash mismatch")
     if manifest["format"] != "facemath.bundle.v3":
         raise ObservationError("unknown bundle format")
+    from .study import verify_inventory
     for relative, info in manifest["files"].items():
         target = root / relative
         if target.is_symlink() or target.resolve().parent != root or Path(relative).name != relative:
@@ -196,6 +205,7 @@ def verify_bundle(path: str | Path) -> dict[str, Any]:
         content = target.read_bytes()
         if len(content) != info["bytes"] or sha256(content).hexdigest() != info["sha256"]:
             raise ObservationError(f"artifact mismatch: {relative}")
+    verify_inventory(root, manifest["files"], exclude=("manifest.json",))
     with np.load(root / "arrays.npz", allow_pickle=False) as data:
         if set(data.files) != set(manifest["arrays"]):
             raise ObservationError("array inventory mismatch")
@@ -209,6 +219,22 @@ def verify_bundle(path: str | Path) -> dict[str, Any]:
             raise ObservationError("intrinsic profile lost its external data artifacts")
         if json.loads((root / "intrinsic.json").read_text(encoding="utf-8")) != evidence["intrinsic_profile"]:
             raise ObservationError("intrinsic report differs from instrument evidence")
+    if evidence.get("measured_acquisition") is not None:
+        from .acquisition import load_group_files
+        groups = tuple(load_group_files(root, f"acquisition_{n}_") for n in ("a", "b"))
+        if canonical_json([g.to_dict() for g in groups]) != canonical_json(evidence["measured_acquisition"]):
+            raise ObservationError("pair measured acquisition differs from recomputed source sidecars")
+        with np.load(root/"arrays.npz", allow_pickle=False) as arrays:
+            for name, group in zip(("a", "b"), groups):
+                for key, value in group.arrays(f"acquisition_{name}_").items():
+                    if key not in arrays or not np.array_equal(arrays[key], value):
+                        raise ObservationError("pair measured source array differs from pixel recomputation")
+        from .bias import load_localization_calibration
+        from .stratified import BoundStratifiedCalibration
+        model = load_localization_calibration(json.loads((root/"localization_calibration.json").read_text()))
+        if not isinstance(model, BoundStratifiedCalibration) or any(
+                r.measured_group_sha256 != g.digest for r, g in zip(model.routes, groups)):
+            raise ObservationError("measured source sidecars differ from bound calibration routes")
     records = [json.loads(line) for line in (root / "events.jsonl").read_text().splitlines()]
     verify_journal(records)
     return {"verified": True, "files": len(manifest["files"]), "arrays": len(manifest["arrays"]),

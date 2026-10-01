@@ -1,3 +1,7 @@
+# 0.9.0 · Measured source routing
+
+Source-pixel aperture diagnostics, whole-group min/max predicate routing before inference, reproducible source evidence bound into the existing stratified joint calibration and canonical pair. Rejected/ambiguous rules remain unavailable despite calibration counts. Native CLI construction deferred until source gate passes. Original group rasters and exact grids are retained and remeasured on verification/replay. Noise and hidden-error-shift counterexamples remain explicit.
+
 # Wave 07 / 0.7.0
 
 - Added a development-only, equal-group full16 residual scatter model with frozen shrinkage/floor and independent group-max calibration. Failed observations and held-out shift remain visible.

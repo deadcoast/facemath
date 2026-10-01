@@ -38,6 +38,7 @@ class RoutingPolicy:
     strata: tuple[str, ...]
     definition: str
     minimum_calibration_groups: int = 9
+    measurement_policy: Any | None = None
 
     def __post_init__(self) -> None:
         strata = tuple(_label(x, "acquisition stratum") for x in self.strata)
@@ -47,23 +48,37 @@ class RoutingPolicy:
         if type(self.minimum_calibration_groups) is not int or self.minimum_calibration_groups < 1:
             raise ObservationError("minimum_calibration_groups must be a positive integer")
         object.__setattr__(self, "strata", strata)
+        if self.measurement_policy is not None:
+            from .acquisition import AcquisitionPolicy
+            measured = (AcquisitionPolicy.from_dict(self.measurement_policy)
+                        if isinstance(self.measurement_policy, Mapping) else self.measurement_policy)
+            if not isinstance(measured, AcquisitionPolicy) or measured.categories != strata:
+                raise ObservationError("measured rule categories differ from the frozen routing inventory")
+            object.__setattr__(self, "measurement_policy", measured)
+
+    def permits(self, category: str) -> bool:
+        return self.measurement_policy is None or self.measurement_policy.permits(category)
 
     @property
     def digest(self) -> str:
         return object_digest(self.to_dict())
 
     def to_dict(self) -> dict[str, Any]:
-        return {"format": "facemath.acquisition_routing_policy.v8", "rule": RULE,
+        result = {"format": "facemath.acquisition_routing_policy.v8", "rule": RULE,
                 "strata": list(self.strata), "definition": self.definition,
                 "minimum_calibration_groups": self.minimum_calibration_groups,
                 "category_source": "curator-declared acquisition metadata, not learned from errors",
                 "group_rule": "one stratum per declared dependent acquisition group"}
+        if self.measurement_policy is not None:
+            result["measurement_policy"] = self.measurement_policy.to_dict()
+            result["category_source"] = "source-pixel predicates over all declared group apertures, before predictions"
+        return result
 
     @classmethod
     def from_dict(cls, value: Mapping[str, Any]) -> RoutingPolicy:
         if value.get("format") != "facemath.acquisition_routing_policy.v8" or value.get("rule") != RULE:
             raise ObservationError("unsupported acquisition routing policy")
-        result = cls(tuple(value["strata"]), value["definition"], value["minimum_calibration_groups"])
+        result = cls(tuple(value["strata"]), value["definition"], value["minimum_calibration_groups"], value.get("measurement_policy"))
         if result.to_dict() != dict(value):
             raise ObservationError("routing policy contains unrecognized or inconsistent fields")
         return result
@@ -93,6 +108,7 @@ class StratumRadius:
     group_scores: tuple[tuple[str, float | None], ...]
     calibration_images: tuple[str, ...]
     calibration_lineages: tuple[str, ...]
+    deployment_permitted: bool = True
     quantile: float | None = field(init=False)
     rank: int = field(init=False)
     status: str = field(init=False)
@@ -104,6 +120,8 @@ class StratumRadius:
         corrected_quantile(np.zeros(1), self.alpha)
         if type(self.minimum_groups) is not int or self.minimum_groups < 1:
             raise ObservationError("minimum category group count must be positive")
+        if type(self.deployment_permitted) is not bool:
+            raise ObservationError("category deployment permission must be boolean")
         groups = tuple(( _label(g, "calibration group"), v) for g, v in self.group_scores)
         if len(set(g for g, _ in groups)) != len(groups):
             raise ObservationError("duplicate stratum calibration group")
@@ -127,13 +145,15 @@ class StratumRadius:
             status = "no_calibration_groups"
         elif len(groups) < self.minimum_groups:
             q, status = None, "below_frozen_minimum_groups"
+        if not self.deployment_permitted:
+            q, status = None, "rejected_by_measured_acquisition_policy"
         for key, value in (("group_scores", tuple(sorted(groups))), ("calibration_images", tuple(sorted(images))),
                            ("calibration_lineages", tuple(sorted(lineages))), ("quantile", q),
                            ("rank", rank), ("status", status)):
             object.__setattr__(self, key, value)
 
     def to_dict(self) -> dict[str, Any]:
-        return {"format": "facemath.category_radius_fragment.v8", "stratum": self.stratum,
+        result = {"format": "facemath.category_radius_fragment.v8", "stratum": self.stratum,
                 "alpha": self.alpha, "minimum_groups": self.minimum_groups,
                 "group_scores": [[g, v] for g, v in self.group_scores],
                 "calibration_images": list(self.calibration_images),
@@ -142,13 +162,17 @@ class StratumRadius:
                 "calibration_groups": len(self.group_scores),
                 "scope": "requires its containing joint model and frozen routing policy"}
 
+        if not self.deployment_permitted:
+            result["deployment_permitted"] = False
+        return result
+
     @classmethod
     def from_dict(cls, obj: Mapping[str, Any]) -> StratumRadius:
         if obj.get("format") != "facemath.category_radius_fragment.v8":
             raise ObservationError("unsupported category radius")
         out = cls(obj["stratum"], obj["alpha"], obj["minimum_groups"],
                   tuple(tuple(x) for x in obj["group_scores"]), tuple(obj["calibration_images"]),
-                  tuple(obj["calibration_lineages"]))
+                  tuple(obj["calibration_lineages"]), obj.get("deployment_permitted", True))
         if out.to_dict() != dict(obj):
             raise ObservationError("category radius differs from its retained order-statistic inputs")
         return out
@@ -161,8 +185,11 @@ class SourceRoute:
     group_id: str
     lineage_ids: tuple[str, ...]
     stratum: str
+    measured_group_sha256: str | None = None
 
     def __post_init__(self) -> None:
+        if self.measured_group_sha256 is not None:
+            check_digest(self.measured_group_sha256, "measured group receipt")
         check_digest(self.observation_sha256, "routed observation")
         check_digest(self.image_sha256, "routed image")
         _label(self.group_id, "routed group"); _label(self.stratum, "routed category")
@@ -172,8 +199,11 @@ class SourceRoute:
         object.__setattr__(self, "lineage_ids", tuple(sorted(ids)))
 
     def to_dict(self) -> dict[str, Any]:
-        return {"observation_sha256": self.observation_sha256, "image_sha256": self.image_sha256,
+        result = {"observation_sha256": self.observation_sha256, "image_sha256": self.image_sha256,
                 "group_id": self.group_id, "lineage_ids": list(self.lineage_ids), "stratum": self.stratum}
+        if self.measured_group_sha256 is not None:
+            result["measured_group_sha256"] = self.measured_group_sha256
+        return result
 
     @classmethod
     def from_dict(cls, value: Mapping[str, Any]) -> SourceRoute:
@@ -194,6 +224,8 @@ class StratifiedJointCalibration(JointCalibration):
         images: set[str] = set()
         lineages: set[str] = set()
         for radius in radii:
+            if radius.deployment_permitted != self.policy.permits(radius.stratum):
+                raise ObservationError("category deployment permission differs from frozen measurement rules")
             if radius.alpha != self.alpha or radius.minimum_groups != self.policy.minimum_calibration_groups:
                 raise ObservationError("category radius differs from frozen error/minimum-group policy")
             if set(dict(radius.group_scores)) & set(groups) or set(radius.calibration_images) & images:
@@ -225,13 +257,25 @@ class StratifiedJointCalibration(JointCalibration):
         raise ObservationError("bind acquisition metadata before requesting a source radius")
 
     def bind(self, observations: tuple[Observation, Observation], groups: tuple[str, str],
-             strata: tuple[str, str], domain: str, lineages: tuple[tuple[str, ...], tuple[str, ...]]
-             ) -> BoundStratifiedCalibration:
+             strata: tuple[str, str], domain: str, lineages: tuple[tuple[str, ...], tuple[str, ...]],
+             *, measured_groups: tuple[Any, Any] | None = None) -> BoundStratifiedCalibration:
         if any(len(x) != 2 for x in (observations, groups, strata, lineages)):
             raise ObservationError("routing requires exactly two source declarations")
-        routes = tuple(SourceRoute(o.digest, o.image_sha256, g, tuple(ids), category)
-                       for o, g, category, ids in zip(observations, groups, strata, lineages))
-        bound = BoundStratifiedCalibration(self.residual, self.bias, self.scatter, self, routes)
+        if self.policy.measurement_policy is not None:
+            from .acquisition import MeasuredGroup
+            if measured_groups is None or len(measured_groups) != 2 or any(not isinstance(g, MeasuredGroup) for g in measured_groups):
+                raise ObservationError("measured routing requires both original source-group pixel bundles")
+            measured_groups = tuple(g.recompute() for g in measured_groups)
+            derived = tuple(g.category for g in measured_groups)
+            if strata != ("", "") and strata != derived:
+                raise ObservationError("declared category conflicts with source-pixel routing; no manual override")
+            strata = derived
+        elif measured_groups is not None:
+            raise ObservationError("pixel measurement groups cannot silently attach to a metadata-only model")
+        routes = tuple(SourceRoute(o.digest, o.image_sha256, g, tuple(ids), category,
+                                   measured_groups[i].digest if measured_groups is not None else None)
+                       for i, (o, g, category, ids) in enumerate(zip(observations, groups, strata, lineages)))
+        bound = BoundStratifiedCalibration(self.residual, self.bias, self.scatter, self, routes, measured_groups)
         for observation, group, ids in zip(observations, groups, lineages):
             bound.require_query(observation, group, domain, tuple(ids))
         return bound
@@ -260,6 +304,7 @@ class StratifiedJointCalibration(JointCalibration):
 class BoundStratifiedCalibration(JointCalibration):
     model: StratifiedJointCalibration
     routes: tuple[SourceRoute, SourceRoute]
+    measured_groups: tuple[Any, Any] | None = field(default=None, repr=False, compare=False)
 
     def __post_init__(self) -> None:
         super().__post_init__()
@@ -267,6 +312,11 @@ class BoundStratifiedCalibration(JointCalibration):
                 or self.scatter.digest != self.model.scatter.digest):
             raise ObservationError("bound source routes lost their shared fitted error model")
         routes = tuple(self.routes)
+        if self.model.policy.measurement_policy is not None:
+            if any(r.measured_group_sha256 is None for r in routes):
+                raise ObservationError("measured source route lost its original-pixel group binding")
+        elif self.measured_groups is not None or any(r.measured_group_sha256 is not None for r in routes):
+            raise ObservationError("unmeasured model cannot claim measured source bindings")
         if len(routes) != 2:
             raise ObservationError("bound pair needs exactly two source routes")
         for route in routes:
@@ -277,6 +327,8 @@ class BoundStratifiedCalibration(JointCalibration):
         if (left.image_sha256 == right.image_sha256 or left.group_id == right.group_id
                 or set(left.lineage_ids) & set(right.lineage_ids)) and left.stratum != right.stratum:
             raise ObservationError("related query sources cannot claim different routing categories")
+        if left.group_id == right.group_id and left.measured_group_sha256 != right.measured_group_sha256:
+            raise ObservationError("same group cannot supply different pixel inventories to a pair")
         if left.observation_sha256 == right.observation_sha256 and left != right:
             raise ObservationError("same observed source has conflicting route declarations")
         object.__setattr__(self, "routes", routes)
@@ -293,6 +345,8 @@ class BoundStratifiedCalibration(JointCalibration):
         raise ObservationError("observation substitution in bound acquisition route")
 
     def source_quantile(self, observation: Observation) -> float:
+        if self.model.policy.measurement_policy is not None and self.measured_groups is None:
+            raise ObservationError("saved measured route needs original-pixel revalidation, not just a stored category")
         value = self.model.radius(self._route(observation).stratum).quantile
         if value is None:  # Constructor makes this unreachable for a valid object.
             raise ObservationError("unsupported source radius")
@@ -301,6 +355,21 @@ class BoundStratifiedCalibration(JointCalibration):
     def require_query(self, observation: Observation, group_id: str, domain: str,
                       lineage_ids: tuple[str, ...] = ()) -> None:
         route = self._route(observation)
+        if self.model.policy.measurement_policy is not None:
+            if self.measured_groups is None:
+                raise ObservationError("saved measured route needs original-pixel revalidation")
+            group = next((g for g in self.measured_groups if g.digest == route.measured_group_sha256), None)
+            if (group is None or group.policy.digest != self.model.policy.measurement_policy.digest
+                    or group.group_id != route.group_id or group.lineage_ids != route.lineage_ids
+                    or group.category != route.stratum
+                    or observation.image_sha256 not in {s.image_sha256 for s in group.sources}):
+                raise ObservationError("measured group conflicts with source route or complete lineage inventory")
+            # Check ALL measured group context, not only the selected query image.
+            for source in group.sources:
+                if (source.image_sha256 in self.residual.calibration_images
+                        or set(source.lineage_ids) & set(self.residual.calibration_lineages)):
+                    raise ObservationError("measured context member leaks calibration evidence")
+                self.bias.require_disjoint(source.image_sha256, group.group_id, source.lineage_ids)
         if route.group_id != group_id or route.lineage_ids != tuple(sorted(lineage_ids)):
             raise ObservationError("query grouping/lineage differs from its bound route")
         # Validate against ALL calibration categories, not only the selected one.
@@ -310,13 +379,18 @@ class BoundStratifiedCalibration(JointCalibration):
             raise ObservationError("routed bias deployment requires four observable eye corners")
 
     def routing_evidence(self) -> dict[str, Any]:
-        return {"policy_sha256": self.model.policy.digest, "model_sha256": self.model.digest,
+        result = {"policy_sha256": self.model.policy.digest, "model_sha256": self.model.digest,
                 "definition": self.model.policy.definition, "rule": RULE,
                 "sources": [{**r.to_dict(), "quantile": self.model.radius(r.stratum).quantile,
                              "calibration_groups": len(self.model.radius(r.stratum).group_scores)} for r in self.routes],
                 "claim": "conditional on correctly declared acquisition category and exchangeable whole groups within it",
                 "not": "not automated domain recognition; a matching label cannot detect hidden within-category shift",
                 "availability_limit": "the rank theorem averages calibration/new-group randomness; selecting only finite delivered outputs does not acquire an extra conditional coverage guarantee"}
+        if self.model.policy.measurement_policy is not None:
+            result["measurement_policy_sha256"] = self.model.policy.measurement_policy.digest
+            result["category_source"] = "recomputed source pixels in all declared group apertures"
+            result["claim"] = "conditional on exchangeable whole groups under the frozen measured partition; not hidden-shift detection"
+        return result
 
     def to_dict(self) -> dict[str, Any]:
         return {"format": BOUND_FORMAT, "model": self.model.to_dict(),
@@ -358,7 +432,8 @@ def stratify_joint(model: JointCalibration, scored_rows: tuple[LocalizationRow, 
             scores[row.group_id] = max(scores.get(row.group_id, 0.), value if ready else np.inf)
         radii.append(StratumRadius(name, model.alpha, policy.minimum_calibration_groups,
             tuple((g, s if np.isfinite(s) else None) for g, s in sorted(scores.items())),
-            tuple(r.image_sha256 for r in rows), tuple(sorted({v for r in rows for v in r.lineage_ids}))))
+            tuple(r.image_sha256 for r in rows), tuple(sorted({v for r in rows for v in r.lineage_ids})),
+            policy.permits(name)))
     return StratifiedJointCalibration(model.residual, model.bias, model.scatter, policy, tuple(radii))
 
 

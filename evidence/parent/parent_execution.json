@@ -1,0 +1,28 @@
+[
+  {
+    "command": [
+      "python",
+      "-m",
+      "pip",
+      "install",
+      "--no-deps",
+      "--no-build-isolation",
+      "-e",
+      "."
+    ],
+    "returncode": 0,
+    "seconds": 4.176109075546265,
+    "log": "parent_install.log"
+  },
+  {
+    "command": [
+      "python",
+      "-m",
+      "pytest",
+      "-q"
+    ],
+    "returncode": 0,
+    "seconds": 73.23319339752197,
+    "log": "parent_tests.log"
+  }
+]

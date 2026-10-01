@@ -14,6 +14,7 @@ from .edge_support import EdgeDiagnostics, diagnose_edges
 from .error_model import LocalizationCalibration, LocalizationEnvelope, assess_pair
 from .bias import BiasCalibration, BiasEnvelope, assess_bias_pair
 from .intrinsic import IntrinsicProfile, measure_intrinsic
+from .acquisition import MeasuredGroup
 
 
 @dataclass(frozen=True)
@@ -27,6 +28,7 @@ class InstrumentResult:
     edges: EdgeDiagnostics | None = None
     localization: LocalizationEnvelope | BiasEnvelope | None = None
     intrinsic: IntrinsicProfile | None = None
+    acquisition_groups: tuple[MeasuredGroup, MeasuredGroup] | None = None
 
     def evidence(self) -> dict:
         return {
@@ -43,6 +45,7 @@ class InstrumentResult:
             "edge_diagnostics": self.edges.summary() if self.edges is not None else None,
             "localization_envelope": self.localization.to_dict() if self.localization is not None else None,
             "intrinsic_profile": self.intrinsic.to_dict() if self.intrinsic is not None else None,
+            "measured_acquisition": [g.to_dict() for g in self.acquisition_groups] if self.acquisition_groups is not None else None,
             "limits": [
                 "2D projected geometry, not identity recognition or proof of 3D shape",
                 "model contours and interpolated fields derive from the same landmarks; not independent evidence",
@@ -90,6 +93,9 @@ class InstrumentResult:
                 arrays.update(self.localization.directional.arrays())
         if self.intrinsic is not None:
             arrays.update(self.intrinsic.arrays())
+        if self.acquisition_groups is not None:
+            for name, group in zip(("a", "b"), self.acquisition_groups):
+                arrays.update(group.arrays(f"acquisition_{name}_"))
         return arrays
 
 
@@ -105,7 +111,7 @@ class InstrumentResult:
             "intrinsic_relation_a", "intrinsic_relation_b", "intrinsic_support_normals",
         }
         return {key: value for key, value in self.arrays().items()
-                if not key.startswith("localization_")
+                if not key.startswith(("localization_", "acquisition_"))
                 and (not key.startswith("intrinsic_") or key in intrinsic_observed)}
 
 
@@ -122,7 +128,8 @@ class FacialInstrument:
                  *, localization_calibration: LocalizationCalibration | BiasCalibration | None = None,
                  query_groups: tuple[str, str] = ("", ""), domain: str = "",
                  query_lineages: tuple[tuple[str, ...], tuple[str, ...]] = ((), ()),
-                 query_strata: tuple[str, str] = ("", "")) -> None:
+                 query_strata: tuple[str, str] = ("", ""),
+                 acquisition_groups: tuple[MeasuredGroup, MeasuredGroup] | None = None) -> None:
         self.config = config or InstrumentConfig()
         self.provider = provider
         self.localization_calibration = localization_calibration
@@ -130,6 +137,7 @@ class FacialInstrument:
         self.query_lineages = tuple(tuple(x) for x in query_lineages)
         self.domain = domain
         self.query_strata = tuple(query_strata)
+        self.acquisition_groups = acquisition_groups
 
     def run(self, image_a: np.ndarray, image_b: np.ndarray,
             observation_a: Observation | None = None,
@@ -146,6 +154,52 @@ class FacialInstrument:
         with journal.step("inputs.validate", {}) as output:
             a, b = rgb_image(image_a), rgb_image(image_b)
             output.update(a_sha256=array_digest(a), b_sha256=array_digest(b), shape_a=list(a.shape), shape_b=list(b.shape))
+        from .stratified import StratifiedJointCalibration, BoundStratifiedCalibration
+        calibration = self.localization_calibration
+        model = calibration.model if isinstance(calibration, BoundStratifiedCalibration) else calibration
+        measured_policy = getattr(getattr(model, "policy", None), "measurement_policy", None)
+        groups, lineages, strata = self.query_groups, self.query_lineages, self.query_strata
+        acquisition = self.acquisition_groups
+        if measured_policy is not None:
+            with journal.step("acquisition.measure_original_sources_before_observer", {
+                "policy_sha256": measured_policy.digest, "uses_predictions_or_reference_labels": False}) as output:
+                acquisition = acquisition or getattr(calibration, "measured_groups", None)
+                if acquisition is None or len(acquisition) != 2:
+                    raise ObservationError("measured calibration requires two raw source acquisition groups")
+                acquisition = tuple(g.recompute() for g in acquisition)
+                if any(g.policy.digest != measured_policy.digest for g in acquisition):
+                    raise ObservationError("source measurement policy differs from calibrated policy")
+                for image, group in zip((a, b), acquisition):
+                    group.require_source(image)
+                if groups == ("", ""):
+                    groups = tuple(g.group_id for g in acquisition)
+                if lineages == ((), ()):
+                    lineages = tuple(g.lineage_ids for g in acquisition)
+                derived = tuple(g.category for g in acquisition)
+                output.update(groups=[g.to_dict() for g in acquisition], group_digests=[g.digest for g in acquisition])
+                if strata != ("", "") and strata != derived:
+                    raise ObservationError("declared category conflicts with measured source pixels; no manual override")
+                strata = derived
+                if groups != tuple(g.group_id for g in acquisition) or lineages != tuple(g.lineage_ids for g in acquisition):
+                    raise ObservationError("query context must retain the complete measured group and lineage inventory")
+                if groups[0] == groups[1] and acquisition[0].digest != acquisition[1].digest:
+                    raise ObservationError("same query group cannot use different measured source inventories")
+                for group in acquisition:
+                    if model.radius(group.category).quantile is None:
+                        raise ObservationError(f"measured category {group.category!r} is unsupported: {model.radius(group.category).status}; no fallback")
+                    for source in group.sources:
+                        if (source.image_sha256 in model.residual.calibration_images or group.group_id in dict(model.residual.group_scores)
+                                or set(source.lineage_ids) & set(model.residual.calibration_lineages)):
+                            raise ObservationError("measured group context leaks calibration evidence")
+                        model.bias.require_disjoint(source.image_sha256, group.group_id, source.lineage_ids)
+                # A serialized route is a claim until its raw group is remeasured.
+                if isinstance(calibration, BoundStratifiedCalibration):
+                    for route, group in zip(calibration.routes, acquisition):
+                        if route.measured_group_sha256 != group.digest:
+                            raise ObservationError("saved measured route differs from supplied original source group")
+                    calibration = model
+        elif acquisition is not None:
+            raise ObservationError("source groups require a measured calibration; use acquisition-group for standalone diagnostics")
         with journal.step("observation.acquire", {"provided_a": observation_a is not None, "provided_b": observation_b is not None}) as output:
             if observation_a is None or observation_b is None:
                 if self.provider is None:
@@ -157,28 +211,26 @@ class FacialInstrument:
             output.update(observation_a_sha256=observation_a.digest, observation_b_sha256=observation_b.digest,
                           provider_a=observation_a.provider, provider_b=observation_b.provider,
                           samples_a=len(observation_a.samples), samples_b=len(observation_b.samples))
-        calibration = self.localization_calibration
-        from .stratified import StratifiedJointCalibration, BoundStratifiedCalibration
         if isinstance(calibration, StratifiedJointCalibration):
             with journal.step("calibration.route_acquisition_sources", {
-                "model_sha256": calibration.digest, "declared_strata": self.query_strata,
+                "model_sha256": calibration.digest, "declared_strata": strata,
                 "routing_uses_reference_or_pair_error": False}) as output:
-                calibration = calibration.bind((observation_a, observation_b), self.query_groups,
-                    self.query_strata, self.domain, self.query_lineages)
+                calibration = calibration.bind((observation_a, observation_b), groups,
+                    strata, self.domain, lineages, measured_groups=acquisition)
                 output.update(calibration.routing_evidence())
         elif isinstance(calibration, BoundStratifiedCalibration):
             expected_strata = tuple(r.stratum for r in calibration.routes)
-            if self.query_strata not in (("", ""), expected_strata):
+            if strata not in (("", ""), expected_strata):
                 raise ObservationError("query strata conflict with bound acquisition routes")
             with journal.step("calibration.route_acquisition_sources", {
                 "model_sha256": calibration.model.digest, "declared_strata": expected_strata,
                 "routing_uses_reference_or_pair_error": False}) as output:
-                for observation, group, ids in zip((observation_a, observation_b), self.query_groups, self.query_lineages):
+                for observation, group, ids in zip((observation_a, observation_b), groups, lineages):
                     calibration.require_query(observation, group, self.domain, ids)
                 output.update(calibration.routing_evidence())
-        elif self.query_strata != ("", ""):
+        elif strata != ("", ""):
             if (not isinstance(calibration, BoundStratifiedCalibration)
-                    or self.query_strata != tuple(r.stratum for r in calibration.routes)):
+                    or strata != tuple(r.stratum for r in calibration.routes)):
                 raise ObservationError("query strata require a matching category-conditioned calibration")
         with journal.step("canonical.shared_state", self.config.recipe()) as output:
             state = canonicalize(a, b, observation_a, observation_b, anatomy, self.config)
@@ -211,7 +263,7 @@ class FacialInstrument:
             with journal.step("validation.localization_envelope", {"calibration_sha256": calibration.digest}) as output:
                 assessor = assess_bias_pair if isinstance(calibration, BiasCalibration) else assess_pair
                 localization = assessor(state, calibration,
-                                          query_groups=self.query_groups, domain=self.domain, query_lineages=self.query_lineages)
+                                          query_groups=groups, domain=self.domain, query_lineages=lineages)
                 output.update(supported_points=int(localization.supported.sum()),
                               kind="fixed_observed_gauge_error_envelope_not_shape_confidence")
         intrinsic = None
@@ -228,4 +280,4 @@ class FacialInstrument:
                               recipe_sha256=intrinsic.recipe_sha256)
         env = environment()
         journal.record("execution.complete", {"environment": env, "recipe_sha256": state.recipe_sha256})
-        return InstrumentResult(state, field, flow, profile, journal.jsonl(), env, edges, localization, intrinsic)
+        return InstrumentResult(state, field, flow, profile, journal.jsonl(), env, edges, localization, intrinsic, acquisition)

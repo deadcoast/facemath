@@ -1,0 +1,26 @@
+[
+  {
+    "name": "source_tests",
+    "command": [
+      "python",
+      "-m",
+      "pytest",
+      "-q"
+    ],
+    "returncode": 0,
+    "elapsed_seconds": 93.11766481399536
+  },
+  {
+    "name": "measured_lab",
+    "command": [
+      "python",
+      "-m",
+      "facemath",
+      "measured-lab",
+      "--out",
+      "/mnt/data/facemath_wave_09/evidence/wave9/laboratory"
+    ],
+    "returncode": 0,
+    "elapsed_seconds": 27.964991569519043
+  }
+]

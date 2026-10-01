@@ -140,3 +140,12 @@ Study qualification arrays add:
 `acquisition_routing.group_array_order` binds group IDs to these columns. `localization_calibration.json` preserves the complete category inventories, selected ranks, policy and original shared joint model. In pair bundles it additionally binds both source observations, images, groups and lineages. No radius is encoded by silently modifying the covariance matrix.
 
 `set_controls/controls.npz` contains the synthetic unequal-radius source centers, full16 covariance/factors, `source_radii`, unit-ball draws, shape draws, every exact scalar relation value/gap, bounding arrays and proper-rotation values. Shapes and factors use the same reference8 interleaved coordinate order. Its separate circle counterexample saves delta, source covariances, radii and an explicit admissible witness. This is a control dataset, not a native-observer evidence bundle.
+
+
+## Wave 09: measured acquisition arrays and original source rasters
+
+Each pair source has `acquisition_a_` or `acquisition_b_` arrays: `features` [members,9], `aggregate` [2,9] (min then max), `predicate_truth` [predicates], `predicate_offsets` [rules+1], `rule_matches` [rules], `apertures` [members,4], and `analyzed_NNNN` [analysis_height,analysis_width]. RGB source PNGs, complete policy JSON and measurements JSON are flat prefixed sidecars under the same manifest. Sidecar NPZ uses the common `acquisition_` prefix; the main NPZ distinguishes A and B. Members are ordered by their decoded pixel digest, not by caller order. Units and feature names are in each source measurement JSON.
+
+Study qualification adds `acquisition_member_features`, `acquisition_group_aggregates`, `acquisition_member_group_index`, and `acquisition_group_rule_matches`. Group order and member order are explicitly represented in `measured_acquisition.groups` in qualification JSON. This inventory includes prospectively observation-excluded enrollments; these are not silently added to the detector-attempt denominator.
+
+Values/masks are not invented zeros for missing source data: invalid apertures, absent members and unsupported routes fail their contracts. Code-value fractions and gradient detail are signal diagnostics, never similarity percentages. Visual previews quantize the exact exported float64 grids for display only.

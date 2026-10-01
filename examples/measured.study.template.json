@@ -1,0 +1,353 @@
+{
+  "format": "facemath.prospective_study.v5",
+  "domain": "REPLACE_WITH_FROZEN_REAL_ACQUISITION_PROTOCOL",
+  "observer": "observer.json",
+  "minimum_raters": 1,
+  "maximum_cases_per_group": 2,
+  "minimum_development_groups": 5,
+  "timeout_seconds": 90,
+  "alpha": 0.1,
+  "bias_mode": "development_joint_ocular_stratified",
+  "strata": [
+    "pixel_clear",
+    "pixel_smooth",
+    "__unmatched__",
+    "__ambiguous__"
+  ],
+  "cases": [
+    {
+      "case_id": "development_000",
+      "group_id": "development_000_group",
+      "split": "development",
+      "lineage_ids": [
+        "development_000_session"
+      ],
+      "image": "images/development_000.png",
+      "references": [
+        "labels/development_000.json"
+      ]
+    },
+    {
+      "case_id": "development_001",
+      "group_id": "development_001_group",
+      "split": "development",
+      "lineage_ids": [
+        "development_001_session"
+      ],
+      "image": "images/development_001.png",
+      "references": [
+        "labels/development_001.json"
+      ]
+    },
+    {
+      "case_id": "development_002",
+      "group_id": "development_002_group",
+      "split": "development",
+      "lineage_ids": [
+        "development_002_session"
+      ],
+      "image": "images/development_002.png",
+      "references": [
+        "labels/development_002.json"
+      ]
+    },
+    {
+      "case_id": "development_003",
+      "group_id": "development_003_group",
+      "split": "development",
+      "lineage_ids": [
+        "development_003_session"
+      ],
+      "image": "images/development_003.png",
+      "references": [
+        "labels/development_003.json"
+      ]
+    },
+    {
+      "case_id": "development_004",
+      "group_id": "development_004_group",
+      "split": "development",
+      "lineage_ids": [
+        "development_004_session"
+      ],
+      "image": "images/development_004.png",
+      "references": [
+        "labels/development_004.json"
+      ]
+    },
+    {
+      "case_id": "calibration_000",
+      "group_id": "calibration_000_group",
+      "split": "calibration",
+      "lineage_ids": [
+        "calibration_000_session"
+      ],
+      "image": "images/calibration_000.png",
+      "references": [
+        "labels/calibration_000.json"
+      ]
+    },
+    {
+      "case_id": "calibration_001",
+      "group_id": "calibration_001_group",
+      "split": "calibration",
+      "lineage_ids": [
+        "calibration_001_session"
+      ],
+      "image": "images/calibration_001.png",
+      "references": [
+        "labels/calibration_001.json"
+      ]
+    },
+    {
+      "case_id": "calibration_002",
+      "group_id": "calibration_002_group",
+      "split": "calibration",
+      "lineage_ids": [
+        "calibration_002_session"
+      ],
+      "image": "images/calibration_002.png",
+      "references": [
+        "labels/calibration_002.json"
+      ]
+    },
+    {
+      "case_id": "calibration_003",
+      "group_id": "calibration_003_group",
+      "split": "calibration",
+      "lineage_ids": [
+        "calibration_003_session"
+      ],
+      "image": "images/calibration_003.png",
+      "references": [
+        "labels/calibration_003.json"
+      ]
+    },
+    {
+      "case_id": "calibration_004",
+      "group_id": "calibration_004_group",
+      "split": "calibration",
+      "lineage_ids": [
+        "calibration_004_session"
+      ],
+      "image": "images/calibration_004.png",
+      "references": [
+        "labels/calibration_004.json"
+      ]
+    },
+    {
+      "case_id": "calibration_005",
+      "group_id": "calibration_005_group",
+      "split": "calibration",
+      "lineage_ids": [
+        "calibration_005_session"
+      ],
+      "image": "images/calibration_005.png",
+      "references": [
+        "labels/calibration_005.json"
+      ]
+    },
+    {
+      "case_id": "calibration_006",
+      "group_id": "calibration_006_group",
+      "split": "calibration",
+      "lineage_ids": [
+        "calibration_006_session"
+      ],
+      "image": "images/calibration_006.png",
+      "references": [
+        "labels/calibration_006.json"
+      ]
+    },
+    {
+      "case_id": "calibration_007",
+      "group_id": "calibration_007_group",
+      "split": "calibration",
+      "lineage_ids": [
+        "calibration_007_session"
+      ],
+      "image": "images/calibration_007.png",
+      "references": [
+        "labels/calibration_007.json"
+      ]
+    },
+    {
+      "case_id": "calibration_008",
+      "group_id": "calibration_008_group",
+      "split": "calibration",
+      "lineage_ids": [
+        "calibration_008_session"
+      ],
+      "image": "images/calibration_008.png",
+      "references": [
+        "labels/calibration_008.json"
+      ]
+    },
+    {
+      "case_id": "calibration_009",
+      "group_id": "calibration_009_group",
+      "split": "calibration",
+      "lineage_ids": [
+        "calibration_009_session"
+      ],
+      "image": "images/calibration_009.png",
+      "references": [
+        "labels/calibration_009.json"
+      ]
+    },
+    {
+      "case_id": "evaluation_000",
+      "group_id": "evaluation_000_group",
+      "split": "evaluation",
+      "lineage_ids": [
+        "evaluation_000_session"
+      ],
+      "image": "images/evaluation_000.png",
+      "references": [
+        "labels/evaluation_000.json"
+      ]
+    },
+    {
+      "case_id": "evaluation_001",
+      "group_id": "evaluation_001_group",
+      "split": "evaluation",
+      "lineage_ids": [
+        "evaluation_001_session"
+      ],
+      "image": "images/evaluation_001.png",
+      "references": [
+        "labels/evaluation_001.json"
+      ]
+    },
+    {
+      "case_id": "evaluation_002",
+      "group_id": "evaluation_002_group",
+      "split": "evaluation",
+      "lineage_ids": [
+        "evaluation_002_session"
+      ],
+      "image": "images/evaluation_002.png",
+      "references": [
+        "labels/evaluation_002.json"
+      ]
+    },
+    {
+      "case_id": "evaluation_003",
+      "group_id": "evaluation_003_group",
+      "split": "evaluation",
+      "lineage_ids": [
+        "evaluation_003_session"
+      ],
+      "image": "images/evaluation_003.png",
+      "references": [
+        "labels/evaluation_003.json"
+      ]
+    }
+  ],
+  "template_notice": "Placeholders only. Omitted aperture uses full stored raster. Example pixel predicates are schematic engineering settings, NOT validated human thresholds or a sufficient sample-size design.",
+  "joint_error": {
+    "shrinkage": 0.02,
+    "floor_eye_spans": 0.001
+  },
+  "stratified_error": {
+    "definition": "Prespecify the real source acquisition and group protocol; example predicates are not validated human settings.",
+    "minimum_calibration_groups": 9,
+    "measurement_policy": {
+      "format": "facemath.measured_acquisition_policy.v9",
+      "recipe": "declared_aperture_RGB_integer299_587_114_div255000_AREA_Sobel_interior.v9",
+      "definition": "Schematic stored-raster apertures; all enrolled group members. Clear: minimum detail >=0.30; smooth: minimum detail in [0.05,0.30). Both need >=96px, range>=0.10 and code-tail fractions<0.20. Engineering demonstration selected using three source-only development probes, not human recommendations.",
+      "rules": [
+        {
+          "category": "pixel_clear",
+          "predicates": [
+            {
+              "feature": "min.native_short_edge_px",
+              "op": ">=",
+              "threshold": 96.0
+            },
+            {
+              "feature": "min.code_range_90",
+              "op": ">=",
+              "threshold": 0.1
+            },
+            {
+              "feature": "max.low_code_fraction",
+              "op": "<",
+              "threshold": 0.2
+            },
+            {
+              "feature": "max.high_code_fraction",
+              "op": "<",
+              "threshold": 0.2
+            },
+            {
+              "feature": "min.detail_ratio",
+              "op": ">=",
+              "threshold": 0.3
+            }
+          ],
+          "deployment_permitted": true
+        },
+        {
+          "category": "pixel_smooth",
+          "predicates": [
+            {
+              "feature": "min.native_short_edge_px",
+              "op": ">=",
+              "threshold": 96.0
+            },
+            {
+              "feature": "min.code_range_90",
+              "op": ">=",
+              "threshold": 0.1
+            },
+            {
+              "feature": "max.low_code_fraction",
+              "op": "<",
+              "threshold": 0.2
+            },
+            {
+              "feature": "max.high_code_fraction",
+              "op": "<",
+              "threshold": 0.2
+            },
+            {
+              "feature": "min.detail_ratio",
+              "op": ">=",
+              "threshold": 0.05
+            },
+            {
+              "feature": "min.detail_ratio",
+              "op": "<",
+              "threshold": 0.3
+            }
+          ],
+          "deployment_permitted": true
+        }
+      ],
+      "maximum_group_members": 2,
+      "analysis_max_side": 128,
+      "low_code": 0.00392156862745098,
+      "high_code": 0.996078431372549,
+      "variance_floor": 1e-08,
+      "group_reducers": [
+        "min",
+        "max"
+      ],
+      "feature_order": [
+        "native_short_edge_px",
+        "native_area_px2",
+        "code_mean",
+        "code_p05",
+        "code_p95",
+        "code_range_90",
+        "low_code_fraction",
+        "high_code_fraction",
+        "detail_ratio"
+      ],
+      "routing": "one simultaneous match; zero or multiple matches withhold deployment",
+      "aperture": "explicit integer xyxy half-open source rectangle; omission means full stored raster",
+      "enrollment": "all declared group members, including prospectively excluded observation cases"
+    }
+  }
+}

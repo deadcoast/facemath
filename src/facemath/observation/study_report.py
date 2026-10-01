@@ -12,6 +12,9 @@ def render_study_report(report: dict[str, Any]) -> str:
         return "NOT AVAILABLE" if x is None else f"{100*x:.1f}%"
     from .stratified_report import render_routing_study
     routing_section = render_routing_study(report.get("acquisition_routing"))
+    if report.get("measured_acquisition") is not None:
+        from .acquisition_report import study_acquisition_section
+        routing_section += study_acquisition_section(report["measured_acquisition"])
     heading = "Match uncertainty<br>to acquisition." if routing_section else "Separate the bias.<br>Keep the observation."
     model = report["selected_error_model"]
     coverage = model["coverage"]
@@ -44,7 +47,7 @@ def render_study_report(report: dict[str, Any]) -> str:
     rawq = number(report['raw_baseline']['quantile']); newq = 'SOURCE-SPECIFIC' if report.get('acquisition_routing') else number(model['quantile'])
     payload = json.dumps(report, allow_nan=False).replace('<','\\u003c').replace('&','\\u0026')
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FACEMATH 08 · Observer qualification</title><style>
+<title>FACEMATH · Observer qualification</title><style>
 :root{{--bg:#0c1218;--panel:#131e28;--muted:#acbccb;--ink:#edf5fb;--line:#304553;--accent:#6de2c4;--warn:#ffd08a}}
 *{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,sans-serif}}a{{color:var(--accent)}}
 main{{max-width:1320px;margin:auto;padding:38px 32px 70px}}header{{border-top:3px solid var(--accent);border-bottom:1px solid var(--line);padding:25px 0 30px}}

@@ -208,6 +208,20 @@ def load_study(path: str | Path) -> FrozenStudy:
         if policy.strata != tuple(data["strata"]):
             raise ObservationError("loaded routing policy differs from frozen acquisition inventory")
         validate_routes(tuple(data["cases"]), policy)
+        if policy.measurement_policy is not None:
+            from .acquisition import measure_frozen_groups
+            groups = measure_frozen_groups(policy.measurement_policy, tuple(data["cases"]),
+                lambda c: load_rgb(local_file(root, c["image"])))
+            measured = {"policy_sha256": policy.measurement_policy.digest, "groups": [g.to_dict() for g in groups]}
+            if canonical_json(measured) != canonical_json(data.get("measured_acquisition")):
+                raise ObservationError("frozen acquisition measurements differ from original-pixel recomputation")
+            by_group = {g.group_id: g for g in groups}
+            for case in data["cases"]:
+                group = by_group[case["group_id"]]
+                if case["stratum"] != group.category or case.get("acquisition_group_sha256") != group.digest:
+                    raise ObservationError("frozen category differs from measured source group")
+        elif "measured_acquisition" in data:
+            raise ObservationError("unmeasured study cannot claim measured route evidence")
     elif "stratified_error" in data:
         raise ObservationError("loaded routing policy does not match frozen estimator mode")
     return FrozenStudy(root, canonical_json(data))
@@ -259,19 +273,24 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
     if mode == "development_joint_ocular_stratified":
         from .stratified import RoutingPolicy, validate_routes
         route_spec = spec.get("stratified_error")
-        if not isinstance(route_spec, dict) or set(route_spec) != {"definition", "minimum_calibration_groups"}:
+        if not isinstance(route_spec, dict) or set(route_spec) not in (
+                {"definition", "minimum_calibration_groups"}, {"definition", "minimum_calibration_groups", "measurement_policy"}):
             raise ObservationError("stratified_error needs a pre-observation definition and minimum_calibration_groups")
         routing_policy = RoutingPolicy(tuple(strata), **route_spec)
+        if (routing_policy.measurement_policy is not None
+                and routing_policy.measurement_policy.maximum_group_members != max_group):
+            raise ObservationError("measured enrollment size differs from the frozen study group maximum")
     elif "stratified_error" in spec:
         raise ObservationError("stratified_error requires development_joint_ocular_stratified mode")
     entries = spec.get("cases")
     if not isinstance(entries, list) or not entries:
         raise ObservationError("study needs an enrolled case inventory")
-    if routing_policy is not None:
+    if routing_policy is not None and routing_policy.measurement_policy is None:
         validate_routes(tuple(entries), routing_policy)
     loaded, cases = [], []
     ids, images, tokens, group_sizes = set(), set(), {}, {}
-    for e in entries:
+    for original_entry in entries:
+        e = dict(original_entry)
         if e.get("observation") or e.get("failure"):
             raise ObservationError("prospective locks do not import predictions or select by observed failures")
         case_id, group, split = e.get("case_id"), e.get("group_id"), e.get("split")
@@ -286,8 +305,11 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
         reason = e.get("exclusion_reason", "")
         if (eligibility == "excluded") != bool(reason):
             raise ObservationError("only prospectively excluded cases require an exclusion reason")
-        if e.get("stratum", "all") not in strata:
+        measured_routing = routing_policy is not None and routing_policy.measurement_policy is not None
+        if not measured_routing and e.get("stratum", "all") not in strata:
             raise ObservationError("unregistered acquisition stratum")
+        if not measured_routing and "acquisition_aperture" in e:
+            raise ObservationError("source apertures require a frozen measured acquisition policy")
         lineages = e.get("lineage_ids", [])
         if not isinstance(lineages, list) or any(not isinstance(x, str) or not x for x in lineages) or len(set(lineages)) != len(lineages):
             raise ObservationError("lineage IDs must be unique nonempty strings")
@@ -317,6 +339,22 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
                 raise ObservationError("fixture study cannot acquire human evidence")
             cases.append(ValidationCase(case_id, group, split, refs, None, "prospective_not_attempted", tuple(lineages)))
         loaded.append((e, image, refs, sha256(image_file.read_bytes()).hexdigest()))
+    measured_groups = None
+    if routing_policy is not None and routing_policy.measurement_policy is not None:
+        from .acquisition import measure_frozen_groups
+        by_id = {e["case_id"]: image for e, image, refs, encoded in loaded}
+        measured_groups = measure_frozen_groups(routing_policy.measurement_policy,
+            tuple(e for e, image, refs, encoded in loaded), lambda c: by_id[c["case_id"]])
+        by_group = {g.group_id: g for g in measured_groups}
+        for e, image, refs, encoded in loaded:
+            group = by_group[e["group_id"]]
+            if "stratum" in e and e["stratum"] != group.category:
+                raise ObservationError("declared study category conflicts with measured source pixels")
+            e["stratum"] = group.category
+            member = next(x for x in group.sources if x.image_sha256 == array_digest(image))
+            e["acquisition_aperture"] = list(member.aperture)
+            e["acquisition_group_sha256"] = group.digest
+        validate_routes(tuple(e for e, image, refs, encoded in loaded), routing_policy)
     validate_study(tuple(cases))
     if mode in ("development_ocular", "development_joint_ocular", "development_joint_ocular_stratified") and len({c.group_id for c in cases if c.split == "development"}) < min_dev:
         raise ObservationError("too few prospectively enrolled development groups for selected bias mode")
@@ -339,6 +377,9 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
                 "eligibility": e.get("eligibility", "included"), "exclusion_reason": e.get("exclusion_reason", ""),
                 "image": image_name, "image_sha256": array_digest(image), "image_shape": list(image.shape[:2]),
                 "original_encoded_sha256": encoded_sha, "references": reference_names})
+            if measured_groups is not None:
+                frozen_cases[-1].update(acquisition_aperture=e["acquisition_aperture"],
+                                        acquisition_group_sha256=e["acquisition_group_sha256"])
         lock = {"format": STUDY_FORMAT, "domain": spec["domain"], "observer": observer.to_dict(),
                 "observer_recipe_sha256": observer.recipe_sha256, "minimum_raters": minimum,
                 "maximum_cases_per_group": max_group, "minimum_development_groups": min_dev,
@@ -353,6 +394,9 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
             lock["joint_error"] = joint_config
         if routing_policy is not None:
             lock["stratified_error"] = routing_policy.to_dict()
+        if measured_groups is not None:
+            lock["measured_acquisition"] = {"policy_sha256": routing_policy.measurement_policy.digest,
+                                            "groups": [g.to_dict() for g in measured_groups]}
         write_json_new(temp / "study.lock.json", lock)
         manifest = {"format": "facemath.study_lock_manifest.v5", "study_sha256": object_digest(lock),
                     "files": file_inventory(temp)}

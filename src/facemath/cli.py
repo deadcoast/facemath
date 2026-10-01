@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import ExitStack
 from dataclasses import fields
 import json
 from pathlib import Path
@@ -91,6 +92,8 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("image_b")
     p.add_argument("--observation-a")
     p.add_argument("--observation-b")
+    p.add_argument("--acquisition-a", help="original-pixel measured group bundle for source A")
+    p.add_argument("--acquisition-b", help="original-pixel measured group bundle for source B")
     p.add_argument("--model", help="local MediaPipe .task model when observations are not supplied")
     p.add_argument("--model-sha256")
     p.add_argument("--lineage-a", action="append", default=[], help="declared source A acquisition lineage; repeatable")
@@ -223,6 +226,15 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--out", required=True)
     p.add_argument("--seed", type=int, default=28091)
 
+    p = sub.add_parser("acquisition-group", help="measure a declared raw source group under frozen pixel rules; no detector")
+    p.add_argument("spec", help="group JSON with original images, apertures and complete declared lineages")
+    p.add_argument("--policy", required=True, help="measurement policy or measured calibration JSON")
+    p.add_argument("--out", required=True)
+
+    p = sub.add_parser("measured-lab", help="execute pixel-routed acquisition and integrated geometry controls; synthetic only")
+    p.add_argument("--out", required=True)
+    p.add_argument("--seed", type=int, default=29091)
+
     p = sub.add_parser("doctor", help="report runtime/model availability; never claims inference was run")
     p.add_argument("--model")
     p.add_argument("--out")
@@ -234,22 +246,39 @@ def _analyze(args: argparse.Namespace) -> dict:
     obs_a = Observation.from_dict(read_json(args.observation_a)) if args.observation_a else None
     obs_b = Observation.from_dict(read_json(args.observation_b)) if args.observation_b else None
     config = _configuration(args)
+    acquisition = None
+    if args.acquisition_a or args.acquisition_b:
+        if not (args.acquisition_a and args.acquisition_b):
+            raise ObservationError("supply both measured acquisition groups")
+        from .observation.acquisition import load_group
+        acquisition = (load_group(args.acquisition_a), load_group(args.acquisition_b))
     calibration = None
     if args.localization_calibration:
         from .observation.bias import load_localization_calibration
         calibration = load_localization_calibration(read_json(args.localization_calibration))
-        if not args.query_groups or not args.domain:
-            raise ObservationError("calibrated analysis requires --query-groups and --domain")
+        if (not args.query_groups and acquisition is None) or not args.domain:
+            raise ObservationError("calibrated analysis requires --domain and query groups (or complete measured source groups)")
     extra = dict(localization_calibration=calibration, query_groups=tuple(args.query_groups or ("", "")), domain=args.domain,
                  query_lineages=(tuple(args.lineage_a), tuple(args.lineage_b)),
-                 query_strata=tuple(args.query_strata or ("", "")))
+                 query_strata=tuple(args.query_strata or ("", "")), acquisition_groups=acquisition)
     if obs_a is not None and obs_b is not None:
         result = FacialInstrument(config, **extra).run(image_a, image_b, obs_a, obs_b)
     else:
         if not args.model:
             raise ObservationError("supply both observation files or --model; no fabricated anatomical fallback")
-        with MediaPipeProvider(args.model, args.model_sha256) as provider:
-            result = FacialInstrument(config, provider, **extra).run(image_a, image_b, obs_a, obs_b)
+        # Acquisition-policy refusal must precede native model construction too.
+        # The instrument invokes observe only after validating both pixel groups.
+        with ExitStack() as resources:
+            class DeferredProvider:
+                def __init__(self):
+                    self.instance = None
+
+                def observe(self, image):
+                    if self.instance is None:
+                        self.instance = resources.enter_context(MediaPipeProvider(args.model, args.model_sha256))
+                    return self.instance.observe(image)
+
+            result = FacialInstrument(config, DeferredProvider(), **extra).run(image_a, image_b, obs_a, obs_b)
     output = write_bundle(result, args.out, image_a, image_b)
     return {"bundle": str(output), "report": str(output / "report.html"), **verify_bundle(output)}
 
@@ -282,6 +311,12 @@ def _inspect_video(args: argparse.Namespace) -> dict:
 
 def _replay(args: argparse.Namespace) -> dict:
     root = Path(args.bundle)
+    if read_json(root / "manifest.json").get("format") == "facemath.acquisition_group_bundle.v9":
+        from .observation.acquisition import load_group, write_group
+        group = load_group(root)
+        target = write_group(group, args.out)
+        return {"replay_verified": True, "new_bundle": str(target), "group_sha256": group.digest,
+                "scope": "exact source-pixel remeasurement, no detector invocation"}
     if read_json(root / "manifest.json").get("format") == "facemath.qualification_bundle.v5":
         from .observation.study_io import replay_qualification_bundle
         return replay_qualification_bundle(root, args.out)
@@ -308,7 +343,11 @@ def _replay(args: argparse.Namespace) -> dict:
         calibration = load_localization_calibration(read_json(root / "localization_calibration.json"))
         if calibration.digest != envelope["calibration_sha256"]:
             raise ObservationError("localization calibration binding mismatch")
-    result = FacialInstrument(config, localization_calibration=calibration,
+    acquisition = None
+    if evidence.get("measured_acquisition") is not None:
+        from .observation.acquisition import load_group_files
+        acquisition = tuple(load_group_files(root, f"acquisition_{n}_") for n in ("a", "b"))
+    result = FacialInstrument(config, localization_calibration=calibration, acquisition_groups=acquisition,
         query_groups=tuple(envelope["query_groups"]) if envelope else ("", ""),
         query_lineages=tuple(tuple(x) for x in envelope.get("query_lineages", ((), ()))) if envelope else ((), ()),
         domain=envelope["domain"] if envelope else "").run(
@@ -317,6 +356,8 @@ def _replay(args: argparse.Namespace) -> dict:
         Observation.from_dict(observations["b"]),
     )
     from .observation.contracts import object_digest
+    if object_digest(result.evidence().get("measured_acquisition")) != object_digest(evidence.get("measured_acquisition")):
+        raise ObservationError("replayed source-pixel acquisition record differs")
     if object_digest(result.evidence().get("intrinsic_profile")) != object_digest(evidence.get("intrinsic_profile")):
         raise ObservationError("replayed intrinsic profile differs")
     if result.state.recipe_sha256 != evidence["recipe_sha256"]:
@@ -375,6 +416,15 @@ def _session_summary(status: dict, directory: str | Path) -> dict:
 
 
 def execute(args: argparse.Namespace) -> dict:
+    if args.command == "acquisition-group":
+        from .observation.acquisition import policy_from_document, group_from_spec, write_group
+        group = group_from_spec(args.spec, policy_from_document(read_json(args.policy)))
+        out = write_group(group, args.out)
+        return {"bundle": str(out), "group_sha256": group.digest, "derived_category": group.category,
+                "deployment_permitted_by_rule": group.policy.permits(group.category), "inference_executed": False}
+    if args.command == "measured-lab":
+        from .observation.acquisition_lab import run_measured_laboratory
+        return run_measured_laboratory(args.out, seed=args.seed)
     if args.command == "analyze":
         return _analyze(args)
     if args.command == "observe":
@@ -423,6 +473,11 @@ def execute(args: argparse.Namespace) -> dict:
             from .observation.study_runner import verify_session
             return _session_summary(verify_session(root), root)
         kind = read_json(root / "manifest.json").get("format")
+        if kind == "facemath.acquisition_group_bundle.v9":
+            from .observation.acquisition import load_group
+            group = load_group(root)
+            return {"verified": True, "kind": "measured_acquisition_group", "group_sha256": group.digest,
+                    "source_measurements_recomputed": True, "category": group.category}
         if kind == "facemath.qualification_bundle.v5":
             from .observation.study_io import verify_qualification_bundle
             return verify_qualification_bundle(root)

@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/facemath_wave_09/scripts/browser_qa_wave9.py",
+    "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/qualification/report.html",
+    "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html",
+    "--out",
+    "/mnt/data/facemath_wave_09/evidence/wave9/browser"
+  ],
+  "cwd": "/mnt/data/facemath_wave_09",
+  "started_utc": "2026-09-20T08:02:25.906724+00:00",
+  "finished_utc": "2026-09-20T08:02:29.599398+00:00",
+  "returncode": 0,
+  "stdout": "{\n  \"format\": \"facemath.browser_qa.v9\",\n  \"started_utc\": \"2026-09-20T08:02:26.420312+00:00\",\n  \"reports\": {\n    \"qualification\": {\n      \"path\": \"/mnt/data/facemath_wave_09/evidence/wave9/laboratory/qualification/report.html\",\n      \"loading\": \"emitted HTML in memory\",\n      \"file_navigation_error\": \"Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_09/evidence/wave9/laboratory/qualification/report.html\\nCall log:\\n  - navigating to \\\"file:///mnt/data/facemath_wave_09/evidence/wave9/laboratory/qualification/report.html\\\", waiting until \\\"load\\\"\\n\"\n    },\n    \"pair\": {\n      \"path\": \"/mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html\",\n      \"loading\": \"emitted HTML in memory\",\n      \"file_navigation_error\": \"Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html\\nCall log:\\n  - navigating to \\\"file:///mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html\\\", waiting until \\\"load\\\"\\n\"\n    }\n  },\n  \"viewports\": [\n    {\n      \"viewport\": {\n        \"width\": 1440,\n        \"height\": 1080\n      },\n      \"source_counts\": [\n        1,\n        2\n      ],\n      \"source_screenshot\": \"desktop_measured_source.png\",\n      \"grid_screenshot\": \"desktop_analysis_grid.png\",\n      \"page_fits_viewport\": true\n    },\n    {\n      \"viewport\": {\n        \"width\": 390,\n        \"height\": 844\n      },\n      \"source_counts\": [\n        1,\n        2\n      ],\n      \"source_screenshot\": \"mobile_measured_source.png\",\n      \"grid_screenshot\": \"mobile_analysis_grid.png\",\n      \"page_fits_viewport\": true\n    }\n  ],\n  \"checks\": {\n    \"attempted_case_rows\": 118,\n    \"rejected_evaluation_rows_retained\": 4,\n    \"category_score_exports_exact\": true,\n    \"qualification_payload_unchanged\": true,\n    \"all_source_members_displayed\": true,\n    \"whole_group_category_unchanged_by_selected_member\": true,\n    \"all_original_and_analysis_dimensions_exact\": true,\n    \"all_group_measurements_export_exactly\": true,\n    \"all_routing_predicates_retained\": true,\n    \"no_category_aperture_threshold_editors\": true,\n    \"pair_payload_unchanged\": true,\n    \"source_sidecar_links_exist\": true\n  },\n  \"errors\": [],\n  \"remote_requests\": [],\n  \"passed\": true,\n  \"finished_utc\": \"2026-09-20T08:02:29.401116+00:00\"\n}\n",
+  "stderr": ""
+}

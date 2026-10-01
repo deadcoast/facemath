@@ -1,0 +1,175 @@
+{
+  "format": "facemath.measured_acquisition_group.v9",
+  "policy_sha256": "b30cc0d28affdb42f42a17ecf543b4370fbbf9ebd392a51e9170ef152d78c13c",
+  "group_id": "fresh_b_29091_0",
+  "lineage_ids": [
+    "fresh_context_b_29091_0",
+    "fresh_lineage_b_29091_0"
+  ],
+  "members": [
+    {
+      "image_sha256": "b82fb402181924866d8ed68702d8d7b9f132f6f8a808614440801533630703a7",
+      "image_shape": [
+        280,
+        320
+      ],
+      "aperture": [
+        35,
+        40,
+        210,
+        230
+      ],
+      "lineage_ids": [
+        "fresh_lineage_b_29091_0"
+      ]
+    },
+    {
+      "image_sha256": "c9acc3ce5e8a12bcbbef86c1640ecef6ae96b4b95982bddd3494b4c82af1d435",
+      "image_shape": [
+        280,
+        320
+      ],
+      "aperture": [
+        35,
+        40,
+        210,
+        230
+      ],
+      "lineage_ids": [
+        "fresh_context_b_29091_0"
+      ]
+    }
+  ],
+  "feature_order": [
+    "native_short_edge_px",
+    "native_area_px2",
+    "code_mean",
+    "code_p05",
+    "code_p95",
+    "code_range_90",
+    "low_code_fraction",
+    "high_code_fraction",
+    "detail_ratio"
+  ],
+  "feature_units": [
+    "px",
+    "px2",
+    "normalized_code",
+    "normalized_code",
+    "normalized_code",
+    "normalized_code",
+    "fraction",
+    "fraction",
+    "analysis_pixel_gradient_energy/variance"
+  ],
+  "features": [
+    [
+      175.0,
+      33250.0,
+      0.3053708388618605,
+      0.21176470588235294,
+      0.7058823529411765,
+      0.49411764705882355,
+      0.0,
+      0.0,
+      0.3843936797002379
+    ],
+    [
+      175.0,
+      33250.0,
+      0.3036974789915966,
+      0.24705882352941178,
+      0.5529411764705883,
+      0.3058823529411765,
+      0.0,
+      0.0,
+      0.2220354843477567
+    ]
+  ],
+  "aggregate_order": [
+    "min.native_short_edge_px",
+    "min.native_area_px2",
+    "min.code_mean",
+    "min.code_p05",
+    "min.code_p95",
+    "min.code_range_90",
+    "min.low_code_fraction",
+    "min.high_code_fraction",
+    "min.detail_ratio",
+    "max.native_short_edge_px",
+    "max.native_area_px2",
+    "max.code_mean",
+    "max.code_p05",
+    "max.code_p95",
+    "max.code_range_90",
+    "max.low_code_fraction",
+    "max.high_code_fraction",
+    "max.detail_ratio"
+  ],
+  "aggregate": [
+    [
+      175.0,
+      33250.0,
+      0.3036974789915966,
+      0.21176470588235294,
+      0.5529411764705883,
+      0.3058823529411765,
+      0.0,
+      0.0,
+      0.2220354843477567
+    ],
+    [
+      175.0,
+      33250.0,
+      0.3053708388618605,
+      0.24705882352941178,
+      0.7058823529411765,
+      0.49411764705882355,
+      0.0,
+      0.0,
+      0.3843936797002379
+    ]
+  ],
+  "predicate_offsets": [
+    0,
+    5,
+    11
+  ],
+  "predicate_truth": [
+    true,
+    true,
+    true,
+    true,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "rule_matches": [
+    false,
+    true
+  ],
+  "category": "pixel_smooth",
+  "deployment_permitted_by_rule": true,
+  "analyzed_patches": [
+    {
+      "shape": [
+        128,
+        118
+      ],
+      "sha256": "f088ab6c182f718fc2a4400a8c6a044de716ab1ba2e4a3d07eda2c3cbe2d0419"
+    },
+    {
+      "shape": [
+        128,
+        118
+      ],
+      "sha256": "cdcd29cdad61c96f764bc53ed073e380741781107c10c3569ced219399f357bf"
+    }
+  ],
+  "source": "recomputed original pixels in declared apertures; no predictions, references or pair metrics",
+  "limit": "not face detection, physiological attributes, blind sharpness accuracy or hidden-shift certification"
+}

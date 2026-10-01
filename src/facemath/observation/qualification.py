@@ -188,6 +188,16 @@ def qualify(study: FrozenStudy, raw_report: dict[str, Any], session_status: dict
         warnings.append("Empirical aggregate coverage is below the nominal target; this is reported, not repaired using evaluation labels.")
     if study.observer.execution_kind == "synthetic_fixture":
         warnings.append("Every observation in this study is a controlled synthetic fixture, not live human-landmark inference.")
+    measured_acquisition = data.get("measured_acquisition")
+    if measured_acquisition is not None:
+        groups = measured_acquisition["groups"]
+        feature_rows = [row for g in groups for row in g["features"]]
+        arrays.update(acquisition_member_features=np.array(feature_rows),
+                      acquisition_group_aggregates=np.array([g["aggregate"] for g in groups]),
+                      acquisition_member_group_index=np.array([i for i, g in enumerate(groups) for _ in g["members"]], dtype=np.int64),
+                      acquisition_group_rule_matches=np.array([g["rule_matches"] for g in groups], dtype=bool))
+        warnings = [w for w in warnings if not w.startswith("Category membership is declared")]
+        warnings.append("Acquisition categories were computed from source-pixel apertures before inference. They are not face detection, validated image-quality judgments or hidden-shift detection.")
     report = {"format": "facemath.qualification.v5", "study_sha256": study.digest,
         "raw_validation_sha256": raw_report["content_sha256"], "observer_recipe_sha256": study.observer.recipe_sha256,
         "execution_kind": study.observer.execution_kind,
@@ -216,5 +226,7 @@ def qualify(study: FrozenStudy, raw_report: dict[str, Any], session_status: dict
         "guarantee_limit": ("category-local new-group rank argument requires exchangeable whole groups within each frozen acquisition category; no per-image or hidden-shift guarantee" if routing_report else
             "marginal new-group conformal rank argument needs exchangeable groups under the frozen protocol; no per-image or conditional-slice guarantee"),
         "array_order": {"cases": [r.case_id for r in rows], "reference_points": list(REFERENCE_NAMES)}}
+    if measured_acquisition is not None:
+        report["measured_acquisition"] = measured_acquisition
     report["content_sha256"] = object_digest(report)
     return report, arrays, selected

@@ -1,0 +1,16 @@
+.....F............................................................       [100%]
+=================================== FAILURES ===================================
+___________ test_native_code_tail_thresholds_are_inclusive[254-0-1] ____________
+
+value = 254, low = 0, high = 1
+
+    @pytest.mark.parametrize('value,low,high',[(0,1,0),(1,1,0),(2,0,0),(253,0,0),(254,0,1),(255,0,1)])
+    def test_native_code_tail_thresholds_are_inclusive(value,low,high):
+        f,_=measure_source(source(value),policy())
+>       assert f[6]==low and f[7]==high
+E       assert (np.float64(0.0) == 0 and np.float64(0.0) == 1)
+
+tests/test_wave9_acquisition.py:46: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_wave9_acquisition.py::test_native_code_tail_thresholds_are_inclusive[254-0-1] - assert (np.float64(0.0) == 0 and np.float64(0.0) == 1)
+1 failed, 65 passed in 0.83s

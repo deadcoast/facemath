@@ -1,55 +1,73 @@
-# FACEMATH · Wave 08
+# FACEMATH · Wave 09
 
-One integrated Python instrument for **facial geometry and observation error**, not identity recognition.
+An integrated Python instrument for **facial geometry, source acquisition and observation error**, not identity recognition.
 
-Wave 08 binds localization uncertainty to prespecified acquisition conditions. One development-fitted full16 mean/covariance feeds category-local group calibration, two immutable query routes, and the same canonical geometry, shape-relation graph, evidence bundle and replay. A clear source and a degraded source can carry different error radii without altering their observed coordinates or rescaling the stored covariance. Unsupported categories never inherit a pooled fallback.
+Wave 09 makes acquisition routing reproducible from original image pixels. A frozen policy measures each explicitly declared source aperture, reduces the complete group's measurements, and evaluates every routing rule before landmark inference. Those source groups authorize the existing category-specific joint-error model and enter the same CanonicalState, shape-expression graph, evidence bundle and numerical replay. A category string alone is no longer sufficient for a measured calibration.
 
-## Execute the integrated laboratory
+## Run the complete controlled experiment
 
 ```shell
 python -m pip install -e ".[dev]"
-python -m facemath stratified-lab --out runs/wave8
-python -m facemath verify runs/wave8/qualification
-python -m facemath replay runs/wave8/pair_02_mouth_8px --out runs/pair-replay
+python -m facemath measured-lab --out runs/wave9
+python -m facemath verify runs/wave9/qualification
+python -m facemath verify runs/wave9/query_group_a
+python -m facemath replay runs/wave9/pair_02_mouth_8px --out runs/pair-replay
 python -m pytest -q
 ```
 
-Open `runs/wave8/qualification/report.html` to inspect category calibration, retained group scores and held-out failures. Open `runs/wave8/pair_02_mouth_8px/report.html` to inspect source-bound qA/qB, the unchanged geometry, coherent error modes and the full relationship inventory. Reports use embedded data and make no remote requests.
+Open `runs/wave9/qualification/report.html` for acquisition, calibration and held-out failures. Open `runs/wave9/pair_02_mouth_8px/report.html` for actual source apertures, exact measurement-grid displays, every routing predicate, source-specific radii, joint error modes and all shape relations. Open `runs/wave9/pixel_controls/noise/report.html` for an important negative control: noise can pass a gradient-detail rule. **These predicates are not a face-quality detector or a promise of localization accuracy.**
 
-The default laboratory enrolls 155 schematic sources, with 154 eligible scripted attempts, frozen exclusions/failures, sparse and absent categories, and a deliberately hidden within-category error shift. Four fresh geometric queries and a separate 1,024-pair admitted-set control retain raw numerical inputs and outputs. These are synthetic controls, not human detection results.
+The default lab enrolls 119 schematic sources, includes a repeated mixed-quality group, retains 118 scripted attempts and two nondetections, and excludes one enrollment prospectively from observation. Four fresh pairs have prescribed mouth changes. Hidden observer-error shifts remain visible within the same measured source category. This is synthetic evidence for software/numerical contracts, not human validation.
 
-## Shared computational path
+## One shared instrument
 
 ```text
-Frozen source inventory + independent references + acquisition categories
-                                ↓
-                 Existing resumable observation runner
-                                ↓
-              One development-only mean / full16 scatter
-                                ↓
-               Prespecified category group order statistics
-                                ↓
-            Exact source-bound routes and separate q_A / q_B
-                                ↓
-                      Existing CanonicalState
-                   ┌────────────┼────────────┐
-                   ↓            ↓            ↓
-             Raw geometry  Fixed-gauge    Intrinsic relations
-              unchanged    point bounds  + refitted shape range
-                   └────────────┼────────────┘
-                       Same bundle / replay
+Original source pixels + declared apertures + complete group inventory
+                             ↓
+             Frozen source-only min/max predicates
+                             ↓
+          Existing prospective study and native observer
+                             ↓
+        Existing development mean / joint16 covariance
+                             ↓
+        Category-local calibration, retained failures
+                             ↓
+      Recomputed query groups → bound source qA and qB
+                             ↓
+                    Existing CanonicalState
+                ┌────────────┼─────────────┐
+                ↓            ↓             ↓
+          Observed geometry  Error sets   Intrinsic shape
+                └────────────┼─────────────┘
+                             ↓
+            Raw arrays + source PNGs + execution journal
+                             ↓
+                   Verify / recompute / report
 ```
 
-A declared category is not an automatic domain-shift detector. The hidden-shift control remains a failure, not an occasion to tune the policy using held-out labels. Coverage among finite delivered outputs is not silently substituted for performance across all enrollment.
+No analyzer selects another alignment or changes source coordinates to improve agreement. All 135 observed-state arrays checked in the controlled pair remain unchanged when qualification is attached. Pair outputs retain 191 arrays for the demonstrated one-member A/two-member B comparison. Exact analysis grids, all min/max values and every rule outcome are retained beside the original pixels.
 
-## Real inputs
+Unmatched, overlapping or explicitly forbidden rules cannot borrow a pooled radius, even with many calibration observations. Missing or inconsistent source inventory refuses the calibrated query before native model initialization. Group-wide measurement does not attest that a curator disclosed every real-world repeat or chose an honest aperture.
 
-The existing `annotate`, `observer-pin`, `study-freeze`, `study-run`, `study-finalize` and `analyze` commands remain the workflow. The new mode is `development_joint_ocular_stratified`; calibrated query pairs supply `--query-strata` for A and B. Full instructions: [operations](docs/WAVE8_OPERATIONS.md).
+## Using original portraits
 
-**Execution boundary:** MediaPipe was not installed and actual host lookup/model-download attempts failed in this environment. The live integration test remains explicitly skipped. Independent real reference annotations and native observer evaluation are still required; no original-face score or human accuracy claim is supplied by the synthetic laboratory.
+Read [the operator guide](docs/WAVE9_OPERATIONS.md). Prepare independent reference annotations and a pinned compatible local model. Select source predicates and grouping on development data, freeze them before calibration/evaluation, and assess both delivered availability and held-out reference coverage. The optional native MediaPipe path has not been executed in this release environment because its package/model were unavailable.
 
-## Inspect
+```shell
+python -m facemath acquisition-group query_a.group.json --policy qualification/localization_calibration.json --out query/a-source
+python -m facemath acquisition-group query_b.group.json --policy qualification/localization_calibration.json --out query/b-source
+python -m facemath analyze portrait_a.png portrait_b.png --observation-a a.observation.json --observation-b b.observation.json --localization-calibration qualification/localization_calibration.json --domain "exact frozen domain" --acquisition-a query/a-source --acquisition-b query/b-source --out pairs/run
+```
 
-[Design and audit](docs/WAVE8_DESIGN.md) · [Mathematics](docs/WAVE8_MATHEMATICS.md) · [Operator guide](docs/WAVE8_OPERATIONS.md) · [Raw array definitions](docs/RAW_ARRAYS.md) · [Previous README](docs/README_WAVE7.md)
+Existing nominal analysis and older calibration types retain their prior behavior. Outputs are create-only. Replay uses captured observations with the corresponding code/runtime, not a new detector invocation. Do not claim arbitrary-platform bitwise reproducibility from tests on one numerical dependency stack.
 
-`evidence/WAVE8_VALIDATION.json` records executed commands, test counts, distribution equivalence and replay results. Hashes establish internal consistency, not independently attested authorship. Replay recomputes from captured observations; it does not rerun a detector or expose proprietary neural telemetry. The inherited mathematical section registry remains an inventory, not proof that every historical analogy has been implemented.
+## Documentation and release evidence
+
+- [Design and development audit](docs/WAVE9_DESIGN.md)
+- [Exact mathematical and pixel-measurement definitions](docs/WAVE9_MATHEMATICS.md)
+- [Operator workflow and complete query-group contract](docs/WAVE9_OPERATIONS.md)
+- [Raw array inventory](docs/RAW_ARRAYS.md)
+- `evidence/WAVE9_VALIDATION.json`: captured executions, source/wheel results and limits
+- `evidence/wave9/laboratory`: original synthetic inputs, references, acquisition receipts, calibrated model, qualified pairs and refused-source pixels
+
+The historical mathematics section registry remains an inventory, not proof that every mathematical analogy from the original conversation is implemented. No human-face similarity percentage is fabricated by these releases.

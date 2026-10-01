@@ -1,0 +1,2276 @@
+{
+  "format": "facemath.prospective_study.v5",
+  "domain": "synthetic-measured-aperture-v9-NOT-HUMAN",
+  "observer": {
+    "provider": "synthetic_acquisition_stratified_observer",
+    "provider_fingerprint": "07b64e7c651d9ba396ff74bba63017a34b7e4d69bf11453d3da2a25f6a6815d0",
+    "schema": "semantic21.v1",
+    "noise_floor_px": 0.18,
+    "attempted_samples": 7,
+    "execution_kind": "synthetic_fixture",
+    "model_sha256": null,
+    "runtime_version": null
+  },
+  "minimum_raters": 1,
+  "maximum_cases_per_group": 2,
+  "minimum_development_groups": 5,
+  "alpha": 0.1,
+  "bias_mode": "development_joint_ocular_stratified",
+  "joint_error": {
+    "shrinkage": 0.02,
+    "floor_eye_spans": 0.001
+  },
+  "strata": [
+    "pixel_clear",
+    "pixel_smooth",
+    "__unmatched__",
+    "__ambiguous__"
+  ],
+  "stratified_error": {
+    "definition": "Schematic stored-raster apertures; all enrolled group members. Clear: minimum detail >=0.30; smooth: minimum detail in [0.05,0.30). Both need >=96px, range>=0.10 and code-tail fractions<0.20. Engineering demonstration selected using three source-only development probes, not human recommendations.",
+    "minimum_calibration_groups": 9,
+    "measurement_policy": {
+      "format": "facemath.measured_acquisition_policy.v9",
+      "recipe": "declared_aperture_RGB_integer299_587_114_div255000_AREA_Sobel_interior.v9",
+      "definition": "Schematic stored-raster apertures; all enrolled group members. Clear: minimum detail >=0.30; smooth: minimum detail in [0.05,0.30). Both need >=96px, range>=0.10 and code-tail fractions<0.20. Engineering demonstration selected using three source-only development probes, not human recommendations.",
+      "rules": [
+        {
+          "category": "pixel_clear",
+          "predicates": [
+            {
+              "feature": "min.native_short_edge_px",
+              "op": ">=",
+              "threshold": 96.0
+            },
+            {
+              "feature": "min.code_range_90",
+              "op": ">=",
+              "threshold": 0.1
+            },
+            {
+              "feature": "max.low_code_fraction",
+              "op": "<",
+              "threshold": 0.2
+            },
+            {
+              "feature": "max.high_code_fraction",
+              "op": "<",
+              "threshold": 0.2
+            },
+            {
+              "feature": "min.detail_ratio",
+              "op": ">=",
+              "threshold": 0.3
+            }
+          ],
+          "deployment_permitted": true
+        },
+        {
+          "category": "pixel_smooth",
+          "predicates": [
+            {
+              "feature": "min.native_short_edge_px",
+              "op": ">=",
+              "threshold": 96.0
+            },
+            {
+              "feature": "min.code_range_90",
+              "op": ">=",
+              "threshold": 0.1
+            },
+            {
+              "feature": "max.low_code_fraction",
+              "op": "<",
+              "threshold": 0.2
+            },
+            {
+              "feature": "max.high_code_fraction",
+              "op": "<",
+              "threshold": 0.2
+            },
+            {
+              "feature": "min.detail_ratio",
+              "op": ">=",
+              "threshold": 0.05
+            },
+            {
+              "feature": "min.detail_ratio",
+              "op": "<",
+              "threshold": 0.3
+            }
+          ],
+          "deployment_permitted": true
+        }
+      ],
+      "maximum_group_members": 2,
+      "analysis_max_side": 128,
+      "low_code": 0.00392156862745098,
+      "high_code": 0.996078431372549,
+      "variance_floor": 1e-08,
+      "group_reducers": [
+        "min",
+        "max"
+      ],
+      "feature_order": [
+        "native_short_edge_px",
+        "native_area_px2",
+        "code_mean",
+        "code_p05",
+        "code_p95",
+        "code_range_90",
+        "low_code_fraction",
+        "high_code_fraction",
+        "detail_ratio"
+      ],
+      "routing": "one simultaneous match; zero or multiple matches withhold deployment",
+      "aperture": "explicit integer xyxy half-open source rectangle; omission means full stored raster",
+      "enrollment": "all declared group members, including prospectively excluded observation cases"
+    }
+  },
+  "cases": [
+    {
+      "case_id": "source_0000",
+      "group_id": "measured_29091_0",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_0"
+      ],
+      "image": "source_0000.png",
+      "references": [
+        "source_0000.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0001",
+      "group_id": "measured_29091_1",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_1"
+      ],
+      "image": "source_0001.png",
+      "references": [
+        "source_0001.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0002",
+      "group_id": "measured_29091_2",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_2"
+      ],
+      "image": "source_0002.png",
+      "references": [
+        "source_0002.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0003",
+      "group_id": "measured_29091_3",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_3"
+      ],
+      "image": "source_0003.png",
+      "references": [
+        "source_0003.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0004",
+      "group_id": "measured_29091_4",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_4"
+      ],
+      "image": "source_0004.png",
+      "references": [
+        "source_0004.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0005",
+      "group_id": "measured_29091_5",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_5"
+      ],
+      "image": "source_0005.png",
+      "references": [
+        "source_0005.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0006",
+      "group_id": "measured_29091_6",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_6"
+      ],
+      "image": "source_0006.png",
+      "references": [
+        "source_0006.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0007",
+      "group_id": "measured_29091_7",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_7"
+      ],
+      "image": "source_0007.png",
+      "references": [
+        "source_0007.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0008",
+      "group_id": "measured_29091_8",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_8"
+      ],
+      "image": "source_0008.png",
+      "references": [
+        "source_0008.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0009",
+      "group_id": "measured_29091_9",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_9"
+      ],
+      "image": "source_0009.png",
+      "references": [
+        "source_0009.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0010",
+      "group_id": "measured_29091_10",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_10"
+      ],
+      "image": "source_0010.png",
+      "references": [
+        "source_0010.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0011",
+      "group_id": "measured_29091_11",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_11"
+      ],
+      "image": "source_0011.png",
+      "references": [
+        "source_0011.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0012",
+      "group_id": "measured_29091_12",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_12"
+      ],
+      "image": "source_0012.png",
+      "references": [
+        "source_0012.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0013",
+      "group_id": "measured_29091_13",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_13"
+      ],
+      "image": "source_0013.png",
+      "references": [
+        "source_0013.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0014",
+      "group_id": "measured_29091_14",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_14"
+      ],
+      "image": "source_0014.png",
+      "references": [
+        "source_0014.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0015",
+      "group_id": "measured_29091_15",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_15"
+      ],
+      "image": "source_0015.png",
+      "references": [
+        "source_0015.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0016",
+      "group_id": "measured_29091_16",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_16"
+      ],
+      "image": "source_0016.png",
+      "references": [
+        "source_0016.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0017",
+      "group_id": "measured_29091_17",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_17"
+      ],
+      "image": "source_0017.png",
+      "references": [
+        "source_0017.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0018",
+      "group_id": "measured_29091_18",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_18"
+      ],
+      "image": "source_0018.png",
+      "references": [
+        "source_0018.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0019",
+      "group_id": "measured_29091_19",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_19"
+      ],
+      "image": "source_0019.png",
+      "references": [
+        "source_0019.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0020",
+      "group_id": "measured_29091_20",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_20"
+      ],
+      "image": "source_0020.png",
+      "references": [
+        "source_0020.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0021",
+      "group_id": "measured_29091_21",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_21"
+      ],
+      "image": "source_0021.png",
+      "references": [
+        "source_0021.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0022",
+      "group_id": "measured_29091_22",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_22"
+      ],
+      "image": "source_0022.png",
+      "references": [
+        "source_0022.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0023",
+      "group_id": "measured_29091_23",
+      "split": "development",
+      "lineage_ids": [
+        "lineage_measured_29091_23"
+      ],
+      "image": "source_0023.png",
+      "references": [
+        "source_0023.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0024",
+      "group_id": "measured_29091_24",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_24"
+      ],
+      "image": "source_0024.png",
+      "references": [
+        "source_0024.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0025",
+      "group_id": "measured_29091_25",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_25"
+      ],
+      "image": "source_0025.png",
+      "references": [
+        "source_0025.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0026",
+      "group_id": "measured_29091_26",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_26"
+      ],
+      "image": "source_0026.png",
+      "references": [
+        "source_0026.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0027",
+      "group_id": "measured_29091_27",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_27"
+      ],
+      "image": "source_0027.png",
+      "references": [
+        "source_0027.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0028",
+      "group_id": "measured_29091_28",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_28"
+      ],
+      "image": "source_0028.png",
+      "references": [
+        "source_0028.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0029",
+      "group_id": "measured_29091_29",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_29"
+      ],
+      "image": "source_0029.png",
+      "references": [
+        "source_0029.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0030",
+      "group_id": "measured_29091_30",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_30"
+      ],
+      "image": "source_0030.png",
+      "references": [
+        "source_0030.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0031",
+      "group_id": "measured_29091_31",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_31"
+      ],
+      "image": "source_0031.png",
+      "references": [
+        "source_0031.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0032",
+      "group_id": "measured_29091_32",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_32"
+      ],
+      "image": "source_0032.png",
+      "references": [
+        "source_0032.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0033",
+      "group_id": "measured_29091_33",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_33"
+      ],
+      "image": "source_0033.png",
+      "references": [
+        "source_0033.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0034",
+      "group_id": "measured_29091_34",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_34"
+      ],
+      "image": "source_0034.png",
+      "references": [
+        "source_0034.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0035",
+      "group_id": "measured_29091_35",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_35"
+      ],
+      "image": "source_0035.png",
+      "references": [
+        "source_0035.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0036",
+      "group_id": "measured_29091_36",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_36"
+      ],
+      "image": "source_0036.png",
+      "references": [
+        "source_0036.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0037",
+      "group_id": "measured_29091_37",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_37"
+      ],
+      "image": "source_0037.png",
+      "references": [
+        "source_0037.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0038",
+      "group_id": "measured_29091_38",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_38"
+      ],
+      "image": "source_0038.png",
+      "references": [
+        "source_0038.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0039",
+      "group_id": "measured_29091_39",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_39"
+      ],
+      "image": "source_0039.png",
+      "references": [
+        "source_0039.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0040",
+      "group_id": "measured_29091_40",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_40"
+      ],
+      "image": "source_0040.png",
+      "references": [
+        "source_0040.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0041",
+      "group_id": "measured_29091_41",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_41"
+      ],
+      "image": "source_0041.png",
+      "references": [
+        "source_0041.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0042",
+      "group_id": "measured_29091_42",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_42"
+      ],
+      "image": "source_0042.png",
+      "references": [
+        "source_0042.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0043",
+      "group_id": "measured_29091_43",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_43"
+      ],
+      "image": "source_0043.png",
+      "references": [
+        "source_0043.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0044",
+      "group_id": "measured_29091_44",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_44"
+      ],
+      "image": "source_0044.png",
+      "references": [
+        "source_0044.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0045",
+      "group_id": "measured_29091_45",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_45"
+      ],
+      "image": "source_0045.png",
+      "references": [
+        "source_0045.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0046",
+      "group_id": "measured_29091_46",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_46"
+      ],
+      "image": "source_0046.png",
+      "references": [
+        "source_0046.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0047",
+      "group_id": "measured_29091_47",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_47"
+      ],
+      "image": "source_0047.png",
+      "references": [
+        "source_0047.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0048",
+      "group_id": "measured_29091_48",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_48"
+      ],
+      "image": "source_0048.png",
+      "references": [
+        "source_0048.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0049",
+      "group_id": "measured_29091_49",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_49"
+      ],
+      "image": "source_0049.png",
+      "references": [
+        "source_0049.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0050",
+      "group_id": "measured_29091_50",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_50"
+      ],
+      "image": "source_0050.png",
+      "references": [
+        "source_0050.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0051",
+      "group_id": "measured_29091_51",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_51"
+      ],
+      "image": "source_0051.png",
+      "references": [
+        "source_0051.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0052",
+      "group_id": "measured_29091_52",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_52"
+      ],
+      "image": "source_0052.png",
+      "references": [
+        "source_0052.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0053",
+      "group_id": "measured_29091_53",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_53"
+      ],
+      "image": "source_0053.png",
+      "references": [
+        "source_0053.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0054",
+      "group_id": "measured_29091_54",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_54"
+      ],
+      "image": "source_0054.png",
+      "references": [
+        "source_0054.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0055",
+      "group_id": "measured_29091_55",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_55"
+      ],
+      "image": "source_0055.png",
+      "references": [
+        "source_0055.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0056",
+      "group_id": "measured_29091_56",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_56"
+      ],
+      "image": "source_0056.png",
+      "references": [
+        "source_0056.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0057",
+      "group_id": "measured_29091_57",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_57"
+      ],
+      "image": "source_0057.png",
+      "references": [
+        "source_0057.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0058",
+      "group_id": "measured_29091_58",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_58"
+      ],
+      "image": "source_0058.png",
+      "references": [
+        "source_0058.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0059",
+      "group_id": "measured_29091_59",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_59"
+      ],
+      "image": "source_0059.png",
+      "references": [
+        "source_0059.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0060",
+      "group_id": "measured_29091_60",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_60"
+      ],
+      "image": "source_0060.png",
+      "references": [
+        "source_0060.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0061",
+      "group_id": "measured_29091_61",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_61"
+      ],
+      "image": "source_0061.png",
+      "references": [
+        "source_0061.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0062",
+      "group_id": "measured_29091_62",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_62"
+      ],
+      "image": "source_0062.png",
+      "references": [
+        "source_0062.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0063",
+      "group_id": "measured_29091_63",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_63"
+      ],
+      "image": "source_0063.png",
+      "references": [
+        "source_0063.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0064",
+      "group_id": "measured_29091_64",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_64"
+      ],
+      "image": "source_0064.png",
+      "references": [
+        "source_0064.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0065",
+      "group_id": "measured_29091_65",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_65"
+      ],
+      "image": "source_0065.png",
+      "references": [
+        "source_0065.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0066",
+      "group_id": "measured_29091_66",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_66"
+      ],
+      "image": "source_0066.png",
+      "references": [
+        "source_0066.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0067",
+      "group_id": "measured_29091_67",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_67"
+      ],
+      "image": "source_0067.png",
+      "references": [
+        "source_0067.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0068",
+      "group_id": "measured_29091_68",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_68"
+      ],
+      "image": "source_0068.png",
+      "references": [
+        "source_0068.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0069",
+      "group_id": "measured_29091_69",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_69"
+      ],
+      "image": "source_0069.png",
+      "references": [
+        "source_0069.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0070",
+      "group_id": "measured_29091_70",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_70"
+      ],
+      "image": "source_0070.png",
+      "references": [
+        "source_0070.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0071",
+      "group_id": "measured_29091_71",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_71"
+      ],
+      "image": "source_0071.png",
+      "references": [
+        "source_0071.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0072",
+      "group_id": "measured_29091_72",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_72"
+      ],
+      "image": "source_0072.png",
+      "references": [
+        "source_0072.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0073",
+      "group_id": "measured_29091_73",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_73"
+      ],
+      "image": "source_0073.png",
+      "references": [
+        "source_0073.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0074",
+      "group_id": "measured_29091_74",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_74"
+      ],
+      "image": "source_0074.png",
+      "references": [
+        "source_0074.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0075",
+      "group_id": "measured_29091_75",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_75"
+      ],
+      "image": "source_0075.png",
+      "references": [
+        "source_0075.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0076",
+      "group_id": "measured_29091_76",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_76"
+      ],
+      "image": "source_0076.png",
+      "references": [
+        "source_0076.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0077",
+      "group_id": "measured_29091_77",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_77"
+      ],
+      "image": "source_0077.png",
+      "references": [
+        "source_0077.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0078",
+      "group_id": "measured_29091_78",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_78"
+      ],
+      "image": "source_0078.png",
+      "references": [
+        "source_0078.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0079",
+      "group_id": "measured_29091_79",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_79"
+      ],
+      "image": "source_0079.png",
+      "references": [
+        "source_0079.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0080",
+      "group_id": "measured_29091_80",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_80"
+      ],
+      "image": "source_0080.png",
+      "references": [
+        "source_0080.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0081",
+      "group_id": "measured_29091_81",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_81"
+      ],
+      "image": "source_0081.png",
+      "references": [
+        "source_0081.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0082",
+      "group_id": "measured_29091_82",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_82"
+      ],
+      "image": "source_0082.png",
+      "references": [
+        "source_0082.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0083",
+      "group_id": "measured_29091_83",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_83"
+      ],
+      "image": "source_0083.png",
+      "references": [
+        "source_0083.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0084",
+      "group_id": "measured_29091_84",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_84"
+      ],
+      "image": "source_0084.png",
+      "references": [
+        "source_0084.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0085",
+      "group_id": "measured_29091_85",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_85"
+      ],
+      "image": "source_0085.png",
+      "references": [
+        "source_0085.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0086",
+      "group_id": "measured_29091_86",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_86"
+      ],
+      "image": "source_0086.png",
+      "references": [
+        "source_0086.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0087",
+      "group_id": "measured_29091_87",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_87"
+      ],
+      "image": "source_0087.png",
+      "references": [
+        "source_0087.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0088",
+      "group_id": "measured_29091_88",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_88"
+      ],
+      "image": "source_0088.png",
+      "references": [
+        "source_0088.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0089",
+      "group_id": "measured_29091_89",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_89"
+      ],
+      "image": "source_0089.png",
+      "references": [
+        "source_0089.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0090",
+      "group_id": "measured_29091_90",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_90"
+      ],
+      "image": "source_0090.png",
+      "references": [
+        "source_0090.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0091",
+      "group_id": "measured_29091_91",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_91"
+      ],
+      "image": "source_0091.png",
+      "references": [
+        "source_0091.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0092",
+      "group_id": "measured_29091_92",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_92"
+      ],
+      "image": "source_0092.png",
+      "references": [
+        "source_0092.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0093",
+      "group_id": "measured_29091_93",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_93"
+      ],
+      "image": "source_0093.png",
+      "references": [
+        "source_0093.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0094",
+      "group_id": "measured_29091_94",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_94"
+      ],
+      "image": "source_0094.png",
+      "references": [
+        "source_0094.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0095",
+      "group_id": "measured_29091_95",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_95"
+      ],
+      "image": "source_0095.png",
+      "references": [
+        "source_0095.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0096",
+      "group_id": "measured_29091_96",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_96"
+      ],
+      "image": "source_0096.png",
+      "references": [
+        "source_0096.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0097",
+      "group_id": "measured_29091_97",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_97"
+      ],
+      "image": "source_0097.png",
+      "references": [
+        "source_0097.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0098",
+      "group_id": "measured_29091_98",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_98"
+      ],
+      "image": "source_0098.png",
+      "references": [
+        "source_0098.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0099",
+      "group_id": "measured_29091_99",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_99"
+      ],
+      "image": "source_0099.png",
+      "references": [
+        "source_0099.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0100",
+      "group_id": "measured_29091_100",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_100"
+      ],
+      "image": "source_0100.png",
+      "references": [
+        "source_0100.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0101",
+      "group_id": "measured_29091_101",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_101"
+      ],
+      "image": "source_0101.png",
+      "references": [
+        "source_0101.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0102",
+      "group_id": "measured_29091_102",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_102"
+      ],
+      "image": "source_0102.png",
+      "references": [
+        "source_0102.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0103",
+      "group_id": "measured_29091_103",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_103"
+      ],
+      "image": "source_0103.png",
+      "references": [
+        "source_0103.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0104",
+      "group_id": "measured_29091_104",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_104"
+      ],
+      "image": "source_0104.png",
+      "references": [
+        "source_0104.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0105",
+      "group_id": "measured_29091_105",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_105"
+      ],
+      "image": "source_0105.png",
+      "references": [
+        "source_0105.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0106",
+      "group_id": "measured_29091_106",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_106"
+      ],
+      "image": "source_0106.png",
+      "references": [
+        "source_0106.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0107",
+      "group_id": "measured_29091_107",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_107"
+      ],
+      "image": "source_0107.png",
+      "references": [
+        "source_0107.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0108",
+      "group_id": "measured_29091_108",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_108"
+      ],
+      "image": "source_0108.png",
+      "references": [
+        "source_0108.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0109",
+      "group_id": "measured_29091_109",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_109"
+      ],
+      "image": "source_0109.png",
+      "references": [
+        "source_0109.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0110",
+      "group_id": "measured_29091_110",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_110"
+      ],
+      "image": "source_0110.png",
+      "references": [
+        "source_0110.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0111",
+      "group_id": "measured_29091_111",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_111"
+      ],
+      "image": "source_0111.png",
+      "references": [
+        "source_0111.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0112",
+      "group_id": "measured_29091_112",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_112"
+      ],
+      "image": "source_0112.png",
+      "references": [
+        "source_0112.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0113",
+      "group_id": "measured_29091_113",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_113"
+      ],
+      "image": "source_0113.png",
+      "references": [
+        "source_0113.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0114",
+      "group_id": "measured_29091_114",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_114"
+      ],
+      "image": "source_0114.png",
+      "references": [
+        "source_0114.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0115",
+      "group_id": "measured_29091_115",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_115"
+      ],
+      "image": "source_0115.png",
+      "references": [
+        "source_0115.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0116",
+      "group_id": "measured_29091_mixed",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_mixed"
+      ],
+      "image": "source_0116.png",
+      "references": [
+        "source_0116.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0117",
+      "group_id": "measured_29091_mixed",
+      "split": "calibration",
+      "lineage_ids": [
+        "lineage_measured_29091_mixed"
+      ],
+      "image": "source_0117.png",
+      "references": [
+        "source_0117.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "source_0118",
+      "group_id": "measured_29091_118",
+      "split": "evaluation",
+      "lineage_ids": [
+        "lineage_measured_29091_118"
+      ],
+      "image": "source_0118.png",
+      "references": [
+        "source_0118.reference.json"
+      ],
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ],
+      "eligibility": "excluded",
+      "exclusion_reason": "frozen excluded-enrollment control; no observer call"
+    }
+  ]
+}

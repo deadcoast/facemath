@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/facemath_wave_09/scripts/browser_qa_wave7.py",
+    "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html",
+    "--out",
+    "/mnt/data/facemath_wave_09/evidence/wave9/joint-browser"
+  ],
+  "cwd": "/mnt/data/facemath_wave_09",
+  "started_utc": "2026-09-20T08:02:29.599767+00:00",
+  "finished_utc": "2026-09-20T08:02:31.969971+00:00",
+  "returncode": 0,
+  "stdout": "{\n  \"format\": \"facemath.browser_qa.v7\",\n  \"started_utc\": \"2026-09-20T08:02:30.044666+00:00\",\n  \"source\": \"/mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html\",\n  \"checks\": {\n    \"retained_mode_and_covariance_inventory\": [\n      16,\n      256,\n      8\n    ],\n    \"display_operations_preserve_measurements\": true,\n    \"csv_exact_full_covariance\": true,\n    \"local_evidence_links\": true,\n    \"no_horizontal_overflow\": true\n  },\n  \"viewports\": [\n    {\n      \"size\": {\n        \"width\": 1440,\n        \"height\": 1150\n      },\n      \"csv_rows\": 256,\n      \"interactive\": true,\n      \"screenshot\": \"desktop_joint.png\"\n    },\n    {\n      \"size\": {\n        \"width\": 390,\n        \"height\": 844\n      },\n      \"csv_rows\": 256,\n      \"interactive\": true,\n      \"screenshot\": \"mobile_joint.png\"\n    }\n  ],\n  \"loading\": \"emitted HTML in memory; local file navigation blocked\",\n  \"navigation_error\": \"Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html\\nCall log:\\n  - navigating to \\\"file:///mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html\\\", waiting until \\\"load\\\"\\n\",\n  \"errors\": [],\n  \"remote_requests\": [],\n  \"finished_utc\": \"2026-09-20T08:02:31.803920+00:00\",\n  \"passed\": true\n}\n",
+  "stderr": ""
+}

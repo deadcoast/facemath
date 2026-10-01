@@ -1,0 +1,125 @@
+.................................................................FF..... [ 78%]
+....................                                                     [100%]
+=================================== FAILURES ===================================
+_______________________ test_byte_tampering_is_detected ________________________
+
+result = (InstrumentResult(state=CanonicalState(observation_a=Observation(image_sha256='25437421df5b41d06edfd3815712d5c765f74e5...0],
+        ...,
+        [63, 63, 63],
+        [55, 55, 55],
+        [51, 51, 51]]], shape=(224, 256, 3), dtype=uint8))
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_byte_tampering_is_detecte0')
+
+    def test_byte_tampering_is_detected(result,tmp_path):
+        out=publish(result,tmp_path)
+        with (out/'arrays.npz').open('ab') as f:f.write(b'corruption')
+        with pytest.raises(ObservationError,match='artifact mismatch'):
+>           verify_bundle(out)
+
+tests/test_wave3_artifacts.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/artifacts.py:201: in verify_bundle
+    verify_inventory(root, manifest["files"], exclude=("manifest.json",))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/tmp/pytest-of-root/pytest-1/test_byte_tampering_is_detecte0/run')
+expected = {'arrays.npz': {'bytes': 145127, 'sha256': '01231509b38aa35034893c0545e0bd38e268415fe5dee008600c6ef9a573fbcc'}, 'canon... 'environment.json': {'bytes': 457, 'sha256': '2d3d6226c92cf1df8945c14bc70b52e0185b5c3a7b4ce43c48d1a07ad9de253f'}, ...}
+
+    def verify_inventory(root: Path, expected: Mapping[str, Any], *, exclude: tuple[str, ...] = ()) -> None:
+        actual = file_inventory(root, exclude=exclude)
+        if actual != expected:
+            missing = sorted(set(expected) - set(actual))
+            extra = sorted(set(actual) - set(expected))
+            changed = sorted(k for k in set(expected) & set(actual) if expected[k] != actual[k])
+>           raise ObservationError(f"artifact inventory mismatch: missing={missing}, extra={extra}, changed={changed}")
+E           facemath.observation.contracts.ObservationError: artifact inventory mismatch: missing=[], extra=[], changed=['arrays.npz']
+
+src/facemath/observation/study.py:94: ObservationError
+
+During handling of the above exception, another exception occurred:
+
+result = (InstrumentResult(state=CanonicalState(observation_a=Observation(image_sha256='25437421df5b41d06edfd3815712d5c765f74e5...0],
+        ...,
+        [63, 63, 63],
+        [55, 55, 55],
+        [51, 51, 51]]], shape=(224, 256, 3), dtype=uint8))
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_byte_tampering_is_detecte0')
+
+    def test_byte_tampering_is_detected(result,tmp_path):
+        out=publish(result,tmp_path)
+        with (out/'arrays.npz').open('ab') as f:f.write(b'corruption')
+>       with pytest.raises(ObservationError,match='artifact mismatch'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'artifact mismatch'
+E         Actual message: "artifact inventory mismatch: missing=[], extra=[], changed=['arrays.npz']"
+
+tests/test_wave3_artifacts.py:49: AssertionError
+______ test_manifest_path_traversal_is_rejected_even_with_recomputed_hash ______
+
+result = (InstrumentResult(state=CanonicalState(observation_a=Observation(image_sha256='25437421df5b41d06edfd3815712d5c765f74e5...0],
+        ...,
+        [63, 63, 63],
+        [55, 55, 55],
+        [51, 51, 51]]], shape=(224, 256, 3), dtype=uint8))
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_manifest_path_traversal_i0')
+
+    def test_manifest_path_traversal_is_rejected_even_with_recomputed_hash(result,tmp_path):
+        out=publish(result,tmp_path)
+        m=json.loads((out/'manifest.json').read_text());m.pop('manifest_content_sha256')
+        m['files']['../outside.txt']={'bytes':0,'sha256':sha256(b'').hexdigest()}
+        m['manifest_content_sha256']=sha256(canonical_json(m).encode()).hexdigest()
+        (out/'manifest.json').write_text(json.dumps(m))
+        with pytest.raises(ObservationError,match='escapes'):
+>           verify_bundle(out)
+
+tests/test_wave3_artifacts.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/artifacts.py:201: in verify_bundle
+    verify_inventory(root, manifest["files"], exclude=("manifest.json",))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/tmp/pytest-of-root/pytest-1/test_manifest_path_traversal_i0/run')
+expected = {'../outside.txt': {'bytes': 0, 'sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}, 'arrays...'canonical_b.png': {'bytes': 20388, 'sha256': '59e69e22f1a4e3766a88cf735218c9ed7c164b80f11ddb7555bda64ffee7c8b7'}, ...}
+
+    def verify_inventory(root: Path, expected: Mapping[str, Any], *, exclude: tuple[str, ...] = ()) -> None:
+        actual = file_inventory(root, exclude=exclude)
+        if actual != expected:
+            missing = sorted(set(expected) - set(actual))
+            extra = sorted(set(actual) - set(expected))
+            changed = sorted(k for k in set(expected) & set(actual) if expected[k] != actual[k])
+>           raise ObservationError(f"artifact inventory mismatch: missing={missing}, extra={extra}, changed={changed}")
+E           facemath.observation.contracts.ObservationError: artifact inventory mismatch: missing=['../outside.txt'], extra=[], changed=[]
+
+src/facemath/observation/study.py:94: ObservationError
+
+During handling of the above exception, another exception occurred:
+
+result = (InstrumentResult(state=CanonicalState(observation_a=Observation(image_sha256='25437421df5b41d06edfd3815712d5c765f74e5...0],
+        ...,
+        [63, 63, 63],
+        [55, 55, 55],
+        [51, 51, 51]]], shape=(224, 256, 3), dtype=uint8))
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_manifest_path_traversal_i0')
+
+    def test_manifest_path_traversal_is_rejected_even_with_recomputed_hash(result,tmp_path):
+        out=publish(result,tmp_path)
+        m=json.loads((out/'manifest.json').read_text());m.pop('manifest_content_sha256')
+        m['files']['../outside.txt']={'bytes':0,'sha256':sha256(b'').hexdigest()}
+        m['manifest_content_sha256']=sha256(canonical_json(m).encode()).hexdigest()
+        (out/'manifest.json').write_text(json.dumps(m))
+>       with pytest.raises(ObservationError,match='escapes'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'escapes'
+E         Actual message: "artifact inventory mismatch: missing=['../outside.txt'], extra=[], changed=[]"
+
+tests/test_wave3_artifacts.py:59: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_wave3_artifacts.py::test_byte_tampering_is_detected - AssertionError: Regex pattern did not match.
+  Expected regex: 'artifact mismatch'
+  Actual message: "artifact inventory mismatch: missing=[], extra=[], changed=['arrays.npz']"
+FAILED tests/test_wave3_artifacts.py::test_manifest_path_traversal_is_rejected_even_with_recomputed_hash - AssertionError: Regex pattern did not match.
+  Expected regex: 'escapes'
+  Actual message: "artifact inventory mismatch: missing=['../outside.txt'], extra=[], changed=[]"
+2 failed, 90 passed in 4.96s

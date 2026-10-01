@@ -1,0 +1,140 @@
+{
+  "format": "facemath.measured_acquisition_group.v9",
+  "policy_sha256": "b30cc0d28affdb42f42a17ecf543b4370fbbf9ebd392a51e9170ef152d78c13c",
+  "group_id": "refused-source",
+  "lineage_ids": [
+    "refused-new-lineage"
+  ],
+  "members": [
+    {
+      "image_sha256": "eb0d35518dd41c4060d7e101eb10fc64e7951b066dce9524cb9ae67794db24fe",
+      "image_shape": [
+        280,
+        320
+      ],
+      "aperture": [
+        35,
+        40,
+        210,
+        230
+      ],
+      "lineage_ids": [
+        "refused-new-lineage"
+      ]
+    }
+  ],
+  "feature_order": [
+    "native_short_edge_px",
+    "native_area_px2",
+    "code_mean",
+    "code_p05",
+    "code_p95",
+    "code_range_90",
+    "low_code_fraction",
+    "high_code_fraction",
+    "detail_ratio"
+  ],
+  "feature_units": [
+    "px",
+    "px2",
+    "normalized_code",
+    "normalized_code",
+    "normalized_code",
+    "normalized_code",
+    "fraction",
+    "fraction",
+    "analysis_pixel_gradient_energy/variance"
+  ],
+  "features": [
+    [
+      175.0,
+      33250.0,
+      0.9890078136517765,
+      0.9882352941176471,
+      0.996078431372549,
+      0.007843137254901933,
+      0.0,
+      0.05476691729323308,
+      0.37876475859427755
+    ]
+  ],
+  "aggregate_order": [
+    "min.native_short_edge_px",
+    "min.native_area_px2",
+    "min.code_mean",
+    "min.code_p05",
+    "min.code_p95",
+    "min.code_range_90",
+    "min.low_code_fraction",
+    "min.high_code_fraction",
+    "min.detail_ratio",
+    "max.native_short_edge_px",
+    "max.native_area_px2",
+    "max.code_mean",
+    "max.code_p05",
+    "max.code_p95",
+    "max.code_range_90",
+    "max.low_code_fraction",
+    "max.high_code_fraction",
+    "max.detail_ratio"
+  ],
+  "aggregate": [
+    [
+      175.0,
+      33250.0,
+      0.9890078136517765,
+      0.9882352941176471,
+      0.996078431372549,
+      0.007843137254901933,
+      0.0,
+      0.05476691729323308,
+      0.37876475859427755
+    ],
+    [
+      175.0,
+      33250.0,
+      0.9890078136517765,
+      0.9882352941176471,
+      0.996078431372549,
+      0.007843137254901933,
+      0.0,
+      0.05476691729323308,
+      0.37876475859427755
+    ]
+  ],
+  "predicate_offsets": [
+    0,
+    5,
+    11
+  ],
+  "predicate_truth": [
+    true,
+    false,
+    true,
+    true,
+    true,
+    true,
+    false,
+    true,
+    true,
+    true,
+    false
+  ],
+  "rule_matches": [
+    false,
+    false
+  ],
+  "category": "__unmatched__",
+  "deployment_permitted_by_rule": false,
+  "analyzed_patches": [
+    {
+      "shape": [
+        128,
+        118
+      ],
+      "sha256": "b0034bda83686cb25521ef8bef31ffc4cc185a8fcde805f30fa79531492fca28"
+    }
+  ],
+  "source": "recomputed original pixels in declared apertures; no predictions, references or pair metrics",
+  "limit": "not face detection, physiological attributes, blind sharpness accuracy or hidden-shift certification"
+}

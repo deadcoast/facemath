@@ -1,0 +1,211 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______ test_cli_refused_pixel_route_precedes_native_model_construction ________
+
+self = <facemath.observation.instrument.FacialInstrument object at 0x7fbd2af76270>
+image_a = array([[[252, 252, 252],
+        [252, 252, 252],
+        [252, 252, 252],
+        ...,
+        [252, 252, 252],
+     ...    ...,
+        [253, 253, 253],
+        [252, 252, 252],
+        [252, 252, 252]]], shape=(280, 320, 3), dtype=uint8)
+image_b = array([[[49, 49, 49],
+        [57, 57, 57],
+        [68, 68, 68],
+        ...,
+        [57, 57, 57],
+        [61, 61, ...65],
+        ...,
+        [63, 63, 63],
+        [71, 71, 71],
+        [74, 74, 74]]], shape=(280, 320, 3), dtype=uint8)
+observation_a = None, observation_b = None
+
+    def run(self, image_a: np.ndarray, image_b: np.ndarray,
+            observation_a: Observation | None = None,
+            observation_b: Observation | None = None) -> InstrumentResult:
+        journal = Journal()
+        try:
+>           return self._execute(image_a, image_b, observation_a, observation_b, journal)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+src/facemath/observation/instrument.py:147: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <facemath.observation.instrument.FacialInstrument object at 0x7fbd2af76270>
+image_a = array([[[252, 252, 252],
+        [252, 252, 252],
+        [252, 252, 252],
+        ...,
+        [252, 252, 252],
+     ...    ...,
+        [253, 253, 253],
+        [252, 252, 252],
+        [252, 252, 252]]], shape=(280, 320, 3), dtype=uint8)
+image_b = array([[[49, 49, 49],
+        [57, 57, 57],
+        [68, 68, 68],
+        ...,
+        [57, 57, 57],
+        [61, 61, ...65],
+        ...,
+        [63, 63, 63],
+        [71, 71, 71],
+        [74, 74, 74]]], shape=(280, 320, 3), dtype=uint8)
+observation_a = None, observation_b = None
+journal = <facemath.observation.journal.Journal object at 0x7fbd4c942850>
+
+    def _execute(self, image_a: np.ndarray, image_b: np.ndarray,
+                 observation_a: Observation | None, observation_b: Observation | None,
+                 journal: Journal) -> InstrumentResult:
+        with journal.step("inputs.validate", {}) as output:
+            a, b = rgb_image(image_a), rgb_image(image_b)
+            output.update(a_sha256=array_digest(a), b_sha256=array_digest(b), shape_a=list(a.shape), shape_b=list(b.shape))
+        from .stratified import StratifiedJointCalibration, BoundStratifiedCalibration
+        calibration = self.localization_calibration
+        model = calibration.model if isinstance(calibration, BoundStratifiedCalibration) else calibration
+        measured_policy = getattr(getattr(model, "policy", None), "measurement_policy", None)
+        groups, lineages, strata = self.query_groups, self.query_lineages, self.query_strata
+        acquisition = self.acquisition_groups
+        if measured_policy is not None:
+            with journal.step("acquisition.measure_original_sources_before_observer", {
+                "policy_sha256": measured_policy.digest, "uses_predictions_or_reference_labels": False}) as output:
+                acquisition = acquisition or getattr(calibration, "measured_groups", None)
+                if acquisition is None or len(acquisition) != 2:
+                    raise ObservationError("measured calibration requires two raw source acquisition groups")
+                acquisition = tuple(g.recompute() for g in acquisition)
+                if any(g.policy.digest != measured_policy.digest for g in acquisition):
+                    raise ObservationError("source measurement policy differs from calibrated policy")
+                for image, group in zip((a, b), acquisition):
+                    group.require_source(image)
+                if groups == ("", ""):
+                    groups = tuple(g.group_id for g in acquisition)
+                if lineages == ((), ()):
+                    lineages = tuple(g.lineage_ids for g in acquisition)
+                derived = tuple(g.category for g in acquisition)
+                output.update(groups=[g.to_dict() for g in acquisition], group_digests=[g.digest for g in acquisition])
+                if strata != ("", "") and strata != derived:
+                    raise ObservationError("declared category conflicts with measured source pixels; no manual override")
+                strata = derived
+                if groups != tuple(g.group_id for g in acquisition) or lineages != tuple(g.lineage_ids for g in acquisition):
+                    raise ObservationError("query context must retain the complete measured group and lineage inventory")
+                if groups[0] == groups[1] and acquisition[0].digest != acquisition[1].digest:
+                    raise ObservationError("same query group cannot use different measured source inventories")
+                for group in acquisition:
+                    if model.radius(group.category).quantile is None:
+>                       raise ObservationError(f"measured category {group.category!r} is unsupported: {model.radius(group.category).status}; no fallback")
+E                       facemath.observation.contracts.ObservationError: measured category '__unmatched__' is unsupported: rejected_by_measured_acquisition_policy; no fallback
+
+src/facemath/observation/instrument.py:189: ObservationError
+
+The above exception was the direct cause of the following exception:
+
+study = (PosixPath('/tmp/pytest-of-root/pytest-5/measured-integration0'), StratifiedFixtureExecutor(records={'f5ce5fc02aeda0f6...es=(), deployment_permitted=False, quantile=None, rank=1, status='rejected_by_measured_acquisition_policy'))), (3, 68))
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-5/test_cli_refused_pixel_route_p0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fbd2b130e90>
+
+    def test_cli_refused_pixel_route_precedes_native_model_construction(study,tmp_path,monkeypatch):
+        import facemath.cli as cli
+        from facemath.observation.acquisition import write_group
+        from facemath.observation.study import save_rgb
+        model=study[4]
+        policy=model.policy.measurement_policy
+        a=measured_record(401101,"washed")["image"]
+        b=measured_record(401102,"clear")["image"]
+        ga=MeasuredGroup(policy,"lazy-a",(ApertureSource(a,("lazy-a",),APERTURE),))
+        gb=MeasuredGroup(policy,"lazy-b",(ApertureSource(b,("lazy-b",),APERTURE),))
+        write_group(ga,tmp_path/"a-group");write_group(gb,tmp_path/"b-group")
+        save_rgb(tmp_path/"a.png",a);save_rgb(tmp_path/"b.png",b)
+        model_path=tmp_path/"calibration.json";model_path.write_text(json.dumps(model.to_dict()))
+        def forbidden(*args,**kwargs):
+            pytest.fail("native model constructed before source-policy refusal")
+        monkeypatch.setattr(cli,"MediaPipeProvider",forbidden)
+        args=cli.build_parser().parse_args(["analyze",str(tmp_path/"a.png"),str(tmp_path/"b.png"),
+            "--model",str(tmp_path/"absent.task"),"--localization-calibration",str(model_path),
+            "--domain",DOMAIN,"--acquisition-a",str(tmp_path/"a-group"),"--acquisition-b",str(tmp_path/"b-group"),
+            "--out",str(tmp_path/"out")])
+        with pytest.raises(InstrumentFailure,match="not deployable"):
+>           cli._analyze(args)
+
+tests/test_wave9_integration.py:271: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/cli.py:281: in _analyze
+    result = FacialInstrument(config, DeferredProvider(), **extra).run(image_a, image_b, obs_a, obs_b)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <facemath.observation.instrument.FacialInstrument object at 0x7fbd2af76270>
+image_a = array([[[252, 252, 252],
+        [252, 252, 252],
+        [252, 252, 252],
+        ...,
+        [252, 252, 252],
+     ...    ...,
+        [253, 253, 253],
+        [252, 252, 252],
+        [252, 252, 252]]], shape=(280, 320, 3), dtype=uint8)
+image_b = array([[[49, 49, 49],
+        [57, 57, 57],
+        [68, 68, 68],
+        ...,
+        [57, 57, 57],
+        [61, 61, ...65],
+        ...,
+        [63, 63, 63],
+        [71, 71, 71],
+        [74, 74, 74]]], shape=(280, 320, 3), dtype=uint8)
+observation_a = None, observation_b = None
+
+    def run(self, image_a: np.ndarray, image_b: np.ndarray,
+            observation_a: Observation | None = None,
+            observation_b: Observation | None = None) -> InstrumentResult:
+        journal = Journal()
+        try:
+            return self._execute(image_a, image_b, observation_a, observation_b, journal)
+        except ObservationError as exc:
+>           raise InstrumentFailure(str(exc), journal.jsonl()) from exc
+E           facemath.observation.instrument.InstrumentFailure: measured category '__unmatched__' is unsupported: rejected_by_measured_acquisition_policy; no fallback
+
+src/facemath/observation/instrument.py:149: InstrumentFailure
+
+During handling of the above exception, another exception occurred:
+
+study = (PosixPath('/tmp/pytest-of-root/pytest-5/measured-integration0'), StratifiedFixtureExecutor(records={'f5ce5fc02aeda0f6...es=(), deployment_permitted=False, quantile=None, rank=1, status='rejected_by_measured_acquisition_policy'))), (3, 68))
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-5/test_cli_refused_pixel_route_p0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fbd2b130e90>
+
+    def test_cli_refused_pixel_route_precedes_native_model_construction(study,tmp_path,monkeypatch):
+        import facemath.cli as cli
+        from facemath.observation.acquisition import write_group
+        from facemath.observation.study import save_rgb
+        model=study[4]
+        policy=model.policy.measurement_policy
+        a=measured_record(401101,"washed")["image"]
+        b=measured_record(401102,"clear")["image"]
+        ga=MeasuredGroup(policy,"lazy-a",(ApertureSource(a,("lazy-a",),APERTURE),))
+        gb=MeasuredGroup(policy,"lazy-b",(ApertureSource(b,("lazy-b",),APERTURE),))
+        write_group(ga,tmp_path/"a-group");write_group(gb,tmp_path/"b-group")
+        save_rgb(tmp_path/"a.png",a);save_rgb(tmp_path/"b.png",b)
+        model_path=tmp_path/"calibration.json";model_path.write_text(json.dumps(model.to_dict()))
+        def forbidden(*args,**kwargs):
+            pytest.fail("native model constructed before source-policy refusal")
+        monkeypatch.setattr(cli,"MediaPipeProvider",forbidden)
+        args=cli.build_parser().parse_args(["analyze",str(tmp_path/"a.png"),str(tmp_path/"b.png"),
+            "--model",str(tmp_path/"absent.task"),"--localization-calibration",str(model_path),
+            "--domain",DOMAIN,"--acquisition-a",str(tmp_path/"a-group"),"--acquisition-b",str(tmp_path/"b-group"),
+            "--out",str(tmp_path/"out")])
+>       with pytest.raises(InstrumentFailure,match="not deployable"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'not deployable'
+E         Actual message: "measured category '__unmatched__' is unsupported: rejected_by_measured_acquisition_policy; no fallback"
+
+tests/test_wave9_integration.py:270: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_wave9_integration.py::test_cli_refused_pixel_route_precedes_native_model_construction - AssertionError: Regex pattern did not match.
+  Expected regex: 'not deployable'
+  Actual message: "measured category '__unmatched__' is unsupported: rejected_by_measured_acquisition_policy; no fallback"
+1 failed in 9.69s
