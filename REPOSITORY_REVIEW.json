@@ -1,0 +1,5064 @@
+[
+  {
+    "schema": "facemath.repository_review.stage1.v1",
+    "review": {
+      "generated_utc": "2026-10-01T20:13:54.670623+00:00",
+      "checkout": "C:/Users/ryanf/github/_active/facemath",
+      "reviewed_head": "31f7063d42b687442b1370b47530cbdf500fb091",
+      "branch": "main",
+      "engine_code_sha256": "77672e7b81c1b9ccfbc345bd36076fbfbd1e3f793b8991729a8180ee9eabf7d0",
+      "project_version": "0.10.0",
+      "purpose": "Global first-stage actionable source-state handoff; implementation designs and technical expansion follow separately.",
+      "change_scope": "This review adds only REPOSITORY_REVIEW.json to tracked scope. Probes/logs are local ignored audit artifacts. Product source, tests and historical evidence are unchanged.",
+      "classification": {
+        "1": "what is still placeholder",
+        "2": "what requires further development",
+        "3": "what is incorrect"
+      },
+      "priority_legend": {
+        "P1": "Fix or resolve before the real-study/release gate affected by the finding.",
+        "P2": "Important correctness, reproducibility or operational work; schedule after immediate blockers.",
+        "P3": "Conditional legacy research or future scope; not authority to postpone the real-reference gate."
+      },
+      "confidence_rule": "Category 3 requires a concrete counterexample or an explicit source/contract contradiction. Unverified behavior is in category 2 and labeled. Intentional templates and fixtures are not defective implementations.",
+      "scope_boundary": "Every Python source module is inventoried below. Active paths and legacy numerical APIs received static review; focused probes supplement the unchanged-fingerprint full suites. Synthetic labs and historical support scripts were reviewed for structure, role and evidence boundaries, not independently re-proven line by line. Binary images, archives and retained evidence were reviewed by inventories/digests and selected records, not by reinterpreting every historical output.",
+      "not_claimed": [
+        "Complete security audit or formal mathematical proof",
+        "Live native inference or human-reference acceptance",
+        "Current browser interaction acceptance",
+        "Passing final qualification or unchanged-array qualification validation on Windows",
+        "That historical Linux results are incorrect because a different current Windows stack fails"
+      ],
+      "finding_counts": {
+        "1": 6,
+        "2": 15,
+        "3": 16,
+        "total": 37
+      },
+      "priority_counts": {
+        "P1": 14,
+        "P3": 5,
+        "P2": 18
+      }
+    },
+    "global_state": {
+      "state": "Implemented research instrument with substantial retained tests/evidence; current Windows qualification/release gate failing; real native independent-reference gate incomplete.",
+      "architecture": [
+        "decoded stored raster -> image-bound Observation",
+        "shared CanonicalState -> measured geometry/field/edge/flow diagnostics",
+        "development-only bias/scatter -> calibration-only category radii -> frozen held-out admission",
+        "same observations/error model -> shared reference8 intrinsic relations -> typed bundle, raw arrays, journal, verify/replay"
+      ],
+      "implemented": [
+        "Immutable bytes-backed active observation arrays and full shape/dtype-aware hashes",
+        "Proper-rotation shared registration, source support masks and explicit missingness",
+        "Source-pixel measurement and complete-group routing without pooled unsupported-category fallback",
+        "Prediction-free workbenches, append-only annotation revisions and prospective study freeze",
+        "Bounded subprocess attempt accounting and retained native output contracts",
+        "Joint full16 development scatter, independent source radii and conservative dependent relation bounds",
+        "All-required-category admission and full-enrollment query/context leakage checks",
+        "Self-contained reports, bundle manifests and numerical replay"
+      ],
+      "invariants_to_preserve": [
+        "Stored-raster pixel centers; no silent EXIF display-coordinate substitution",
+        "One authoritative Observation pair and CanonicalState; no second scoring/alignment pipeline",
+        "Raw observed arrays are never replaced with error-model centers",
+        "Proper rotations exclude reflection; uncertain reference eye spans remain uncertain",
+        "Shared landmark dependencies, missingness and fixed declared denominators survive exports",
+        "Development fits; calibration sets radii; evaluation is frozen and cannot retune",
+        "A radius stays bound to its fitted center/scatter/protocol and category",
+        "Synthetic fixtures, successful smoke, model digests and hashes do not prove human validity or authenticity",
+        "Preserve existing failures, local changes, archives and original evidence; create distinct runs"
+      ],
+      "next_scientific_gate": "D01: independent original portraits and a pinned native observer. Resolve I01/I02/I04/I08 and D05 as applicable first; do not substitute more synthetic interval tightening.",
+      "legacy_boundary": "Top-level mathematical modules and legacy CLI remain available for compatibility/research; they are not uniformly active, validated or equivalent to all historical section titles."
+    },
+    "validation": {
+      "basis": "Actual checks performed earlier in this same session against this unchanged source fingerprint, plus new review probes. Full suites were not needlessly rerun for a report-only change.",
+      "environment": {
+        "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+        "executable": "C:\\Users\\ryanf\\github\\_active\\facemath\\.venv\\Scripts\\python.exe",
+        "platform": "win32",
+        "packages": {
+          "numpy": "2.5.3",
+          "scipy": "1.18.1",
+          "opencv-python": "5.0.0.93",
+          "scikit-image": "0.26.0",
+          "scikit-learn": "1.9.1",
+          "pytest": "9.1.1",
+          "setuptools": "84.0.0"
+        },
+        "archive_sha256": {
+          "09": "690568754812a5d34fff61cb41be634617d2078a89caf0fcfd1ec7c758baef1f",
+          "10": "1553cdb8462328422ddea3c87d07c31f933c16f4da47dadce05471d28059acf7"
+        },
+        "scope": "Commit organization; fresh Windows checks are separate from the retained historical release evidence."
+      },
+      "full_suites": {
+        "parent": {
+          "counts": {
+            "tests": 791,
+            "failures": 3,
+            "errors": 66,
+            "skipped": 2,
+            "passed": 720
+          },
+          "seconds": 115.011,
+          "failures": [
+            "test_offline_coarse_locator_on_blank_raster_returns_no_landmark_claim",
+            "test_full_qualification_preserves_raw_rows_and_replays_exactly",
+            "test_lab_uses_existing_frozen_study_and_real_calibration_code"
+          ],
+          "skips": [
+            {
+              "test": "test_live_mediapipe_provider",
+              "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+            },
+            {
+              "test": "test_session_symlink_is_not_silently_followed",
+              "reason": "platform cannot create a directory symlink"
+            }
+          ]
+        },
+        "source": {
+          "counts": {
+            "tests": 943,
+            "failures": 4,
+            "errors": 83,
+            "skipped": 2,
+            "passed": 854
+          },
+          "seconds": 145.479,
+          "failures": [
+            "test_unsafe_portable_archive_names_rejected[a\\\\b]",
+            "test_offline_coarse_locator_on_blank_raster_returns_no_landmark_claim",
+            "test_full_qualification_preserves_raw_rows_and_replays_exactly",
+            "test_lab_uses_existing_frozen_study_and_real_calibration_code"
+          ],
+          "skips": [
+            {
+              "test": "test_live_mediapipe_provider",
+              "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+            },
+            {
+              "test": "test_session_symlink_is_not_silently_followed",
+              "reason": "platform cannot create a directory symlink"
+            }
+          ]
+        },
+        "archive": {
+          "counts": {
+            "tests": 943,
+            "failures": 4,
+            "errors": 83,
+            "skipped": 2,
+            "passed": 854
+          },
+          "seconds": 144.925,
+          "failures": [
+            "test_unsafe_portable_archive_names_rejected[a\\\\b]",
+            "test_offline_coarse_locator_on_blank_raster_returns_no_landmark_claim",
+            "test_full_qualification_preserves_raw_rows_and_replays_exactly",
+            "test_lab_uses_existing_frozen_study_and_real_calibration_code"
+          ],
+          "skips": [
+            {
+              "test": "test_live_mediapipe_provider",
+              "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+            },
+            {
+              "test": "test_session_symlink_is_not_silently_followed",
+              "reason": "platform cannot create a directory symlink"
+            }
+          ]
+        },
+        "wheel": {
+          "counts": {
+            "tests": 943,
+            "failures": 4,
+            "errors": 83,
+            "skipped": 2,
+            "passed": 854
+          },
+          "seconds": 160.661,
+          "failures": [
+            "test_unsafe_portable_archive_names_rejected[a\\\\b]",
+            "test_offline_coarse_locator_on_blank_raster_returns_no_landmark_claim",
+            "test_full_qualification_preserves_raw_rows_and_replays_exactly",
+            "test_lab_uses_existing_frozen_study_and_real_calibration_code"
+          ],
+          "skips": [
+            {
+              "test": "test_live_mediapipe_provider",
+              "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+            },
+            {
+              "test": "test_session_symlink_is_not_silently_followed",
+              "reason": "platform cannot create a directory symlink"
+            }
+          ]
+        }
+      },
+      "research_path": "fresh source demo, verify, replay and installed-wheel verify/replay passed",
+      "milestone_path": "source and extracted-archive milestone-lab failed copying locked .runner.lock on Windows; admitted pair not produced, dependent verify/replay invocations failed; no qualification invariance claim",
+      "distribution_bytes": "archive inventory, extracted inventory, both committed archive member sets, and rebuilt wheel Python files passed",
+      "installed_import": "outside checkout; verified installed path and identical code fingerprint",
+      "historical_release_record": "evidence/WAVE10_VALIDATION.json retains historical Linux execution; it is not overwritten by these Windows results.",
+      "raw_local_records": [
+        ".commit-audit/split-20261001/commands.json",
+        ".commit-audit/split-20261001/environment.json",
+        ".commit-audit/split-20261001/validation-summary.json",
+        ".commit-audit/split-20261001/source.xml",
+        ".commit-audit/split-20261001/wheel.xml",
+        ".commit-audit/split-20261001/archive.xml",
+        ".commit-audit/review-20261001/probe-run2/focused-probes.json",
+        ".commit-audit/review-20261001/probe-run3/results.json",
+        ".commit-audit/review-20261001/probe-run4/results.json",
+        ".commit-audit/review-20261001/python311-actual-parse.json",
+        ".commit-audit/review-20261001/probe-run5/results.json"
+      ],
+      "local_record_portability": "The .commit-audit tree is ignored and may be absent in another clone. Concrete observations, environment, counts and minimal reproductions are embedded here; attach sanitized raw logs to the next remediation run if cross-machine review requires them.",
+      "probe_results": {
+        "zip_original_names": {
+          "case-backslash": {
+            "filename": "a/b",
+            "orig_filename": "a\\b",
+            "result": "accepted",
+            "files": [
+              "a/b"
+            ]
+          },
+          "case-nul": {
+            "filename": "a",
+            "orig_filename": "a\u0000b",
+            "result": "accepted",
+            "files": [
+              "a"
+            ]
+          },
+          "mesh_triangle": {
+            "result": "RuntimeError",
+            "detail": "Factor is exactly singular"
+          }
+        },
+        "partial_region_denominator": {
+          "code_fingerprint": "77672e7b81c1b9ccfbc345bd36076fbfbd1e3f793b8991729a8180ee9eabf7d0",
+          "nose_declared_indices": [
+            10,
+            11,
+            12,
+            13
+          ],
+          "supported_nose_indices": [
+            10,
+            11,
+            13
+          ],
+          "measurements": [
+            {
+              "name": "geometry.nose.rms",
+              "value": 0.0,
+              "unit": "registered_eye_span_geomean",
+              "support": 3,
+              "total": 4,
+              "family": "landmarks",
+              "interpretation": "lower residual means closer projected layout under this registration gauge",
+              "interval": [
+                0.0028427016393173217,
+                0.006468132381837431
+              ],
+              "interval_kind": "95_percent_conditional_observation_sensitivity_not_accuracy_CI",
+              "exclusion": null
+            },
+            {
+              "name": "geometry.nose.within_tolerance",
+              "value": 1.0,
+              "unit": "fraction_of_evaluated_landmarks",
+              "support": 3,
+              "total": 4,
+              "family": "landmarks",
+              "interpretation": "fraction within 0.05 geometric-mean registered eye spans; not identity probability or rarity",
+              "interval": null,
+              "interval_kind": null,
+              "exclusion": null
+            },
+            {
+              "name": "registration.heldout_nose.rms",
+              "value": 0.0,
+              "unit": "registered_eye_span_geomean",
+              "support": 3,
+              "total": 3,
+              "family": "registration_sensitivity",
+              "interpretation": "evaluation region excluded from alignment anchors; exposes alignment-induced resemblance",
+              "interval": null,
+              "interval_kind": null,
+              "exclusion": null
+            },
+            {
+              "name": "registration.heldout_nose.change",
+              "value": 0.0,
+              "unit": "registered_eye_span_geomean",
+              "support": 3,
+              "total": 3,
+              "family": "registration_sensitivity",
+              "interpretation": "signed change from the primary registration residual",
+              "interval": null,
+              "interval_kind": null,
+              "exclusion": null
+            }
+          ]
+        },
+        "python311_parse": {
+          "python": "3.11.14 (main, Oct 14 2025, 21:21:22) [MSC v.1944 64 bit (AMD64)]",
+          "errors": [
+            {
+              "path": "src/facemath/observation/stratified_report.py",
+              "line": 25,
+              "message": "f-string: unmatched '['",
+              "text": "            f'<td>{c[\"covered_groups\"] if c[\"covered_groups\"] is not None else 0} / {c[\"groups\"]}<small>{c[\"groups\"] if r['quantile'] is not None else 0} with finite envelope</small></td></tr>')\n"
+            }
+          ]
+        },
+        "legacy_counterexamples": {
+          "tied_percentile": {
+            "baseline": [
+              1,
+              1,
+              1
+            ],
+            "value": 1,
+            "direction": "lower_is_more_similar",
+            "point_percentile": 50,
+            "bootstrap_interval": [
+              0,
+              0
+            ]
+          },
+          "frame_shape_collision": {
+            "shape_a": [
+              8,
+              12,
+              3
+            ],
+            "shape_b": [
+              12,
+              8,
+              3
+            ],
+            "dtype": "uint8",
+            "fill": 0,
+            "same_digest": true
+          },
+          "unequal_0d_persistence": {
+            "a": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "b": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                100,
+                0
+              ]
+            ],
+            "distance": 0
+          }
+        },
+        "browser": {
+          "status": "not_completed",
+          "exit_code": 2147483651,
+          "observed_failure": "Chromium child/GPU process startup failed in the restricted execution environment; no pointer result emitted. Not evidence of a FACEMATH UI runtime failure."
+        },
+        "discarded_probe_interpretations": [
+          "The first exploratory read hit a Windows metadata-decoding error; it is not a product defect.",
+          "The probe-run2 NUL destination used Windows reserved name nul and is invalid as a loader test; probe-run3 uses valid destinations.",
+          "Python 3.14 ast.parse(feature_version=(3,11)) accepted the incompatible f-string; actual Python 3.11.14 independently rejected it."
+        ]
+      },
+      "qualification_invariance": "Unproven in the current Windows run because finalization fails before the qualifying fixture is available; do not infer it from passing bare research replay."
+    },
+    "recommended_order": [
+      {
+        "step": 1,
+        "finding_ids": [
+          "I01",
+          "I02",
+          "I03",
+          "I04",
+          "I07",
+          "I08"
+        ],
+        "deliverable": "Small independent fixes for platform, snapshot and active denominator defects; targeted regressions first."
+      },
+      {
+        "step": 2,
+        "finding_ids": [
+          "I05",
+          "I06",
+          "I16",
+          "D02",
+          "D03",
+          "D13"
+        ],
+        "deliverable": "Reproducible package/release validation with preserved failure evidence and final-fingerprint source/wheel/archive checks."
+      },
+      {
+        "step": 3,
+        "finding_ids": [
+          "D05",
+          "D06",
+          "P01",
+          "P02",
+          "P03",
+          "D01"
+        ],
+        "deliverable": "Validated annotation coordinates plus actual native independent-reference study, retaining either pass or fail."
+      },
+      {
+        "step": 4,
+        "finding_ids": [
+          "D04",
+          "D07",
+          "D08",
+          "D09",
+          "D11",
+          "D14"
+        ],
+        "deliverable": "Real-use recovery, lifecycle, scale, utility and operational governance."
+      },
+      {
+        "step": 5,
+        "finding_ids": [
+          "I09",
+          "I10",
+          "I11",
+          "I12",
+          "I13",
+          "I14",
+          "I15",
+          "D10",
+          "D12",
+          "D15",
+          "P05",
+          "P06"
+        ],
+        "deliverable": "Bound legacy repairs and conditional research expansion; avoid changing active scientific contracts."
+      }
+    ],
+    "1": {
+      "label": "what is still placeholder",
+      "items": [
+        {
+          "id": "P01",
+          "priority": "P1",
+          "scope": "native_observation",
+          "title": "No delivered, validated native model/runtime pair",
+          "evidence_status": "documented_missing_asset_and_validation",
+          "evidence": [
+            "models/README.md:3",
+            "models/README.md:21",
+            "src/facemath/observation/native_check.py:1",
+            "tests/test_wave3_provider.py"
+          ],
+          "consequence": "Automatic native observation has an implementation, but this checkout supplies neither model weights nor completed live-model acceptance. A digest or API fixture is not native accuracy.",
+          "next_action": "Acquire an explicit model/runtime pair for the intended machine; retain origin, model SHA-256 and exact runtime; run observer-smoke and the live provider test with a legitimate supplied portrait.",
+          "done_when": "A distinct run retains native process outputs and actual observation/no-face/multiple-face outcomes; human-reference accuracy remains separately gated by D01.",
+          "depends_on": []
+        },
+        {
+          "id": "P02",
+          "priority": "P1",
+          "scope": "study_inputs",
+          "title": "Real study and query templates contain replacement values and absent assets",
+          "evidence_status": "intentional_template",
+          "evidence": [
+            "examples/workspace.spec.template.json:5",
+            "examples/workspace.spec.template.json:135",
+            "examples/validation.study.template.json:3",
+            "examples/prospective.study.template.json:3",
+            "examples/joint.study.template.json:3",
+            "examples/measured.study.template.json:3",
+            "examples/query.group.template.json:3",
+            "examples/semantic21.template.json"
+          ],
+          "consequence": "Example filenames, group/lineage identifiers, sampling design and schematic coordinates are not an enrolled independent portrait study. Structural sample counts are not sample-size justification.",
+          "next_action": "Populate a new study outside historical evidence with actual original images, blinded source-coordinate labels, dependent-group membership, exclusions and justified enrollment. Replace every schematic coordinate and REPLACE value.",
+          "done_when": "Workspace status and freeze validate complete source/rater inventory; the study design explains group independence and category-specific enrollment before acquisition.",
+          "depends_on": []
+        },
+        {
+          "id": "P03",
+          "priority": "P1",
+          "scope": "acquisition_policy",
+          "title": "Source-routing thresholds are schematic engineering values",
+          "evidence_status": "intentional_demonstration_values",
+          "evidence": [
+            "examples/measured_acquisition_policy.example.json:4",
+            "examples/workspace.spec.template.json",
+            "src/facemath/observation/acquisition_lab.py:38"
+          ],
+          "consequence": "pixel_clear/pixel_smooth and thresholds such as detail 0.30/0.05 have no established real-portrait qualification. Reusing their names does not establish comparable acquisition.",
+          "next_action": "Design the intended measurement policy using source-only development data; freeze apertures, all group members, thresholds and required categories before calibration/evaluation.",
+          "done_when": "A new frozen policy has an explicit development rationale and retained source measurements; unseen/ambiguous categories still withhold deployment without pooled fallback.",
+          "depends_on": []
+        },
+        {
+          "id": "P04",
+          "priority": "P1",
+          "scope": "validation_evidence",
+          "title": "Synthetic labs and native API controls remain deliberately synthetic",
+          "evidence_status": "intentional_test_fixture",
+          "evidence": [
+            "src/facemath/observation/lab.py:1",
+            "src/facemath/observation/milestone_lab.py:1",
+            "src/facemath/observation/milestone_lab.py:35",
+            "scripts/native_contract_control.py:15",
+            "scripts/native_contract_control.py:25",
+            "evidence/WAVE10_VALIDATION.json"
+          ],
+          "consequence": "Engineered positive/negative controls test plumbing, containment and refusal. Blank raster/fake .task/API patching does not establish real inference, human accuracy, exchangeability or externally authentic history.",
+          "next_action": "Retain these regression controls and explicit labels. Add separate native and independent-reference runs; never relabel existing fixtures or replace their evidence.",
+          "done_when": "Reports identify synthetic, native smoke and real-reference validation as distinct evidence layers with actual outcomes.",
+          "depends_on": []
+        },
+        {
+          "id": "P05",
+          "priority": "P3",
+          "scope": "legacy_optional_telemetry",
+          "title": "ModelAdapter is an extension interface with no concrete telemetry provider",
+          "evidence_status": "explicit_interface_stub",
+          "evidence": [
+            "src/facemath/representation.py:79",
+            "src/facemath/representation.py:82",
+            "src/facemath/torch_attribution.py",
+            "pyproject.toml:21"
+          ],
+          "consequence": "capture/intervene raise NotImplementedError. Optional torch helpers do not expose private model activations, attention or historical reasoning.",
+          "next_action": "Only if a separately authorized research task needs telemetry, implement an adapter for an accessible model with explicit capture/intervention contracts and provenance; otherwise document the extension boundary.",
+          "done_when": "Adapter tests execute actual accessible-model behavior and distinguish captured arrays from synthetic inputs; no implication of private-model access.",
+          "depends_on": []
+        },
+        {
+          "id": "P06",
+          "priority": "P3",
+          "scope": "legacy_research_inventory",
+          "title": "Research registry contains missing methods and non-equivalent proxies",
+          "evidence_status": "inherited_audit_cross_checked_against_source",
+          "evidence": [
+            "src/facemath/coverage.py",
+            "src/facemath/observation/capabilities.py",
+            "docs/WAVE3_AUDIT.md",
+            "docs/MILESTONE_MAP.md:25"
+          ],
+          "consequence": "Coverage by section number is not mathematical implementation coverage. Missing/proxy groups include SPD geometry, higher-dimensional persistence, optimized OT/GW, Jacobian SVD, concept probes, Bayesian evidence, exact wavelets/scattering, camera/3D models, causal counterfactuals and information-bottleneck training.",
+          "next_action": "Use legacy_capability_gaps in this file to route claims to the actual primitive. Correct public naming/documentation or commission a specific method only when justified; these gaps do not supersede the real-reference gate.",
+          "done_when": "Each claimed method has an explicit implemented/proxy/absent status, contract and appropriate independent numerical validation; retained historical mappings remain distinguishable.",
+          "depends_on": []
+        }
+      ]
+    },
+    "2": {
+      "label": "what requires further development",
+      "items": [
+        {
+          "id": "D01",
+          "priority": "P1",
+          "scope": "empirical_gate",
+          "title": "Complete the first independent real-portrait native study",
+          "evidence_status": "documented_open_gate",
+          "evidence": [
+            "docs/WAVE10_ROADMAP.md:3",
+            "README.md:33",
+            "src/facemath/observation/workspace.py",
+            "src/facemath/observation/study.py",
+            "src/facemath/observation/study_runner.py",
+            "src/facemath/observation/admission.py"
+          ],
+          "consequence": "The software can describe a qualification protocol, but no retained real-reference native result currently establishes human localization delivery/coverage.",
+          "next_action": "After platform and annotation blockers are resolved, freeze a prospectively justified native study; acquire once per eligible case; fit mean/scatter on development, radii on calibration and evaluate every required held-out category without retuning.",
+          "done_when": "Completed acquisition, raw source-coordinate error rows, complete group denominators, category delivery/coverage and a truthful admitted/withheld result are retained. A failed criterion remains failed.",
+          "depends_on": [
+            "I01",
+            "I02",
+            "I04",
+            "D05",
+            "P01",
+            "P02",
+            "P03"
+          ]
+        },
+        {
+          "id": "D02",
+          "priority": "P1",
+          "scope": "release_validation",
+          "title": "Close platform, installed-wheel and final-archive validation gaps",
+          "evidence_status": "current_failures_and_static_ci_gap",
+          "evidence": [
+            "AGENTS.md",
+            "scripts/check_wheel.py",
+            "scripts/run_milestone.ps1",
+            ".github/workflows/core.yml",
+            ".github/workflows/milestone.yml",
+            ".commit-audit/split-20261001/validation-summary.json"
+          ],
+          "consequence": "Current Windows source/wheel/archive suites all fail; milestone qualification and its raw-state-invariance check cannot complete. Historical Linux success does not certify this machine or current dependency versions.",
+          "next_action": "Fix confirmed blockers; execute the supported OS/Python matrix and final-fingerprint tests, milestone-lab, verify/replay, outside-source wheel installation and extracted final-archive validation. Add these artifact/lab checks to CI rather than only building a wheel.",
+          "done_when": "Raw commands, environment, exit codes and skip reasons are retained per platform; source/wheel/archive package bytes match; qualification changes no observed arrays; no source-tree import leakage.",
+          "depends_on": [
+            "I01",
+            "I02",
+            "I03",
+            "I04",
+            "I06",
+            "I07"
+          ]
+        },
+        {
+          "id": "D03",
+          "priority": "P1",
+          "scope": "dependency_reproducibility",
+          "title": "Define tested dependency combinations and reproducible uv setup",
+          "evidence_status": "confirmed_configuration_gap",
+          "evidence": [
+            "pyproject.toml:10",
+            "pyproject.toml:11",
+            "uv.lock:512",
+            "models/README.md",
+            ".github/workflows/milestone.yml:22"
+          ],
+          "consequence": "Unbounded lower-only dependencies allow untested future stacks; current OpenCV 5 is already incompatible. The local lock predates Wave10 and CI independently resolves packages.",
+          "next_action": "Regenerate the existing uv lock against current project metadata; establish tested core/native constraints and a documented locked setup. Keep existing environments and retained historical stacks recoverable.",
+          "done_when": "A fresh locked environment installs the correct project version and passes relevant core/native gates; lock drift is detected; unsupported combinations fail clearly.",
+          "depends_on": [
+            "I02",
+            "I05"
+          ]
+        },
+        {
+          "id": "D04",
+          "priority": "P2",
+          "scope": "annotation_recovery",
+          "title": "Provide evidence-preserving recovery for interrupted annotation imports",
+          "evidence_status": "documented_operational_gap",
+          "evidence": [
+            "src/facemath/observation/workspace.py:44",
+            "src/facemath/observation/workspace.py:79",
+            "docs/WAVE10_DESIGN.md:26"
+          ],
+          "consequence": "A label published before its receipt leaves an orphan and blocks status/freeze. Refusal preserves integrity, but there is no automated recovery command.",
+          "next_action": "Specify and implement explicit inspect/export/reconcile or fork-to-new-workspace recovery with retained original bytes and operator decisions; do not silently discard or promote orphan files.",
+          "done_when": "Fault-injected crashes before/after label and receipt publication have documented recoverable outcomes; frozen revision history remains complete.",
+          "depends_on": []
+        },
+        {
+          "id": "D05",
+          "priority": "P1",
+          "scope": "annotation_coordinates",
+          "title": "Resolve workbench raster-center and pointer-transform validation before real labeling",
+          "evidence_status": "source_based_candidate_browser_verification_incomplete",
+          "evidence": [
+            "src/facemath/observation/annotation_ui.py:54",
+            "src/facemath/observation/annotation_ui.py:73",
+            "src/facemath/observation/annotation_ui.py:75",
+            "src/facemath/observation/annotation_ui.py:76",
+            "src/facemath/observation/annotation_ui.py:79",
+            "src/facemath/observation/annotation_ui.py:80",
+            ".commit-audit/review-20261001/probe-run5/results.json"
+          ],
+          "consequence": "The image is drawn from a canvas edge origin, while sourceAt directly divides edge-relative coordinates and exports them as integer-center raster coordinates. The formula maps displayed pixel i center to i+0.5; CSS canvas borders add another transform concern. Full pointer/browser confirmation did not run: local headless Chromium exited 2147483651 before producing a result.",
+          "next_action": "Use an indexed raster fixture to check pixel centers and edge pixels through actual click/export at fit, pan, zoom, CSS border and devicePixelRatio variations. Establish one explicit source-to-canvas transform and its inverse; version any changed annotation convention instead of rewriting old labels.",
+          "done_when": "Real browser pointer/export tests recover known integer pixel centers without half-pixel or border offsets; roundtrip imports preserve image binding and provenance.",
+          "depends_on": []
+        },
+        {
+          "id": "D06",
+          "priority": "P2",
+          "scope": "browser_validation",
+          "title": "Make offline browser interactions reproducible on supported hosts",
+          "evidence_status": "confirmed_test_tooling_gap",
+          "evidence": [
+            "scripts/browser_qa_wave4.py",
+            "scripts/browser_qa_wave5.py:20",
+            "scripts/browser_qa_wave6.py:19",
+            "scripts/browser_qa_wave7.py:16",
+            "scripts/browser_qa_wave8.py:17",
+            "scripts/browser_qa_wave9.py:21",
+            "scripts/browser_qa_wave10.py:15",
+            "pyproject.toml:19"
+          ],
+          "consequence": "Several QA drivers hardcode /usr/bin/chromium; Playwright is not a declared dev extra. Historical set_content fallback checks do not prove file-URL navigation, adjacent links or persistent offline draft storage.",
+          "next_action": "Provide a portable browser-path/dependency setup and run actual emitted file bundles, keyboard/pointer edits, rater isolation, undo/redo, draft restore, downloads, filter equality and offline links. Retain fallback scope explicitly.",
+          "done_when": "Desktop/mobile interaction logs and exported data comparisons pass on supported browsers; file navigation/link checks are distinct from screenshots and in-memory HTML tests.",
+          "depends_on": [
+            "D05",
+            "I01"
+          ]
+        },
+        {
+          "id": "D07",
+          "priority": "P2",
+          "scope": "native_worker_operations",
+          "title": "Verify bounded worker lifecycle and quiet Windows launches",
+          "evidence_status": "static_gap_native_runtime_not_exercised",
+          "evidence": [
+            "src/facemath/observation/study_runner.py:93",
+            "src/facemath/observation/study_runner.py:124",
+            "src/facemath/observation/study_runner.py:136",
+            "src/facemath/observation/worker.py"
+          ],
+          "consequence": "The worker captures streams and times out its direct process, but does not set an explicit Windows no-window flag or contain descendant processes. Native behavior on the intended host remains unvalidated.",
+          "next_action": "Use hidden background launches on Windows, verify timeout/crash/interruption and any child-process cleanup, and retain process outcomes. If an interactive helper is necessary, honor the requested secondary-monitor placement without foregrounding the primary display.",
+          "done_when": "Native failure controls leave no stray worker/window, preserve all attempt artifacts, and do not retry a failed case into success.",
+          "depends_on": []
+        },
+        {
+          "id": "D08",
+          "priority": "P2",
+          "scope": "scale_and_storage",
+          "title": "Measure large-study cost before designing evidence deduplication",
+          "evidence_status": "static_architecture_scaling_gap",
+          "evidence": [
+            "src/facemath/observation/study_io.py:51",
+            "src/facemath/observation/deployment.py",
+            "src/facemath/observation/artifacts.py:143",
+            "src/facemath/observation/acquisition_report.py:30",
+            "docs/WAVE10_ROADMAP.md"
+          ],
+          "consequence": "Qualification copies the acquisition tree; admitted pairs embed complete qualification snapshots; HTML embeds source previews. Repeated queries multiply raw study storage and replay cost.",
+          "next_action": "Benchmark intended enrollment sizes, image dimensions, peak memory, finalization/replay time, bundle bytes and VS Code indexing. If required, design content-addressed reuse with preserved self-contained export and exact replay semantics.",
+          "done_when": "Published size/time/memory limits and recovery behavior are tested; any deduplication retains original rasters, labels, attempts and portable verifiability.",
+          "depends_on": []
+        },
+        {
+          "id": "D09",
+          "priority": "P2",
+          "scope": "empirical_utility",
+          "title": "Evaluate usable geometry and hidden shift separately from finite delivery",
+          "evidence_status": "documented_open_gate",
+          "evidence": [
+            "docs/WAVE10_ROADMAP.md",
+            "src/facemath/observation/qualification.py",
+            "src/facemath/observation/stratified.py:381",
+            "scripts/hidden_shift_control_wave9.py"
+          ],
+          "consequence": "Finite error radii or accepted coverage do not establish narrow/useful shape conclusions or immunity to within-category shift. Gradient routing is not calibrated face-quality recognition.",
+          "next_action": "Prespecify interval-width, denominator-collapse, unresolved-relation and rater-disagreement analyses plus relevant acquisition shifts. Report abstentions and utility alongside delivery/coverage; propose new fits only from development evidence.",
+          "done_when": "Held-out results include all groups and utility/missingness by frozen category; no threshold or model is tuned after seeing evaluation.",
+          "depends_on": [
+            "D01"
+          ]
+        },
+        {
+          "id": "D10",
+          "priority": "P3",
+          "scope": "anatomical_scope",
+          "title": "Expand beyond reference8 only after its real performance is characterized",
+          "evidence_status": "deliberate_scope_boundary",
+          "evidence": [
+            "src/facemath/observation/reference.py",
+            "src/facemath/observation/anatomy.py",
+            "src/facemath/observation/edge_support.py:1",
+            "src/facemath/observation/field.py:1",
+            "docs/WAVE10_ROADMAP.md"
+          ],
+          "consequence": "Eight calibrated reference points do not validate all 478 model vertices, landmark-guided contours, interpolated deformation, occlusion or 3D anatomy.",
+          "next_action": "If justified after D01/D09, acquire independent contour/visibility/depth evidence with new explicit protocols. Preserve raw 2D observations and keep new evidence scoped to the supported anatomy.",
+          "done_when": "Every added anatomical claim has independent labels, appropriate error accounting and a versioned protocol; existing reference8 results are unchanged.",
+          "depends_on": [
+            "D01",
+            "D09"
+          ]
+        },
+        {
+          "id": "D11",
+          "priority": "P2",
+          "scope": "repeated_study_governance",
+          "title": "Prespecify cross-study selection and deployment monitoring",
+          "evidence_status": "documented_open_gate",
+          "evidence": [
+            "src/facemath/observation/admission.py",
+            "docs/WAVE10_ROADMAP.md",
+            "README.md:78"
+          ],
+          "consequence": "All-category acceptance controls a frozen study; repeated adaptive studies/model selection and post-deployment monitoring are not controlled by that policy.",
+          "next_action": "Before operational deployment, specify how studies/models are selected, how repeated looks spend error, and what changes trigger a new frozen study. Record failures instead of selecting the first passing rerun.",
+          "done_when": "A prospectively frozen monitoring/selection policy is evaluated separately from single-study acceptance.",
+          "depends_on": [
+            "D01"
+          ]
+        },
+        {
+          "id": "D12",
+          "priority": "P3",
+          "scope": "video_scope",
+          "title": "Validate timing and endpoint provenance before using original video inputs",
+          "evidence_status": "documented_scope_limit",
+          "evidence": [
+            "src/facemath/observation/sequence_guard.py:74",
+            "src/facemath/observation/sequence_guard.py:99",
+            "src/facemath/observation/sequence_guard.py:108",
+            "src/facemath/video.py",
+            "src/facemath/sequence.py"
+          ],
+          "consequence": "inspect_video uses CFR index/FPS time while retaining decoded timestamps. VFR timing and unmixed portrait endpoints are unvalidated; rank-one crossfades are explicitly not resemblance evidence.",
+          "next_action": "If video becomes a substantive input, define timestamp/decoding behavior and verify real endpoints/ROI. Preserve the negative crossfade control and separate temporal diagnostics from anatomical pair evidence.",
+          "done_when": "CFR/VFR fixtures validate selected-frame timestamps and source provenance; no temporal low-rank statistic becomes a face similarity score.",
+          "depends_on": []
+        },
+        {
+          "id": "D13",
+          "priority": "P2",
+          "scope": "release_tooling",
+          "title": "Replace wave-specific publication assumptions with a current create-only runner",
+          "evidence_status": "confirmed_static",
+          "evidence": [
+            "scripts/assemble_release_evidence.py:43",
+            "scripts/assemble_release_evidence.py:65",
+            "scripts/assemble_release_evidence.py:111",
+            "scripts/assemble_release_evidence.py:113",
+            "scripts/release_summary.py:47",
+            "scripts/validate_wave9.py:38",
+            "scripts/summarize_wave8_release.py"
+          ],
+          "consequence": "Historical scripts hardcode wave paths, wheel versions and expected counts; some overwrite summary/log destinations. Reusing them for a new release can mix old evidence with current commands.",
+          "next_action": "Keep historical scripts/evidence intact. Add a parameterized current release workflow that derives version/parent digest/test counts from actual artifacts, uses fresh destinations, preserves failures and seals a manifest after final bytes.",
+          "done_when": "A clean staged release can be rebuilt and independently verified without changing an earlier record or assuming a fixed test count.",
+          "depends_on": [
+            "I06"
+          ]
+        },
+        {
+          "id": "D14",
+          "priority": "P2",
+          "scope": "repository_navigation",
+          "title": "Separate the active checkout map from sealed archive inventories",
+          "evidence_status": "verified_archive_scope",
+          "evidence": [
+            "RELEASE_MANIFEST.json",
+            ".gitignore",
+            ".gitattributes",
+            "packages",
+            "evidence",
+            "docs/legacy",
+            "examples/legacy"
+          ],
+          "consequence": "The root release manifest inventories the sealed Wave10 distribution, not every file in the accumulated checkout. Prior waves and large evidence trees are intentional history; treating them as live source creates IDE and authority confusion.",
+          "next_action": "Document current source/test/config ownership and release-specific manifests. Use IDE exclusions or a small source-focused workspace view if needed; retain original packages/evidence and LFS policy.",
+          "done_when": "Agents and developers can identify current code, historical records and local ignored runs without deleting evidence or falsely declaring manifest corruption.",
+          "depends_on": []
+        },
+        {
+          "id": "D15",
+          "priority": "P3",
+          "scope": "legacy_api_contracts",
+          "title": "Bound legacy numerical APIs before promoting them into active evidence",
+          "evidence_status": "review_gap_not_blanket_defect_claim",
+          "evidence": [
+            "src/facemath/geometry.py",
+            "src/facemath/registration.py",
+            "src/facemath/deformation.py",
+            "src/facemath/shape.py",
+            "src/facemath/signal.py",
+            "src/facemath/temporal.py",
+            "src/facemath/information.py",
+            "src/facemath/torch_attribution.py"
+          ],
+          "consequence": "Retained generic helpers have weaker shape/range/degeneracy and mutation contracts than Observation. Existing tests do not certify every domain or optional model/3D path.",
+          "next_action": "For any actively used helper, specify units, valid cardinalities, degeneracies, finite inputs and mutation behavior; use adversarial numerical fixtures. Prefer the existing active contracts when integrating; keep unrelated research conditional.",
+          "done_when": "Promoted functions have meaningful contract tests and explicit unsupported-input errors; no new alignment or score bypasses CanonicalState.",
+          "depends_on": []
+        }
+      ]
+    },
+    "3": {
+      "label": "what is incorrect",
+      "items": [
+        {
+          "id": "I01",
+          "priority": "P1",
+          "scope": "active_qualification",
+          "title": "Windows finalization copies its own locked runner file",
+          "evidence_status": "reproduced_full_suites_and_milestone",
+          "evidence": [
+            "src/facemath/observation/study_io.py:38",
+            "src/facemath/observation/study_io.py:51",
+            "src/facemath/observation/study_runner.py:43",
+            ".commit-audit/split-20261001/source-tests.log",
+            ".commit-audit/split-20261001/source-lab.log"
+          ],
+          "consequence": "shutil.copytree runs while .runner.lock has a Windows byte-range lock. WinError 33 breaks study-finalize, milestone-lab and qualification replay; 83 current setup errors and two direct failures share this boundary.",
+          "next_action": "Snapshot stable session content while retaining the writer lock; omit ephemeral lock bytes and recreate any required lock sentinel under a defined inventory policy. Do not unlock before the snapshot and introduce a concurrent-writer race.",
+          "done_when": "Windows finalization and replay pass; concurrent-writer refusal remains intact; source/wheel/archive suites and raw-array-invariance tests complete.",
+          "depends_on": []
+        },
+        {
+          "id": "I02",
+          "priority": "P1",
+          "scope": "provider_and_dependencies",
+          "title": "Allowed OpenCV 5 dependency lacks the Haar API used by locate_faces",
+          "evidence_status": "reproduced_source_archive_and_wheel",
+          "evidence": [
+            "pyproject.toml:14",
+            "src/facemath/observation/provider.py:180",
+            "src/facemath/observation/provider.py:184",
+            "tests/test_wave3_provider.py",
+            ".commit-audit/split-20261001/source-tests.log"
+          ],
+          "consequence": "With opencv-python 5.0.0.93, cv2.CascadeClassifier is absent and the blank-raster locator test raises AttributeError. A supported install can therefore break the coarse locator.",
+          "next_action": "Declare a tested compatible OpenCV range or implement a supported locator backend; explicitly capability-check optional detector assets/APIs and raise ProviderUnavailable with a concrete reason.",
+          "done_when": "Supported dependency stacks return the documented empty coarse-locator result on a blank raster; incompatible stacks fail clearly without fake landmarks.",
+          "depends_on": []
+        },
+        {
+          "id": "I03",
+          "priority": "P1",
+          "scope": "portable_snapshot_loader",
+          "title": "ZIP filename checks inspect already-normalized names",
+          "evidence_status": "reproduced_raw_archive_bytes",
+          "evidence": [
+            "src/facemath/observation/deployment.py:61",
+            "src/facemath/observation/deployment.py:75",
+            ".commit-audit/review-20261001/probe-run3/results.json"
+          ],
+          "consequence": "A raw ZIP member a\\b is accepted as a/b on Windows; a raw member a\u0000b is accepted as a. ZipInfo.orig_filename retains the forbidden bytes/characters while filename has normalized/truncated them. This defeats the declared name-rejection contract; the probe did not establish traversal outside the extraction root.",
+          "next_action": "Validate the original decoded archive name and its equivalence to the accepted portable representation before constructing destinations; reject NUL/backslash and existing traversal/ADS/device/collision hazards.",
+          "done_when": "Raw-byte malformed ZIPs are rejected consistently on Windows/Linux/macOS before writing; valid deterministic qualification snapshots still verify/replay.",
+          "depends_on": []
+        },
+        {
+          "id": "I04",
+          "priority": "P1",
+          "scope": "python_compatibility",
+          "title": "Report module cannot parse on declared Python 3.11",
+          "evidence_status": "reproduced_actual_python_3_11_parser",
+          "evidence": [
+            "pyproject.toml:10",
+            "src/facemath/observation/stratified_report.py:25",
+            ".github/workflows/core.yml:8",
+            ".commit-audit/review-20261001/python311-actual-parse.json"
+          ],
+          "consequence": "The single-quoted f-string contains r['quantile'] using the same quote delimiter. Actual Python 3.11.14 reports SyntaxError: f-string: unmatched [. Rendering/import paths using the module cannot run on that declared supported version.",
+          "next_action": "Rewrite the expression with Python 3.11-compatible quoting or precomputed values while preserving the existing support declaration; run the real interpreter, not only a newer parser feature_version check.",
+          "done_when": "All source/scripts/tests parse on actual supported interpreters and the Python 3.11 study/report and CLI tests pass.",
+          "depends_on": []
+        },
+        {
+          "id": "I05",
+          "priority": "P2",
+          "scope": "dependency_and_build_metadata",
+          "title": "Committed lock and generated metadata identify the project as 0.8.0",
+          "evidence_status": "reproduced_file_metadata_mismatch",
+          "evidence": [
+            "pyproject.toml:7",
+            "src/facemath/__init__.py",
+            "uv.lock:512",
+            "uv.lock:513",
+            "src/facemath.egg-info/PKG-INFO:3",
+            ".commit-audit/review-20261001/probe-run2/focused-probes.json"
+          ],
+          "consequence": "Project/source version is 0.10.0 while uv.lock and tracked egg-info say 0.8.0. Locked setup and metadata consumers do not have one authoritative current package identity.",
+          "next_action": "Regenerate uv.lock from the current package; verify the resulting dependency change. Stop treating stale generated egg-info as source authority, and regenerate/untrack it through an explicit packaging cleanup without touching release archives.",
+          "done_when": "Project, lock, installed metadata and wheel version agree; a locked check succeeds; historical artifacts retain their original versions.",
+          "depends_on": []
+        },
+        {
+          "id": "I06",
+          "priority": "P1",
+          "scope": "release_packaging",
+          "title": "Packaging script includes ignored environments/runs and overwrites a fixed archive",
+          "evidence_status": "confirmed_static_packager_not_executed",
+          "evidence": [
+            "scripts/package_release.py:7",
+            "scripts/package_release.py:9",
+            "scripts/package_release.py:10",
+            "scripts/package_release.py:11",
+            "scripts/package_release.py:19",
+            "scripts/package_release.py:26",
+            "scripts/verify_release.py",
+            "RELEASE_MANIFEST.json"
+          ],
+          "consequence": "Recursive packaging excludes only a small cache set. It includes .venv, .uv-cache, .commit-audit, runs and nested packages archives when present; Git ignores do not affect it. It writes ../facemath.zip and its sidecar in overwrite mode and does not regenerate the release manifest.",
+          "next_action": "Build from an explicit clean release staging inventory with versioned create-only outputs. Exclude local environments/runs and unintended historical payloads; generate the final manifest from staged bytes and verify both ZIP and extraction. Inspect selection in dry-run mode before packaging this checkout.",
+          "done_when": "A staging test containing sentinel local/cache/old-archive files excludes them; existing output refuses replacement; final inventory, wheel bytes, extraction tests and replay pass.",
+          "depends_on": []
+        },
+        {
+          "id": "I07",
+          "priority": "P2",
+          "scope": "snapshot_test_fixture",
+          "title": "Backslash rejection test does not write the intended raw ZIP name on Windows",
+          "evidence_status": "reproduced_fixture_normalization",
+          "evidence": [
+            "tests/test_wave10_snapshot.py:12",
+            "tests/test_wave10_snapshot.py:24",
+            ".commit-audit/review-20261001/probe-run2/focused-probes.json"
+          ],
+          "consequence": "Constructing ZipInfo with a backslash normalizes the member name before writing on Windows. The test therefore asks the loader to reject an ordinary slash path and fails for the wrong fixture; real raw-name acceptance remains separately confirmed as I03.",
+          "next_action": "Construct malformed local/central ZIP header names as raw bytes or use a fixture whose stored names are verified independently. Assert orig_filename/raw representation before calling the loader.",
+          "done_when": "The same malicious bytes reach the loader on every target OS; benign a/b is accepted and actual a\\b/NUL names are rejected.",
+          "depends_on": [
+            "I03"
+          ]
+        },
+        {
+          "id": "I08",
+          "priority": "P1",
+          "scope": "active_measurement_missingness",
+          "title": "Held-out region measurements shrink their published denominator",
+          "evidence_status": "reproduced_active_instrument",
+          "evidence": [
+            "src/facemath/observation/measure.py:143",
+            "src/facemath/observation/measure.py:154",
+            "src/facemath/observation/measure.py:157",
+            ".commit-audit/review-20261001/probe-run4/results.json"
+          ],
+          "consequence": "After filtering visible indices, heldout RMS/change use len(ids) for both support and total. A four-point nose with point 12 off-image reports geometry.nose.rms as 3/4 but registration.heldout_nose.rms/change as 3/3, hiding the same missing point.",
+          "next_action": "Use the already retained total_ids as the held-out total; keep the observed-support numerator and missing-value behavior. Check all regional measurement ledgers for the same denominator collapse.",
+          "done_when": "Partial, wholly missing and fully observed regions retain their declared totals consistently in raw JSON and HTML; original coordinates/fit results remain unchanged.",
+          "depends_on": []
+        },
+        {
+          "id": "I09",
+          "priority": "P2",
+          "scope": "legacy_calibration",
+          "title": "Percentile bootstrap uses a different tie policy from its point estimate",
+          "evidence_status": "reproduced_legacy_numeric_counterexample",
+          "evidence": [
+            "src/facemath/calibration.py:31",
+            "src/facemath/calibration.py:38",
+            "src/facemath/calibration.py:43",
+            "src/facemath/statistics.py",
+            ".commit-audit/review-20261001/probe-run2/focused-probes.json"
+          ],
+          "consequence": "For baseline [1,1,1], value 1 and lower-is-more-similar, percentile is 50 but bootstrap interval is [0,0]. The bootstrap estimates a different statistic because <= replaces the point estimator's midrank tie policy.",
+          "next_action": "Use one explicit percentile/tie definition for point and bootstrap estimates in both directions; add tied/discrete and non-tied controls.",
+          "done_when": "All-equal baseline point and bootstrap are consistent; documented percentile orientation remains stable. Do not alter the separate active observation.cohort semantics inadvertently.",
+          "depends_on": []
+        },
+        {
+          "id": "I10",
+          "priority": "P2",
+          "scope": "legacy_provenance",
+          "title": "Frame digest omits array shape and dtype",
+          "evidence_status": "reproduced_legacy_digest_collision",
+          "evidence": [
+            "src/facemath/core.py:87",
+            "src/facemath/core.py:100",
+            ".commit-audit/review-20261001/probe-run2/focused-probes.json"
+          ],
+          "consequence": "Legacy Frame hashes raw bytes only and truncates to 16 hex characters. Zero RGB arrays shaped [8,12,3] and [12,8,3] receive the same fingerprint despite different source geometry.",
+          "next_action": "Define a versioned digest over dtype, shape and contiguous bytes, preferably using the active full-SHA array contract. Preserve legacy digest interpretation for historical reports rather than silently relabeling them.",
+          "done_when": "Different shapes/dtypes cannot collide solely through identical byte streams; compatibility behavior and provenance migration are explicit.",
+          "depends_on": []
+        },
+        {
+          "id": "I11",
+          "priority": "P2",
+          "scope": "legacy_state",
+          "title": "Frozen legacy dataclasses still alias writable NumPy arrays",
+          "evidence_status": "confirmed_static_aliasing",
+          "evidence": [
+            "src/facemath/core.py:87",
+            "src/facemath/core.py:112",
+            "src/facemath/calibration.py:18",
+            "src/facemath/state.py:45",
+            "src/facemath/state.py:86",
+            "src/facemath/wave2.py"
+          ],
+          "consequence": "np.asarray and frozen=True do not own immutable bytes. Mutating caller arrays can change legacy frames, landmarks, cohorts or measurement state after construction, undermining their immutable-state/provenance interpretation.",
+          "next_action": "Copy and freeze owned numerical storage or narrow/document the mutable contract. Use the active contracts.frozen_array pattern where compatible; retain deliberate mutable result/ledger APIs.",
+          "done_when": "Caller-buffer and returned-buffer mutation tests cannot change a supposedly frozen legacy input/state or its recorded provenance.",
+          "depends_on": []
+        },
+        {
+          "id": "I12",
+          "priority": "P2",
+          "scope": "legacy_configuration",
+          "title": "minimum_valid_support is an ineffective EngineConfig setting",
+          "evidence_status": "confirmed_static_unused_configuration",
+          "evidence": [
+            "src/facemath/wave2.py:24",
+            "src/facemath/wave2.py:93",
+            "src/facemath/quality.py:28"
+          ],
+          "consequence": "The configuration declares minimum_valid_support, but quality assessment hardcodes 0.20 and never reads the setting. Changing the public option cannot change its intended quality gate.",
+          "next_action": "Pass the configured threshold into quality assessment with range validation, or explicitly retire the unused option with compatibility handling.",
+          "done_when": "Two declared thresholds around a controlled support fraction produce the expected different quality decisions.",
+          "depends_on": []
+        },
+        {
+          "id": "I13",
+          "priority": "P2",
+          "scope": "legacy_reporting",
+          "title": "Median of calibrated domain percentiles is labeled as a calibrated consensus percentile",
+          "evidence_status": "confirmed_implementation_claim_mismatch",
+          "evidence": [
+            "src/facemath/fusion.py:25",
+            "src/facemath/report.py:17",
+            "src/facemath/report.py:37"
+          ],
+          "consequence": "calibrated_consensus returns a median of domain summaries without calibrating the aggregate statistic against a joint reference cohort. Individual calibrated marginals do not make their median a population-calibrated percentile.",
+          "next_action": "Label the result as a descriptive aggregate and remove the population-percentile implication, or require a separately specified/calibrated joint statistic with dependence and held-out validation.",
+          "done_when": "Legacy reports cannot present this uncalibrated aggregate as a resemblance probability or population percentile; active instrument outputs remain unchanged.",
+          "depends_on": []
+        },
+        {
+          "id": "I14",
+          "priority": "P2",
+          "scope": "legacy_surface_numerics",
+          "title": "Zero-shift Laplacian eigensolver fails on a valid small mesh",
+          "evidence_status": "reproduced_legacy_mesh_counterexample",
+          "evidence": [
+            "src/facemath/surface3d.py:42",
+            "src/facemath/surface3d.py:45",
+            ".commit-audit/review-20261001/probe-run3/results.json"
+          ],
+          "consequence": "laplace_beltrami_eigensystem requests shift-invert at sigma=0 on a Laplacian with a constant nullspace. Vertices [[0,0,0],[1,0,0],[0,1,0]], face [[0,1,2]] reproduce RuntimeError: Factor is exactly singular. HKS/WKS/spectral distances depend on this path.",
+          "next_action": "Handle the constant nullspace with an appropriate eigensolver/shift or constrained basis; validate small, disconnected and degenerate meshes and define admissible k.",
+          "done_when": "Valid connected small meshes return sorted finite modes with expected nullity; unsupported/degenerate inputs fail explicitly; HKS/WKS invariants are checked.",
+          "depends_on": []
+        },
+        {
+          "id": "I15",
+          "priority": "P2",
+          "scope": "legacy_topology",
+          "title": "Persistence comparison silently drops unmatched components",
+          "evidence_status": "reproduced_legacy_numeric_counterexample",
+          "evidence": [
+            "src/facemath/topology.py:29",
+            ".commit-audit/review-20261001/probe-run2/focused-probes.json"
+          ],
+          "consequence": "persistence_distance_0d compares only min(len(pa),len(pb)) deaths. Points [[0,0],[1,0]] and [[0,0],[1,0],[100,0]] return distance 0 after the additional long-lived component is discarded.",
+          "next_action": "Reject unsupported unequal-cardinality comparisons or implement a correctly specified persistence-diagram matching rule including unmatched deaths/diagonal cost. Keep the 0D-only scope explicit.",
+          "done_when": "Adding a distant component cannot silently yield equality; singleton/empty/cardinality cases have a defined finite result or explicit error.",
+          "depends_on": []
+        },
+        {
+          "id": "I16",
+          "priority": "P2",
+          "scope": "failure_provenance",
+          "title": "Finalization/validation errors discard their partial execution journals",
+          "evidence_status": "confirmed_static_failure_path",
+          "evidence": [
+            "src/facemath/observation/study_io.py:36",
+            "src/facemath/observation/study_io.py:89",
+            "src/facemath/observation/study_io.py:102",
+            "src/facemath/observation/validation_io.py:105",
+            "src/facemath/observation/validation_io.py:175",
+            "src/facemath/observation/validation_io.py:187",
+            "src/facemath/observation/journal.py:61"
+          ],
+          "consequence": "These paths accumulate actual Journal events in memory, persist them only near success and remove the temporary tree on exceptions. A failed finalization may leave the original acquisition intact but loses its own partial stage journal and intermediate validation output.",
+          "next_action": "Preserve a create-only failed-run record containing the actual partial journal, exception and any committed diagnostic artifacts before cleanup. Distinguish failed output from a valid bundle and never overwrite an earlier failure.",
+          "done_when": "Injected failures at qualification/validation/export stages retain inspectable actual events without an invented completion event or invalid successful manifest.",
+          "depends_on": []
+        }
+      ]
+    },
+    "coverage": {
+      "source_module_count": 79,
+      "source_line_count": 12857,
+      "subsystem_counts": {
+        "entrypoints": 3,
+        "legacy_research": 28,
+        "active_observation": 40,
+        "synthetic_laboratories": 8
+      },
+      "tracked_file_counts_by_root": {
+        ".github": 2,
+        "[root]": 9,
+        "dist": 4,
+        "docs": 41,
+        "evidence": 25140,
+        "examples": 12,
+        "models": 1,
+        "packages": 10,
+        "scripts": 29,
+        "src": 85,
+        "tests": 40
+      },
+      "source_files": [
+        {
+          "path": "src/facemath/__init__.py",
+          "lines": 44,
+          "sha256": "f73cc454f538b00c444ff09e94d46eaecfe8680e236d2c43a443b01a2e09a1e5",
+          "subsystem": "entrypoints",
+          "state": "active_entrypoints_and_legacy_dispatch",
+          "review_depth": "static_source_review",
+          "purpose": "FACEMATH public API, with lazy backwards-compatible research exports.",
+          "symbols": [
+            {
+              "name": "__getattr__",
+              "line": 35
+            },
+            {
+              "name": "__dir__",
+              "line": 43
+            }
+          ],
+          "finding_ids": [
+            "I05"
+          ]
+        },
+        {
+          "path": "src/facemath/__main__.py",
+          "lines": 2,
+          "sha256": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+          "subsystem": "entrypoints",
+          "state": "active_entrypoints_and_legacy_dispatch",
+          "review_depth": "static_source_review",
+          "purpose": "",
+          "symbols": [],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/calibration.py",
+          "lines": 76,
+          "sha256": "e250ddccf702f848951a629759f98d1e812052e4a0e1dd693c8545958ff5eedd",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "BaselineCohort",
+              "line": 12
+            },
+            {
+              "name": "BaselineRegistry",
+              "line": 51
+            }
+          ],
+          "finding_ids": [
+            "I09",
+            "I11"
+          ]
+        },
+        {
+          "path": "src/facemath/cli.py",
+          "lines": 697,
+          "sha256": "45ede2d6628d953137387016b30280648241596483ecd6594677d769f9ee8c1d",
+          "subsystem": "entrypoints",
+          "state": "active_entrypoints_and_legacy_dispatch",
+          "review_depth": "static_source_review",
+          "purpose": "FACEMATH CLI: frozen acquisition, qualified observation, and one geometric state.",
+          "symbols": [
+            {
+              "name": "write_json_new",
+              "line": 41
+            },
+            {
+              "name": "_configuration",
+              "line": 50
+            },
+            {
+              "name": "_add_config",
+              "line": 67
+            },
+            {
+              "name": "build_parser",
+              "line": 82
+            },
+            {
+              "name": "_analyze",
+              "line": 266
+            },
+            {
+              "name": "_inspect_video",
+              "line": 317
+            },
+            {
+              "name": "_replay",
+              "line": 343
+            },
+            {
+              "name": "_calibrate",
+              "line": 430
+            },
+            {
+              "name": "_session_summary",
+              "line": 448
+            },
+            {
+              "name": "execute",
+              "line": 456
+            },
+            {
+              "name": "main",
+              "line": 667
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/core.py",
+          "lines": 151,
+          "sha256": "b8e14bd8b5eeaee1b15390d7c31b82c8c4520eac5347bfbc811eea34c4acb576",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "Direction",
+              "line": 14
+            },
+            {
+              "name": "Provenance",
+              "line": 22
+            },
+            {
+              "name": "MetricResult",
+              "line": 31
+            },
+            {
+              "name": "EvidenceLedger",
+              "line": 50
+            },
+            {
+              "name": "Frame",
+              "line": 87
+            },
+            {
+              "name": "LandmarkSet",
+              "line": 107
+            },
+            {
+              "name": "FacePair",
+              "line": 129
+            },
+            {
+              "name": "CanonicalPair",
+              "line": 137
+            },
+            {
+              "name": "AnalysisBundle",
+              "line": 147
+            }
+          ],
+          "finding_ids": [
+            "I10",
+            "I11"
+          ]
+        },
+        {
+          "path": "src/facemath/correspondence.py",
+          "lines": 45,
+          "sha256": "29938b08b495653327675e58c2e7d359103cb733b140c47539cb9d91d816f80f",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "dense_correspondence_farneback",
+              "line": 10
+            },
+            {
+              "name": "weighted_flow_statistics",
+              "line": 33
+            },
+            {
+              "name": "region_correspondence_summary",
+              "line": 44
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/coverage.py",
+          "lines": 9,
+          "sha256": "ba1786739debb0efffadd5d1f3df69e5f2aaa9f2e793c1e6ffc549655a220346",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "Coverage map for the mathematics developed in conversation sections 20–180.",
+          "symbols": [],
+          "finding_ids": [
+            "P06"
+          ]
+        },
+        {
+          "path": "src/facemath/deformation.py",
+          "lines": 99,
+          "sha256": "4368188fb9fd0dbb1f3238549d3fbf0fbac9ddaf3b6dfb3dda19a59226e399bf",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "FlowField",
+              "line": 9
+            },
+            {
+              "name": "optical_flow_farneback",
+              "line": 17
+            },
+            {
+              "name": "flow_jacobian",
+              "line": 26
+            },
+            {
+              "name": "strain_tensor",
+              "line": 38
+            },
+            {
+              "name": "strain_energy",
+              "line": 43
+            },
+            {
+              "name": "smooth_deformation_energy",
+              "line": 51
+            },
+            {
+              "name": "fit_thin_plate_spline",
+              "line": 64
+            },
+            {
+              "name": "tps_grid",
+              "line": 70
+            },
+            {
+              "name": "tps_bending_proxy",
+              "line": 79
+            },
+            {
+              "name": "local_affine_strain",
+              "line": 87
+            }
+          ],
+          "finding_ids": [
+            "D15"
+          ]
+        },
+        {
+          "path": "src/facemath/fusion.py",
+          "lines": 33,
+          "sha256": "249a7b9ea88433ccfea3378254f13d856cb4896d8249d9caada2009b9fb764e0",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "DomainSummary",
+              "line": 8
+            },
+            {
+              "name": "summarize_domains",
+              "line": 15
+            },
+            {
+              "name": "calibrated_consensus",
+              "line": 25
+            }
+          ],
+          "finding_ids": [
+            "I13"
+          ]
+        },
+        {
+          "path": "src/facemath/geometry.py",
+          "lines": 184,
+          "sha256": "22dfa9c9d4745ad517b947d0595a51cba1b2d6ddfbb6369a6b2e5ca3b04155e9",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "ProcrustesResult",
+              "line": 13
+            },
+            {
+              "name": "center_scale",
+              "line": 24
+            },
+            {
+              "name": "generalized_procrustes",
+              "line": 34
+            },
+            {
+              "name": "similarity_transform",
+              "line": 49
+            },
+            {
+              "name": "apply_homography",
+              "line": 74
+            },
+            {
+              "name": "intrinsic_coordinates",
+              "line": 81
+            },
+            {
+              "name": "pairwise_distance_matrix",
+              "line": 95
+            },
+            {
+              "name": "distance_matrix_error",
+              "line": 100
+            },
+            {
+              "name": "angle",
+              "line": 106
+            },
+            {
+              "name": "angle_signature",
+              "line": 114
+            },
+            {
+              "name": "angle_error",
+              "line": 119
+            },
+            {
+              "name": "epsilon_isometry_distortion",
+              "line": 128
+            },
+            {
+              "name": "rigid_residuals",
+              "line": 135
+            },
+            {
+              "name": "landmark_scale",
+              "line": 141
+            },
+            {
+              "name": "relational_graph",
+              "line": 145
+            },
+            {
+              "name": "graph_laplacian",
+              "line": 160
+            },
+            {
+              "name": "graph_spectrum",
+              "line": 175
+            },
+            {
+              "name": "spectral_graph_distance",
+              "line": 181
+            }
+          ],
+          "finding_ids": [
+            "D15"
+          ]
+        },
+        {
+          "path": "src/facemath/information.py",
+          "lines": 39,
+          "sha256": "7aab4e1ddba064fe05463de9b790473be094b2ca282c64a346402aaac1f4fc59",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "shannon_entropy",
+              "line": 7
+            },
+            {
+              "name": "compressed_length",
+              "line": 14
+            },
+            {
+              "name": "normalized_compression_distance",
+              "line": 18
+            },
+            {
+              "name": "algorithmic_mutual_information_proxy",
+              "line": 24
+            },
+            {
+              "name": "mutual_information_matrix",
+              "line": 28
+            },
+            {
+              "name": "mdl_score",
+              "line": 38
+            }
+          ],
+          "finding_ids": [
+            "D15"
+          ]
+        },
+        {
+          "path": "src/facemath/legacy_cli.py",
+          "lines": 59,
+          "sha256": "4ea0dd14ad4d2fed4605eed8df62cd57cf4edc43febdafe0ac044f29af07b148",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "load_image",
+              "line": 14
+            },
+            {
+              "name": "load_landmarks",
+              "line": 20
+            },
+            {
+              "name": "_clean",
+              "line": 27
+            },
+            {
+              "name": "main",
+              "line": 36
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/__init__.py",
+          "lines": 8,
+          "sha256": "fdfa47265a68fb008270bdac62f381efae1844c084b05452a824f3d0c71f6ab5",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "FACEMATH Wave 3: observation-driven, gauge-aware anatomical evidence.",
+          "symbols": [],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/acquisition.py",
+          "lines": 446,
+          "sha256": "2abdcfeff0b2becd4efb1e3a317572a9be372c27a4f148b78678251d0286836a",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Measured acquisition contracts over declared source apertures, before inference.",
+          "symbols": [
+            {
+              "name": "_text",
+              "line": 38
+            },
+            {
+              "name": "_exact",
+              "line": 44
+            },
+            {
+              "name": "Predicate",
+              "line": 50
+            },
+            {
+              "name": "AcquisitionRule",
+              "line": 76
+            },
+            {
+              "name": "AcquisitionPolicy",
+              "line": 103
+            },
+            {
+              "name": "ApertureSource",
+              "line": 172
+            },
+            {
+              "name": "measure_source",
+              "line": 206
+            },
+            {
+              "name": "MeasuredGroup",
+              "line": 239
+            },
+            {
+              "name": "measure_frozen_groups",
+              "line": 315
+            },
+            {
+              "name": "write_group",
+              "line": 325
+            },
+            {
+              "name": "load_group",
+              "line": 358
+            },
+            {
+              "name": "group_from_spec",
+              "line": 383
+            },
+            {
+              "name": "policy_from_document",
+              "line": 400
+            },
+            {
+              "name": "write_group_files",
+              "line": 414
+            },
+            {
+              "name": "load_group_files",
+              "line": 429
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/acquisition_lab.py",
+          "lines": 239,
+          "sha256": "7daed582ed84711b8422cc642e6aaa2f0658ff33530aede01e0fb38bee96c973",
+          "subsystem": "synthetic_laboratories",
+          "state": "implemented_software_controls_not_human_validation",
+          "review_depth": "fixture_role_and_structure_review_plus_inherited_execution",
+          "purpose": "Measured-pixel routing through the inherited prospective instrument.",
+          "symbols": [
+            {
+              "name": "demonstration_policy",
+              "line": 38
+            },
+            {
+              "name": "measured_record",
+              "line": 57
+            },
+            {
+              "name": "make_measured_study",
+              "line": 69
+            },
+            {
+              "name": "run_pixel_controls",
+              "line": 129
+            },
+            {
+              "name": "run_measured_laboratory",
+              "line": 170
+            }
+          ],
+          "finding_ids": [
+            "P03"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/acquisition_report.py",
+          "lines": 79,
+          "sha256": "7cc6100f83dbf668aae3e7489b59441daf8866207ff0174740bf008061b67ffd",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Offline displays of saved measured-source contracts; controls never reroute.",
+          "symbols": [
+            {
+              "name": "_png",
+              "line": 14
+            },
+            {
+              "name": "acquisition_panel",
+              "line": 21
+            },
+            {
+              "name": "group_html",
+              "line": 70
+            },
+            {
+              "name": "study_acquisition_section",
+              "line": 74
+            }
+          ],
+          "finding_ids": [
+            "D08"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/admission.py",
+          "lines": 227,
+          "sha256": "319e43ac7333f8e71d05ff70ab1430a6dd23f646917b973fdeaa3474d6f9f388",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Prespecified empirical acceptance of a complete observer study.",
+          "symbols": [
+            {
+              "name": "_probability",
+              "line": 25
+            },
+            {
+              "name": "lower_binomial",
+              "line": 31
+            },
+            {
+              "name": "AdmissionPolicy",
+              "line": 47
+            },
+            {
+              "name": "plan_admission",
+              "line": 113
+            },
+            {
+              "name": "_score_complete",
+              "line": 139
+            },
+            {
+              "name": "assess_admission",
+              "line": 145
+            }
+          ],
+          "finding_ids": [
+            "D01",
+            "D11"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/anatomy.py",
+          "lines": 123,
+          "sha256": "e4341cab848edc4236ab8fbbcd76783e6cb66bfcb69ece4df75bedb201d1ba31",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "One landmark grammar used by registration, masks, contours, and statistics.",
+          "symbols": [
+            {
+              "name": "Anatomy",
+              "line": 48
+            },
+            {
+              "name": "anatomy_for",
+              "line": 76
+            },
+            {
+              "name": "eye_span",
+              "line": 97
+            },
+            {
+              "name": "polygon",
+              "line": 105
+            },
+            {
+              "name": "anatomical_masks",
+              "line": 117
+            }
+          ],
+          "finding_ids": [
+            "D10"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/annotation_ui.py",
+          "lines": 95,
+          "sha256": "737db83d5e611bcb4a3e7b97d62b3081a8b0c173854e30d347a3b2b8e96ea1e8",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Create a portable, offline, prediction-blind reference annotation workspace.",
+          "symbols": [
+            {
+              "name": "create_annotation_workspace",
+              "line": 19
+            }
+          ],
+          "finding_ids": [
+            "D05"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/artifacts.py",
+          "lines": 265,
+          "sha256": "f16f6cbd9a2414c9038c44ba73e5733d779cc3b1eb13410797c3610df979173e",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Self-contained inspection bundle with real arrays and byte-level verification.",
+          "symbols": [
+            {
+              "name": "_png",
+              "line": 26
+            },
+            {
+              "name": "_overlay",
+              "line": 34
+            },
+            {
+              "name": "_html",
+              "line": 46
+            },
+            {
+              "name": "write_bundle",
+              "line": 127
+            },
+            {
+              "name": "verify_bundle",
+              "line": 198
+            }
+          ],
+          "finding_ids": [
+            "D08"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/bias.py",
+          "lines": 359,
+          "sha256": "9b4d035776bd109c7e4714cb94c20c2a2183993eb1e468d8b096eae26e3422a8",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Development-only error centering in an observer-defined ocular frame.",
+          "symbols": [
+            {
+              "name": "ocular_basis",
+              "line": 30
+            },
+            {
+              "name": "DevelopmentBias",
+              "line": 46
+            },
+            {
+              "name": "fit_development_bias",
+              "line": 126
+            },
+            {
+              "name": "centered_rows",
+              "line": 163
+            },
+            {
+              "name": "BiasCalibration",
+              "line": 198
+            },
+            {
+              "name": "fit_bias_calibration",
+              "line": 272
+            },
+            {
+              "name": "BiasEnvelope",
+              "line": 285
+            },
+            {
+              "name": "assess_bias_pair",
+              "line": 328
+            },
+            {
+              "name": "load_localization_calibration",
+              "line": 347
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/canonical.py",
+          "lines": 312,
+          "sha256": "41295180185e7015043ecf660dc0e94711570a1e78b1c9713a89a07fa3f6aea8",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "One declared coordinate gauge, with held-out-region registration diagnostics.",
+          "symbols": [
+            {
+              "name": "InstrumentConfig",
+              "line": 21
+            },
+            {
+              "name": "proper_similarity",
+              "line": 93
+            },
+            {
+              "name": "balanced_similarity",
+              "line": 123
+            },
+            {
+              "name": "symmetric_normalizer",
+              "line": 155
+            },
+            {
+              "name": "_anchor_array",
+              "line": 159
+            },
+            {
+              "name": "fit_anatomy",
+              "line": 164
+            },
+            {
+              "name": "eye_chart",
+              "line": 195
+            },
+            {
+              "name": "warp_with_support",
+              "line": 220
+            },
+            {
+              "name": "CanonicalState",
+              "line": 230
+            },
+            {
+              "name": "canonicalize",
+              "line": 269
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/capabilities.py",
+          "lines": 88,
+          "sha256": "57390c3270860b2a2f99dd045bfdcc0a381e2aed32fcdf45bbb5dc715c77beff",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Honest inherited-mathematics inventory, not a string-presence coverage test.",
+          "symbols": [
+            {
+              "name": "inventory",
+              "line": 53
+            }
+          ],
+          "finding_ids": [
+            "P06"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/cohort.py",
+          "lines": 204,
+          "sha256": "6b5eb89c591a13336057ce590586263339078d13292862092f50e25ee61eeb7a",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Per-metric reference cohorts with exact recipe matching and leakage checks.",
+          "symbols": [
+            {
+              "name": "CohortRow",
+              "line": 19
+            },
+            {
+              "name": "Cohort",
+              "line": 53
+            },
+            {
+              "name": "cohort_from_bundles",
+              "line": 159
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/contracts.py",
+          "lines": 167,
+          "sha256": "c1c6458bbd0e701fcfa6f1e9f48fed4b3e760cb2c2c4586565960e0b33042b84",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Validated observation records. Coordinates are pixels, ordered by semantic ID.",
+          "symbols": [
+            {
+              "name": "ObservationError",
+              "line": 20
+            },
+            {
+              "name": "ProviderUnavailable",
+              "line": 24
+            },
+            {
+              "name": "frozen_array",
+              "line": 28
+            },
+            {
+              "name": "canonical_json",
+              "line": 35
+            },
+            {
+              "name": "object_digest",
+              "line": 39
+            },
+            {
+              "name": "array_digest",
+              "line": 43
+            },
+            {
+              "name": "rgb_image",
+              "line": 49
+            },
+            {
+              "name": "Observation",
+              "line": 59
+            },
+            {
+              "name": "LandmarkProvider",
+              "line": 164
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/deployment.py",
+          "lines": 168,
+          "sha256": "5cb372dee460d0ca16352cc747d7465727b6070b28be64485165633066b60ae4",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "A qualified study enters the same pair instrument with its raw provenance.",
+          "symbols": [
+            {
+              "name": "pack_snapshot",
+              "line": 27
+            },
+            {
+              "name": "unpack_snapshot",
+              "line": 49
+            },
+            {
+              "name": "ValidatedQualification",
+              "line": 81
+            },
+            {
+              "name": "load_snapshot",
+              "line": 167
+            }
+          ],
+          "finding_ids": [
+            "D08",
+            "I03"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/edge_support.py",
+          "lines": 146,
+          "sha256": "740e8fb92b508a82f95e72a6373ce3a16bd0fd588e7a6989dcce99459a5b6b22",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Image-derived contour checks in the shared canonical gauge.",
+          "symbols": [
+            {
+              "name": "EdgeProfile",
+              "line": 19
+            },
+            {
+              "name": "normal_rays",
+              "line": 37
+            },
+            {
+              "name": "sample_edge_profile",
+              "line": 58
+            },
+            {
+              "name": "EdgeDiagnostics",
+              "line": 104
+            },
+            {
+              "name": "diagnose_edges",
+              "line": 125
+            }
+          ],
+          "finding_ids": [
+            "D10"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/error_model.py",
+          "lines": 386,
+          "sha256": "06d3ba178fff14d173cdeef04f95e4db2cfec78c890b4694ae552d8771ac20ee",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Group-level split-conformal localization envelopes, separate from similarity.",
+          "symbols": [
+            {
+              "name": "ErrorCalibration",
+              "line": 21
+            },
+            {
+              "name": "corrected_quantile",
+              "line": 52
+            },
+            {
+              "name": "LocalizationCalibration",
+              "line": 66
+            },
+            {
+              "name": "_validate_rows",
+              "line": 157
+            },
+            {
+              "name": "fit_localization_calibration",
+              "line": 174
+            },
+            {
+              "name": "evaluate_coverage",
+              "line": 198
+            },
+            {
+              "name": "DirectionalBounds",
+              "line": 232
+            },
+            {
+              "name": "ellipse_gap_bounds",
+              "line": 255
+            },
+            {
+              "name": "LocalizationEnvelope",
+              "line": 295
+            },
+            {
+              "name": "assess_pair",
+              "line": 350
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/field.py",
+          "lines": 153,
+          "sha256": "3bb389f78f4fd3a199cb0cfc8e789a54375f714035489abbe3f9712b9b3645c0",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "A single piecewise-affine anatomical field and independent flow diagnostics.",
+          "symbols": [
+            {
+              "name": "AnatomicalField",
+              "line": 20
+            },
+            {
+              "name": "affine_triangle_field",
+              "line": 42
+            },
+            {
+              "name": "FlowDiagnostics",
+              "line": 96
+            },
+            {
+              "name": "_texture",
+              "line": 111
+            },
+            {
+              "name": "flow_diagnostics",
+              "line": 120
+            },
+            {
+              "name": "build_field",
+              "line": 144
+            }
+          ],
+          "finding_ids": [
+            "D10"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/instrument.py",
+          "lines": 297,
+          "sha256": "4c082ccb6697d8ba030f14763e045637de9a72b8482164cc6249fd881964039e",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "The Wave 3 orchestration boundary: one state, one field, one measured profile.",
+          "symbols": [
+            {
+              "name": "InstrumentResult",
+              "line": 21
+            },
+            {
+              "name": "InstrumentFailure",
+              "line": 120
+            },
+            {
+              "name": "FacialInstrument",
+              "line": 128
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/intrinsic.py",
+          "lines": 513,
+          "sha256": "3817b75b41613a79ce8c0685d2b0bdfe2a0ecf90db9f95651d994af95248463a",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Registration-independent reference-shape relations inside the shared instrument.",
+          "symbols": [
+            {
+              "name": "Relation",
+              "line": 40
+            },
+            {
+              "name": "relation_registry",
+              "line": 62
+            },
+            {
+              "name": "_nominal",
+              "line": 95
+            },
+            {
+              "name": "nominal_values",
+              "line": 117
+            },
+            {
+              "name": "_bound",
+              "line": 122
+            },
+            {
+              "name": "normalized_centered",
+              "line": 132
+            },
+            {
+              "name": "proper_shape_distance",
+              "line": 142
+            },
+            {
+              "name": "ShapeBound",
+              "line": 158
+            },
+            {
+              "name": "bound_refitted_shape",
+              "line": 189
+            },
+            {
+              "name": "JointRelationAudit",
+              "line": 228
+            },
+            {
+              "name": "IntrinsicProfile",
+              "line": 280
+            },
+            {
+              "name": "measure_intrinsic",
+              "line": 426
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/intrinsic_lab.py",
+          "lines": 269,
+          "sha256": "fe2730b47eded66ccde2ac61159aac2333d0af905ff9544da27a46e8632574be",
+          "subsystem": "synthetic_laboratories",
+          "state": "implemented_software_controls_not_human_validation",
+          "review_depth": "fixture_role_and_structure_review_plus_inherited_execution",
+          "purpose": "Executable Wave 06 controls, using the production study and pair instrument.",
+          "symbols": [
+            {
+              "name": "_sample",
+              "line": 43
+            },
+            {
+              "name": "_exact_relation_batch",
+              "line": 54
+            },
+            {
+              "name": "_so2_minimum",
+              "line": 75
+            },
+            {
+              "name": "run_set_controls",
+              "line": 84
+            },
+            {
+              "name": "_query",
+              "line": 187
+            },
+            {
+              "name": "run_intrinsic_laboratory",
+              "line": 206
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/intrinsic_report.py",
+          "lines": 194,
+          "sha256": "08e54fd013959102abe953fc07a1108fd01346023b5fec1f9ad699cdf9b48e63",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Offline, inspectable presentation of the SAME immutable intrinsic profile.",
+          "symbols": [
+            {
+              "name": "relation_csv",
+              "line": 24
+            },
+            {
+              "name": "render_intrinsic_section",
+              "line": 33
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/intrinsic_sets.py",
+          "lines": 354,
+          "sha256": "82623604f4cdddf963a9eeb5ac5e35ee6f116e147f52c9e9e4207dd384ca0d28",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Conservative set arithmetic on one shared, eight-point anatomical observation.",
+          "symbols": [
+            {
+              "name": "pad",
+              "line": 29
+            },
+            {
+              "name": "Interval",
+              "line": 35
+            },
+            {
+              "name": "outer",
+              "line": 58
+            },
+            {
+              "name": "divide",
+              "line": 70
+            },
+            {
+              "name": "absolute_difference",
+              "line": 80
+            },
+            {
+              "name": "coefficients",
+              "line": 88
+            },
+            {
+              "name": "displacement",
+              "line": 97
+            },
+            {
+              "name": "EllipticSource",
+              "line": 107
+            },
+            {
+              "name": "SourceRelations",
+              "line": 163
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/joint.py",
+          "lines": 232,
+          "sha256": "d033c840cfe024c3705ade7d71297fe769de79bc8c4f14211f545caa0d9c0b72",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Development-fitted full-shape error geometry, calibrated as ONE scalar score.",
+          "symbols": [
+            {
+              "name": "regularized_scatter",
+              "line": 28
+            },
+            {
+              "name": "DevelopmentScatter",
+              "line": 55
+            },
+            {
+              "name": "_eligible",
+              "line": 105
+            },
+            {
+              "name": "fit_development_scatter",
+              "line": 110
+            },
+            {
+              "name": "JointCalibration",
+              "line": 144
+            },
+            {
+              "name": "joint_scored_rows",
+              "line": 190
+            },
+            {
+              "name": "fit_joint_calibration",
+              "line": 220
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/joint_lab.py",
+          "lines": 234,
+          "sha256": "2b5d18a9d2bb687847799ad282f64b4716e138fc1c19899ab83ce2dcfc11ce43",
+          "subsystem": "synthetic_laboratories",
+          "state": "implemented_software_controls_not_human_validation",
+          "review_depth": "fixture_role_and_structure_review_plus_inherited_execution",
+          "purpose": "One prospective synthetic study and deterministic full-shape set controls.",
+          "symbols": [
+            {
+              "name": "fixture_observation",
+              "line": 41
+            },
+            {
+              "name": "_record",
+              "line": 48
+            },
+            {
+              "name": "JointFixtureExecutor",
+              "line": 69
+            },
+            {
+              "name": "make_joint_study",
+              "line": 89
+            },
+            {
+              "name": "_source",
+              "line": 127
+            },
+            {
+              "name": "run_joint_set_controls",
+              "line": 133
+            },
+            {
+              "name": "run_joint_laboratory",
+              "line": 188
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/joint_report.py",
+          "lines": 54,
+          "sha256": "5781a06e418a9bdb1f9f8c7e7bf72e1afdd16082580895ab646553b420dac7e6",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Offline display of retained joint sets; sliders NEVER recalculate scores.",
+          "symbols": [
+            {
+              "name": "render_joint_section",
+              "line": 9
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/journal.py",
+          "lines": 79,
+          "sha256": "8bdac0f5499502b13448968dd5c2d74d8677b898c3e5e4c675c1d774d5ec2dd9",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Actual execution events, not model self-explanations or reconstructed history.",
+          "symbols": [
+            {
+              "name": "code_fingerprint",
+              "line": 17
+            },
+            {
+              "name": "numeric_environment",
+              "line": 23
+            },
+            {
+              "name": "environment",
+              "line": 31
+            },
+            {
+              "name": "Journal",
+              "line": 43
+            },
+            {
+              "name": "verify_journal",
+              "line": 72
+            }
+          ],
+          "finding_ids": [
+            "I16"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/lab.py",
+          "lines": 86,
+          "sha256": "211e4e768a68885c052f3bee1b53c95edb2b8dfd00669ca8870f41505578b5ce",
+          "subsystem": "synthetic_laboratories",
+          "state": "implemented_software_controls_not_human_validation",
+          "review_depth": "fixture_role_and_structure_review_plus_inherited_execution",
+          "purpose": "Known-geometry controls. These are schematic phantoms, never human baselines.",
+          "symbols": [
+            {
+              "name": "phantom_points",
+              "line": 16
+            },
+            {
+              "name": "render_phantom",
+              "line": 25
+            },
+            {
+              "name": "phantom_observation",
+              "line": 40
+            },
+            {
+              "name": "laboratory",
+              "line": 48
+            }
+          ],
+          "finding_ids": [
+            "P04"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/measure.py",
+          "lines": 190,
+          "sha256": "b27815eab351fe4f41ca23b2e9874de240858da33b2364893622f526b84c3b6f",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "All measurements consume the same canonical state and anatomical field.",
+          "symbols": [
+            {
+              "name": "Measurement",
+              "line": 24
+            },
+            {
+              "name": "MeasurementProfile",
+              "line": 53
+            },
+            {
+              "name": "_residual",
+              "line": 68
+            },
+            {
+              "name": "sensitivity",
+              "line": 74
+            },
+            {
+              "name": "measure",
+              "line": 99
+            }
+          ],
+          "finding_ids": [
+            "I08"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/milestone_lab.py",
+          "lines": 200,
+          "sha256": "dda04570a1146965e46d9a1957a2b258c79a58a858b4ad432472d5e6b5c9bbfc",
+          "subsystem": "synthetic_laboratories",
+          "state": "implemented_software_controls_not_human_validation",
+          "review_depth": "fixture_role_and_structure_review_plus_inherited_execution",
+          "purpose": "End-to-end milestone controls, with deliberately explicit non-human provenance.",
+          "symbols": [
+            {
+              "name": "_control_record",
+              "line": 43
+            },
+            {
+              "name": "control_observation",
+              "line": 57
+            },
+            {
+              "name": "ControlExecutor",
+              "line": 66
+            },
+            {
+              "name": "make_milestone_workspace_spec",
+              "line": 80
+            },
+            {
+              "name": "run_control_study",
+              "line": 130
+            },
+            {
+              "name": "run_milestone_laboratory",
+              "line": 153
+            }
+          ],
+          "finding_ids": [
+            "P04"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/native_check.py",
+          "lines": 109,
+          "sha256": "e4b3348289f573b29a6d1da7a80d9cb61a368b6441f9f30ce4945619aa1f594c",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "An executable native smoke check, not a fabricated accuracy study.",
+          "symbols": [
+            {
+              "name": "native_smoke",
+              "line": 19
+            },
+            {
+              "name": "verify_smoke",
+              "line": 76
+            }
+          ],
+          "finding_ids": [
+            "P01"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/provider.py",
+          "lines": 190,
+          "sha256": "c7f8843fcd7b26f2f6272553e91f38ef7b1ab78ccaf9ae9c3b3f540a42ffaaf6",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Optional local MediaPipe observation and a strict, image-bound annotation path.",
+          "symbols": [
+            {
+              "name": "DetectionMiss",
+              "line": 23
+            },
+            {
+              "name": "mediapipe_fingerprint",
+              "line": 32
+            },
+            {
+              "name": "Augmentation",
+              "line": 40
+            },
+            {
+              "name": "augmentations",
+              "line": 46
+            },
+            {
+              "name": "apply_points",
+              "line": 59
+            },
+            {
+              "name": "MediaPipeProvider",
+              "line": 64
+            },
+            {
+              "name": "annotated_observation",
+              "line": 166
+            },
+            {
+              "name": "locate_faces",
+              "line": 180
+            }
+          ],
+          "finding_ids": [
+            "I02"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/qualification.py",
+          "lines": 240,
+          "sha256": "a5fd1ea8008733989471ecaae61ecd34894341027861d00e7e5e52155daa8f78",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Freeze-selected estimation, held-out qualification and prospective slices.",
+          "symbols": [
+            {
+              "name": "rows_from_report",
+              "line": 25
+            },
+            {
+              "name": "binomial_interval",
+              "line": 36
+            },
+            {
+              "name": "_slice_coverage",
+              "line": 48
+            },
+            {
+              "name": "qualify",
+              "line": 68
+            }
+          ],
+          "finding_ids": [
+            "D09"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/readout.py",
+          "lines": 122,
+          "sha256": "d1d66bc5bf3fc8012f9b4b8c781e4a483ab9a3c01c25c7d7237909c23619e905",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "A compact readout of existing evidence, never a second scoring pipeline.",
+          "symbols": [
+            {
+              "name": "pair_readout",
+              "line": 12
+            },
+            {
+              "name": "admission_panel",
+              "line": 34
+            },
+            {
+              "name": "render_pair_readout",
+              "line": 55
+            },
+            {
+              "name": "inspect_readout",
+              "line": 81
+            },
+            {
+              "name": "terminal_readout",
+              "line": 98
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/reference.py",
+          "lines": 212,
+          "sha256": "1cc15c84747433495ef9058ca735f85265423700f0b413aa96a65c6affca9780",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Independent localization references, not a second detector or a face identity.",
+          "symbols": [
+            {
+              "name": "check_digest",
+              "line": 45
+            },
+            {
+              "name": "ReferenceAnnotation",
+              "line": 51
+            },
+            {
+              "name": "ReferenceConsensus",
+              "line": 120
+            },
+            {
+              "name": "consensus",
+              "line": 143
+            },
+            {
+              "name": "mapped_prediction",
+              "line": 165
+            },
+            {
+              "name": "observer_recipe",
+              "line": 177
+            },
+            {
+              "name": "import_ibug68",
+              "line": 188
+            }
+          ],
+          "finding_ids": [
+            "D10"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/sequence_guard.py",
+          "lines": 111,
+          "sha256": "8c633f71a609fb81a2c75569451cbf0026aa4d68007f4b51ccd542cc98b2303c",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Time-aware video diagnostics; crossfade rank is never resemblance evidence.",
+          "symbols": [
+            {
+              "name": "crossfade",
+              "line": 17
+            },
+            {
+              "name": "sequence_diagnostics",
+              "line": 27
+            },
+            {
+              "name": "inspect_video",
+              "line": 74
+            }
+          ],
+          "finding_ids": [
+            "D12"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/stratified.py",
+          "lines": 498,
+          "sha256": "f7207418d1d719883f347e3971df82e1c3716de7847bbc3576a2f1072bd36800",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Prospective acquisition-category calibration over one shared full16 error model.",
+          "symbols": [
+            {
+              "name": "_label",
+              "line": 30
+            },
+            {
+              "name": "RoutingPolicy",
+              "line": 37
+            },
+            {
+              "name": "validate_routes",
+              "line": 87
+            },
+            {
+              "name": "StratumRadius",
+              "line": 104
+            },
+            {
+              "name": "SourceRoute",
+              "line": 182
+            },
+            {
+              "name": "StratifiedJointCalibration",
+              "line": 214
+            },
+            {
+              "name": "BoundStratifiedCalibration",
+              "line": 304
+            },
+            {
+              "name": "stratify_joint",
+              "line": 412
+            },
+            {
+              "name": "evaluate_stratified",
+              "line": 440
+            }
+          ],
+          "finding_ids": [
+            "D09"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/stratified_lab.py",
+          "lines": 292,
+          "sha256": "9d6b2d005d1dbd7fbe9a88850ddfe3602dcef2fe1787c6e32e159ec697a81605",
+          "subsystem": "synthetic_laboratories",
+          "state": "implemented_software_controls_not_human_validation",
+          "review_depth": "fixture_role_and_structure_review_plus_inherited_execution",
+          "purpose": "Integrated, explicitly synthetic heterogeneous-acquisition falsification study.",
+          "symbols": [
+            {
+              "name": "observation",
+              "line": 44
+            },
+            {
+              "name": "record",
+              "line": 52
+            },
+            {
+              "name": "StratifiedFixtureExecutor",
+              "line": 75
+            },
+            {
+              "name": "make_stratified_study",
+              "line": 94
+            },
+            {
+              "name": "run_mixed_radius_controls",
+              "line": 153
+            },
+            {
+              "name": "run_stratified_laboratory",
+              "line": 212
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/stratified_report.py",
+          "lines": 58,
+          "sha256": "6c15cd0b72ca70f73a2225fae5ecc6111fae3c8f6d1bb12dcbe212a2edee78f3",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Display the frozen calibration route without implementing calibration in JavaScript.",
+          "symbols": [
+            {
+              "name": "_payload",
+              "line": 9
+            },
+            {
+              "name": "render_routing_study",
+              "line": 13
+            },
+            {
+              "name": "render_routing_pair",
+              "line": 45
+            }
+          ],
+          "finding_ids": [
+            "I04"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/study.py",
+          "lines": 438,
+          "sha256": "40123871102bc4a743a909aabbdf81fef31eb08ba6efd585c088396cc4bdbb14",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Prospective acquisition contracts and self-contained, create-only study locks.",
+          "symbols": [
+            {
+              "name": "read_json",
+              "line": 29
+            },
+            {
+              "name": "write_json_new",
+              "line": 35
+            },
+            {
+              "name": "local_file",
+              "line": 43
+            },
+            {
+              "name": "load_rgb",
+              "line": 57
+            },
+            {
+              "name": "save_rgb",
+              "line": 67
+            },
+            {
+              "name": "file_inventory",
+              "line": 75
+            },
+            {
+              "name": "verify_inventory",
+              "line": 88
+            },
+            {
+              "name": "ObserverDeclaration",
+              "line": 98
+            },
+            {
+              "name": "FrozenStudy",
+              "line": 160
+            },
+            {
+              "name": "load_study",
+              "line": 194
+            },
+            {
+              "name": "freeze_study",
+              "line": 244
+            }
+          ],
+          "finding_ids": [
+            "D01"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/study_io.py",
+          "lines": 153,
+          "sha256": "dc76aaab10cebf9d0faa4fcebdcf7fb3c87071cb17e31f4d6573369e681fda2b",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Acquisition → existing validation engine → qualified error model → pair API.",
+          "symbols": [
+            {
+              "name": "finalize_session",
+              "line": 28
+            },
+            {
+              "name": "verify_qualification_bundle",
+              "line": 107
+            },
+            {
+              "name": "replay_qualification_bundle",
+              "line": 139
+            }
+          ],
+          "finding_ids": [
+            "D08",
+            "I01",
+            "I16"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/study_lab.py",
+          "lines": 168,
+          "sha256": "2361217b14cf6eeca3736b1b40653c846dd458ce06ce5de35371ac32fe4db3b4",
+          "subsystem": "synthetic_laboratories",
+          "state": "implemented_software_controls_not_human_validation",
+          "review_depth": "fixture_role_and_structure_review_plus_inherited_execution",
+          "purpose": "A prospective, rotated/scaled stable-bias + domain-shift falsification study.",
+          "symbols": [
+            {
+              "name": "FixtureExecutor",
+              "line": 37
+            },
+            {
+              "name": "make_fixture_study",
+              "line": 68
+            },
+            {
+              "name": "run_study_laboratory",
+              "line": 117
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/study_report.py",
+          "lines": 87,
+          "sha256": "cc30b5d7b459e5450dea690a4222a5acd33385b615c0659c75e869cdcb358008",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Offline study console. All visible numbers come from qualification JSON.",
+          "symbols": [
+            {
+              "name": "render_study_report",
+              "line": 8
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/study_runner.py",
+          "lines": 343,
+          "sha256": "e8e848a7bf6a1103b2a6b319c08d8e16a0899b3520a28844575a212dfacba47a",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Resumable single-attempt acquisition on a frozen study.",
+          "symbols": [
+            {
+              "name": "utc_now",
+              "line": 38
+            },
+            {
+              "name": "writer_lock",
+              "line": 43
+            },
+            {
+              "name": "AttemptOutcome",
+              "line": 75
+            },
+            {
+              "name": "ObserverExecutor",
+              "line": 87
+            },
+            {
+              "name": "NativeExecutor",
+              "line": 93
+            },
+            {
+              "name": "_commit_receipt",
+              "line": 155
+            },
+            {
+              "name": "verify_receipt",
+              "line": 176
+            },
+            {
+              "name": "verify_session",
+              "line": 208
+            },
+            {
+              "name": "run_session",
+              "line": 243
+            }
+          ],
+          "finding_ids": [
+            "D01",
+            "D07",
+            "I01"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/validation.py",
+          "lines": 190,
+          "sha256": "741a5eb339540022d369f1a6f753f4d8115b52cd15b796004e402fc0b449d9cf",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Source-pixel localization evaluation, with failed attempts in denominators.",
+          "symbols": [
+            {
+              "name": "ValidationCase",
+              "line": 20
+            },
+            {
+              "name": "LocalizationRow",
+              "line": 53
+            },
+            {
+              "name": "evaluate_case",
+              "line": 94
+            },
+            {
+              "name": "validate_study",
+              "line": 124
+            },
+            {
+              "name": "summarize",
+              "line": 147
+            },
+            {
+              "name": "evaluate_study",
+              "line": 176
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/validation_io.py",
+          "lines": 235,
+          "sha256": "baab032659520ecc509005d49c6a9585cafb43e8dd5a737647f2dfe1599a3d48",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Replayable validation studies using the SAME Observation/provider contracts.",
+          "symbols": [
+            {
+              "name": "_json",
+              "line": 27
+            },
+            {
+              "name": "_write",
+              "line": 31
+            },
+            {
+              "name": "_local_path",
+              "line": 35
+            },
+            {
+              "name": "_image",
+              "line": 46
+            },
+            {
+              "name": "_png",
+              "line": 52
+            },
+            {
+              "name": "_html",
+              "line": 57
+            },
+            {
+              "name": "run_validation_study",
+              "line": 74
+            },
+            {
+              "name": "verify_validation_bundle",
+              "line": 193
+            },
+            {
+              "name": "replay_validation_bundle",
+              "line": 222
+            }
+          ],
+          "finding_ids": [
+            "I16"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/validation_lab.py",
+          "lines": 119,
+          "sha256": "9d39f2c3d820e6f27a93544b301f68e5da845a266a585bd847a1843b01ec98d4",
+          "subsystem": "synthetic_laboratories",
+          "state": "implemented_software_controls_not_human_validation",
+          "review_depth": "fixture_role_and_structure_review_plus_inherited_execution",
+          "purpose": "A falsification laboratory for localization uncertainty, not human accuracy.",
+          "symbols": [
+            {
+              "name": "_write",
+              "line": 37
+            },
+            {
+              "name": "run_localization_laboratory",
+              "line": 41
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/observation/worker.py",
+          "lines": 52,
+          "sha256": "aaf98bdc7dd368fd02e5b45cd0910f9f150760f52414de46aaa7788a62c18d11",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Native worker entry point. No reference labels or split metadata are received.",
+          "symbols": [
+            {
+              "name": "main",
+              "line": 14
+            }
+          ],
+          "finding_ids": [
+            "D07"
+          ]
+        },
+        {
+          "path": "src/facemath/observation/workspace.py",
+          "lines": 332,
+          "sha256": "c1c0d761639c0264f28def6391913bd81568cdd4bb16567a0f5dc6598729a28b",
+          "subsystem": "active_observation",
+          "state": "implemented_with_scope_and_findings_below",
+          "review_depth": "static_source_and_data_flow_review",
+          "purpose": "Portable, prediction-free preparation for the existing prospective runner.",
+          "symbols": [
+            {
+              "name": "_load",
+              "line": 28
+            },
+            {
+              "name": "_revision_state",
+              "line": 44
+            },
+            {
+              "name": "prepare_workspace",
+              "line": 86
+            },
+            {
+              "name": "import_reference",
+              "line": 188
+            },
+            {
+              "name": "workspace_status",
+              "line": 225
+            },
+            {
+              "name": "freeze_workspace",
+              "line": 255
+            },
+            {
+              "name": "verify_workspace_origin",
+              "line": 279
+            }
+          ],
+          "finding_ids": [
+            "D01",
+            "D04"
+          ]
+        },
+        {
+          "path": "src/facemath/perturbation.py",
+          "lines": 67,
+          "sha256": "ff11412a5340cdbd633c87992ab450cf5fc2a66d807e0c09ffe87799a13d3414",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "occlusion_effect",
+              "line": 8
+            },
+            {
+              "name": "finite_difference_gradient",
+              "line": 22
+            },
+            {
+              "name": "finite_difference_hessian",
+              "line": 32
+            },
+            {
+              "name": "shapley_values",
+              "line": 46
+            },
+            {
+              "name": "pair_interaction",
+              "line": 61
+            },
+            {
+              "name": "fisher_information",
+              "line": 65
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/pipeline.py",
+          "lines": 68,
+          "sha256": "9df6314135c2ef2d0be507d32b477a8204b4c96ecc28625503afa36a7c86739e",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "GeometryPipeline",
+              "line": 14
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/quality.py",
+          "lines": 34,
+          "sha256": "41050e7bc785c9c47d804840b291aa4dd2727f5c876807fd7308094b4c341baf",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "QualityReport",
+              "line": 7
+            },
+            {
+              "name": "assess_state",
+              "line": 17
+            }
+          ],
+          "finding_ids": [
+            "I12"
+          ]
+        },
+        {
+          "path": "src/facemath/regions.py",
+          "lines": 76,
+          "sha256": "522fa6163c3f1f4c5854c89a89908adcfdb436dcb097b96bef6337e08493d45b",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "RegionSchema",
+              "line": 13
+            },
+            {
+              "name": "_indices",
+              "line": 35
+            },
+            {
+              "name": "polygon_mask",
+              "line": 41
+            },
+            {
+              "name": "ellipse_face_mask",
+              "line": 54
+            },
+            {
+              "name": "build_regions",
+              "line": 68
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/registration.py",
+          "lines": 90,
+          "sha256": "7f3d33c2cfea5e4166b97567caf97a0a193e9846d98ba1a9719240681959e53c",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "weighted_similarity_transform",
+              "line": 12
+            },
+            {
+              "name": "ransac_similarity_transform",
+              "line": 20
+            },
+            {
+              "name": "warp_frame",
+              "line": 42
+            },
+            {
+              "name": "refine_ecc",
+              "line": 48
+            },
+            {
+              "name": "overlap_fraction",
+              "line": 61
+            },
+            {
+              "name": "diagnose_registration",
+              "line": 68
+            }
+          ],
+          "finding_ids": [
+            "D15"
+          ]
+        },
+        {
+          "path": "src/facemath/report.py",
+          "lines": 42,
+          "sha256": "46512b78efd1f0bb33a26c86cd2a0a6d3311dc2b59b537bc4986c8965b4927fe",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "EvidenceReport",
+              "line": 13
+            },
+            {
+              "name": "build_report",
+              "line": 23
+            }
+          ],
+          "finding_ids": [
+            "I13"
+          ]
+        },
+        {
+          "path": "src/facemath/representation.py",
+          "lines": 83,
+          "sha256": "e633159df99ea731a823affc32412faa550bdbd2aa7fc47686d9b0ccff7665b2",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "RepresentationSnapshot",
+              "line": 10
+            },
+            {
+              "name": "cosine_similarity",
+              "line": 17
+            },
+            {
+              "name": "linear_cka",
+              "line": 22
+            },
+            {
+              "name": "rdm",
+              "line": 31
+            },
+            {
+              "name": "rsa",
+              "line": 37
+            },
+            {
+              "name": "svcca",
+              "line": 43
+            },
+            {
+              "name": "attention_laplacian",
+              "line": 52
+            },
+            {
+              "name": "attention_spectral_distance",
+              "line": 61
+            },
+            {
+              "name": "logit_contrast",
+              "line": 68
+            },
+            {
+              "name": "ModelAdapter",
+              "line": 73
+            }
+          ],
+          "finding_ids": [
+            "P05"
+          ]
+        },
+        {
+          "path": "src/facemath/sequence.py",
+          "lines": 52,
+          "sha256": "46bfe47f421ea6116293a5f9be015b3fd8f2181d1423b46bd284b001ec8ee8ac",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "SequenceEvidence",
+              "line": 9
+            },
+            {
+              "name": "analyze_sequence",
+              "line": 21
+            }
+          ],
+          "finding_ids": [
+            "D12"
+          ]
+        },
+        {
+          "path": "src/facemath/shape.py",
+          "lines": 48,
+          "sha256": "9a6e516dae972478993d0060245e15c6819e3ee2aab51f04da9d890ccf95d9a5",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "resample_closed_contour",
+              "line": 6
+            },
+            {
+              "name": "contour_curvature",
+              "line": 15
+            },
+            {
+              "name": "curvature_distance",
+              "line": 25
+            },
+            {
+              "name": "fourier_descriptors",
+              "line": 32
+            },
+            {
+              "name": "fourier_descriptor_distance",
+              "line": 46
+            }
+          ],
+          "finding_ids": [
+            "D15"
+          ]
+        },
+        {
+          "path": "src/facemath/signal.py",
+          "lines": 97,
+          "sha256": "46cd755b6bffd2e7bd45ad06d31f46b49842499aed419995172aca5fabf89ea5",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "crossfade",
+              "line": 9
+            },
+            {
+              "name": "difference_field",
+              "line": 13
+            },
+            {
+              "name": "gradient_field",
+              "line": 17
+            },
+            {
+              "name": "structure_tensor",
+              "line": 26
+            },
+            {
+              "name": "structure_tensor_distance",
+              "line": 34
+            },
+            {
+              "name": "phase_correlation",
+              "line": 39
+            },
+            {
+              "name": "fourier_phase_distance",
+              "line": 46
+            },
+            {
+              "name": "laplacian_pyramid_distance",
+              "line": 55
+            },
+            {
+              "name": "gabor_scattering_signature",
+              "line": 62
+            },
+            {
+              "name": "scattering_distance",
+              "line": 87
+            },
+            {
+              "name": "residual_entropy",
+              "line": 92
+            }
+          ],
+          "finding_ids": [
+            "D15"
+          ]
+        },
+        {
+          "path": "src/facemath/state.py",
+          "lines": 100,
+          "sha256": "a45de992b20f89696c8b535c24f5319421e1a058065215b65dac78d4408f0e06",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "SupportLevel",
+              "line": 11
+            },
+            {
+              "name": "Region",
+              "line": 18
+            },
+            {
+              "name": "CorrespondenceField",
+              "line": 34
+            },
+            {
+              "name": "RegistrationDiagnostics",
+              "line": 61
+            },
+            {
+              "name": "FacialState",
+              "line": 74
+            }
+          ],
+          "finding_ids": [
+            "I11"
+          ]
+        },
+        {
+          "path": "src/facemath/statistics.py",
+          "lines": 56,
+          "sha256": "8fbcd6b6b8efc8c25be950e7d730fd9d7ee477a0706be530c78628fc407a40ae",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "ShapeModel",
+              "line": 9
+            },
+            {
+              "name": "fit_shape_model",
+              "line": 24
+            },
+            {
+              "name": "mahalanobis_distance",
+              "line": 32
+            },
+            {
+              "name": "empirical_similarity_percentile",
+              "line": 39
+            },
+            {
+              "name": "nearest_neighbor_tail",
+              "line": 45
+            },
+            {
+              "name": "covariance_whiten",
+              "line": 50
+            }
+          ],
+          "finding_ids": [
+            "I09"
+          ]
+        },
+        {
+          "path": "src/facemath/surface3d.py",
+          "lines": 79,
+          "sha256": "c774637b7b05cf17658c3672c1edd750ef76ad2af75eafb549728bffd9c3a50c",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "vertex_normals",
+              "line": 7
+            },
+            {
+              "name": "cotangent_laplacian",
+              "line": 18
+            },
+            {
+              "name": "laplace_beltrami_eigensystem",
+              "line": 42
+            },
+            {
+              "name": "heat_kernel_signature",
+              "line": 50
+            },
+            {
+              "name": "wave_kernel_signature",
+              "line": 55
+            },
+            {
+              "name": "spectral_shape_distance",
+              "line": 66
+            },
+            {
+              "name": "functional_map_from_descriptors",
+              "line": 76
+            }
+          ],
+          "finding_ids": [
+            "I14"
+          ]
+        },
+        {
+          "path": "src/facemath/symmetry.py",
+          "lines": 58,
+          "sha256": "c861830e9186f9c6d943f632b0798fd19ee8f7e7d7426f4acfa8beb438d5f15b",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "reflect_points",
+              "line": 6
+            },
+            {
+              "name": "image_reflection_error",
+              "line": 12
+            },
+            {
+              "name": "paired_symmetry_signature",
+              "line": 23
+            },
+            {
+              "name": "symmetry_topology_distance",
+              "line": 35
+            },
+            {
+              "name": "midline_deviation_signature",
+              "line": 41
+            },
+            {
+              "name": "midline_signature_distance",
+              "line": 55
+            }
+          ],
+          "finding_ids": []
+        },
+        {
+          "path": "src/facemath/temporal.py",
+          "lines": 91,
+          "sha256": "2eb99baa70601c755a741ace79a8fa54e68027082ccf4dcfe7ae786b0dc4264c",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "trajectory_velocity",
+              "line": 8
+            },
+            {
+              "name": "trajectory_acceleration",
+              "line": 12
+            },
+            {
+              "name": "path_energy",
+              "line": 16
+            },
+            {
+              "name": "path_curvature_energy",
+              "line": 21
+            },
+            {
+              "name": "slow_feature_analysis",
+              "line": 26
+            },
+            {
+              "name": "robust_pca_pcp",
+              "line": 43
+            },
+            {
+              "name": "dynamic_mode_decomposition",
+              "line": 75
+            },
+            {
+              "name": "canonical_correlation",
+              "line": 87
+            }
+          ],
+          "finding_ids": [
+            "D15"
+          ]
+        },
+        {
+          "path": "src/facemath/topology.py",
+          "lines": 55,
+          "sha256": "44e5fad29ad7b38702a555e7fbf69d1739b4577e597a30b030c6232ef8f857e2",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "zero_dim_persistence",
+              "line": 7
+            },
+            {
+              "name": "persistence_distance_0d",
+              "line": 30
+            },
+            {
+              "name": "relational_assignment",
+              "line": 37
+            },
+            {
+              "name": "gromov_relational_distortion",
+              "line": 44
+            }
+          ],
+          "finding_ids": [
+            "I15"
+          ]
+        },
+        {
+          "path": "src/facemath/torch_attribution.py",
+          "lines": 23,
+          "sha256": "ece4814667dbb8bfb839548f903028bfbd2a3b5bd1d834b30d17ea921ac757cf",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "input_gradient",
+              "line": 6
+            },
+            {
+              "name": "integrated_gradients",
+              "line": 14
+            }
+          ],
+          "finding_ids": [
+            "P05",
+            "D15"
+          ]
+        },
+        {
+          "path": "src/facemath/video.py",
+          "lines": 32,
+          "sha256": "b93ea4008e45a577981b39a9e06d5789be5dfbf569c9bfaf2100bbfbc4860249",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "read_video",
+              "line": 8
+            },
+            {
+              "name": "sample_frames",
+              "line": 22
+            }
+          ],
+          "finding_ids": [
+            "D12"
+          ]
+        },
+        {
+          "path": "src/facemath/wave2.py",
+          "lines": 152,
+          "sha256": "c8a970f2d14beb17249ee77d8b5c1982fbdf3a618cb05908f9a9fb1e1d62cfa9",
+          "subsystem": "legacy_research",
+          "state": "retained_callable_not_automatically_active_or_validated",
+          "review_depth": "static_source_review_and_contract_audit",
+          "purpose": "",
+          "symbols": [
+            {
+              "name": "EngineConfig",
+              "line": 20
+            },
+            {
+              "name": "FacialGeometryEngine",
+              "line": 29
+            }
+          ],
+          "finding_ids": [
+            "I11",
+            "I12"
+          ]
+        }
+      ],
+      "test_files": [
+        {
+          "path": "tests/test_core.py",
+          "bytes": 1742,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_observation_contracts.py",
+          "bytes": 3861,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave10_admission.py",
+          "bytes": 7484,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave10_integration.py",
+          "bytes": 8902,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave10_native_readout.py",
+          "bytes": 6330,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave10_snapshot.py",
+          "bytes": 2304,
+          "finding_ids": [
+            "I07"
+          ]
+        },
+        {
+          "path": "tests/test_wave10_workspace.py",
+          "bytes": 6967,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave2.py",
+          "bytes": 5148,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave3_artifacts.py",
+          "bytes": 3596,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave3_cli.py",
+          "bytes": 6630,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave3_cohort.py",
+          "bytes": 3103,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave3_cohort_ingestion.py",
+          "bytes": 1969,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave3_dense_schema.py",
+          "bytes": 1888,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave3_field.py",
+          "bytes": 2836,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave3_instrument.py",
+          "bytes": 6466,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave3_legacy_repairs.py",
+          "bytes": 1548,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave3_provider.py",
+          "bytes": 6295,
+          "finding_ids": [
+            "P01",
+            "I02"
+          ]
+        },
+        {
+          "path": "tests/test_wave3_registration.py",
+          "bytes": 2688,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave3_sequence.py",
+          "bytes": 3677,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave4_directional.py",
+          "bytes": 2644,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave4_edge_support.py",
+          "bytes": 3442,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave4_error_model.py",
+          "bytes": 8256,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave4_io.py",
+          "bytes": 7666,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave4_lab.py",
+          "bytes": 1647,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave4_reference.py",
+          "bytes": 6658,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave5_bias.py",
+          "bytes": 6396,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave5_execution.py",
+          "bytes": 8069,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave5_study.py",
+          "bytes": 7834,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave6_integration.py",
+          "bytes": 7181,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave6_intrinsic.py",
+          "bytes": 11922,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave6_sets.py",
+          "bytes": 6628,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave7_joint_integration.py",
+          "bytes": 9578,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave7_joint_model.py",
+          "bytes": 6327,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave7_joint_sets.py",
+          "bytes": 7409,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave8_integration.py",
+          "bytes": 14083,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave8_radii.py",
+          "bytes": 2978,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave8_stratified.py",
+          "bytes": 7934,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave9_acquisition.py",
+          "bytes": 11318,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave9_integration.py",
+          "bytes": 14623,
+          "finding_ids": []
+        },
+        {
+          "path": "tests/test_wave9_study.py",
+          "bytes": 3625,
+          "finding_ids": []
+        }
+      ],
+      "support_scripts": [
+        {
+          "path": "scripts/assemble_release_evidence.py",
+          "bytes": 7599,
+          "finding_ids": [
+            "D13"
+          ]
+        },
+        {
+          "path": "scripts/browser_qa_wave10.py",
+          "bytes": 7826,
+          "finding_ids": [
+            "D06"
+          ]
+        },
+        {
+          "path": "scripts/browser_qa_wave4.py",
+          "bytes": 6286,
+          "finding_ids": [
+            "D06"
+          ]
+        },
+        {
+          "path": "scripts/browser_qa_wave5.py",
+          "bytes": 5757,
+          "finding_ids": [
+            "D06"
+          ]
+        },
+        {
+          "path": "scripts/browser_qa_wave6.py",
+          "bytes": 6626,
+          "finding_ids": [
+            "D06"
+          ]
+        },
+        {
+          "path": "scripts/browser_qa_wave7.py",
+          "bytes": 5514,
+          "finding_ids": [
+            "D06"
+          ]
+        },
+        {
+          "path": "scripts/browser_qa_wave8.py",
+          "bytes": 6729,
+          "finding_ids": [
+            "D06"
+          ]
+        },
+        {
+          "path": "scripts/browser_qa_wave9.py",
+          "bytes": 9084,
+          "finding_ids": [
+            "D06"
+          ]
+        },
+        {
+          "path": "scripts/check_report.py",
+          "bytes": 2985,
+          "finding_ids": []
+        },
+        {
+          "path": "scripts/check_wheel.py",
+          "bytes": 3142,
+          "finding_ids": [
+            "D02"
+          ]
+        },
+        {
+          "path": "scripts/hidden_shift_control_wave9.py",
+          "bytes": 2277,
+          "finding_ids": [
+            "D09"
+          ]
+        },
+        {
+          "path": "scripts/milestone_numerical_controls.py",
+          "bytes": 1390,
+          "finding_ids": []
+        },
+        {
+          "path": "scripts/native_contract_control.py",
+          "bytes": 2453,
+          "finding_ids": [
+            "P04"
+          ]
+        },
+        {
+          "path": "scripts/package_release.py",
+          "bytes": 1235,
+          "finding_ids": [
+            "I06"
+          ]
+        },
+        {
+          "path": "scripts/release_summary.py",
+          "bytes": 4997,
+          "finding_ids": [
+            "D13"
+          ]
+        },
+        {
+          "path": "scripts/run_milestone.ps1",
+          "bytes": 605,
+          "finding_ids": [
+            "D02"
+          ]
+        },
+        {
+          "path": "scripts/run_milestone.sh",
+          "bytes": 251,
+          "finding_ids": []
+        },
+        {
+          "path": "scripts/summarize_wave5_release.py",
+          "bytes": 4172,
+          "finding_ids": []
+        },
+        {
+          "path": "scripts/summarize_wave6_release.py",
+          "bytes": 6038,
+          "finding_ids": []
+        },
+        {
+          "path": "scripts/summarize_wave7_release.py",
+          "bytes": 5151,
+          "finding_ids": []
+        },
+        {
+          "path": "scripts/summarize_wave8_release.py",
+          "bytes": 5114,
+          "finding_ids": [
+            "D13"
+          ]
+        },
+        {
+          "path": "scripts/validate.py",
+          "bytes": 2084,
+          "finding_ids": []
+        },
+        {
+          "path": "scripts/validate_release_wave4.py",
+          "bytes": 8169,
+          "finding_ids": []
+        },
+        {
+          "path": "scripts/validate_wave5.py",
+          "bytes": 2691,
+          "finding_ids": []
+        },
+        {
+          "path": "scripts/validate_wave6.py",
+          "bytes": 2404,
+          "finding_ids": []
+        },
+        {
+          "path": "scripts/validate_wave7.py",
+          "bytes": 2581,
+          "finding_ids": []
+        },
+        {
+          "path": "scripts/validate_wave8.py",
+          "bytes": 2845,
+          "finding_ids": []
+        },
+        {
+          "path": "scripts/validate_wave9.py",
+          "bytes": 2848,
+          "finding_ids": [
+            "D13"
+          ]
+        },
+        {
+          "path": "scripts/verify_release.py",
+          "bytes": 2839,
+          "finding_ids": [
+            "I06"
+          ]
+        }
+      ],
+      "workflow_files": [
+        {
+          "path": ".github/workflows/core.yml",
+          "bytes": 462,
+          "finding_ids": [
+            "D02",
+            "I04"
+          ]
+        },
+        {
+          "path": ".github/workflows/milestone.yml",
+          "bytes": 1015,
+          "finding_ids": [
+            "D02",
+            "D03"
+          ]
+        }
+      ],
+      "documentation_files": [
+        {
+          "path": "docs/01_image-analyze.md",
+          "bytes": 16343,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/02_image-analyze.md",
+          "bytes": 7155,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/03_facial-mathematics.md",
+          "bytes": 15987,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/04_facial-recognition.md",
+          "bytes": 119069,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/05_python-face-recognition.md",
+          "bytes": 12936,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "bytes": 10050,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/legacy/README-wave2-superseded.md",
+          "bytes": 6854,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/MATHEMATICS.md",
+          "bytes": 8810,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/MILESTONE_MAP.md",
+          "bytes": 3606,
+          "finding_ids": [
+            "P06"
+          ]
+        },
+        {
+          "path": "docs/MODEL_SETUP.md",
+          "bytes": 2271,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/RAW_ARRAYS.md",
+          "bytes": 14589,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/README_WAVE4.md",
+          "bytes": 8698,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/README_WAVE5.md",
+          "bytes": 3837,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/README_WAVE6.md",
+          "bytes": 4535,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/README_WAVE7.md",
+          "bytes": 4083,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/README_WAVE9.md",
+          "bytes": 5902,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/REFERENCE_PROTOCOL.md",
+          "bytes": 4546,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/ROADMAP.md",
+          "bytes": 4939,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/SOURCES.md",
+          "bytes": 2189,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE10_DESIGN.md",
+          "bytes": 7272,
+          "finding_ids": [
+            "D04"
+          ]
+        },
+        {
+          "path": "docs/WAVE10_MATHEMATICS.md",
+          "bytes": 7673,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE10_OPERATIONS.md",
+          "bytes": 9158,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE10_ROADMAP.md",
+          "bytes": 2508,
+          "finding_ids": [
+            "D01",
+            "D08",
+            "D09",
+            "D10",
+            "D11"
+          ]
+        },
+        {
+          "path": "docs/WAVE3_AUDIT.md",
+          "bytes": 5290,
+          "finding_ids": [
+            "P06"
+          ]
+        },
+        {
+          "path": "docs/WAVE4_DESIGN.md",
+          "bytes": 10932,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE4_ROADMAP.md",
+          "bytes": 2491,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE5_DESIGN.md",
+          "bytes": 12567,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE5_OPERATIONS.md",
+          "bytes": 5762,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE6_DESIGN.md",
+          "bytes": 8140,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE6_MATHEMATICS.md",
+          "bytes": 10341,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE6_OPERATIONS.md",
+          "bytes": 4661,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE7_DESIGN.md",
+          "bytes": 6589,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE7_MATHEMATICS.md",
+          "bytes": 8498,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE7_OPERATIONS.md",
+          "bytes": 4362,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE8_DESIGN.md",
+          "bytes": 8628,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE8_MATHEMATICS.md",
+          "bytes": 6152,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE8_OPERATIONS.md",
+          "bytes": 4962,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE9_DESIGN.md",
+          "bytes": 8948,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE9_MATHEMATICS.md",
+          "bytes": 6509,
+          "finding_ids": []
+        },
+        {
+          "path": "docs/WAVE9_OPERATIONS.md",
+          "bytes": 6238,
+          "finding_ids": []
+        }
+      ],
+      "example_files": [
+        {
+          "path": "examples/joint.study.template.json",
+          "bytes": 6966,
+          "finding_ids": [
+            "P02"
+          ]
+        },
+        {
+          "path": "examples/legacy/README.md",
+          "bytes": 409,
+          "finding_ids": []
+        },
+        {
+          "path": "examples/legacy/video_endpoint_evidence.json",
+          "bytes": 5355,
+          "finding_ids": []
+        },
+        {
+          "path": "examples/legacy/wave2_video_sequence.json",
+          "bytes": 3696,
+          "finding_ids": []
+        },
+        {
+          "path": "examples/measured.study.template.json",
+          "bytes": 9700,
+          "finding_ids": [
+            "P02"
+          ]
+        },
+        {
+          "path": "examples/measured_acquisition_policy.example.json",
+          "bytes": 2666,
+          "finding_ids": [
+            "P03"
+          ]
+        },
+        {
+          "path": "examples/prospective.study.template.json",
+          "bytes": 6884,
+          "finding_ids": [
+            "P02"
+          ]
+        },
+        {
+          "path": "examples/query.group.template.json",
+          "bytes": 227,
+          "finding_ids": [
+            "P02"
+          ]
+        },
+        {
+          "path": "examples/semantic21.template.json",
+          "bytes": 1345,
+          "finding_ids": [
+            "P02"
+          ]
+        },
+        {
+          "path": "examples/validation.study.template.json",
+          "bytes": 736,
+          "finding_ids": [
+            "P02"
+          ]
+        },
+        {
+          "path": "examples/workspace.spec.template.json",
+          "bytes": 5650,
+          "finding_ids": [
+            "P02",
+            "P03"
+          ]
+        }
+      ],
+      "root_authority_and_configuration": [
+        "AGENTS.md",
+        "README.md",
+        "CHANGELOG.md",
+        "pyproject.toml",
+        "uv.lock",
+        ".gitattributes",
+        ".gitignore",
+        ".sourcery.yaml",
+        "RELEASE_MANIFEST.json",
+        "models/README.md"
+      ],
+      "large_retained_trees": {
+        "evidence": "Historical and synthetic execution artifacts; current outcomes reported separately.",
+        "packages": "Versioned original package archives under Git LFS; retain their original bytes.",
+        "runs": "Local generated runs ignored by Git; preserved.",
+        "dist": "Retained built distributions; identity must be checked per release.",
+        "docs/legacy": "Historical research source inventory; not current implementation authority."
+      },
+      "interpretation": "An empty finding_ids list means no separate confirmed defect was established in this review; it does not certify correctness or extend scientific scope."
+    },
+    "legacy_capability_gaps": {
+      "source": "facemath.observation.capabilities.inventory(); retained Wave3 audit, not newly executed proof of every section.",
+      "status_counts": {
+        "not_in_inherited_registry": 20,
+        "inherited_not_fully_audited": 100,
+        "partial": 14,
+        "missing_exact": 14,
+        "requires_external_telemetry": 22,
+        "conceptual_or_telemetry": 1,
+        "surrogate": 4,
+        "conceptual": 3,
+        "misindexed": 3
+      },
+      "sections_0_through_19": "Absent from inherited registry; no equivalence claim.",
+      "entries": [
+        {
+          "section": 34,
+          "inherited_reference": "topology.zero_dim_persistence",
+          "status": "partial",
+          "note": "0D merge deaths are not full persistent homology/bottleneck distance"
+        },
+        {
+          "section": 39,
+          "inherited_reference": "statistics.covariance_whiten",
+          "status": "missing_exact",
+          "note": "covariance whitening is not the affine-invariant SPD log metric"
+        },
+        {
+          "section": 43,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 44,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 45,
+          "inherited_reference": "representation.cosine_similarity",
+          "status": "conceptual_or_telemetry",
+          "note": "cosine similarity is not an implementation of feature superposition"
+        },
+        {
+          "section": 46,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 47,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 48,
+          "inherited_reference": "representation.cosine_similarity",
+          "status": "partial",
+          "note": "cosine is a primitive, not a recovered concept-direction probe"
+        },
+        {
+          "section": 50,
+          "inherited_reference": "perturbation.finite_difference_gradient",
+          "status": "partial",
+          "note": "finite difference of a supplied scalar callable is not historical model Jacobian access"
+        },
+        {
+          "section": 51,
+          "inherited_reference": "perturbation.finite_difference_gradient",
+          "status": "missing_exact",
+          "note": "gradient alone does not implement Jacobian singular-mode decomposition"
+        },
+        {
+          "section": 53,
+          "inherited_reference": "temporal.path_energy",
+          "status": "partial",
+          "note": "Euclidean path energy is not a general Riemannian geodesic solver"
+        },
+        {
+          "section": 54,
+          "inherited_reference": "temporal.path_curvature_energy",
+          "status": "partial",
+          "note": "path curvature does not construct or identify disentangled representation manifolds"
+        },
+        {
+          "section": 58,
+          "inherited_reference": "topology.relational_assignment",
+          "status": "partial",
+          "note": "Hungarian one-to-one assignment is not general mass-constrained optimal transport"
+        },
+        {
+          "section": 59,
+          "inherited_reference": "topology.relational_assignment",
+          "status": "partial",
+          "note": "position assignment omits the stated mixed feature/spatial transport problem"
+        },
+        {
+          "section": 60,
+          "inherited_reference": "topology.gromov_relational_distortion",
+          "status": "partial",
+          "note": "fixed-coupling relational distortion is not optimization of Gromov-Wasserstein transport"
+        },
+        {
+          "section": 66,
+          "inherited_reference": "calibration.BaselineRegistry",
+          "status": "missing_exact",
+          "note": "percentile registry does not implement Stevens power-law magnitude estimation"
+        },
+        {
+          "section": 67,
+          "inherited_reference": "statistics.empirical_similarity_percentile",
+          "status": "missing_exact",
+          "note": "empirical ranks are not Bayesian posterior probabilities"
+        },
+        {
+          "section": 68,
+          "inherited_reference": "statistics.empirical_similarity_percentile",
+          "status": "missing_exact",
+          "note": "empirical ranks are not likelihood ratios"
+        },
+        {
+          "section": 69,
+          "inherited_reference": "statistics.empirical_similarity_percentile",
+          "status": "missing_exact",
+          "note": "empirical ranks are not dependent-evidence Bayes factor fusion"
+        },
+        {
+          "section": 77,
+          "inherited_reference": "representation.linear_cka",
+          "status": "missing_exact",
+          "note": "CKA is not InfoNCE or contrastive representation training"
+        },
+        {
+          "section": 78,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 86,
+          "inherited_reference": "signal.gabor_scattering_signature",
+          "status": "surrogate",
+          "note": "Gabor summary is not a full spatial wavelet coefficient system"
+        },
+        {
+          "section": 87,
+          "inherited_reference": "signal.scattering_distance",
+          "status": "surrogate",
+          "note": "Gabor descriptor is not a Mallat scattering transform"
+        },
+        {
+          "section": 88,
+          "inherited_reference": "deformation.smooth_deformation_energy",
+          "status": "partial",
+          "note": "deformation energy does not establish the cited deformation stability bound"
+        },
+        {
+          "section": 91,
+          "inherited_reference": "deformation.tps_bending_proxy",
+          "status": "surrogate",
+          "note": "TPS bending proxy is not a calibrated anatomical deformation field; Wave 3 provides a separate PWA field"
+        },
+        {
+          "section": 95,
+          "inherited_reference": "information.algorithmic_mutual_information_proxy",
+          "status": "surrogate",
+          "note": "compression-based mutual information is not computable exact Kolmogorov complexity"
+        },
+        {
+          "section": 96,
+          "inherited_reference": "information.mutual_information_matrix",
+          "status": "conceptual",
+          "note": "generic mutual-information estimation does not demonstrate geometric sufficiency"
+        },
+        {
+          "section": 97,
+          "inherited_reference": "pipeline.GeometryPipeline",
+          "status": "missing_exact",
+          "note": "ordinary pipeline is not an identified causal generative face model"
+        },
+        {
+          "section": 98,
+          "inherited_reference": "perturbation.occlusion_effect",
+          "status": "partial",
+          "note": "occlusion is not controlled counterfactual 3D nuisance-factor rendering"
+        },
+        {
+          "section": 99,
+          "inherited_reference": "surface3d.vertex_normals",
+          "status": "missing_exact",
+          "note": "vertex normals do not implement a fitted 3D morphable model"
+        },
+        {
+          "section": 100,
+          "inherited_reference": "surface3d.vertex_normals",
+          "status": "missing_exact",
+          "note": "vertex normals do not implement camera projection/intrinsic calibration"
+        },
+        {
+          "section": 101,
+          "inherited_reference": "surface3d.vertex_normals",
+          "status": "missing_exact",
+          "note": "vertex normals do not implement depth recovery or epipolar inference"
+        },
+        {
+          "section": 103,
+          "inherited_reference": "surface3d.laplace_beltrami_eigensystem",
+          "status": "missing_exact",
+          "note": "Laplace-Beltrami eigensystem is not principal/mean/Gaussian curvature estimation"
+        },
+        {
+          "section": 104,
+          "inherited_reference": "surface3d.cotangent_laplacian",
+          "status": "partial",
+          "note": "cotangent discretization is not a general surface geodesic solver"
+        },
+        {
+          "section": 105,
+          "inherited_reference": "surface3d.spectral_shape_distance",
+          "status": "partial",
+          "note": "spectral distance is not an isometry proof; isospectral shapes exist"
+        },
+        {
+          "section": 110,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 112,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 113,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 114,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 115,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 116,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 123,
+          "inherited_reference": "topology.gromov_relational_distortion",
+          "status": "missing_exact",
+          "note": "GW-style objective does not implement higher-order relation tensors"
+        },
+        {
+          "section": 124,
+          "inherited_reference": "topology.zero_dim_persistence",
+          "status": "partial",
+          "note": "0D persistence is not a general simplicial-complex implementation"
+        },
+        {
+          "section": 126,
+          "inherited_reference": "geometry.relational_graph",
+          "status": "conceptual",
+          "note": "a relational graph does not implement general categorical morphism laws"
+        },
+        {
+          "section": 130,
+          "inherited_reference": "representation.linear_cka",
+          "status": "partial",
+          "note": "inherited svcca name implements CCA without the stated SVD-reduction stage"
+        },
+        {
+          "section": 137,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 138,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 141,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 142,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 143,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 144,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 145,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 146,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 153,
+          "inherited_reference": "temporal.robust_pca_pcp",
+          "status": "misindexed",
+          "note": "RPCA mapping is not the ordinary temporal PCA described in section 153"
+        },
+        {
+          "section": 154,
+          "inherited_reference": "temporal.dynamic_mode_decomposition",
+          "status": "misindexed",
+          "note": "DMD mapping is not RPCA described in section 154"
+        },
+        {
+          "section": 155,
+          "inherited_reference": "temporal.canonical_correlation",
+          "status": "misindexed",
+          "note": "CCA mapping is not DMD described in section 155"
+        },
+        {
+          "section": 157,
+          "inherited_reference": "information.mutual_information_matrix",
+          "status": "missing_exact",
+          "note": "mutual-information matrix is not partial least squares"
+        },
+        {
+          "section": 159,
+          "inherited_reference": "information.mutual_information_matrix",
+          "status": "conceptual",
+          "note": "mutual-information estimator is not information-bottleneck training"
+        },
+        {
+          "section": 163,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 164,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        },
+        {
+          "section": 178,
+          "inherited_reference": "representation.ModelAdapter",
+          "status": "requires_external_telemetry",
+          "note": "interface only; no access to proprietary historical states is supplied"
+        }
+      ],
+      "action_policy": "Use these exact section mappings for later technical clarification. Missing historical methods are conditional research scope, not an instruction to implement all of them before D01."
+    },
+    "handoff_rules": {
+      "next_step": "Choose one finding ID or a tightly coupled blocker group; expand its implementation design and validation details against the cited source before editing.",
+      "before_source_edits": [
+        "Read README, current milestone design and AGENTS.md",
+        "Use the actual parent archive; record its digest and baseline without fabricating missing bytes",
+        "Preserve this review baseline and every pre-fix failure; create new run destinations"
+      ],
+      "after_source_edits": [
+        "Run python -m pytest -q from the actual package",
+        "Run milestone-lab, verify and replay with the final code fingerprint",
+        "Assert every raw observed-state array is unchanged by added qualification",
+        "Build/install wheel outside the source tree; verify import location and package bytes; test there",
+        "Extract the final archive and repeat required validation; retain commands/environment/return codes/raw logs/skips",
+        "Report implementation, runtime, package, native-model and human-reference outcomes separately"
+      ],
+      "review_refresh": "Reconcile finding IDs against new evidence after fixes; do not silently erase this baseline or rewrite sealed historical outputs."
+    }
+  }
+]
