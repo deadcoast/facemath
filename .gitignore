@@ -1,0 +1,16 @@
+# Local Python environments, tooling caches, and bytecode.
+.venv/
+.uv-cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+.coverage
+htmlcov/
+build/
+*.egg-info/
+
+# Local executions stay on disk; release evidence belongs in evidence/.
+/runs/
+/.commit-audit/
