@@ -1,0 +1,2090 @@
+{
+  "format": "facemath.reference_workspace_spec.v10",
+  "study": {
+    "format": "facemath.prospective_study.v5",
+    "domain": "synthetic-wave10-workflow-controls-NOT-A-HUMAN-STUDY",
+    "observer": {
+      "provider": "synthetic_milestone_containment_observer",
+      "provider_fingerprint": "7223088ba52e68495cf92915a2b1ff19c78c741840d69674a92a6bbfa77b13b9",
+      "schema": "semantic21.v1",
+      "noise_floor_px": 0.18,
+      "attempted_samples": 7,
+      "execution_kind": "synthetic_fixture",
+      "model_sha256": null,
+      "runtime_version": null
+    },
+    "minimum_raters": 1,
+    "maximum_cases_per_group": 2,
+    "minimum_development_groups": 5,
+    "alpha": 0.1,
+    "bias_mode": "development_joint_ocular_stratified",
+    "joint_error": {
+      "shrinkage": 0.02,
+      "floor_eye_spans": 0.001
+    },
+    "strata": [
+      "pixel_clear",
+      "pixel_smooth",
+      "__unmatched__",
+      "__ambiguous__"
+    ],
+    "stratified_error": {
+      "definition": "Schematic stored-raster apertures; all enrolled group members. Clear: minimum detail >=0.30; smooth: minimum detail in [0.05,0.30). Both need >=96px, range>=0.10 and code-tail fractions<0.20. Engineering demonstration selected using three source-only development probes, not human recommendations.",
+      "minimum_calibration_groups": 9,
+      "measurement_policy": {
+        "format": "facemath.measured_acquisition_policy.v9",
+        "recipe": "declared_aperture_RGB_integer299_587_114_div255000_AREA_Sobel_interior.v9",
+        "definition": "Schematic stored-raster apertures; all enrolled group members. Clear: minimum detail >=0.30; smooth: minimum detail in [0.05,0.30). Both need >=96px, range>=0.10 and code-tail fractions<0.20. Engineering demonstration selected using three source-only development probes, not human recommendations.",
+        "rules": [
+          {
+            "category": "pixel_clear",
+            "predicates": [
+              {
+                "feature": "min.native_short_edge_px",
+                "op": ">=",
+                "threshold": 96.0
+              },
+              {
+                "feature": "min.code_range_90",
+                "op": ">=",
+                "threshold": 0.1
+              },
+              {
+                "feature": "max.low_code_fraction",
+                "op": "<",
+                "threshold": 0.2
+              },
+              {
+                "feature": "max.high_code_fraction",
+                "op": "<",
+                "threshold": 0.2
+              },
+              {
+                "feature": "min.detail_ratio",
+                "op": ">=",
+                "threshold": 0.3
+              }
+            ],
+            "deployment_permitted": true
+          },
+          {
+            "category": "pixel_smooth",
+            "predicates": [
+              {
+                "feature": "min.native_short_edge_px",
+                "op": ">=",
+                "threshold": 96.0
+              },
+              {
+                "feature": "min.code_range_90",
+                "op": ">=",
+                "threshold": 0.1
+              },
+              {
+                "feature": "max.low_code_fraction",
+                "op": "<",
+                "threshold": 0.2
+              },
+              {
+                "feature": "max.high_code_fraction",
+                "op": "<",
+                "threshold": 0.2
+              },
+              {
+                "feature": "min.detail_ratio",
+                "op": ">=",
+                "threshold": 0.05
+              },
+              {
+                "feature": "min.detail_ratio",
+                "op": "<",
+                "threshold": 0.3
+              }
+            ],
+            "deployment_permitted": true
+          }
+        ],
+        "maximum_group_members": 2,
+        "analysis_max_side": 128,
+        "low_code": 0.00392156862745098,
+        "high_code": 0.996078431372549,
+        "variance_floor": 1e-08,
+        "group_reducers": [
+          "min",
+          "max"
+        ],
+        "feature_order": [
+          "native_short_edge_px",
+          "native_area_px2",
+          "code_mean",
+          "code_p05",
+          "code_p95",
+          "code_range_90",
+          "low_code_fraction",
+          "high_code_fraction",
+          "detail_ratio"
+        ],
+        "routing": "one simultaneous match; zero or multiple matches withhold deployment",
+        "aperture": "explicit integer xyxy half-open source rectangle; omission means full stored raster",
+        "enrollment": "all declared group members, including prospectively excluded observation cases"
+      }
+    },
+    "admission_policy": {
+      "format": "facemath.empirical_admission_policy.v10",
+      "required_categories": [
+        "pixel_clear",
+        "pixel_smooth"
+      ],
+      "minimum_groups": 20,
+      "minimum_delivery": 0.8,
+      "minimum_coverage": 0.8,
+      "family_error": 0.1,
+      "evidence_kind": "synthetic_control",
+      "independent_groups_declared": true,
+      "sampling_design": "Deterministic branch/containment control. No population interpretation; does not establish real sampling assumptions."
+    }
+  },
+  "rater_ids": [
+    "known-render-coordinates"
+  ],
+  "sources": [
+    {
+      "case_id": "case_00000",
+      "group_id": "group_36091_0",
+      "lineage_ids": [
+        "lineage_36091_0"
+      ],
+      "split": "development",
+      "image": "source_00000.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00001",
+      "group_id": "group_36091_1",
+      "lineage_ids": [
+        "lineage_36091_1"
+      ],
+      "split": "development",
+      "image": "source_00001.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00002",
+      "group_id": "group_36091_2",
+      "lineage_ids": [
+        "lineage_36091_2"
+      ],
+      "split": "development",
+      "image": "source_00002.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00003",
+      "group_id": "group_36091_3",
+      "lineage_ids": [
+        "lineage_36091_3"
+      ],
+      "split": "development",
+      "image": "source_00003.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00004",
+      "group_id": "group_36091_4",
+      "lineage_ids": [
+        "lineage_36091_4"
+      ],
+      "split": "development",
+      "image": "source_00004.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00005",
+      "group_id": "group_36091_5",
+      "lineage_ids": [
+        "lineage_36091_5"
+      ],
+      "split": "development",
+      "image": "source_00005.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00006",
+      "group_id": "group_36091_6",
+      "lineage_ids": [
+        "lineage_36091_6"
+      ],
+      "split": "development",
+      "image": "source_00006.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00007",
+      "group_id": "group_36091_7",
+      "lineage_ids": [
+        "lineage_36091_7"
+      ],
+      "split": "development",
+      "image": "source_00007.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00008",
+      "group_id": "group_36091_8",
+      "lineage_ids": [
+        "lineage_36091_8"
+      ],
+      "split": "development",
+      "image": "source_00008.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00009",
+      "group_id": "group_36091_9",
+      "lineage_ids": [
+        "lineage_36091_9"
+      ],
+      "split": "development",
+      "image": "source_00009.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00010",
+      "group_id": "group_36091_10",
+      "lineage_ids": [
+        "lineage_36091_10"
+      ],
+      "split": "development",
+      "image": "source_00010.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00011",
+      "group_id": "group_36091_11",
+      "lineage_ids": [
+        "lineage_36091_11"
+      ],
+      "split": "development",
+      "image": "source_00011.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00012",
+      "group_id": "group_36091_12",
+      "lineage_ids": [
+        "lineage_36091_12"
+      ],
+      "split": "development",
+      "image": "source_00012.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00013",
+      "group_id": "group_36091_13",
+      "lineage_ids": [
+        "lineage_36091_13"
+      ],
+      "split": "development",
+      "image": "source_00013.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00014",
+      "group_id": "group_36091_14",
+      "lineage_ids": [
+        "lineage_36091_14"
+      ],
+      "split": "development",
+      "image": "source_00014.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00015",
+      "group_id": "group_36091_15",
+      "lineage_ids": [
+        "lineage_36091_15"
+      ],
+      "split": "development",
+      "image": "source_00015.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00016",
+      "group_id": "group_36091_16",
+      "lineage_ids": [
+        "lineage_36091_16"
+      ],
+      "split": "calibration",
+      "image": "source_00016.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00017",
+      "group_id": "group_36091_17",
+      "lineage_ids": [
+        "lineage_36091_17"
+      ],
+      "split": "calibration",
+      "image": "source_00017.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00018",
+      "group_id": "group_36091_18",
+      "lineage_ids": [
+        "lineage_36091_18"
+      ],
+      "split": "calibration",
+      "image": "source_00018.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00019",
+      "group_id": "group_36091_19",
+      "lineage_ids": [
+        "lineage_36091_19"
+      ],
+      "split": "calibration",
+      "image": "source_00019.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00020",
+      "group_id": "group_36091_20",
+      "lineage_ids": [
+        "lineage_36091_20"
+      ],
+      "split": "calibration",
+      "image": "source_00020.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00021",
+      "group_id": "group_36091_21",
+      "lineage_ids": [
+        "lineage_36091_21"
+      ],
+      "split": "calibration",
+      "image": "source_00021.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00022",
+      "group_id": "group_36091_22",
+      "lineage_ids": [
+        "lineage_36091_22"
+      ],
+      "split": "calibration",
+      "image": "source_00022.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00023",
+      "group_id": "group_36091_23",
+      "lineage_ids": [
+        "lineage_36091_23"
+      ],
+      "split": "calibration",
+      "image": "source_00023.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00024",
+      "group_id": "group_36091_24",
+      "lineage_ids": [
+        "lineage_36091_24"
+      ],
+      "split": "calibration",
+      "image": "source_00024.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00025",
+      "group_id": "group_36091_25",
+      "lineage_ids": [
+        "lineage_36091_25"
+      ],
+      "split": "calibration",
+      "image": "source_00025.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00026",
+      "group_id": "group_36091_26",
+      "lineage_ids": [
+        "lineage_36091_26"
+      ],
+      "split": "calibration",
+      "image": "source_00026.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00027",
+      "group_id": "group_36091_27",
+      "lineage_ids": [
+        "lineage_36091_27"
+      ],
+      "split": "calibration",
+      "image": "source_00027.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00028",
+      "group_id": "group_36091_28",
+      "lineage_ids": [
+        "lineage_36091_28"
+      ],
+      "split": "calibration",
+      "image": "source_00028.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00029",
+      "group_id": "group_36091_29",
+      "lineage_ids": [
+        "lineage_36091_29"
+      ],
+      "split": "calibration",
+      "image": "source_00029.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00030",
+      "group_id": "group_36091_30",
+      "lineage_ids": [
+        "lineage_36091_30"
+      ],
+      "split": "calibration",
+      "image": "source_00030.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00031",
+      "group_id": "group_36091_31",
+      "lineage_ids": [
+        "lineage_36091_31"
+      ],
+      "split": "calibration",
+      "image": "source_00031.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00032",
+      "group_id": "group_36091_32",
+      "lineage_ids": [
+        "lineage_36091_32"
+      ],
+      "split": "calibration",
+      "image": "source_00032.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00033",
+      "group_id": "group_36091_33",
+      "lineage_ids": [
+        "lineage_36091_33"
+      ],
+      "split": "calibration",
+      "image": "source_00033.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00034",
+      "group_id": "group_36091_34",
+      "lineage_ids": [
+        "lineage_36091_34"
+      ],
+      "split": "calibration",
+      "image": "source_00034.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00035",
+      "group_id": "group_36091_35",
+      "lineage_ids": [
+        "lineage_36091_35"
+      ],
+      "split": "calibration",
+      "image": "source_00035.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00036",
+      "group_id": "group_36091_36",
+      "lineage_ids": [
+        "lineage_36091_36"
+      ],
+      "split": "calibration",
+      "image": "source_00036.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00037",
+      "group_id": "group_36091_37",
+      "lineage_ids": [
+        "lineage_36091_37"
+      ],
+      "split": "calibration",
+      "image": "source_00037.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00038",
+      "group_id": "group_36091_38",
+      "lineage_ids": [
+        "lineage_36091_38"
+      ],
+      "split": "calibration",
+      "image": "source_00038.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00039",
+      "group_id": "group_36091_39",
+      "lineage_ids": [
+        "lineage_36091_39"
+      ],
+      "split": "calibration",
+      "image": "source_00039.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00040",
+      "group_id": "group_36091_40",
+      "lineage_ids": [
+        "lineage_36091_40"
+      ],
+      "split": "calibration",
+      "image": "source_00040.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00041",
+      "group_id": "group_36091_41",
+      "lineage_ids": [
+        "lineage_36091_41"
+      ],
+      "split": "calibration",
+      "image": "source_00041.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00042",
+      "group_id": "group_36091_42",
+      "lineage_ids": [
+        "lineage_36091_42"
+      ],
+      "split": "calibration",
+      "image": "source_00042.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00043",
+      "group_id": "group_36091_43",
+      "lineage_ids": [
+        "lineage_36091_43"
+      ],
+      "split": "calibration",
+      "image": "source_00043.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00044",
+      "group_id": "group_36091_44",
+      "lineage_ids": [
+        "lineage_36091_44"
+      ],
+      "split": "calibration",
+      "image": "source_00044.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00045",
+      "group_id": "group_36091_45",
+      "lineage_ids": [
+        "lineage_36091_45"
+      ],
+      "split": "calibration",
+      "image": "source_00045.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00046",
+      "group_id": "group_36091_46",
+      "lineage_ids": [
+        "lineage_36091_46"
+      ],
+      "split": "calibration",
+      "image": "source_00046.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00047",
+      "group_id": "group_36091_47",
+      "lineage_ids": [
+        "lineage_36091_47"
+      ],
+      "split": "calibration",
+      "image": "source_00047.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00048",
+      "group_id": "group_36091_48",
+      "lineage_ids": [
+        "lineage_36091_48"
+      ],
+      "split": "calibration",
+      "image": "source_00048.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00049",
+      "group_id": "group_36091_49",
+      "lineage_ids": [
+        "lineage_36091_49"
+      ],
+      "split": "calibration",
+      "image": "source_00049.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00050",
+      "group_id": "group_36091_50",
+      "lineage_ids": [
+        "lineage_36091_50"
+      ],
+      "split": "calibration",
+      "image": "source_00050.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00051",
+      "group_id": "group_36091_51",
+      "lineage_ids": [
+        "lineage_36091_51"
+      ],
+      "split": "calibration",
+      "image": "source_00051.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00052",
+      "group_id": "group_36091_52",
+      "lineage_ids": [
+        "lineage_36091_52"
+      ],
+      "split": "calibration",
+      "image": "source_00052.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00053",
+      "group_id": "group_36091_53",
+      "lineage_ids": [
+        "lineage_36091_53"
+      ],
+      "split": "calibration",
+      "image": "source_00053.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00054",
+      "group_id": "group_36091_54",
+      "lineage_ids": [
+        "lineage_36091_54"
+      ],
+      "split": "calibration",
+      "image": "source_00054.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00055",
+      "group_id": "group_36091_55",
+      "lineage_ids": [
+        "lineage_36091_55"
+      ],
+      "split": "calibration",
+      "image": "source_00055.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00056",
+      "group_id": "group_36091_56",
+      "lineage_ids": [
+        "lineage_36091_56"
+      ],
+      "split": "calibration",
+      "image": "source_00056.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00057",
+      "group_id": "group_36091_57",
+      "lineage_ids": [
+        "lineage_36091_57"
+      ],
+      "split": "calibration",
+      "image": "source_00057.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00058",
+      "group_id": "group_36091_58",
+      "lineage_ids": [
+        "lineage_36091_58"
+      ],
+      "split": "calibration",
+      "image": "source_00058.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00059",
+      "group_id": "group_36091_59",
+      "lineage_ids": [
+        "lineage_36091_59"
+      ],
+      "split": "calibration",
+      "image": "source_00059.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00060",
+      "group_id": "group_36091_60",
+      "lineage_ids": [
+        "lineage_36091_60"
+      ],
+      "split": "calibration",
+      "image": "source_00060.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00061",
+      "group_id": "group_36091_61",
+      "lineage_ids": [
+        "lineage_36091_61"
+      ],
+      "split": "calibration",
+      "image": "source_00061.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00062",
+      "group_id": "group_36091_62",
+      "lineage_ids": [
+        "lineage_36091_62"
+      ],
+      "split": "calibration",
+      "image": "source_00062.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00063",
+      "group_id": "group_36091_63",
+      "lineage_ids": [
+        "lineage_36091_63"
+      ],
+      "split": "calibration",
+      "image": "source_00063.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00064",
+      "group_id": "group_36091_64",
+      "lineage_ids": [
+        "lineage_36091_64"
+      ],
+      "split": "calibration",
+      "image": "source_00064.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00065",
+      "group_id": "group_36091_65",
+      "lineage_ids": [
+        "lineage_36091_65"
+      ],
+      "split": "calibration",
+      "image": "source_00065.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00066",
+      "group_id": "group_36091_66",
+      "lineage_ids": [
+        "lineage_36091_66"
+      ],
+      "split": "calibration",
+      "image": "source_00066.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00067",
+      "group_id": "group_36091_67",
+      "lineage_ids": [
+        "lineage_36091_67"
+      ],
+      "split": "calibration",
+      "image": "source_00067.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00068",
+      "group_id": "group_36091_68",
+      "lineage_ids": [
+        "lineage_36091_68"
+      ],
+      "split": "calibration",
+      "image": "source_00068.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00069",
+      "group_id": "group_36091_69",
+      "lineage_ids": [
+        "lineage_36091_69"
+      ],
+      "split": "calibration",
+      "image": "source_00069.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00070",
+      "group_id": "group_36091_70",
+      "lineage_ids": [
+        "lineage_36091_70"
+      ],
+      "split": "calibration",
+      "image": "source_00070.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00071",
+      "group_id": "group_36091_71",
+      "lineage_ids": [
+        "lineage_36091_71"
+      ],
+      "split": "calibration",
+      "image": "source_00071.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00072",
+      "group_id": "group_36091_72",
+      "lineage_ids": [
+        "lineage_36091_72"
+      ],
+      "split": "calibration",
+      "image": "source_00072.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00073",
+      "group_id": "group_36091_73",
+      "lineage_ids": [
+        "lineage_36091_73"
+      ],
+      "split": "calibration",
+      "image": "source_00073.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00074",
+      "group_id": "group_36091_74",
+      "lineage_ids": [
+        "lineage_36091_74"
+      ],
+      "split": "calibration",
+      "image": "source_00074.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00075",
+      "group_id": "group_36091_75",
+      "lineage_ids": [
+        "lineage_36091_75"
+      ],
+      "split": "calibration",
+      "image": "source_00075.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00076",
+      "group_id": "group_36091_76",
+      "lineage_ids": [
+        "lineage_36091_76"
+      ],
+      "split": "calibration",
+      "image": "source_00076.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00077",
+      "group_id": "group_36091_77",
+      "lineage_ids": [
+        "lineage_36091_77"
+      ],
+      "split": "calibration",
+      "image": "source_00077.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00078",
+      "group_id": "group_36091_78",
+      "lineage_ids": [
+        "lineage_36091_78"
+      ],
+      "split": "calibration",
+      "image": "source_00078.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00079",
+      "group_id": "group_36091_79",
+      "lineage_ids": [
+        "lineage_36091_79"
+      ],
+      "split": "calibration",
+      "image": "source_00079.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00080",
+      "group_id": "group_36091_80",
+      "lineage_ids": [
+        "lineage_36091_80"
+      ],
+      "split": "evaluation",
+      "image": "source_00080.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00081",
+      "group_id": "group_36091_81",
+      "lineage_ids": [
+        "lineage_36091_81"
+      ],
+      "split": "evaluation",
+      "image": "source_00081.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00082",
+      "group_id": "group_36091_82",
+      "lineage_ids": [
+        "lineage_36091_82"
+      ],
+      "split": "evaluation",
+      "image": "source_00082.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00083",
+      "group_id": "group_36091_83",
+      "lineage_ids": [
+        "lineage_36091_83"
+      ],
+      "split": "evaluation",
+      "image": "source_00083.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00084",
+      "group_id": "group_36091_84",
+      "lineage_ids": [
+        "lineage_36091_84"
+      ],
+      "split": "evaluation",
+      "image": "source_00084.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00085",
+      "group_id": "group_36091_85",
+      "lineage_ids": [
+        "lineage_36091_85"
+      ],
+      "split": "evaluation",
+      "image": "source_00085.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00086",
+      "group_id": "group_36091_86",
+      "lineage_ids": [
+        "lineage_36091_86"
+      ],
+      "split": "evaluation",
+      "image": "source_00086.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00087",
+      "group_id": "group_36091_87",
+      "lineage_ids": [
+        "lineage_36091_87"
+      ],
+      "split": "evaluation",
+      "image": "source_00087.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00088",
+      "group_id": "group_36091_88",
+      "lineage_ids": [
+        "lineage_36091_88"
+      ],
+      "split": "evaluation",
+      "image": "source_00088.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00089",
+      "group_id": "group_36091_89",
+      "lineage_ids": [
+        "lineage_36091_89"
+      ],
+      "split": "evaluation",
+      "image": "source_00089.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00090",
+      "group_id": "group_36091_90",
+      "lineage_ids": [
+        "lineage_36091_90"
+      ],
+      "split": "evaluation",
+      "image": "source_00090.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00091",
+      "group_id": "group_36091_91",
+      "lineage_ids": [
+        "lineage_36091_91"
+      ],
+      "split": "evaluation",
+      "image": "source_00091.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00092",
+      "group_id": "group_36091_92",
+      "lineage_ids": [
+        "lineage_36091_92"
+      ],
+      "split": "evaluation",
+      "image": "source_00092.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00093",
+      "group_id": "group_36091_93",
+      "lineage_ids": [
+        "lineage_36091_93"
+      ],
+      "split": "evaluation",
+      "image": "source_00093.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00094",
+      "group_id": "group_36091_94",
+      "lineage_ids": [
+        "lineage_36091_94"
+      ],
+      "split": "evaluation",
+      "image": "source_00094.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00095",
+      "group_id": "group_36091_95",
+      "lineage_ids": [
+        "lineage_36091_95"
+      ],
+      "split": "evaluation",
+      "image": "source_00095.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00096",
+      "group_id": "group_36091_96",
+      "lineage_ids": [
+        "lineage_36091_96"
+      ],
+      "split": "evaluation",
+      "image": "source_00096.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00097",
+      "group_id": "group_36091_97",
+      "lineage_ids": [
+        "lineage_36091_97"
+      ],
+      "split": "evaluation",
+      "image": "source_00097.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00098",
+      "group_id": "group_36091_98",
+      "lineage_ids": [
+        "lineage_36091_98"
+      ],
+      "split": "evaluation",
+      "image": "source_00098.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00099",
+      "group_id": "group_36091_99",
+      "lineage_ids": [
+        "lineage_36091_99"
+      ],
+      "split": "evaluation",
+      "image": "source_00099.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00100",
+      "group_id": "group_36091_100",
+      "lineage_ids": [
+        "lineage_36091_100"
+      ],
+      "split": "evaluation",
+      "image": "source_00100.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00101",
+      "group_id": "group_36091_101",
+      "lineage_ids": [
+        "lineage_36091_101"
+      ],
+      "split": "evaluation",
+      "image": "source_00101.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00102",
+      "group_id": "group_36091_102",
+      "lineage_ids": [
+        "lineage_36091_102"
+      ],
+      "split": "evaluation",
+      "image": "source_00102.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00103",
+      "group_id": "group_36091_103",
+      "lineage_ids": [
+        "lineage_36091_103"
+      ],
+      "split": "evaluation",
+      "image": "source_00103.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00104",
+      "group_id": "group_36091_104",
+      "lineage_ids": [
+        "lineage_36091_104"
+      ],
+      "split": "evaluation",
+      "image": "source_00104.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00105",
+      "group_id": "group_36091_105",
+      "lineage_ids": [
+        "lineage_36091_105"
+      ],
+      "split": "evaluation",
+      "image": "source_00105.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00106",
+      "group_id": "group_36091_106",
+      "lineage_ids": [
+        "lineage_36091_106"
+      ],
+      "split": "evaluation",
+      "image": "source_00106.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00107",
+      "group_id": "group_36091_107",
+      "lineage_ids": [
+        "lineage_36091_107"
+      ],
+      "split": "evaluation",
+      "image": "source_00107.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00108",
+      "group_id": "group_36091_108",
+      "lineage_ids": [
+        "lineage_36091_108"
+      ],
+      "split": "evaluation",
+      "image": "source_00108.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00109",
+      "group_id": "group_36091_109",
+      "lineage_ids": [
+        "lineage_36091_109"
+      ],
+      "split": "evaluation",
+      "image": "source_00109.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00110",
+      "group_id": "group_36091_110",
+      "lineage_ids": [
+        "lineage_36091_110"
+      ],
+      "split": "evaluation",
+      "image": "source_00110.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00111",
+      "group_id": "group_36091_111",
+      "lineage_ids": [
+        "lineage_36091_111"
+      ],
+      "split": "evaluation",
+      "image": "source_00111.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00112",
+      "group_id": "group_36091_112",
+      "lineage_ids": [
+        "lineage_36091_112"
+      ],
+      "split": "evaluation",
+      "image": "source_00112.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00113",
+      "group_id": "group_36091_113",
+      "lineage_ids": [
+        "lineage_36091_113"
+      ],
+      "split": "evaluation",
+      "image": "source_00113.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00114",
+      "group_id": "group_36091_114",
+      "lineage_ids": [
+        "lineage_36091_114"
+      ],
+      "split": "evaluation",
+      "image": "source_00114.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00115",
+      "group_id": "group_36091_115",
+      "lineage_ids": [
+        "lineage_36091_115"
+      ],
+      "split": "evaluation",
+      "image": "source_00115.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00116",
+      "group_id": "group_36091_116",
+      "lineage_ids": [
+        "lineage_36091_116"
+      ],
+      "split": "evaluation",
+      "image": "source_00116.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00117",
+      "group_id": "group_36091_117",
+      "lineage_ids": [
+        "lineage_36091_117"
+      ],
+      "split": "evaluation",
+      "image": "source_00117.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00118",
+      "group_id": "group_36091_118",
+      "lineage_ids": [
+        "lineage_36091_118"
+      ],
+      "split": "evaluation",
+      "image": "source_00118.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00119",
+      "group_id": "group_36091_119",
+      "lineage_ids": [
+        "lineage_36091_119"
+      ],
+      "split": "evaluation",
+      "image": "source_00119.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00120",
+      "group_id": "group_36091_120",
+      "lineage_ids": [
+        "lineage_36091_120"
+      ],
+      "split": "evaluation",
+      "image": "source_00120.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00121",
+      "group_id": "group_36091_121",
+      "lineage_ids": [
+        "lineage_36091_121"
+      ],
+      "split": "evaluation",
+      "image": "source_00121.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00122",
+      "group_id": "group_36091_122",
+      "lineage_ids": [
+        "lineage_36091_122"
+      ],
+      "split": "evaluation",
+      "image": "source_00122.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00123",
+      "group_id": "group_36091_123",
+      "lineage_ids": [
+        "lineage_36091_123"
+      ],
+      "split": "evaluation",
+      "image": "source_00123.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00124",
+      "group_id": "group_36091_124",
+      "lineage_ids": [
+        "lineage_36091_124"
+      ],
+      "split": "evaluation",
+      "image": "source_00124.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00125",
+      "group_id": "group_36091_125",
+      "lineage_ids": [
+        "lineage_36091_125"
+      ],
+      "split": "evaluation",
+      "image": "source_00125.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00126",
+      "group_id": "group_36091_126",
+      "lineage_ids": [
+        "lineage_36091_126"
+      ],
+      "split": "evaluation",
+      "image": "source_00126.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00127",
+      "group_id": "group_36091_127",
+      "lineage_ids": [
+        "lineage_36091_127"
+      ],
+      "split": "evaluation",
+      "image": "source_00127.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ]
+    },
+    {
+      "case_id": "case_00128",
+      "group_id": "group_36091_128",
+      "lineage_ids": [
+        "lineage_36091_128"
+      ],
+      "split": "evaluation",
+      "image": "source_00128.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ],
+      "eligibility": "excluded",
+      "exclusion_reason": "prespecified never-invoked control"
+    }
+  ],
+  "source_description": "SYNTHETIC WORKFLOW CONTROL; never presented as a human study"
+}

@@ -1,0 +1,589 @@
+{
+  "format": "facemath.release-validation.v9",
+  "version": "0.9.0",
+  "scope": "executed source/wheel, synthetic controls, pixel remeasurement and replay; NOT real observer validation or external attestation",
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "packages": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "opencv-python": "4.13.0.92",
+      "mediapipe": null,
+      "pytest": "9.0.2"
+    },
+    "numeric_environment": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "opencv": "4.13.0"
+    },
+    "engine_code_sha256": "03db277b4d775962070926c2b060e875bd4d0e08d89b11872a0dfc75434a5c20"
+  },
+  "code_sha256": "03db277b4d775962070926c2b060e875bd4d0e08d89b11872a0dfc75434a5c20",
+  "parent": {
+    "archive": "facemath_wave_08.zip",
+    "sha256": "db18a9a46f6b07a798af847e0fb1bde35e4a40085a1c5b9cad0df6089c8a9ce9",
+    "reproduced_tests": {
+      "passed": 691,
+      "skipped": 1
+    }
+  },
+  "lineage": {
+    "new_python_modules": [
+      "observation/acquisition.py",
+      "observation/acquisition_lab.py",
+      "observation/acquisition_report.py"
+    ],
+    "modified_python_modules": [
+      "__init__.py",
+      "cli.py",
+      "observation/artifacts.py",
+      "observation/instrument.py",
+      "observation/qualification.py",
+      "observation/stratified.py",
+      "observation/study.py",
+      "observation/study_report.py"
+    ],
+    "unchanged_python_modules": [
+      "__main__.py",
+      "calibration.py",
+      "core.py",
+      "correspondence.py",
+      "coverage.py",
+      "deformation.py",
+      "fusion.py",
+      "geometry.py",
+      "information.py",
+      "legacy_cli.py",
+      "observation/__init__.py",
+      "observation/anatomy.py",
+      "observation/annotation_ui.py",
+      "observation/bias.py",
+      "observation/canonical.py",
+      "observation/capabilities.py",
+      "observation/cohort.py",
+      "observation/contracts.py",
+      "observation/edge_support.py",
+      "observation/error_model.py",
+      "observation/field.py",
+      "observation/intrinsic.py",
+      "observation/intrinsic_lab.py",
+      "observation/intrinsic_report.py",
+      "observation/intrinsic_sets.py",
+      "observation/joint.py",
+      "observation/joint_lab.py",
+      "observation/joint_report.py",
+      "observation/journal.py",
+      "observation/lab.py",
+      "observation/measure.py",
+      "observation/provider.py",
+      "observation/reference.py",
+      "observation/sequence_guard.py",
+      "observation/stratified_lab.py",
+      "observation/stratified_report.py",
+      "observation/study_io.py",
+      "observation/study_lab.py",
+      "observation/study_runner.py",
+      "observation/validation.py",
+      "observation/validation_io.py",
+      "observation/validation_lab.py",
+      "observation/worker.py",
+      "perturbation.py",
+      "pipeline.py",
+      "quality.py",
+      "regions.py",
+      "registration.py",
+      "report.py",
+      "representation.py",
+      "sequence.py",
+      "shape.py",
+      "signal.py",
+      "state.py",
+      "statistics.py",
+      "surface3d.py",
+      "symmetry.py",
+      "temporal.py",
+      "topology.py",
+      "torch_attribution.py",
+      "video.py",
+      "wave2.py"
+    ],
+    "removed_python_modules": [],
+    "source_digests": {
+      "wave2.py": "c8a970f2d14beb17249ee77d8b5c1982fbdf3a618cb05908f9a9fb1e1d62cfa9",
+      "geometry.py": "22dfa9c9d4745ad517b947d0595a51cba1b2d6ddfbb6369a6b2e5ca3b04155e9",
+      "pipeline.py": "9df6314135c2ef2d0be507d32b477a8204b4c96ecc28625503afa36a7c86739e",
+      "__init__.py": "5899f32a996eb380c9d0066a2922e732d8187c4b422eb5bda47c9f83b89aab0d",
+      "core.py": "b8e14bd8b5eeaee1b15390d7c31b82c8c4520eac5347bfbc811eea34c4acb576",
+      "symmetry.py": "c861830e9186f9c6d943f632b0798fd19ee8f7e7d7426f4acfa8beb438d5f15b",
+      "information.py": "7aab4e1ddba064fe05463de9b790473be094b2ca282c64a346402aaac1f4fc59",
+      "state.py": "a45de992b20f89696c8b535c24f5319421e1a058065215b65dac78d4408f0e06",
+      "fusion.py": "249a7b9ea88433ccfea3378254f13d856cb4896d8249d9caada2009b9fb764e0",
+      "sequence.py": "46bfe47f421ea6116293a5f9be015b3fd8f2181d1423b46bd284b001ec8ee8ac",
+      "video.py": "b93ea4008e45a577981b39a9e06d5789be5dfbf569c9bfaf2100bbfbc4860249",
+      "calibration.py": "e250ddccf702f848951a629759f98d1e812052e4a0e1dd693c8545958ff5eedd",
+      "temporal.py": "2eb99baa70601c755a741ace79a8fa54e68027082ccf4dcfe7ae786b0dc4264c",
+      "registration.py": "7f3d33c2cfea5e4166b97567caf97a0a193e9846d98ba1a9719240681959e53c",
+      "coverage.py": "ba1786739debb0efffadd5d1f3df69e5f2aaa9f2e793c1e6ffc549655a220346",
+      "shape.py": "9a6e516dae972478993d0060245e15c6819e3ee2aab51f04da9d890ccf95d9a5",
+      "perturbation.py": "ff11412a5340cdbd633c87992ab450cf5fc2a66d807e0c09ffe87799a13d3414",
+      "quality.py": "41050e7bc785c9c47d804840b291aa4dd2727f5c876807fd7308094b4c341baf",
+      "legacy_cli.py": "4ea0dd14ad4d2fed4605eed8df62cd57cf4edc43febdafe0ac044f29af07b148",
+      "torch_attribution.py": "ece4814667dbb8bfb839548f903028bfbd2a3b5bd1d834b30d17ea921ac757cf",
+      "statistics.py": "8fbcd6b6b8efc8c25be950e7d730fd9d7ee477a0706be530c78628fc407a40ae",
+      "report.py": "46512b78efd1f0bb33a26c86cd2a0a6d3311dc2b59b537bc4986c8965b4927fe",
+      "cli.py": "8c63071b6b08211073ed13a9361f10e35e78ed02f920d85ebffcdc059c6f8366",
+      "regions.py": "522fa6163c3f1f4c5854c89a89908adcfdb436dcb097b96bef6337e08493d45b",
+      "deformation.py": "4368188fb9fd0dbb1f3238549d3fbf0fbac9ddaf3b6dfb3dda19a59226e399bf",
+      "__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+      "representation.py": "e633159df99ea731a823affc32412faa550bdbd2aa7fc47686d9b0ccff7665b2",
+      "surface3d.py": "c774637b7b05cf17658c3672c1edd750ef76ad2af75eafb549728bffd9c3a50c",
+      "topology.py": "44e5fad29ad7b38702a555e7fbf69d1739b4577e597a30b030c6232ef8f857e2",
+      "signal.py": "46cd755b6bffd2e7bd45ad06d31f46b49842499aed419995172aca5fabf89ea5",
+      "correspondence.py": "29938b08b495653327675e58c2e7d359103cb733b140c47539cb9d91d816f80f",
+      "observation/capabilities.py": "57390c3270860b2a2f99dd045bfdcc0a381e2aed32fcdf45bbb5dc715c77beff",
+      "observation/acquisition_lab.py": "7daed582ed84711b8422cc642e6aaa2f0658ff33530aede01e0fb38bee96c973",
+      "observation/joint.py": "d033c840cfe024c3705ade7d71297fe769de79bc8c4f14211f545caa0d9c0b72",
+      "observation/cohort.py": "6b5eb89c591a13336057ce590586263339078d13292862092f50e25ee61eeb7a",
+      "observation/worker.py": "aaf98bdc7dd368fd02e5b45cd0910f9f150760f52414de46aaa7788a62c18d11",
+      "observation/__init__.py": "fdfa47265a68fb008270bdac62f381efae1844c084b05452a824f3d0c71f6ab5",
+      "observation/study_runner.py": "e8e848a7bf6a1103b2a6b319c08d8e16a0899b3520a28844575a212dfacba47a",
+      "observation/lab.py": "211e4e768a68885c052f3bee1b53c95edb2b8dfd00669ca8870f41505578b5ce",
+      "observation/qualification.py": "f1d50c4740d5247443bf963662886941fd706b16d7e823f1f61b3df600eb8efd",
+      "observation/contracts.py": "c1c6458bbd0e701fcfa6f1e9f48fed4b3e760cb2c2c4586565960e0b33042b84",
+      "observation/intrinsic_lab.py": "fe2730b47eded66ccde2ac61159aac2333d0af905ff9544da27a46e8632574be",
+      "observation/intrinsic.py": "3817b75b41613a79ce8c0685d2b0bdfe2a0ecf90db9f95651d994af95248463a",
+      "observation/study_report.py": "cc30b5d7b459e5450dea690a4222a5acd33385b615c0659c75e869cdcb358008",
+      "observation/intrinsic_report.py": "08e54fd013959102abe953fc07a1108fd01346023b5fec1f9ad699cdf9b48e63",
+      "observation/sequence_guard.py": "8c633f71a609fb81a2c75569451cbf0026aa4d68007f4b51ccd542cc98b2303c",
+      "observation/intrinsic_sets.py": "82623604f4cdddf963a9eeb5ac5e35ee6f116e147f52c9e9e4207dd384ca0d28",
+      "observation/instrument.py": "5730435ec960f53d604f26b050ca36a623af13d70648d84f13fe275718645e0d",
+      "observation/validation_lab.py": "9d39f2c3d820e6f27a93544b301f68e5da845a266a585bd847a1843b01ec98d4",
+      "observation/journal.py": "8bdac0f5499502b13448968dd5c2d74d8677b898c3e5e4c675c1d774d5ec2dd9",
+      "observation/field.py": "3bb389f78f4fd3a199cb0cfc8e789a54375f714035489abbe3f9712b9b3645c0",
+      "observation/error_model.py": "06d3ba178fff14d173cdeef04f95e4db2cfec78c890b4694ae552d8771ac20ee",
+      "observation/validation_io.py": "baab032659520ecc509005d49c6a9585cafb43e8dd5a737647f2dfe1599a3d48",
+      "observation/stratified_lab.py": "9d6b2d005d1dbd7fbe9a88850ddfe3602dcef2fe1787c6e32e159ec697a81605",
+      "observation/acquisition_report.py": "7cc6100f83dbf668aae3e7489b59441daf8866207ff0174740bf008061b67ffd",
+      "observation/provider.py": "c7f8843fcd7b26f2f6272553e91f38ef7b1ab78ccaf9ae9c3b3f540a42ffaaf6",
+      "observation/bias.py": "9b4d035776bd109c7e4714cb94c20c2a2183993eb1e468d8b096eae26e3422a8",
+      "observation/artifacts.py": "46a784c3e8a03f8f201a75f210cc8e5055fccc92ec7702a789e8256ef7cac068",
+      "observation/stratified_report.py": "6c15cd0b72ca70f73a2225fae5ecc6111fae3c8f6d1bb12dcbe212a2edee78f3",
+      "observation/joint_report.py": "5781a06e418a9bdb1f9f8c7e7bf72e1afdd16082580895ab646553b420dac7e6",
+      "observation/reference.py": "1cc15c84747433495ef9058ca735f85265423700f0b413aa96a65c6affca9780",
+      "observation/measure.py": "b27815eab351fe4f41ca23b2e9874de240858da33b2364893622f526b84c3b6f",
+      "observation/study.py": "f008c44f321594094911399fc28bbd2c64565b7794fb1194a4024bb9cbe424ba",
+      "observation/edge_support.py": "740e8fb92b508a82f95e72a6373ce3a16bd0fd588e7a6989dcce99459a5b6b22",
+      "observation/joint_lab.py": "2b5d18a9d2bb687847799ad282f64b4716e138fc1c19899ab83ce2dcfc11ce43",
+      "observation/study_lab.py": "2361217b14cf6eeca3736b1b40653c846dd458ce06ce5de35371ac32fe4db3b4",
+      "observation/canonical.py": "41295180185e7015043ecf660dc0e94711570a1e78b1c9713a89a07fa3f6aea8",
+      "observation/acquisition.py": "2abdcfeff0b2becd4efb1e3a317572a9be372c27a4f148b78678251d0286836a",
+      "observation/annotation_ui.py": "737db83d5e611bcb4a3e7b97d62b3081a8b0c173854e30d347a3b2b8e96ea1e8",
+      "observation/anatomy.py": "e4341cab848edc4236ab8fbbcd76783e6cb66bfcb69ece4df75bedb201d1ba31",
+      "observation/validation.py": "741a5eb339540022d369f1a6f753f4d8115b52cd15b796004e402fc0b449d9cf",
+      "observation/study_io.py": "2d4360b4b1fc4a3d1b975cf3a8ca9e6c0cf7cb7546cffdd8e3f3f8802e493539",
+      "observation/stratified.py": "f7207418d1d719883f347e3971df82e1c3716de7847bbc3576a2f1072bd36800"
+    }
+  },
+  "source_tests": {
+    "passed": 790,
+    "skipped": 1,
+    "record": "evidence/wave9/source_tests.log"
+  },
+  "installed_wheel_tests": {
+    "tests": 791,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "passed": 790
+  },
+  "wheel_source_bytes_equal": true,
+  "matching_python_modules": 73,
+  "wheel_sha256": "5948f6437be630a8a8fdea49611257ee3e3078b2098b7031e35f2eb9179fb458",
+  "executions": [
+    {
+      "name": "source_tests",
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 93.11766481399536
+    },
+    {
+      "name": "measured_lab",
+      "command": [
+        "python",
+        "-m",
+        "facemath",
+        "measured-lab",
+        "--out",
+        "/mnt/data/facemath_wave_09/evidence/wave9/laboratory"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 27.964991569519043
+    },
+    {
+      "name": "browser.execution",
+      "record": "evidence/wave9/browser.execution.json",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_09/scripts/browser_qa_wave9.py",
+        "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/qualification/report.html",
+        "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html",
+        "--out",
+        "/mnt/data/facemath_wave_09/evidence/wave9/browser"
+      ],
+      "returncode": 0,
+      "started_utc": "2026-09-20T08:02:25.906724+00:00",
+      "finished_utc": "2026-09-20T08:02:29.599398+00:00"
+    },
+    {
+      "name": "doctor.execution",
+      "record": "evidence/wave9/doctor.execution.json",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "doctor"
+      ],
+      "returncode": 0,
+      "started_utc": "2026-09-20T08:02:09.080193+00:00",
+      "finished_utc": "2026-09-20T08:02:10.564006+00:00"
+    },
+    {
+      "name": "joint_browser.execution",
+      "record": "evidence/wave9/joint_browser.execution.json",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_09/scripts/browser_qa_wave7.py",
+        "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html",
+        "--out",
+        "/mnt/data/facemath_wave_09/evidence/wave9/joint-browser"
+      ],
+      "returncode": 0,
+      "started_utc": "2026-09-20T08:02:29.599767+00:00",
+      "finished_utc": "2026-09-20T08:02:31.969971+00:00"
+    },
+    {
+      "name": "relation_browser.execution",
+      "record": "evidence/wave9/relation_browser.execution.json",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_09/scripts/browser_qa_wave6.py",
+        "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html",
+        "--out",
+        "/mnt/data/facemath_wave_09/evidence/wave9/relation-browser"
+      ],
+      "returncode": 0,
+      "started_utc": "2026-09-20T08:02:31.970402+00:00",
+      "finished_utc": "2026-09-20T08:02:34.557728+00:00"
+    },
+    {
+      "name": "source_group_replay.execution",
+      "record": "evidence/wave9/source_group_replay.execution.json",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/query_group_b_02",
+        "--out",
+        "/mnt/data/facemath_wave_09/evidence/wave9/source-group-replay"
+      ],
+      "returncode": 0,
+      "started_utc": "2026-09-20T08:02:11.843629+00:00",
+      "finished_utc": "2026-09-20T08:02:13.117102+00:00"
+    },
+    {
+      "name": "source_group_verify.execution",
+      "record": "evidence/wave9/source_group_verify.execution.json",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "verify",
+        "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/query_group_b_02"
+      ],
+      "returncode": 0,
+      "started_utc": "2026-09-20T08:02:10.566280+00:00",
+      "finished_utc": "2026-09-20T08:02:11.843268+00:00"
+    },
+    {
+      "name": "source_pair_replay.execution",
+      "record": "evidence/wave9/source_pair_replay.execution.json",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px",
+        "--out",
+        "/mnt/data/facemath_wave_09/evidence/wave9/source-pair-replay"
+      ],
+      "returncode": 0,
+      "started_utc": "2026-09-20T08:02:13.117463+00:00",
+      "finished_utc": "2026-09-20T08:02:15.372688+00:00"
+    },
+    {
+      "name": "source_study_replay.execution",
+      "record": "evidence/wave9/source_study_replay.execution.json",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/qualification",
+        "--out",
+        "/mnt/data/facemath_wave_09/evidence/wave9/source-study-replay"
+      ],
+      "returncode": 0,
+      "started_utc": "2026-09-20T08:02:15.373257+00:00",
+      "finished_utc": "2026-09-20T08:02:25.906335+00:00"
+    },
+    {
+      "name": "wheel_build.execution",
+      "record": "evidence/wave9/wheel_build.execution.json",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-deps",
+        "--no-build-isolation",
+        "--no-index",
+        "--wheel-dir",
+        "/mnt/data/facemath_wave_09/dist",
+        "/mnt/data/facemath_wave_09"
+      ],
+      "returncode": 0,
+      "started_utc": "2026-09-20T08:02:34.558074+00:00",
+      "finished_utc": "2026-09-20T08:02:37.565927+00:00"
+    },
+    {
+      "name": "wheel_check.execution",
+      "record": "evidence/wave9/wheel_check.execution.json",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_09/scripts/check_wheel.py",
+        "/mnt/data/facemath_wave_09/dist/facemath-0.9.0-py3-none-any.whl",
+        "--tests",
+        "/mnt/data/facemath_wave_09/tests",
+        "--bundle",
+        "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/qualification",
+        "--pair-bundle",
+        "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px",
+        "--out",
+        "/mnt/data/facemath_wave_09/evidence/wave9/wheel-check"
+      ],
+      "returncode": 0,
+      "started_utc": "2026-09-20T08:02:37.566607+00:00",
+      "finished_utc": "2026-09-20T08:04:25.457784+00:00"
+    }
+  ],
+  "live_skip_reasons": [
+    "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+  ],
+  "controls": {
+    "actual_observer_calls": {
+      "first": 5,
+      "complete": 118,
+      "after_completed_resume": 118
+    },
+    "enrollment": {
+      "enrolled": 119,
+      "eligible": 118,
+      "prospectively_excluded": 1,
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 2,
+        "observed": 116,
+        "runtime_error": 0,
+        "timeout": 0
+      }
+    },
+    "raw_arrays_unchanged": true,
+    "raw_array_count": 135,
+    "qualified_pair_array_count": 191,
+    "all_prespecified_reference_shapes_enclosed": true,
+    "reference_relation_violations": 0,
+    "coverage_full_denominator": [
+      14,
+      24
+    ],
+    "source_only_negative_controls": {
+      "format": "facemath.measured_source_controls.v9",
+      "source_only": true,
+      "outside_aperture_features_identical": true,
+      "single_source_category": "pixel_clear",
+      "whole_group_category": "pixel_smooth",
+      "noise_category": "pixel_clear",
+      "noise_detail": 0.37576088727298096,
+      "smoothed_noise_category": "__unmatched__",
+      "smoothed_noise_detail": 0.061907951584462176,
+      "flat_category": "__unmatched__",
+      "flat_detail": 0.0,
+      "overlapping_rule_category": "__ambiguous__",
+      "noise_counterexample": "high-frequency noise is not usable anatomical detail; this routing is NOT a face-quality detector",
+      "no_predictions_or_reference_labels_consumed": true
+    },
+    "refused_query_observer_calls": 0
+  },
+  "browser": {
+    "browser": {
+      "format": "facemath.browser_qa.v9",
+      "started_utc": "2026-09-20T08:02:26.420312+00:00",
+      "reports": {
+        "qualification": {
+          "path": "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/qualification/report.html",
+          "loading": "emitted HTML in memory",
+          "file_navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_09/evidence/wave9/laboratory/qualification/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_09/evidence/wave9/laboratory/qualification/report.html\", waiting until \"load\"\n"
+        },
+        "pair": {
+          "path": "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html",
+          "loading": "emitted HTML in memory",
+          "file_navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html\", waiting until \"load\"\n"
+        }
+      },
+      "viewports": [
+        {
+          "viewport": {
+            "width": 1440,
+            "height": 1080
+          },
+          "source_counts": [
+            1,
+            2
+          ],
+          "source_screenshot": "desktop_measured_source.png",
+          "grid_screenshot": "desktop_analysis_grid.png",
+          "page_fits_viewport": true
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "source_counts": [
+            1,
+            2
+          ],
+          "source_screenshot": "mobile_measured_source.png",
+          "grid_screenshot": "mobile_analysis_grid.png",
+          "page_fits_viewport": true
+        }
+      ],
+      "checks": {
+        "attempted_case_rows": 118,
+        "rejected_evaluation_rows_retained": 4,
+        "category_score_exports_exact": true,
+        "qualification_payload_unchanged": true,
+        "all_source_members_displayed": true,
+        "whole_group_category_unchanged_by_selected_member": true,
+        "all_original_and_analysis_dimensions_exact": true,
+        "all_group_measurements_export_exactly": true,
+        "all_routing_predicates_retained": true,
+        "no_category_aperture_threshold_editors": true,
+        "pair_payload_unchanged": true,
+        "source_sidecar_links_exist": true
+      },
+      "errors": [],
+      "remote_requests": [],
+      "passed": true,
+      "finished_utc": "2026-09-20T08:02:29.401116+00:00"
+    },
+    "joint-browser": {
+      "format": "facemath.browser_qa.v7",
+      "started_utc": "2026-09-20T08:02:30.044666+00:00",
+      "source": "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html",
+      "checks": {
+        "retained_mode_and_covariance_inventory": [
+          16,
+          256,
+          8
+        ],
+        "display_operations_preserve_measurements": true,
+        "csv_exact_full_covariance": true,
+        "local_evidence_links": true,
+        "no_horizontal_overflow": true
+      },
+      "viewports": [
+        {
+          "size": {
+            "width": 1440,
+            "height": 1150
+          },
+          "csv_rows": 256,
+          "interactive": true,
+          "screenshot": "desktop_joint.png"
+        },
+        {
+          "size": {
+            "width": 390,
+            "height": 844
+          },
+          "csv_rows": 256,
+          "interactive": true,
+          "screenshot": "mobile_joint.png"
+        }
+      ],
+      "loading": "emitted HTML in memory; local file navigation blocked",
+      "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html\", waiting until \"load\"\n",
+      "errors": [],
+      "remote_requests": [],
+      "finished_utc": "2026-09-20T08:02:31.803920+00:00",
+      "passed": true
+    },
+    "relation-browser": {
+      "format": "facemath.browser_qa.v6",
+      "report": "/mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html",
+      "started_at": "2026-09-20T08:02:32.420835+00:00",
+      "checks": {
+        "distance_rows": 28,
+        "angle_rows": 168,
+        "signed_double_area_rows": 56,
+        "asymmetry_rows": 4,
+        "anatomical_name_filter_rows": 63,
+        "selection_links_same_raw_array_row": true,
+        "csv_matches_exact_selected_frozen_values": true,
+        "status_filter_rows": 2,
+        "full_covariance_ellipse_display": true,
+        "display_zoom_not_measurement_rescale": true,
+        "local_evidence_links_exist": true,
+        "controls_do_not_change_measurements": true
+      },
+      "viewports": [
+        {
+          "width": 1440,
+          "height": 1150,
+          "document_width": 1440,
+          "body_overflow": false
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "document_width": 390,
+          "body_overflow": false
+        }
+      ],
+      "loading": "in-memory emitted HTML; local navigation unavailable",
+      "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px/report.html\", waiting until \"load\"\n",
+      "page_errors": [],
+      "remote_requests": [],
+      "passed": true,
+      "finished_at": "2026-09-20T08:02:34.382188+00:00"
+    }
+  },
+  "known_limits": [
+    "MediaPipe absent; actual model host request failed DNS. No human source-reference study or original face score.",
+    "Dependent numerical packages reused for isolated wheel tests, not a clean dependency stack or Windows/macOS validation.",
+    "Browser file navigation blocked; same emitted HTML rendered in memory. This is not native file-navigation/CSP verification.",
+    "Apertures and full real-world group membership are curator declarations, not externally attested facts.",
+    "Noise and unchanged-input hidden-error controls remain counterexamples to image-quality/shift-detection claims.",
+    "Archive extraction tests are recorded in the external release JSON after ZIP creation."
+  ]
+}

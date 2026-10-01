@@ -98,6 +98,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--model-sha256")
     p.add_argument("--lineage-a", action="append", default=[], help="declared source A acquisition lineage; repeatable")
     p.add_argument("--lineage-b", action="append", default=[], help="declared source B acquisition lineage; repeatable")
+    p.add_argument("--qualification", help="complete held-out study bundle; numerically replayed before empirical admission")
     p.add_argument("--localization-calibration", help="independent reference error calibration JSON")
     p.add_argument("--query-groups", nargs=2, metavar=("GROUP_A", "GROUP_B"))
     p.add_argument("--query-strata", nargs=2, metavar=("CATEGORY_A", "CATEGORY_B"),
@@ -238,6 +239,27 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("doctor", help="report runtime/model availability; never claims inference was run")
     p.add_argument("--model")
     p.add_argument("--out")
+    p = sub.add_parser("overview", help="compact typed readout of a verified pair or study")
+    p.add_argument("bundle")
+    p.add_argument("--raw", action="store_true")
+
+    p = sub.add_parser("observer-smoke", help="execute the actual native worker or retain an honest preflight failure")
+    p.add_argument("image")
+    p.add_argument("--model", required=True)
+    p.add_argument("--model-sha256")
+    p.add_argument("--timeout", type=float, default=90.)
+    p.add_argument("--out", required=True)
+
+    p = sub.add_parser("workspace", help="prepare portraits, import independent label revisions, freeze a study")
+    w = p.add_subparsers(dest="workspace_command", required=True)
+    q = w.add_parser("prepare"); q.add_argument("spec"); q.add_argument("--out", required=True)
+    q = w.add_parser("import"); q.add_argument("workspace"); q.add_argument("reference"); q.add_argument("--case-id", required=True)
+    q = w.add_parser("status"); q.add_argument("workspace")
+    q = w.add_parser("freeze"); q.add_argument("workspace"); q.add_argument("--out", required=True)
+
+    p = sub.add_parser("milestone-lab", help="Wave10 end-to-end consolidation and empirical acceptance controls")
+    p.add_argument("--out", required=True)
+    p.add_argument("--seed", type=int, default=31091)
     return parser
 
 
@@ -253,6 +275,15 @@ def _analyze(args: argparse.Namespace) -> dict:
         from .observation.acquisition import load_group
         acquisition = (load_group(args.acquisition_a), load_group(args.acquisition_b))
     calibration = None
+    qualification = None
+    if getattr(args, "qualification", None):
+        if args.localization_calibration:
+            raise ObservationError("choose a complete qualification OR a research calibration, not both")
+        from .observation.deployment import ValidatedQualification
+        qualification = ValidatedQualification.from_directory(args.qualification)
+        calibration = qualification.calibration
+        if not args.domain:
+            args.domain = qualification.report["domain"]
     if args.localization_calibration:
         from .observation.bias import load_localization_calibration
         calibration = load_localization_calibration(read_json(args.localization_calibration))
@@ -260,7 +291,7 @@ def _analyze(args: argparse.Namespace) -> dict:
             raise ObservationError("calibrated analysis requires --domain and query groups (or complete measured source groups)")
     extra = dict(localization_calibration=calibration, query_groups=tuple(args.query_groups or ("", "")), domain=args.domain,
                  query_lineages=(tuple(args.lineage_a), tuple(args.lineage_b)),
-                 query_strata=tuple(args.query_strata or ("", "")), acquisition_groups=acquisition)
+                 query_strata=tuple(args.query_strata or ("", "")), acquisition_groups=acquisition, qualification_evidence=qualification)
     if obs_a is not None and obs_b is not None:
         result = FacialInstrument(config, **extra).run(image_a, image_b, obs_a, obs_b)
     else:
@@ -347,7 +378,12 @@ def _replay(args: argparse.Namespace) -> dict:
     if evidence.get("measured_acquisition") is not None:
         from .observation.acquisition import load_group_files
         acquisition = tuple(load_group_files(root, f"acquisition_{n}_") for n in ("a", "b"))
+    qualification = None
+    if evidence.get("empirical_admission", {}).get("format") == "facemath.validated_qualification_link.v10":
+        from .observation.deployment import load_snapshot
+        qualification = load_snapshot(root / "qualification_snapshot.zip")
     result = FacialInstrument(config, localization_calibration=calibration, acquisition_groups=acquisition,
+        qualification_evidence=qualification,
         query_groups=tuple(envelope["query_groups"]) if envelope else ("", ""),
         query_lineages=tuple(tuple(x) for x in envelope.get("query_lineages", ((), ()))) if envelope else ((), ()),
         domain=envelope["domain"] if envelope else "").run(
@@ -356,6 +392,8 @@ def _replay(args: argparse.Namespace) -> dict:
         Observation.from_dict(observations["b"]),
     )
     from .observation.contracts import object_digest
+    if object_digest(result.evidence().get("empirical_admission")) != object_digest(evidence.get("empirical_admission")):
+        raise ObservationError("replayed empirical admission differs")
     if object_digest(result.evidence().get("measured_acquisition")) != object_digest(evidence.get("measured_acquisition")):
         raise ObservationError("replayed source-pixel acquisition record differs")
     if object_digest(result.evidence().get("intrinsic_profile")) != object_digest(evidence.get("intrinsic_profile")):
@@ -416,6 +454,26 @@ def _session_summary(status: dict, directory: str | Path) -> dict:
 
 
 def execute(args: argparse.Namespace) -> dict:
+    if args.command == "overview":
+        from .observation.readout import inspect_readout
+        return inspect_readout(args.bundle)
+    if args.command == "observer-smoke":
+        from .observation.native_check import native_smoke
+        return native_smoke(args.image, args.model, args.out, timeout_seconds=args.timeout, expected_sha256=args.model_sha256)
+    if args.command == "workspace":
+        from .observation.workspace import prepare_workspace, import_reference, workspace_status, freeze_workspace
+        if args.workspace_command == "prepare":
+            root = prepare_workspace(args.spec, args.out)
+            return {"workspace": str(root), **workspace_status(root)}
+        if args.workspace_command == "import":
+            return import_reference(args.workspace, args.reference, args.case_id)
+        if args.workspace_command == "status":
+            return workspace_status(args.workspace)
+        study = freeze_workspace(args.workspace, args.out)
+        return {"study": str(study.root), "study_sha256": study.digest, "inference_executed": False}
+    if args.command == "milestone-lab":
+        from .observation.milestone_lab import run_milestone_laboratory
+        return run_milestone_laboratory(args.out, seed=args.seed)
     if args.command == "acquisition-group":
         from .observation.acquisition import policy_from_document, group_from_spec, write_group
         group = group_from_spec(args.spec, policy_from_document(read_json(args.policy)))
@@ -473,6 +531,9 @@ def execute(args: argparse.Namespace) -> dict:
             from .observation.study_runner import verify_session
             return _session_summary(verify_session(root), root)
         kind = read_json(root / "manifest.json").get("format")
+        if kind == "facemath.native_smoke_bundle.v10":
+            from .observation.native_check import verify_smoke
+            return verify_smoke(root)
         if kind == "facemath.acquisition_group_bundle.v9":
             from .observation.acquisition import load_group
             group = load_group(root)
@@ -614,9 +675,22 @@ def main(argv: list[str] | None = None) -> None:
     try:
         result = execute(args)
     except (ObservationError, ProviderUnavailable, OSError, KeyError, json.JSONDecodeError) as exc:
+        if hasattr(exc, "journal_jsonl") and getattr(args, "out", None):
+            journal_path = Path(str(args.out) + ".failure.events.jsonl")
+            try:
+                journal_path.parent.mkdir(parents=True, exist_ok=True)
+                with journal_path.open("x", encoding="utf-8") as stream:
+                    stream.write(exc.journal_jsonl)
+                print(f"Actual partial journal: {journal_path}", file=sys.stderr)
+            except OSError as journal_error:
+                print(f"Journal was not overwritten: {journal_error}", file=sys.stderr)
         print(f"FACEMATH: {exc}", file=sys.stderr)
         raise SystemExit(2) from None
-    print(json.dumps(result, indent=2, allow_nan=False))
+    if args.command == "overview" and not args.raw:
+        from .observation.readout import terminal_readout
+        print(terminal_readout(result))
+    else:
+        print(json.dumps(result, indent=2, allow_nan=False))
 
 
 if __name__ == "__main__":

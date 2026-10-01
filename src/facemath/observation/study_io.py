@@ -82,7 +82,9 @@ def finalize_session(session_path: str | Path, destination: str | Path) -> Path:
         write_json_new(temp / "localization_calibration.json", calibration.to_dict())
         np.savez_compressed(temp / "arrays.npz", **arrays)
         write_json_new(temp / "environment.json", environment())
-        (temp / "report.html").write_text(render_study_report(report), encoding="utf-8")
+        from .readout import admission_panel
+        html = render_study_report(report).replace("</header>", "</header>" + admission_panel(report.get("empirical_admission")), 1)
+        (temp / "report.html").write_text(html, encoding="utf-8")
         journal.record("execution.complete", {"qualification_sha256": report["content_sha256"]})
         (temp / "events.jsonl").write_text(journal.jsonl(), encoding="utf-8")
         manifest = {"format": "facemath.qualification_bundle.v5", "study_sha256": study.digest,

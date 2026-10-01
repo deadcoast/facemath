@@ -1,0 +1,206 @@
+COMMAND ['/opt/pyvenv/bin/python', '/mnt/data/facemath_wave_10/scripts/milestone_numerical_controls.py', '--out', '/mnt/data/facemath_wave_10/evidence/wave10/numerical_controls']
+{
+  "format": "facemath.consolidated_controls.v10",
+  "analytic_checks": {
+    "jaw_response_monotone": true,
+    "similarity_invariance": true,
+    "unrelated_crossfade_rank1": true,
+    "null_not_similarity_evidence": true
+  },
+  "mixed_radius": {
+    "format": "facemath.mixed_source_radius_controls.v8",
+    "kind": "analytic_and_synthetic_NOT_HUMAN",
+    "seed": 28801,
+    "sampled_shape_pairs": 1024,
+    "scalar_relation_checks": 262144,
+    "sampled_relation_violations": 0,
+    "sampled_shape_violations": 0,
+    "shape_bound": {
+      "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+      "observed_rms": 0.04999972298708903,
+      "reference_set_center_rms": 0.04999972298708903,
+      "lower": 0.02428640423154512,
+      "upper": 0.06634270166002348,
+      "available": true,
+      "reason": "bounded",
+      "distance_matrix_lower": 0.0233635065375299,
+      "quotient_lipschitz_lower": 0.024286404231573543,
+      "quotient_lipschitz_upper": 0.07571304174260451,
+      "candidate_rotation_upper": 0.06634270165999506,
+      "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+      "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+      "arrays": [
+        "intrinsic_shape_deviation_radii",
+        "intrinsic_shape_candidate_rotation"
+      ]
+    },
+    "circle_counterexample": {
+      "source_radii": [
+        1.0,
+        3.0
+      ],
+      "admissible_witness_gap": 1.2,
+      "correct_source_specific_upper": 1.2000000000000173,
+      "unsafe_smaller_single_radius_upper": 0.8000000000000143,
+      "overconservative_larger_single_radius_upper": 1.4000000000000201
+    },
+    "arrays": {
+      "source_centers": {
+        "shape": [
+          2,
+          8,
+          2
+        ],
+        "dtype": "float64",
+        "sha256": "495101ca8266efbfe6c6ec02051ad331b4facb55d192099ba8e9d6f5500f3b65"
+      },
+      "source_covariance": {
+        "shape": [
+          2,
+          16,
+          16
+        ],
+        "dtype": "float64",
+        "sha256": "4b9e0e415291ef7249ba90a44a2035b35176fa408819776f12d0db693e119d8a"
+      },
+      "source_factors": {
+        "shape": [
+          2,
+          8,
+          2,
+          16
+        ],
+        "dtype": "float64",
+        "sha256": "5267f31980069c8c950c2c68af915e7c2e684a2e94a1c04f883a7f1abeb6eaf0"
+      },
+      "source_radii": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64",
+        "sha256": "c70124d34f3c6fd97aefa319957e0d71ba85b80c664ac9ecede6785f615b2c05"
+      },
+      "latent_draws": {
+        "shape": [
+          2,
+          1024,
+          16
+        ],
+        "dtype": "float64",
+        "sha256": "5d2fc9d471bd73b62a714ec27282a384b6bd2e756c1626cdc4d382503cdc1cce"
+      },
+      "shape_draws": {
+        "shape": [
+          2,
+          1024,
+          8,
+          2
+        ],
+        "dtype": "float64",
+        "sha256": "9a3125eae6b9e98a23bc51e8ef747969ecbc09b771fa96270f68e9f828dc4cbd"
+      },
+      "exact_relation_values": {
+        "shape": [
+          2,
+          1024,
+          256
+        ],
+        "dtype": "float64",
+        "sha256": "f3eb81f50548496e62aff442b4d7af11ce2bafd1b19459cf3df4a39d62931f69"
+      },
+      "exact_relation_gaps": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "float64",
+        "sha256": "b1143d6885c1e2b80537a65a78d2ebcfe2adbaea7051d8cbb9c9623ec72db4e1"
+      },
+      "gap_lower": {
+        "shape": [
+          256
+        ],
+        "dtype": "float64",
+        "sha256": "59877682e5827cb684b14e417bbbb4c3f1408a55295966ab0174787e90593798"
+      },
+      "gap_upper": {
+        "shape": [
+          256
+        ],
+        "dtype": "float64",
+        "sha256": "288cf913f6e51b7741b9286e63a91b8a59ac107aeeca2056e5735fad7e5484e8"
+      },
+      "gap_available": {
+        "shape": [
+          256
+        ],
+        "dtype": "bool",
+        "sha256": "f9484b9c5a5151fdd263b1925dc6dbeeb7b7d99b60bd555a5fbfbf492661e1ad"
+      },
+      "exact_refitted_shape": {
+        "shape": [
+          1024
+        ],
+        "dtype": "float64",
+        "sha256": "51abdd1ab6f338eca9e1605d723a3a3b1f304ceb9eb2d31d1eba508c9c6979ab"
+      },
+      "shape_bounds": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64",
+        "sha256": "6767f7571242244b7cb9271563d4d473b9fa572413de206a198ec668279d97f9"
+      },
+      "circle_delta": {
+        "shape": [
+          1,
+          2
+        ],
+        "dtype": "float64",
+        "sha256": "739236a6acf2507c9b12f40d51728d57ac9fc90c4927a12ee6238723550da2ee"
+      },
+      "circle_covariances": {
+        "shape": [
+          2,
+          1,
+          2,
+          2
+        ],
+        "dtype": "float64",
+        "sha256": "aa3c969a6f11a9c88dd545634528083a34bb007955525500d38eef997ac2e99a"
+      },
+      "circle_source_radii": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64",
+        "sha256": "c3c7e70f0287dbcf738f14e45cc97cb1ed6af16a1701d1895a7c1449ab457cf6"
+      },
+      "circle_witness": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64",
+        "sha256": "56dc728216c1976bd451867d21bbe94b9d2ddfc49e3d5de51f4f3def11b7089b"
+      }
+    },
+    "limit": "sampling tests the analytic outer bounds; it is not proof by sampling or real reference calibration"
+  },
+  "pixel_controls": {
+    "format": "facemath.measured_source_controls.v9",
+    "source_only": true,
+    "outside_aperture_features_identical": true,
+    "single_source_category": "pixel_clear",
+    "whole_group_category": "pixel_smooth",
+    "noise_category": "pixel_clear",
+    "noise_detail": 0.37576088727298096,
+    "smoothed_noise_category": "__unmatched__",
+    "smoothed_noise_detail": 0.061907951584462176,
+    "flat_category": "__unmatched__",
+    "flat_detail": 0.0,
+    "overlapping_rule_category": "__ambiguous__",
+    "noise_counterexample": "high-frequency noise is not usable anatomical detail; this routing is NOT a face-quality detector",
+    "no_predictions_or_reference_labels_consumed": true
+  },
+  "scope": "analytic and synthetic source/shape controls, not human observation validation"
+}

@@ -1,0 +1,538 @@
+COMMAND ['/opt/pyvenv/bin/python', '-m', 'pytest', '-q', '--junitxml=/mnt/data/wave10_work/logs/source_first.xml']
+........................................................................ [  7%]
+........................................................................ [ 15%]
+...........................................................FFFF....EFF.E [ 22%]
+.EE....................EEEE............................................. [ 30%]
+.......s................................................................ [ 38%]
+........................................................................ [ 45%]
+........................................................................ [ 53%]
+........................................................................ [ 61%]
+........................................................................ [ 68%]
+........................................................................ [ 76%]
+........................................................................ [ 84%]
+........................................................................ [ 91%]
+........................................................................ [ 99%]
+......                                                                   [100%]
+==================================== ERRORS ====================================
+_____________ ERROR at setup of test_demo_verify_replay_roundtrip ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_demo_verify_replay_roundt0')
+
+    @pytest.fixture
+    def demo(tmp_path):
+        destination = tmp_path / 'demo'
+>       command('demo', '--out', destination, '--size', 96, '--draws', 4, '--no-flow')
+
+tests/test_wave3_cli.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_wave3_cli.py:23: in command
+    return execute(build_parser().parse_args([str(a) for a in argv]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/cli.py:520: in execute
+    output = write_bundle(result, args.out, image_a, image_b)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/artifacts.py:148: in write_bundle
+    (temp / "summary.json").write_text(json.dumps(pair_readout(result.evidence()), indent=2, allow_nan=False), encoding="utf-8")
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+evidence = {'configuration': {'canvas_size': 96, 'edge_gradient_floor': 0.025, 'edge_maximum_ambiguity': 0.85, 'edge_radius_ipd':...n': {'passed': False, 'scope': 'research analysis; empirical acceptance not asserted', 'status': 'not_requested'}, ...}
+
+    def pair_readout(evidence: dict) -> dict:
+        intrinsic = evidence.get("intrinsic_profile") or {}
+        family_rows = []
+        for family in intrinsic.get("families", []):
+            fraction = family["within_tolerance_fraction_bounds"]
+>           family_rows.append({**family, "within_tolerance_percent_bounds": [100 * x for x in fraction]})
+                                                                                               ^^^^^^^^
+E           TypeError: 'NoneType' object is not iterable
+
+src/facemath/observation/readout.py:17: TypeError
+_____________ ERROR at setup of test_existing_run_not_overwritten ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_existing_run_not_overwrit0')
+
+    @pytest.fixture
+    def demo(tmp_path):
+        destination = tmp_path / 'demo'
+>       command('demo', '--out', destination, '--size', 96, '--draws', 4, '--no-flow')
+
+tests/test_wave3_cli.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_wave3_cli.py:23: in command
+    return execute(build_parser().parse_args([str(a) for a in argv]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/cli.py:520: in execute
+    output = write_bundle(result, args.out, image_a, image_b)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/artifacts.py:148: in write_bundle
+    (temp / "summary.json").write_text(json.dumps(pair_readout(result.evidence()), indent=2, allow_nan=False), encoding="utf-8")
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+evidence = {'configuration': {'canvas_size': 96, 'edge_gradient_floor': 0.025, 'edge_maximum_ambiguity': 0.85, 'edge_radius_ipd':...n': {'passed': False, 'scope': 'research analysis; empirical acceptance not asserted', 'status': 'not_requested'}, ...}
+
+    def pair_readout(evidence: dict) -> dict:
+        intrinsic = evidence.get("intrinsic_profile") or {}
+        family_rows = []
+        for family in intrinsic.get("families", []):
+            fraction = family["within_tolerance_fraction_bounds"]
+>           family_rows.append({**family, "within_tolerance_percent_bounds": [100 * x for x in fraction]})
+                                                                                               ^^^^^^^^
+E           TypeError: 'NoneType' object is not iterable
+
+src/facemath/observation/readout.py:17: TypeError
+_ ERROR at setup of test_cli_calibration_reads_verified_metric_and_same_recipe _
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_cli_calibration_reads_ver0')
+
+    @pytest.fixture
+    def demo(tmp_path):
+        destination = tmp_path / 'demo'
+>       command('demo', '--out', destination, '--size', 96, '--draws', 4, '--no-flow')
+
+tests/test_wave3_cli.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_wave3_cli.py:23: in command
+    return execute(build_parser().parse_args([str(a) for a in argv]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/cli.py:520: in execute
+    output = write_bundle(result, args.out, image_a, image_b)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/artifacts.py:148: in write_bundle
+    (temp / "summary.json").write_text(json.dumps(pair_readout(result.evidence()), indent=2, allow_nan=False), encoding="utf-8")
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+evidence = {'configuration': {'canvas_size': 96, 'edge_gradient_floor': 0.025, 'edge_maximum_ambiguity': 0.85, 'edge_radius_ipd':...n': {'passed': False, 'scope': 'research analysis; empirical acceptance not asserted', 'status': 'not_requested'}, ...}
+
+    def pair_readout(evidence: dict) -> dict:
+        intrinsic = evidence.get("intrinsic_profile") or {}
+        family_rows = []
+        for family in intrinsic.get("families", []):
+            fraction = family["within_tolerance_fraction_bounds"]
+>           family_rows.append({**family, "within_tolerance_percent_bounds": [100 * x for x in fraction]})
+                                                                                               ^^^^^^^^
+E           TypeError: 'NoneType' object is not iterable
+
+src/facemath/observation/readout.py:17: TypeError
+___ ERROR at setup of test_numeric_runtime_is_exposed_in_bundle_environment ____
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_numeric_runtime_is_expose0')
+
+    @pytest.fixture
+    def demo(tmp_path):
+        destination = tmp_path / 'demo'
+>       command('demo', '--out', destination, '--size', 96, '--draws', 4, '--no-flow')
+
+tests/test_wave3_cli.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_wave3_cli.py:23: in command
+    return execute(build_parser().parse_args([str(a) for a in argv]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/cli.py:520: in execute
+    output = write_bundle(result, args.out, image_a, image_b)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/artifacts.py:148: in write_bundle
+    (temp / "summary.json").write_text(json.dumps(pair_readout(result.evidence()), indent=2, allow_nan=False), encoding="utf-8")
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+evidence = {'configuration': {'canvas_size': 96, 'edge_gradient_floor': 0.025, 'edge_maximum_ambiguity': 0.85, 'edge_radius_ipd':...n': {'passed': False, 'scope': 'research analysis; empirical acceptance not asserted', 'status': 'not_requested'}, ...}
+
+    def pair_readout(evidence: dict) -> dict:
+        intrinsic = evidence.get("intrinsic_profile") or {}
+        family_rows = []
+        for family in intrinsic.get("families", []):
+            fraction = family["within_tolerance_fraction_bounds"]
+>           family_rows.append({**family, "within_tolerance_percent_bounds": [100 * x for x in fraction]})
+                                                                                               ^^^^^^^^
+E           TypeError: 'NoneType' object is not iterable
+
+src/facemath/observation/readout.py:17: TypeError
+__ ERROR at setup of test_ingestion_retains_source_manifest_and_exact_values ___
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_ingestion_retains_source_0')
+
+    @pytest.fixture
+    def bundles(tmp_path):
+        config = InstrumentConfig(canvas_size=96, eye_span_px=32, uncertainty_draws=4, enable_flow=False)
+        output = []
+        for i in range(3):
+            p = phantom_points()
+            q = p.copy()
+            q[19, 0] -= 2 * (i + 1)
+            a, b = render_phantom(p, seed=10 + i), render_phantom(q, seed=20 + i)
+            result = FacialInstrument(config).run(a, b, phantom_observation(a, p), phantom_observation(b, q))
+>           output.append(str(write_bundle(result, tmp_path / f'run{i}', a, b)))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_wave3_cohort_ingestion.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/artifacts.py:148: in write_bundle
+    (temp / "summary.json").write_text(json.dumps(pair_readout(result.evidence()), indent=2, allow_nan=False), encoding="utf-8")
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+evidence = {'configuration': {'canvas_size': 96, 'edge_gradient_floor': 0.025, 'edge_maximum_ambiguity': 0.85, 'edge_radius_ipd':...n': {'passed': False, 'scope': 'research analysis; empirical acceptance not asserted', 'status': 'not_requested'}, ...}
+
+    def pair_readout(evidence: dict) -> dict:
+        intrinsic = evidence.get("intrinsic_profile") or {}
+        family_rows = []
+        for family in intrinsic.get("families", []):
+            fraction = family["within_tolerance_fraction_bounds"]
+>           family_rows.append({**family, "within_tolerance_percent_bounds": [100 * x for x in fraction]})
+                                                                                               ^^^^^^^^
+E           TypeError: 'NoneType' object is not iterable
+
+src/facemath/observation/readout.py:17: TypeError
+_ ERROR at setup of test_synthetic_evidence_cannot_be_relabeled_as_human_population _
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_synthetic_evidence_cannot0')
+
+    @pytest.fixture
+    def bundles(tmp_path):
+        config = InstrumentConfig(canvas_size=96, eye_span_px=32, uncertainty_draws=4, enable_flow=False)
+        output = []
+        for i in range(3):
+            p = phantom_points()
+            q = p.copy()
+            q[19, 0] -= 2 * (i + 1)
+            a, b = render_phantom(p, seed=10 + i), render_phantom(q, seed=20 + i)
+            result = FacialInstrument(config).run(a, b, phantom_observation(a, p), phantom_observation(b, q))
+>           output.append(str(write_bundle(result, tmp_path / f'run{i}', a, b)))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_wave3_cohort_ingestion.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/artifacts.py:148: in write_bundle
+    (temp / "summary.json").write_text(json.dumps(pair_readout(result.evidence()), indent=2, allow_nan=False), encoding="utf-8")
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+evidence = {'configuration': {'canvas_size': 96, 'edge_gradient_floor': 0.025, 'edge_maximum_ambiguity': 0.85, 'edge_radius_ipd':...n': {'passed': False, 'scope': 'research analysis; empirical acceptance not asserted', 'status': 'not_requested'}, ...}
+
+    def pair_readout(evidence: dict) -> dict:
+        intrinsic = evidence.get("intrinsic_profile") or {}
+        family_rows = []
+        for family in intrinsic.get("families", []):
+            fraction = family["within_tolerance_fraction_bounds"]
+>           family_rows.append({**family, "within_tolerance_percent_bounds": [100 * x for x in fraction]})
+                                                                                               ^^^^^^^^
+E           TypeError: 'NoneType' object is not iterable
+
+src/facemath/observation/readout.py:17: TypeError
+______ ERROR at setup of test_missing_metric_does_not_silently_drop_rows _______
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_missing_metric_does_not_s0')
+
+    @pytest.fixture
+    def bundles(tmp_path):
+        config = InstrumentConfig(canvas_size=96, eye_span_px=32, uncertainty_draws=4, enable_flow=False)
+        output = []
+        for i in range(3):
+            p = phantom_points()
+            q = p.copy()
+            q[19, 0] -= 2 * (i + 1)
+            a, b = render_phantom(p, seed=10 + i), render_phantom(q, seed=20 + i)
+            result = FacialInstrument(config).run(a, b, phantom_observation(a, p), phantom_observation(b, q))
+>           output.append(str(write_bundle(result, tmp_path / f'run{i}', a, b)))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_wave3_cohort_ingestion.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/artifacts.py:148: in write_bundle
+    (temp / "summary.json").write_text(json.dumps(pair_readout(result.evidence()), indent=2, allow_nan=False), encoding="utf-8")
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+evidence = {'configuration': {'canvas_size': 96, 'edge_gradient_floor': 0.025, 'edge_maximum_ambiguity': 0.85, 'edge_radius_ipd':...n': {'passed': False, 'scope': 'research analysis; empirical acceptance not asserted', 'status': 'not_requested'}, ...}
+
+    def pair_readout(evidence: dict) -> dict:
+        intrinsic = evidence.get("intrinsic_profile") or {}
+        family_rows = []
+        for family in intrinsic.get("families", []):
+            fraction = family["within_tolerance_fraction_bounds"]
+>           family_rows.append({**family, "within_tolerance_percent_bounds": [100 * x for x in fraction]})
+                                                                                               ^^^^^^^^
+E           TypeError: 'NoneType' object is not iterable
+
+src/facemath/observation/readout.py:17: TypeError
+__ ERROR at setup of test_repeated_bundle_does_not_become_independent_sample ___
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_repeated_bundle_does_not_0')
+
+    @pytest.fixture
+    def bundles(tmp_path):
+        config = InstrumentConfig(canvas_size=96, eye_span_px=32, uncertainty_draws=4, enable_flow=False)
+        output = []
+        for i in range(3):
+            p = phantom_points()
+            q = p.copy()
+            q[19, 0] -= 2 * (i + 1)
+            a, b = render_phantom(p, seed=10 + i), render_phantom(q, seed=20 + i)
+            result = FacialInstrument(config).run(a, b, phantom_observation(a, p), phantom_observation(b, q))
+>           output.append(str(write_bundle(result, tmp_path / f'run{i}', a, b)))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_wave3_cohort_ingestion.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/artifacts.py:148: in write_bundle
+    (temp / "summary.json").write_text(json.dumps(pair_readout(result.evidence()), indent=2, allow_nan=False), encoding="utf-8")
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+evidence = {'configuration': {'canvas_size': 96, 'edge_gradient_floor': 0.025, 'edge_maximum_ambiguity': 0.85, 'edge_radius_ipd':...n': {'passed': False, 'scope': 'research analysis; empirical acceptance not asserted', 'status': 'not_requested'}, ...}
+
+    def pair_readout(evidence: dict) -> dict:
+        intrinsic = evidence.get("intrinsic_profile") or {}
+        family_rows = []
+        for family in intrinsic.get("families", []):
+            fraction = family["within_tolerance_fraction_bounds"]
+>           family_rows.append({**family, "within_tolerance_percent_bounds": [100 * x for x in fraction]})
+                                                                                               ^^^^^^^^
+E           TypeError: 'NoneType' object is not iterable
+
+src/facemath/observation/readout.py:17: TypeError
+=================================== FAILURES ===================================
+______ test_bundle_contains_verified_raw_arrays_and_original_observations ______
+
+result = (InstrumentResult(state=CanonicalState(observation_a=Observation(image_sha256='25437421df5b41d06edfd3815712d5c765f74e5...0],
+        ...,
+        [63, 63, 63],
+        [55, 55, 55],
+        [51, 51, 51]]], shape=(224, 256, 3), dtype=uint8))
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_bundle_contains_verified_0')
+
+    def test_bundle_contains_verified_raw_arrays_and_original_observations(result,tmp_path):
+>       out=publish(result,tmp_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_wave3_artifacts.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_wave3_artifacts.py:24: in publish
+    return write_bundle(r,tmp_path/'run',a,b)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/artifacts.py:148: in write_bundle
+    (temp / "summary.json").write_text(json.dumps(pair_readout(result.evidence()), indent=2, allow_nan=False), encoding="utf-8")
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+evidence = {'configuration': {'canvas_size': 96, 'edge_gradient_floor': 0.025, 'edge_maximum_ambiguity': 0.85, 'edge_radius_ipd':...n': {'passed': False, 'scope': 'research analysis; empirical acceptance not asserted', 'status': 'not_requested'}, ...}
+
+    def pair_readout(evidence: dict) -> dict:
+        intrinsic = evidence.get("intrinsic_profile") or {}
+        family_rows = []
+        for family in intrinsic.get("families", []):
+            fraction = family["within_tolerance_fraction_bounds"]
+>           family_rows.append({**family, "within_tolerance_percent_bounds": [100 * x for x in fraction]})
+                                                                                               ^^^^^^^^
+E           TypeError: 'NoneType' object is not iterable
+
+src/facemath/observation/readout.py:17: TypeError
+__________________________ test_bundle_is_create_only __________________________
+
+result = (InstrumentResult(state=CanonicalState(observation_a=Observation(image_sha256='25437421df5b41d06edfd3815712d5c765f74e5...0],
+        ...,
+        [63, 63, 63],
+        [55, 55, 55],
+        [51, 51, 51]]], shape=(224, 256, 3), dtype=uint8))
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_bundle_is_create_only0')
+
+    def test_bundle_is_create_only(result,tmp_path):
+>       out=publish(result,tmp_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_wave3_artifacts.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_wave3_artifacts.py:24: in publish
+    return write_bundle(r,tmp_path/'run',a,b)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/artifacts.py:148: in write_bundle
+    (temp / "summary.json").write_text(json.dumps(pair_readout(result.evidence()), indent=2, allow_nan=False), encoding="utf-8")
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+evidence = {'configuration': {'canvas_size': 96, 'edge_gradient_floor': 0.025, 'edge_maximum_ambiguity': 0.85, 'edge_radius_ipd':...n': {'passed': False, 'scope': 'research analysis; empirical acceptance not asserted', 'status': 'not_requested'}, ...}
+
+    def pair_readout(evidence: dict) -> dict:
+        intrinsic = evidence.get("intrinsic_profile") or {}
+        family_rows = []
+        for family in intrinsic.get("families", []):
+            fraction = family["within_tolerance_fraction_bounds"]
+>           family_rows.append({**family, "within_tolerance_percent_bounds": [100 * x for x in fraction]})
+                                                                                               ^^^^^^^^
+E           TypeError: 'NoneType' object is not iterable
+
+src/facemath/observation/readout.py:17: TypeError
+_______________________ test_byte_tampering_is_detected ________________________
+
+result = (InstrumentResult(state=CanonicalState(observation_a=Observation(image_sha256='25437421df5b41d06edfd3815712d5c765f74e5...0],
+        ...,
+        [63, 63, 63],
+        [55, 55, 55],
+        [51, 51, 51]]], shape=(224, 256, 3), dtype=uint8))
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_byte_tampering_is_detecte0')
+
+    def test_byte_tampering_is_detected(result,tmp_path):
+>       out=publish(result,tmp_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_wave3_artifacts.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_wave3_artifacts.py:24: in publish
+    return write_bundle(r,tmp_path/'run',a,b)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/artifacts.py:148: in write_bundle
+    (temp / "summary.json").write_text(json.dumps(pair_readout(result.evidence()), indent=2, allow_nan=False), encoding="utf-8")
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+evidence = {'configuration': {'canvas_size': 96, 'edge_gradient_floor': 0.025, 'edge_maximum_ambiguity': 0.85, 'edge_radius_ipd':...n': {'passed': False, 'scope': 'research analysis; empirical acceptance not asserted', 'status': 'not_requested'}, ...}
+
+    def pair_readout(evidence: dict) -> dict:
+        intrinsic = evidence.get("intrinsic_profile") or {}
+        family_rows = []
+        for family in intrinsic.get("families", []):
+            fraction = family["within_tolerance_fraction_bounds"]
+>           family_rows.append({**family, "within_tolerance_percent_bounds": [100 * x for x in fraction]})
+                                                                                               ^^^^^^^^
+E           TypeError: 'NoneType' object is not iterable
+
+src/facemath/observation/readout.py:17: TypeError
+______ test_manifest_path_traversal_is_rejected_even_with_recomputed_hash ______
+
+result = (InstrumentResult(state=CanonicalState(observation_a=Observation(image_sha256='25437421df5b41d06edfd3815712d5c765f74e5...0],
+        ...,
+        [63, 63, 63],
+        [55, 55, 55],
+        [51, 51, 51]]], shape=(224, 256, 3), dtype=uint8))
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_manifest_path_traversal_i0')
+
+    def test_manifest_path_traversal_is_rejected_even_with_recomputed_hash(result,tmp_path):
+>       out=publish(result,tmp_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_wave3_artifacts.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_wave3_artifacts.py:24: in publish
+    return write_bundle(r,tmp_path/'run',a,b)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/artifacts.py:148: in write_bundle
+    (temp / "summary.json").write_text(json.dumps(pair_readout(result.evidence()), indent=2, allow_nan=False), encoding="utf-8")
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+evidence = {'configuration': {'canvas_size': 96, 'edge_gradient_floor': 0.025, 'edge_maximum_ambiguity': 0.85, 'edge_radius_ipd':...n': {'passed': False, 'scope': 'research analysis; empirical acceptance not asserted', 'status': 'not_requested'}, ...}
+
+    def pair_readout(evidence: dict) -> dict:
+        intrinsic = evidence.get("intrinsic_profile") or {}
+        family_rows = []
+        for family in intrinsic.get("families", []):
+            fraction = family["within_tolerance_fraction_bounds"]
+>           family_rows.append({**family, "within_tolerance_percent_bounds": [100 * x for x in fraction]})
+                                                                                               ^^^^^^^^
+E           TypeError: 'NoneType' object is not iterable
+
+src/facemath/observation/readout.py:17: TypeError
+___________________ test_cli_tolerance_reaches_shared_recipe ___________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_cli_tolerance_reaches_sha0')
+
+    def test_cli_tolerance_reaches_shared_recipe(tmp_path):
+        out = tmp_path / 'custom'
+>       command('demo', '--out', out, '--size', 96, '--draws', 4, '--no-flow', '--tolerance', '.12')
+
+tests/test_wave3_cli.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_wave3_cli.py:23: in command
+    return execute(build_parser().parse_args([str(a) for a in argv]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/cli.py:520: in execute
+    output = write_bundle(result, args.out, image_a, image_b)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/artifacts.py:148: in write_bundle
+    (temp / "summary.json").write_text(json.dumps(pair_readout(result.evidence()), indent=2, allow_nan=False), encoding="utf-8")
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+evidence = {'configuration': {'canvas_size': 96, 'edge_gradient_floor': 0.025, 'edge_maximum_ambiguity': 0.85, 'edge_radius_ipd':...n': {'passed': False, 'scope': 'research analysis; empirical acceptance not asserted', 'status': 'not_requested'}, ...}
+
+    def pair_readout(evidence: dict) -> dict:
+        intrinsic = evidence.get("intrinsic_profile") or {}
+        family_rows = []
+        for family in intrinsic.get("families", []):
+            fraction = family["within_tolerance_fraction_bounds"]
+>           family_rows.append({**family, "within_tolerance_percent_bounds": [100 * x for x in fraction]})
+                                                                                               ^^^^^^^^
+E           TypeError: 'NoneType' object is not iterable
+
+src/facemath/observation/readout.py:17: TypeError
+______________ test_annotation_import_then_analyze_is_image_bound ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_annotation_import_then_an0')
+
+    def test_annotation_import_then_analyze_is_image_bound(tmp_path):
+        a = phantom_points()
+        b = a.copy()
+        b[19, 0] -= 5
+        paths = []
+        observations = []
+        for name, points in [('a', a), ('b', b)]:
+            image_path = tmp_path / f'{name}.png'
+            cv2.imwrite(str(image_path), cv2.cvtColor(render_phantom(points), cv2.COLOR_RGB2BGR))
+            annotation = tmp_path / f'{name}_annotation.json'
+            annotation.write_text(json.dumps({'xy': points.tolist()}))
+            observation = tmp_path / f'{name}_observation.json'
+            result = command('import-annotation', image_path, annotation, '--annotation-id', f'test-{name}',
+                             '--sigma', .25, '--out', observation)
+            assert result['provider'] == 'explicit_manual_annotation'
+            paths.append(image_path)
+            observations.append(observation)
+>       result = command('analyze', *paths, '--observation-a', observations[0], '--observation-b', observations[1],
+                         '--out', tmp_path / 'analyzed', '--size', 96, '--draws', 4, '--no-flow')
+
+tests/test_wave3_cli.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_wave3_cli.py:23: in command
+    return execute(build_parser().parse_args([str(a) for a in argv]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/cli.py:487: in execute
+    return _analyze(args)
+           ^^^^^^^^^^^^^^
+src/facemath/cli.py:313: in _analyze
+    output = write_bundle(result, args.out, image_a, image_b)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/artifacts.py:148: in write_bundle
+    (temp / "summary.json").write_text(json.dumps(pair_readout(result.evidence()), indent=2, allow_nan=False), encoding="utf-8")
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+evidence = {'configuration': {'canvas_size': 96, 'edge_gradient_floor': 0.025, 'edge_maximum_ambiguity': 0.85, 'edge_radius_ipd':...n': {'passed': False, 'scope': 'research analysis; empirical acceptance not asserted', 'status': 'not_requested'}, ...}
+
+    def pair_readout(evidence: dict) -> dict:
+        intrinsic = evidence.get("intrinsic_profile") or {}
+        family_rows = []
+        for family in intrinsic.get("families", []):
+            fraction = family["within_tolerance_fraction_bounds"]
+>           family_rows.append({**family, "within_tolerance_percent_bounds": [100 * x for x in fraction]})
+                                                                                               ^^^^^^^^
+E           TypeError: 'NoneType' object is not iterable
+
+src/facemath/observation/readout.py:17: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_wave3_artifacts.py::test_bundle_contains_verified_raw_arrays_and_original_observations - TypeError: 'NoneType' object is not iterable
+FAILED tests/test_wave3_artifacts.py::test_bundle_is_create_only - TypeError: 'NoneType' object is not iterable
+FAILED tests/test_wave3_artifacts.py::test_byte_tampering_is_detected - TypeError: 'NoneType' object is not iterable
+FAILED tests/test_wave3_artifacts.py::test_manifest_path_traversal_is_rejected_even_with_recomputed_hash - TypeError: 'NoneType' object is not iterable
+FAILED tests/test_wave3_cli.py::test_cli_tolerance_reaches_shared_recipe - TypeError: 'NoneType' object is not iterable
+FAILED tests/test_wave3_cli.py::test_annotation_import_then_analyze_is_image_bound - TypeError: 'NoneType' object is not iterable
+ERROR tests/test_wave3_cli.py::test_demo_verify_replay_roundtrip - TypeError: 'NoneType' object is not iterable
+ERROR tests/test_wave3_cli.py::test_existing_run_not_overwritten - TypeError: 'NoneType' object is not iterable
+ERROR tests/test_wave3_cli.py::test_cli_calibration_reads_verified_metric_and_same_recipe - TypeError: 'NoneType' object is not iterable
+ERROR tests/test_wave3_cli.py::test_numeric_runtime_is_exposed_in_bundle_environment - TypeError: 'NoneType' object is not iterable
+ERROR tests/test_wave3_cohort_ingestion.py::test_ingestion_retains_source_manifest_and_exact_values - TypeError: 'NoneType' object is not iterable
+ERROR tests/test_wave3_cohort_ingestion.py::test_synthetic_evidence_cannot_be_relabeled_as_human_population - TypeError: 'NoneType' object is not iterable
+ERROR tests/test_wave3_cohort_ingestion.py::test_missing_metric_does_not_silently_drop_rows - TypeError: 'NoneType' object is not iterable
+ERROR tests/test_wave3_cohort_ingestion.py::test_repeated_bundle_does_not_become_independent_sample - TypeError: 'NoneType' object is not iterable
+6 failed, 927 passed, 1 skipped, 8 errors in 265.66s (0:04:25)

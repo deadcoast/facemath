@@ -29,6 +29,7 @@ class InstrumentResult:
     localization: LocalizationEnvelope | BiasEnvelope | None = None
     intrinsic: IntrinsicProfile | None = None
     acquisition_groups: tuple[MeasuredGroup, MeasuredGroup] | None = None
+    qualification_evidence: object | None = None
 
     def evidence(self) -> dict:
         return {
@@ -45,6 +46,7 @@ class InstrumentResult:
             "edge_diagnostics": self.edges.summary() if self.edges is not None else None,
             "localization_envelope": self.localization.to_dict() if self.localization is not None else None,
             "intrinsic_profile": self.intrinsic.to_dict() if self.intrinsic is not None else None,
+            "empirical_admission": self.qualification_evidence.summary if self.qualification_evidence is not None else {"status": "not_requested", "passed": False, "scope": "research analysis; empirical acceptance not asserted"},
             "measured_acquisition": [g.to_dict() for g in self.acquisition_groups] if self.acquisition_groups is not None else None,
             "limits": [
                 "2D projected geometry, not identity recognition or proof of 3D shape",
@@ -129,7 +131,8 @@ class FacialInstrument:
                  query_groups: tuple[str, str] = ("", ""), domain: str = "",
                  query_lineages: tuple[tuple[str, ...], tuple[str, ...]] = ((), ()),
                  query_strata: tuple[str, str] = ("", ""),
-                 acquisition_groups: tuple[MeasuredGroup, MeasuredGroup] | None = None) -> None:
+                 acquisition_groups: tuple[MeasuredGroup, MeasuredGroup] | None = None,
+                 qualification_evidence=None) -> None:
         self.config = config or InstrumentConfig()
         self.provider = provider
         self.localization_calibration = localization_calibration
@@ -138,6 +141,9 @@ class FacialInstrument:
         self.domain = domain
         self.query_strata = tuple(query_strata)
         self.acquisition_groups = acquisition_groups
+        self.qualification_evidence = qualification_evidence
+        if qualification_evidence is not None and self.localization_calibration is None:
+            self.localization_calibration = qualification_evidence.calibration
 
     def run(self, image_a: np.ndarray, image_b: np.ndarray,
             observation_a: Observation | None = None,
@@ -154,6 +160,10 @@ class FacialInstrument:
         with journal.step("inputs.validate", {}) as output:
             a, b = rgb_image(image_a), rgb_image(image_b)
             output.update(a_sha256=array_digest(a), b_sha256=array_digest(b), shape_a=list(a.shape), shape_b=list(b.shape))
+        if self.qualification_evidence is not None:
+            with journal.step("admission.require_recomputed_heldout_criteria", self.qualification_evidence.summary) as output:
+                self.qualification_evidence.require_admitted()
+                output.update(passed=True, observer_reexecuted=False)
         from .stratified import StratifiedJointCalibration, BoundStratifiedCalibration
         calibration = self.localization_calibration
         model = calibration.model if isinstance(calibration, BoundStratifiedCalibration) else calibration
@@ -200,6 +210,10 @@ class FacialInstrument:
                     calibration = model
         elif acquisition is not None:
             raise ObservationError("source groups require a measured calibration; use acquisition-group for standalone diagnostics")
+        if self.qualification_evidence is not None:
+            with journal.step("admission.require_disjoint_query_sources", {}) as output:
+                self.qualification_evidence.require_query(acquisition, calibration)
+                output.update(evaluation_sources_excluded=True, scope=self.qualification_evidence.summary["scope"])
         with journal.step("observation.acquire", {"provided_a": observation_a is not None, "provided_b": observation_b is not None}) as output:
             if observation_a is None or observation_b is None:
                 if self.provider is None:
@@ -280,4 +294,4 @@ class FacialInstrument:
                               recipe_sha256=intrinsic.recipe_sha256)
         env = environment()
         journal.record("execution.complete", {"environment": env, "recipe_sha256": state.recipe_sha256})
-        return InstrumentResult(state, field, flow, profile, journal.jsonl(), env, edges, localization, intrinsic, acquisition)
+        return InstrumentResult(state, field, flow, profile, journal.jsonl(), env, edges, localization, intrinsic, acquisition, self.qualification_evidence)

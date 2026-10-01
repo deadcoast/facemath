@@ -1,0 +1,42 @@
+{
+  "format": "facemath.browser_qa.v7",
+  "started_utc": "2026-09-20T09:11:13.204653+00:00",
+  "source": "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair/report.html",
+  "checks": {
+    "retained_mode_and_covariance_inventory": [
+      16,
+      256,
+      8
+    ],
+    "display_operations_preserve_measurements": true,
+    "csv_exact_full_covariance": true,
+    "local_evidence_links": true,
+    "no_horizontal_overflow": true
+  },
+  "viewports": [
+    {
+      "size": {
+        "width": 1440,
+        "height": 1150
+      },
+      "csv_rows": 256,
+      "interactive": true,
+      "screenshot": "desktop_joint.png"
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "csv_rows": 256,
+      "interactive": true,
+      "screenshot": "mobile_joint.png"
+    }
+  ],
+  "loading": "emitted HTML in memory; local file navigation blocked",
+  "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair/report.html\", waiting until \"load\"\n",
+  "errors": [],
+  "remote_requests": [],
+  "finished_utc": "2026-09-20T09:11:26.298873+00:00",
+  "passed": true
+}

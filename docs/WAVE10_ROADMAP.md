@@ -1,0 +1,23 @@
+# Beyond the Wave10 consolidation
+
+## Gate A — actual native observations and independent references
+
+Execute `observer-smoke` with pinned local model/runtime on the intended machine. Preserve every process output and no-face/multi-face outcome. Do not treat model availability as anatomical accuracy. Acquire independently annotated original portraits under an explicit reference8 equivalence/visibility protocol. Use the new workspace and retained revisions rather than untracked spreadsheet coordinates.
+
+Exit evidence: completed frozen native acquisition; source-coordinate localization rows; complete group delivery/coverage; all predeclared empirical criteria evaluated; no substituted synthetic data. A failing study is still a completed experiment, but does not authorize the empirically gated query path.
+
+## Gate B — utility and domain robustness
+
+Evaluate interval width, unavailable normalization, reference-rater disagreement and conditional acquisition shifts on prespecified studies. Report finite localization delivery separately from usable geometric conclusions. Review observer bias/scatter using development data; freeze before calibration/evaluation. Establish group independence and real acquisition membership externally rather than trusting renamed IDs.
+
+Do not add more conservative-bound refinements simply to postpone collecting real references. New fit families need a scientific reason and tests that their tighter geometry still retains actual reference coverage.
+
+## Gate C — supported anatomical expansion
+
+Only after reference8 performance is characterized: independent contour/visibility labels, explicit occlusion evidence and, where justified by available data, 3D shape. A landmark-guided edge is not independently labeled anatomy. A frontal projection does not prove depth correspondence. The full mesh needs its own reference support.
+
+## Gate D — operational hardening driven by real use
+
+Run the supplied Windows/macOS/Linux CI matrix and native process checks on those platforms. Test large studies, privacy-preserving evidence transfer, interruption and operator recovery. Consider content-addressed artifact deduplication only with stable bundle/replay semantics; never trade away original raw evidence to make an archive smaller.
+
+Cross-study adaptive acceptance and post-deployment monitoring are not controlled yet. Any extension must freeze its sequential/multiplicity design before outcomes are used, not bolt a reassuring badge onto historical runs.

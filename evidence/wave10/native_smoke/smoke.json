@@ -1,0 +1,33 @@
+{
+  "format": "facemath.native_smoke.v10",
+  "source_sha256": "630bb12254d4cc055af3572c0131df3603e0b01219a789d3f9a3138469f4f636",
+  "status": "not_attempted",
+  "observer_attempted": false,
+  "native_observation_produced": false,
+  "human_accuracy_validated": false,
+  "blockers": [
+    "MediaPipe is not installed in this interpreter",
+    "explicit local model file is missing"
+  ],
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "packages": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "opencv-python": "4.13.0.92",
+      "mediapipe": null,
+      "pytest": "9.0.2"
+    },
+    "numeric_environment": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "opencv": "4.13.0"
+    },
+    "engine_code_sha256": "77672e7b81c1b9ccfbc345bd36076fbfbd1e3f793b8991729a8180ee9eabf7d0"
+  },
+  "meaning": "execution smoke check only; independent labels and group-disjoint study still required",
+  "network_isolation": "not supplied; third-party runtime may emit utilization metrics",
+  "runtime_version": null,
+  "model_sha256": null
+}

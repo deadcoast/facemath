@@ -1,0 +1,59 @@
+{
+  "format": "facemath.browser_qa.v10",
+  "started_utc": "2026-09-20T09:03:14.249301+00:00",
+  "reports": {
+    "positive": {
+      "path": "/mnt/data/wave10_work/first_lab/positive/qualification/report.html",
+      "loading": "emitted HTML in memory",
+      "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/wave10_work/first_lab/positive/qualification/report.html\nCall log:\n  - navigating to \"file:///mnt/data/wave10_work/first_lab/positive/qualification/report.html\", waiting until \"load\"\n"
+    },
+    "negative": {
+      "path": "/mnt/data/wave10_work/first_lab/negative/qualification/report.html",
+      "loading": "emitted HTML in memory",
+      "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/wave10_work/first_lab/negative/qualification/report.html\nCall log:\n  - navigating to \"file:///mnt/data/wave10_work/first_lab/negative/qualification/report.html\", waiting until \"load\"\n"
+    },
+    "pair": {
+      "path": "/mnt/data/wave10_work/first_lab/admitted_pair/report.html",
+      "loading": "emitted HTML in memory",
+      "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/wave10_work/first_lab/admitted_pair/report.html\nCall log:\n  - navigating to \"file:///mnt/data/wave10_work/first_lab/admitted_pair/report.html\", waiting until \"load\"\n"
+    },
+    "blank_reference_workspace": {
+      "path": "/mnt/data/wave10_work/first_lab/positive/workspace/workbenches/source_00011_rater_000.html",
+      "loading": "emitted HTML in memory",
+      "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/wave10_work/first_lab/positive/workspace/workbenches/source_00011_rater_000.html\nCall log:\n  - navigating to \"file:///mnt/data/wave10_work/first_lab/positive/workspace/workbenches/source_00011_rater_000.html\", waiting until \"load\"\n"
+    }
+  },
+  "checks": {
+    "positive_full_evaluation_retained": 3,
+    "negative_full_evaluation_retained": 3,
+    "readout_uses_stored_fraction_bounds": true,
+    "whole_group_csv_exact": true,
+    "immutable_pair_payload": true,
+    "blank_workspace_no_reference_predictions": true,
+    "no_result_category_or_acceptance_editors": true,
+    "qualification_snapshot_exists": true
+  },
+  "viewports": [
+    {
+      "size": {
+        "width": 1440,
+        "height": 1080
+      },
+      "page_fits": true,
+      "csv_exact": true
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "page_fits": true,
+      "csv_exact": true
+    }
+  ],
+  "annotations": "none; blank workspace and rater state tested, not human labels",
+  "passed": true,
+  "script_errors": [],
+  "remote_requests": [],
+  "finished_utc": "2026-09-20T09:03:21.694599+00:00"
+}

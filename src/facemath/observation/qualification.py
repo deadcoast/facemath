@@ -228,5 +228,13 @@ def qualify(study: FrozenStudy, raw_report: dict[str, Any], session_status: dict
         "array_order": {"cases": [r.case_id for r in rows], "reference_points": list(REFERENCE_NAMES)}}
     if measured_acquisition is not None:
         report["measured_acquisition"] = measured_acquisition
+    if "admission_policy" in data:
+        from .admission import AdmissionPolicy, assess_admission
+        admission, admission_arrays = assess_admission(AdmissionPolicy.from_dict(data["admission_policy"]), data, scored, selected)
+        report["empirical_admission"] = admission
+        arrays.update(admission_arrays)
+    else:
+        report["empirical_admission"] = {"status": "not_prespecified", "passed": False,
+            "meaning": "research qualification only; no held-out acceptance policy was frozen"}
     report["content_sha256"] = object_digest(report)
     return report, arrays, selected

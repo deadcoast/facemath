@@ -224,6 +224,20 @@ def load_study(path: str | Path) -> FrozenStudy:
             raise ObservationError("unmeasured study cannot claim measured route evidence")
     elif "stratified_error" in data:
         raise ObservationError("loaded routing policy does not match frozen estimator mode")
+    if "admission_policy" in data:
+        from .admission import AdmissionPolicy, plan_admission
+        policy = AdmissionPolicy.from_dict(data["admission_policy"])
+        if data["observer"]["execution_kind"] == "native_mediapipe":
+            for case in data["cases"]:
+                if case["eligibility"] == "included":
+                    refs = [ReferenceAnnotation.from_dict(read_json(local_file(root, n))) for n in case["references"]]
+                    if any(r.kind not in ("human_blind", "external_dataset") or r.prediction_exposure != "none_declared" for r in refs):
+                        raise ObservationError("native empirical admission requires independent prediction-unexposed labels")
+        planned = plan_admission(policy, data["cases"], data["strata"], data["observer"]["execution_kind"])
+        if planned != data.get("admission_plan"):
+            raise ObservationError("frozen empirical admission plan differs from enrolled evidence")
+    from .workspace import verify_workspace_origin
+    verify_workspace_origin(data, root)
     return FrozenStudy(root, canonical_json(data))
 
 
@@ -330,6 +344,9 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
         if any(r.image_sha256 != digest or r.image_shape != image.shape[:2] for r in refs):
             raise ObservationError("reference does not match the enrolled source raster")
         if eligibility == "included":
+            if spec.get("admission_policy") and observer.execution_kind == "native_mediapipe":
+                if any(r.kind not in ("human_blind", "external_dataset") or r.prediction_exposure != "none_declared" for r in refs):
+                    raise ObservationError("native empirical admission requires declared independent prediction-unexposed reference labels")
             consensus(refs, minimum).eye_span_px
             if observer.execution_kind == "native_mediapipe" and any(r.kind == "synthetic_fixture" for r in refs):
                 # Native smoke tests on synthetic inputs can be run separately,
@@ -390,6 +407,8 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
                 "source_manifest_sha256": sha256(spec_path.read_bytes()).hexdigest(),
                 "declarations": {"chronology_and_blinding": "curator-declared, not externally attested",
                                  "model_receives": "source raster only; not reference coordinates, split or stratum"}}
+        if "workspace_origin" in spec:
+            lock["workspace_origin"] = spec["workspace_origin"]
         if joint_config is not None:
             lock["joint_error"] = joint_config
         if routing_policy is not None:
@@ -397,6 +416,13 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
         if measured_groups is not None:
             lock["measured_acquisition"] = {"policy_sha256": routing_policy.measurement_policy.digest,
                                             "groups": [g.to_dict() for g in measured_groups]}
+        if "admission_policy" in spec:
+            from .admission import AdmissionPolicy, plan_admission
+            admission = AdmissionPolicy.from_dict(spec["admission_policy"])
+            if routing_policy is None or routing_policy.measurement_policy is None:
+                raise ObservationError("empirical admission requires measured whole-group acquisition routing")
+            lock["admission_policy"] = admission.to_dict()
+            lock["admission_plan"] = plan_admission(admission, frozen_cases, strata, observer.execution_kind)
         write_json_new(temp / "study.lock.json", lock)
         manifest = {"format": "facemath.study_lock_manifest.v5", "study_sha256": object_digest(lock),
                     "files": file_inventory(temp)}

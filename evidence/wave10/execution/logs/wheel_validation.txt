@@ -1,0 +1,33 @@
+COMMAND ['/opt/pyvenv/bin/python', '/mnt/data/facemath_wave_10/scripts/check_wheel.py', '/mnt/data/facemath_wave_10/dist/facemath-0.10.0-py3-none-any.whl', '--tests', '/mnt/data/facemath_wave_10/tests', '--bundle', '/mnt/data/facemath_wave_10/evidence/wave10/laboratory/positive/qualification', '--pair-bundle', '/mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair', '--out', '/mnt/data/wave10_work/wheel-check']
+WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Processing /mnt/data/facemath_wave_10/dist/facemath-0.10.0-py3-none-any.whl
+Installing collected packages: facemath
+Successfully installed facemath-0.10.0
+{"file": "/tmp/facemath-installed-on3jl551/installed/facemath/__init__.py", "version": "0.10.0", "code_sha256": "77672e7b81c1b9ccfbc345bd36076fbfbd1e3f793b8991729a8180ee9eabf7d0"}
+........................................................................ [  7%]
+........................................................................ [ 15%]
+........................................................................ [ 22%]
+........................................................................ [ 30%]
+........s............................................................... [ 38%]
+........................................................................ [ 45%]
+........................................................................ [ 53%]
+........................................................................ [ 61%]
+........................................................................ [ 68%]
+........................................................................ [ 76%]
+........................................................................ [ 83%]
+........................................................................ [ 91%]
+........................................................................ [ 99%]
+.......                                                                  [100%]
+942 passed, 1 skipped in 282.98s (0:04:42)
+{
+  "replay_verified": true,
+  "bundle": "/mnt/data/wave10_work/wheel-check/replayed",
+  "comparison": "exact qualification/calibration JSON and numerical array equality",
+  "live_inference_reexecuted": false
+}
+{
+  "replay_verified": true,
+  "source_bundle": "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair",
+  "new_bundle": "/mnt/data/wave10_work/wheel-check/pair-replayed",
+  "numerical_tolerance": "arrays atol=1e-9, rtol=1e-7; measurements atol=1e-10, rtol=1e-8"
+}

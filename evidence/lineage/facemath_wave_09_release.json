@@ -1,0 +1,81 @@
+{
+  "artifact": "facemath_wave_09.zip",
+  "bytes": 137843967,
+  "sha256": "690568754812a5d34fff61cb41be634617d2078a89caf0fcfd1ec7c758baef1f",
+  "files": 4498,
+  "zip_crc_check": "passed",
+  "source_wheel_archive_python_equality": {
+    "modules": 73,
+    "all_identical": true
+  },
+  "executions": [
+    {
+      "name": "extracted_tests",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=/mnt/data/wave9_work/extracted_tests.xml"
+      ],
+      "cwd": "/mnt/data/wave9_work/fresh-extraction/facemath_wave_09",
+      "started_utc": "2026-09-20T08:08:47.818685+00:00",
+      "finished_utc": "2026-09-20T08:10:21.716253+00:00",
+      "returncode": 0,
+      "stdout": "........................................................................ [  9%]\n........................................................................ [ 18%]\ns....................................................................... [ 27%]\n........................................................................ [ 36%]\n........................................................................ [ 45%]\n........................................................................ [ 54%]\n........................................................................ [ 63%]\n........................................................................ [ 72%]\n........................................................................ [ 81%]\n........................................................................ [ 91%]\n.......................................................................  [100%]\n790 passed, 1 skipped in 91.45s (0:01:31)\n",
+      "stderr": ""
+    },
+    {
+      "name": "extracted_pair_verify",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "verify",
+        "/mnt/data/wave9_work/fresh-extraction/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px"
+      ],
+      "cwd": "/mnt/data/wave9_work/fresh-extraction/facemath_wave_09",
+      "started_utc": "2026-09-20T08:10:21.716749+00:00",
+      "finished_utc": "2026-09-20T08:10:23.280829+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"files\": 25,\n  \"arrays\": 191,\n  \"events\": 21,\n  \"manifest_content_sha256\": \"21bf62adcb541460aaae05c4442fb404e11de73ac12a33cac947a75564490ea5\",\n  \"limit\": \"self-consistency hashes; not an externally signed execution attestation\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "extracted_source_verify",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "verify",
+        "/mnt/data/wave9_work/fresh-extraction/facemath_wave_09/evidence/wave9/laboratory/query_group_b_02"
+      ],
+      "cwd": "/mnt/data/wave9_work/fresh-extraction/facemath_wave_09",
+      "started_utc": "2026-09-20T08:10:23.285291+00:00",
+      "finished_utc": "2026-09-20T08:10:24.603926+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"measured_acquisition_group\",\n  \"group_sha256\": \"f8e769f4e30a0533fa380c18928d7d911ded17cf585768ec6385f416d335e23a\",\n  \"source_measurements_recomputed\": true,\n  \"category\": \"pixel_smooth\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "extracted_pair_replay",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/wave9_work/fresh-extraction/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px",
+        "--out",
+        "/mnt/data/wave9_work/extracted-pair-replay"
+      ],
+      "cwd": "/mnt/data/wave9_work/fresh-extraction/facemath_wave_09",
+      "started_utc": "2026-09-20T08:10:24.604466+00:00",
+      "finished_utc": "2026-09-20T08:10:26.837225+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"replay_verified\": true,\n  \"source_bundle\": \"/mnt/data/wave9_work/fresh-extraction/facemath_wave_09/evidence/wave9/laboratory/pair_02_mouth_8px\",\n  \"new_bundle\": \"/mnt/data/wave9_work/extracted-pair-replay\",\n  \"numerical_tolerance\": \"arrays atol=1e-9, rtol=1e-7; measurements atol=1e-10, rtol=1e-8\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "release_verified": true,
+  "elapsed_seconds": 109.6806640625
+}

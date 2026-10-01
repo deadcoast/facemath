@@ -1,73 +1,84 @@
-# FACEMATH · Wave 09
+# FACEMATH · Wave 10 milestone
 
-An integrated Python instrument for **facial geometry, source acquisition and observation error**, not identity recognition.
+A local Python instrument for **projected facial geometry, observation error, and auditable source evidence**. It does not identify people or turn a visually chosen percentage into a biometric measurement.
 
-Wave 09 makes acquisition routing reproducible from original image pixels. A frozen policy measures each explicitly declared source aperture, reduces the complete group's measurements, and evaluates every routing rule before landmark inference. Those source groups authorize the existing category-specific joint-error model and enter the same CanonicalState, shape-expression graph, evidence bundle and numerical replay. A category string alone is no longer sufficient for a measured calibration.
+Wave 10 consolidates source intake → independent annotation → frozen acquisition → error-model qualification → measured query sources → geometric comparison into one operational workflow. The existing `Observation`, `CanonicalState`, error models, relation graph and evidence bundles remain authoritative.
 
-## Run the complete controlled experiment
+**New at this milestone:** an append-only reference workspace; a prespecified held-out acceptance policy; full-study numerical replay before the optional empirically gated query path; evaluation/context leakage checks; an actual native-execution smoke command; a compact result readout. Ordinary research analysis remains available and explicitly labeled.
+
+## First executable result
 
 ```shell
 python -m pip install -e ".[dev]"
-python -m facemath measured-lab --out runs/wave9
-python -m facemath verify runs/wave9/qualification
-python -m facemath verify runs/wave9/query_group_a
-python -m facemath replay runs/wave9/pair_02_mouth_8px --out runs/pair-replay
+python -m facemath demo --size 160 --draws 8 --no-flow --out runs/research-demo
+python -m facemath overview runs/research-demo
+python -m facemath verify runs/research-demo
+```
+
+Open `runs/research-demo/report.html`. This is a known-coordinate **synthetic** demonstration. The fraction of a declared relation inventory within a stated tolerance is a computable percentage; it is not a probability of resemblance. Unresolved/missing relations remain in the denominator.
+
+## Complete milestone control
+
+```shell
+python -m facemath milestone-lab --out runs/wave10
+python -m facemath overview runs/wave10/positive/qualification
+python -m facemath overview runs/wave10/negative/qualification
+python -m facemath overview runs/wave10/admitted_pair
+python -m facemath replay runs/wave10/admitted_pair --out runs/wave10-pair-replay
 python -m pytest -q
 ```
 
-Open `runs/wave9/qualification/report.html` for acquisition, calibration and held-out failures. Open `runs/wave9/pair_02_mouth_8px/report.html` for actual source apertures, exact measurement-grid displays, every routing predicate, source-specific radii, joint error modes and all shape relations. Open `runs/wave9/pixel_controls/noise/report.html` for an important negative control: noise can pass a gradient-detail rule. **These predicates are not a face-quality detector or a promise of localization accuracy.**
+The positive and negative workflows are frozen independently before their scripted outcomes run. The positive branch is an **engineered containment/acceptance control**, not a representative or exchangeable human study. The negative branch keeps the same policy but shifts the observer's errors in one required category. All requested categories must pass; no successful subset is selected after seeing outcomes.
 
-The default lab enrolls 119 schematic sources, includes a repeated mixed-quality group, retains 118 scripted attempts and two nondetections, and excludes one enrollment prospectively from observation. Four fresh pairs have prescribed mouth changes. Hidden observer-error shifts remain visible within the same measured source category. This is synthetic evidence for software/numerical contracts, not human validation.
-
-## One shared instrument
-
-```text
-Original source pixels + declared apertures + complete group inventory
-                             ↓
-             Frozen source-only min/max predicates
-                             ↓
-          Existing prospective study and native observer
-                             ↓
-        Existing development mean / joint16 covariance
-                             ↓
-        Category-local calibration, retained failures
-                             ↓
-      Recomputed query groups → bound source qA and qB
-                             ↓
-                    Existing CanonicalState
-                ┌────────────┼─────────────┐
-                ↓            ↓             ↓
-          Observed geometry  Error sets   Intrinsic shape
-                └────────────┼─────────────┘
-                             ↓
-            Raw arrays + source PNGs + execution journal
-                             ↓
-                   Verify / recompute / report
-```
-
-No analyzer selects another alignment or changes source coordinates to improve agreement. All 135 observed-state arrays checked in the controlled pair remain unchanged when qualification is attached. Pair outputs retain 191 arrays for the demonstrated one-member A/two-member B comparison. Exact analysis grids, all min/max values and every rule outcome are retained beside the original pixels.
-
-Unmatched, overlapping or explicitly forbidden rules cannot borrow a pooled radius, even with many calibration observations. Missing or inconsistent source inventory refuses the calibrated query before native model initialization. Group-wide measurement does not attest that a curator disclosed every real-world repeat or chose an honest aperture.
-
-## Using original portraits
-
-Read [the operator guide](docs/WAVE9_OPERATIONS.md). Prepare independent reference annotations and a pinned compatible local model. Select source predicates and grouping on development data, freeze them before calibration/evaluation, and assess both delivered availability and held-out reference coverage. The optional native MediaPipe path has not been executed in this release environment because its package/model were unavailable.
+## Start an actual reference study
 
 ```shell
-python -m facemath acquisition-group query_a.group.json --policy qualification/localization_calibration.json --out query/a-source
-python -m facemath acquisition-group query_b.group.json --policy qualification/localization_calibration.json --out query/b-source
-python -m facemath analyze portrait_a.png portrait_b.png --observation-a a.observation.json --observation-b b.observation.json --localization-calibration qualification/localization_calibration.json --domain "exact frozen domain" --acquisition-a query/a-source --acquisition-b query/b-source --out pairs/run
+python -m facemath workspace prepare study/workspace.spec.json --out work/portraits
+python -m facemath workspace status work/portraits
+python -m facemath workspace import work/portraits labels/portrait-rater-a.json --case-id portrait_0001
+python -m facemath workspace freeze work/portraits --out studies/portraits-v1
+python -m facemath observer-smoke portrait.png --model models/face_landmarker.task --out runs/native-smoke
+python -m facemath study-run studies/portraits-v1 --model models/face_landmarker.task --out runs/portraits-v1
+python -m facemath study-finalize runs/portraits-v1 --out qualification/portraits-v1
 ```
 
-Existing nominal analysis and older calibration types retain their prior behavior. Outputs are create-only. Replay uses captured observations with the corresponding code/runtime, not a new detector invocation. Do not claim arbitrary-platform bitwise reproducibility from tests on one numerical dependency stack.
+The spec needs actual images, independently produced reference annotations, declared dependent groups/lineages, a pinned compatible runtime/model and a source-measurement policy designed on development data. The example template is not a sufficient dataset. See [the consolidated operator guide](docs/WAVE10_OPERATIONS.md).
 
-## Documentation and release evidence
+`observer-smoke` never downloads a model or installs a runtime. Missing prerequisites produce **not_attempted**, not a fictional detector failure or accuracy result. A successfully running detector would still need independent reference evaluation.
 
-- [Design and development audit](docs/WAVE9_DESIGN.md)
-- [Exact mathematical and pixel-measurement definitions](docs/WAVE9_MATHEMATICS.md)
-- [Operator workflow and complete query-group contract](docs/WAVE9_OPERATIONS.md)
-- [Raw array inventory](docs/RAW_ARRAYS.md)
-- `evidence/WAVE9_VALIDATION.json`: captured executions, source/wheel results and limits
-- `evidence/wave9/laboratory`: original synthetic inputs, references, acquisition receipts, calibrated model, qualified pairs and refused-source pixels
+## Research versus empirically gated queries
 
-The historical mathematics section registry remains an inventory, not proof that every mathematical analogy from the original conversation is implemented. No human-face similarity percentage is fabricated by these releases.
+`--localization-calibration model.json` applies a research calibration as before. The report does not infer empirical approval merely because its radius is finite.
+
+`--qualification qualification/portraits-v1` loads the **complete retained study**, replays its numerical qualification, requires all frozen acceptance criteria to pass, and rejects query source/context overlap with development, calibration, evaluation and excluded enrollment. Original source-group pixels remain necessary. The portable pair stores the qualification snapshot, not just an approval string.
+
+```shell
+python -m facemath analyze query/a.png query/b.png \
+  --observation-a query/a.observation.json --observation-b query/b.observation.json \
+  --qualification qualification/portraits-v1 \
+  --acquisition-a query/a-source --acquisition-b query/b-source --out pairs/qualified
+```
+
+Use `--model` instead of imported observation files for a pinned native observer. Source and acceptance gates run before its deferred construction. Failed instrument invocations preserve an actual partial journal at `<out>.failure.events.jsonl`, without overwriting previous evidence.
+
+## Read the evidence
+
+- `summary.json`: compact view of existing measurements, bounds, relation fractions and acceptance status.
+- `evidence.json`, `intrinsic.json`, `arrays.npz`: original measurements and complete numerical arrays.
+- `events.jsonl`: actual instrument-stage events, not private neural telemetry.
+- `qualification_snapshot.zip`: retained raw study, observations, labels, receipts and qualification behind an admitted pair.
+- Workspace `labels/`: original annotations and explicit superseding revisions. Freeze records the complete chain and selected latest labels.
+
+Hashes establish byte consistency; replay establishes consistency with the retained numerical inputs and implementation. Neither proves external chronology, true subject independence, human blinding, accurate source metadata, or resistance to an attacker recreating an entire consistent dataset.
+
+## Scientific and release boundaries
+
+The release's `evidence/WAVE10_VALIDATION.json` records what was executed. Synthetic controls and API fixtures are not live detector validation. The actual native smoke outcome is separate. No new similarity score for the original video's two people is manufactured.
+
+Eight-point reference calibration does not validate all 478 vertices, 3D anatomy or identity. Source gradient rules are not face-quality classifiers. A passed held-out policy is conditional on its sampling assumptions and does not guarantee performance under hidden shift or control repeated adaptive studies. Exact replay requires the matching package code and numerical runtime.
+
+## Development map
+
+[Design and audit](docs/WAVE10_DESIGN.md) · [Mathematics](docs/WAVE10_MATHEMATICS.md) · [Operations](docs/WAVE10_OPERATIONS.md) · [Milestone architecture map](docs/MILESTONE_MAP.md) · [Next development gates](docs/WAVE10_ROADMAP.md) · [Contributor contract](AGENTS.md)
+
+The inherited section-number registry is a research inventory, **not proof of implementation of every historical mathematical analogy**. The active implementation and its non-equivalent/missing research methods are separately documented by `facemath capabilities` and the retained Wave 3 audit.

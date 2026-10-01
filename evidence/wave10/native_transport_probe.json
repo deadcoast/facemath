@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "curl",
+    "--fail",
+    "--location",
+    "--connect-timeout",
+    "5",
+    "--max-time",
+    "15",
+    "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task",
+    "--output",
+    "/mnt/data/wave10_work/models/face_landmarker.task"
+  ],
+  "started_utc": "2026-09-20T09:09:11.531702+00:00",
+  "finished_utc": "2026-09-20T09:09:11.558483+00:00",
+  "returncode": 6,
+  "stdout": "",
+  "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (6) Could not resolve host: storage.googleapis.com\n",
+  "file_exists": false
+}

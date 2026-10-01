@@ -47,6 +47,8 @@ def _html(result: InstrumentResult, arrays: dict[str, np.ndarray]) -> str:
     def uri(image: np.ndarray) -> str:
         return "data:image/png;base64," + b64encode(_png(image)).decode()
     ev = result.evidence()
+    from .readout import render_pair_readout
+    readout_section = render_pair_readout(ev)
     from .intrinsic_report import render_intrinsic_section
     intrinsic_section = render_intrinsic_section(result.intrinsic) if result.intrinsic is not None else ""
     rows = []
@@ -98,12 +100,12 @@ small{{display:block;color:var(--muted);font-size:12px;max-width:68ch}}code{{fon
 a{{color:var(--accent)}}summary{{cursor:pointer;font-weight:600}}input[type=range]{{width:min(100%,500px)}}.blend{{position:relative;max-width:360px}}.blend img{{width:100%;display:block}}.blend img:last-child{{position:absolute;inset:0;opacity:.5}}
 footer{{margin-top:40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:18px}}
 @media(max-width:760px){{.gallery{{grid-template-columns:1fr}}main{{padding:20px 14px}}h1{{font-size:28px}}}}
-</style><main><header><div class="eyebrow">FACEMATH / WAVE 09 / OBSERVATION → FIELD → EVIDENCE</div>
+</style><main><header><div class="eyebrow">FACEMATH / WAVE 10 / OBSERVATION → FIELD → EVIDENCE</div>
 <h1>Anatomical correspondence, exposed.</h1>
 <span class="tag">{escape(result.state.observation_a.provider)}</span><span class="tag">{len(result.state.xy_a)} observed landmarks</span>
 <span class="tag">No identity scoring</span><span class="tag">No population calibration attached</span>
 <p>One canonical state binds observations, the registration gauge, regional contours, anatomical interpolation, and independent image-flow checks. Every reported value has a raw array path in this bundle.</p></header>
-<h2>Registered views</h2><div class="gallery">
+{readout_section}<h2>Registered views</h2><div class="gallery">
 <figure><img src="{uri(result.state.image_a)}" alt="Canonical image A"><figcaption>A · source observation transformed once</figcaption></figure>
 <figure><img src="{uri(result.state.image_b)}" alt="Canonical image B"><figcaption>B · reference display chart</figcaption></figure>
 <figure><img src="{uri(_overlay(result))}" alt="Landmark residual overlay"><figcaption>White circle: A. Cyan cross: B. Amber line: positional residual. This overlay is a display, not the score.</figcaption></figure></div>
@@ -138,8 +140,12 @@ def write_bundle(result: InstrumentResult, destination: str | Path,
             from .acquisition import write_group_files
             for name, group in zip(("a", "b"), result.acquisition_groups):
                 write_group_files(group, temp, f"acquisition_{name}_")
+        if result.qualification_evidence is not None:
+            (temp / "qualification_snapshot.zip").write_bytes(result.qualification_evidence.snapshot)
         np.savez_compressed(temp / "arrays.npz", **arrays)
         (temp / "evidence.json").write_text(json.dumps(result.evidence(), indent=2, allow_nan=False), encoding="utf-8")
+        from .readout import pair_readout
+        (temp / "summary.json").write_text(json.dumps(pair_readout(result.evidence()), indent=2, allow_nan=False), encoding="utf-8")
         (temp / "observations.json").write_text(json.dumps({"a": result.state.observation_a.to_dict(), "b": result.state.observation_b.to_dict()}, indent=2, allow_nan=False), encoding="utf-8")
         (temp / "environment.json").write_text(json.dumps(result.environment, indent=2, allow_nan=False), encoding="utf-8")
         (temp / "events.jsonl").write_text(result.journal_jsonl, encoding="utf-8")
@@ -214,6 +220,10 @@ def verify_bundle(path: str | Path) -> dict[str, Any]:
             if list(a.shape) != spec["shape"] or a.dtype.str != spec["dtype"] or array_digest(a) != spec["sha256"]:
                 raise ObservationError(f"array contract mismatch: {name}")
     evidence = json.loads((root / "evidence.json").read_text(encoding="utf-8"))
+    if "summary.json" in manifest["files"]:
+        from .readout import pair_readout
+        if json.loads((root / "summary.json").read_text()) != pair_readout(evidence):
+            raise ObservationError("compact readout differs from authoritative instrument evidence")
     if evidence.get("intrinsic_profile") is not None:
         if "intrinsic.json" not in manifest["files"] or "intrinsic.csv" not in manifest["files"]:
             raise ObservationError("intrinsic profile lost its external data artifacts")
@@ -235,6 +245,19 @@ def verify_bundle(path: str | Path) -> dict[str, Any]:
         if not isinstance(model, BoundStratifiedCalibration) or any(
                 r.measured_group_sha256 != g.digest for r, g in zip(model.routes, groups)):
             raise ObservationError("measured source sidecars differ from bound calibration routes")
+    admission = evidence.get("empirical_admission", {})
+    if admission.get("format") == "facemath.validated_qualification_link.v10":
+        from .deployment import load_snapshot
+        qualified = load_snapshot(root / "qualification_snapshot.zip")
+        if canonical_json(qualified.summary) != canonical_json(admission):
+            raise ObservationError("pair empirical admission differs from replayed raw study")
+        from .bias import load_localization_calibration
+        from .acquisition import load_group_files
+        model = load_localization_calibration(json.loads((root / "localization_calibration.json").read_text()))
+        groups = tuple(load_group_files(root, f"acquisition_{n}_") for n in ("a", "b"))
+        qualified.require_query(groups, model)
+    elif "qualification_snapshot.zip" in manifest["files"]:
+        raise ObservationError("orphan qualification snapshot has no bound admission")
     records = [json.loads(line) for line in (root / "events.jsonl").read_text().splitlines()]
     verify_journal(records)
     return {"verified": True, "files": len(manifest["files"]), "arrays": len(manifest["arrays"]),

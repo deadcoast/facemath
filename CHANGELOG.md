@@ -1,3 +1,11 @@
+# 0.10.0 · Integrated observation-to-accepted-evidence milestone
+
+Consolidated blank reference workspaces, retained annotation revisions, frozen study origin, complete-group held-out acceptance, replay-backed deployment evidence, full-enrollment/context query leakage checks, explicit native smoke outcomes, and a compact inspectable pair readout. Research and empirically gated analyses remain separate paths through the same canonical instrument; attaching acceptance leaves raw geometry unchanged.
+
+The acceptance policy and evidence type are frozen before observer execution. Every required category must satisfy both finite-delivery and reference-coverage lower bounds. A portable full-study snapshot accompanies admitted pairs and is numerically replayed on load, rather than accepting a saved approval flag. The native smoke command reports unavailable prerequisites as not attempted. No new human accuracy claim is made.
+
+Source and independently installed wheel: 942 passed, one explicit live-observer skip. Final extracted-archive verification is recorded outside the sealed archive. New negative controls retain shifted held-out failures, source/context leakage, unsafe/tampered snapshots and unavailable nominal bounds. The initial full regression caught and repaired null-bound readout handling without replacing unavailable results with zeros.
+
 # 0.9.0 · Measured source routing
 
 Source-pixel aperture diagnostics, whole-group min/max predicate routing before inference, reproducible source evidence bound into the existing stratified joint calibration and canonical pair. Rejected/ambiguous rules remain unavailable despite calibration counts. Native CLI construction deferred until source gate passes. Original group rasters and exact grids are retained and remeasured on verification/replay. Noise and hidden-error-shift counterexamples remain explicit.

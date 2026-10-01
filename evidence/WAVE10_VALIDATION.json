@@ -1,0 +1,1712 @@
+{
+  "format": "facemath.release-validation.v10",
+  "version": "0.10.0",
+  "summary_created_utc": "2026-09-20T09:21:18.692844+00:00",
+  "scope": "summary of actual retained executions; raw logs separate; synthetic controls are not human accuracy or native model inference",
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "packages": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "opencv-python": "4.13.0.92",
+      "mediapipe": null,
+      "pytest": "9.0.2"
+    },
+    "numeric_environment": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "opencv": "4.13.0"
+    },
+    "engine_code_sha256": "77672e7b81c1b9ccfbc345bd36076fbfbd1e3f793b8991729a8180ee9eabf7d0"
+  },
+  "code_sha256": "77672e7b81c1b9ccfbc345bd36076fbfbd1e3f793b8991729a8180ee9eabf7d0",
+  "parent": {
+    "archive": "facemath_wave_09.zip",
+    "sha256": "690568754812a5d34fff61cb41be634617d2078a89caf0fcfd1ec7c758baef1f",
+    "reproduced_tests": {
+      "tests": 791,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 790,
+      "seconds": 129.939,
+      "junit_timestamps": [
+        "2026-09-20T08:24:09.689441+00:00"
+      ],
+      "skipped_cases": [
+        {
+          "name": "test_live_mediapipe_provider",
+          "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+        }
+      ]
+    }
+  },
+  "lineage_and_wheel_equivalence": {
+    "new": [
+      "observation/admission.py",
+      "observation/deployment.py",
+      "observation/milestone_lab.py",
+      "observation/native_check.py",
+      "observation/readout.py",
+      "observation/workspace.py"
+    ],
+    "modified": [
+      "__init__.py",
+      "cli.py",
+      "observation/artifacts.py",
+      "observation/instrument.py",
+      "observation/qualification.py",
+      "observation/study.py",
+      "observation/study_io.py"
+    ],
+    "unchanged": [
+      "__main__.py",
+      "calibration.py",
+      "core.py",
+      "correspondence.py",
+      "coverage.py",
+      "deformation.py",
+      "fusion.py",
+      "geometry.py",
+      "information.py",
+      "legacy_cli.py",
+      "observation/__init__.py",
+      "observation/acquisition.py",
+      "observation/acquisition_lab.py",
+      "observation/acquisition_report.py",
+      "observation/anatomy.py",
+      "observation/annotation_ui.py",
+      "observation/bias.py",
+      "observation/canonical.py",
+      "observation/capabilities.py",
+      "observation/cohort.py",
+      "observation/contracts.py",
+      "observation/edge_support.py",
+      "observation/error_model.py",
+      "observation/field.py",
+      "observation/intrinsic.py",
+      "observation/intrinsic_lab.py",
+      "observation/intrinsic_report.py",
+      "observation/intrinsic_sets.py",
+      "observation/joint.py",
+      "observation/joint_lab.py",
+      "observation/joint_report.py",
+      "observation/journal.py",
+      "observation/lab.py",
+      "observation/measure.py",
+      "observation/provider.py",
+      "observation/reference.py",
+      "observation/sequence_guard.py",
+      "observation/stratified.py",
+      "observation/stratified_lab.py",
+      "observation/stratified_report.py",
+      "observation/study_lab.py",
+      "observation/study_report.py",
+      "observation/study_runner.py",
+      "observation/validation.py",
+      "observation/validation_io.py",
+      "observation/validation_lab.py",
+      "observation/worker.py",
+      "perturbation.py",
+      "pipeline.py",
+      "quality.py",
+      "regions.py",
+      "registration.py",
+      "report.py",
+      "representation.py",
+      "sequence.py",
+      "shape.py",
+      "signal.py",
+      "state.py",
+      "statistics.py",
+      "surface3d.py",
+      "symmetry.py",
+      "temporal.py",
+      "topology.py",
+      "torch_attribution.py",
+      "video.py",
+      "wave2.py"
+    ],
+    "removed": [],
+    "package_python_sha256": {
+      "__init__.py": "f73cc454f538b00c444ff09e94d46eaecfe8680e236d2c43a443b01a2e09a1e5",
+      "__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+      "calibration.py": "e250ddccf702f848951a629759f98d1e812052e4a0e1dd693c8545958ff5eedd",
+      "cli.py": "45ede2d6628d953137387016b30280648241596483ecd6594677d769f9ee8c1d",
+      "core.py": "b8e14bd8b5eeaee1b15390d7c31b82c8c4520eac5347bfbc811eea34c4acb576",
+      "correspondence.py": "29938b08b495653327675e58c2e7d359103cb733b140c47539cb9d91d816f80f",
+      "coverage.py": "ba1786739debb0efffadd5d1f3df69e5f2aaa9f2e793c1e6ffc549655a220346",
+      "deformation.py": "4368188fb9fd0dbb1f3238549d3fbf0fbac9ddaf3b6dfb3dda19a59226e399bf",
+      "fusion.py": "249a7b9ea88433ccfea3378254f13d856cb4896d8249d9caada2009b9fb764e0",
+      "geometry.py": "22dfa9c9d4745ad517b947d0595a51cba1b2d6ddfbb6369a6b2e5ca3b04155e9",
+      "information.py": "7aab4e1ddba064fe05463de9b790473be094b2ca282c64a346402aaac1f4fc59",
+      "legacy_cli.py": "4ea0dd14ad4d2fed4605eed8df62cd57cf4edc43febdafe0ac044f29af07b148",
+      "observation/__init__.py": "fdfa47265a68fb008270bdac62f381efae1844c084b05452a824f3d0c71f6ab5",
+      "observation/acquisition.py": "2abdcfeff0b2becd4efb1e3a317572a9be372c27a4f148b78678251d0286836a",
+      "observation/acquisition_lab.py": "7daed582ed84711b8422cc642e6aaa2f0658ff33530aede01e0fb38bee96c973",
+      "observation/acquisition_report.py": "7cc6100f83dbf668aae3e7489b59441daf8866207ff0174740bf008061b67ffd",
+      "observation/admission.py": "319e43ac7333f8e71d05ff70ab1430a6dd23f646917b973fdeaa3474d6f9f388",
+      "observation/anatomy.py": "e4341cab848edc4236ab8fbbcd76783e6cb66bfcb69ece4df75bedb201d1ba31",
+      "observation/annotation_ui.py": "737db83d5e611bcb4a3e7b97d62b3081a8b0c173854e30d347a3b2b8e96ea1e8",
+      "observation/artifacts.py": "f16f6cbd9a2414c9038c44ba73e5733d779cc3b1eb13410797c3610df979173e",
+      "observation/bias.py": "9b4d035776bd109c7e4714cb94c20c2a2183993eb1e468d8b096eae26e3422a8",
+      "observation/canonical.py": "41295180185e7015043ecf660dc0e94711570a1e78b1c9713a89a07fa3f6aea8",
+      "observation/capabilities.py": "57390c3270860b2a2f99dd045bfdcc0a381e2aed32fcdf45bbb5dc715c77beff",
+      "observation/cohort.py": "6b5eb89c591a13336057ce590586263339078d13292862092f50e25ee61eeb7a",
+      "observation/contracts.py": "c1c6458bbd0e701fcfa6f1e9f48fed4b3e760cb2c2c4586565960e0b33042b84",
+      "observation/deployment.py": "5cb372dee460d0ca16352cc747d7465727b6070b28be64485165633066b60ae4",
+      "observation/edge_support.py": "740e8fb92b508a82f95e72a6373ce3a16bd0fd588e7a6989dcce99459a5b6b22",
+      "observation/error_model.py": "06d3ba178fff14d173cdeef04f95e4db2cfec78c890b4694ae552d8771ac20ee",
+      "observation/field.py": "3bb389f78f4fd3a199cb0cfc8e789a54375f714035489abbe3f9712b9b3645c0",
+      "observation/instrument.py": "4c082ccb6697d8ba030f14763e045637de9a72b8482164cc6249fd881964039e",
+      "observation/intrinsic.py": "3817b75b41613a79ce8c0685d2b0bdfe2a0ecf90db9f95651d994af95248463a",
+      "observation/intrinsic_lab.py": "fe2730b47eded66ccde2ac61159aac2333d0af905ff9544da27a46e8632574be",
+      "observation/intrinsic_report.py": "08e54fd013959102abe953fc07a1108fd01346023b5fec1f9ad699cdf9b48e63",
+      "observation/intrinsic_sets.py": "82623604f4cdddf963a9eeb5ac5e35ee6f116e147f52c9e9e4207dd384ca0d28",
+      "observation/joint.py": "d033c840cfe024c3705ade7d71297fe769de79bc8c4f14211f545caa0d9c0b72",
+      "observation/joint_lab.py": "2b5d18a9d2bb687847799ad282f64b4716e138fc1c19899ab83ce2dcfc11ce43",
+      "observation/joint_report.py": "5781a06e418a9bdb1f9f8c7e7bf72e1afdd16082580895ab646553b420dac7e6",
+      "observation/journal.py": "8bdac0f5499502b13448968dd5c2d74d8677b898c3e5e4c675c1d774d5ec2dd9",
+      "observation/lab.py": "211e4e768a68885c052f3bee1b53c95edb2b8dfd00669ca8870f41505578b5ce",
+      "observation/measure.py": "b27815eab351fe4f41ca23b2e9874de240858da33b2364893622f526b84c3b6f",
+      "observation/milestone_lab.py": "dda04570a1146965e46d9a1957a2b258c79a58a858b4ad432472d5e6b5c9bbfc",
+      "observation/native_check.py": "e4b3348289f573b29a6d1da7a80d9cb61a368b6441f9f30ce4945619aa1f594c",
+      "observation/provider.py": "c7f8843fcd7b26f2f6272553e91f38ef7b1ab78ccaf9ae9c3b3f540a42ffaaf6",
+      "observation/qualification.py": "a5fd1ea8008733989471ecaae61ecd34894341027861d00e7e5e52155daa8f78",
+      "observation/readout.py": "d1d66bc5bf3fc8012f9b4b8c781e4a483ab9a3c01c25c7d7237909c23619e905",
+      "observation/reference.py": "1cc15c84747433495ef9058ca735f85265423700f0b413aa96a65c6affca9780",
+      "observation/sequence_guard.py": "8c633f71a609fb81a2c75569451cbf0026aa4d68007f4b51ccd542cc98b2303c",
+      "observation/stratified.py": "f7207418d1d719883f347e3971df82e1c3716de7847bbc3576a2f1072bd36800",
+      "observation/stratified_lab.py": "9d6b2d005d1dbd7fbe9a88850ddfe3602dcef2fe1787c6e32e159ec697a81605",
+      "observation/stratified_report.py": "6c15cd0b72ca70f73a2225fae5ecc6111fae3c8f6d1bb12dcbe212a2edee78f3",
+      "observation/study.py": "40123871102bc4a743a909aabbdf81fef31eb08ba6efd585c088396cc4bdbb14",
+      "observation/study_io.py": "dc76aaab10cebf9d0faa4fcebdcf7fb3c87071cb17e31f4d6573369e681fda2b",
+      "observation/study_lab.py": "2361217b14cf6eeca3736b1b40653c846dd458ce06ce5de35371ac32fe4db3b4",
+      "observation/study_report.py": "cc30b5d7b459e5450dea690a4222a5acd33385b615c0659c75e869cdcb358008",
+      "observation/study_runner.py": "e8e848a7bf6a1103b2a6b319c08d8e16a0899b3520a28844575a212dfacba47a",
+      "observation/validation.py": "741a5eb339540022d369f1a6f753f4d8115b52cd15b796004e402fc0b449d9cf",
+      "observation/validation_io.py": "baab032659520ecc509005d49c6a9585cafb43e8dd5a737647f2dfe1599a3d48",
+      "observation/validation_lab.py": "9d39f2c3d820e6f27a93544b301f68e5da845a266a585bd847a1843b01ec98d4",
+      "observation/worker.py": "aaf98bdc7dd368fd02e5b45cd0910f9f150760f52414de46aaa7788a62c18d11",
+      "observation/workspace.py": "c1c0d761639c0264f28def6391913bd81568cdd4bb16567a0f5dc6598729a28b",
+      "perturbation.py": "ff11412a5340cdbd633c87992ab450cf5fc2a66d807e0c09ffe87799a13d3414",
+      "pipeline.py": "9df6314135c2ef2d0be507d32b477a8204b4c96ecc28625503afa36a7c86739e",
+      "quality.py": "41050e7bc785c9c47d804840b291aa4dd2727f5c876807fd7308094b4c341baf",
+      "regions.py": "522fa6163c3f1f4c5854c89a89908adcfdb436dcb097b96bef6337e08493d45b",
+      "registration.py": "7f3d33c2cfea5e4166b97567caf97a0a193e9846d98ba1a9719240681959e53c",
+      "report.py": "46512b78efd1f0bb33a26c86cd2a0a6d3311dc2b59b537bc4986c8965b4927fe",
+      "representation.py": "e633159df99ea731a823affc32412faa550bdbd2aa7fc47686d9b0ccff7665b2",
+      "sequence.py": "46bfe47f421ea6116293a5f9be015b3fd8f2181d1423b46bd284b001ec8ee8ac",
+      "shape.py": "9a6e516dae972478993d0060245e15c6819e3ee2aab51f04da9d890ccf95d9a5",
+      "signal.py": "46cd755b6bffd2e7bd45ad06d31f46b49842499aed419995172aca5fabf89ea5",
+      "state.py": "a45de992b20f89696c8b535c24f5319421e1a058065215b65dac78d4408f0e06",
+      "statistics.py": "8fbcd6b6b8efc8c25be950e7d730fd9d7ee477a0706be530c78628fc407a40ae",
+      "surface3d.py": "c774637b7b05cf17658c3672c1edd750ef76ad2af75eafb549728bffd9c3a50c",
+      "symmetry.py": "c861830e9186f9c6d943f632b0798fd19ee8f7e7d7426f4acfa8beb438d5f15b",
+      "temporal.py": "2eb99baa70601c755a741ace79a8fa54e68027082ccf4dcfe7ae786b0dc4264c",
+      "topology.py": "44e5fad29ad7b38702a555e7fbf69d1739b4577e597a30b030c6232ef8f857e2",
+      "torch_attribution.py": "ece4814667dbb8bfb839548f903028bfbd2a3b5bd1d834b30d17ea921ac757cf",
+      "video.py": "b93ea4008e45a577981b39a9e06d5789be5dfbf569c9bfaf2100bbfbc4860249",
+      "wave2.py": "c8a970f2d14beb17249ee77d8b5c1982fbdf3a618cb05908f9a9fb1e1d62cfa9"
+    },
+    "wheel_python_bytes_equal": true
+  },
+  "source_tests": {
+    "tests": 943,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "passed": 942,
+    "seconds": 268.894,
+    "junit_timestamps": [
+      "2026-09-20T09:02:03.560658+00:00"
+    ],
+    "skipped_cases": [
+      {
+        "name": "test_live_mediapipe_provider",
+        "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+      }
+    ]
+  },
+  "installed_wheel_tests": {
+    "tests": 943,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "passed": 942,
+    "seconds": 282.965,
+    "junit_timestamps": [
+      "2026-09-20T09:09:26.149808+00:00"
+    ],
+    "skipped_cases": [
+      {
+        "name": "test_live_mediapipe_provider",
+        "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+      }
+    ]
+  },
+  "development_failure_suite": {
+    "tests": 942,
+    "failures": 6,
+    "errors": 8,
+    "skipped": 1,
+    "passed": 927,
+    "seconds": 265.624,
+    "junit_timestamps": [
+      "2026-09-20T08:52:05.822466+00:00"
+    ],
+    "skipped_cases": [
+      {
+        "name": "test_live_mediapipe_provider",
+        "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+      }
+    ]
+  },
+  "laboratory_summary": {
+    "kind": "DETERMINISTIC SYNTHETIC WORKFLOW CONTROLS",
+    "seed": 31091,
+    "record": "evidence/wave10/laboratory/laboratory.json",
+    "outcomes": {
+      "positive_control": {
+        "source_count": 129,
+        "labels_initially_missing": true,
+        "ready_after_import": true,
+        "retained_revisions": 128,
+        "duplicate_import_idempotent": true,
+        "observer_calls": [
+          4,
+          128,
+          128
+        ],
+        "enrollment": {
+          "enrolled": 129,
+          "eligible": 128,
+          "prospectively_excluded": 1,
+          "outcomes": {
+            "contract_error": 0,
+            "interrupted": 0,
+            "multiple_faces": 0,
+            "no_face": 0,
+            "observed": 128,
+            "runtime_error": 0,
+            "timeout": 0
+          }
+        },
+        "frozen_origin_present": true
+      },
+      "negative_control": {
+        "source_count": 129,
+        "labels_initially_missing": true,
+        "ready_after_import": true,
+        "retained_revisions": 128,
+        "duplicate_import_idempotent": true,
+        "observer_calls": [
+          4,
+          128,
+          128
+        ],
+        "enrollment": {
+          "enrolled": 129,
+          "eligible": 128,
+          "prospectively_excluded": 1,
+          "outcomes": {
+            "contract_error": 0,
+            "interrupted": 0,
+            "multiple_faces": 0,
+            "no_face": 0,
+            "observed": 128,
+            "runtime_error": 0,
+            "timeout": 0
+          }
+        },
+        "frozen_origin_present": true
+      }
+    },
+    "admission": {
+      "positive_control": {
+        "status": "admitted_synthetic_control",
+        "passed": true,
+        "policy": {
+          "format": "facemath.empirical_admission_policy.v10",
+          "required_categories": [
+            "pixel_clear",
+            "pixel_smooth"
+          ],
+          "minimum_groups": 20,
+          "minimum_delivery": 0.8,
+          "minimum_coverage": 0.8,
+          "family_error": 0.1,
+          "evidence_kind": "synthetic_control",
+          "independent_groups_declared": true,
+          "sampling_design": "Deterministic branch/containment control. No population interpretation; does not establish real sampling assumptions."
+        },
+        "tail_probability_per_endpoint": 0.025,
+        "multiplicity": 4,
+        "categories": [
+          {
+            "category": "pixel_clear",
+            "groups": 24,
+            "delivered": 24,
+            "covered": 24,
+            "delivery_lower": 0.8575264022774743,
+            "coverage_lower": 0.8575264022774743,
+            "delivery_target": 0.8,
+            "coverage_target": 0.8,
+            "passes": true,
+            "reasons": []
+          },
+          {
+            "category": "pixel_smooth",
+            "groups": 24,
+            "delivered": 24,
+            "covered": 24,
+            "delivery_lower": 0.8575264022774743,
+            "coverage_lower": 0.8575264022774743,
+            "delivery_target": 0.8,
+            "coverage_target": 0.8,
+            "passes": true,
+            "reasons": []
+          }
+        ]
+      },
+      "negative_control": {
+        "status": "withheld",
+        "passed": false,
+        "policy": {
+          "format": "facemath.empirical_admission_policy.v10",
+          "required_categories": [
+            "pixel_clear",
+            "pixel_smooth"
+          ],
+          "minimum_groups": 20,
+          "minimum_delivery": 0.8,
+          "minimum_coverage": 0.8,
+          "family_error": 0.1,
+          "evidence_kind": "synthetic_control",
+          "independent_groups_declared": true,
+          "sampling_design": "Deterministic branch/containment control. No population interpretation; does not establish real sampling assumptions."
+        },
+        "tail_probability_per_endpoint": 0.025,
+        "multiplicity": 4,
+        "categories": [
+          {
+            "category": "pixel_clear",
+            "groups": 24,
+            "delivered": 24,
+            "covered": 24,
+            "delivery_lower": 0.8575264022774743,
+            "coverage_lower": 0.8575264022774743,
+            "delivery_target": 0.8,
+            "coverage_target": 0.8,
+            "passes": true,
+            "reasons": []
+          },
+          {
+            "category": "pixel_smooth",
+            "groups": 24,
+            "delivered": 24,
+            "covered": 0,
+            "delivery_lower": 0.8575264022774743,
+            "coverage_lower": 0.0,
+            "delivery_target": 0.8,
+            "coverage_target": 0.8,
+            "passes": false,
+            "reasons": [
+              "reference coverage lower bound below frozen target"
+            ]
+          }
+        ]
+      }
+    },
+    "additional_fields": {
+      "admitted_pair": {
+        "raw_arrays_unchanged": true,
+        "raw_arrays_checked": 135,
+        "array_count": 191,
+        "known_reference_shape_rms": 0.08333333333333319,
+        "shape_bounds": {
+          "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+          "observed_rms": 0.08333333333333345,
+          "reference_set_center_rms": 0.08333333333333345,
+          "lower": 0.07081151304994407,
+          "upper": 0.09006813168888718,
+          "available": true,
+          "reason": "bounded",
+          "distance_matrix_lower": 0.04908612847603172,
+          "quotient_lipschitz_lower": 0.07081151304997249,
+          "quotient_lipschitz_upper": 0.09585515361669442,
+          "candidate_rotation_upper": 0.09006813168885876,
+          "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+          "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+          "arrays": [
+            "intrinsic_shape_deviation_radii",
+            "intrinsic_shape_candidate_rotation"
+          ]
+        },
+        "known_reference_shape_enclosed": true,
+        "verified": true,
+        "qualification_snapshot_replayed": true
+      },
+      "withheld_query": {
+        "observer_calls": 0,
+        "reason": "empirical admission withheld: pixel_smooth: reference coverage lower bound below frozen target"
+      },
+      "limits": [
+        "positive branch was engineered, not sampled human performance",
+        "the separately frozen negative branch uses the same acceptance policy and keeps failing cases",
+        "native observer and independent real-reference validation remain outstanding",
+        "raw-state replay is self-consistency, not external attestation of provenance"
+      ]
+    }
+  },
+  "native_smoke": {
+    "format": "facemath.native_smoke.v10",
+    "source_sha256": "630bb12254d4cc055af3572c0131df3603e0b01219a789d3f9a3138469f4f636",
+    "status": "not_attempted",
+    "observer_attempted": false,
+    "native_observation_produced": false,
+    "human_accuracy_validated": false,
+    "blockers": [
+      "MediaPipe is not installed in this interpreter",
+      "explicit local model file is missing"
+    ],
+    "environment": {
+      "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+      "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+      "packages": {
+        "numpy": "2.3.5",
+        "scipy": "1.17.0",
+        "opencv-python": "4.13.0.92",
+        "mediapipe": null,
+        "pytest": "9.0.2"
+      },
+      "numeric_environment": {
+        "numpy": "2.3.5",
+        "scipy": "1.17.0",
+        "opencv": "4.13.0"
+      },
+      "engine_code_sha256": "77672e7b81c1b9ccfbc345bd36076fbfbd1e3f793b8991729a8180ee9eabf7d0"
+    },
+    "meaning": "execution smoke check only; independent labels and group-disjoint study still required",
+    "network_isolation": "not supplied; third-party runtime may emit utilization metrics",
+    "runtime_version": null,
+    "model_sha256": null
+  },
+  "native_transport_probe": {
+    "argv": [
+      "curl",
+      "--fail",
+      "--location",
+      "--connect-timeout",
+      "5",
+      "--max-time",
+      "15",
+      "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task",
+      "--output",
+      "/mnt/data/wave10_work/models/face_landmarker.task"
+    ],
+    "started_utc": "2026-09-20T09:09:11.531702+00:00",
+    "finished_utc": "2026-09-20T09:09:11.558483+00:00",
+    "returncode": 6,
+    "stdout": "",
+    "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (6) Could not resolve host: storage.googleapis.com\n",
+    "file_exists": false
+  },
+  "native_api_fixture": {
+    "record": "evidence/wave10/execution/logs/native_api_control.txt",
+    "execution": {
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_10/scripts/native_contract_control.py",
+        "--out",
+        "/mnt/data/wave10_work/native_api_fixture"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 4.382316589355469
+    },
+    "native_inference_executed": false,
+    "scope": "patched Python API fixture only; not MediaPipe, pretrained weights, or human reference validation"
+  },
+  "consolidated_numeric_controls": {
+    "format": "facemath.consolidated_controls.v10",
+    "analytic_checks": {
+      "jaw_response_monotone": true,
+      "similarity_invariance": true,
+      "unrelated_crossfade_rank1": true,
+      "null_not_similarity_evidence": true
+    },
+    "mixed_radius": {
+      "format": "facemath.mixed_source_radius_controls.v8",
+      "kind": "analytic_and_synthetic_NOT_HUMAN",
+      "seed": 28801,
+      "sampled_shape_pairs": 1024,
+      "scalar_relation_checks": 262144,
+      "sampled_relation_violations": 0,
+      "sampled_shape_violations": 0,
+      "shape_bound": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.04999972298708903,
+        "reference_set_center_rms": 0.04999972298708903,
+        "lower": 0.02428640423154512,
+        "upper": 0.06634270166002348,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.0233635065375299,
+        "quotient_lipschitz_lower": 0.024286404231573543,
+        "quotient_lipschitz_upper": 0.07571304174260451,
+        "candidate_rotation_upper": 0.06634270165999506,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "circle_counterexample": {
+        "source_radii": [
+          1.0,
+          3.0
+        ],
+        "admissible_witness_gap": 1.2,
+        "correct_source_specific_upper": 1.2000000000000173,
+        "unsafe_smaller_single_radius_upper": 0.8000000000000143,
+        "overconservative_larger_single_radius_upper": 1.4000000000000201
+      },
+      "arrays": {
+        "source_centers": {
+          "shape": [
+            2,
+            8,
+            2
+          ],
+          "dtype": "float64",
+          "sha256": "495101ca8266efbfe6c6ec02051ad331b4facb55d192099ba8e9d6f5500f3b65"
+        },
+        "source_covariance": {
+          "shape": [
+            2,
+            16,
+            16
+          ],
+          "dtype": "float64",
+          "sha256": "4b9e0e415291ef7249ba90a44a2035b35176fa408819776f12d0db693e119d8a"
+        },
+        "source_factors": {
+          "shape": [
+            2,
+            8,
+            2,
+            16
+          ],
+          "dtype": "float64",
+          "sha256": "5267f31980069c8c950c2c68af915e7c2e684a2e94a1c04f883a7f1abeb6eaf0"
+        },
+        "source_radii": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64",
+          "sha256": "c70124d34f3c6fd97aefa319957e0d71ba85b80c664ac9ecede6785f615b2c05"
+        },
+        "latent_draws": {
+          "shape": [
+            2,
+            1024,
+            16
+          ],
+          "dtype": "float64",
+          "sha256": "5d2fc9d471bd73b62a714ec27282a384b6bd2e756c1626cdc4d382503cdc1cce"
+        },
+        "shape_draws": {
+          "shape": [
+            2,
+            1024,
+            8,
+            2
+          ],
+          "dtype": "float64",
+          "sha256": "9a3125eae6b9e98a23bc51e8ef747969ecbc09b771fa96270f68e9f828dc4cbd"
+        },
+        "exact_relation_values": {
+          "shape": [
+            2,
+            1024,
+            256
+          ],
+          "dtype": "float64",
+          "sha256": "f3eb81f50548496e62aff442b4d7af11ce2bafd1b19459cf3df4a39d62931f69"
+        },
+        "exact_relation_gaps": {
+          "shape": [
+            1024,
+            256
+          ],
+          "dtype": "float64",
+          "sha256": "b1143d6885c1e2b80537a65a78d2ebcfe2adbaea7051d8cbb9c9623ec72db4e1"
+        },
+        "gap_lower": {
+          "shape": [
+            256
+          ],
+          "dtype": "float64",
+          "sha256": "59877682e5827cb684b14e417bbbb4c3f1408a55295966ab0174787e90593798"
+        },
+        "gap_upper": {
+          "shape": [
+            256
+          ],
+          "dtype": "float64",
+          "sha256": "288cf913f6e51b7741b9286e63a91b8a59ac107aeeca2056e5735fad7e5484e8"
+        },
+        "gap_available": {
+          "shape": [
+            256
+          ],
+          "dtype": "bool",
+          "sha256": "f9484b9c5a5151fdd263b1925dc6dbeeb7b7d99b60bd555a5fbfbf492661e1ad"
+        },
+        "exact_refitted_shape": {
+          "shape": [
+            1024
+          ],
+          "dtype": "float64",
+          "sha256": "51abdd1ab6f338eca9e1605d723a3a3b1f304ceb9eb2d31d1eba508c9c6979ab"
+        },
+        "shape_bounds": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64",
+          "sha256": "6767f7571242244b7cb9271563d4d473b9fa572413de206a198ec668279d97f9"
+        },
+        "circle_delta": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "float64",
+          "sha256": "739236a6acf2507c9b12f40d51728d57ac9fc90c4927a12ee6238723550da2ee"
+        },
+        "circle_covariances": {
+          "shape": [
+            2,
+            1,
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "sha256": "aa3c969a6f11a9c88dd545634528083a34bb007955525500d38eef997ac2e99a"
+        },
+        "circle_source_radii": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64",
+          "sha256": "c3c7e70f0287dbcf738f14e45cc97cb1ed6af16a1701d1895a7c1449ab457cf6"
+        },
+        "circle_witness": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64",
+          "sha256": "56dc728216c1976bd451867d21bbe94b9d2ddfc49e3d5de51f4f3def11b7089b"
+        }
+      },
+      "limit": "sampling tests the analytic outer bounds; it is not proof by sampling or real reference calibration"
+    },
+    "pixel_controls": {
+      "format": "facemath.measured_source_controls.v9",
+      "source_only": true,
+      "outside_aperture_features_identical": true,
+      "single_source_category": "pixel_clear",
+      "whole_group_category": "pixel_smooth",
+      "noise_category": "pixel_clear",
+      "noise_detail": 0.37576088727298096,
+      "smoothed_noise_category": "__unmatched__",
+      "smoothed_noise_detail": 0.061907951584462176,
+      "flat_category": "__unmatched__",
+      "flat_detail": 0.0,
+      "overlapping_rule_category": "__ambiguous__",
+      "noise_counterexample": "high-frequency noise is not usable anatomical detail; this routing is NOT a face-quality detector",
+      "no_predictions_or_reference_labels_consumed": true
+    },
+    "scope": "analytic and synthetic source/shape controls, not human observation validation"
+  },
+  "browser_checks": {
+    "browser": {
+      "format": "facemath.browser_qa.v10",
+      "started_utc": "2026-09-20T09:09:15.735665+00:00",
+      "reports": {
+        "positive": {
+          "path": "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/positive/qualification/report.html",
+          "loading": "emitted HTML in memory",
+          "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_10/evidence/wave10/laboratory/positive/qualification/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_10/evidence/wave10/laboratory/positive/qualification/report.html\", waiting until \"load\"\n"
+        },
+        "negative": {
+          "path": "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/negative/qualification/report.html",
+          "loading": "emitted HTML in memory",
+          "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_10/evidence/wave10/laboratory/negative/qualification/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_10/evidence/wave10/laboratory/negative/qualification/report.html\", waiting until \"load\"\n"
+        },
+        "pair": {
+          "path": "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair/report.html",
+          "loading": "emitted HTML in memory",
+          "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair/report.html\", waiting until \"load\"\n"
+        },
+        "blank_reference_workspace": {
+          "path": "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/positive/workspace/workbenches/source_00011_rater_000.html",
+          "loading": "emitted HTML in memory",
+          "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_10/evidence/wave10/laboratory/positive/workspace/workbenches/source_00011_rater_000.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_10/evidence/wave10/laboratory/positive/workspace/workbenches/source_00011_rater_000.html\", waiting until \"load\"\n"
+        }
+      },
+      "checks": {
+        "positive_full_evaluation_retained": 24,
+        "negative_full_evaluation_retained": 24,
+        "readout_uses_stored_fraction_bounds": true,
+        "whole_group_csv_exact": true,
+        "immutable_pair_payload": true,
+        "blank_workspace_no_reference_predictions": true,
+        "no_result_category_or_acceptance_editors": true,
+        "qualification_snapshot_exists": true
+      },
+      "viewports": [
+        {
+          "size": {
+            "width": 1440,
+            "height": 1080
+          },
+          "page_fits": true,
+          "csv_exact": true
+        },
+        {
+          "size": {
+            "width": 390,
+            "height": 844
+          },
+          "page_fits": true,
+          "csv_exact": true
+        }
+      ],
+      "annotations": "none; blank workspace and rater state tested, not human labels",
+      "passed": true,
+      "script_errors": [],
+      "remote_requests": [],
+      "finished_utc": "2026-09-20T09:09:28.891662+00:00"
+    },
+    "joint-browser": {
+      "format": "facemath.browser_qa.v7",
+      "started_utc": "2026-09-20T09:11:13.204653+00:00",
+      "source": "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair/report.html",
+      "checks": {
+        "retained_mode_and_covariance_inventory": [
+          16,
+          256,
+          8
+        ],
+        "display_operations_preserve_measurements": true,
+        "csv_exact_full_covariance": true,
+        "local_evidence_links": true,
+        "no_horizontal_overflow": true
+      },
+      "viewports": [
+        {
+          "size": {
+            "width": 1440,
+            "height": 1150
+          },
+          "csv_rows": 256,
+          "interactive": true,
+          "screenshot": "desktop_joint.png"
+        },
+        {
+          "size": {
+            "width": 390,
+            "height": 844
+          },
+          "csv_rows": 256,
+          "interactive": true,
+          "screenshot": "mobile_joint.png"
+        }
+      ],
+      "loading": "emitted HTML in memory; local file navigation blocked",
+      "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair/report.html\", waiting until \"load\"\n",
+      "errors": [],
+      "remote_requests": [],
+      "finished_utc": "2026-09-20T09:11:26.298873+00:00",
+      "passed": true
+    },
+    "relation-browser": {
+      "format": "facemath.browser_qa.v6",
+      "report": "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair/report.html",
+      "started_at": "2026-09-20T09:11:16.569081+00:00",
+      "checks": {
+        "distance_rows": 28,
+        "angle_rows": 168,
+        "signed_double_area_rows": 56,
+        "asymmetry_rows": 4,
+        "anatomical_name_filter_rows": 63,
+        "selection_links_same_raw_array_row": true,
+        "csv_matches_exact_selected_frozen_values": true,
+        "status_filter_rows": 50,
+        "full_covariance_ellipse_display": true,
+        "display_zoom_not_measurement_rescale": true,
+        "local_evidence_links_exist": true,
+        "controls_do_not_change_measurements": true
+      },
+      "viewports": [
+        {
+          "width": 1440,
+          "height": 1150,
+          "document_width": 1440,
+          "body_overflow": false
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "document_width": 390,
+          "body_overflow": false
+        }
+      ],
+      "loading": "in-memory emitted HTML; local navigation unavailable",
+      "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair/report.html\nCall log:\n  - navigating to \"file:///mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair/report.html\", waiting until \"load\"\n",
+      "page_errors": [],
+      "remote_requests": [],
+      "passed": true,
+      "finished_at": "2026-09-20T09:11:26.679736+00:00"
+    }
+  },
+  "source_replay": {
+    "source_study_replay": {
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/positive/qualification",
+        "--out",
+        "/mnt/data/wave10_work/source-study-replay"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 36.18251085281372
+    },
+    "source_pair_replay": {
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair",
+        "--out",
+        "/mnt/data/wave10_work/source-pair-replay"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 82.68180775642395
+    },
+    "research_replay": {
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_10/evidence/wave10/research_pair",
+        "--out",
+        "/mnt/data/wave10_work/research-replay"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 9.749964237213135
+    }
+  },
+  "actual_command_records": [
+    {
+      "record": "evidence/wave10/execution/logs/actual_native_smoke.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "observer-smoke",
+        "/mnt/data/wave10_work/native_input.png",
+        "--model",
+        "/mnt/data/wave10_work/models/face_landmarker.task",
+        "--out",
+        "/mnt/data/facemath_wave_10/evidence/wave10/native_smoke"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 5.546313762664795
+    },
+    {
+      "record": "evidence/wave10/execution/logs/browser_final.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_10/scripts/browser_qa_wave10.py",
+        "/mnt/data/facemath_wave_10/evidence/wave10/laboratory",
+        "--out",
+        "/mnt/data/facemath_wave_10/evidence/wave10/browser"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 15.660607814788818
+    },
+    {
+      "record": "evidence/wave10/execution/logs/capabilities.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "capabilities",
+        "--out",
+        "/mnt/data/facemath_wave_10/evidence/wave10/capabilities.json"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 7.341601133346558
+    },
+    {
+      "record": "evidence/wave10/execution/logs/joint_browser.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_10/scripts/browser_qa_wave7.py",
+        "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair/report.html",
+        "--out",
+        "/mnt/data/facemath_wave_10/evidence/wave10/joint-browser"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 15.006621360778809
+    },
+    {
+      "record": "evidence/wave10/execution/logs/lab_first.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-c",
+        "from facemath.observation.milestone_lab import run_milestone_laboratory; print(run_milestone_laboratory('/mnt/data/wave10_work/first_lab',compact=True)['admitted_pair'])"
+      ],
+      "cwd": "/",
+      "returncode": 0,
+      "elapsed_seconds": 47.259989500045776
+    },
+    {
+      "record": "evidence/wave10/execution/logs/milestone_lab_final.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "milestone-lab",
+        "--out",
+        "/mnt/data/facemath_wave_10/evidence/wave10/laboratory"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 254.03148794174194
+    },
+    {
+      "record": "evidence/wave10/execution/logs/native_api_control.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_10/scripts/native_contract_control.py",
+        "--out",
+        "/mnt/data/wave10_work/native_api_fixture"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 4.382316589355469
+    },
+    {
+      "record": "evidence/wave10/execution/logs/native_smoke_verify.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "verify",
+        "/mnt/data/facemath_wave_10/evidence/wave10/native_smoke"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 7.510962247848511
+    },
+    {
+      "record": "evidence/wave10/execution/logs/numerical_consolidation.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_10/scripts/milestone_numerical_controls.py",
+        "--out",
+        "/mnt/data/facemath_wave_10/evidence/wave10/numerical_controls"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 13.216931581497192
+    },
+    {
+      "record": "evidence/wave10/execution/logs/overview_accepted.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "overview",
+        "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 31.638179063796997
+    },
+    {
+      "record": "evidence/wave10/execution/logs/overview_rejected.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "overview",
+        "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/negative/qualification"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 17.306488037109375
+    },
+    {
+      "record": "evidence/wave10/execution/logs/overview_research.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "overview",
+        "/mnt/data/facemath_wave_10/evidence/wave10/research_pair"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 7.05215048789978
+    },
+    {
+      "record": "evidence/wave10/execution/logs/relation_browser.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_10/scripts/browser_qa_wave6.py",
+        "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair/report.html",
+        "--out",
+        "/mnt/data/facemath_wave_10/evidence/wave10/relation-browser"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 13.247502326965332
+    },
+    {
+      "record": "evidence/wave10/execution/logs/research_demo.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "demo",
+        "--size",
+        "160",
+        "--draws",
+        "8",
+        "--no-flow",
+        "--out",
+        "/mnt/data/facemath_wave_10/evidence/wave10/research_pair"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 7.793330907821655
+    },
+    {
+      "record": "evidence/wave10/execution/logs/research_replay.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_10/evidence/wave10/research_pair",
+        "--out",
+        "/mnt/data/wave10_work/research-replay"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 9.749964237213135
+    },
+    {
+      "record": "evidence/wave10/execution/logs/source_final.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=/mnt/data/wave10_work/logs/source_final.xml"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 271.6718246936798
+    },
+    {
+      "record": "evidence/wave10/execution/logs/source_first.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=/mnt/data/wave10_work/logs/source_first.xml"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 1,
+      "elapsed_seconds": 268.8484740257263
+    },
+    {
+      "record": "evidence/wave10/execution/logs/source_pair_replay.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair",
+        "--out",
+        "/mnt/data/wave10_work/source-pair-replay"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 82.68180775642395
+    },
+    {
+      "record": "evidence/wave10/execution/logs/source_study_replay.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/positive/qualification",
+        "--out",
+        "/mnt/data/wave10_work/source-study-replay"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 36.18251085281372
+    },
+    {
+      "record": "evidence/wave10/execution/logs/wheel_validation.result.json",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/facemath_wave_10/scripts/check_wheel.py",
+        "/mnt/data/facemath_wave_10/dist/facemath-0.10.0-py3-none-any.whl",
+        "--tests",
+        "/mnt/data/facemath_wave_10/tests",
+        "--bundle",
+        "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/positive/qualification",
+        "--pair-bundle",
+        "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair",
+        "--out",
+        "/mnt/data/wave10_work/wheel-check"
+      ],
+      "cwd": "/mnt/data/facemath_wave_10",
+      "returncode": 0,
+      "elapsed_seconds": 399.56219935417175
+    }
+  ],
+  "installed_wheel_commands": [
+    {
+      "record": "evidence/wave10/execution/wheel-check/command-00.json",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-deps",
+        "--no-index",
+        "--target",
+        "/tmp/facemath-installed-on3jl551/installed",
+        "/mnt/data/facemath_wave_10/dist/facemath-0.10.0-py3-none-any.whl"
+      ],
+      "cwd": "/tmp/facemath-installed-on3jl551",
+      "started_utc": "2026-09-20T09:09:16.550974+00:00",
+      "finished_utc": "2026-09-20T09:09:20.554967+00:00",
+      "returncode": 0,
+      "stdout": "Processing /mnt/data/facemath_wave_10/dist/facemath-0.10.0-py3-none-any.whl\nInstalling collected packages: facemath\nSuccessfully installed facemath-0.10.0\n",
+      "stderr": "WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+    },
+    {
+      "record": "evidence/wave10/execution/wheel-check/command-01.json",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-c",
+        "import facemath,json; from facemath.observation.journal import code_fingerprint; print(json.dumps({\"file\":facemath.__file__,\"version\":facemath.__version__,\"code_sha256\":code_fingerprint()}))"
+      ],
+      "cwd": "/tmp/facemath-installed-on3jl551",
+      "started_utc": "2026-09-20T09:09:20.555331+00:00",
+      "finished_utc": "2026-09-20T09:09:22.998693+00:00",
+      "returncode": 0,
+      "stdout": "{\"file\": \"/tmp/facemath-installed-on3jl551/installed/facemath/__init__.py\", \"version\": \"0.10.0\", \"code_sha256\": \"77672e7b81c1b9ccfbc345bd36076fbfbd1e3f793b8991729a8180ee9eabf7d0\"}\n",
+      "stderr": ""
+    },
+    {
+      "record": "evidence/wave10/execution/wheel-check/command-02.json",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "/mnt/data/facemath_wave_10/tests",
+        "-c",
+        "/tmp/facemath-installed-on3jl551/pytest.ini",
+        "--junitxml=/mnt/data/wave10_work/wheel-check/pytest.xml"
+      ],
+      "cwd": "/tmp/facemath-installed-on3jl551",
+      "started_utc": "2026-09-20T09:09:22.999276+00:00",
+      "finished_utc": "2026-09-20T09:14:11.156305+00:00",
+      "returncode": 0,
+      "stdout": "........................................................................ [  7%]\n........................................................................ [ 15%]\n........................................................................ [ 22%]\n........................................................................ [ 30%]\n........s............................................................... [ 38%]\n........................................................................ [ 45%]\n........................................................................ [ 53%]\n........................................................................ [ 61%]\n........................................................................ [ 68%]\n........................................................................ [ 76%]\n........................................................................ [ 83%]\n........................................................................ [ 91%]\n........................................................................ [ 99%]\n.......                                                                  [100%]\n942 passed, 1 skipped in 282.98s (0:04:42)\n",
+      "stderr": ""
+    },
+    {
+      "record": "evidence/wave10/execution/wheel-check/command-03.json",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/positive/qualification",
+        "--out",
+        "/mnt/data/wave10_work/wheel-check/replayed"
+      ],
+      "cwd": "/tmp/facemath-installed-on3jl551",
+      "started_utc": "2026-09-20T09:14:11.158622+00:00",
+      "finished_utc": "2026-09-20T09:14:37.297272+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"replay_verified\": true,\n  \"bundle\": \"/mnt/data/wave10_work/wheel-check/replayed\",\n  \"comparison\": \"exact qualification/calibration JSON and numerical array equality\",\n  \"live_inference_reexecuted\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "record": "evidence/wave10/execution/wheel-check/command-04.json",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "facemath",
+        "replay",
+        "/mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair",
+        "--out",
+        "/mnt/data/wave10_work/wheel-check/pair-replayed"
+      ],
+      "cwd": "/tmp/facemath-installed-on3jl551",
+      "started_utc": "2026-09-20T09:14:37.298552+00:00",
+      "finished_utc": "2026-09-20T09:15:54.366384+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"replay_verified\": true,\n  \"source_bundle\": \"/mnt/data/facemath_wave_10/evidence/wave10/laboratory/admitted_pair\",\n  \"new_bundle\": \"/mnt/data/wave10_work/wheel-check/pair-replayed\",\n  \"numerical_tolerance\": \"arrays atol=1e-9, rtol=1e-7; measurements atol=1e-10, rtol=1e-8\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "retained_raw_execution_files": [
+    {
+      "path": "evidence/wave10/execution/logs/actual_native_smoke.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/actual_native_smoke.result.json",
+      "bytes": 388,
+      "sha256": "a23b662d6ddcb9f15006720dbbf4bca4eb6b3d30b16f10d371677fba2c10913a"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/actual_native_smoke.txt",
+      "bytes": 1382,
+      "sha256": "9d847c76a5e0469b445dbab9a92eebde2326f273b0bd348ffac58004d0eb61f2"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/admission-first.txt",
+      "bytes": 2403,
+      "sha256": "e8d6b8ca82d0433e0190085cf97ecc4ef393f229dc902813b181a192b4e2ce1f"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/admission-second.txt",
+      "bytes": 179,
+      "sha256": "36c948b3ed035992d6e804aa58b2b7a2e4fa2741be45bdc3ee03bda6a2796d7b"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/browser_final.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/browser_final.result.json",
+      "bytes": 342,
+      "sha256": "65de46651f1e5a244ac51d244b85854961314cb42a4dcdb3336609c1b971a603"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/browser_final.txt",
+      "bytes": 3261,
+      "sha256": "b85a5115b2a1dcfe90a98d82af368f832e614111cc249291fbb8c0e32bfa8ce3"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/browser_first.txt",
+      "bytes": 2781,
+      "sha256": "4269592e47f6aff249b92f624c868fe15b00a71560c0c4d8296225c0e152326c"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/capabilities.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/capabilities.result.json",
+      "bytes": 273,
+      "sha256": "7d22b3698e59c72d250d5d760226f5450defd69e61c83cf7f06079b9af814a6f"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/capabilities.txt",
+      "bytes": 43793,
+      "sha256": "30df535cd4085717cdbbff96e06b55d6287ff41201b4fa8d570c163cba27c1db"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/contracts-first.txt",
+      "bytes": 181,
+      "sha256": "bc8a5894391f8f0a05334627eea2bd35e067dcf086d94a6d4f82277d5891853d"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/install10.txt",
+      "bytes": 1325,
+      "sha256": "bde555a4a74dea478f4dd3302215b9796b98da3fa17004773fb6c949e762c59c"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/joint_browser.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/joint_browser.result.json",
+      "bytes": 373,
+      "sha256": "602fb050970f94a3e48f185943cfac68618855a3f6d048cbf319e3c1b2e99b56"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/joint_browser.txt",
+      "bytes": 1555,
+      "sha256": "22451ec0a96883cc177562940a5b536362f2ff0544226fb73f014f75253be670"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/lab_first.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/lab_first.result.json",
+      "bytes": 309,
+      "sha256": "661393b18e0c0cfe5de42cb11659a27c913624bc0485505671e7cff66b4216a8"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/lab_first.txt",
+      "bytes": 1242,
+      "sha256": "e956ecfa5e4ba5c3e7d04702af21ea3404d330b9a55452b47a84adead2594f14"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/milestone_lab_final.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/milestone_lab_final.result.json",
+      "bytes": 268,
+      "sha256": "140133277892f23461d3a6b44d3a716f9146de0d1f1c2f7a1450451cbd88db03"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/milestone_lab_final.txt",
+      "bytes": 34402,
+      "sha256": "8b795e00afcfee8022760e150cef3f7d21d77af7f4fe71ef2609363f83c41bce"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/native_api_control.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/native_api_control.result.json",
+      "bytes": 276,
+      "sha256": "e4c81b5c4f542b1123edcf84bf0a4ebe112bd9b8eef93292f1756fe833813151"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/native_api_control.txt",
+      "bytes": 397,
+      "sha256": "9526aaa16e788aa22e8148000f93e51ae21dff3b5d2f305a915591c39b9a0f5f"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/native_smoke_verify.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/native_smoke_verify.result.json",
+      "bytes": 249,
+      "sha256": "bbca0a326768cdaae62b494c48b9779fa62d546d3938b4f42e57b34ea1616828"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/native_smoke_verify.txt",
+      "bytes": 263,
+      "sha256": "0b046dcfad623b33002c284231764ae1a459acd2139a514f214d7ed78b864d5e"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/native_snapshot_first.txt",
+      "bytes": 99,
+      "sha256": "80d0a677f82b06411dc6fa2d3be95b9677ca6dac157f8f6e6787b51a64f55dcc"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/numerical_consolidation.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/numerical_consolidation.result.json",
+      "bytes": 303,
+      "sha256": "f3c622da183b09013c075c0af346231779b943d22cbfe4b9d309185da1a60024"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/numerical_consolidation.txt",
+      "bytes": 6384,
+      "sha256": "a7fe22ca0ed2a6702c1aac6f27d1d43ea824e32f65ded795fe7a3e76bd67cae0"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/overview_accepted.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/overview_accepted.result.json",
+      "bytes": 264,
+      "sha256": "670f45fce26453a929b6c17edefe59ce4833452cea3e7358eaa216d3b7f36010"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/overview_accepted.txt",
+      "bytes": 808,
+      "sha256": "a8ffe2871740e065cfd4519b9ba0b099abf757e3059599dcad43c8f985a0d330"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/overview_rejected.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/overview_rejected.result.json",
+      "bytes": 273,
+      "sha256": "e36c84ee83b2172e43d82f0b3cdd124f2894e99c2f65d7336e1182ffe796028d"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/overview_rejected.txt",
+      "bytes": 454,
+      "sha256": "c14e462ab6e4625605c77e1c75378ce54f6a0ffb8168d2646b45eeedfd5eb4fc"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/overview_research.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/overview_research.result.json",
+      "bytes": 251,
+      "sha256": "faf10de2da8f8a58e9cf0ad8d073e0e4ce54ca2d1a2acd9470656648c1e2edba"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/overview_research.txt",
+      "bytes": 705,
+      "sha256": "e0c19f0cc978cc815fc9b5b046b865b8f03d8c9755d336f5a2092aa590a4cbca"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/parent.xml",
+      "bytes": 101682,
+      "sha256": "d72c8a6ba31d8214c2075fe7f234452e52fc4b45503440fc9336625cfd0e5d37"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/parent_install.txt",
+      "bytes": 1182,
+      "sha256": "93ec3247299559ec824c5327daefb5d47b91fe74aa5a57f041e09fd69ddf9c53"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/parent_tests.txt",
+      "bytes": 923,
+      "sha256": "ab4eb6451e6c9bda6c8402da32751d91c013caf4439dfc9d0482fa33d3e7fa1d"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/pypi_probe.txt",
+      "bytes": 280,
+      "sha256": "1a467ed5fcb02249cd1849a9d7a88a14b4b47b973834ccd67fb7137ae9caab37"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/readout_repair.txt",
+      "bytes": 99,
+      "sha256": "1e893a5d508c6ca8d5408c6968dbffcd18d0ed623b27d4c209302468931f7673"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/relation_browser.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/relation_browser.result.json",
+      "bytes": 376,
+      "sha256": "87784bae90071c14225e9c2f41b486307f446dfae50824c8c7912ede4a29e59d"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/relation_browser.txt",
+      "bytes": 1658,
+      "sha256": "cf485c2c74089c2c2d780ec469dacd10d475c6f7893d61f3c93a992724f0d7ec"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/research_demo.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/research_demo.result.json",
+      "bytes": 327,
+      "sha256": "b3b4d4f69fc12a8b0d053958afd1d6961209ac019da80fdece2208c82b771560"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/research_demo.txt",
+      "bytes": 555,
+      "sha256": "3200387f987c6efc134ee29a0bd35a04bf04da9be4b4c66e0b242173ea78ac2e"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/research_replay.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/research_replay.result.json",
+      "bytes": 308,
+      "sha256": "b574eb3c09a087ce061ef2d7a6cabf25fceb386e386dda897da5eab8c7f23843"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/research_replay.txt",
+      "bytes": 431,
+      "sha256": "f0e3ddbe4bff973a00c1c6f37f85f31d2de60abca0df7b5a11028c8ab1dd83e3"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/source_final.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/source_final.result.json",
+      "bytes": 242,
+      "sha256": "6776320cd6b82513344c46078d06d0f7314e019d14eaf1e1c81d8a6caf63cdea"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/source_final.txt",
+      "bytes": 1278,
+      "sha256": "8ad6c9058f96bfb8d6b38f17d020ab71c8f663eb3d91fa544c77c816e1f92e1b"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/source_final.xml",
+      "bytes": 121289,
+      "sha256": "b836fe20ba6b906c49dc9c0e19c6a83a81d80bc5e247bfa045a617b5cf6d4aa3"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/source_first.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/source_first.result.json",
+      "bytes": 242,
+      "sha256": "7317c004fba50c06261451bf9775ead18d4445f08e1ca48e66669901fe8dba39"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/source_first.txt",
+      "bytes": 32675,
+      "sha256": "f07431f97a38ae166577311090e935372c1e4cd855ce5f07eba6809e6e3a8057"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/source_first.xml",
+      "bytes": 150767,
+      "sha256": "2087311abbf696f6d4fc363f0eb902685b85e366309ad23845c4f1b43a3bec49"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/source_pair_replay.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/source_pair_replay.result.json",
+      "bytes": 322,
+      "sha256": "655145785e66cb8462c628ef3ba3095a567e49676ec900b401b2834aa9f56463"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/source_pair_replay.txt",
+      "bytes": 459,
+      "sha256": "2eb7e319cec7c785c00d79b537833d076689cf6c841c67feadf5743b6e6eaacd"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/source_study_replay.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/source_study_replay.result.json",
+      "bytes": 332,
+      "sha256": "3f7c0e960f70986f042bc2fcb62a465f9ff4110b76b30ae7961b48eedfd8627e"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/source_study_replay.txt",
+      "bytes": 407,
+      "sha256": "43f799a18cb406bf41f23e238168e6117c59fe4e4adb666f587cd296f3952981"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/wheel_build.txt",
+      "bytes": 905,
+      "sha256": "48df6a6f5f6a0234b2ccbe00abc98b20df6baaa7a5be697cfdd18c38fa123d94"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/wheel_validation.launch.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/wheel_validation.result.json",
+      "bytes": 581,
+      "sha256": "6d2c1b7dd7072f2af379bd94224812d2dca38337446f394caf98318abb37adb3"
+    },
+    {
+      "path": "evidence/wave10/execution/logs/wheel_validation.txt",
+      "bytes": 2679,
+      "sha256": "8cc9b08cf67d6a8d1668bc9ffca6c56c0d077883cd819468afdf819255962da6"
+    },
+    {
+      "path": "evidence/wave10/execution/wheel-check/command-00.json",
+      "bytes": 884,
+      "sha256": "e1353d8502fe84bc1c7aa2c97b8de87dca21f445c6a8f93bf0a605d1a28dae31"
+    },
+    {
+      "path": "evidence/wave10/execution/wheel-check/command-01.json",
+      "bytes": 661,
+      "sha256": "272a2107e0879c0e40c96fafb109410fc723a4115fbd1b4c2ec7ab73905d2da2"
+    },
+    {
+      "path": "evidence/wave10/execution/wheel-check/command-02.json",
+      "bytes": 1630,
+      "sha256": "0464dff09b879b68b7417de68dd531afbd7da96355e0b8726c666f8b6a5bcf54"
+    },
+    {
+      "path": "evidence/wave10/execution/wheel-check/command-03.json",
+      "bytes": 670,
+      "sha256": "1adea599ba699dfb058004e8261eb02131d73e0386337963812eb093c41412b1"
+    },
+    {
+      "path": "evidence/wave10/execution/wheel-check/command-04.json",
+      "bytes": 736,
+      "sha256": "ffb7e90fba31d4c1df2d36ffd0c3d0fef1d07c33c0542e297fae479a1f6ff9e4"
+    },
+    {
+      "path": "evidence/wave10/execution/wheel-check/pytest.xml",
+      "bytes": 115631,
+      "sha256": "c554ae0fbd52de84ebdbbe0c6cc07b3d5652c11ecfeea05299accac7b8cdf4d4"
+    }
+  ],
+  "logging_boundary": "Some early wrappers recorded argv/cwd/returncode/elapsed only. Missing UTC fields are not retroactively reconstructed. JUnit and later native/wheel records retain their own original timestamps.",
+  "final_archive_validation": "After sealing the archive, extracted-suite and replay outcomes will be stored in the adjacent facemath_wave_10_release.json, not retroactively inserted in this sealed record.",
+  "limits": [
+    "No live MediaPipe inference or independently annotated real-portrait accuracy study was completed.",
+    "The positive/negative acceptance workflows are engineered deterministic synthetic controls, not exchangeable population experiments.",
+    "Sampling checks of analytic outer bounds are not formal interval arithmetic proofs or exact extrema.",
+    "Held-out acceptance requires the declared sampling assumptions; IDs do not prove independence or blinding; adaptive repeated studies are not controlled.",
+    "Byte verification and numerical replay establish consistency with retained inputs, not external authenticity or real-world truth.",
+    "All Python executions used one Linux numerical dependency stack; a target wheel installation is not a fresh dependency stack.",
+    "The multi-OS CI matrix is supplied configuration, not executed Windows/macOS validation.",
+    "Browser file navigation was blocked; actual emitted HTML was tested in memory and paths inspected separately.",
+    "Historical formula registry remains an inventory, not proof that all earlier mathematical analogies are implemented.",
+    "No new original-video face score, identity analysis, or historical neural telemetry is claimed."
+  ]
+}

@@ -1,0 +1,46 @@
+................F.......F.........................................       [100%]
+=================================== FAILURES ===================================
+_ test_exact_one_sided_lower_matches_independent_scipy_contract[0.0125-73-100] _
+
+k = 73, n = 100, tail = 0.0125
+
+    @pytest.mark.parametrize('k,n', [(0,1),(1,1),(0,30),(1,30),(14,30),(29,30),(30,30),(73,100),(990,1000)])
+    @pytest.mark.parametrize('tail', [.025, .0125, .001])
+    def test_exact_one_sided_lower_matches_independent_scipy_contract(k,n,tail):
+        expected=binomtest(k,n,alternative='greater').proportion_ci(confidence_level=1-tail,method='exact').low
+>       assert lower_binomial(k,n,tail)==pytest.approx(expected,abs=2e-13)
+E       assert 0.6180898551083676 == 0.6180898551085919 ± 2.0e-13
+E         
+E         comparison failed
+E         Obtained: 0.6180898551083676
+E         Expected: 0.6180898551085919 ± 2.0e-13
+
+tests/test_wave10_admission.py:24: AssertionError
+__ test_exact_one_sided_lower_matches_independent_scipy_contract[0.001-30-30] __
+
+k = 30, n = 30, tail = 0.001
+
+    @pytest.mark.parametrize('k,n', [(0,1),(1,1),(0,30),(1,30),(14,30),(29,30),(30,30),(73,100),(990,1000)])
+    @pytest.mark.parametrize('tail', [.025, .0125, .001])
+    def test_exact_one_sided_lower_matches_independent_scipy_contract(k,n,tail):
+        expected=binomtest(k,n,alternative='greater').proportion_ci(confidence_level=1-tail,method='exact').low
+>       assert lower_binomial(k,n,tail)==pytest.approx(expected,abs=2e-13)
+E       assert 0.7943282347242815 == 0.7943282347240552 ± 2.0e-13
+E         
+E         comparison failed
+E         Obtained: 0.7943282347242815
+E         Expected: 0.7943282347240552 ± 2.0e-13
+
+tests/test_wave10_admission.py:24: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_wave10_admission.py::test_exact_one_sided_lower_matches_independent_scipy_contract[0.0125-73-100] - assert 0.6180898551083676 == 0.6180898551085919 ± 2.0e-13
+  
+  comparison failed
+  Obtained: 0.6180898551083676
+  Expected: 0.6180898551085919 ± 2.0e-13
+FAILED tests/test_wave10_admission.py::test_exact_one_sided_lower_matches_independent_scipy_contract[0.001-30-30] - assert 0.7943282347242815 == 0.7943282347240552 ± 2.0e-13
+  
+  comparison failed
+  Obtained: 0.7943282347242815
+  Expected: 0.7943282347240552 ± 2.0e-13
+2 failed, 64 passed in 1.01s
