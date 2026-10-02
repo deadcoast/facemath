@@ -134,3 +134,21 @@ distinct diagnostic result. No tolerance or saved result was changed to admit it
 The measured Linux-to-Windows control has 12 identical saved arrays and a maximum
 absolute derived-score difference of `7.815970093361102e-14`. This value diagnoses
 that one run; it is not a new permissible replay tolerance.
+# Joint bound utility and HELEN cohorts
+
+Use `examples/helen-utility-cohort.json` with the same `dataset cohort-fetch`,
+`dataset cohort`, `dataset run`, `verify` and `replay` commands as the LFPW plan.
+Its HELEN-specific selection requires numeric `source_face` names and chooses
+one original face per photograph root before splitting. The prepared dataset
+retains original pixels/PTS, root selection and all source pins for offline
+transfer. Existing LFPW selection and artifacts retain their original meaning.
+
+For joint models, `qualification/qualification.json` contains `bound_utility`:
+per-case landmark diameters, eye-span/mouth-width intervals and mouth/eye ratios;
+split/category summaries retain every enrolled case, excluded case and group.
+Widths use observed-eye-span units, with raw pixel span retained for conversion.
+Ratio bounds use the uncertain reference-set denominator. Null widths have
+explicit reasons. Development/calibration summaries are diagnostics, not held-out
+evidence. Exact replay recomputes the report; the fitted model digest binds each
+report to its center, scatter, protocol and radius. These diagnostics do not
+authorize empirical admission or change native coordinates.

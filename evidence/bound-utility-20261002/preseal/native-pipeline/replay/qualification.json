@@ -1,0 +1,4182 @@
+{
+  "format": "facemath.qualification.v5",
+  "study_sha256": "3d3d4bfed7cfbe4a2e813020e1a4c35b98198c00386226667f730541ff115822",
+  "raw_validation_sha256": "97de1aae5ed100e8e06ab67062209e48d7c66f51cf191e20ed701fd6957e8d1b",
+  "observer_recipe_sha256": "d805baa53707cce9795a34b3e0e88347021888c1b708ee62a073d9da4a735c37",
+  "execution_kind": "native_mediapipe",
+  "live_human_observer_validation": true,
+  "domain": "Prospectively selected original HELEN testset crops, published PTS agreement and joint bound utility; visibility, identity independence and native training overlap unknown",
+  "bias_mode_selected_before_acquisition": "development_joint_ocular",
+  "raw_coordinates_changed": false,
+  "estimator_selected_using_evaluation": false,
+  "enrollment": {
+    "enrolled": 60,
+    "eligible": 60,
+    "prospectively_excluded": 0,
+    "committed": 60,
+    "outcomes": {
+      "contract_error": 0,
+      "interrupted": 0,
+      "multiple_faces": 1,
+      "no_face": 1,
+      "observed": 58,
+      "runtime_error": 0,
+      "timeout": 0
+    }
+  },
+  "excluded_cases": [],
+  "acquisition_routing": null,
+  "raw_baseline": {
+    "quantile": 55.0772298666839,
+    "rank": 19,
+    "coverage": {
+      "calibration_sha256": "36ef42b0c36adf4fae37dad7ac9ac95f93e1972674d36e9f2d149cb61cf4c925",
+      "nominal_coverage": 0.9,
+      "finite_envelope": true,
+      "evaluation_cases": 20,
+      "evaluation_groups": 20,
+      "covered_groups": 20,
+      "empirical_group_coverage": 1.0,
+      "failures": 0,
+      "cases": [
+        {
+          "case_id": "case_00040",
+          "group_id": "source_464a5dfa186cf9e4ccc539a169b2ccd35cecac37e9cd440cae1971bc1922c0fc",
+          "score": 34.99190584925023,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00041",
+          "group_id": "source_77d14976d855a2c10e8f137644a0647279ce82b4024acb4c34539ad6b6308aad",
+          "score": 19.192281576700594,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00042",
+          "group_id": "source_ae85596ab4be599c366712aa11c80e95f9f1bdce553d3bb54131b90d49a3ec36",
+          "score": 13.744569225172015,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00043",
+          "group_id": "source_127dab0e54f689c980640160207c878242fffcc7ea340f7dfe104b5e3a1b2f64",
+          "score": 30.842719232513016,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00044",
+          "group_id": "source_b84ede30080e53d54d86857f96f5c51de5a8bf1b0c623667b70e3668b48eb582",
+          "score": 33.514908680439525,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00045",
+          "group_id": "source_30f1eab3c7c9d34132261d49fcc1d807d022b4778ccd00d84fddec6742ef0888",
+          "score": 40.838843971444696,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00046",
+          "group_id": "source_15e684096aea4e04fb8042b533bf3a07974ec7041270a867dfe4c10c7d6a7172",
+          "score": 4.810782858662419,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00047",
+          "group_id": "source_418fab8b148cf314b5392974e813c8e6f9dfe5b153e202ec9a7027075783e570",
+          "score": 14.16077019383375,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00048",
+          "group_id": "source_bb40679480b7227a74a1ca2b4afec97020ea4f872820fcaa030ff339f1ec977d",
+          "score": 26.548029766927975,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00049",
+          "group_id": "source_9a08efce411cd58d8c158df5e09dc58632c72404ef16415fa89b1cfe4984baad",
+          "score": 16.381828952211677,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00050",
+          "group_id": "source_2735124784676fa408912269a81e575b0b482edb02b4c7e0adb4b696bfa22917",
+          "score": 41.56218883882099,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00051",
+          "group_id": "source_d42d908ed3b359ba9a6d9f96223351a0a50f74828b0369d0fd1517e26b6691ae",
+          "score": 40.62995176195631,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00052",
+          "group_id": "source_9d5505fa89d1c757b553ddaaec2640b450c76feef715f9730e2c5a9602dac35b",
+          "score": 12.739067093591586,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00053",
+          "group_id": "source_36bab299211571f58118e41487156fef4b48e1ac418554d2995d26816038dff7",
+          "score": 9.735805960746587,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00054",
+          "group_id": "source_5fadc85a176bf4eadd1cf8cbc01eece2fd6be292d88987f3519f64c2020aaa50",
+          "score": 15.966438388461642,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00055",
+          "group_id": "source_8b60bd299390a1533d987e11fbd59ae99f00455ee6263e1c5cd5fc27943f531d",
+          "score": 22.07186184741203,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00056",
+          "group_id": "source_5bc86f46187e4aff8439bef7c1d0b18c639872426442acd7b3f48615a3fb25ee",
+          "score": 27.198419285737998,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00057",
+          "group_id": "source_82e6ec7e324188fe9085d2390a3e0b1c3387ba4deb3d90cff84c2e43512b4ed1",
+          "score": 29.513307714525848,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00058",
+          "group_id": "source_f696849b61592bf27eead643592d40b8a15e6d94df1c304f37731ac2b6a21c22",
+          "score": 19.221093200560624,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00059",
+          "group_id": "source_2f552115ab9520d4205f3140b9b923d4806b727cf583e3baef54ce95e09f9e63",
+          "score": 13.96084625471178,
+          "assessable": true,
+          "covered": true
+        }
+      ],
+      "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage"
+    }
+  },
+  "selected_error_model": {
+    "calibration_sha256": "8f779b5a706f8188218a1e18a1dd5bcfb100e30632baa8efb90b9f9dc5dff4fd",
+    "quantile": 16.220889465226026,
+    "rank": 19,
+    "radius_mode": "one_pooled_radius",
+    "bias_sha256": "117f079a21cd4e709562152bdb3ee4bddccac7d3a43cf2dae4591bf317000520",
+    "joint_scatter_sha256": "b70f9314f41c9bf44c2b73602463aee6f290b6805e97aea09aa2660108424b64",
+    "error_geometry": "full16_shared_latent_ellipsoid",
+    "q_comparability": "score definitions differ across model types; compare coverage and widths, not q alone",
+    "development_groups": 20,
+    "fitted_development_groups": 19,
+    "development_cases_rejected": [
+      [
+        "case_00012",
+        "multiple_faces: primary observation: multiple_faces; explicitly crop/select one face"
+      ]
+    ],
+    "coverage": {
+      "calibration_sha256": "f8f75c60037e2b453a046fe91611df5f4d27b02279bf8b6ef51e87b419faa361",
+      "nominal_coverage": 0.9,
+      "finite_envelope": true,
+      "evaluation_cases": 20,
+      "evaluation_groups": 20,
+      "covered_groups": 18,
+      "empirical_group_coverage": 0.9,
+      "failures": 0,
+      "cases": [
+        {
+          "case_id": "case_00040",
+          "group_id": "source_464a5dfa186cf9e4ccc539a169b2ccd35cecac37e9cd440cae1971bc1922c0fc",
+          "score": 14.689425528713803,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00041",
+          "group_id": "source_77d14976d855a2c10e8f137644a0647279ce82b4024acb4c34539ad6b6308aad",
+          "score": 5.8337409995724965,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00042",
+          "group_id": "source_ae85596ab4be599c366712aa11c80e95f9f1bdce553d3bb54131b90d49a3ec36",
+          "score": 37.00589274245272,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "case_00043",
+          "group_id": "source_127dab0e54f689c980640160207c878242fffcc7ea340f7dfe104b5e3a1b2f64",
+          "score": 6.171972886091527,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00044",
+          "group_id": "source_b84ede30080e53d54d86857f96f5c51de5a8bf1b0c623667b70e3668b48eb582",
+          "score": 11.093883458058881,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00045",
+          "group_id": "source_30f1eab3c7c9d34132261d49fcc1d807d022b4778ccd00d84fddec6742ef0888",
+          "score": 6.555747896089615,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00046",
+          "group_id": "source_15e684096aea4e04fb8042b533bf3a07974ec7041270a867dfe4c10c7d6a7172",
+          "score": 28.92943412747145,
+          "assessable": true,
+          "covered": false
+        },
+        {
+          "case_id": "case_00047",
+          "group_id": "source_418fab8b148cf314b5392974e813c8e6f9dfe5b153e202ec9a7027075783e570",
+          "score": 5.467286958853902,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00048",
+          "group_id": "source_bb40679480b7227a74a1ca2b4afec97020ea4f872820fcaa030ff339f1ec977d",
+          "score": 9.312177881688307,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00049",
+          "group_id": "source_9a08efce411cd58d8c158df5e09dc58632c72404ef16415fa89b1cfe4984baad",
+          "score": 4.733934389900346,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00050",
+          "group_id": "source_2735124784676fa408912269a81e575b0b482edb02b4c7e0adb4b696bfa22917",
+          "score": 7.591039023799574,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00051",
+          "group_id": "source_d42d908ed3b359ba9a6d9f96223351a0a50f74828b0369d0fd1517e26b6691ae",
+          "score": 6.940481065767532,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00052",
+          "group_id": "source_9d5505fa89d1c757b553ddaaec2640b450c76feef715f9730e2c5a9602dac35b",
+          "score": 9.638996437454102,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00053",
+          "group_id": "source_36bab299211571f58118e41487156fef4b48e1ac418554d2995d26816038dff7",
+          "score": 8.306084921641922,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00054",
+          "group_id": "source_5fadc85a176bf4eadd1cf8cbc01eece2fd6be292d88987f3519f64c2020aaa50",
+          "score": 10.243234678185102,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00055",
+          "group_id": "source_8b60bd299390a1533d987e11fbd59ae99f00455ee6263e1c5cd5fc27943f531d",
+          "score": 5.514233335709031,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00056",
+          "group_id": "source_5bc86f46187e4aff8439bef7c1d0b18c639872426442acd7b3f48615a3fb25ee",
+          "score": 6.126419279402404,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00057",
+          "group_id": "source_82e6ec7e324188fe9085d2390a3e0b1c3387ba4deb3d90cff84c2e43512b4ed1",
+          "score": 9.79451041236949,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00058",
+          "group_id": "source_f696849b61592bf27eead643592d40b8a15e6d94df1c304f37731ac2b6a21c22",
+          "score": 8.849771483070196,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00059",
+          "group_id": "source_2f552115ab9520d4205f3140b9b923d4806b727cf583e3baef54ce95e09f9e63",
+          "score": 5.116677344879598,
+          "assessable": true,
+          "covered": true
+        }
+      ],
+      "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage",
+      "full_error_model_sha256": "8f779b5a706f8188218a1e18a1dd5bcfb100e30632baa8efb90b9f9dc5dff4fd",
+      "score_centering": "development_joint_ocular",
+      "binomial_95_interval": [
+        0.6830172859809176,
+        0.9876514728297052
+      ]
+    }
+  },
+  "slices": [
+    {
+      "stratum": "all",
+      "prespecified": true,
+      "calibration_groups": 20,
+      "has_calibration_representation": true,
+      "evaluation": {
+        "cases": 20,
+        "groups": 20,
+        "covered_groups": 18,
+        "empirical_coverage": 0.9,
+        "binomial_95_interval": [
+          0.6830172859809176,
+          0.9876514728297052
+        ],
+        "case_count_per_group": {
+          "source_464a5dfa186cf9e4ccc539a169b2ccd35cecac37e9cd440cae1971bc1922c0fc": 1,
+          "source_77d14976d855a2c10e8f137644a0647279ce82b4024acb4c34539ad6b6308aad": 1,
+          "source_ae85596ab4be599c366712aa11c80e95f9f1bdce553d3bb54131b90d49a3ec36": 1,
+          "source_127dab0e54f689c980640160207c878242fffcc7ea340f7dfe104b5e3a1b2f64": 1,
+          "source_b84ede30080e53d54d86857f96f5c51de5a8bf1b0c623667b70e3668b48eb582": 1,
+          "source_30f1eab3c7c9d34132261d49fcc1d807d022b4778ccd00d84fddec6742ef0888": 1,
+          "source_15e684096aea4e04fb8042b533bf3a07974ec7041270a867dfe4c10c7d6a7172": 1,
+          "source_418fab8b148cf314b5392974e813c8e6f9dfe5b153e202ec9a7027075783e570": 1,
+          "source_bb40679480b7227a74a1ca2b4afec97020ea4f872820fcaa030ff339f1ec977d": 1,
+          "source_9a08efce411cd58d8c158df5e09dc58632c72404ef16415fa89b1cfe4984baad": 1,
+          "source_2735124784676fa408912269a81e575b0b482edb02b4c7e0adb4b696bfa22917": 1,
+          "source_d42d908ed3b359ba9a6d9f96223351a0a50f74828b0369d0fd1517e26b6691ae": 1,
+          "source_9d5505fa89d1c757b553ddaaec2640b450c76feef715f9730e2c5a9602dac35b": 1,
+          "source_36bab299211571f58118e41487156fef4b48e1ac418554d2995d26816038dff7": 1,
+          "source_5fadc85a176bf4eadd1cf8cbc01eece2fd6be292d88987f3519f64c2020aaa50": 1,
+          "source_8b60bd299390a1533d987e11fbd59ae99f00455ee6263e1c5cd5fc27943f531d": 1,
+          "source_5bc86f46187e4aff8439bef7c1d0b18c639872426442acd7b3f48615a3fb25ee": 1,
+          "source_82e6ec7e324188fe9085d2390a3e0b1c3387ba4deb3d90cff84c2e43512b4ed1": 1,
+          "source_f696849b61592bf27eead643592d40b8a15e6d94df1c304f37731ac2b6a21c22": 1,
+          "source_2f552115ab9520d4205f3140b9b923d4806b727cf583e3baef54ce95e09f9e63": 1
+        },
+        "scope": "all scored reference points in this slice's cases per group; overlapping slices are not pooled",
+        "interval_assumption": "independent comparable Bernoulli groups; not implied by marginal conformal exchangeability"
+      },
+      "route_status": "pooled_diagnostic_slice",
+      "deployed_quantile": 16.220889465226026,
+      "raw_localization": {
+        "attempted_cases": 20,
+        "complete_cases": 20,
+        "failed_cases": 0,
+        "groups": 20,
+        "reference_kind": "external_dataset",
+        "successful_case_mean_nme": 0.048473130311190174,
+        "unconditional_auc": 0.5271549504934564,
+        "auc_threshold_ipd": 0.1,
+        "pck_threshold_ipd": 0.05,
+        "eligible_landmarks": 160,
+        "observed_landmarks": 160,
+        "pck_including_failures": 0.7125,
+        "per_landmark": [
+          {
+            "name": "left_eye_outer",
+            "eligible": 20,
+            "observed": 20,
+            "within_tolerance": 18,
+            "pck": 0.9,
+            "median_error_px": 7.657356443408325
+          },
+          {
+            "name": "left_eye_inner",
+            "eligible": 20,
+            "observed": 20,
+            "within_tolerance": 18,
+            "pck": 0.9,
+            "median_error_px": 8.675464829326566
+          },
+          {
+            "name": "right_eye_inner",
+            "eligible": 20,
+            "observed": 20,
+            "within_tolerance": 16,
+            "pck": 0.8,
+            "median_error_px": 8.173238853610282
+          },
+          {
+            "name": "right_eye_outer",
+            "eligible": 20,
+            "observed": 20,
+            "within_tolerance": 18,
+            "pck": 0.9,
+            "median_error_px": 3.936449864217413
+          },
+          {
+            "name": "nose_tip",
+            "eligible": 20,
+            "observed": 20,
+            "within_tolerance": 1,
+            "pck": 0.05,
+            "median_error_px": 31.79855556913099
+          },
+          {
+            "name": "mouth_left",
+            "eligible": 20,
+            "observed": 20,
+            "within_tolerance": 18,
+            "pck": 0.9,
+            "median_error_px": 4.94138378972577
+          },
+          {
+            "name": "mouth_right",
+            "eligible": 20,
+            "observed": 20,
+            "within_tolerance": 18,
+            "pck": 0.9,
+            "median_error_px": 5.1874594161436605
+          },
+          {
+            "name": "chin",
+            "eligible": 20,
+            "observed": 20,
+            "within_tolerance": 7,
+            "pck": 0.35,
+            "median_error_px": 13.750940318553106
+          }
+        ],
+        "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+        "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+        "covariance_limit": "perturbation repeatability is not localization accuracy",
+        "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+      },
+      "conditional_coverage_guaranteed": false
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "case_00000",
+      "group_id": "source_8b9fcd46df7ea385cc3d4193ede684efa31331021ff281803d520b78beb431e8",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 7.992034984814419,
+      "centered_mean_error_px": 5.4455466413910685,
+      "raw_simultaneous_score": 14.496585890752863,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00000.png",
+      "receipt": "acquisition/cases/case_00000/receipt.json"
+    },
+    {
+      "case_id": "case_00001",
+      "group_id": "source_7a62d843abc4c961dc8c5edd07e4eb4ed0832f56ea06162435047571851b7c4e",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 7.708356820415043,
+      "centered_mean_error_px": 3.7097881428168256,
+      "raw_simultaneous_score": 21.87736544572773,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00001.png",
+      "receipt": "acquisition/cases/case_00001/receipt.json"
+    },
+    {
+      "case_id": "case_00002",
+      "group_id": "source_669191ba29d069fc811418d11899dd00515b093b143de3cd2283f6a812a7f09e",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 5.959866892164763,
+      "centered_mean_error_px": 3.52272596388328,
+      "raw_simultaneous_score": 29.281965013912878,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00002.png",
+      "receipt": "acquisition/cases/case_00002/receipt.json"
+    },
+    {
+      "case_id": "case_00003",
+      "group_id": "source_2c9a03efda41f1a5aac0bd8b43fdd09162e159149c1ecbd81e3b2169439fc026",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 6.220855896519323,
+      "centered_mean_error_px": 5.04268737800901,
+      "raw_simultaneous_score": 9.545642700962107,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00003.png",
+      "receipt": "acquisition/cases/case_00003/receipt.json"
+    },
+    {
+      "case_id": "case_00004",
+      "group_id": "source_50dbbf773dfcadb55ce4a9dfff1108fce9a0687ffe0e704baa672df4ee8857ac",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 9.338658551660448,
+      "centered_mean_error_px": 6.990104922785048,
+      "raw_simultaneous_score": 32.57152815628939,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00004.png",
+      "receipt": "acquisition/cases/case_00004/receipt.json"
+    },
+    {
+      "case_id": "case_00005",
+      "group_id": "source_52364b7d32c31bcbe38dd8d3053a8471c09e4aeb20a4045a3d49d255d8fb154c",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 6.324855131959356,
+      "centered_mean_error_px": 4.456838777802604,
+      "raw_simultaneous_score": 20.619197097386845,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00005.png",
+      "receipt": "acquisition/cases/case_00005/receipt.json"
+    },
+    {
+      "case_id": "case_00006",
+      "group_id": "source_d5b448b1e77f73820f418367f8b559b7fbc1edecc2ccc2b89cd681a8be5a30c6",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 11.326569477947475,
+      "centered_mean_error_px": 7.591647839599792,
+      "raw_simultaneous_score": 23.335900188928836,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00006.png",
+      "receipt": "acquisition/cases/case_00006/receipt.json"
+    },
+    {
+      "case_id": "case_00007",
+      "group_id": "source_7c05d2b5b26a567096966eb4f6db4fff18dd267f1f55c595d9631dde747692e6",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 9.146190426493572,
+      "centered_mean_error_px": 5.0981362530975165,
+      "raw_simultaneous_score": 18.910956348587984,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00007.png",
+      "receipt": "acquisition/cases/case_00007/receipt.json"
+    },
+    {
+      "case_id": "case_00008",
+      "group_id": "source_81b1b8fec0f5cdc6b5099f8a407976620ce0e3d61049f6c7c3933999f7a114ba",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 21.22602343394186,
+      "centered_mean_error_px": 13.587925500656588,
+      "raw_simultaneous_score": 23.527965353567552,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00008.png",
+      "receipt": "acquisition/cases/case_00008/receipt.json"
+    },
+    {
+      "case_id": "case_00009",
+      "group_id": "source_db715fd3c15174340f1ea22936f5503fc3760367e11139629d8e08b24628e4e1",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 7.624586793652035,
+      "centered_mean_error_px": 7.0884714666297,
+      "raw_simultaneous_score": 22.27064175801228,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00009.png",
+      "receipt": "acquisition/cases/case_00009/receipt.json"
+    },
+    {
+      "case_id": "case_00010",
+      "group_id": "source_bdd7ba4c16c7269044d6f685b948c6ca3ca49177750378927e853039a4fef445",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 30.53811499792784,
+      "centered_mean_error_px": 23.54430436368642,
+      "raw_simultaneous_score": 30.897141293012204,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00010.png",
+      "receipt": "acquisition/cases/case_00010/receipt.json"
+    },
+    {
+      "case_id": "case_00011",
+      "group_id": "source_a2b0d483c1935300ddf094639a68328a6d6199f9c767affa9b05dd0981cf653a",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 9.787717040636599,
+      "centered_mean_error_px": 6.41419292192908,
+      "raw_simultaneous_score": 31.04859358670619,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00011.png",
+      "receipt": "acquisition/cases/case_00011/receipt.json"
+    },
+    {
+      "case_id": "case_00012",
+      "group_id": "source_3f03df4a4f718e372840e749b8294eede63d1d1c3c657378fe40a786f82d25da",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "multiple_faces",
+      "raw_mean_error_px": null,
+      "centered_mean_error_px": null,
+      "raw_simultaneous_score": null,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 0,
+      "image": "acquisition/study/inputs/case_00012.png",
+      "receipt": "acquisition/cases/case_00012/receipt.json"
+    },
+    {
+      "case_id": "case_00013",
+      "group_id": "source_ac7ca3cce247df68a7645218cd43423d060c880d1d11857eabf44298f5298e61",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 6.126011583097401,
+      "centered_mean_error_px": 2.5682778172040797,
+      "raw_simultaneous_score": 18.369137839952888,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00013.png",
+      "receipt": "acquisition/cases/case_00013/receipt.json"
+    },
+    {
+      "case_id": "case_00014",
+      "group_id": "source_3ce77e2c488fe88a9fae23af4ff5061b0436e3404fa3854d0e3e630192ed940a",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 8.096546646221752,
+      "centered_mean_error_px": 5.021313087953872,
+      "raw_simultaneous_score": 18.51586654939582,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00014.png",
+      "receipt": "acquisition/cases/case_00014/receipt.json"
+    },
+    {
+      "case_id": "case_00015",
+      "group_id": "source_b17263487727cae5b8e98083c852bacf733a43a573105838db8e5ecd7e4694fb",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 5.235145022800554,
+      "centered_mean_error_px": 2.7741393143181066,
+      "raw_simultaneous_score": 18.85616558943788,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00015.png",
+      "receipt": "acquisition/cases/case_00015/receipt.json"
+    },
+    {
+      "case_id": "case_00016",
+      "group_id": "source_ba851fd0d880ec56cf455b5927bca68eb8407fe9a26081019aa5dec5455d83a1",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 11.410637527326433,
+      "centered_mean_error_px": 7.142098902901305,
+      "raw_simultaneous_score": 24.768214901451824,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00016.png",
+      "receipt": "acquisition/cases/case_00016/receipt.json"
+    },
+    {
+      "case_id": "case_00017",
+      "group_id": "source_fe6d402ca4d8426af73609c860fa25cb2d70cc75269366fd166db36a71b833e5",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 6.096051432810856,
+      "centered_mean_error_px": 4.527673626066803,
+      "raw_simultaneous_score": 10.576193585003873,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00017.png",
+      "receipt": "acquisition/cases/case_00017/receipt.json"
+    },
+    {
+      "case_id": "case_00018",
+      "group_id": "source_84b131cd8e6f74d94e797c3279c6dadf9c2969bf4f1c4a0289371d8a037d13d5",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 6.747597926274216,
+      "centered_mean_error_px": 6.253176983176617,
+      "raw_simultaneous_score": 11.190825409818624,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00018.png",
+      "receipt": "acquisition/cases/case_00018/receipt.json"
+    },
+    {
+      "case_id": "case_00019",
+      "group_id": "source_58718acaa9a8551b049c9cc2f5a7da3a6f6371c6d54e909242f49d105c6e754c",
+      "split": "development",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 5.949729428930153,
+      "centered_mean_error_px": 2.26075364064764,
+      "raw_simultaneous_score": 20.119184610686847,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": true,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00019.png",
+      "receipt": "acquisition/cases/case_00019/receipt.json"
+    },
+    {
+      "case_id": "case_00020",
+      "group_id": "source_6c04f62d8b0277111b5651f342dc5db8e08cd47bbb87c9c575b9733cea673254",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 15.691327987697065,
+      "centered_mean_error_px": 12.222922362813978,
+      "raw_simultaneous_score": 14.131447727400653,
+      "selected_simultaneous_score": 15.016834240032024,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00020.png",
+      "receipt": "acquisition/cases/case_00020/receipt.json"
+    },
+    {
+      "case_id": "case_00021",
+      "group_id": "source_8cf487a02f950b6699f581f8ddeb2838768d008adb05241b9014001fcf208376",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 22.275606621908267,
+      "centered_mean_error_px": 18.087723331722614,
+      "raw_simultaneous_score": 13.231331450765719,
+      "selected_simultaneous_score": 7.474028071686938,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00021.png",
+      "receipt": "acquisition/cases/case_00021/receipt.json"
+    },
+    {
+      "case_id": "case_00022",
+      "group_id": "source_6e232aef10d83543032902abe02f3fb3ec263442ee87fbc363bcdc42c3ad8594",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 12.855466589161917,
+      "centered_mean_error_px": 12.146079860197224,
+      "raw_simultaneous_score": 23.875496095934583,
+      "selected_simultaneous_score": 9.994484128954209,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00022.png",
+      "receipt": "acquisition/cases/case_00022/receipt.json"
+    },
+    {
+      "case_id": "case_00023",
+      "group_id": "source_45acbc4403643690f5b177f4b3ba42245731c12d7bebe9507d63981a0b64062f",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 10.300265286762958,
+      "centered_mean_error_px": 6.374073527027427,
+      "raw_simultaneous_score": 27.408657203235542,
+      "selected_simultaneous_score": 16.220889465226026,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00023.png",
+      "receipt": "acquisition/cases/case_00023/receipt.json"
+    },
+    {
+      "case_id": "case_00024",
+      "group_id": "source_e6a66c42a45fe1c158152c1fde1c7c71eb2abd53473d80c917d96ac8bd98e996",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 6.186534296755708,
+      "centered_mean_error_px": 4.963351852938539,
+      "raw_simultaneous_score": 12.124694111100384,
+      "selected_simultaneous_score": 9.6546352168966,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00024.png",
+      "receipt": "acquisition/cases/case_00024/receipt.json"
+    },
+    {
+      "case_id": "case_00025",
+      "group_id": "source_c286bdfde929458ec20f09ef71f71b257ea0fbe080cd4aabe9fba2ee5e73e7ba",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 9.912737721061148,
+      "centered_mean_error_px": 12.207407506990952,
+      "raw_simultaneous_score": 15.30810243325797,
+      "selected_simultaneous_score": 11.144612925068953,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00025.png",
+      "receipt": "acquisition/cases/case_00025/receipt.json"
+    },
+    {
+      "case_id": "case_00026",
+      "group_id": "source_911e310fcf39c06f6a37dce98ac951a6fe38d72f30a30abbe5ddbee58b28b877",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 20.291977895345795,
+      "centered_mean_error_px": 10.96346829765741,
+      "raw_simultaneous_score": 28.538987350958912,
+      "selected_simultaneous_score": 4.819444350283667,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00026.png",
+      "receipt": "acquisition/cases/case_00026/receipt.json"
+    },
+    {
+      "case_id": "case_00027",
+      "group_id": "source_3ae94f555293827c0dfabc41a888d193be625ff9af57f98ca1c4ba12fa81e3e6",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 13.513821589077587,
+      "centered_mean_error_px": 11.13683991822655,
+      "raw_simultaneous_score": 16.936350087135644,
+      "selected_simultaneous_score": 7.424769297265381,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00027.png",
+      "receipt": "acquisition/cases/case_00027/receipt.json"
+    },
+    {
+      "case_id": "case_00028",
+      "group_id": "source_cdbc4af541e18f74c856dc6caf2ccb0926d2b1d957fdcb6c5b32e99dfd6c065d",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 6.57238371074701,
+      "centered_mean_error_px": 5.1427835551419365,
+      "raw_simultaneous_score": 18.967618595347385,
+      "selected_simultaneous_score": 6.3028873897660835,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00028.png",
+      "receipt": "acquisition/cases/case_00028/receipt.json"
+    },
+    {
+      "case_id": "case_00029",
+      "group_id": "source_a1a46264ca68789ea328ef587e943e6dcc9fb5f7d9e74089e4e5ac909276a06c",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 16.47337048737631,
+      "centered_mean_error_px": 8.895636067814646,
+      "raw_simultaneous_score": 34.273435185231804,
+      "selected_simultaneous_score": 5.988386036175104,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00029.png",
+      "receipt": "acquisition/cases/case_00029/receipt.json"
+    },
+    {
+      "case_id": "case_00030",
+      "group_id": "source_c1550981c781e0d5f85e1a8021adfcb3a53dc08a81f04f290515d664904e381b",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 6.464680658220817,
+      "centered_mean_error_px": 5.2315072108806255,
+      "raw_simultaneous_score": 24.555023091498615,
+      "selected_simultaneous_score": 5.357563614880345,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00030.png",
+      "receipt": "acquisition/cases/case_00030/receipt.json"
+    },
+    {
+      "case_id": "case_00031",
+      "group_id": "source_5dd670e8c67e1e8299894685c3b30eef477e6afb0e96f0455e2e30eb13a09c95",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 19.261700549484313,
+      "centered_mean_error_px": 15.016726389526262,
+      "raw_simultaneous_score": 55.0772298666839,
+      "selected_simultaneous_score": 8.284152368196128,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00031.png",
+      "receipt": "acquisition/cases/case_00031/receipt.json"
+    },
+    {
+      "case_id": "case_00032",
+      "group_id": "source_eccaa5ee4a41d63cfc4ca97b4b3aa825cb862381ba51f38445b7cb91aa67cf11",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 5.999369467267858,
+      "centered_mean_error_px": 3.8244207652896827,
+      "raw_simultaneous_score": 12.138193243664812,
+      "selected_simultaneous_score": 9.276171403950725,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00032.png",
+      "receipt": "acquisition/cases/case_00032/receipt.json"
+    },
+    {
+      "case_id": "case_00033",
+      "group_id": "source_a7e8c2013e98a142e3d6b55205f2bd649b745ab05adf94470513e11f27a4d4eb",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 18.986585087753703,
+      "centered_mean_error_px": 12.197025582046763,
+      "raw_simultaneous_score": 22.97930105207928,
+      "selected_simultaneous_score": 5.446221099367137,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00033.png",
+      "receipt": "acquisition/cases/case_00033/receipt.json"
+    },
+    {
+      "case_id": "case_00034",
+      "group_id": "source_3a721989d8ef56c03478b0beff1de1aba58d7d07e1cdf3ced6ddb7ee654ceeb6",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 14.718742506752303,
+      "centered_mean_error_px": 8.260200942026351,
+      "raw_simultaneous_score": 32.794181477709756,
+      "selected_simultaneous_score": 6.525773487335255,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00034.png",
+      "receipt": "acquisition/cases/case_00034/receipt.json"
+    },
+    {
+      "case_id": "case_00035",
+      "group_id": "source_2ccecdb6ee987172c2efe62e732bf96aedaa9fdbe159c2054685dd511dc333e1",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 5.299646587145154,
+      "centered_mean_error_px": 2.5341288243732585,
+      "raw_simultaneous_score": 21.53975908095619,
+      "selected_simultaneous_score": 6.084161914818888,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00035.png",
+      "receipt": "acquisition/cases/case_00035/receipt.json"
+    },
+    {
+      "case_id": "case_00036",
+      "group_id": "source_c5361e998993c35f170da7e14e1b361bb7f491be98157c20ebb201450dc9992c",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 20.77747520815052,
+      "centered_mean_error_px": 16.990185541569183,
+      "raw_simultaneous_score": 13.190043226254643,
+      "selected_simultaneous_score": 5.503294332739481,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00036.png",
+      "receipt": "acquisition/cases/case_00036/receipt.json"
+    },
+    {
+      "case_id": "case_00037",
+      "group_id": "source_1d8ee1fa5f62088c7728bc8d79f26bc989c6815e32dc044ad922f696d360d2cf",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 21.056510114890536,
+      "centered_mean_error_px": 11.837012642776719,
+      "raw_simultaneous_score": 39.50116740891171,
+      "selected_simultaneous_score": 5.194805958117041,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00037.png",
+      "receipt": "acquisition/cases/case_00037/receipt.json"
+    },
+    {
+      "case_id": "case_00038",
+      "group_id": "source_afd630d8e8682914f4285483274f84a0a2b476ff1e2f7ab4f43c0160c2d4d857",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "no_face",
+      "raw_mean_error_px": null,
+      "centered_mean_error_px": null,
+      "raw_simultaneous_score": null,
+      "selected_simultaneous_score": null,
+      "development_not_heldout": false,
+      "observed_reference_points": 0,
+      "image": "acquisition/study/inputs/case_00038.png",
+      "receipt": "acquisition/cases/case_00038/receipt.json"
+    },
+    {
+      "case_id": "case_00039",
+      "group_id": "source_4151757d16e5d8251dc261ef077e6c3c95002fd80d2a202b87883c502376f0b1",
+      "split": "calibration",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 8.849707202838065,
+      "centered_mean_error_px": 7.173446826236317,
+      "raw_simultaneous_score": 19.275607546672006,
+      "selected_simultaneous_score": 6.23019419972264,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00039.png",
+      "receipt": "acquisition/cases/case_00039/receipt.json"
+    },
+    {
+      "case_id": "case_00040",
+      "group_id": "source_464a5dfa186cf9e4ccc539a169b2ccd35cecac37e9cd440cae1971bc1922c0fc",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 37.051506101616155,
+      "centered_mean_error_px": 33.60765683091573,
+      "raw_simultaneous_score": 34.99190584925023,
+      "selected_simultaneous_score": 14.689425528713803,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00040.png",
+      "receipt": "acquisition/cases/case_00040/receipt.json"
+    },
+    {
+      "case_id": "case_00041",
+      "group_id": "source_77d14976d855a2c10e8f137644a0647279ce82b4024acb4c34539ad6b6308aad",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 5.0392130043271575,
+      "centered_mean_error_px": 4.0310494710354385,
+      "raw_simultaneous_score": 19.192281576700594,
+      "selected_simultaneous_score": 5.8337409995724965,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00041.png",
+      "receipt": "acquisition/cases/case_00041/receipt.json"
+    },
+    {
+      "case_id": "case_00042",
+      "group_id": "source_ae85596ab4be599c366712aa11c80e95f9f1bdce553d3bb54131b90d49a3ec36",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 23.487089327265014,
+      "centered_mean_error_px": 20.406478401000793,
+      "raw_simultaneous_score": 13.744569225172015,
+      "selected_simultaneous_score": 37.00589274245272,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00042.png",
+      "receipt": "acquisition/cases/case_00042/receipt.json"
+    },
+    {
+      "case_id": "case_00043",
+      "group_id": "source_127dab0e54f689c980640160207c878242fffcc7ea340f7dfe104b5e3a1b2f64",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 12.864080516269624,
+      "centered_mean_error_px": 5.776030786055195,
+      "raw_simultaneous_score": 30.842719232513016,
+      "selected_simultaneous_score": 6.171972886091527,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00043.png",
+      "receipt": "acquisition/cases/case_00043/receipt.json"
+    },
+    {
+      "case_id": "case_00044",
+      "group_id": "source_b84ede30080e53d54d86857f96f5c51de5a8bf1b0c623667b70e3668b48eb582",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 10.517679995962995,
+      "centered_mean_error_px": 8.790464517679675,
+      "raw_simultaneous_score": 33.514908680439525,
+      "selected_simultaneous_score": 11.093883458058881,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00044.png",
+      "receipt": "acquisition/cases/case_00044/receipt.json"
+    },
+    {
+      "case_id": "case_00045",
+      "group_id": "source_30f1eab3c7c9d34132261d49fcc1d807d022b4778ccd00d84fddec6742ef0888",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 26.64786904589172,
+      "centered_mean_error_px": 16.690331195136466,
+      "raw_simultaneous_score": 40.838843971444696,
+      "selected_simultaneous_score": 6.555747896089615,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00045.png",
+      "receipt": "acquisition/cases/case_00045/receipt.json"
+    },
+    {
+      "case_id": "case_00046",
+      "group_id": "source_15e684096aea4e04fb8042b533bf3a07974ec7041270a867dfe4c10c7d6a7172",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 7.652747266522539,
+      "centered_mean_error_px": 9.253926192206361,
+      "raw_simultaneous_score": 4.810782858662419,
+      "selected_simultaneous_score": 28.92943412747145,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00046.png",
+      "receipt": "acquisition/cases/case_00046/receipt.json"
+    },
+    {
+      "case_id": "case_00047",
+      "group_id": "source_418fab8b148cf314b5392974e813c8e6f9dfe5b153e202ec9a7027075783e570",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 12.782041030618101,
+      "centered_mean_error_px": 10.13720758611984,
+      "raw_simultaneous_score": 14.16077019383375,
+      "selected_simultaneous_score": 5.467286958853902,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00047.png",
+      "receipt": "acquisition/cases/case_00047/receipt.json"
+    },
+    {
+      "case_id": "case_00048",
+      "group_id": "source_bb40679480b7227a74a1ca2b4afec97020ea4f872820fcaa030ff339f1ec977d",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 16.653547205297535,
+      "centered_mean_error_px": 9.769368737348913,
+      "raw_simultaneous_score": 26.548029766927975,
+      "selected_simultaneous_score": 9.312177881688307,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00048.png",
+      "receipt": "acquisition/cases/case_00048/receipt.json"
+    },
+    {
+      "case_id": "case_00049",
+      "group_id": "source_9a08efce411cd58d8c158df5e09dc58632c72404ef16415fa89b1cfe4984baad",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 5.298045793473923,
+      "centered_mean_error_px": 2.9308962424293883,
+      "raw_simultaneous_score": 16.381828952211677,
+      "selected_simultaneous_score": 4.733934389900346,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00049.png",
+      "receipt": "acquisition/cases/case_00049/receipt.json"
+    },
+    {
+      "case_id": "case_00050",
+      "group_id": "source_2735124784676fa408912269a81e575b0b482edb02b4c7e0adb4b696bfa22917",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 17.91379372449945,
+      "centered_mean_error_px": 12.395105873844425,
+      "raw_simultaneous_score": 41.56218883882099,
+      "selected_simultaneous_score": 7.591039023799574,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00050.png",
+      "receipt": "acquisition/cases/case_00050/receipt.json"
+    },
+    {
+      "case_id": "case_00051",
+      "group_id": "source_d42d908ed3b359ba9a6d9f96223351a0a50f74828b0369d0fd1517e26b6691ae",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 14.182887774926684,
+      "centered_mean_error_px": 8.755321740855813,
+      "raw_simultaneous_score": 40.62995176195631,
+      "selected_simultaneous_score": 6.940481065767532,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00051.png",
+      "receipt": "acquisition/cases/case_00051/receipt.json"
+    },
+    {
+      "case_id": "case_00052",
+      "group_id": "source_9d5505fa89d1c757b553ddaaec2640b450c76feef715f9730e2c5a9602dac35b",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 17.636014220593655,
+      "centered_mean_error_px": 13.82410300287957,
+      "raw_simultaneous_score": 12.739067093591586,
+      "selected_simultaneous_score": 9.638996437454102,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00052.png",
+      "receipt": "acquisition/cases/case_00052/receipt.json"
+    },
+    {
+      "case_id": "case_00053",
+      "group_id": "source_36bab299211571f58118e41487156fef4b48e1ac418554d2995d26816038dff7",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 8.292996363350877,
+      "centered_mean_error_px": 6.890555671749928,
+      "raw_simultaneous_score": 9.735805960746587,
+      "selected_simultaneous_score": 8.306084921641922,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00053.png",
+      "receipt": "acquisition/cases/case_00053/receipt.json"
+    },
+    {
+      "case_id": "case_00054",
+      "group_id": "source_5fadc85a176bf4eadd1cf8cbc01eece2fd6be292d88987f3519f64c2020aaa50",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 5.490884435843585,
+      "centered_mean_error_px": 3.7119084021663635,
+      "raw_simultaneous_score": 15.966438388461642,
+      "selected_simultaneous_score": 10.243234678185102,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00054.png",
+      "receipt": "acquisition/cases/case_00054/receipt.json"
+    },
+    {
+      "case_id": "case_00055",
+      "group_id": "source_8b60bd299390a1533d987e11fbd59ae99f00455ee6263e1c5cd5fc27943f531d",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 24.957757671325993,
+      "centered_mean_error_px": 19.595415573197506,
+      "raw_simultaneous_score": 22.07186184741203,
+      "selected_simultaneous_score": 5.514233335709031,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00055.png",
+      "receipt": "acquisition/cases/case_00055/receipt.json"
+    },
+    {
+      "case_id": "case_00056",
+      "group_id": "source_5bc86f46187e4aff8439bef7c1d0b18c639872426442acd7b3f48615a3fb25ee",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 9.997637725813242,
+      "centered_mean_error_px": 6.583338413324025,
+      "raw_simultaneous_score": 27.198419285737998,
+      "selected_simultaneous_score": 6.126419279402404,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00056.png",
+      "receipt": "acquisition/cases/case_00056/receipt.json"
+    },
+    {
+      "case_id": "case_00057",
+      "group_id": "source_82e6ec7e324188fe9085d2390a3e0b1c3387ba4deb3d90cff84c2e43512b4ed1",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 17.44667373679883,
+      "centered_mean_error_px": 16.07445305400896,
+      "raw_simultaneous_score": 29.513307714525848,
+      "selected_simultaneous_score": 9.79451041236949,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00057.png",
+      "receipt": "acquisition/cases/case_00057/receipt.json"
+    },
+    {
+      "case_id": "case_00058",
+      "group_id": "source_f696849b61592bf27eead643592d40b8a15e6d94df1c304f37731ac2b6a21c22",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 4.514213947303039,
+      "centered_mean_error_px": 2.935347155106264,
+      "raw_simultaneous_score": 19.221093200560624,
+      "selected_simultaneous_score": 8.849771483070196,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00058.png",
+      "receipt": "acquisition/cases/case_00058/receipt.json"
+    },
+    {
+      "case_id": "case_00059",
+      "group_id": "source_2f552115ab9520d4205f3140b9b923d4806b727cf583e3baef54ce95e09f9e63",
+      "split": "evaluation",
+      "stratum": "all",
+      "attempt_outcome": "observed",
+      "raw_mean_error_px": 7.344876842325373,
+      "centered_mean_error_px": 6.027992689944902,
+      "raw_simultaneous_score": 13.96084625471178,
+      "selected_simultaneous_score": 5.116677344879598,
+      "development_not_heldout": false,
+      "observed_reference_points": 8,
+      "image": "acquisition/study/inputs/case_00059.png",
+      "receipt": "acquisition/cases/case_00059/receipt.json"
+    }
+  ],
+  "per_landmark": [
+    {
+      "name": "left_eye_outer",
+      "observed_evaluation_cases": 20,
+      "raw_mean_error_px": 7.413129697633758,
+      "centered_mean_error_px": 7.268573549292374
+    },
+    {
+      "name": "left_eye_inner",
+      "observed_evaluation_cases": 20,
+      "raw_mean_error_px": 11.181021811346044,
+      "centered_mean_error_px": 8.393140278210195
+    },
+    {
+      "name": "right_eye_inner",
+      "observed_evaluation_cases": 20,
+      "raw_mean_error_px": 9.836169209177493,
+      "centered_mean_error_px": 8.051243860278545
+    },
+    {
+      "name": "right_eye_outer",
+      "observed_evaluation_cases": 20,
+      "raw_mean_error_px": 7.381380561937755,
+      "centered_mean_error_px": 7.020035886116261
+    },
+    {
+      "name": "nose_tip",
+      "observed_evaluation_cases": 20,
+      "raw_mean_error_px": 36.33222496072028,
+      "centered_mean_error_px": 13.008401259045765
+    },
+    {
+      "name": "mouth_left",
+      "observed_evaluation_cases": 20,
+      "raw_mean_error_px": 8.263866957976116,
+      "centered_mean_error_px": 10.201167701085769
+    },
+    {
+      "name": "mouth_right",
+      "observed_evaluation_cases": 20,
+      "raw_mean_error_px": 8.052976947130293,
+      "centered_mean_error_px": 8.326302629956357
+    },
+    {
+      "name": "chin",
+      "observed_evaluation_cases": 20,
+      "raw_mean_error_px": 25.84785214608845,
+      "centered_mean_error_px": 25.00591545081695
+    }
+  ],
+  "warnings": [],
+  "interpretation": "error-to-independent-reference study; centered residuals describe the error model, not changed detector outputs or facial resemblance",
+  "guarantee_limit": "marginal new-group conformal rank argument needs exchangeable groups under the frozen protocol; no per-image or conditional-slice guarantee",
+  "array_order": {
+    "cases": [
+      "case_00000",
+      "case_00001",
+      "case_00002",
+      "case_00003",
+      "case_00004",
+      "case_00005",
+      "case_00006",
+      "case_00007",
+      "case_00008",
+      "case_00009",
+      "case_00010",
+      "case_00011",
+      "case_00012",
+      "case_00013",
+      "case_00014",
+      "case_00015",
+      "case_00016",
+      "case_00017",
+      "case_00018",
+      "case_00019",
+      "case_00020",
+      "case_00021",
+      "case_00022",
+      "case_00023",
+      "case_00024",
+      "case_00025",
+      "case_00026",
+      "case_00027",
+      "case_00028",
+      "case_00029",
+      "case_00030",
+      "case_00031",
+      "case_00032",
+      "case_00033",
+      "case_00034",
+      "case_00035",
+      "case_00036",
+      "case_00037",
+      "case_00038",
+      "case_00039",
+      "case_00040",
+      "case_00041",
+      "case_00042",
+      "case_00043",
+      "case_00044",
+      "case_00045",
+      "case_00046",
+      "case_00047",
+      "case_00048",
+      "case_00049",
+      "case_00050",
+      "case_00051",
+      "case_00052",
+      "case_00053",
+      "case_00054",
+      "case_00055",
+      "case_00056",
+      "case_00057",
+      "case_00058",
+      "case_00059"
+    ],
+    "reference_points": [
+      "left_eye_outer",
+      "left_eye_inner",
+      "right_eye_inner",
+      "right_eye_outer",
+      "nose_tip",
+      "mouth_left",
+      "mouth_right",
+      "chin"
+    ]
+  },
+  "empirical_admission": {
+    "status": "not_prespecified",
+    "passed": false,
+    "meaning": "research qualification only; no held-out acceptance policy was frozen"
+  },
+  "bound_utility": {
+    "format": "facemath.joint_bound_utility.v13",
+    "status": "diagnostic",
+    "calibration_sha256": "8f779b5a706f8188218a1e18a1dd5bcfb100e30632baa8efb90b9f9dc5dff4fd",
+    "bias_sha256": "117f079a21cd4e709562152bdb3ee4bddccac7d3a43cf2dae4591bf317000520",
+    "scatter_sha256": "b70f9314f41c9bf44c2b73602463aee6f290b6805e97aea09aa2660108424b64",
+    "raw_coordinates_changed": false,
+    "acceptance_decision": false,
+    "width_unit": "observed_eye_spans; ratio width is dimensionless",
+    "normalization": "mouth_eye_ratio divides by uncertain reference-set eye span in shared relation graph",
+    "landmark_diameter_meaning": "major-axis diameter of each marginal projection of the full16 set",
+    "support_limit": "validation-row observed mask includes reference availability; not a visibility claim",
+    "summary_scope": "all enrolled cases, including exclusions; complete-group delivery requires every member",
+    "limit": "descriptive finite widths do not establish useful accuracy, anatomical equivalence or empirical admission",
+    "splits": {
+      "development": {
+        "enrolled_cases": 20,
+        "eligible_cases": 20,
+        "prospectively_excluded": 0,
+        "enrolled_groups": 20,
+        "complete_landmark_groups": 19,
+        "finite_ratio_groups": 19,
+        "reasons": {
+          "bounded": 19,
+          "multiple_faces: primary observation: multiple_faces; explicitly crop/select one face": 1
+        },
+        "landmark_diameter": {
+          "total": 160,
+          "finite": 152,
+          "unavailable": 8,
+          "minimum": 0.4642792077493886,
+          "median": 0.7015678808173116,
+          "maximum": 2.055135537118501
+        },
+        "eye_span": {
+          "total": 20,
+          "finite": 19,
+          "unavailable": 1,
+          "minimum": 0.7750379014326026,
+          "median": 0.7750379014326026,
+          "maximum": 0.7750379014326026
+        },
+        "mouth_width": {
+          "total": 20,
+          "finite": 19,
+          "unavailable": 1,
+          "minimum": 0.7441793699174644,
+          "median": 0.7465428522828886,
+          "maximum": 0.751714012137371
+        },
+        "mouth_eye_ratio": {
+          "total": 20,
+          "finite": 19,
+          "unavailable": 1,
+          "minimum": 1.438817513163969,
+          "median": 1.588760836770534,
+          "maximum": 1.9075896686498348
+        }
+      },
+      "calibration": {
+        "enrolled_cases": 20,
+        "eligible_cases": 20,
+        "prospectively_excluded": 0,
+        "enrolled_groups": 20,
+        "complete_landmark_groups": 19,
+        "finite_ratio_groups": 19,
+        "reasons": {
+          "bounded": 19,
+          "no_face: primary observation: no_face; explicitly crop/select one face": 1
+        },
+        "landmark_diameter": {
+          "total": 160,
+          "finite": 152,
+          "unavailable": 8,
+          "minimum": 0.4642792077493886,
+          "median": 0.7015678808173116,
+          "maximum": 2.055135537118501
+        },
+        "eye_span": {
+          "total": 20,
+          "finite": 19,
+          "unavailable": 1,
+          "minimum": 0.7750379014326026,
+          "median": 0.7750379014326026,
+          "maximum": 0.7750379014326026
+        },
+        "mouth_width": {
+          "total": 20,
+          "finite": 19,
+          "unavailable": 1,
+          "minimum": 0.7442027775395521,
+          "median": 0.7471221210953234,
+          "maximum": 0.7514759687790175
+        },
+        "mouth_eye_ratio": {
+          "total": 20,
+          "finite": 19,
+          "unavailable": 1,
+          "minimum": 1.4524242264910403,
+          "median": 1.6237296334896627,
+          "maximum": 1.8070363191709702
+        }
+      },
+      "evaluation": {
+        "enrolled_cases": 20,
+        "eligible_cases": 20,
+        "prospectively_excluded": 0,
+        "enrolled_groups": 20,
+        "complete_landmark_groups": 20,
+        "finite_ratio_groups": 20,
+        "reasons": {
+          "bounded": 20
+        },
+        "landmark_diameter": {
+          "total": 160,
+          "finite": 160,
+          "unavailable": 0,
+          "minimum": 0.4642792077493886,
+          "median": 0.7015678808173116,
+          "maximum": 2.055135537118501
+        },
+        "eye_span": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 0.7750379014326026,
+          "median": 0.7750379014326026,
+          "maximum": 0.7750379014326026
+        },
+        "mouth_width": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 0.7435285369793481,
+          "median": 0.7457559972160448,
+          "maximum": 0.7515359319423748
+        },
+        "mouth_eye_ratio": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 1.2013502268539396,
+          "median": 1.646326618344232,
+          "maximum": 1.9253618739178977
+        }
+      }
+    },
+    "evaluation_strata": {
+      "all": {
+        "enrolled_cases": 20,
+        "eligible_cases": 20,
+        "prospectively_excluded": 0,
+        "enrolled_groups": 20,
+        "complete_landmark_groups": 20,
+        "finite_ratio_groups": 20,
+        "reasons": {
+          "bounded": 20
+        },
+        "landmark_diameter": {
+          "total": 160,
+          "finite": 160,
+          "unavailable": 0,
+          "minimum": 0.4642792077493886,
+          "median": 0.7015678808173116,
+          "maximum": 2.055135537118501
+        },
+        "eye_span": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 0.7750379014326026,
+          "median": 0.7750379014326026,
+          "maximum": 0.7750379014326026
+        },
+        "mouth_width": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 0.7435285369793481,
+          "median": 0.7457559972160448,
+          "maximum": 0.7515359319423748
+        },
+        "mouth_eye_ratio": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 1.2013502268539396,
+          "median": 1.646326618344232,
+          "maximum": 1.9253618739178977
+        }
+      }
+    },
+    "cases": [
+      {
+        "case_id": "case_00000",
+        "group_id": "source_8b9fcd46df7ea385cc3d4193ede684efa31331021ff281803d520b78beb431e8",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 227.08975680372868,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.5365579820147406,
+          "upper": 1.2828204684176945,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7462624864029539
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.37895533445354634,
+          "upper": 2.0017508102255643,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.622795475772018
+        }
+      },
+      {
+        "case_id": "case_00001",
+        "group_id": "source_7a62d843abc4c961dc8c5edd07e4eb4ed0832f56ea06162435047571851b7c4e",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 168.761049077879,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.49093381536124414,
+          "upper": 1.2381476056080265,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7472137902467824
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.34673230933253224,
+          "upper": 1.9320419604481287,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.5853096511155964
+        }
+      },
+      {
+        "case_id": "case_00002",
+        "group_id": "source_669191ba29d069fc811418d11899dd00515b093b143de3cd2283f6a812a7f09e",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 196.0088144474564,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.42375910541893536,
+          "upper": 1.1691745133595486,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7454154079406132
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.2992887607761892,
+          "upper": 1.824414317538398,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.5251255567622088
+        }
+      },
+      {
+        "case_id": "case_00003",
+        "group_id": "source_2c9a03efda41f1a5aac0bd8b43fdd09162e159149c1ecbd81e3b2169439fc026",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 103.36309606721441,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.8674427429642941,
+          "upper": 1.6150934244914936,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7476506815271995
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.6126496404825003,
+          "upper": 2.520239309132335,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.9075896686498348
+        }
+      },
+      {
+        "case_id": "case_00004",
+        "group_id": "source_50dbbf773dfcadb55ce4a9dfff1108fce9a0687ffe0e704baa672df4ee8857ac",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 201.28480736843244,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.40433658026596403,
+          "upper": 1.1485159501834283,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7441793699174644
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.28557119480570464,
+          "upper": 1.7921780876106808,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.506606892804976
+        }
+      },
+      {
+        "case_id": "case_00005",
+        "group_id": "source_52364b7d32c31bcbe38dd8d3053a8471c09e4aeb20a4045a3d49d255d8fb154c",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 150.8881468978908,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.6854535498563907,
+          "upper": 1.432278792604401,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7468252427480102
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.48411595381143346,
+          "upper": 2.23496997760034,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.7508540237889068
+        }
+      },
+      {
+        "case_id": "case_00006",
+        "group_id": "source_d5b448b1e77f73820f418367f8b559b7fbc1edecc2ccc2b89cd681a8be5a30c6",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 246.6757123984306,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.4851174293765546,
+          "upper": 1.232024964649317,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7469075352727625
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.34262436467413265,
+          "upper": 1.922488011316857,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.5798636466427243
+        }
+      },
+      {
+        "case_id": "case_00007",
+        "group_id": "source_7c05d2b5b26a567096966eb4f6db4fff18dd267f1f55c595d9631dde747692e6",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 187.33543369272013,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.5701881017458155,
+          "upper": 1.3150077234234498,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7448196216776344
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.40270731224082923,
+          "upper": 2.0519767501547737,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.6492694379139445
+        }
+      },
+      {
+        "case_id": "case_00008",
+        "group_id": "source_81b1b8fec0f5cdc6b5099f8a407976620ce0e3d61049f6c7c3933999f7a114ba",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 407.3794848671664,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.6325487575453872,
+          "upper": 1.3767968814113636,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7442481238659764
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.44675083403606,
+          "upper": 2.148394370632894,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.7016435365968339
+        }
+      },
+      {
+        "case_id": "case_00009",
+        "group_id": "source_db715fd3c15174340f1ea22936f5503fc3760367e11139629d8e08b24628e4e1",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 281.77370930820433,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.4897378734259044,
+          "upper": 1.2366944577402124,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.746956584314308
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.34588765024388735,
+          "upper": 1.9297744257514284,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.583886775507541
+        }
+      },
+      {
+        "case_id": "case_00010",
+        "group_id": "source_bdd7ba4c16c7269044d6f685b948c6ca3ca49177750378927e853039a4fef445",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 476.02416123417964,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.4867529832861849,
+          "upper": 1.2384669954235559,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.751714012137371
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.34377950894486625,
+          "upper": 1.9325403457154002,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.588760836770534
+        }
+      },
+      {
+        "case_id": "case_00011",
+        "group_id": "source_a2b0d483c1935300ddf094639a68328a6d6199f9c767affa9b05dd0981cf653a",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 244.09038974548164,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.3540452613009806,
+          "upper": 1.0987001831660714,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7446549218650909
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.25005189542462974,
+          "upper": 1.714444098760315,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.464392203335685
+        }
+      },
+      {
+        "case_id": "case_00012",
+        "group_id": "source_3f03df4a4f718e372840e749b8294eede63d1d1c3c657378fe40a786f82d25da",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "multiple_faces: primary observation: multiple_faces; explicitly crop/select one face",
+        "observed_eye_span_px": null,
+        "landmark_diameters": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "eye_span": {
+          "lower": null,
+          "upper": null,
+          "available": false,
+          "reason": "multiple_faces: primary observation: multiple_faces; explicitly crop/select one face",
+          "width": null
+        },
+        "mouth_width": {
+          "lower": null,
+          "upper": null,
+          "available": false,
+          "reason": "multiple_faces: primary observation: multiple_faces; explicitly crop/select one face",
+          "width": null
+        },
+        "mouth_eye_ratio": {
+          "lower": null,
+          "upper": null,
+          "available": false,
+          "reason": "multiple_faces: primary observation: multiple_faces; explicitly crop/select one face",
+          "width": null
+        }
+      },
+      {
+        "case_id": "case_00013",
+        "group_id": "source_ac7ca3cce247df68a7645218cd43423d060c880d1d11857eabf44298f5298e61",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 133.37113232412742,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.3925649772876291,
+          "upper": 1.1394885091974913,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7469235319098622
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.277257253175465,
+          "upper": 1.7780914030334132,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.500834149857948
+        }
+      },
+      {
+        "case_id": "case_00014",
+        "group_id": "source_3ce77e2c488fe88a9fae23af4ff5061b0436e3404fa3854d0e3e630192ed940a",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 181.68056272033886,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.32428800222533416,
+          "upper": 1.0688421338353222,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7445541316099881
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.22903520674712616,
+          "upper": 1.6678527199110953,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.438817513163969
+        }
+      },
+      {
+        "case_id": "case_00015",
+        "group_id": "source_b17263487727cae5b8e98083c852bacf733a43a573105838db8e5ecd7e4694fb",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 132.72204261014514,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.7131381589425131,
+          "upper": 1.4596810112254017,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7465428522828886
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5036687899393281,
+          "upper": 2.2777292059389906,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.7740604159996627
+        }
+      },
+      {
+        "case_id": "case_00016",
+        "group_id": "source_ba851fd0d880ec56cf455b5927bca68eb8407fe9a26081019aa5dec5455d83a1",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 247.7864381866074,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.7719557809013464,
+          "upper": 1.5192185386149115,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7472627577135651
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5452099697340619,
+          "upper": 2.3706333157695583,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.8254233460354965
+        }
+      },
+      {
+        "case_id": "case_00017",
+        "group_id": "source_fe6d402ca4d8426af73609c860fa25cb2d70cc75269366fd166db36a71b833e5",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 128.9081967074881,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.5667045481462625,
+          "upper": 1.312131404985438,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7454268568391755
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.40024697940886084,
+          "upper": 2.0474884582187567,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.647241478809896
+        }
+      },
+      {
+        "case_id": "case_00018",
+        "group_id": "source_84b131cd8e6f74d94e797c3279c6dadf9c2969bf4f1c4a0289371d8a037d13d5",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 194.5782512440297,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.6749411100794849,
+          "upper": 1.420660029338843,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7457189192593581
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.4766913226157111,
+          "upper": 2.216839717479579,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.7401483948638679
+        }
+      },
+      {
+        "case_id": "case_00019",
+        "group_id": "source_58718acaa9a8551b049c9cc2f5a7da3a6f6371c6d54e909242f49d105c6e754c",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 144.72775060025637,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.403042744588578,
+          "upper": 1.1503385378852862,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7472957932967081
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.2846573962074417,
+          "upper": 1.7950221070964325,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.5103647108889908
+        }
+      },
+      {
+        "case_id": "case_00020",
+        "group_id": "source_6c04f62d8b0277111b5651f342dc5db8e08cd47bbb87c9c575b9733cea673254",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 291.1209336704368,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.7144054697291761,
+          "upper": 1.4608082387402495,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7464027690110734
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5045638547768936,
+          "upper": 2.2794881649256196,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.774924310148726
+        }
+      },
+      {
+        "case_id": "case_00021",
+        "group_id": "source_8cf487a02f950b6699f581f8ddeb2838768d008adb05241b9014001fcf208376",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 463.0390370689708,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.4470193313661539,
+          "upper": 1.1928965220237326,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7458771906575787
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.31571678346666493,
+          "upper": 1.8614308379578761,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.5457140544912111
+        }
+      },
+      {
+        "case_id": "case_00022",
+        "group_id": "source_6e232aef10d83543032902abe02f3fb3ec263442ee87fbc363bcdc42c3ad8594",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 368.09411810514206,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.40841945410254116,
+          "upper": 1.1585009867094622,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.750081532606921
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.2884548101317911,
+          "upper": 1.8077590324491848,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.5193042223173938
+        }
+      },
+      {
+        "case_id": "case_00023",
+        "group_id": "source_45acbc4403643690f5b177f4b3ba42245731c12d7bebe9507d63981a0b64062f",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 168.74876405464548,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.5168593055197719,
+          "upper": 1.2624241103433245,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7455648048235526
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.3650427308027472,
+          "upper": 1.9699237328548849,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.6048810020521378
+        }
+      },
+      {
+        "case_id": "case_00024",
+        "group_id": "source_e6a66c42a45fe1c158152c1fde1c7c71eb2abd53473d80c917d96ac8bd98e996",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 176.98012011918757,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.6508095462282718,
+          "upper": 1.3981648279494538,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.747355281721182
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.45964789924553534,
+          "upper": 2.181737543234621,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.7220896439890856
+        }
+      },
+      {
+        "case_id": "case_00025",
+        "group_id": "source_c286bdfde929458ec20f09ef71f71b257ea0fbe080cd4aabe9fba2ee5e73e7ba",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 315.75005013414625,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.6488970773270953,
+          "upper": 1.3969861657074578,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7480890883803625
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.45829717795096797,
+          "upper": 2.1798983239861096,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.7216011460351417
+        }
+      },
+      {
+        "case_id": "case_00026",
+        "group_id": "source_911e310fcf39c06f6a37dce98ac951a6fe38d72f30a30abbe5ddbee58b28b877",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 498.43228697765966,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.5243826474737171,
+          "upper": 1.2702943049053965,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7459116574316794
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.3703562489348614,
+          "upper": 1.982204616056486,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.6118483671216244
+        }
+      },
+      {
+        "case_id": "case_00027",
+        "group_id": "source_3ae94f555293827c0dfabc41a888d193be625ff9af57f98ca1c4ba12fa81e3e6",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 351.63431755798524,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.4791986120252973,
+          "upper": 1.2234013895648495,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7442027775395521
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.33844407571357504,
+          "upper": 1.9090315309773545,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.5705874552637793
+        }
+      },
+      {
+        "case_id": "case_00028",
+        "group_id": "source_cdbc4af541e18f74c856dc6caf2ccb0926d2b1d957fdcb6c5b32e99dfd6c065d",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 157.53200170399688,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.7500642400089628,
+          "upper": 1.4975268258094758,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7474625858005131
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5297486095853845,
+          "upper": 2.3367849287563547,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.8070363191709702
+        }
+      },
+      {
+        "case_id": "case_00029",
+        "group_id": "source_a1a46264ca68789ea328ef587e943e6dcc9fb5f7d9e74089e4e5ac909276a06c",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 427.9315583842604,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.4184792508718805,
+          "upper": 1.1660844018181433,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7476051509462629
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.29555975270471757,
+          "upper": 1.8195924165522646,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.524032663847547
+        }
+      },
+      {
+        "case_id": "case_00030",
+        "group_id": "source_c1550981c781e0d5f85e1a8021adfcb3a53dc08a81f04f290515d664904e381b",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 214.97199655874797,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.3443274456030376,
+          "upper": 1.0908017485815533,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7464743029785157
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.24318848415984107,
+          "upper": 1.7021191489966316,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.4589306648367906
+        }
+      },
+      {
+        "case_id": "case_00031",
+        "group_id": "source_5dd670e8c67e1e8299894685c3b30eef477e6afb0e96f0455e2e30eb13a09c95",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 478.94675098218,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150746,
+          "upper": 1.4158871329476772,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.49395021733878475,
+          "upper": 1.2454261861178022,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7514759687790175
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.3488627065282893,
+          "upper": 1.9433996716722939,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.5945369651440044
+        }
+      },
+      {
+        "case_id": "case_00032",
+        "group_id": "source_eccaa5ee4a41d63cfc4ca97b4b3aa825cb862381ba51f38445b7cb91aa67cf11",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 122.81343341569908,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.3337515629348242,
+          "upper": 1.0818453182805263,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7480937553457021
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.23571904509078526,
+          "upper": 1.6881432715818256,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.4524242264910403
+        }
+      },
+      {
+        "case_id": "case_00033",
+        "group_id": "source_a7e8c2013e98a142e3d6b55205f2bd649b745ab05adf94470513e11f27a4d4eb",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 434.1260757854855,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.707027444485522,
+          "upper": 1.4527085178552204,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7456810733696984
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.49935296962089004,
+          "upper": 2.2668491220950924,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.7674961524742023
+        }
+      },
+      {
+        "case_id": "case_00034",
+        "group_id": "source_3a721989d8ef56c03478b0beff1de1aba58d7d07e1cdf3ced6ddb7ee654ceeb6",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 405.53529295199564,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.5391622107709522,
+          "upper": 1.2845978310308204,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7454356202598682
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.3807946256622954,
+          "upper": 2.004524259151958,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.6237296334896627
+        }
+      },
+      {
+        "case_id": "case_00035",
+        "group_id": "source_2ccecdb6ee987172c2efe62e732bf96aedaa9fdbe159c2054685dd511dc333e1",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 106.35230493074279,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.6315495998968017,
+          "upper": 1.3791647339106887,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.747615134013887
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.4460451579794484,
+          "upper": 2.1520892373548643,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.706044079375416
+        }
+      },
+      {
+        "case_id": "case_00036",
+        "group_id": "source_c5361e998993c35f170da7e14e1b361bb7f491be98157c20ebb201450dc9992c",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 615.8502779967861,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.7160983586477656,
+          "upper": 1.463220479743089,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7471221210953234
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5057594931008785,
+          "upper": 2.2832522967747546,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.777492803673876
+        }
+      },
+      {
+        "case_id": "case_00037",
+        "group_id": "source_1d8ee1fa5f62088c7728bc8d79f26bc989c6815e32dc044ad922f696d360d2cf",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 416.4570171414718,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.6573569626820502,
+          "upper": 1.4051225608664408,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7477655981843906
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.46427214951338486,
+          "upper": 2.192594594432978,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.7283224449195933
+        }
+      },
+      {
+        "case_id": "case_00038",
+        "group_id": "source_afd630d8e8682914f4285483274f84a0a2b476ff1e2f7ab4f43c0160c2d4d857",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "no_face: primary observation: no_face; explicitly crop/select one face",
+        "observed_eye_span_px": null,
+        "landmark_diameters": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "eye_span": {
+          "lower": null,
+          "upper": null,
+          "available": false,
+          "reason": "no_face: primary observation: no_face; explicitly crop/select one face",
+          "width": null
+        },
+        "mouth_width": {
+          "lower": null,
+          "upper": null,
+          "available": false,
+          "reason": "no_face: primary observation: no_face; explicitly crop/select one face",
+          "width": null
+        },
+        "mouth_eye_ratio": {
+          "lower": null,
+          "upper": null,
+          "available": false,
+          "reason": "no_face: primary observation: no_face; explicitly crop/select one face",
+          "width": null
+        }
+      },
+      {
+        "case_id": "case_00039",
+        "group_id": "source_4151757d16e5d8251dc261ef077e6c3c95002fd80d2a202b87883c502376f0b1",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 203.39977859656696,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.5903614770833338,
+          "upper": 1.3371681745189907,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.746806697435657
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.4169551819107222,
+          "upper": 2.0865565701900586,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.6696013882793364
+        }
+      },
+      {
+        "case_id": "case_00040",
+        "group_id": "source_464a5dfa186cf9e4ccc539a169b2ccd35cecac37e9cd440cae1971bc1922c0fc",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 640.5457778947032,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.5874552090933126,
+          "upper": 1.3318207384767897,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7443655293834771
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.41490256915480966,
+          "upper": 2.0782122736235182,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.6633097044687086
+        }
+      },
+      {
+        "case_id": "case_00041",
+        "group_id": "source_77d14976d855a2c10e8f137644a0647279ce82b4024acb4c34539ad6b6308aad",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 163.09063996108998,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.7404407253638572,
+          "upper": 1.4858716959207348,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7454309705568776
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5229518004180675,
+          "upper": 2.318597921086568,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.7956461206685004
+        }
+      },
+      {
+        "case_id": "case_00042",
+        "group_id": "source_ae85596ab4be599c366712aa11c80e95f9f1bdce553d3bb54131b90d49a3ec36",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 190.90403514531076,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.04318816709268052,
+          "upper": 0.789431904945481,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7462437378528005
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.0305025493117656,
+          "upper": 1.2318527761657052,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.2013502268539396
+        }
+      },
+      {
+        "case_id": "case_00043",
+        "group_id": "source_127dab0e54f689c980640160207c878242fffcc7ea340f7dfe104b5e3a1b2f64",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 371.78504025464537,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.5445555800822269,
+          "upper": 1.2906366039574388,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7460810238752119
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.38460380591810156,
+          "upper": 2.0139473381378568,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.6293435322197551
+        }
+      },
+      {
+        "case_id": "case_00044",
+        "group_id": "source_b84ede30080e53d54d86857f96f5c51de5a8bf1b0c623667b70e3668b48eb582",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 253.2733358588509,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.6709490991881761,
+          "upper": 1.4159198915142095,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7449707923260334
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.4738718811514769,
+          "upper": 2.2094430669235234,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.7355711857720466
+        }
+      },
+      {
+        "case_id": "case_00045",
+        "group_id": "source_30f1eab3c7c9d34132261d49fcc1d807d022b4778ccd00d84fddec6742ef0888",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 530.7495285350567,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.8173701251470775,
+          "upper": 1.5651772248551978,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7478070997081203
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5772848033764737,
+          "upper": 2.4423486022678094,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.8650637988913357
+        }
+      },
+      {
+        "case_id": "case_00046",
+        "group_id": "source_15e684096aea4e04fb8042b533bf3a07974ec7041270a867dfe4c10c7d6a7172",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 120.25360255921807,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.6785699415011788,
+          "upper": 1.4220984784805268,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7435285369793481
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.4792542609582181,
+          "upper": 2.219084315851466,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.7398300548932477
+        }
+      },
+      {
+        "case_id": "case_00047",
+        "group_id": "source_418fab8b148cf314b5392974e813c8e6f9dfe5b153e202ec9a7027075783e570",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 339.8152761103264,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.8878184409456517,
+          "upper": 1.634098892526006,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7462804515803544
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.6270404047653403,
+          "upper": 2.549896000753203,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.9228555959878628
+        }
+      },
+      {
+        "case_id": "case_00048",
+        "group_id": "source_bb40679480b7227a74a1ca2b4afec97020ea4f872820fcaa030ff339f1ec977d",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 317.56561513344053,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.42982716103309093,
+          "upper": 1.1745162979762689,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.744689136943178
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.30357445239168007,
+          "upper": 1.832749795454306,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.5291753430626258
+        }
+      },
+      {
+        "case_id": "case_00049",
+        "group_id": "source_9a08efce411cd58d8c158df5e09dc58632c72404ef16415fa89b1cfe4984baad",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 132.34350235641452,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.7636306169022025,
+          "upper": 1.5087247452909311,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7450941283887287
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5393301479563107,
+          "upper": 2.3542584918516587,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.8149283438953479
+        }
+      },
+      {
+        "case_id": "case_00050",
+        "group_id": "source_2735124784676fa408912269a81e575b0b482edb02b4c7e0adb4b696bfa22917",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 338.06758473496325,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.3926985804246311,
+          "upper": 1.1400531572595178,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7473545768348867
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.2773516131946311,
+          "upper": 1.7789724964860676,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.5016208832914364
+        }
+      },
+      {
+        "case_id": "case_00051",
+        "group_id": "source_d42d908ed3b359ba9a6d9f96223351a0a50f74828b0369d0fd1517e26b6691ae",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 291.7860662251144,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.35598264477046393,
+          "upper": 1.104832828930875,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7488501841604112
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.25142021315589524,
+          "upper": 1.7240136596854412,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.472593446529546
+        }
+      },
+      {
+        "case_id": "case_00052",
+        "group_id": "source_9d5505fa89d1c757b553ddaaec2640b450c76feef715f9730e2c5a9602dac35b",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 443.3673387437827,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.46324410094689944,
+          "upper": 1.2078764506633501,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7446323497164506
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.32717586745944544,
+          "upper": 1.8848059594419153,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.55763009198247
+        }
+      },
+      {
+        "case_id": "case_00053",
+        "group_id": "source_36bab299211571f58118e41487156fef4b48e1ac418554d2995d26816038dff7",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 200.46261614023743,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.7558053439830513,
+          "upper": 1.507341275925426,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7515359319423748
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5338033847440059,
+          "upper": 2.3520996855404857,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.8182963007964799
+        }
+      },
+      {
+        "case_id": "case_00054",
+        "group_id": "source_5fadc85a176bf4eadd1cf8cbc01eece2fd6be292d88987f3519f64c2020aaa50",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 133.46976026345916,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.4786298634983959,
+          "upper": 1.222831615904959,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7442017524065632
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.3380423851312775,
+          "upper": 1.9081424393909554,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.570100054259678
+        }
+      },
+      {
+        "case_id": "case_00055",
+        "group_id": "source_8b60bd299390a1533d987e11fbd59ae99f00455ee6263e1c5cd5fc27943f531d",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 467.12766960872943,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.4950149766992531,
+          "upper": 1.239861020050858,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7448460433516049
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.3496147151705685,
+          "upper": 1.9347156227677056,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.5851009075971372
+        }
+      },
+      {
+        "case_id": "case_00056",
+        "group_id": "source_5bc86f46187e4aff8439bef7c1d0b18c639872426442acd7b3f48615a3fb25ee",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 228.66897822119546,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.633714597136353,
+          "upper": 1.3814469050216522,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7477323078852992
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.44757423271229374,
+          "upper": 2.155650404316972,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.7080761716046782
+        }
+      },
+      {
+        "case_id": "case_00057",
+        "group_id": "source_82e6ec7e324188fe9085d2390a3e0b1c3387ba4deb3d90cff84c2e43512b4ed1",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 330.6291524376409,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.5029156671823749,
+          "upper": 1.2481028688941804,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7451872017118055
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.3551947436200631,
+          "upper": 1.9475764462469465,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.5923817026268834
+        }
+      },
+      {
+        "case_id": "case_00058",
+        "group_id": "source_f696849b61592bf27eead643592d40b8a15e6d94df1c304f37731ac2b6a21c22",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 115.49345647876788,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.5382505886795306,
+          "upper": 1.2858880512112838,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7476374625317532
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.38015077342986225,
+          "upper": 2.0065375566906214,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.626386783260759
+        }
+      },
+      {
+        "case_id": "case_00059",
+        "group_id": "source_2f552115ab9520d4205f3140b9b923d4806b727cf583e3baef54ce95e09f9e63",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 214.15670948669236,
+        "landmark_diameters": [
+          0.4642792077493886,
+          0.637139264774991,
+          0.8388245253067612,
+          0.6589035194971079,
+          1.2607419698560418,
+          0.7204898997131552,
+          0.6826458619214679,
+          2.055135537118501
+        ],
+        "eye_span": {
+          "lower": 0.6408492315150748,
+          "upper": 1.4158871329476774,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7750379014326026
+        },
+        "mouth_width": {
+          "lower": 0.8883430737879368,
+          "upper": 1.6359424945704275,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.7475994207824908
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.627410937719611,
+          "upper": 2.552772811637509,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.9253618739178977
+        }
+      }
+    ]
+  },
+  "content_sha256": "335a1e4556fbdacfa08299e138c25f97433f23e45c7107ecfce2af08261df44e"
+}

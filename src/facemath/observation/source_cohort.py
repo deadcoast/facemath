@@ -56,7 +56,8 @@ def validate_plan(plan: dict) -> None:
         if not isinstance(plan.get(key), str) or not plan[key].strip():
             raise ObservationError(f"cohort must declare {key}")
     _member_name(plan['candidate_prefix'])
-    if plan.get('selection') != 'sha256_seed_nul_member_blocks_v1':
+    if plan.get('selection') not in ('sha256_seed_nul_member_blocks_v1',
+                                    'sha256_seed_nul_helen_source_blocks_v1'):
         raise ObservationError("unknown prospective selection algorithm")
     counts = plan.get('split_counts', {})
     if set(counts) != set(SPLITS) or any(type(v) is not int or not 1 <= v <= 1000 for v in counts.values()):
@@ -139,15 +140,32 @@ def select_members(plan: dict, inventory: list) -> list[dict]:
         if (path.parent.as_posix() == plan['candidate_prefix'] and path.suffix in ('.jpg', '.png', '.jpeg')
                 and not path.stem.endswith('_mirror') and name not in paired):
             raise ObservationError("original image missing PTS annotation")
+    candidate_count = len(candidates)
+    candidates.sort(key=lambda r: (r['rank'], r['image']))
+    if plan['selection'] == 'sha256_seed_nul_helen_source_blocks_v1':
+        # HELEN filenames retain an upstream photograph root and face suffix.
+        # Rank roots independently of their number of faces, then take one
+        # deterministically ranked original per root. Never split one root.
+        groups = {}
+        for row in candidates:
+            path = PurePosixPath(row['image'])
+            root, separator, index = path.stem.rpartition('_')
+            if not separator or not root.isascii() or not root.isdecimal() or not index.isascii() or not index.isdecimal():
+                raise ObservationError("HELEN grouping requires numeric source_face filenames")
+            key = (path.parent / str(int(root))).as_posix()
+            if key not in groups:
+                groups[key] = {**row, 'source_group': key,
+                    'source_group_rank': sha256((plan['seed'] + '\0' + key).encode()).hexdigest()}
+        candidates = sorted(groups.values(), key=lambda r: (r['source_group_rank'], r['source_group']))
+        candidates = [{**r, 'candidate_groups': len(groups)} for r in candidates]
     required = sum(plan['split_counts'].values())
     if len(candidates) < required:
         raise ObservationError("candidate inventory is smaller than frozen cohort")
-    candidates.sort(key=lambda r: (r['rank'], r['image']))
     selected, offset = [], 0
     for split in SPLITS:
         count = plan['split_counts'][split]
         for row in candidates[offset:offset + count]:
-            selected.append({**row, 'split': split, 'candidate_count': len(candidates)})
+            selected.append({**row, 'split': split, 'candidate_count': candidate_count})
         offset += count
     return selected
 
@@ -164,7 +182,7 @@ def make_recipe(plan: dict, inventory: list) -> dict:
             names[role] = name
             assets.append(dict(path=name, bytes=member['bytes'], sha256=member['sha256'],
                                url=plan['archive']['url'], source_member=row[role]))
-        group = 'source_' + sha256(row['image'].encode()).hexdigest()
+        group = 'source_' + sha256(row.get('source_group', row['image']).encode()).hexdigest()
         images.append(dict(path=names['image'], annotation=names['annotation'], group_id=group,
                            lineage_ids=[group], split=row['split']))
         annotations.append(names['annotation'])

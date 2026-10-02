@@ -1,0 +1,19 @@
+{
+  "command": [
+    "runs/bound-utility-20261002/env311/Scripts/python.exe",
+    "-c",
+    "import json; from pathlib import Path; from facemath.observation.dataset import verify_pipeline; base=Path('evidence/bound-utility-20261002'); print(json.dumps({name:verify_pipeline(base/name) for name in ['preseal/native-pipeline','postseal/installed-native','postseal/archive-native','development/linux-native']},indent=2))"
+  ],
+  "cwd": ".",
+  "started_utc": "2026-10-02T16:56:57.380192+00:00",
+  "finished_utc": "2026-10-02T16:58:06.394580+00:00",
+  "elapsed_seconds": 69.01600000000326,
+  "returncode": 0,
+  "environment": {
+    "PYTHONPATH": null,
+    "UV_CACHE_DIR": null,
+    "UV_PROJECT_ENVIRONMENT": null,
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

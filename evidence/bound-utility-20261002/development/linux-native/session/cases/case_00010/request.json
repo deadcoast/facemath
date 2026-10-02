@@ -1,0 +1,1532 @@
+{
+  "format": "facemath.worker_request.v5",
+  "image": "/mnt/c/Users/ryanf/github/_active/facemath/runs/bound-utility-20261002/linux-native/session/study/inputs/case_00010.png",
+  "model": "/mnt/c/Users/ryanf/github/_active/facemath/runs/bound-utility-20261002/linux-native/dataset/assets/face_landmarker.task",
+  "observer": {
+    "provider": "mediapipe",
+    "provider_fingerprint": "05fb85e38d783a48b77f2fddff63bbc64ed02b6920290ae3e59c1c28d26fb785",
+    "schema": "mediapipe478.v1",
+    "noise_floor_px": 0.75,
+    "attempted_samples": 7,
+    "execution_kind": "native_mediapipe",
+    "model_sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+    "runtime_version": "1.0.1"
+  },
+  "engine_code_sha256": "f95ed198d0467684be35e1a59e1906ac4300d12b4290ce09e3c17103a24a6148",
+  "numeric_environment": {
+    "format": "facemath.numeric_environment.v12",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "opencv": "4.14.0",
+    "installation": {
+      "interpreter": {
+        "implementation": "CPython",
+        "version": "3.11.17",
+        "compiler": "Clang 22.1.3 ",
+        "build": [
+          "main",
+          "Oct  1 2026 20:58:47"
+        ],
+        "byteorder": "little",
+        "float_mant_dig": 53,
+        "float_rounds": 1
+      },
+      "platform": {
+        "system": "Linux",
+        "machine": "x86_64",
+        "libc": [
+          "glibc",
+          "2.39"
+        ]
+      },
+      "packages": {
+        "numpy": {
+          "version": "2.4.6",
+          "binaries": {
+            "numpy.libs/libgfortran-040039e1-0352e75f.so.5.0.0": {
+              "bytes": 2833617,
+              "sha256": "c6090048eccc763522c12ef016f81da6b627cb3a044f55cf0479a839c41c0980"
+            },
+            "numpy.libs/libquadmath-96973f99-934c22de.so.0.0.0": {
+              "bytes": 250985,
+              "sha256": "6ed5137f412781ad7863439fb543613f620b43c32b63292a0029246162f5bbc6"
+            },
+            "numpy.libs/libscipy_openblas64_-32a4b2a6.so": {
+              "bytes": 25409073,
+              "sha256": "05c9f9eb89ee68a4b9d673184fa91c99587e736392c0c2d49180a8aa5303d080"
+            },
+            "numpy/_core/_multiarray_tests.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 142528,
+              "sha256": "5457018b1852b9d38f32187aa1877934404b776b5ce95e58d1f76d0a563f6825"
+            },
+            "numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 10407681,
+              "sha256": "1535fbed1e9ac6b717e72ad9bd5c20b9f0536a21084fcadc40c00255a8f35d1d"
+            },
+            "numpy/_core/_operand_flag_tests.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 16800,
+              "sha256": "16babe15aaf495909d9af8b40431cf3c34ffc319cadacef029edb4ffb93f0e2c"
+            },
+            "numpy/_core/_rational_tests.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 59584,
+              "sha256": "4150c28b4fbe191a528cf86b18b9035f1c13b0347ef35576f8ffd229323be2c2"
+            },
+            "numpy/_core/_simd.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 1506096,
+              "sha256": "8e5117a0e42866ef2f693c4a673f74922b7d681118707d212a6de9886140b74a"
+            },
+            "numpy/_core/_struct_ufunc_tests.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 16936,
+              "sha256": "fa59d16d75dd8ed3216d14dbc12351abd13d0a3d0171b028cf0cb78906177b2b"
+            },
+            "numpy/_core/_umath_tests.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 50120,
+              "sha256": "5099e6d0e351b46f5f4e9fc633b8d065c65a019ce1ff2b774143a7f918e074da"
+            },
+            "numpy/fft/_pocketfft_umath.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 539280,
+              "sha256": "2e78619c9326b3a2e1a61369371ebf257c3c644d209c50f4b641fe055f37167e"
+            },
+            "numpy/linalg/_umath_linalg.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 231785,
+              "sha256": "ff1141bebaf0b681b329dfdab7153a78eb2b7c12e54e365ed70d385c495ec792"
+            },
+            "numpy/linalg/lapack_lite.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 30001,
+              "sha256": "de5f8dbc506e9c903c265dd048bc6ba14187623ae166a4662e03e9cca349c43c"
+            },
+            "numpy/random/_bounded_integers.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 342536,
+              "sha256": "a3ed3619fb0bb7a8a68e605d8219aee971878710a9c7588f043e725f1d05254e"
+            },
+            "numpy/random/_common.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 266808,
+              "sha256": "71d7971ef760a9e45c5c804b98bc3155d42d38837d4f287ab3bb41865d9954b1"
+            },
+            "numpy/random/_generator.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 835416,
+              "sha256": "336eca5889ed937b66fddf1790095b35ec4c61e3a35375f0d29a94bb1299a3ef"
+            },
+            "numpy/random/_mt19937.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 131072,
+              "sha256": "6edbd3acc543aa58610f0e3eacf71e7343010d5721b1df2a2a4fee7bea48407c"
+            },
+            "numpy/random/_pcg64.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 138584,
+              "sha256": "cd16eef58424a339bb93a9eff61c7482229e23554cbf4089526e3bacd018ec98"
+            },
+            "numpy/random/_philox.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 114512,
+              "sha256": "1a866751156413cd95c38e3b4bd4f981919cc4692a75dc8f965505c1ce48c4de"
+            },
+            "numpy/random/_sfc64.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 87792,
+              "sha256": "91cca65548a69ed7851e0925e0ba3427a988b756027d0ce4cd4846c33f387a26"
+            },
+            "numpy/random/bit_generator.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 222528,
+              "sha256": "e0d931cd4694de2ca87ed2731dffb51a0dacdeaa160b6fd627bda678f182e157"
+            },
+            "numpy/random/mtrand.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 647216,
+              "sha256": "3badc42eeb19cb0837bb5fd89ed792e14be2df6bc4005cf2f9bca0490f610ad6"
+            }
+          }
+        },
+        "scipy": {
+          "version": "1.17.1",
+          "binaries": {
+            "scipy.libs/libgfortran-040039e1-0352e75f.so.5.0.0": {
+              "bytes": 2833617,
+              "sha256": "c6090048eccc763522c12ef016f81da6b627cb3a044f55cf0479a839c41c0980"
+            },
+            "scipy.libs/libgfortran-8f1e9814.so.5.0.0": {
+              "bytes": 2714697,
+              "sha256": "a95cc4ac4afad889f2d83088f46b5e6fa6cd5efd729db887e1e639147ec55b73"
+            },
+            "scipy.libs/libquadmath-828275a7.so.0.0.0": {
+              "bytes": 272193,
+              "sha256": "71bdc2ec57ab2fc939360597968f73230426b1c6764048e62a2cb6c8d8c3a1fd"
+            },
+            "scipy.libs/libquadmath-96973f99-934c22de.so.0.0.0": {
+              "bytes": 250985,
+              "sha256": "6ed5137f412781ad7863439fb543613f620b43c32b63292a0029246162f5bbc6"
+            },
+            "scipy.libs/libscipy_openblas-6cdc3b4a.so": {
+              "bytes": 24805561,
+              "sha256": "8fb864c29cac4b25f6e2c139491ea96f2724dde42d51394f84e9c4a622e34790"
+            },
+            "scipy/_cyutility.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 214968,
+              "sha256": "18a80ec93130f6bde42aa8cb2c098248979a656352f9a24d18880eb865816438"
+            },
+            "scipy/_lib/_ccallback_c.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 95176,
+              "sha256": "be952495f2e3563ca76cc176238e554b8c369abac0048dc2dfa0d437a52ba12a"
+            },
+            "scipy/_lib/_fpumode.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 16216,
+              "sha256": "e031a6c372499cea5ec27792e75de108602339f6035306aff44831e926d6c2c7"
+            },
+            "scipy/_lib/_test_ccallback.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 23008,
+              "sha256": "d53ed13b56c53be8cee3d06f92e5a74d1f473d8e0b0d36da64f1d4bbd4129c79"
+            },
+            "scipy/_lib/_test_deprecation_call.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 44920,
+              "sha256": "2f70be3a7339bb4b5f6e9e39d1ae08a922d6e5607379b22a5b9b957eabbc99b0"
+            },
+            "scipy/_lib/_test_deprecation_def.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 28456,
+              "sha256": "79bb2162976c8d1b9930930fa6033ff5f78965a1556fc693e73d21a8a3b77912"
+            },
+            "scipy/_lib/_uarray/_uarray.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 111000,
+              "sha256": "df29055dbb67bcbbf69e2eeb2c00a92912477a8b86706066a797a277fe75e146"
+            },
+            "scipy/_lib/messagestream.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 79600,
+              "sha256": "858f61c9a563ad6a78af3f53ea304e657690aa058d12ecbef71b59484b2a8f48"
+            },
+            "scipy/cluster/_hierarchy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 249160,
+              "sha256": "27ef5f58760dcf36d5582d6465b226d544c27dd10d31be374096b61122326333"
+            },
+            "scipy/cluster/_optimal_leaf_ordering.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 176168,
+              "sha256": "6214d0140116fe646cc03f6111b4e37d8ece750f19128787779f09777960f0fa"
+            },
+            "scipy/cluster/_vq.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 117200,
+              "sha256": "873aa071ef24d84970943c724c060e9fd97b336bc4dec3d88bd5e4d218a4aba8"
+            },
+            "scipy/fft/_pocketfft/pypocketfft.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 1223848,
+              "sha256": "31d812b267667ac86e8479efe62b70353290105a0f5139b5233fd8ea38d65e32"
+            },
+            "scipy/fftpack/convolve.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 114040,
+              "sha256": "09ee0f3f25a84c918270a67a3944fe171b5568c89ce36fd35c79df132eb7db09"
+            },
+            "scipy/integrate/_dop.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 59352,
+              "sha256": "5d1de25b4fafa293a74ec425a1c7a8554f77432b32f0b928b1838f5a9d4af366"
+            },
+            "scipy/integrate/_odepack.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 478889,
+              "sha256": "7247be9de803c8588d045f63407245e943f47eaa8b76d80e7e12948e906dfba4"
+            },
+            "scipy/integrate/_quadpack.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 119920,
+              "sha256": "396e2f70df5f1c752b2523feb61d26f0484c07826fb667290dbc4ff41ecaf53e"
+            },
+            "scipy/integrate/_test_multivariate.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 16656,
+              "sha256": "e6ad67902e6f4b958e6c33f321bb54b260e1a0a3f9c155486c5c2e3edecda78c"
+            },
+            "scipy/integrate/_vode.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 519809,
+              "sha256": "660e7382288b286f31733ec18d46765bb240d2c2fde6eeb57cabec1853b89ef4"
+            },
+            "scipy/interpolate/_dfitpack.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 366793,
+              "sha256": "45cc7391161a72211f5472c29879a6777a814326c67e5c4782118bf9a53a5ee0"
+            },
+            "scipy/interpolate/_dierckx.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 129361,
+              "sha256": "a8bf877280f7823dfe52f0ec036772d02973dc66e6d61dab1eaef86fa106cbd4"
+            },
+            "scipy/interpolate/_fitpack.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 95561,
+              "sha256": "524301137269652b7015fc9290f3e5c2bc1c5e2ab0b62d618574ac28a680e785"
+            },
+            "scipy/interpolate/_interpnd.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 242896,
+              "sha256": "162ddcd5f345417c34d32fc8622ef20e14d7119375176ecfc764471f6db54a7d"
+            },
+            "scipy/interpolate/_ppoly.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 218392,
+              "sha256": "459e7d5db30166559491da7bb58b2a1bdf244eec80301bfddcc3e59f14dce3bf"
+            },
+            "scipy/interpolate/_rbfinterp_pythran.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 247384,
+              "sha256": "5ae8e0e21ca49a559ce3ecd82e80a7d5d05cb88b254588c07b658348fd9e0196"
+            },
+            "scipy/interpolate/_rgi_cython.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 119656,
+              "sha256": "d54e4c5e93bb7088ff03827df430cbe89933dc20697f31f3c8430e7bc60acb38"
+            },
+            "scipy/io/_fast_matrix_market/_fmm_core.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 4093104,
+              "sha256": "56f5560203c11dcaf308cd5df797e2f86abd99f038f4ed3003f2fda215c97b7c"
+            },
+            "scipy/io/matlab/_mio5_utils.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 231528,
+              "sha256": "971bf8281a197c9f6e1c6d396a1c132746e199e77edfdf52a652a1703e29cb1d"
+            },
+            "scipy/io/matlab/_mio_utils.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 64096,
+              "sha256": "4036a7b78ec4006afb1a1299a0d81896841a62c7a51229ea838e26ab00e66378"
+            },
+            "scipy/io/matlab/_streams.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 131352,
+              "sha256": "d6996e6d1fa4f511e4951c4fd4fa8c1598bf2c3895e07757bc13ebc2f71996aa"
+            },
+            "scipy/linalg/_batched_linalg.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 179137,
+              "sha256": "d72599c0cdf4b148d09bce6261a8ec79603642163f59bf7e30f96c4fd4741859"
+            },
+            "scipy/linalg/_cythonized_array_utils.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 321656,
+              "sha256": "18fc439056a75862cef1b78491a314d55ef185c7cc4280e65130d5ce913bf880"
+            },
+            "scipy/linalg/_decomp_interpolative.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 766224,
+              "sha256": "59a9ae26e5eda0e7e77c99a839341ab2bf6b074163b7bc4783c032588092caeb"
+            },
+            "scipy/linalg/_decomp_lu_cython.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 116568,
+              "sha256": "492be7ae828729110f4fe607498899e81af3084da4f6997c61a606b0ccabf6ad"
+            },
+            "scipy/linalg/_decomp_update.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 325792,
+              "sha256": "ba0240026b5edd0f19fc1498bdd1fbcd6cc904ad0fab66346eaf036c965f3c5c"
+            },
+            "scipy/linalg/_fblas.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 1032665,
+              "sha256": "deea2995d0cad9cb44c36bf73bd94218e505bdd00d24d6712eb1383c4cfc0213"
+            },
+            "scipy/linalg/_flapack.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 2560561,
+              "sha256": "39fb8e55d62b49eed79e918d5846c8035999ea85466509ad3dc758da2aed8efd"
+            },
+            "scipy/linalg/_linalg_pythran.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 122792,
+              "sha256": "97df8980ad36f16e6d623e4721a7f0f9f621daff221d9365b73e0cb5113be0c3"
+            },
+            "scipy/linalg/_matfuncs_expm.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 511433,
+              "sha256": "332a52bdbee5dd96edc0051714d3ba37c74518e8565cd444ba2036b1cae40580"
+            },
+            "scipy/linalg/_matfuncs_schur_sqrtm.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 486881,
+              "sha256": "29ef0f77a6e1fe99956b92fd60acb30f6c3bfb52ea5a65480bc7947ae987dca6"
+            },
+            "scipy/linalg/_matfuncs_sqrtm_triu.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 97360,
+              "sha256": "b306a8358268540edff0e1348943ee9a49ebf8d3e066f8fce6699e1f45f26de9"
+            },
+            "scipy/linalg/_solve_toeplitz.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 124640,
+              "sha256": "0127ca632eeb6e362fe27a8acae419b0748b5af5d6c6f02ba89b659355da2cc3"
+            },
+            "scipy/linalg/cython_blas.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 168449,
+              "sha256": "9d5838502cfd7fea2cbdf16400735f5039234f985510f82cc105f1c1414291b6"
+            },
+            "scipy/linalg/cython_lapack.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 580569,
+              "sha256": "558c7c8094dc7764f40cb1626428f1b6f8cd66042d6cdaffcfa070d6996272c4"
+            },
+            "scipy/ndimage/_ctest.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 16824,
+              "sha256": "ba6b922ce97b4d87caa06859481209982abcb419447f8b0e5bbe05a1419a1819"
+            },
+            "scipy/ndimage/_cytest.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 89760,
+              "sha256": "4110edb7ed7b58357ace3e7345693804cdfd825398458768beb5bf81ce526b87"
+            },
+            "scipy/ndimage/_nd_image.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 171408,
+              "sha256": "27b7ec31e85e104e94ffca3ece9b9a4cdfc67dbf23be38df6c153b874646bcd1"
+            },
+            "scipy/ndimage/_ni_label.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 212424,
+              "sha256": "457db95cf7886ad7f7a263bf8b79359ea14d146a76b4c93f56b75f791fe7cf2f"
+            },
+            "scipy/ndimage/_rank_filter_1d.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 26944,
+              "sha256": "ecda0c8b793a182ed4f6cb710e8c322e7875cf1456a448d558981d2d3b4db2d0"
+            },
+            "scipy/odr/__odrpack.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 630745,
+              "sha256": "623d8466f07cc33153eb1ce46514f406a0103e3cf40ad0971e5458df4ad07528"
+            },
+            "scipy/optimize/_bglu_dense.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 188776,
+              "sha256": "f046a5024de96f2a1ed555847bab22b22e9353b0f1280856b37fd31c28b55a2c"
+            },
+            "scipy/optimize/_direct.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 47368,
+              "sha256": "015fc50f4ec50afed170d8bcb250519cd831d3ea5ed08f432b966d16a1cb837f"
+            },
+            "scipy/optimize/_group_columns.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 92256,
+              "sha256": "e391143e5f0c584dd346e5a00c3c8e8d23281a6a17c16c5252a5745e2cf25e8c"
+            },
+            "scipy/optimize/_highspy/_core.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 6720872,
+              "sha256": "b259e36fe574c0eb8ea225641bad9378b5b24ee637558d6a0c7c607375251bc2"
+            },
+            "scipy/optimize/_highspy/_highs_options.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 395784,
+              "sha256": "7ba9fd6e4a9cff3570337c44c11ab953a66b00229610e6f7c6f96918d1d09c3b"
+            },
+            "scipy/optimize/_lbfgsb.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 454033,
+              "sha256": "76b945447f82ff92b60d59b14cb60036fc2fbf943be257f7263db00cae356211"
+            },
+            "scipy/optimize/_lsap.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 26776,
+              "sha256": "e76a1fdd731689e2aaafc1d6d7fa5dc80e57ab64a68250116c4bd2c99b9f5b15"
+            },
+            "scipy/optimize/_lsq/givens_elimination.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 64416,
+              "sha256": "9e31f7d48dbb1cb86e90d292a5c5cdf5110341a39f2c5ef97e77e8b7ac00d197"
+            },
+            "scipy/optimize/_minpack.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 94024,
+              "sha256": "d3b6a5d24677bc4b621a6bce40cc490eb6e8a5b14d9c85c2bf2716227d99df87"
+            },
+            "scipy/optimize/_moduleTNC.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 144608,
+              "sha256": "627610f5fd6121653c4036129ba0b7ca8592ca6afa76cd72230fbd854fddf656"
+            },
+            "scipy/optimize/_pava_pybind.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 201520,
+              "sha256": "12491a7ffdba02ed8aa90ff6f44a62758b0ed03d02b03e425b4104652c7d9edf"
+            },
+            "scipy/optimize/_slsqplib.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 458321,
+              "sha256": "ff528471f0459e629e08a95b9afe37ce9df47ff60894db0e52d632224cca11f8"
+            },
+            "scipy/optimize/_trlib/_trlib.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 212457,
+              "sha256": "ac8a481f656a505afe409c26562eb9edbcadb95782cbdfb023f0401014ab77bf"
+            },
+            "scipy/optimize/_zeros.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 21400,
+              "sha256": "371debc370e522e1d01142591ae6430dd43b30eb3c5ee7ca4fbe78e05b3646e6"
+            },
+            "scipy/optimize/cython_optimize/_zeros.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 96848,
+              "sha256": "d859c88610bd2840a2edbe3f968c2382a07bf6d7228024fe829ed7d812c5b7fe"
+            },
+            "scipy/signal/_max_len_seq_inner.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 57328,
+              "sha256": "e01e8885797dc3892b83ab840f8b7b707563addef9650f35425e40d145834848"
+            },
+            "scipy/signal/_peak_finding_utils.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 136304,
+              "sha256": "fb1645e44b3f2e08d9247a9d663f1b9c0f4348694457b309f3dedb3f1eb6c2cb"
+            },
+            "scipy/signal/_sigtools.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 108368,
+              "sha256": "6231025d985a51266134bc380b7cfe51a14e171bd8230f33176e8d8a79b49d00"
+            },
+            "scipy/signal/_sosfilt.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 105856,
+              "sha256": "bbce98f06d5475577dfe4b4d1e0ee57932fdbae84ba3d9ece27b6e4c31c31e63"
+            },
+            "scipy/signal/_spline.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 59632,
+              "sha256": "7f0258ca91c9487786b6af85337999da29fc519d174655efb432f94ba698ef71"
+            },
+            "scipy/signal/_upfirdn_apply.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 203824,
+              "sha256": "a7dea04ba17d6832909f725947de7970166a522aa081489cdb6c8b34c373bf69"
+            },
+            "scipy/sparse/_csparsetools.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 479320,
+              "sha256": "ddedde20f03812e5ba04b7a30cb91f8dcc26e8393235bc0d686554522d8f9c32"
+            },
+            "scipy/sparse/_sparsetools.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 4524560,
+              "sha256": "61d0e4c335ab469e3e2745dbdd4e724caac96ce6a4407da3d68aed0f2ec3c84c"
+            },
+            "scipy/sparse/csgraph/_flow.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 197256,
+              "sha256": "2d28f9ba4271d2390725593ac56496fe48a8c979cad4041724f0ac201ea10b52"
+            },
+            "scipy/sparse/csgraph/_matching.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 192984,
+              "sha256": "9632ce8441240e14353d125c9b10cfad723672d30198894ea7bb84118f5ce579"
+            },
+            "scipy/sparse/csgraph/_min_spanning_tree.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 100800,
+              "sha256": "953f766cc408903ee727a410fbd5936b4ff81ba3a08254f5c6e4ab999ff9f778"
+            },
+            "scipy/sparse/csgraph/_reordering.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 155312,
+              "sha256": "25ef76e53c00a631c141a4485dabc16ef6127441b3214a712a789f9115cb6b23"
+            },
+            "scipy/sparse/csgraph/_shortest_path.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 554416,
+              "sha256": "a9df5e4d9ba6a4f30c5777624fdc6cd8c31b6f588e70cbfd06e3ff9f16718cad"
+            },
+            "scipy/sparse/csgraph/_tools.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 185440,
+              "sha256": "531bc246dbbea7d24ab9e95704be015c9a66b3126902676cb48b2b31f82e6313"
+            },
+            "scipy/sparse/csgraph/_traversal.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 344336,
+              "sha256": "27559486eba58664c9d15e099842c34a5dfed8ba783d6c542663aa2f10661d9f"
+            },
+            "scipy/sparse/linalg/_dsolve/_superlu.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 835729,
+              "sha256": "d190577110967f76305c7742b4d224016fba2b377de6268001930ab3279496e4"
+            },
+            "scipy/sparse/linalg/_eigen/arpack/_arpacklib.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 609793,
+              "sha256": "87e89eb55052e37ccf6bc3072bfe8c6373c2e425281d6243b220d6824eabebda"
+            },
+            "scipy/sparse/linalg/_propack.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 552529,
+              "sha256": "ebc5b8e185331c73cf4b0eeccaf65b79d93ee7f8c4ee1f8715576f4965b44226"
+            },
+            "scipy/spatial/_ckdtree.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 790544,
+              "sha256": "9f52ae4aa5c1d36e0b3666428e85897c308b602a6076e4f462ae9bd888249f38"
+            },
+            "scipy/spatial/_distance_pybind.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 586608,
+              "sha256": "2a335fa97ecae68db1f2ba5076fc279868d59d4087aa25d1de7b277af6bb2060"
+            },
+            "scipy/spatial/_distance_wrap.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 120824,
+              "sha256": "5e778b35cdda1cddc67d21a362cfae6745c7b0299dfaedd4ca5d78035ce87ca6"
+            },
+            "scipy/spatial/_hausdorff.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 87328,
+              "sha256": "afcf41f3387d1848ab381cafd9298d72777ef4fe502f0656f1805aa462c406f6"
+            },
+            "scipy/spatial/_qhull.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 945832,
+              "sha256": "993093e6f6bb607c0fbe9dc5e1848592a5aeeb7d7a1c24d0e89103340687a801"
+            },
+            "scipy/spatial/_voronoi.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 82448,
+              "sha256": "c4ad555fa529190d439f4e03fed01318e0414beb3b98cd8421b7c0d1a393e042"
+            },
+            "scipy/spatial/transform/_rigid_transform_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 258384,
+              "sha256": "97e949b8178baf522e7dc499b599ce65303dc2697b45505237693774e32c4881"
+            },
+            "scipy/spatial/transform/_rotation_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 609976,
+              "sha256": "be598d7799fcbd8c2247a2ec76ed95d6646850f5ac523496638fe900a4afbcc4"
+            },
+            "scipy/special/_comb.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 58384,
+              "sha256": "840fe0ca8e2d2bd3c2fd3cdc2e6d2bae94f5d8fa3de97f21d2e3a1f1c70db44c"
+            },
+            "scipy/special/_ellip_harm_2.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 130145,
+              "sha256": "5522fe2ace933da385df1c4fbbd10cedef5f81c5360b5ef8dc09473f5ced6118"
+            },
+            "scipy/special/_gufuncs.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 891592,
+              "sha256": "199fa03e7a91dfcf48cc427aeba70f4936cb8c9450f5135be61813506be77920"
+            },
+            "scipy/special/_specfun.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 228128,
+              "sha256": "d4258f68549f9c6f75d2fbc57906e478cff9e423cbbb7e090d23ef491dfcbe75"
+            },
+            "scipy/special/_special_ufuncs.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 1654984,
+              "sha256": "13bedcf260f072cd3c4c2d4d1c71f9980057c05189da2ec616893969db14edc1"
+            },
+            "scipy/special/_test_internal.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 88056,
+              "sha256": "1651b1fc55b836977542cfc079bef994e3915b615c3ba8ba05ef63ee27bc82e2"
+            },
+            "scipy/special/_ufuncs.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 1531945,
+              "sha256": "d52a02c24e621a04f707ca6020c6f9c6f571d2255188514d80debd265dc59939"
+            },
+            "scipy/special/_ufuncs_cxx.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 1910152,
+              "sha256": "d44b99cd9119d1600c8324cb9390bd70dbaa669e2732de46ad0f5461547f637e"
+            },
+            "scipy/special/cython_special.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 2401608,
+              "sha256": "d6fe7a54ef77b8d998aa346c55b44c7766ecbdf18d54de564fd31cf90b82fac0"
+            },
+            "scipy/stats/_ansari_swilk_statistics.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 104032,
+              "sha256": "0515f5b070b3473d2ccde7924f7e41986054e6875fb09aa5e318c0e6e3029f5a"
+            },
+            "scipy/stats/_biasedurn.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 241480,
+              "sha256": "a3c0f488225df82520b9fd79efa8ac1543b7d92cd0321cfced5cbdfeceae908b"
+            },
+            "scipy/stats/_levy_stable/levyst.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 57280,
+              "sha256": "f3d2234c3e490ab9669193ac126ddc0483098c1fd0544c472ea4fb22cf2a351a"
+            },
+            "scipy/stats/_qmc_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 131032,
+              "sha256": "d6d6ff9da4b9f769a8ba9f52d9978ac2c340f02f2eeffe340f39fd2a78c020ac"
+            },
+            "scipy/stats/_qmvnt_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 131576,
+              "sha256": "e88d907993d8b451c1d81806c71e5a574db6a31e3120481cb315d442ed4264bd"
+            },
+            "scipy/stats/_rcont/rcont.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 104296,
+              "sha256": "51ee570c2b61a3799ca41dad929d98b068c806463382c8100704aedba6e45c9f"
+            },
+            "scipy/stats/_sobol.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 182408,
+              "sha256": "226d282c3f59e9e92e8b15533a6d25009303652bcf3032e5fc6b50b892888a51"
+            },
+            "scipy/stats/_stats.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 514440,
+              "sha256": "4f412e72394cc3c5e21e9268362f8974a162cf5d1b702f660686c2d5500c74dc"
+            },
+            "scipy/stats/_stats_pythran.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 189856,
+              "sha256": "3f08b80f614564c14191ab0cefdd4ef731e7844876bd1f738e8eb7ba7e3e90cd"
+            },
+            "scipy/stats/_unuran/unuran_wrapper.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 1342200,
+              "sha256": "8078304607ccaab44115e0744cfec08e9d913e32491db9a577028bdc2f9e4475"
+            }
+          }
+        },
+        "scikit-image": {
+          "version": "0.26.0",
+          "binaries": {
+            "skimage/_shared/fast_exp.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 69880,
+              "sha256": "d144da06f233ec0729686a5b1ae126e7a7814556160d04b7952a471dc445a585"
+            },
+            "skimage/_shared/geometry.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 180400,
+              "sha256": "1e3c9d10521cfc941841bb03a77e393b5df06916b7005207a7a28a506bff7278"
+            },
+            "skimage/_shared/interpolation.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 53784,
+              "sha256": "242c730f9c48722ad42f9d4daa584e8be78cfd46cdaa636aa32991f6760abc7b"
+            },
+            "skimage/_shared/transform.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 180544,
+              "sha256": "e68e892d2ced81c5660f292f7125d7d860ef71b01cb9258302fc60fe3b2fba5b"
+            },
+            "skimage/draw/_draw.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 372280,
+              "sha256": "32673fec979236e2f83543ad289a8128059b96e6562a9ea30114c4e73c17139b"
+            },
+            "skimage/feature/_canny_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 250472,
+              "sha256": "a538d0bc096dae1853ffcf46fddb49df961b76b9dfb7a31f9c0ee9401eda479c"
+            },
+            "skimage/feature/_cascade.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 330832,
+              "sha256": "6db7650f38c07026220f74d1c5d23dc9b3749db68f823903d90498b2a12ecb08"
+            },
+            "skimage/feature/_haar.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 530984,
+              "sha256": "d86ee7776ed0e57729f898ce28d47a243d7da528faac6b35f49544d097b516c2"
+            },
+            "skimage/feature/_hessian_det_appx.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 65424,
+              "sha256": "034b6a18c9835026a4ec664a7f9a826c90e4c589fa3e743e5945f6fb85695a32"
+            },
+            "skimage/feature/_hoghistogram.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 258640,
+              "sha256": "964a20aa5080b87421442d41c57e114cb93a88fc2f392cc0ae5e2d02315d6800"
+            },
+            "skimage/feature/_sift.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 298600,
+              "sha256": "e3c48d8ff9383520817573e48c1fc25d5b2769f27773db37396d851059cf464f"
+            },
+            "skimage/feature/_texture.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 352240,
+              "sha256": "9baa437ffe11c8203e0830f5327a0b26849b6147c4855f2cfce033ba6622fd19"
+            },
+            "skimage/feature/brief_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 223600,
+              "sha256": "0fc5bfd82837a7b9469f822b67e6c9253c892e9c0a406de0216254478860e682"
+            },
+            "skimage/feature/censure_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 217736,
+              "sha256": "459d8279c756e7ec0da5732853d01aebb0ab4de2f49593bdbdf92d100613e328"
+            },
+            "skimage/feature/corner_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 311592,
+              "sha256": "d8b9ad63a23315a275f942c45dab1f948515a5238f990417f0c4428a7e070211"
+            },
+            "skimage/feature/orb_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 246712,
+              "sha256": "28aa7c5a00337c9f688cd7174d1700d34057acbf4aedd39c0868d89d9631756a"
+            },
+            "skimage/filters/_multiotsu.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 261840,
+              "sha256": "3a79da12138f8a6cab53c462959a63525290b8f497d2e1737bc67409c7a57ffc"
+            },
+            "skimage/filters/rank/bilateral_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 456248,
+              "sha256": "6aab367d40898173cc165f22b8f3de2abe0d09a5bb5a77aa14a597ae64e52fd5"
+            },
+            "skimage/filters/rank/core_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 573416,
+              "sha256": "fa449e5288f37100869fe8e5aa1342b08063094d83992e4f3733cd048b214030"
+            },
+            "skimage/filters/rank/core_cy_3d.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 348504,
+              "sha256": "5ab97231406a6fed3a6008001a0026f001db581e4e125cdcb8b993d34ecf3553"
+            },
+            "skimage/filters/rank/generic_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 3381624,
+              "sha256": "dbfe82ee14ec403af08502b0d4cff5909e761681bf3c24d05dcd34154046944b"
+            },
+            "skimage/filters/rank/percentile_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 935912,
+              "sha256": "3ddb32203a65301a15f47c14af4e52a13c2d3e62fdaf8d75e335c129a7913628"
+            },
+            "skimage/graph/_mcp.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 496704,
+              "sha256": "46dfde971a9367977868a70bb5a32163a6889b100ef4efba9a9ba615045ebc0a"
+            },
+            "skimage/graph/_ncut_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 271888,
+              "sha256": "874cc0ac4e48a6cdc91ce1d959a13a9f3d51e66db67aa4742bfe3894f6f21279"
+            },
+            "skimage/graph/_spath.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 242208,
+              "sha256": "9f0e9e7e46719e755b1e939b238d10a19fa218fbb73d25380b540f4f63e72613"
+            },
+            "skimage/graph/heap.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 122960,
+              "sha256": "9c3d248b53be6ff8325b47dfaf6781b6e1fb0d6d49f8d0b0a6eac5267f0476ae"
+            },
+            "skimage/measure/_ccomp.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 130304,
+              "sha256": "d106a378b031ff7c9fc22fdc0ddccc69a84925fb1d2e278bea44ab195f9d4b0b"
+            },
+            "skimage/measure/_find_contours_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 226096,
+              "sha256": "15b835ec91473c39ca03d42e661be41236c799a247fdcb420d917ddfc7555802"
+            },
+            "skimage/measure/_marching_cubes_lewiner_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 341384,
+              "sha256": "38201751c5e1005003ce4c87893521882cd0ac4f1c5341de08463554077faa67"
+            },
+            "skimage/measure/_moments_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 246176,
+              "sha256": "e0532ea0792ed78c0f4bdcbfdc1c9c242d6bc4e0621f01953921b9560496ead6"
+            },
+            "skimage/measure/_pnpoly.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 241240,
+              "sha256": "79ed889762b111f7c381a14f66cd578fb4aa1a2fc92f0ada3d6a22c6b06e77c9"
+            },
+            "skimage/morphology/_convex_hull.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 218208,
+              "sha256": "2add12346fc0c63843f51392a2d9657f05ff153737ccafd83cd3542b3c6a9196"
+            },
+            "skimage/morphology/_extrema_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 314544,
+              "sha256": "a352c2f0238fde53d22a97e773af13f636d545ca7b016558318823787b17913a"
+            },
+            "skimage/morphology/_flood_fill_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 343736,
+              "sha256": "71962501722d7a0949afb2075026bdeba6916916d4aec18de055a54df5e8172e"
+            },
+            "skimage/morphology/_grayreconstruct.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 263136,
+              "sha256": "2a1c547a7bce16318c693700c483258cf6644c2d918fd6787b301f5878e3b990"
+            },
+            "skimage/morphology/_max_tree.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 794352,
+              "sha256": "7a8a1dc23fcdfc13767ec6a460b864b888527b1cbc4c7cab7b2488a1e8407f14"
+            },
+            "skimage/morphology/_misc_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 313568,
+              "sha256": "ad179aebc1ce4e81669750a01405683db9ff1f9ac293ab48acfe4916992a5c56"
+            },
+            "skimage/morphology/_skeletonize_lee_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 243512,
+              "sha256": "ec9fba16b5ba7c18f451b525797fc8a1092ea38fc0505ad98cd3706afb420f68"
+            },
+            "skimage/morphology/_skeletonize_various_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 240640,
+              "sha256": "4cf08c2175a8975ba8e76ea41c602354e394c206016a12f537d085420da5d855"
+            },
+            "skimage/restoration/_denoise_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 305488,
+              "sha256": "d662cc8dd8b13ef6fb680d8ca71d61277a87fca3a90f8994507c935699dfcd90"
+            },
+            "skimage/restoration/_inpaint.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 269984,
+              "sha256": "422b11b1f0ffb5295fbc5174aa3054f5d6e5f8c1f570e0b0da4fdcd3d3a31819"
+            },
+            "skimage/restoration/_nl_means_denoising.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 590040,
+              "sha256": "c663a5e55a3c4b3bb73d8124f83e7cf6c6a9b4e42a0189f5ec94fb1c4e92c625"
+            },
+            "skimage/restoration/_rolling_ball_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 276168,
+              "sha256": "2fca45f258c890add8c60340bbbd65e25fe98a42e00d6ad75a73e5ed20154e12"
+            },
+            "skimage/restoration/_unwrap_1d.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 213696,
+              "sha256": "78f6caaffcbc5d542e3f195a7442badd9e02e1124cc18c99c26c8e3f6b5d7eba"
+            },
+            "skimage/restoration/_unwrap_2d.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 226624,
+              "sha256": "75e378ae5db8401932bcaad4f3f19fb4aad64f01ac21e656cdcf9f95fe1a8109"
+            },
+            "skimage/restoration/_unwrap_3d.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 239000,
+              "sha256": "fd6768dd09cdb75120b8dbd72e3af6afb7f5f187d93aa1b37860b68103c984e7"
+            },
+            "skimage/segmentation/_felzenszwalb_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 154656,
+              "sha256": "4de509696b57718abf5a8d6978a860f7a03bd575d18a9c2206b7c2dbfb357ade"
+            },
+            "skimage/segmentation/_quickshift_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 289432,
+              "sha256": "5778e9396e89bdea993c596449d5ffe6ad642b4716213c70cb7f5f7a07f87603"
+            },
+            "skimage/segmentation/_slic.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 310656,
+              "sha256": "3a9dd658c6cef6f06a5d69344ee22629ee9c0f601e5f85b2c07b66f407c49aed"
+            },
+            "skimage/segmentation/_watershed_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 305808,
+              "sha256": "c4ccaa85c952f9334f2c6c4eb01c188cace356fe8cfe2d8dfb4d96c498eababf"
+            },
+            "skimage/transform/_hough_transform.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 326792,
+              "sha256": "970c723ba299c041e9c33e68778ddbb7ed5648fa0ad7742e1117f8fb401a2a54"
+            },
+            "skimage/transform/_radon_transform.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 263296,
+              "sha256": "2b619b86665a679d5f02cdb2951d050819d3f5c9b0f08c88cfc5d1eefb27fa85"
+            },
+            "skimage/transform/_warps_cy.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 285480,
+              "sha256": "d550096b19de193b36fc9b8f4ecdb7268954a6c2f63764e263ff532bb26b47a8"
+            },
+            "skimage/util/_remap.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 870648,
+              "sha256": "ec8b4ba7dc6b98f9e248b297ef194aae22396d96d145f9417dbe32858b22885e"
+            }
+          }
+        },
+        "scikit-learn": {
+          "version": "1.9.1",
+          "binaries": {
+            "scikit_learn.libs/libgomp-e985bcbb.so.1.0.0": {
+              "bytes": 253289,
+              "sha256": "a43904e4fa297301d4640dc1bb3c8a3480b406f99e498eba9b1914b68aab604a"
+            },
+            "sklearn/__check_build/_check_build.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 40304,
+              "sha256": "11e4b19c6af7fd5578d63a8cc540bbbb94d4ba04c6771817ca3fdc36354ff9d6"
+            },
+            "sklearn/_cyutility.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 214872,
+              "sha256": "2b5cc912d180506db44f7032ac310d0cc27ddc63c8c699153e82dffc397e6742"
+            },
+            "sklearn/_isotonic.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 141776,
+              "sha256": "55b68d07aae2b80e47e4a610dc9e54458d8dc74988d7ade4b1c060021dba355a"
+            },
+            "sklearn/_loss/_loss.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 1580473,
+              "sha256": "d9bfaf8bb56296a73b2cf8f0070ac84f583ce4f859294f1ce821b6a81597a405"
+            },
+            "sklearn/cluster/_dbscan_inner.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 59240,
+              "sha256": "f708607e319b64ebe6cf603bb976cb84260b77d483890f6ba8f45a5f8a21f52e"
+            },
+            "sklearn/cluster/_hdbscan/_linkage.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 123864,
+              "sha256": "45984a54b1d6dfb3cccb86f3febeb133d13f7dc4f0b4eacf2b6708e58ee3fb70"
+            },
+            "sklearn/cluster/_hdbscan/_reachability.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 212232,
+              "sha256": "a5291455401938dcef4dd77601b93ac3cb29147a018af7e3ae2ea5fa1fb077b7"
+            },
+            "sklearn/cluster/_hdbscan/_tree.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 260528,
+              "sha256": "ce0c1f3200d9aa9f55937d863b2dae8301e2b04a8e41d19e878c02a353045a24"
+            },
+            "sklearn/cluster/_hierarchical_fast.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 174136,
+              "sha256": "976148bb03e288a42bc18a39b5ccee7e2c7e2b3e7d8169d3c5f05fa75fea59f0"
+            },
+            "sklearn/cluster/_k_means_common.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 281937,
+              "sha256": "b50d4602d5b853e791d3d0eecf87bb768c4795fda984ab2e79fd7c50789979c0"
+            },
+            "sklearn/cluster/_k_means_elkan.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 290081,
+              "sha256": "a281ab5a24ef4aae45e838a3c11617cb422b29b65bf669e2f1c5ad7e18917b6f"
+            },
+            "sklearn/cluster/_k_means_lloyd.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 195841,
+              "sha256": "98dd8e95580af3818a2b31ff6a588e633d2a3ea655fc2fb9ac5798623ae48459"
+            },
+            "sklearn/cluster/_k_means_minibatch.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 158649,
+              "sha256": "adff3335414a9fecbc333ff2084d86defcb689b63dacc2909edd7b4b08a258ca"
+            },
+            "sklearn/datasets/_svmlight_format_fast.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 441016,
+              "sha256": "367a8966f8490e21fc4468f1324199ce818e287871bdeaf9258c993f82859167"
+            },
+            "sklearn/decomposition/_cdnmf_fast.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 84184,
+              "sha256": "c08dec116b512c05e4be27cb2d3d0a96021c59c9df0b3f676f72d59ebedf0aa8"
+            },
+            "sklearn/decomposition/_online_lda_fast.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 124280,
+              "sha256": "742fc199158cfaf6599f3736cb55b0b660e84c14ccfd5c0c828a45622d2014b7"
+            },
+            "sklearn/ensemble/_gradient_boosting.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 102064,
+              "sha256": "b17bd0970ec9adc942f09386380d05339bce67361457721b0c63c6c6da6acdef"
+            },
+            "sklearn/ensemble/_hist_gradient_boosting/_binning.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 80281,
+              "sha256": "2b175bac592cb1c44f27c5d9974e2f48f59d346652eebe4c05508f960aa7f79a"
+            },
+            "sklearn/ensemble/_hist_gradient_boosting/_gradient_boosting.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 84593,
+              "sha256": "8782120032b733a655500b536cd4ebaf5a3080e5f09de017a25a997c95ea230c"
+            },
+            "sklearn/ensemble/_hist_gradient_boosting/_predictor.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 109297,
+              "sha256": "e2e014b3f290e0cadb3334c13d4f5590301564eade16eb8d5f4c9ce9e3f2e7ba"
+            },
+            "sklearn/ensemble/_hist_gradient_boosting/common.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 49616,
+              "sha256": "6014a3273ff3d190f5cbc6827489ab537956237c62e359bd78696ec869d2fe6c"
+            },
+            "sklearn/ensemble/_hist_gradient_boosting/histogram.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 183505,
+              "sha256": "2294a1418a98f7c2c8b0b04704dcb4cc603f94527f752c904867742d58b5a810"
+            },
+            "sklearn/ensemble/_hist_gradient_boosting/splitting.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 220361,
+              "sha256": "b3d84a3e06be6830c7723e825d636d9cd07df6184516e67afaae64487e9ab266"
+            },
+            "sklearn/feature_extraction/_hashing_fast.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 90824,
+              "sha256": "97deb01359ad41a4c28a556399992d4f8a449fcb9c874e24b4921e7a46943f8d"
+            },
+            "sklearn/linear_model/_cd_fast.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 442328,
+              "sha256": "09f3aa396a79cb4eb64c55b3b48f1bf3231eee291c8a0ba9b5b8b5803f122197"
+            },
+            "sklearn/linear_model/_sag_fast.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 147064,
+              "sha256": "62edebf37eb201e6da887c519315ab232abd23893ba888248fe7e1f228afe07d"
+            },
+            "sklearn/linear_model/_sgd_fast.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 219248,
+              "sha256": "5b93af5dba2bd1a1da3adcb6552591ba068b4bcbe2026096fc16505bc6aaae7a"
+            },
+            "sklearn/manifold/_barnes_hut_tsne.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 113713,
+              "sha256": "630038b2bdb893dceeafae51edc03e1ea7c7aaee1171dc88d2841a5c2117ff04"
+            },
+            "sklearn/manifold/_utils.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 70152,
+              "sha256": "e09445e6036ad96bea8d9f7d5cbc37af02dce362616bc0510afa23a0eaeaee1e"
+            },
+            "sklearn/metrics/_dist_metrics.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 591216,
+              "sha256": "c47cd8dd97c3debf4b0a879619ec054fccc6cb7d32fc878db683207430a0b319"
+            },
+            "sklearn/metrics/_pairwise_distances_reduction/_argkmin.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 241177,
+              "sha256": "6c8741b2b514f1905c9ecc6e3edf4043d6a292695abb2a82c438327e96657159"
+            },
+            "sklearn/metrics/_pairwise_distances_reduction/_argkmin_classmode.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 150801,
+              "sha256": "29a3025b0e7ffc40ca9e0edd45cbdc09e6f6883e808248185880942ff05b9b6e"
+            },
+            "sklearn/metrics/_pairwise_distances_reduction/_base.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 208881,
+              "sha256": "251d5d82912cebb954459e8053a632c753753eaee4239e3b70a88c722bde34d7"
+            },
+            "sklearn/metrics/_pairwise_distances_reduction/_datasets_pair.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 345120,
+              "sha256": "f3d16f8f83ce39c49da90f2b09ed647b734b7d8fd298cadb492447b1551d180f"
+            },
+            "sklearn/metrics/_pairwise_distances_reduction/_middle_term_computer.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 349824,
+              "sha256": "8e506890c101be273f94c65fda32114082a96bff6053cb689fb1edab81b71409"
+            },
+            "sklearn/metrics/_pairwise_distances_reduction/_radius_neighbors.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 267513,
+              "sha256": "0b0f04b27abd7e8fc63a6fec9971d001885697a13d352ef222b044d889bb468a"
+            },
+            "sklearn/metrics/_pairwise_distances_reduction/_radius_neighbors_classmode.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 175505,
+              "sha256": "8e99e093b418e9341d444794a7e1869ac90cce51f6cd844e4d3a9d083de2a5fd"
+            },
+            "sklearn/metrics/_pairwise_fast.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 142369,
+              "sha256": "e0c9e8025fa8750b5d2404bcb51e9196d5ef4ea63e4dfb5ae23427d87a760029"
+            },
+            "sklearn/metrics/cluster/_expected_mutual_info_fast.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 96552,
+              "sha256": "4c45cb17b9930e2ad595e3f851ea5818a55b682056f2fa68bb5332c44556d979"
+            },
+            "sklearn/neighbors/_ball_tree.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 599064,
+              "sha256": "e57824a3db7757d058cc2c53a1a4afd569ff0dde32e256660dfafb2b47d94f45"
+            },
+            "sklearn/neighbors/_kd_tree.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 610736,
+              "sha256": "fd039636930fe69375e911335e35df4d8df05a711926be4447a6fdbf98b5c392"
+            },
+            "sklearn/neighbors/_partition_nodes.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 32328,
+              "sha256": "b57c7add11fe3d674db64177a80d7f16d48f00168cc991255ef707ce485dd38b"
+            },
+            "sklearn/neighbors/_quad_tree.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 164296,
+              "sha256": "df24578ba84383ef50ee8b2fde6b2f3ed6ccaf079a55b7695591dec53dc59e14"
+            },
+            "sklearn/preprocessing/_csr_polynomial_expansion.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 292112,
+              "sha256": "fc6674db8ddf1424acb1b7442d74e0337de1f4d65412fa6cb3f24aa0da1f98eb"
+            },
+            "sklearn/preprocessing/_target_encoder_fast.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 494064,
+              "sha256": "ec0eba08cd1febd7dd0a602852e3329d6faf36cd6542939c5324edbfb9943053"
+            },
+            "sklearn/svm/_liblinear.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 165832,
+              "sha256": "9da985f89bb5e0ec89f46d877ff6bc3f22494d6b7893215ac54225805bda2049"
+            },
+            "sklearn/svm/_libsvm.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 405976,
+              "sha256": "718eabb3b4c5b603264bf34fec8f257c29f116e49f0a798e41138ca2207e775c"
+            },
+            "sklearn/svm/_libsvm_sparse.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 337984,
+              "sha256": "1749a61d581dfc3d5ddfa28a3ecb0c689d89207da6eeeb3fdec2e2100eb89540"
+            },
+            "sklearn/svm/_newrand.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 55352,
+              "sha256": "3d7d84e506d4410a3d61338460d2fb84d989c81edad4d2e092a11d207b2e4618"
+            },
+            "sklearn/tree/_criterion.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 206416,
+              "sha256": "7420b3ac3308c6921eabfc3bedb3e67a9c5a131a45baf61cd83ebff409a2c886"
+            },
+            "sklearn/tree/_partitioner.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 159024,
+              "sha256": "289a2d79f8dc92b95ffa1f27d520cc736b32937574fd555b438a8de196121f89"
+            },
+            "sklearn/tree/_splitter.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 132984,
+              "sha256": "249bc73ea079dee171ebdd62cf7d566a096adbd7b9c8375dd78647561dcbabd1"
+            },
+            "sklearn/tree/_tree.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 483728,
+              "sha256": "5512f896d1a68fc091a2f7215319412f784cef07112e0ce620e9541d2dec18f3"
+            },
+            "sklearn/tree/_utils.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 108128,
+              "sha256": "7281ae5de7c0d047db24ef640f041606012e547ba4b002f647b66fae22158082"
+            },
+            "sklearn/utils/_bitset.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 65440,
+              "sha256": "c83d3d25bdc9edc3e4e81c594341356192802521cd64634a4aa21e2eeb8fc9ea"
+            },
+            "sklearn/utils/_cython_blas.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 208304,
+              "sha256": "97c574d7fb1ac2e604f311b41ec5f45fd51125c60f59b39acf0dcd73c2e48829"
+            },
+            "sklearn/utils/_fast_dict.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 147000,
+              "sha256": "3caede38c18c9c3075602d4f77e0efc2be60a1d9906fc30353349350f5e9f519"
+            },
+            "sklearn/utils/_heap.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 27144,
+              "sha256": "1066d13746ffe111f150d9dd70325d5a011afa1d036742712a7ac6d26edb07a1"
+            },
+            "sklearn/utils/_isfinite.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 85048,
+              "sha256": "9187516b5eae541f52de76af0dcdd6e38ecc004aead54ddaff774ee8952db0e7"
+            },
+            "sklearn/utils/_openmp_helpers.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 72481,
+              "sha256": "2d965a728c1e9d8753d3870c4bfb4e514a5e501d48a179b751d85df68b6b21ae"
+            },
+            "sklearn/utils/_random.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 171472,
+              "sha256": "801ba624b61c321a8f9e37a0a1b08219b0dc478d87ee56dbddc993b911c67c9e"
+            },
+            "sklearn/utils/_seq_dataset.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 179568,
+              "sha256": "8c442de43d871f4cfb9a0aa93815ac2c97ae5b724db22e262ad10402b3c3b103"
+            },
+            "sklearn/utils/_sorting.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 84808,
+              "sha256": "c85d6dbc71fa800e6b073677d6ee027d558a5edbd7c6b406293c8d645814aef3"
+            },
+            "sklearn/utils/_typedefs.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 128008,
+              "sha256": "7423b0b7fc4492debb8822417804be006e4ad325cb6dc7e06245e3d89de0f9f0"
+            },
+            "sklearn/utils/_vector_sentinel.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 157600,
+              "sha256": "ec6d08bf483bbb3b5113093262733485b9f9bd329d42327473b61cfe72586f8f"
+            },
+            "sklearn/utils/_weight_vector.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 70600,
+              "sha256": "da0d9e96b681d1fcc25319631d4666f9943f5ba2008bf47a8c19f1daef3db204"
+            },
+            "sklearn/utils/arrayfuncs.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 137472,
+              "sha256": "eb3a81fc5ae9b19178b2d29f2673c0656097545f281dc7947c9b802adfc44908"
+            },
+            "sklearn/utils/murmurhash.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 110736,
+              "sha256": "e0f2a14ed53c947b4d959b701849a4fe842be9ff44635d686789a2fd070c60f5"
+            },
+            "sklearn/utils/sparsefuncs_fast.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 673560,
+              "sha256": "8a1669864716aa76f2e89346bb61391bab06bd8d60197a4b65f009066c1127e5"
+            }
+          }
+        },
+        "pillow": {
+          "version": "12.3.0",
+          "binaries": {
+            "PIL/_avif.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 91985,
+              "sha256": "4b44ccbaca9ab8172c9dc3d252d325c80bd367122a80e5d7bb6897570aee148b"
+            },
+            "PIL/_imaging.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 3385961,
+              "sha256": "b55dc49c50e6bad027caa57e6d0f7d7e793993e4693cd8d80cec38dc102790ff"
+            },
+            "PIL/_imagingcms.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 157841,
+              "sha256": "c06d0f4e91a6d0f0b162a6798849c8692dae1a222bf4b4b67f546a4696af21ff"
+            },
+            "PIL/_imagingft.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 322969,
+              "sha256": "8f7f03397dd21518ed13f4322b7461be44c867459f539e6f0759f8c282995cbb"
+            },
+            "PIL/_imagingmath.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 137496,
+              "sha256": "e0d3cf5254e69defb13ac124a48e580aa8e746388a6a59b8f0cb78215ecba099"
+            },
+            "PIL/_imagingmorph.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 38104,
+              "sha256": "f808e510293f01c166c18e29f795b0da7d8e196760afdde79bdc57f0d03355bc"
+            },
+            "PIL/_imagingtk.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 46048,
+              "sha256": "5f999c2c7e7f2bf29e36f5cd6a71d7a52f8e26b745c18514a1563d0d6b1a1368"
+            },
+            "PIL/_webp.cpython-311-x86_64-linux-gnu.so": {
+              "bytes": 108849,
+              "sha256": "aff629f5b1a9143958126b163c21854fc3ae76faea2793fe562a2a975f75cb16"
+            },
+            "pillow.libs/libXau-154567c4.so.6.0.0": {
+              "bytes": 22081,
+              "sha256": "05484d24bf78cb8ed03169f1cb067204d829cb7af21de8820400d29d115e4320"
+            },
+            "pillow.libs/libavif-8a7f9d56.so.16.4.2": {
+              "bytes": 5203513,
+              "sha256": "3a8819e60f0fd7c716ef14776085a81c941db354002a9f9a679da38447e5507f"
+            },
+            "pillow.libs/libbrotlicommon-53534446.so.1.2.0": {
+              "bytes": 144425,
+              "sha256": "d0034d3c0dc0dc698266f9ce61ef1701402960eb0f18c0defadc61b91f793d88"
+            },
+            "pillow.libs/libbrotlidec-7e5462ba.so.1.2.0": {
+              "bytes": 66441,
+              "sha256": "301d8f1b7365c0204485f7bdc89165936fa8212b36c4f78563fe4229df53863c"
+            },
+            "pillow.libs/libfreetype-9fc94c80.so.6.20.6": {
+              "bytes": 1467713,
+              "sha256": "994d650f4fe686013580524dd868d7001325fa3bbf408800eaa4778138a7e690"
+            },
+            "pillow.libs/libharfbuzz-172d1f63.so.0.61421.0": {
+              "bytes": 970233,
+              "sha256": "7ff87422406706600619c8467a2daa42a8122207dcb95337273ae18419f7a220"
+            },
+            "pillow.libs/libjpeg-31e2ca52.so.62.4.0": {
+              "bytes": 829137,
+              "sha256": "6d7c754529b30aff22efaaf88ba02061714591702c03f297f00ccb32ee6d9d9a"
+            },
+            "pillow.libs/liblcms2-dade1fbf.so.2.0.19": {
+              "bytes": 519257,
+              "sha256": "2549d6886e7de9960792e10ac87acfb9895e2afae85b7aac02108080cc7d3a71"
+            },
+            "pillow.libs/liblzma-2be87c3e.so.5.8.3": {
+              "bytes": 266369,
+              "sha256": "535737fa00b49f62d14d6d9bce76482440df700b33d2666d636894f751dd25f1"
+            },
+            "pillow.libs/libopenjp2-b07f72ad.so.2.5.4": {
+              "bytes": 585849,
+              "sha256": "185cb358047fd8b351c1d05b84a7e906c59d68d7f41222805f7042895ae266d8"
+            },
+            "pillow.libs/libpng16-abb096d5.so.16.58.0": {
+              "bytes": 278001,
+              "sha256": "44f1d1d821c9b57cda2b32d4a278eeaa03bc9930ae9da0ec0f384c3daf165e12"
+            },
+            "pillow.libs/libsharpyuv-0066295b.so.0.1.2": {
+              "bytes": 46113,
+              "sha256": "c2c5e89368b3bf9276a3cfea7e52ceb624db1c0c986c127169616219d5325807"
+            },
+            "pillow.libs/libtiff-fc87e79d.so.6.2.0": {
+              "bytes": 762929,
+              "sha256": "522bafb6812978fc53db6c32e5c57786186b551fc5fd6a7c61b857ca01261d16"
+            },
+            "pillow.libs/libwebp-51b0b3f7.so.7.2.0": {
+              "bytes": 735313,
+              "sha256": "7df9ad3680dd09d756511334791c8c896207863816eb2910840e5fc4ae10028a"
+            },
+            "pillow.libs/libwebpdemux-9fe2abcc.so.2.0.17": {
+              "bytes": 33553,
+              "sha256": "a7ccaaf4388d8ec212ca85be17907e8e021b7da113f7f48c47722c1ebe602f8e"
+            },
+            "pillow.libs/libwebpmux-8fb1c9f6.so.3.1.2": {
+              "bytes": 64257,
+              "sha256": "48ebf91c4d208901a48f851fb4c851d380fededd2a272104e3ca24c17499deba"
+            },
+            "pillow.libs/libxcb-ad31f5a3.so.1.1.0": {
+              "bytes": 271913,
+              "sha256": "633fe8df9f1bfc0ef60de6a3495a599ec56e56216491b90b79604cfecfb88000"
+            },
+            "pillow.libs/libzstd-44be1190.so.1.5.7": {
+              "bytes": 1800497,
+              "sha256": "9501ab40e92a57491cadd2d02df46b596f24e74e6c0476b8500793f822fa0072"
+            }
+          }
+        },
+        "opencv-contrib-python": {
+          "version": "4.14.0.94",
+          "binaries": {
+            "cv2/cv2.abi3.so": {
+              "bytes": 84057353,
+              "sha256": "0b85c02132d388d1074e048136d5b307d4684a32e0970abe443b29a60d91c635"
+            },
+            "cv2/qt/plugins/platforms/libqxcb.so": {
+              "bytes": 28361,
+              "sha256": "d25aca02d27f72f265b983958fce842c8548c95a67d721bb0c12e742950dc4e4"
+            },
+            "opencv_contrib_python.libs/libQt5Core-9088e21b.so.5.15.19": {
+              "bytes": 7516361,
+              "sha256": "648bc35ad28d32776aac2b572cf9a2ef508e5b8a4f9cc4e9c090c4789bd88023"
+            },
+            "opencv_contrib_python.libs/libQt5Gui-afbd4980.so.5.15.19": {
+              "bytes": 9954737,
+              "sha256": "536788d31cc7baf50118b6e7145219e2b5792243646d2bd6bc8e24931599d2d5"
+            },
+            "opencv_contrib_python.libs/libQt5Test-2553f470.so.5.15.19": {
+              "bytes": 440457,
+              "sha256": "3b19c992c34add06a756c00ab31aa065a47e57ca9cb01b4d699db7dd249f0a17"
+            },
+            "opencv_contrib_python.libs/libQt5Widgets-5be2f68b.so.5.15.19": {
+              "bytes": 9122297,
+              "sha256": "1271c7b6b606be4c802c110b389c1a6645608df668c739999b0cc029b5de506d"
+            },
+            "opencv_contrib_python.libs/libQt5XcbQpa-bb93e554.so.5.15.19": {
+              "bytes": 1930225,
+              "sha256": "ca88133317c2baf28265d4b91806ca74173663847bc2a4cb2e283f44ce83591b"
+            },
+            "opencv_contrib_python.libs/libX11-xcb-b482bfde.so.1.0.0": {
+              "bytes": 8761,
+              "sha256": "bd84887dc1555a36fa203b55b129d7f12856b5979f00dbbcf083785c0dba50b0"
+            },
+            "opencv_contrib_python.libs/libXau-154567c4.so.6.0.0": {
+              "bytes": 22081,
+              "sha256": "05484d24bf78cb8ed03169f1cb067204d829cb7af21de8820400d29d115e4320"
+            },
+            "opencv_contrib_python.libs/libaom-a0d22147.so.3.14.1": {
+              "bytes": 8141337,
+              "sha256": "1158ff3dfd6b92bdf3f163c02c11c629baadba467604dcf5c579cf8daac071ea"
+            },
+            "opencv_contrib_python.libs/libavcodec-57aca189.so.62.28.102": {
+              "bytes": 18451737,
+              "sha256": "ad374a15351f348217c081ff0d422cec8a24434ec07c82d9a87aa5c1f2ef2006"
+            },
+            "opencv_contrib_python.libs/libavdevice-547b8dab.so.62.3.102": {
+              "bytes": 110737,
+              "sha256": "7c3a1a5a6912b75fa42952aa331a9a16ef87d5944c1d0617943cc2b3e539efb4"
+            },
+            "opencv_contrib_python.libs/libavfilter-dc48f827.so.11.14.102": {
+              "bytes": 5386105,
+              "sha256": "cbd3e706e9a82ae1a4b7670c84b790ebd713b8a6794911e6c86524d11b762092"
+            },
+            "opencv_contrib_python.libs/libavformat-50e282e4.so.62.12.102": {
+              "bytes": 2991681,
+              "sha256": "6bf44cd8b654d547161550085f46d1afa4ffa4babb56acf03363b1007d74c525"
+            },
+            "opencv_contrib_python.libs/libavif-43e630fc.so.16.4.2": {
+              "bytes": 1165369,
+              "sha256": "08bd56025b1f665362a7ac4f1f2ac552e36803817a3637840a376242d38f30da"
+            },
+            "opencv_contrib_python.libs/libavutil-431feb49.so.60.26.102": {
+              "bytes": 1066369,
+              "sha256": "fbd9aeb567815a65feba4c492c000d94643eb21581262944fcb8b77f9a98fb56"
+            },
+            "opencv_contrib_python.libs/libcrypto-a324fe28.so.1.1.1k": {
+              "bytes": 3215921,
+              "sha256": "a0f3596ad24657c5657908b709090a8facb3b93727d0181829daf80fd62ea859"
+            },
+            "opencv_contrib_python.libs/libdav1d-d02dd842.so.7.0.0": {
+              "bytes": 2901313,
+              "sha256": "1767a16263dbe12d8e98a4cda8c8465e024d4d33dac7218acada023929930ac5"
+            },
+            "opencv_contrib_python.libs/libdrm-b0291a67.so.2.4.0": {
+              "bytes": 96417,
+              "sha256": "2b8f19025340baf49d5fb8b6b68113c429baf3ceb0e04d7b2663f673c44cdbed"
+            },
+            "opencv_contrib_python.libs/libgfortran-83c28eba.so.5.0.0": {
+              "bytes": 2751569,
+              "sha256": "468e71e59e1d784821a76702e5ecd1e0dbcfc024499f74a552d1bea4b26f27ad"
+            },
+            "opencv_contrib_python.libs/libopenblasp-r0-59ffcd50.3.15.so": {
+              "bytes": 38982937,
+              "sha256": "c073ab726795e391fd4ee09ce941c7d9e23e71a3737a910367f03d89487542f5"
+            },
+            "opencv_contrib_python.libs/libpcre2-16-bca4e6b3.so.0.7.1": {
+              "bytes": 502753,
+              "sha256": "3ba35e91573e04d26e114a07dd6e60d2bbca4708d4d596917f092d527a2843a9"
+            },
+            "opencv_contrib_python.libs/libpng16-529cb57a.so.16.58.0": {
+              "bytes": 1076721,
+              "sha256": "e4d04733e75ffa81ab878c0ed628463ee4bba178120c32dc0372963680c6e768"
+            },
+            "opencv_contrib_python.libs/libquadmath-2284e583.so.0.0.0": {
+              "bytes": 272193,
+              "sha256": "a9307bbaa353623fa014e8b682d50c4629f5e5c7d61daa9a8652f7d165cd421a"
+            },
+            "opencv_contrib_python.libs/libssl-8248cfc9.so.1.1.1k": {
+              "bytes": 687353,
+              "sha256": "6b696f6571492d0e76cb8260ba75cb77fc49985e7585053e2ada009c18095991"
+            },
+            "opencv_contrib_python.libs/libswresample-b08787fc.so.6.3.102": {
+              "bytes": 150337,
+              "sha256": "8c54e0dd8ccd3093512a2b23271f0829767862c96510ac0fd4e34ec4766466a7"
+            },
+            "opencv_contrib_python.libs/libswscale-ca2eb2d3.so.9.5.102": {
+              "bytes": 2017409,
+              "sha256": "8f9515d0882d84691ff236e54786f4afb8fc73d528691dec0ed3e9219dbb2f26"
+            },
+            "opencv_contrib_python.libs/libvpx-4fb239ff.so.11.0.1": {
+              "bytes": 3692569,
+              "sha256": "be3407f96ebd5fd5fde8eb91c9bf7d1e083916ddf856cf45784c67f1b2cb7f41"
+            },
+            "opencv_contrib_python.libs/libxcb-icccm-9453e4f7.so.4.0.0": {
+              "bytes": 28417,
+              "sha256": "4cce664f12f61f7f5f35ce99b77ffc600125fde677e4140d7c5cbeeed1725557"
+            },
+            "opencv_contrib_python.libs/libxcb-image-c881c1c3.so.0.0.0": {
+              "bytes": 29673,
+              "sha256": "d2d3aa33012d06db83c422bd2138453edb8d55ca1b79659e4f0005b734e4eff0"
+            },
+            "opencv_contrib_python.libs/libxcb-keysyms-28f5419b.so.1.0.0": {
+              "bytes": 13889,
+              "sha256": "f12f9472c2b76a78f149129171b97f29cefac19e59aa249bd04e2c1fd0edb3c9"
+            },
+            "opencv_contrib_python.libs/libxcb-randr-562554c2.so.0.1.0": {
+              "bytes": 138953,
+              "sha256": "32a6509485332f5497d086e4c6bd9f26dd6b0027e06956ff7cab9260b8eb71d8"
+            },
+            "opencv_contrib_python.libs/libxcb-render-161c0eb5.so.0.0.0": {
+              "bytes": 106753,
+              "sha256": "646dba7950d90dbb03cb22756cabfa5b04635968eaf2136d7a6b2b7e37e5ce60"
+            },
+            "opencv_contrib_python.libs/libxcb-render-util-f04ad2c5.so.0.0.0": {
+              "bytes": 30313,
+              "sha256": "89cffc2c86fa565b02f53207d7c33f5a15a30c1d7bd8b4e77169e797164d87d8"
+            },
+            "opencv_contrib_python.libs/libxcb-shape-7716c890.so.0.0.0": {
+              "bytes": 29937,
+              "sha256": "fcab683bb15400cc661666124feec67e25454f62fad04830bdf43a3573c4899b"
+            },
+            "opencv_contrib_python.libs/libxcb-shm-0be6dfbf.so.0.0.0": {
+              "bytes": 29545,
+              "sha256": "3f6cbaedacdf0eb23246a4c77b59fc8036711b6a23a2baa651001199a5834e29"
+            },
+            "opencv_contrib_python.libs/libxcb-sync-e532c63b.so.1.0.0": {
+              "bytes": 47937,
+              "sha256": "bc4b29666777726add6b8463f9d574727aac5b6699eb83fd03284a402f707bb6"
+            },
+            "opencv_contrib_python.libs/libxcb-util-9255dd30.so.1.0.0": {
+              "bytes": 30337,
+              "sha256": "dc208fbcb5c9a8c2e1ccf3694b164a356b063cac662dba1bd4ca3b1ac9cd70bb"
+            },
+            "opencv_contrib_python.libs/libxcb-xfixes-6de855b8.so.0.0.0": {
+              "bytes": 65793,
+              "sha256": "295225acbb1878c65c1277469528479c7f6f80abaa0ee271d7c0c0865f3e6bf8"
+            },
+            "opencv_contrib_python.libs/libxcb-xinerama-fe4b410c.so.0.0.0": {
+              "bytes": 25697,
+              "sha256": "35010a319eaf31664707265683b8229445d4a6ce2f18f922527c30db34f9bff6"
+            },
+            "opencv_contrib_python.libs/libxcb-xkb-fd53f741.so.1.0.0": {
+              "bytes": 219337,
+              "sha256": "aa99b0d07e83480c38ecceb95c39e710840a7b87496c6502c9d7899cb107899b"
+            },
+            "opencv_contrib_python.libs/libxkbcommon-de59cad2.so.0.0.0": {
+              "bytes": 347745,
+              "sha256": "4c262f4cf31ffbdb94fd6d16bb89c8e8d5d46720e4eec2dd1c6a32d53b5bf395"
+            },
+            "opencv_contrib_python.libs/libxkbcommon-x11-27b61ed0.so.0.0.0": {
+              "bytes": 64465,
+              "sha256": "dab9fef7e66b923d3ca4bc3c1a3be599beb48ef20734bbb7a0f9db9c99c31f12"
+            }
+          }
+        }
+      },
+      "numpy_cpu": {
+        "features": {
+          "ASIMD": false,
+          "ASIMDDP": false,
+          "ASIMDFHM": false,
+          "ASIMDHP": false,
+          "AVX": true,
+          "AVX2": true,
+          "AVX5124FMAPS": false,
+          "AVX5124VNNIW": false,
+          "AVX512BF16": true,
+          "AVX512BITALG": true,
+          "AVX512BW": true,
+          "AVX512CD": true,
+          "AVX512DQ": true,
+          "AVX512ER": false,
+          "AVX512F": true,
+          "AVX512FP16": false,
+          "AVX512IFMA": true,
+          "AVX512PF": false,
+          "AVX512VBMI": true,
+          "AVX512VBMI2": true,
+          "AVX512VL": true,
+          "AVX512VNNI": true,
+          "AVX512VPOPCNTDQ": true,
+          "AVX512_CLX": true,
+          "AVX512_CNL": true,
+          "AVX512_ICL": true,
+          "AVX512_KNL": false,
+          "AVX512_KNM": false,
+          "AVX512_SKX": true,
+          "AVX512_SPR": false,
+          "BMI": true,
+          "BMI2": true,
+          "CX16": true,
+          "F16C": true,
+          "FMA3": true,
+          "FMA4": false,
+          "FPHP": false,
+          "GFNI": true,
+          "LAHF": true,
+          "LSX": false,
+          "LZCNT": true,
+          "MMX": true,
+          "MOVBE": true,
+          "NEON": false,
+          "NEON_FP16": false,
+          "NEON_VFPV4": false,
+          "POPCNT": true,
+          "RVV": false,
+          "SSE": true,
+          "SSE2": true,
+          "SSE3": true,
+          "SSE41": true,
+          "SSE42": true,
+          "SSSE3": true,
+          "SVE": false,
+          "VAES": true,
+          "VPCLMULQDQ": true,
+          "VSX": false,
+          "VSX2": false,
+          "VSX3": false,
+          "VSX4": false,
+          "VX": false,
+          "VXE": false,
+          "VXE2": false,
+          "X86_V2": true,
+          "X86_V3": true,
+          "X86_V4": true,
+          "XOP": false
+        },
+        "baseline": [
+          "X86_V2"
+        ],
+        "dispatch": [
+          "X86_V3",
+          "X86_V4",
+          "AVX512_ICL",
+          "AVX512_SPR"
+        ]
+      },
+      "opencv_build_sha256": "8830737541f63840e7fc1bfb36dab8f030b9d89cbee1cc95af656a4b8539c2ac"
+    },
+    "execution": {
+      "blas": [
+        {
+          "user_api": "blas",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "version": "0.3.30",
+          "threading_layer": "pthreads",
+          "architecture": "SkylakeX",
+          "binary": {
+            "bytes": 24805561,
+            "sha256": "8fb864c29cac4b25f6e2c139491ea96f2724dde42d51394f84e9c4a622e34790"
+          }
+        },
+        {
+          "user_api": "blas",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "version": "0.3.15",
+          "threading_layer": "pthreads",
+          "architecture": "Barcelona",
+          "binary": {
+            "bytes": 38982937,
+            "sha256": "c073ab726795e391fd4ee09ce941c7d9e23e71a3737a910367f03d89487542f5"
+          }
+        },
+        {
+          "user_api": "blas",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "version": "0.3.31.188.0",
+          "threading_layer": "pthreads",
+          "architecture": "SkylakeX",
+          "binary": {
+            "bytes": 25409073,
+            "sha256": "05c9f9eb89ee68a4b9d673184fa91c99587e736392c0c2d49180a8aa5303d080"
+          }
+        }
+      ],
+      "opencv_cpu": "SSE SSE2 SSE3 *SSE4.1 *SSE4.2 *AVX *FP16 *AVX2 *AVX512-SKX",
+      "opencv_optimized": true,
+      "opencv_threads": 16,
+      "dispatch_environment": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "OPENBLAS_CORETYPE": null,
+        "GOTO_NUM_THREADS": null,
+        "OMP_NUM_THREADS": "1",
+        "OMP_DYNAMIC": null,
+        "MKL_NUM_THREADS": null,
+        "MKL_DYNAMIC": null,
+        "MKL_CBWR": null,
+        "BLIS_NUM_THREADS": null,
+        "VECLIB_MAXIMUM_THREADS": null,
+        "NPY_DISABLE_CPU_FEATURES": null,
+        "NPY_ENABLE_CPU_FEATURES": null
+      }
+    },
+    "content_sha256": "d37a43cbe38d2029df3cdcdf496b33a77bab6f812935984477d9c79c42ab522e"
+  }
+}

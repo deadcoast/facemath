@@ -1,0 +1,2674 @@
+{
+  "parent": "evidence\\source-cohort-20261002\\preseal\\native-pipeline\\qualification",
+  "engine_code_sha256": "f95ed198d0467684be35e1a59e1906ac4300d12b4290ce09e3c17103a24a6148",
+  "fitted_model_unchanged": true,
+  "qualification_arrays_byte_identical": [
+    "centered_error_valid",
+    "centered_error_vectors_px",
+    "covariance_px2",
+    "development_bias_beta",
+    "development_group_bias_vectors",
+    "development_joint_covariance",
+    "development_joint_group_case_counts",
+    "development_joint_group_second_moments",
+    "raw_error_vectors_px",
+    "source_bias_vectors_px",
+    "source_predicted_xy",
+    "source_reference_xy"
+  ],
+  "old_report_fields_identical": true,
+  "retrospective_utility_diagnostic": {
+    "format": "facemath.joint_bound_utility.v13",
+    "status": "diagnostic",
+    "calibration_sha256": "9a1e03c8dac6a69c40b98ff7e8be6c3af16bb098f8e6dd5efdf23ebe8e3243bf",
+    "bias_sha256": "5b5ab4b745ff3bc306409f0d5f4028a3a9169a142282b64a3c302ca0cc05df55",
+    "scatter_sha256": "416c9598e3d39391ce19d8746b32e96fd495cc906251dd310f8d8346fbf18cc6",
+    "raw_coordinates_changed": false,
+    "acceptance_decision": false,
+    "width_unit": "observed_eye_spans; ratio width is dimensionless",
+    "normalization": "mouth_eye_ratio divides by uncertain reference-set eye span in shared relation graph",
+    "landmark_diameter_meaning": "major-axis diameter of each marginal projection of the full16 set",
+    "support_limit": "validation-row observed mask includes reference availability; not a visibility claim",
+    "summary_scope": "all enrolled cases, including exclusions; complete-group delivery requires every member",
+    "limit": "descriptive finite widths do not establish useful accuracy, anatomical equivalence or empirical admission",
+    "splits": {
+      "development": {
+        "enrolled_cases": 20,
+        "eligible_cases": 20,
+        "prospectively_excluded": 0,
+        "enrolled_groups": 20,
+        "complete_landmark_groups": 20,
+        "finite_ratio_groups": 20,
+        "reasons": {
+          "bounded": 20
+        },
+        "landmark_diameter": {
+          "total": 160,
+          "finite": 160,
+          "unavailable": 0,
+          "minimum": 0.37956558724194395,
+          "median": 0.455499723795216,
+          "maximum": 1.5340415344230567
+        },
+        "eye_span": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 0.5394064868679925,
+          "median": 0.5394064868679925,
+          "maximum": 0.5394064868679925
+        },
+        "mouth_width": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 0.5768779411347829,
+          "median": 0.57723151672693,
+          "maximum": 0.5772315167269552
+        },
+        "mouth_eye_ratio": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 0.9997982107284107,
+          "median": 1.0977878734279274,
+          "maximum": 1.2543823671438579
+        }
+      },
+      "calibration": {
+        "enrolled_cases": 20,
+        "eligible_cases": 20,
+        "prospectively_excluded": 0,
+        "enrolled_groups": 20,
+        "complete_landmark_groups": 20,
+        "finite_ratio_groups": 20,
+        "reasons": {
+          "bounded": 20
+        },
+        "landmark_diameter": {
+          "total": 160,
+          "finite": 160,
+          "unavailable": 0,
+          "minimum": 0.37956558724194395,
+          "median": 0.455499723795216,
+          "maximum": 1.5340415344230567
+        },
+        "eye_span": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 0.5394064868679925,
+          "median": 0.5394064868679925,
+          "maximum": 0.5394064868679925
+        },
+        "mouth_width": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 0.5771045702023163,
+          "median": 0.577231516726937,
+          "maximum": 0.5772315167269536
+        },
+        "mouth_eye_ratio": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 0.966221045300784,
+          "median": 1.1001650182561433,
+          "maximum": 1.2410582600917386
+        }
+      },
+      "evaluation": {
+        "enrolled_cases": 20,
+        "eligible_cases": 20,
+        "prospectively_excluded": 0,
+        "enrolled_groups": 20,
+        "complete_landmark_groups": 20,
+        "finite_ratio_groups": 20,
+        "reasons": {
+          "bounded": 20
+        },
+        "landmark_diameter": {
+          "total": 160,
+          "finite": 160,
+          "unavailable": 0,
+          "minimum": 0.37956558724194395,
+          "median": 0.455499723795216,
+          "maximum": 1.5340415344230567
+        },
+        "eye_span": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 0.5394064868679925,
+          "median": 0.5394064868679925,
+          "maximum": 0.5394064868679925
+        },
+        "mouth_width": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 0.5770392171818335,
+          "median": 0.5772315167269388,
+          "maximum": 0.5772315167269506
+        },
+        "mouth_eye_ratio": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 1.0094157093415368,
+          "median": 1.1188507715158291,
+          "maximum": 1.2104589774743295
+        }
+      }
+    },
+    "evaluation_strata": {
+      "all": {
+        "enrolled_cases": 20,
+        "eligible_cases": 20,
+        "prospectively_excluded": 0,
+        "enrolled_groups": 20,
+        "complete_landmark_groups": 20,
+        "finite_ratio_groups": 20,
+        "reasons": {
+          "bounded": 20
+        },
+        "landmark_diameter": {
+          "total": 160,
+          "finite": 160,
+          "unavailable": 0,
+          "minimum": 0.37956558724194395,
+          "median": 0.455499723795216,
+          "maximum": 1.5340415344230567
+        },
+        "eye_span": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 0.5394064868679925,
+          "median": 0.5394064868679925,
+          "maximum": 0.5394064868679925
+        },
+        "mouth_width": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 0.5770392171818335,
+          "median": 0.5772315167269388,
+          "maximum": 0.5772315167269506
+        },
+        "mouth_eye_ratio": {
+          "total": 20,
+          "finite": 20,
+          "unavailable": 0,
+          "minimum": 1.0094157093415368,
+          "median": 1.1188507715158291,
+          "maximum": 1.2104589774743295
+        }
+      }
+    },
+    "cases": [
+      {
+        "case_id": "case_00000",
+        "group_id": "source_41a1eb7df7e55e14c1c7d133fdc0fa16db67ece772f9975fdc26cb00b1c997c4",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 73.62116546799008,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.853823956972648,
+          "upper": 1.4310554736995966,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269486
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.6489264414285049,
+          "upper": 1.8433313523728554,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1944049109443506
+        }
+      },
+      {
+        "case_id": "case_00001",
+        "group_id": "source_bb9d709d24bd3127bd28b8860f5c512f49c329505b92ed0dd8db71e6a4837da7",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 59.53143854429113,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.8027511734171665,
+          "upper": 1.3799826901441126,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269461
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.6101099155910017,
+          "upper": 1.7775448997083803,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1674349841173786
+        }
+      },
+      {
+        "case_id": "case_00002",
+        "group_id": "source_881cb0260eb6023d72d615770f899d77195090ceec78b33dccae5b174908ffd8",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 112.44221397581907,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.8477127651829232,
+          "upper": 1.4249442819098717,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269485
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.6442817908437938,
+          "upper": 1.835459574071179,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1911777832273853
+        }
+      },
+      {
+        "case_id": "case_00003",
+        "group_id": "source_b1f5a1aad005a460ce80d4a010139ee085a0f33c98597236c044082f67fdf4d4",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 55.09172944173865,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.48786096551410996,
+          "upper": 1.0649649918793636,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5771040263652536
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.37078589523938593,
+          "upper": 1.3717730687516447,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0009871735122589
+        }
+      },
+      {
+        "case_id": "case_00004",
+        "group_id": "source_f94e70c098d6b7d467bba25d5621143e9073ea9956919e7fe726521897ee9f64",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 90.03092083033482,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.593499106783311,
+          "upper": 1.1706119094956977,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5771128027123867
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.4510733860425311,
+          "upper": 1.5078560362555449,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0567826502130138
+        }
+      },
+      {
+        "case_id": "case_00005",
+        "group_id": "source_2c402db77acfb5cdc41abdd3193931812101523f8c5480a5fa11960c7b6f9d1a",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 100.36585227461377,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.725149316421074,
+          "upper": 1.3022794062506104,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5771300898295364
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5511306652461525,
+          "upper": 1.6774559080406204,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1263252427944679
+        }
+      },
+      {
+        "case_id": "case_00006",
+        "group_id": "source_6b9f3afaccfc42951b4b76d98a47ee8d1bb070b9f268aa6bd43dabc7966dda87",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 104.64638938904496,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.5097207541648877,
+          "upper": 1.086952270891817,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269292
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.3873998526526039,
+          "upper": 1.4000947107158421,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0126948580632382
+        }
+      },
+      {
+        "case_id": "case_00007",
+        "group_id": "source_7a5265047287482e5d4d1312d58851ddb17b181213275ed100be4aed7538ac58",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 112.65921484152518,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.48616091293715447,
+          "upper": 1.0630388540719373,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5768779411347829
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.3694938149926373,
+          "upper": 1.369292025721048,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.9997982107284107
+        }
+      },
+      {
+        "case_id": "case_00008",
+        "group_id": "source_edbc2e5004efabf97a6bab1ee834a6c870fa33bbd7b279b2914868723af64ef4",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 60.21948966816498,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.6967248457639111,
+          "upper": 1.2738338333664068,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5771089876024956
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5295273939366392,
+          "upper": 1.6408153883002465,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1112879943636074
+        }
+      },
+      {
+        "case_id": "case_00009",
+        "group_id": "source_644274239f853915ea71b629c73102412077375277ce6d019402c1f0af9df3c4",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 46.16362899171808,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.7888585298940882,
+          "upper": 1.3660900466210335,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269453
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5995511772821924,
+          "upper": 1.7596498943475978,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1600987170654053
+        }
+      },
+      {
+        "case_id": "case_00010",
+        "group_id": "source_dc49373c4115b3bf6c7b858d16617a7fa014633830a2a6e17404b36c891071e7",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 54.99010545520818,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.9674028946664021,
+          "upper": 1.5446344113933572,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269552
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.7352491256972495,
+          "upper": 1.9896314928411074,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.2543823671438579
+        }
+      },
+      {
+        "case_id": "case_00011",
+        "group_id": "source_6d20dc6a34b9fa497a6e3731bcd3011a41bb583e483115723366fcbea834b9c9",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 62.46370594056022,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.5237441427194733,
+          "upper": 1.1009756594464033,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.57723151672693
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.3980579602837866,
+          "upper": 1.418158127728146,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0201001674443595
+        }
+      },
+      {
+        "case_id": "case_00012",
+        "group_id": "source_b910782409b0868255cf166bd56d039e4be3af355e9a8b6d0e3a74770cce011b",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 57.828746453196686,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.6821643143736958,
+          "upper": 1.2593958311006348,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.577231516726939
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5184610450210355,
+          "upper": 1.62221791061245,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1037568655914143
+        }
+      },
+      {
+        "case_id": "case_00013",
+        "group_id": "source_95ddd497c6878d186cb46859b2c9d32acaf9b974d7049c96394d5a30c74a084b",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 79.99793940799609,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.8806975068279027,
+          "upper": 1.457816175945259,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5771186691173563
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.6693509761744667,
+          "upper": 1.8778016034340654,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.2084506272595987
+        }
+      },
+      {
+        "case_id": "case_00014",
+        "group_id": "source_96a5ed4560155e117d4559a8d51c2791d5571e21bd2fb4d2bb74c4586e416d03",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 115.8846076215624,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.5383419318103653,
+          "upper": 1.1155734485372961,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269308
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.4091526259348467,
+          "upper": 1.4369614255744583,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0278087996396117
+        }
+      },
+      {
+        "case_id": "case_00015",
+        "group_id": "source_528c7ddde390ee9c54eb3b2703d245d0313b030816172e8e117296ab5104f431",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 69.52349668689783,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.659557427320131,
+          "upper": 1.2367889440470687,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269377
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5012792751167782,
+          "upper": 1.5930981563812188,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0918188812644405
+        }
+      },
+      {
+        "case_id": "case_00016",
+        "group_id": "source_5b6214c83be4c4f55b7069672f769d5f091ece89d79ab2cb24211f444644bde5",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 46.327012478755464,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.7690012085015511,
+          "upper": 1.346232725228495,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269438
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5844591424401969,
+          "upper": 1.73407183411882,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1496126916786231
+        }
+      },
+      {
+        "case_id": "case_00017",
+        "group_id": "source_ad5b5eb4c5f9a95dc12bc2145f59186da1fe6936a56fa79b46f90a13bedf3c84",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 62.38233758129286,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.5218036654014498,
+          "upper": 1.0990351821283797,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269298
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.39658315153618184,
+          "upper": 1.4156586140862084,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0190754625500267
+        }
+      },
+      {
+        "case_id": "case_00018",
+        "group_id": "source_435bf6709925bd48053584d337144f31df69fff0a68303bf206fd73f228eac86",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 61.17456482907966,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.5796439724021255,
+          "upper": 1.1568447583131782,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772007859110527
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.4405431555704612,
+          "upper": 1.490122676596196,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0495795210257346
+        }
+      },
+      {
+        "case_id": "case_00019",
+        "group_id": "source_732fc0a34b50aeeb2e89c62086e8edbc3f9d73277a4eb97fe36dcba4f6289472",
+        "split": "development",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 97.78722624632567,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.5398603434681432,
+          "upper": 1.1169219369048105,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5770615934366673
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.41030665477844935,
+          "upper": 1.4386984028837466,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0283917481052973
+        }
+      },
+      {
+        "case_id": "case_00020",
+        "group_id": "source_d86e3e00043a15b4476483a05c91cb2159cda69bc404d027bd3d7381ed35c70d",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 51.79489886454993,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.7709807629331502,
+          "upper": 1.3480853331354665,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5771045702023163
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5859636507201781,
+          "upper": 1.736458163860284,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.150494513140106
+        }
+      },
+      {
+        "case_id": "case_00021",
+        "group_id": "source_c34ef45624875aae86dbd06911abc3afab4852fe7444c392d169d97fd0029807",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 51.87632863024298,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.4217135824939204,
+          "upper": 0.9989450992208445,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269242
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.3205123165671533,
+          "upper": 1.2867333618679373,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.966221045300784
+        }
+      },
+      {
+        "case_id": "case_00022",
+        "group_id": "source_0e2f114b49e494c752aa2497ecb4443216ac2282bb2339e0ff91d20a70892581",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 57.180306433708914,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.942171115584881,
+          "upper": 1.5194026323118346,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269536
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.7160723756464112,
+          "upper": 1.9571306357381497,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.2410582600917386
+        }
+      },
+      {
+        "case_id": "case_00023",
+        "group_id": "source_e2c434d95a2eb2f94d0a1ff83e44b542348cadd93242a247cba48c27651d9429",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 72.74998367738964,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.8598630178340954,
+          "upper": 1.4370945345610446,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269493
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.6535162707983486,
+          "upper": 1.8511102193905093,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1975939485921607
+        }
+      },
+      {
+        "case_id": "case_00024",
+        "group_id": "source_cb625626576aec873d821508b96cec22319434838d1321b36d719d120d7eb248",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 46.20611674606224,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.5600085860436801,
+          "upper": 1.1372401027706123,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269322
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.4256197966138462,
+          "upper": 1.4648700732707234,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0392502766568772
+        }
+      },
+      {
+        "case_id": "case_00025",
+        "group_id": "source_b9ba9b33cbba663627018435459af64f3ecb3607b7d3cd65deeeb5346fa2a6c3",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 67.35540018776959,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.7639129333064306,
+          "upper": 1.3411444500333742,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269436
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5805919327087132,
+          "upper": 1.7275176666745493,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.146925733965836
+        }
+      },
+      {
+        "case_id": "case_00026",
+        "group_id": "source_522ced410e1649f11d4e8e37b8e43f51ccc248b35ba8ce12cfd3947c7f09daa7",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 48.71782427903156,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.5722184282327705,
+          "upper": 1.149449944959703,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269326
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.4348995660293864,
+          "upper": 1.4805974754073372,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0456979093779508
+        }
+      },
+      {
+        "case_id": "case_00027",
+        "group_id": "source_a771d01e662f82e39a3faa0321fd47d4213bbb8861bfca5d40d638e119cac86b",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 46.835147285516435,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.6667858308952864,
+          "upper": 1.2440173476222245,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269381
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5067730331343752,
+          "upper": 1.602409006437396,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0956359733030208
+        }
+      },
+      {
+        "case_id": "case_00028",
+        "group_id": "source_468811b1c2dd7d3d4874f0fd1e713856cf0539f72e9c0c999cd7a68d54d789ac",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 58.894957427735854,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.6382108511381667,
+          "upper": 1.2154423678651034,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269367
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.4850553713420932,
+          "upper": 1.5656017987171045,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0805464273750114
+        }
+      },
+      {
+        "case_id": "case_00029",
+        "group_id": "source_436b320de395ce2fb0ebff9d2fd1b8808358c06b53606c7c0036099fc9e1d75b",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 216.89252599729798,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.776341959277962,
+          "upper": 1.3157484461459545,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.8862172964392675,
+          "upper": 1.463448813166218,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269505
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.6735461470884304,
+          "upper": 1.8850569593421724,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.2115108122537421
+        }
+      },
+      {
+        "case_id": "case_00030",
+        "group_id": "source_f0b2e2ac4288be4b27f01b97d60255ecf2fd4ba45010e7cc96ee351aaa64d544",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 50.60621273718283,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.830874797439211,
+          "upper": 1.4081063141661583,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269473
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.6314845363282877,
+          "upper": 1.8137707196398483,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1822861833115605
+        }
+      },
+      {
+        "case_id": "case_00031",
+        "group_id": "source_00cab453858558cfedb876935fabe8e453453d7b4c9fb871c3ffb112cfc3dbf2",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 40.99061378562568,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.6474963433384394,
+          "upper": 1.2247278600653766,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269372
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.49211256546416954,
+          "upper": 1.5775623685269722,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0854498030628026
+        }
+      },
+      {
+        "case_id": "case_00032",
+        "group_id": "source_c59a2f65b52db739c99fe9fe4eb0df8879c99abf3bee1861520951f5ec0d2dd3",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 78.90401736922871,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.49681758566460404,
+          "upper": 1.0740491023915324,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269284
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.37759313880994005,
+          "upper": 1.3834742403856213,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0058811015756812
+        }
+      },
+      {
+        "case_id": "case_00033",
+        "group_id": "source_97006e3de5d405d4248223c64930f96a2bc2450eb06f691c05e82980510402b8",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 83.27239307875396,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.9346219329841475,
+          "upper": 1.511853449711101,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269534
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.710334817967475,
+          "upper": 1.9474065927304072,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.2370717747629323
+        }
+      },
+      {
+        "case_id": "case_00034",
+        "group_id": "source_f625b5098be006cabaab422f5d83cea37c2ad75ef2a4cd42017220ad24c348d1",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 63.62841180023034,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.6841953743963249,
+          "upper": 1.2613218201120409,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5771264457157159
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5200046987707916,
+          "upper": 1.6246987619800577,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.104694063209266
+        }
+      },
+      {
+        "case_id": "case_00035",
+        "group_id": "source_0a328f13ba76333debe2b0b70d232d9a6ce86af5d1b169bd76b84a247eab61bc",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 185.16625325533806,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.5503799801345207,
+          "upper": 1.1276114968614521,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269314
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.41830182794182325,
+          "upper": 1.4524675413785717,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0341657134367486
+        }
+      },
+      {
+        "case_id": "case_00036",
+        "group_id": "source_04caf159b008a09e59320f87400763ec199e95d6069b95c1b86750cb43b1b630",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 51.015186584921835,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.6312130920756591,
+          "upper": 1.2084446088025953,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269362
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.47973690861997886,
+          "upper": 1.5565880400520227,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.076851131432044
+        }
+      },
+      {
+        "case_id": "case_00037",
+        "group_id": "source_761fdd6e1a75666cd8df1350bce6090481d55c55f8449ea27de2480d5871f6ef",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 50.336928557766335,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.8862447382272293,
+          "upper": 1.46347625495418,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269507
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.6735670034976037,
+          "upper": 1.8850923068944134,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.2115253033968099
+        }
+      },
+      {
+        "case_id": "case_00038",
+        "group_id": "source_a24e5686af10cd53b61c627d5ffb54ca58ed6a204146b2c7c3da6e5a658307fa",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 91.85650008967207,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.8077627351663342,
+          "upper": 1.3849942518932803,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269461
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.6139188212855873,
+          "upper": 1.7840002531634849,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1700814318778976
+        }
+      },
+      {
+        "case_id": "case_00039",
+        "group_id": "source_8a2de32b98da9d6078ac317a9645582fa48966c42b17e70576d754e155e040de",
+        "split": "calibration",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 71.36314639075682,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.4989275799586552,
+          "upper": 1.0761590966855838,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269286
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.3791967844765806,
+          "upper": 1.386192107517283,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0069953230407023
+        }
+      },
+      {
+        "case_id": "case_00040",
+        "group_id": "source_1aa85a2ca7475b27054623578c670c945d1a0a388d1a7a9cae38442d5d4a0be2",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 42.26128296663756,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.5955816149548235,
+          "upper": 1.172727166418446,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5771455514636225
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.45265614160466955,
+          "upper": 1.5105806821380316,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0579245405333622
+        }
+      },
+      {
+        "case_id": "case_00041",
+        "group_id": "source_8b6e7a916e1d75eb0bca642a6bb38c19df382867496fea3e3877dc395aaa3528",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 72.27412668195615,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.7968914341751687,
+          "upper": 1.3741229509021144,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269457
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.6056563749015473,
+          "upper": 1.7699970154648852,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1643406405633379
+        }
+      },
+      {
+        "case_id": "case_00042",
+        "group_id": "source_4424641e9a80256b6acca54d4d0bf0163881877294af4a6f767a6adc7755f5de",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 61.11955971035127,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.6234945941134874,
+          "upper": 1.2007261108404232,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269358
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.4738706672538726,
+          "upper": 1.5466459032527302,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0727752359988576
+        }
+      },
+      {
+        "case_id": "case_00043",
+        "group_id": "source_32789b1f32bacfd6dbe36a2b2ea74392713404d3747cd1906cdeb3da662e3776",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 45.77486503821225,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.6585310861857495,
+          "upper": 1.2357626029126871,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269376
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5004992315321647,
+          "upper": 1.5917761344009356,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.091276902868771
+        }
+      },
+      {
+        "case_id": "case_00044",
+        "group_id": "source_0ce910a38de442fcead8d3b44b8a4c7d11171091d5920348b8c7203a2ea214bd",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 55.62410379781601,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.8842254434257335,
+          "upper": 1.4614569601526841,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269506
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.672032291594724,
+          "upper": 1.8824912690690536,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.2104589774743295
+        }
+      },
+      {
+        "case_id": "case_00045",
+        "group_id": "source_98a5e3f5b56ff27f63db27a7105ec3b1e744d6de3c1de5ef6f07b2de4e14e71f",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 77.34341569152255,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.7212453486996648,
+          "upper": 1.2984768654266061,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269413
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.548163557260698,
+          "upper": 1.67255788497416,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.124394327713462
+        }
+      },
+      {
+        "case_id": "case_00046",
+        "group_id": "source_e16b0fc1cf223672cceb84abf8760086cc42a01821e5a389875b0512abfdc772",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 46.83562825572665,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.735691697628426,
+          "upper": 1.312923214355368,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.577231516726942
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5591431247996725,
+          "upper": 1.6911661139332104,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1320229891335378
+        }
+      },
+      {
+        "case_id": "case_00047",
+        "group_id": "source_c11da52e00147c2148a6241eb9ca1a8d9b857e63127a088fd5819fd933dbb289",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 49.95768375007012,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.75925306124325,
+          "upper": 1.3363295155651378,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5770764543218878
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5770503195099062,
+          "upper": 1.7213155872806765,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1442652677707703
+        }
+      },
+      {
+        "case_id": "case_00048",
+        "group_id": "source_2ed3f22c48cde2a59e2f3564f065a76db83c3ded090ec23d7d0767239458a110",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 48.30327968267077,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.766015107604288,
+          "upper": 1.343246624331232,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.577231516726944
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5821896349929264,
+          "upper": 1.7302254609303342,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.148035825937408
+        }
+      },
+      {
+        "case_id": "case_00049",
+        "group_id": "source_fee8a1693593fdce4a204d50737d81338919de6256e3c78aa202faaae3029d41",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 52.15402399907525,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.5812808984880178,
+          "upper": 1.1583201156698513,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5770392171818335
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.44178725818801473,
+          "upper": 1.4920230728572008,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0502358146691861
+        }
+      },
+      {
+        "case_id": "case_00050",
+        "group_id": "source_712f44fee5b3ad37b798194f83f34ab22038aeecf846882e45c6c94a3f250f2c",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 48.44348706632083,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.7530186328057354,
+          "upper": 1.3302501495326784,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.577231516726943
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5723120061523825,
+          "upper": 1.7134848034877799,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1411727973353973
+        }
+      },
+      {
+        "case_id": "case_00051",
+        "group_id": "source_a7d78e99dc23db02016f3e5605c02620bf7f8738f740d78af910479b0cc3af78",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 40.99274111478241,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.5469416439643989,
+          "upper": 1.1241731606913303,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269314
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.4156886109699978,
+          "upper": 1.4480386474755296,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0323500365055318
+        }
+      },
+      {
+        "case_id": "case_00052",
+        "group_id": "source_129183d0fb862f1a8d66fa68fff4a611f3714877ffe9b86700552550b79c76da",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 55.00324730678943,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.7249062155836673,
+          "upper": 1.3021377323106087,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269414
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5509459028486602,
+          "upper": 1.6772734189476264,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.126327516098966
+        }
+      },
+      {
+        "case_id": "case_00053",
+        "group_id": "source_a0ed5b7328ea8dbcde4e421279b193434eaf180053d37807c0cb2acc2212477f",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 49.77687730533625,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.776341959277962,
+          "upper": 1.3157484461459545,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.7002497525583967,
+          "upper": 1.2774812692853368,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269401
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.532206406634553,
+          "upper": 1.6455136219527495,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1133072153181964
+        }
+      },
+      {
+        "case_id": "case_00054",
+        "group_id": "source_f7210dd5cd54a74d9186411ec220ee3a21f4d404c9b3f4e2d723b911a00254dc",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 53.26774384675576,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.6085017464163285,
+          "upper": 1.1857332631432633,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269348
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.462475747699854,
+          "upper": 1.5273337335084791,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0648579858086251
+        }
+      },
+      {
+        "case_id": "case_00055",
+        "group_id": "source_80a2e19588b79630702e3d63bce17a098ad32fa338a7afec5b92df1fd8ac3f6f",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 67.53926606680704,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.503511050520375,
+          "upper": 1.0807425672473039,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269289
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.382680330723696,
+          "upper": 1.3920960400652327,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0094157093415368
+        }
+      },
+      {
+        "case_id": "case_00056",
+        "group_id": "source_7fb2c38527776d41c78a46915197ac0c5a72f5a20d720feaf25ba18e9f0dd871",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 77.59657464940594,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.776341959277962,
+          "upper": 1.3157484461459545,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.826818993176699,
+          "upper": 1.4040505099036464,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269474
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.6284020289733355,
+          "upper": 1.8085464699209683,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.180144440947633
+        }
+      },
+      {
+        "case_id": "case_00057",
+        "group_id": "source_e125194de0398c598d902681ad4a01b315a2cc55cfd0f2e4e2a5dfcaf1b1bd12",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 70.90855467007471,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.5878957098482566,
+          "upper": 1.1651272265751902,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269336
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.4468146715812164,
+          "upper": 1.5007912591235595,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.053976587542343
+        }
+      },
+      {
+        "case_id": "case_00058",
+        "group_id": "source_20f65e0f1f70eb429d3cc5296faa2198aad43918a8e681028401b5e95deb82b3",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 113.00559269990063,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.7353036149707142,
+          "upper": 1.3125351316976561,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.577231516726942
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.5588481727829336,
+          "upper": 1.6906662276999933,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.1318180549170598
+        }
+      },
+      {
+        "case_id": "case_00059",
+        "group_id": "source_5ddca14acbe43288806924ccc1833db41a28dabfc8306f54ed01a0a2a00d7037",
+        "split": "evaluation",
+        "stratum": "all",
+        "eligibility": "included",
+        "exclusion_reason": "",
+        "reason": "bounded",
+        "observed_eye_span_px": 34.792629476429845,
+        "landmark_diameters": [
+          0.39959436561702893,
+          0.5514425739526981,
+          0.37956558724194395,
+          0.49716276487243594,
+          0.7175181863444358,
+          0.4138366827179961,
+          0.3853117704609412,
+          1.5340415344230567
+        ],
+        "eye_span": {
+          "lower": 0.7763419592779618,
+          "upper": 1.3157484461459543,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5394064868679925
+        },
+        "mouth_width": {
+          "lower": 0.6171945779996272,
+          "upper": 1.1944260947265626,
+          "available": true,
+          "reason": "bounded",
+          "width": 0.5772315167269354
+        },
+        "mouth_eye_ratio": {
+          "lower": 0.4690825057080135,
+          "upper": 1.5385309018173832,
+          "available": true,
+          "reason": "bounded",
+          "width": 1.0694483961093697
+        }
+      }
+    ]
+  },
+  "limit": "Old LFPW evaluation is not retuned; post-hoc width diagnostic, no new acceptance claim"
+}

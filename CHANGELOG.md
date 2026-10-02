@@ -125,3 +125,12 @@ Retained the original research modules and legacy commands for continuity. They 
   directories. Launch Windows native workers without console windows.
 - Extend release validation to repeat real native acquisition from source,
   installed wheels and extracted archives; preserve source/evidence bytes in Git.
+# 0.13.0 — frozen bound utility
+
+- Joint qualification retains per-case widths and complete enrollment/group
+  delivery summaries; exact replay recomputes them with the full fitted model.
+- Existing shared relation geometry keeps uncertain eye spans and cross-landmark
+  dependencies. Raw observations and qualification arrays remain unchanged.
+- HELEN source-root sampling selects at most one original face per photograph
+  root before split assignment; original PTS assets remain transferable.
+- Research width diagnostics do not grant empirical admission.

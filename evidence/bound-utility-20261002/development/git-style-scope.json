@@ -1,0 +1,30 @@
+{
+  "unscoped_command": [
+    "git",
+    "diff",
+    "--cached",
+    "--check"
+  ],
+  "unscoped_result": "Interrupted noisy diagnostic: preserved Windows CRLF evidence was treated as trailing whitespace",
+  "unscoped_raw_output": "Tool transcript only; no source or evidence bytes changed",
+  "scoped_command": [
+    "git",
+    "-c",
+    "core.whitespace=cr-at-eol",
+    "diff",
+    "--cached",
+    "--check",
+    "--",
+    "src/facemath",
+    "tests",
+    "docs",
+    "examples",
+    "README.md",
+    "CHANGELOG.md",
+    "pyproject.toml",
+    "uv.lock",
+    ".gitattributes"
+  ],
+  "scoped_returncode": 0,
+  "byte_integrity_authority": "staged-proof.json: all staged source/evidence bytes checked against Git blob IDs"
+}

@@ -1,0 +1,31 @@
+{
+  "archive": "packages/facemath-0.12.0-cohort-20261002.zip",
+  "sha256": "9cd1c27496e4c0d95906f57d8cda2d9b769b7a702fc98ff3a32bd1642240d49d",
+  "baseline_reused": true,
+  "baseline_command": {
+    "name": "archive-tests",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\source-cohort-20261002\\env311\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "-ra",
+      "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\source-cohort-20261002\\release-final\\archive.xml",
+      "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\source-cohort-20261002\\release-final\\archive-temp"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\source-cohort-20261002\\release-final\\extracted\\facemath-0.12.0",
+    "started_utc": "2026-10-02T15:23:39.040673+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\source-cohort-20261002\\release-final\\extracted\\facemath-0.12.0\\src",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "true",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-02T15:27:51.209023+00:00"
+  },
+  "baseline_output": "........................................................................ [  6%]\n........................................................................ [ 13%]\n........................................................................ [ 20%]\n........................................................................ [ 27%]\n........................................................................ [ 34%]\n........................................................................ [ 41%]\n........................................................................ [ 48%]\n........................................................................ [ 55%]\n.......s................................................................ [ 62%]\n........................................................................ [ 69%]\n........................................................................ [ 76%]\n........................................................................ [ 83%]\n........................................................................ [ 90%]\n........................................................................ [ 97%]\n..........................                                               [100%]\n=========================== short test summary info ===========================\nSKIPPED [1] tests\\test_wave5_execution.py:184: platform cannot create a directory symlink\n1033 passed, 1 skipped in 251.79s (0:04:11)\n",
+  "fresh_byte_check": "parent-bytes.json"
+}

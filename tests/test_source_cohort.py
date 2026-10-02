@@ -64,6 +64,38 @@ def test_selection_is_order_independent_and_excludes_mirrors(cohort):
     assert len({r['image'] for r in selected}) == 4
 
 
+def test_helen_group_selection_never_splits_related_sources(cohort):
+    plan = deepcopy(cohort['plan'])
+    plan['selection'] = 'sha256_seed_nul_helen_source_blocks_v1'
+    inventory = deepcopy(cohort['inventory'])
+    for row in inventory:
+        row['name'] = row['name'].replace('image_', '1234_')
+    with pytest.raises(ObservationError, match='smaller'):
+        select_members(plan, inventory)
+    for row in inventory:
+        # Three related pairs, plus three distinct roots gives four groups.
+        for i in range(3, 6):
+            row['name'] = row['name'].replace(f'1234_{i}.', f'{4000+i}_1.')
+    selected = select_members(plan, inventory)
+    assert len({r['source_group'] for r in selected}) == 4
+    assert {r['candidate_count'] for r in selected} == {6}
+    assert {r['candidate_groups'] for r in selected} == {4}
+    assert selected == select_members(plan, inventory[::-1])
+    recipe = make_recipe(plan, inventory)
+    assert len({r['group_id'] for r in recipe['images']}) == 4
+    verify_recipe(recipe)
+    recipe['cohort']['selection'][0]['source_group'] += '1'
+    with pytest.raises(ObservationError, match='frozen selection'):
+        verify_recipe(recipe)
+
+
+def test_helen_grouping_refuses_unknown_filename_convention(cohort):
+    plan = deepcopy(cohort['plan'])
+    plan['selection'] = 'sha256_seed_nul_helen_source_blocks_v1'
+    with pytest.raises(ObservationError, match='source_face'):
+        select_members(plan, cohort['inventory'])
+
+
 def test_intake_transfer_preserves_original_pts_precision_and_pixels(cohort, tmp_path):
     dataset = prepare_cohort(cohort['path'], cohort['archive'], cohort['model'], tmp_path/'intake')
     result = verify_dataset(dataset)

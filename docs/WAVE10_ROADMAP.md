@@ -1,5 +1,11 @@
 # Beyond the Wave10 consolidation
 
+The 0.13.0 utility milestone reuses the shared relation graph to report landmark
+diameters, eye-span and mouth-width bounds with every enrolled denominator.
+Its prospectively frozen HELEN plan selects one face per photograph filename root
+before assigning splits. See [the utility design](BOUND_UTILITY_DESIGN.md).
+Finite delivery and identifiable normalized geometry remain separate outcomes.
+
 The 0.12.0 source-cohort adapter implements the next data gate with original
 published PTS references and 60 prospectively selected source images. It uses
 the same fit/calibrate/evaluate pipeline and retains complete source membership.

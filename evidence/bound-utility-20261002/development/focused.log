@@ -1,0 +1,21 @@
+.........F...............................                                [100%]
+================================== FAILURES ===================================
+________ test_stratum_without_deployable_radius_has_no_pooled_fallback ________
+
+model = JointCalibration(residual=LocalizationCalibration(alpha=0.1, quantile=3.56516621794578, rank=30, group_scores=(('20', ...38,  0.00170801, -0.00050146,  0.0017249 , -0.00048851,
+         0.00174511]]), shrinkage=0.02, floor_eye_spans=0.001))
+
+    def test_stratum_without_deployable_radius_has_no_pooled_fallback(model):
+        from facemath.observation.stratified import RoutingPolicy, stratify_joint
+        from facemath.observation.joint import joint_scored_rows
+        data = rows(); enrolled = enrollment(data)
+        for case in enrolled:
+            case['stratum'] = 'missing' if case['split'] == 'evaluation' else 'all'
+>       policy = RoutingPolicy(('all', 'missing'), minimum_calibration_groups=10)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: RoutingPolicy.__init__() missing 1 required positional argument: 'definition'
+
+tests\test_bound_utility.py:135: TypeError
+=========================== short test summary info ===========================
+FAILED tests/test_bound_utility.py::test_stratum_without_deployable_radius_has_no_pooled_fallback
+1 failed, 40 passed in 2.55s

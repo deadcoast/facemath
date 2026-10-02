@@ -1,0 +1,28 @@
+{
+  "command": [
+    "runs/bound-utility-20261002/env311/Scripts/python.exe",
+    "-m",
+    "facemath",
+    "dataset",
+    "cohort",
+    "examples/helen-utility-cohort.json",
+    "--archive",
+    "runs/source-cohort-20261002/ibug_300W_large_face_landmark_dataset.tar.gz",
+    "--model",
+    "evidence/source-cohort-20261002/dataset/assets/face_landmarker.task",
+    "--out",
+    "runs/bound-utility-20261002/intake-grouped"
+  ],
+  "cwd": ".",
+  "started_utc": "2026-10-02T16:10:29.116756+00:00",
+  "finished_utc": "2026-10-02T16:10:49.105992+00:00",
+  "elapsed_seconds": 20.0,
+  "returncode": 0,
+  "environment": {
+    "PYTHONPATH": null,
+    "UV_CACHE_DIR": null,
+    "UV_PROJECT_ENVIRONMENT": null,
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

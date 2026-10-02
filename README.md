@@ -1,6 +1,12 @@
 # FACEMATH · reproducible facial geometry
 
-Version **0.12.0** adds prospectively selected, pinned original PTS cohorts to the
+Version **0.13.0** reports joint bound widths, complete delivery denominators and
+uncertain eye-span/mouth-width geometry in every joint qualification and replay.
+The HELEN example samples photograph roots before faces to keep related source
+files together. See [the frozen utility design](docs/BOUND_UTILITY_DESIGN.md).
+These are research diagnostics; finite output does not establish useful accuracy.
+
+Version 0.12.0 added prospectively selected, pinned original PTS cohorts to the
 same native study pipeline. The supplied LFPW plan selects 60 original photographs
 from 224 candidates, with 20 groups each for development, calibration and evaluation.
 It retains full-precision labels, source bytes, member inventory and selection rules.

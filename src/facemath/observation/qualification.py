@@ -241,5 +241,7 @@ def qualify(study: FrozenStudy, raw_report: dict[str, Any], session_status: dict
     else:
         report["empirical_admission"] = {"status": "not_prespecified", "passed": False,
             "meaning": "research qualification only; no held-out acceptance policy was frozen"}
+    from .utility import joint_bound_utility
+    report["bound_utility"] = joint_bound_utility(rows, selected, study.cases)
     report["content_sha256"] = object_digest(report)
     return report, arrays, selected
