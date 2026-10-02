@@ -186,11 +186,8 @@ def observer_recipe(observation: Observation) -> str:
     })
 
 
-def import_ibug68(text: str, *, image_sha256: str, image_shape: tuple[int, int],
-                  coordinate_origin: int, source: str) -> ReferenceAnnotation:
-    """Strict .pts reader. Caller declares 0/1 origin; no guessing or clipping."""
-    if coordinate_origin not in (0, 1) or type(coordinate_origin) is not int:
-        raise ObservationError("coordinate_origin must explicitly be 0 or 1")
+def parse_ibug68(text: str) -> np.ndarray:
+    """All 68 original PTS coordinates, with no origin change or rounding."""
     match = re.fullmatch(r"\s*version:\s*1\s+n_points:\s*68\s*\{\s*(.*?)\s*\}\s*", text, re.S)
     if not match:
         raise ObservationError("expected version:1 n_points:68 PTS block")
@@ -201,6 +198,15 @@ def import_ibug68(text: str, *, image_sha256: str, image_shape: tuple[int, int],
         raise ObservationError("invalid PTS coordinate rows") from exc
     if points.shape != (68, 2) or not np.isfinite(points).all():
         raise ObservationError("PTS must contain exactly 68 finite xy rows")
+    return points
+
+
+def import_ibug68(text: str, *, image_sha256: str, image_shape: tuple[int, int],
+                  coordinate_origin: int, source: str) -> ReferenceAnnotation:
+    """Strict .pts reader. Caller declares 0/1 origin; no guessing or clipping."""
+    if coordinate_origin not in (0, 1) or type(coordinate_origin) is not int:
+        raise ObservationError("coordinate_origin must explicitly be 0 or 1")
+    points = parse_ibug68(text)
     points = points[list(IBUG68_INDICES)] - coordinate_origin
     h, w = image_shape
     visible = (points[:, 0] >= 0) & (points[:, 0] <= w-1) & (points[:, 1] >= 0) & (points[:, 1] <= h-1)

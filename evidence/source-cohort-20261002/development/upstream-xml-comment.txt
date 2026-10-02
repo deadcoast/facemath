@@ -1,0 +1,20 @@
+This folder contains data downloaded from:
+http://ibug.doc.ic.ac.uk/resources/facial-point-annotations/
+
+The dataset is actually a combination of the AFW, HELEN, iBUG, and LFPW
+face landmark datasets.  But the iBUG people have aggregated it all together
+and gave them a consistent set of 68 landmarks across all the images, thereby
+turning it into one big dataset.
+
+Note that we have adjusted the coordinates of the points from the MATLAB convention
+of 1 being the first index to 0 being the first index.  So the coordinates in this
+file are in the normal C 0-indexed coordinate system.
+
+We have also added left right flips (i.e. mirrors) of each image and also
+appropriately flipped the landmarks.  This doubles the size of the dataset.
+Each of the mirrored versions of the images has a filename that ends with
+_mirror.jpg.
+
+Finally, note that the bounding boxes are from dlib's default face detector.  For the
+faces the detector failed to detect, we guessed at what the bounding box would have been
+had the detector found it and used that.

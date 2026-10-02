@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-10-02T14:30:07.034353+00:00",
+  "parent_archive": "packages\\facemath-0.11.2-numerics-20261002.zip",
+  "sha256": "785d5e7cde06b32d52313ceefb0d8981b2453a6d3c99950ff523a1485273414d",
+  "baseline_reused_from_actual_extracted_parent": true,
+  "baseline_command": {
+    "name": "archive-tests",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\numerical-runtime-20261002\\env311\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "-ra",
+      "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\numerical-runtime-20261002\\release-check\\archive.xml",
+      "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\numerical-runtime-20261002\\release-check\\archive-temp"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\numerical-runtime-20261002\\release-check\\extracted\\facemath-0.11.2",
+    "started_utc": "2026-10-02T14:02:23.090066+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\numerical-runtime-20261002\\release-check\\extracted\\facemath-0.11.2\\src",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "true",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-02T14:07:08.682458+00:00"
+  },
+  "baseline_output": "evidence/numerical-runtime-20261002/postseal/archive-tests.log",
+  "junit": "evidence/numerical-runtime-20261002/postseal/archive.xml",
+  "suite": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "1",
+    "tests": "1005",
+    "time": "285.059",
+    "timestamp": "2026-10-02T07:02:23.377208-07:00",
+    "hostname": "homeone"
+  },
+  "reason": "Actual archive suite completed before any new source changes; bytes and raw results retained. No redundant rerun."
+}

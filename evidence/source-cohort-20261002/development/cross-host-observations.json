@@ -1,0 +1,43 @@
+{
+  "format": "facemath.native_cross_host_diagnostic.v1",
+  "nominal_xy_identical_cases": 60,
+  "perturbation_samples_identical_cases": 59,
+  "total": 60,
+  "maximum_sample_delta_px": 1.2812488705549185e-05,
+  "identical_json_values": 59,
+  "equal_after_line_ending_comparison": 59,
+  "changed_samples": [
+    {
+      "case": "case_00044",
+      "exact_file_bytes_equal": false,
+      "json_value_equal": false,
+      "equal_after_only_crlf_to_lf": false,
+      "arrays": {
+        "xy": {
+          "same_layout": true,
+          "bytes_equal": true,
+          "maximum_absolute_delta_px": 0.0
+        },
+        "samples": {
+          "same_layout": true,
+          "bytes_equal": false,
+          "maximum_absolute_delta_px": 1.2812488705549185e-05
+        }
+      }
+    }
+  ],
+  "heldout_covered_groups": [
+    17,
+    17
+  ],
+  "heldout_total_groups": 20,
+  "raw_nme": [
+    0.050866247048650594,
+    0.050866247048650594
+  ],
+  "interpretation": "All nominal observations agree exactly; one perturbation array differs across native hosts. JSON file bytes additionally differ by platform newline encoding. This diagnostic changes no raw data, kernels or comparison tolerance and does not authorize cross-host exact replay.",
+  "runs": [
+    "runs\\source-cohort-20261002\\release-final\\source-native",
+    "runs\\source-cohort-20261002\\linux-final-native"
+  ]
+}

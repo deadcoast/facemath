@@ -1,0 +1,29 @@
+{
+  "command": [
+    "wsl",
+    "-d",
+    "Ubuntu",
+    "--",
+    "/tmp/facemath-source-cohort-20261002/env/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "/mnt/c/Users/ryanf/github/_active/facemath/tests/test_source_cohort.py",
+    "-k",
+    "unsafe",
+    "--basetemp=/tmp/facemath-source-cohort-20261002/tar-diagnosis",
+    "--tb=short"
+  ],
+  "cwd": ".",
+  "started_utc": "2026-10-02T14:52:19.780654+00:00",
+  "finished_utc": "2026-10-02T14:52:24.704808+00:00",
+  "elapsed_seconds": 4.920999999972992,
+  "returncode": 1,
+  "environment": {
+    "PYTHONPATH": null,
+    "UV_CACHE_DIR": "C:\\Users\\ryanf\\AppData\\Local\\uv\\cache",
+    "UV_PROJECT_ENVIRONMENT": null,
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

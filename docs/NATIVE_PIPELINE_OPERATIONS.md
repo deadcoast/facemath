@@ -1,5 +1,21 @@
 # Automated native dataset operations
 
+For original PTS references, use `examples/lfpw-cohort.json` and the
+`dataset cohort-fetch` / `dataset cohort` commands shown in the README. The plan
+pins a 1.8 GB public source archive and the native model. Intake validates all
+archive members but retains only 60 selected original image/PTS pairs, the model,
+full member inventory and frozen selection in its `dataset/` directory. Transfer
+that complete prepared directory for offline `verify` and `dataset run`.
+Plain regular-file/directory tar archives are supported; links, PAX/GNU extension
+headers, unsafe paths and excessive member sizes/counts are refused. Failed
+intake directories and partial downloads remain available for diagnosis.
+
+The LFPW references are published semi-automatic annotations, with unknown
+occlusion and prediction exposure. These outputs are research agreement evidence.
+No new human campaign is required, and no empirical-admission policy is requested.
+The [cohort design](SOURCED_COHORT_DESIGN.md) records the selection, grouping,
+coordinate conversion and research-only source terms.
+
 Use the locked Python 3.11 observer environment for the supplied pilot. Its
 tested MediaPipe version is `1.0.1`, with model SHA-256
 `64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff`.

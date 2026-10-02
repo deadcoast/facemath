@@ -1,6 +1,13 @@
 # FACEMATH · reproducible facial geometry
 
-Version **0.11.2** binds exact replay to recorded numerical kernel bytes, CPU
+Version **0.12.0** adds prospectively selected, pinned original PTS cohorts to the
+same native study pipeline. The supplied LFPW plan selects 60 original photographs
+from 224 candidates, with 20 groups each for development, calibration and evaluation.
+It retains full-precision labels, source bytes, member inventory and selection rules.
+Published labels provide research agreement evidence, with unknown visibility,
+training overlap and person independence. See [the cohort design](docs/SOURCED_COHORT_DESIGN.md).
+
+The 0.11.2 runtime contract binds exact replay to recorded numerical kernel bytes, CPU
 dispatch and thread settings, with a machine-readable compatibility command.
 The 0.11.1 isolated native execution and single OpenCV 4 contrib environment
 remain in place. The automated dataset pipeline can fetch assets,
@@ -11,6 +18,25 @@ The prior 0.10.1 blocker repairs remain documented in
 [the remediation record](docs/REVIEW_REMEDIATION_20261001.md).
 
 ## Run the sourced native pipeline
+
+The original PTS cohort can be reproduced without a user-supplied image database:
+
+```shell
+uv sync --locked --python 3.11 --extra dev --extra observer
+uv run --locked --extra observer python -m facemath dataset cohort-fetch examples/lfpw-cohort.json --out runs/lfpw-assets
+uv run --locked --extra observer python -m facemath dataset cohort examples/lfpw-cohort.json --archive runs/lfpw-assets/source.tar.gz --model runs/lfpw-assets/face_landmarker.task --out runs/lfpw-intake
+uv run --locked --extra observer python -m facemath dataset run runs/lfpw-intake/dataset --out runs/lfpw-001
+uv run --locked --extra observer python -m facemath verify runs/lfpw-001
+uv run --locked --extra observer python -m facemath replay runs/lfpw-001 --out runs/lfpw-001-replay
+```
+
+The archive download is about 1.8 GB; selected original assets plus the model are
+about 22 MB. Use existing pinned local archive/model paths to skip downloading.
+The prepared dataset is independently transferable and needs no network or full
+archive for verification or new execution. iBUG annotations are restricted to
+research use; their terms remain in the plan and all prepared datasets.
+
+The earlier machine-reference pilot remains available:
 
 ```shell
 uv sync --locked --python 3.11 --extra dev --extra observer

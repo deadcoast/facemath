@@ -1,0 +1,190 @@
+........................................................................ [  6%]
+...........................................FF........................... [ 13%]
+........................................................................ [ 20%]
+........................................................................ [ 27%]
+........................................................................ [ 34%]
+........................................................................ [ 41%]
+........................................................................ [ 48%]
+........................................................................ [ 55%]
+......F................................................................. [ 62%]
+........................................................................ [ 69%]
+........................................................................ [ 76%]
+........................................................................ [ 83%]
+........................................................................ [ 90%]
+........................................................................ [ 97%]
+..........................                                               [100%]
+=================================== FAILURES ===================================
+_ test_archive_rejects_unsafe_members_and_preserves_failure[data/extension-x] __
+
+cohort = {'root': PosixPath('/tmp/facemath-source-cohort-20261002/tests/test_archive_rejects_unsafe_me7/source'), 'plan': {'for...ve': PosixPath('/tmp/facemath-source-cohort-20261002/tests/test_archive_rejects_unsafe_me7/source/source.tar.gz'), ...}
+tmp_path = PosixPath('/tmp/facemath-source-cohort-20261002/tests/test_archive_rejects_unsafe_me7')
+name = 'data/extension', kind = b'x'
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_source_cohort.py:127: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/source_cohort.py:226: in prepare_cohort
+    with tarfile.open(archive_path, 'r|gz', tarinfo=_PlainTarInfo) as archive:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+runs/native-portability-20261002/linux-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/tarfile.py:1922: in open
+    t = cls(name, filemode, stream, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+runs/native-portability-20261002/linux-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/tarfile.py:1800: in __init__
+    self.firstmember = self.next()
+                       ^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tarfile.TarFile object at 0x74257d5d9f50>
+
+    def next(self):
+        """Return the next member of the archive as a TarInfo object, when
+           TarFile is opened for reading. Return None if there is no more
+           available.
+        """
+        self._check("ra")
+        if self.firstmember is not None:
+            m = self.firstmember
+            self.firstmember = None
+            return m
+    
+        # Advance the file pointer.
+        if self.offset != self.fileobj.tell():
+            if self.offset == 0:
+                return None
+            self.fileobj.seek(self.offset - 1)
+            if not self.fileobj.read(1):
+                raise ReadError("unexpected end of data")
+    
+        # Read the next block.
+        tarinfo = None
+        while True:
+            try:
+                tarinfo = self.tarinfo.fromtarfile(self)
+            except EOFHeaderError as e:
+                if self.ignore_zeros:
+                    self._dbg(2, "0x%X: %s" % (self.offset, e))
+                    self.offset += BLOCKSIZE
+                    continue
+            except InvalidHeaderError as e:
+                if self.ignore_zeros:
+                    self._dbg(2, "0x%X: %s" % (self.offset, e))
+                    self.offset += BLOCKSIZE
+                    continue
+                elif self.offset == 0:
+                    raise ReadError(str(e)) from None
+            except EmptyHeaderError:
+                if self.offset == 0:
+                    raise ReadError("empty file") from None
+            except TruncatedHeaderError as e:
+                if self.offset == 0:
+                    raise ReadError(str(e)) from None
+            except SubsequentHeaderError as e:
+>               raise ReadError(str(e)) from None
+E               tarfile.ReadError: end of file header
+
+runs/native-portability-20261002/linux-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/tarfile.py:2799: ReadError
+__ test_archive_rejects_unsafe_members_and_preserves_failure[data/longname-L] __
+
+cohort = {'root': PosixPath('/tmp/facemath-source-cohort-20261002/tests/test_archive_rejects_unsafe_me8/source'), 'plan': {'for...ve': PosixPath('/tmp/facemath-source-cohort-20261002/tests/test_archive_rejects_unsafe_me8/source/source.tar.gz'), ...}
+tmp_path = PosixPath('/tmp/facemath-source-cohort-20261002/tests/test_archive_rejects_unsafe_me8')
+name = 'data/longname', kind = b'L'
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_source_cohort.py:127: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/source_cohort.py:226: in prepare_cohort
+    with tarfile.open(archive_path, 'r|gz', tarinfo=_PlainTarInfo) as archive:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+runs/native-portability-20261002/linux-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/tarfile.py:1922: in open
+    t = cls(name, filemode, stream, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+runs/native-portability-20261002/linux-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/tarfile.py:1800: in __init__
+    self.firstmember = self.next()
+                       ^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tarfile.TarFile object at 0x742559f91550>
+
+    def next(self):
+        """Return the next member of the archive as a TarInfo object, when
+           TarFile is opened for reading. Return None if there is no more
+           available.
+        """
+        self._check("ra")
+        if self.firstmember is not None:
+            m = self.firstmember
+            self.firstmember = None
+            return m
+    
+        # Advance the file pointer.
+        if self.offset != self.fileobj.tell():
+            if self.offset == 0:
+                return None
+            self.fileobj.seek(self.offset - 1)
+            if not self.fileobj.read(1):
+                raise ReadError("unexpected end of data")
+    
+        # Read the next block.
+        tarinfo = None
+        while True:
+            try:
+                tarinfo = self.tarinfo.fromtarfile(self)
+            except EOFHeaderError as e:
+                if self.ignore_zeros:
+                    self._dbg(2, "0x%X: %s" % (self.offset, e))
+                    self.offset += BLOCKSIZE
+                    continue
+            except InvalidHeaderError as e:
+                if self.ignore_zeros:
+                    self._dbg(2, "0x%X: %s" % (self.offset, e))
+                    self.offset += BLOCKSIZE
+                    continue
+                elif self.offset == 0:
+                    raise ReadError(str(e)) from None
+            except EmptyHeaderError:
+                if self.offset == 0:
+                    raise ReadError("empty file") from None
+            except TruncatedHeaderError as e:
+                if self.offset == 0:
+                    raise ReadError(str(e)) from None
+            except SubsequentHeaderError as e:
+>               raise ReadError(str(e)) from None
+E               tarfile.ReadError: end of file header
+
+runs/native-portability-20261002/linux-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/tarfile.py:2799: ReadError
+________________ test_prospective_cli_freeze_verify_and_status _________________
+
+tmp_path = PosixPath('/tmp/facemath-source-cohort-20261002/tests/test_prospective_cli_freeze_ve0')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave5_execution.py:173: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-source-cohort-20261002/tests/test_prospective_cli_freeze_ve0/frozen')
+destination = PosixPath('/tmp/facemath-source-cohort-20261002/tests/test_prospective_cli_freeze_ve0/session')
+executor = FixtureExecutor(records={'497b8655d0368485aaa01d18f8f965624e62810c149eacbfdf9e4e3cd3052132': {'truth': array([[105.057...72, 72],
+        [66, 66, 66],
+        [57, 57, 57]]], shape=(280, 320, 3), dtype=uint8)}}, calls=0, fail_on_call=None)
+maximum_new_cases = 2
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+=========================== short test summary info ============================
+FAILED tests/test_source_cohort.py::test_archive_rejects_unsafe_members_and_preserves_failure[data/extension-x]
+FAILED tests/test_source_cohort.py::test_archive_rejects_unsafe_members_and_preserves_failure[data/longname-L]
+FAILED tests/test_wave5_execution.py::test_prospective_cli_freeze_verify_and_status
+3 failed, 1031 passed in 450.88s (0:07:30)

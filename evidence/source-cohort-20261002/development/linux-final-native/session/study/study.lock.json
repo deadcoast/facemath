@@ -1,0 +1,1299 @@
+{
+  "format": "facemath.prospective_study.v5",
+  "domain": "Prospectively selected original LFPW testset crops, published semi-automatic PTS reference agreement; visibility, identity independence and native training overlap unknown",
+  "observer": {
+    "provider": "mediapipe",
+    "provider_fingerprint": "05fb85e38d783a48b77f2fddff63bbc64ed02b6920290ae3e59c1c28d26fb785",
+    "schema": "mediapipe478.v1",
+    "noise_floor_px": 0.75,
+    "attempted_samples": 7,
+    "execution_kind": "native_mediapipe",
+    "model_sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+    "runtime_version": "1.0.1"
+  },
+  "observer_recipe_sha256": "d805baa53707cce9795a34b3e0e88347021888c1b708ee62a073d9da4a735c37",
+  "minimum_raters": 1,
+  "maximum_cases_per_group": 1,
+  "minimum_development_groups": 2,
+  "alpha": 0.1,
+  "bias_mode": "development_joint_ocular",
+  "strata": [
+    "all"
+  ],
+  "cases": [
+    {
+      "case_id": "case_00000",
+      "group_id": "source_41a1eb7df7e55e14c1c7d133fdc0fa16db67ece772f9975fdc26cb00b1c997c4",
+      "split": "development",
+      "lineage_ids": [
+        "source_41a1eb7df7e55e14c1c7d133fdc0fa16db67ece772f9975fdc26cb00b1c997c4"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00000.png",
+      "image_sha256": "28a5402b3481c8b0f58cee881785a88e0716aeb8c2c34fc5ceaba422f1caf5d6",
+      "image_shape": [
+        257,
+        286
+      ],
+      "original_encoded_sha256": "7a1752f814eb8188bf5ce64d0bdd92a2697aea80cac5191743c012e88c4b3237",
+      "references": [
+        "inputs/case_00000_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00001",
+      "group_id": "source_bb9d709d24bd3127bd28b8860f5c512f49c329505b92ed0dd8db71e6a4837da7",
+      "split": "development",
+      "lineage_ids": [
+        "source_bb9d709d24bd3127bd28b8860f5c512f49c329505b92ed0dd8db71e6a4837da7"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00001.png",
+      "image_sha256": "c88df7a7fbf4d61c8bd7bcb1c3ffe5d106084c9e6298485e48636ba08c59a24b",
+      "image_shape": [
+        232,
+        225
+      ],
+      "original_encoded_sha256": "321e8eb7e4c9886562c22df3c23b2ac3559cfe559aaf7956ee714cf04882c392",
+      "references": [
+        "inputs/case_00001_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00002",
+      "group_id": "source_881cb0260eb6023d72d615770f899d77195090ceec78b33dccae5b174908ffd8",
+      "split": "development",
+      "lineage_ids": [
+        "source_881cb0260eb6023d72d615770f899d77195090ceec78b33dccae5b174908ffd8"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00002.png",
+      "image_sha256": "d493fad6972233b283b50cbdb5399ab0b726ee8edc358432c5dfe05615630250",
+      "image_shape": [
+        413,
+        407
+      ],
+      "original_encoded_sha256": "07599ede17a46a342f5ffd40fd19e77955ea0fb69708a436abccd20f3476644c",
+      "references": [
+        "inputs/case_00002_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00003",
+      "group_id": "source_b1f5a1aad005a460ce80d4a010139ee085a0f33c98597236c044082f67fdf4d4",
+      "split": "development",
+      "lineage_ids": [
+        "source_b1f5a1aad005a460ce80d4a010139ee085a0f33c98597236c044082f67fdf4d4"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00003.png",
+      "image_sha256": "69d9500291598dcfdae36aa7cbba1ac6ec2b92d6feb562a8cc4bc2bb01842d9b",
+      "image_shape": [
+        178,
+        180
+      ],
+      "original_encoded_sha256": "e6af8582a2a62b44b8b61993a8117fcd8845034f2c73c943f5e002ae925a7766",
+      "references": [
+        "inputs/case_00003_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00004",
+      "group_id": "source_f94e70c098d6b7d467bba25d5621143e9073ea9956919e7fe726521897ee9f64",
+      "split": "development",
+      "lineage_ids": [
+        "source_f94e70c098d6b7d467bba25d5621143e9073ea9956919e7fe726521897ee9f64"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00004.png",
+      "image_sha256": "498cf9575959398fc9d44bc279e21af74d19c6f5e22a6bc88dddba058ba68f71",
+      "image_shape": [
+        317,
+        317
+      ],
+      "original_encoded_sha256": "9a19597b4976a18144338c25c9cfc37da543f277f373221a2274ddcaef2e0715",
+      "references": [
+        "inputs/case_00004_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00005",
+      "group_id": "source_2c402db77acfb5cdc41abdd3193931812101523f8c5480a5fa11960c7b6f9d1a",
+      "split": "development",
+      "lineage_ids": [
+        "source_2c402db77acfb5cdc41abdd3193931812101523f8c5480a5fa11960c7b6f9d1a"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00005.png",
+      "image_sha256": "7d99c1b01aa57965934ace0823a879d0955910807c30ef68d67a03619e8e854f",
+      "image_shape": [
+        345,
+        366
+      ],
+      "original_encoded_sha256": "a334e4e9ad7be2995ebfde2bc07686ea378ddd3dcf6825b7b40d044428c56741",
+      "references": [
+        "inputs/case_00005_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00006",
+      "group_id": "source_6b9f3afaccfc42951b4b76d98a47ee8d1bb070b9f268aa6bd43dabc7966dda87",
+      "split": "development",
+      "lineage_ids": [
+        "source_6b9f3afaccfc42951b4b76d98a47ee8d1bb070b9f268aa6bd43dabc7966dda87"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00006.png",
+      "image_sha256": "5884c780aebcb398914d4ae8fc1fd0dc6f88ae5f8a548b0d4959a72aa2cd5781",
+      "image_shape": [
+        413,
+        414
+      ],
+      "original_encoded_sha256": "81b96ef70567399ee2ff7eebf97afd4c630073c8e5d480c3da67a2507e7d4fca",
+      "references": [
+        "inputs/case_00006_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00007",
+      "group_id": "source_7a5265047287482e5d4d1312d58851ddb17b181213275ed100be4aed7538ac58",
+      "split": "development",
+      "lineage_ids": [
+        "source_7a5265047287482e5d4d1312d58851ddb17b181213275ed100be4aed7538ac58"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00007.png",
+      "image_sha256": "0b8ddc0b3ed7e4aac85eb932dc9651625846896594f84c6c5f2f3826eef92a47",
+      "image_shape": [
+        338,
+        442
+      ],
+      "original_encoded_sha256": "bdf5ecce98b8e51fbe7e1f711eaff207dfe7112058802b17034812eef3898f38",
+      "references": [
+        "inputs/case_00007_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00008",
+      "group_id": "source_edbc2e5004efabf97a6bab1ee834a6c870fa33bbd7b279b2914868723af64ef4",
+      "split": "development",
+      "lineage_ids": [
+        "source_edbc2e5004efabf97a6bab1ee834a6c870fa33bbd7b279b2914868723af64ef4"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00008.png",
+      "image_sha256": "22cb69b8bdc75ad18bf3e21239204037b6c756958f7597b6cee88f9dffe9f80b",
+      "image_shape": [
+        216,
+        219
+      ],
+      "original_encoded_sha256": "433d312750b11c7238607e23fae4b75e638dd1f66ae27945e73755dfd4f1965f",
+      "references": [
+        "inputs/case_00008_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00009",
+      "group_id": "source_644274239f853915ea71b629c73102412077375277ce6d019402c1f0af9df3c4",
+      "split": "development",
+      "lineage_ids": [
+        "source_644274239f853915ea71b629c73102412077375277ce6d019402c1f0af9df3c4"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00009.png",
+      "image_sha256": "839ed925d612d76260729c9f60276fe5fa04f37f816a454826bacf3e36846a87",
+      "image_shape": [
+        166,
+        164
+      ],
+      "original_encoded_sha256": "6625fb21ee89beaad713e4902afedaa6bdf47750929c5d8b7db782748af4023e",
+      "references": [
+        "inputs/case_00009_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00010",
+      "group_id": "source_dc49373c4115b3bf6c7b858d16617a7fa014633830a2a6e17404b36c891071e7",
+      "split": "development",
+      "lineage_ids": [
+        "source_dc49373c4115b3bf6c7b858d16617a7fa014633830a2a6e17404b36c891071e7"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00010.png",
+      "image_sha256": "bf1701577ad864c498e191ae4098dfc597923822da525d81338a87c2124cc797",
+      "image_shape": [
+        203,
+        202
+      ],
+      "original_encoded_sha256": "adabb578002752bdd8825789c55273301ccc131c6600ae0abf11d70b0512acec",
+      "references": [
+        "inputs/case_00010_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00011",
+      "group_id": "source_6d20dc6a34b9fa497a6e3731bcd3011a41bb583e483115723366fcbea834b9c9",
+      "split": "development",
+      "lineage_ids": [
+        "source_6d20dc6a34b9fa497a6e3731bcd3011a41bb583e483115723366fcbea834b9c9"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00011.png",
+      "image_sha256": "04572448f3b7dcca1ef98f80e33a9a8aa345e52358b7f35e13a5a83d4a89598e",
+      "image_shape": [
+        198,
+        213
+      ],
+      "original_encoded_sha256": "44b037a7cb45fe5b8f9bbe78f1bebcf801e6ada4162ddf11af750578f0057079",
+      "references": [
+        "inputs/case_00011_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00012",
+      "group_id": "source_b910782409b0868255cf166bd56d039e4be3af355e9a8b6d0e3a74770cce011b",
+      "split": "development",
+      "lineage_ids": [
+        "source_b910782409b0868255cf166bd56d039e4be3af355e9a8b6d0e3a74770cce011b"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00012.png",
+      "image_sha256": "27df305f81d059994bda658659518d2c341cf82cde3e0dadebbeefa52194f0dc",
+      "image_shape": [
+        228,
+        207
+      ],
+      "original_encoded_sha256": "3f3b6ef2ff73a9d3ab2fc794a67afe317759567a5f90d09159691b1cfadf87c7",
+      "references": [
+        "inputs/case_00012_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00013",
+      "group_id": "source_95ddd497c6878d186cb46859b2c9d32acaf9b974d7049c96394d5a30c74a084b",
+      "split": "development",
+      "lineage_ids": [
+        "source_95ddd497c6878d186cb46859b2c9d32acaf9b974d7049c96394d5a30c74a084b"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00013.png",
+      "image_sha256": "936d1a0622a20381957170627de30787d1116128a78bc35aeb629bcb8b18cdc6",
+      "image_shape": [
+        263,
+        264
+      ],
+      "original_encoded_sha256": "d7dfb52749598c024371e836e784339fa5c2f29e8c9aa765cfb762a902c36f07",
+      "references": [
+        "inputs/case_00013_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00014",
+      "group_id": "source_96a5ed4560155e117d4559a8d51c2791d5571e21bd2fb4d2bb74c4586e416d03",
+      "split": "development",
+      "lineage_ids": [
+        "source_96a5ed4560155e117d4559a8d51c2791d5571e21bd2fb4d2bb74c4586e416d03"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00014.png",
+      "image_sha256": "32c7524364d5d0b7c8ce21ac3fa5293a200522d944a09e742881261576c98746",
+      "image_shape": [
+        407,
+        411
+      ],
+      "original_encoded_sha256": "178564788bc6c8d3b1465c6359c163d3e8b4d44ad688b2ad40d55d9fec9e1610",
+      "references": [
+        "inputs/case_00014_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00015",
+      "group_id": "source_528c7ddde390ee9c54eb3b2703d245d0313b030816172e8e117296ab5104f431",
+      "split": "development",
+      "lineage_ids": [
+        "source_528c7ddde390ee9c54eb3b2703d245d0313b030816172e8e117296ab5104f431"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00015.png",
+      "image_sha256": "0ee7798d30d1188696502a42784d7b7c6384985c4cd88331fa52cde54908de7a",
+      "image_shape": [
+        238,
+        231
+      ],
+      "original_encoded_sha256": "2f14875800c64a3217e423dec5deb4d39584557f925547f2a038ee3e58751a6a",
+      "references": [
+        "inputs/case_00015_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00016",
+      "group_id": "source_5b6214c83be4c4f55b7069672f769d5f091ece89d79ab2cb24211f444644bde5",
+      "split": "development",
+      "lineage_ids": [
+        "source_5b6214c83be4c4f55b7069672f769d5f091ece89d79ab2cb24211f444644bde5"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00016.png",
+      "image_sha256": "0030fac82b4c42cc249b37638e9d379a2b1aa63030c6694e3abe926c46fb7947",
+      "image_shape": [
+        186,
+        184
+      ],
+      "original_encoded_sha256": "192740e30607ae9a675291efa81ed8b00b4e20f130da3ba9c71065918e7d3984",
+      "references": [
+        "inputs/case_00016_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00017",
+      "group_id": "source_ad5b5eb4c5f9a95dc12bc2145f59186da1fe6936a56fa79b46f90a13bedf3c84",
+      "split": "development",
+      "lineage_ids": [
+        "source_ad5b5eb4c5f9a95dc12bc2145f59186da1fe6936a56fa79b46f90a13bedf3c84"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00017.png",
+      "image_sha256": "ff9d049e75bfb16f96cab4b3db8c3fa429e7a11011388936ee84b16df7e569a6",
+      "image_shape": [
+        225,
+        214
+      ],
+      "original_encoded_sha256": "70c5cf9f818ca6e21959c7e7038740f39d8ce811ed3994becc8f6d104310392b",
+      "references": [
+        "inputs/case_00017_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00018",
+      "group_id": "source_435bf6709925bd48053584d337144f31df69fff0a68303bf206fd73f228eac86",
+      "split": "development",
+      "lineage_ids": [
+        "source_435bf6709925bd48053584d337144f31df69fff0a68303bf206fd73f228eac86"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00018.png",
+      "image_sha256": "c2fbaa4616ec8ef6c3bacd146f4a8f4ee8e435fa5454d3592952e237674762d3",
+      "image_shape": [
+        222,
+        233
+      ],
+      "original_encoded_sha256": "b49f1ce4a8bddc14ff864f98a0b09cb8f79f2abe34a01258d3e9ddd975dbad46",
+      "references": [
+        "inputs/case_00018_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00019",
+      "group_id": "source_732fc0a34b50aeeb2e89c62086e8edbc3f9d73277a4eb97fe36dcba4f6289472",
+      "split": "development",
+      "lineage_ids": [
+        "source_732fc0a34b50aeeb2e89c62086e8edbc3f9d73277a4eb97fe36dcba4f6289472"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00019.png",
+      "image_sha256": "406156dbb3f3026f9cdaf411fe20fffe04eb854759b1266790d6d4331e88ccad",
+      "image_shape": [
+        359,
+        389
+      ],
+      "original_encoded_sha256": "72170e3d4773d03a294848619420c2ddd7325ff771271a4f3099684aa0d8ee44",
+      "references": [
+        "inputs/case_00019_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00020",
+      "group_id": "source_d86e3e00043a15b4476483a05c91cb2159cda69bc404d027bd3d7381ed35c70d",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_d86e3e00043a15b4476483a05c91cb2159cda69bc404d027bd3d7381ed35c70d"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00020.png",
+      "image_sha256": "d38812b853b736bfbd75371054970da89c432b3b7c28456ed07e6ddd8fa973f7",
+      "image_shape": [
+        184,
+        177
+      ],
+      "original_encoded_sha256": "b5ebdebc8aec1f7df36d629b2daf3e32bafd0f0f6edfa3e922d853885b9f96ec",
+      "references": [
+        "inputs/case_00020_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00021",
+      "group_id": "source_c34ef45624875aae86dbd06911abc3afab4852fe7444c392d169d97fd0029807",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_c34ef45624875aae86dbd06911abc3afab4852fe7444c392d169d97fd0029807"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00021.png",
+      "image_sha256": "7c3b7a7d4d950eb69a7034825b693a82f51dd1227427b5cf635251f9c8bd0f63",
+      "image_shape": [
+        168,
+        178
+      ],
+      "original_encoded_sha256": "548f5a6055fb1fc9772b47e1dd3e9070700d9465bba5ecbb2baa9a4dd1deedf1",
+      "references": [
+        "inputs/case_00021_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00022",
+      "group_id": "source_0e2f114b49e494c752aa2497ecb4443216ac2282bb2339e0ff91d20a70892581",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_0e2f114b49e494c752aa2497ecb4443216ac2282bb2339e0ff91d20a70892581"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00022.png",
+      "image_sha256": "711ba081ee60e77f5be7d037bd26ced1fd72045be72e120c5ddb33dd8f4f888e",
+      "image_shape": [
+        216,
+        207
+      ],
+      "original_encoded_sha256": "da39cf2cb63229ea346fe254e0a9a1374b5cc5ae43551851d44af341335d78a7",
+      "references": [
+        "inputs/case_00022_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00023",
+      "group_id": "source_e2c434d95a2eb2f94d0a1ff83e44b542348cadd93242a247cba48c27651d9429",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_e2c434d95a2eb2f94d0a1ff83e44b542348cadd93242a247cba48c27651d9429"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00023.png",
+      "image_sha256": "3037dbf99d68aa0310cb3abcd3542f2584bbd7d36c5d3d1fbc7aa02d4916998c",
+      "image_shape": [
+        252,
+        258
+      ],
+      "original_encoded_sha256": "554bce3656a0892c2496f1460194ba9623ecb5c4ffa1de44665fd7fc9f87f7f8",
+      "references": [
+        "inputs/case_00023_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00024",
+      "group_id": "source_cb625626576aec873d821508b96cec22319434838d1321b36d719d120d7eb248",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_cb625626576aec873d821508b96cec22319434838d1321b36d719d120d7eb248"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00024.png",
+      "image_sha256": "af7ce951d33d770ef023784b5b98f594f6ce0c6f969581f9755eccc11c221a26",
+      "image_shape": [
+        155,
+        154
+      ],
+      "original_encoded_sha256": "0b12dc5229787edf035915888a3a2d2862c3dcf659cf11fe04d525a8e872b92b",
+      "references": [
+        "inputs/case_00024_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00025",
+      "group_id": "source_b9ba9b33cbba663627018435459af64f3ecb3607b7d3cd65deeeb5346fa2a6c3",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_b9ba9b33cbba663627018435459af64f3ecb3607b7d3cd65deeeb5346fa2a6c3"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00025.png",
+      "image_sha256": "135ddf4b1a7066c01838e721aa8dce15ee25d5e563f5f4346af0b1d25c4a5bbe",
+      "image_shape": [
+        268,
+        261
+      ],
+      "original_encoded_sha256": "b4438d1fc55be6599fad8b4775a01f29d868e387243e276da9c5812003a451ad",
+      "references": [
+        "inputs/case_00025_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00026",
+      "group_id": "source_522ced410e1649f11d4e8e37b8e43f51ccc248b35ba8ce12cfd3947c7f09daa7",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_522ced410e1649f11d4e8e37b8e43f51ccc248b35ba8ce12cfd3947c7f09daa7"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00026.png",
+      "image_sha256": "6b50c30b7a40c9f2020d1cb8d17870d7636e3e5980ef6c21cdb4f804ae1f0db3",
+      "image_shape": [
+        174,
+        178
+      ],
+      "original_encoded_sha256": "d12b0ac6cb728249b92bee7ae15af6f70b55536a57c3b22da324283cf0cf3154",
+      "references": [
+        "inputs/case_00026_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00027",
+      "group_id": "source_a771d01e662f82e39a3faa0321fd47d4213bbb8861bfca5d40d638e119cac86b",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_a771d01e662f82e39a3faa0321fd47d4213bbb8861bfca5d40d638e119cac86b"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00027.png",
+      "image_sha256": "f4b71cf41585ca5a66e9949cdf042d022f366b8d186a560e3fda049dd688d496",
+      "image_shape": [
+        179,
+        173
+      ],
+      "original_encoded_sha256": "730317c66c608511faeecd40c9603570778c634a8ec4954f54aef9fef083cc5b",
+      "references": [
+        "inputs/case_00027_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00028",
+      "group_id": "source_468811b1c2dd7d3d4874f0fd1e713856cf0539f72e9c0c999cd7a68d54d789ac",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_468811b1c2dd7d3d4874f0fd1e713856cf0539f72e9c0c999cd7a68d54d789ac"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00028.png",
+      "image_sha256": "b585ac27b040ae9cf296201e0eea780e719e56180993692a5c889947b140cf0e",
+      "image_shape": [
+        249,
+        252
+      ],
+      "original_encoded_sha256": "14d55d26732bec115da53bb65f72fe2f19a8e91ac553a6a7b0c8d8901052b2da",
+      "references": [
+        "inputs/case_00028_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00029",
+      "group_id": "source_436b320de395ce2fb0ebff9d2fd1b8808358c06b53606c7c0036099fc9e1d75b",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_436b320de395ce2fb0ebff9d2fd1b8808358c06b53606c7c0036099fc9e1d75b"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00029.png",
+      "image_sha256": "63779687617e8c0cf4db1e4c86caf27c039b1596979e6c8b9c68b708e42444ce",
+      "image_shape": [
+        760,
+        743
+      ],
+      "original_encoded_sha256": "7d2ba80a69ff52007c19056c86b5fd643cdc51f452bf2e771810d48cd9930b25",
+      "references": [
+        "inputs/case_00029_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00030",
+      "group_id": "source_f0b2e2ac4288be4b27f01b97d60255ecf2fd4ba45010e7cc96ee351aaa64d544",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_f0b2e2ac4288be4b27f01b97d60255ecf2fd4ba45010e7cc96ee351aaa64d544"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00030.png",
+      "image_sha256": "2773a61ad42f711b9a15110df3956657e6ac4288c88f41031c3ef32be37d5c04",
+      "image_shape": [
+        190,
+        165
+      ],
+      "original_encoded_sha256": "f00e795300a7d3e5af89d5b3bfaad205c99dd39ab7e715fec5fe3c4375c0ceea",
+      "references": [
+        "inputs/case_00030_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00031",
+      "group_id": "source_00cab453858558cfedb876935fabe8e453453d7b4c9fb871c3ffb112cfc3dbf2",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_00cab453858558cfedb876935fabe8e453453d7b4c9fb871c3ffb112cfc3dbf2"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00031.png",
+      "image_sha256": "d210ffa6ed082710b7d56d7cf907d10921273f83702040cb9e7f8c3d1a8a651b",
+      "image_shape": [
+        153,
+        150
+      ],
+      "original_encoded_sha256": "906c87fd505bbd7e1e09c591cf1dfa7af8d625a41bfca2aa46e557db2e1d23d1",
+      "references": [
+        "inputs/case_00031_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00032",
+      "group_id": "source_c59a2f65b52db739c99fe9fe4eb0df8879c99abf3bee1861520951f5ec0d2dd3",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_c59a2f65b52db739c99fe9fe4eb0df8879c99abf3bee1861520951f5ec0d2dd3"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00032.png",
+      "image_sha256": "e681cc31076c2d3dc40dca012f55221ee3868bae98f59e38e7b66d2fc16c1f6c",
+      "image_shape": [
+        270,
+        258
+      ],
+      "original_encoded_sha256": "d86c21f607f77afc112bff98943acb62d47fd3b79141c41e979ac33a219077f6",
+      "references": [
+        "inputs/case_00032_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00033",
+      "group_id": "source_97006e3de5d405d4248223c64930f96a2bc2450eb06f691c05e82980510402b8",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_97006e3de5d405d4248223c64930f96a2bc2450eb06f691c05e82980510402b8"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00033.png",
+      "image_sha256": "8b3ddd7f8dd665e8da2e76c362b6e5577e538d6230c4dea94b4faf6d94d87867",
+      "image_shape": [
+        293,
+        294
+      ],
+      "original_encoded_sha256": "3be930dc5038a349fa3edf30d22bbb81057a806a3d4caa9c6b40b8106c5b8155",
+      "references": [
+        "inputs/case_00033_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00034",
+      "group_id": "source_f625b5098be006cabaab422f5d83cea37c2ad75ef2a4cd42017220ad24c348d1",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_f625b5098be006cabaab422f5d83cea37c2ad75ef2a4cd42017220ad24c348d1"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00034.png",
+      "image_sha256": "d8de42fcf6d2db3bcb18734425cb4e5ef79fcd58aa3e4795f309baf51125815f",
+      "image_shape": [
+        237,
+        192
+      ],
+      "original_encoded_sha256": "b21e1d45320732ebebf33cc04077157016654770559796167b66b784888afcd0",
+      "references": [
+        "inputs/case_00034_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00035",
+      "group_id": "source_0a328f13ba76333debe2b0b70d232d9a6ce86af5d1b169bd76b84a247eab61bc",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_0a328f13ba76333debe2b0b70d232d9a6ce86af5d1b169bd76b84a247eab61bc"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00035.png",
+      "image_sha256": "652263f880c390e7d22fbd74692f7c41d143da328068a2155e92919f03c3b29f",
+      "image_shape": [
+        663,
+        629
+      ],
+      "original_encoded_sha256": "296457231a07eef5bccc0b64c18e2f6a91aa02fcbb873fd448f6d7963d5c853d",
+      "references": [
+        "inputs/case_00035_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00036",
+      "group_id": "source_04caf159b008a09e59320f87400763ec199e95d6069b95c1b86750cb43b1b630",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_04caf159b008a09e59320f87400763ec199e95d6069b95c1b86750cb43b1b630"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00036.png",
+      "image_sha256": "5938fdd921c6f27092d401f3d1636f42011bad6b9bac30b161fdf6173304e8ba",
+      "image_shape": [
+        189,
+        202
+      ],
+      "original_encoded_sha256": "93314d7576c276c16b82902ed74a6ce7848894d12fd2e4cc992d9f78071eb7f4",
+      "references": [
+        "inputs/case_00036_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00037",
+      "group_id": "source_761fdd6e1a75666cd8df1350bce6090481d55c55f8449ea27de2480d5871f6ef",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_761fdd6e1a75666cd8df1350bce6090481d55c55f8449ea27de2480d5871f6ef"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00037.png",
+      "image_sha256": "4deb71e5474b8389f52f03aae98bd3cfffba1b9dda442457e2a84407759f1242",
+      "image_shape": [
+        165,
+        178
+      ],
+      "original_encoded_sha256": "07bee25e788cf65d0217152c579e725fe22f4dd66b28cdb058dcb0c349bc99af",
+      "references": [
+        "inputs/case_00037_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00038",
+      "group_id": "source_a24e5686af10cd53b61c627d5ffb54ca58ed6a204146b2c7c3da6e5a658307fa",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_a24e5686af10cd53b61c627d5ffb54ca58ed6a204146b2c7c3da6e5a658307fa"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00038.png",
+      "image_sha256": "fdb75f18ba7fbc78efb1650419bd35ddf3ffaf13d7bb217b53ea459e928a8a07",
+      "image_shape": [
+        299,
+        318
+      ],
+      "original_encoded_sha256": "0b029977f8664806bd1e99301581a616b94f05c8d331493f8d67ec6b94fad972",
+      "references": [
+        "inputs/case_00038_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00039",
+      "group_id": "source_8a2de32b98da9d6078ac317a9645582fa48966c42b17e70576d754e155e040de",
+      "split": "calibration",
+      "lineage_ids": [
+        "source_8a2de32b98da9d6078ac317a9645582fa48966c42b17e70576d754e155e040de"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00039.png",
+      "image_sha256": "40615677285d2286529f5334bec6a5eca2cd1853f940fac0efae7b5660a31169",
+      "image_shape": [
+        252,
+        270
+      ],
+      "original_encoded_sha256": "c97bd8fa37b161ab6806f8735889bab70aa83a320a2a2f3d6de487efdae76119",
+      "references": [
+        "inputs/case_00039_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00040",
+      "group_id": "source_1aa85a2ca7475b27054623578c670c945d1a0a388d1a7a9cae38442d5d4a0be2",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_1aa85a2ca7475b27054623578c670c945d1a0a388d1a7a9cae38442d5d4a0be2"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00040.png",
+      "image_sha256": "c1c9d53a157d558b289ba793e8ddb39d218bef522dfb12d94bde7c368f54c230",
+      "image_shape": [
+        149,
+        162
+      ],
+      "original_encoded_sha256": "556e1856d66cd3aad0653cb083869cab8936192133b9eab8d37a446c8ae620c4",
+      "references": [
+        "inputs/case_00040_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00041",
+      "group_id": "source_8b6e7a916e1d75eb0bca642a6bb38c19df382867496fea3e3877dc395aaa3528",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_8b6e7a916e1d75eb0bca642a6bb38c19df382867496fea3e3877dc395aaa3528"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00041.png",
+      "image_sha256": "a980fb437d8eb0b11bf509c932cd0c042bb0c3852ef3a3023699ecf4e83c6371",
+      "image_shape": [
+        252,
+        249
+      ],
+      "original_encoded_sha256": "e78934c8bf23875de5b3cb6c925e95165f5b14020727d322aad699ba215220e7",
+      "references": [
+        "inputs/case_00041_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00042",
+      "group_id": "source_4424641e9a80256b6acca54d4d0bf0163881877294af4a6f767a6adc7755f5de",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_4424641e9a80256b6acca54d4d0bf0163881877294af4a6f767a6adc7755f5de"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00042.png",
+      "image_sha256": "cf98ea456cf2b3ab45cf17ca0bec675c8398dafc14d6b1c7ffc8db731698393d",
+      "image_shape": [
+        224,
+        210
+      ],
+      "original_encoded_sha256": "2e849d511c450308eccfe529448b20f27a1cf63610767181dea064c7fee38de3",
+      "references": [
+        "inputs/case_00042_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00043",
+      "group_id": "source_32789b1f32bacfd6dbe36a2b2ea74392713404d3747cd1906cdeb3da662e3776",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_32789b1f32bacfd6dbe36a2b2ea74392713404d3747cd1906cdeb3da662e3776"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00043.png",
+      "image_sha256": "480814c8dffd271f69ed03873b98188144d36fc71fc6056d5adf27880902051d",
+      "image_shape": [
+        155,
+        162
+      ],
+      "original_encoded_sha256": "aab0ea2bc8cd8ab7efd2410a6b78c3f8a73fde9312792b1f4064ed9efdf56c00",
+      "references": [
+        "inputs/case_00043_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00044",
+      "group_id": "source_0ce910a38de442fcead8d3b44b8a4c7d11171091d5920348b8c7203a2ea214bd",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_0ce910a38de442fcead8d3b44b8a4c7d11171091d5920348b8c7203a2ea214bd"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00044.png",
+      "image_sha256": "475b725ab5490480df9566ab4507403c10083e7954e59c58baf09b585ad65a77",
+      "image_shape": [
+        203,
+        208
+      ],
+      "original_encoded_sha256": "f42f0b4c1d36d045e772e64ae433d6949c52415ed32842a6637efd2b2076a5bf",
+      "references": [
+        "inputs/case_00044_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00045",
+      "group_id": "source_98a5e3f5b56ff27f63db27a7105ec3b1e744d6de3c1de5ef6f07b2de4e14e71f",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_98a5e3f5b56ff27f63db27a7105ec3b1e744d6de3c1de5ef6f07b2de4e14e71f"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00045.png",
+      "image_sha256": "edb8fd2b45ac66cb77be6a0d50cac0cfb99979da3a90adbeb206f28c5b03dd3c",
+      "image_shape": [
+        263,
+        275
+      ],
+      "original_encoded_sha256": "9b664a75a5b75422c6e0d9f3fe45fad89387f921fa21e140c2ace7e8243c1715",
+      "references": [
+        "inputs/case_00045_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00046",
+      "group_id": "source_e16b0fc1cf223672cceb84abf8760086cc42a01821e5a389875b0512abfdc772",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_e16b0fc1cf223672cceb84abf8760086cc42a01821e5a389875b0512abfdc772"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00046.png",
+      "image_sha256": "56fee69b191a525bd9df9f2352a1397d779cbb1187a93f57499e6d5a20ac18c3",
+      "image_shape": [
+        161,
+        162
+      ],
+      "original_encoded_sha256": "114c18917ccaf6fadba1aabcd7caf743f74800867b65275fad7d969148d183de",
+      "references": [
+        "inputs/case_00046_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00047",
+      "group_id": "source_c11da52e00147c2148a6241eb9ca1a8d9b857e63127a088fd5819fd933dbb289",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_c11da52e00147c2148a6241eb9ca1a8d9b857e63127a088fd5819fd933dbb289"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00047.png",
+      "image_sha256": "6e5410364fcd0971ae8fe24bdaf65037fb43e25b50b88682a5e8f33a0f108274",
+      "image_shape": [
+        197,
+        186
+      ],
+      "original_encoded_sha256": "0c1979e46804123725623ed9a4faf1bcfe87b4fdb0e1656a3a8651a75fab3084",
+      "references": [
+        "inputs/case_00047_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00048",
+      "group_id": "source_2ed3f22c48cde2a59e2f3564f065a76db83c3ded090ec23d7d0767239458a110",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_2ed3f22c48cde2a59e2f3564f065a76db83c3ded090ec23d7d0767239458a110"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00048.png",
+      "image_sha256": "d91353dd4b1c2bc2cf25a4326cb5d584423807d0222699f2c29a771bd581e401",
+      "image_shape": [
+        203,
+        209
+      ],
+      "original_encoded_sha256": "9260a2007693c47c72bb7eb17f5e30c8601bff6a964fe972202cc1099e58ab30",
+      "references": [
+        "inputs/case_00048_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00049",
+      "group_id": "source_fee8a1693593fdce4a204d50737d81338919de6256e3c78aa202faaae3029d41",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_fee8a1693593fdce4a204d50737d81338919de6256e3c78aa202faaae3029d41"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00049.png",
+      "image_sha256": "2384312e674ad867f936309eb637485e4e9dbe65e44bdcbe770110a5d61b469f",
+      "image_shape": [
+        167,
+        165
+      ],
+      "original_encoded_sha256": "e58ac743f04b0d8c6e4ff05e8ddb5503f62b52d7465898d551e7bedb8e32c722",
+      "references": [
+        "inputs/case_00049_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00050",
+      "group_id": "source_712f44fee5b3ad37b798194f83f34ab22038aeecf846882e45c6c94a3f250f2c",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_712f44fee5b3ad37b798194f83f34ab22038aeecf846882e45c6c94a3f250f2c"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00050.png",
+      "image_sha256": "f64a61d500fbb92d031c366a260ee0a56bca20c404e6a7b9db888d08c28a36b6",
+      "image_shape": [
+        192,
+        177
+      ],
+      "original_encoded_sha256": "3b6318e8b290c08995c21db0c92a0bb6d2d6165785d8310d227fb35686b12282",
+      "references": [
+        "inputs/case_00050_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00051",
+      "group_id": "source_a7d78e99dc23db02016f3e5605c02620bf7f8738f740d78af910479b0cc3af78",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_a7d78e99dc23db02016f3e5605c02620bf7f8738f740d78af910479b0cc3af78"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00051.png",
+      "image_sha256": "1fba1ecbaf754a9a04be606d3e00fdebdfecd3f40256a5c620e487d97f54bdc6",
+      "image_shape": [
+        142,
+        150
+      ],
+      "original_encoded_sha256": "b73530774d6d6c5e3f4b008c6cdb588a55e1175991fdd28cf27d4ef97dca5ee5",
+      "references": [
+        "inputs/case_00051_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00052",
+      "group_id": "source_129183d0fb862f1a8d66fa68fff4a611f3714877ffe9b86700552550b79c76da",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_129183d0fb862f1a8d66fa68fff4a611f3714877ffe9b86700552550b79c76da"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00052.png",
+      "image_sha256": "90033788d1239ec14443b4a08883536f1fbb29ad379ffb2a44af1f336fc822a7",
+      "image_shape": [
+        203,
+        228
+      ],
+      "original_encoded_sha256": "6b7759e5fb8bdce6ffa1a81d2109f9f2ca0a5cbe7d7512b8f87ab0e250419b33",
+      "references": [
+        "inputs/case_00052_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00053",
+      "group_id": "source_a0ed5b7328ea8dbcde4e421279b193434eaf180053d37807c0cb2acc2212477f",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_a0ed5b7328ea8dbcde4e421279b193434eaf180053d37807c0cb2acc2212477f"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00053.png",
+      "image_sha256": "ebb444ec993ce59246b8ec09df0652092431fc30215e1472c8919f4f0e297ec9",
+      "image_shape": [
+        198,
+        190
+      ],
+      "original_encoded_sha256": "541d160e1118739a3f847e94e4e7a140be5e5090865bcdf440bf01b3a9c2c882",
+      "references": [
+        "inputs/case_00053_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00054",
+      "group_id": "source_f7210dd5cd54a74d9186411ec220ee3a21f4d404c9b3f4e2d723b911a00254dc",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_f7210dd5cd54a74d9186411ec220ee3a21f4d404c9b3f4e2d723b911a00254dc"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00054.png",
+      "image_sha256": "d1466be306f5f91c42cd21c3a4680bcc58d9c3d1803d53c8cd05dfa1b08227d8",
+      "image_shape": [
+        184,
+        195
+      ],
+      "original_encoded_sha256": "0cf8a75fe61ca7049b34f854d1f3be81c002c2b195997b084f603881a314dffd",
+      "references": [
+        "inputs/case_00054_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00055",
+      "group_id": "source_80a2e19588b79630702e3d63bce17a098ad32fa338a7afec5b92df1fd8ac3f6f",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_80a2e19588b79630702e3d63bce17a098ad32fa338a7afec5b92df1fd8ac3f6f"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00055.png",
+      "image_sha256": "a33a59864e07cb4f12e2c53f610ca446f2bbde87c9677618b353b7b654eea21d",
+      "image_shape": [
+        210,
+        215
+      ],
+      "original_encoded_sha256": "4076b8e1ab4a87fb4779bfbe7e115bbd80c019f8537da4e260690d29d3ec91a2",
+      "references": [
+        "inputs/case_00055_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00056",
+      "group_id": "source_7fb2c38527776d41c78a46915197ac0c5a72f5a20d720feaf25ba18e9f0dd871",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_7fb2c38527776d41c78a46915197ac0c5a72f5a20d720feaf25ba18e9f0dd871"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00056.png",
+      "image_sha256": "c0d799b68ee753176405d9e011ec6ff81e533a9d1dec4b6179089cc3de650b0c",
+      "image_shape": [
+        280,
+        257
+      ],
+      "original_encoded_sha256": "76c7eeb07f230c274eb24e0300292aff3bdcb9858cd6ee8b3b4e2bc15d541b22",
+      "references": [
+        "inputs/case_00056_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00057",
+      "group_id": "source_e125194de0398c598d902681ad4a01b315a2cc55cfd0f2e4e2a5dfcaf1b1bd12",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_e125194de0398c598d902681ad4a01b315a2cc55cfd0f2e4e2a5dfcaf1b1bd12"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00057.png",
+      "image_sha256": "e8de5348359f8b4e7673768aebfeb0a6109ff2425122dc2116964cc7e01bbeb9",
+      "image_shape": [
+        269,
+        258
+      ],
+      "original_encoded_sha256": "cdf574abb0b024b8d471d36053bcd6c2a46848f531f22c6ac84cedda68cd55ba",
+      "references": [
+        "inputs/case_00057_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00058",
+      "group_id": "source_20f65e0f1f70eb429d3cc5296faa2198aad43918a8e681028401b5e95deb82b3",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_20f65e0f1f70eb429d3cc5296faa2198aad43918a8e681028401b5e95deb82b3"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00058.png",
+      "image_sha256": "39c6e91c96dc98fd80b55c622f8dae0814fce233f3d721158f6b4c4dcb786779",
+      "image_shape": [
+        385,
+        418
+      ],
+      "original_encoded_sha256": "dc9e6549272325447edb47c53614cee58c8604b4d25e9045080ec4a888949b30",
+      "references": [
+        "inputs/case_00058_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00059",
+      "group_id": "source_5ddca14acbe43288806924ccc1833db41a28dabfc8306f54ed01a0a2a00d7037",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_5ddca14acbe43288806924ccc1833db41a28dabfc8306f54ed01a0a2a00d7037"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00059.png",
+      "image_sha256": "cd4275b3abc31e4c6d9e64e8a134641d68c3c132b3db8811351ee0064f39eb3b",
+      "image_shape": [
+        162,
+        142
+      ],
+      "original_encoded_sha256": "73159c25b2fd75a3d924100852a47213e47d191b1366e634b3caf9dd0f754816",
+      "references": [
+        "inputs/case_00059_reference_00.json"
+      ]
+    }
+  ],
+  "timeout_seconds": 90.0,
+  "native_case_isolation": "fresh_process_per_source",
+  "image_coordinate_convention": "decoded_stored_raster_ignore_EXIF_orientation",
+  "engine_code_sha256": "d608dc3b43cf30b8c02d2c29b8d6cc7e4e390db9de9c6e9abbb32af2a062b8ff",
+  "protocol_sha256": "db71853e5f9cc8f1929cf7329aad3d3111c9518cc5f10eb043e36ac530701972",
+  "source_manifest_sha256": "175b6393a8ed7dd8f4644428d4944ef0282dcbe54ce72c0ae7d9d074bde34e8b",
+  "declarations": {
+    "chronology_and_blinding": "curator-declared, not externally attested",
+    "model_receives": "source raster only; not reference coordinates, split or stratum"
+  },
+  "joint_error": {
+    "shrinkage": 0.02,
+    "floor_eye_spans": 0.001
+  }
+}

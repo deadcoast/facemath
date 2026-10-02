@@ -1,0 +1,81 @@
+{
+  "package": {
+    "verified": true,
+    "files": 8781,
+    "version": "0.12.0",
+    "archive_sha256": "9cd1c27496e4c0d95906f57d8cda2d9b769b7a702fc98ff3a32bd1642240d49d",
+    "kind": "archive",
+    "scope": "shipped-byte consistency, not external authenticity or numerical replay"
+  },
+  "suites": {
+    "windows_source_311": {
+      "tests": 1034,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1033,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "installed_wheel": {
+      "tests": 1034,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1033,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "extracted_archive": {
+      "tests": 1034,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1033,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "linux_311": {
+      "tests": 1034,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 1034,
+      "skip_reasons": []
+    },
+    "windows_314_cohort_only": {
+      "tests": 50,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 50,
+      "skip_reasons": []
+    }
+  },
+  "milestone": {
+    "source": {
+      "positive": "admitted_synthetic_control",
+      "negative": "withheld",
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "withheld_observer_calls": 0
+    },
+    "installed": {
+      "positive": "admitted_synthetic_control",
+      "negative": "withheld",
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "withheld_observer_calls": 0
+    },
+    "archive": {
+      "positive": "admitted_synthetic_control",
+      "negative": "withheld",
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "withheld_observer_calls": 0
+    }
+  }
+}

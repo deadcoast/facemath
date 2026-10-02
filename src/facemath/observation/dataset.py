@@ -1,4 +1,4 @@
-"""Pinned machine-reference data -> the existing frozen native study pipeline.
+"""Pinned published-reference data -> the existing frozen native study pipeline.
 
 Network access is explicit in fetch_dataset only. Preparation never infers points,
 selects detector successes, resizes pixels, or claims independent human labels.
@@ -38,7 +38,11 @@ def _name(value: str) -> str:
 
 def _recipe(path: Path) -> dict:
     recipe = read_json(path)
-    if recipe.get("format") != RECIPE_FORMAT or recipe.get("label_kind") != "model_generated":
+    from .source_cohort import RECIPE_FORMAT as PTS_FORMAT, verify_recipe
+    pts = recipe.get("format") == PTS_FORMAT
+    if pts:
+        verify_recipe(recipe)
+    elif recipe.get("format") != RECIPE_FORMAT or recipe.get("label_kind") != "model_generated":
         raise ObservationError("this adapter requires an explicit model_generated dlib recipe")
     if type(recipe.get("coordinate_origin")) is not int or recipe["coordinate_origin"] not in (0, 1):
         raise ObservationError("declare coordinate origin 0 or 1")
@@ -102,6 +106,8 @@ def fetch_dataset(recipe_path: str | Path, destination: str | Path) -> Path:
     """Explicit opt-in download; original failures and partial bytes are retained."""
     recipe_path, root = Path(recipe_path).resolve(), Path(destination).resolve()
     recipe = _recipe(recipe_path)
+    if recipe['format'] != RECIPE_FORMAT:
+        raise ObservationError("archive-derived PTS assets require dataset cohort-fetch and cohort intake")
     root.mkdir(parents=True, exist_ok=False)
     shutil.copyfile(recipe_path, root / "recipe.json")
     receipts = []
@@ -125,10 +131,23 @@ def fetch_dataset(recipe_path: str | Path, destination: str | Path) -> Path:
     return root
 
 
-def _plan(recipe: dict, assets: Path) -> tuple[list, dict]:
-    pins = {a["path"]: a for a in recipe["assets"]}
-    for asset in pins.values():
-        _check_asset(local_file(assets, asset["path"]), asset)
+def _source_boxes(recipe: dict, assets: Path) -> dict:
+    """Adapt label containers only; both use the same pixel/crop conversion below."""
+    if recipe['format'] != RECIPE_FORMAT:
+        from .reference import parse_ibug68
+        result = {}
+        for entry in recipe['images']:
+            path = local_file(assets, entry['annotation'])
+            if path.stat().st_size > 64 * 1024:
+                raise ObservationError("PTS annotation exceeds 64 KiB")
+            points = parse_ibug68(path.read_text(encoding='utf-8'))
+            lo = np.floor(points.min(axis=0)); hi = np.ceil(points.max(axis=0))
+            box = ET.Element('box', left=str(int(lo[0])), top=str(int(lo[1])),
+                             width=str(int(hi[0]-lo[0]+1)), height=str(int(hi[1]-lo[1]+1)))
+            for i, (x, y) in enumerate(points):
+                ET.SubElement(box, 'part', name=f'{i:02}', x=str(float(x)), y=str(float(y)))
+            result[entry['path']] = (entry['annotation'], [box])
+        return result
     source_boxes = {}
     for name in recipe["annotations"]:
         data = (assets / name).read_bytes()
@@ -147,6 +166,14 @@ def _plan(recipe: dict, assets: Path) -> tuple[list, dict]:
             source_boxes[key] = (name, image.findall("box"))
     if set(source_boxes) != {i["path"] for i in recipe["images"]}:
         raise ObservationError("XML and declared source-image enrollment must match exactly")
+    return source_boxes
+
+
+def _plan(recipe: dict, assets: Path) -> tuple[list, dict]:
+    pins = {a["path"]: a for a in recipe["assets"]}
+    for asset in pins.values():
+        _check_asset(local_file(assets, asset["path"]), asset)
+    source_boxes = _source_boxes(recipe, assets)
     cases, records, seen = [], [], set()
     for entry in recipe["images"]:
         source = load_rgb(assets / entry["path"])
@@ -186,8 +213,12 @@ def _plan(recipe: dict, assets: Path) -> tuple[list, dict]:
                 "visibility": "no_occlusion_labels; in_crop_assumed_observable", "mapping_requires_review": True,
                 "label_source": recipe["label_source"], "grouping_limit": recipe["grouping_limit"],
                 "image_terms": recipe["image_terms"]}
+            if recipe['label_kind'] == 'external_dataset':
+                metadata.update(source_format='original_pts', crop_basis='inclusive_integer_68_point_extrema',
+                                cohort_archive_sha256=recipe['cohort']['plan']['archive']['sha256'])
+            rater = 'published_teacher_model' if recipe['label_kind'] == 'model_generated' else 'published_dataset_annotation'
             ref = ReferenceAnnotation(array_digest(crop), crop.shape[:2], xy, visible,
-                "published_teacher_model", "model_generated", recipe["source"], "unknown", canonical_json(metadata))
+                rater, recipe['label_kind'], recipe["source"], "unknown", canonical_json(metadata))
             reason = ""
             try:
                 consensus((ref,)).eye_span_px
@@ -254,9 +285,9 @@ def verify_dataset(path: str | Path) -> dict:
         if (not np.array_equal(load_rgb(root / case["image"]), crop)
                 or read_json(root / case["references"][0]) != ref.to_dict()):
             raise ObservationError("dataset crop or reference differs from pinned source coordinates")
-    return {"verified": True, "kind": "machine_reference_dataset", "source_images": len(recipe["images"]),
+    return {"verified": True, "kind": "machine_reference_dataset" if recipe['label_kind'] == 'model_generated' else 'published_reference_dataset', "source_images": len(recipe["images"]),
             "cases": len(cases), "eligible": sum(c["eligibility"] == "included" for c, _, _ in cases),
-            "reference_kind": "model_generated", "conversion_recomputed": True,
+            "reference_kind": recipe['label_kind'], "conversion_recomputed": True,
             "human_accuracy_validated": False}
 
 
@@ -289,7 +320,7 @@ def run_pipeline(dataset: str | Path, destination: str | Path, *, model: str | P
         with journal.step("pipeline.exact_numerical_replay", {}) as step:
             replay = replay_qualification_bundle(root / "qualification", root / "replay")
             step.update(replay_verified=replay["replay_verified"], native_reexecuted=False)
-        result = {"completed": True, "reference_kind": "model_generated", "human_accuracy_validated": False,
+        result = {"completed": True, "reference_kind": recipe['label_kind'], "human_accuracy_validated": False,
             "outcomes": status["outcomes"], "enrolled": status["enrolled"], "eligible": status["eligible"],
             "selected_error_model": report["selected_error_model"], "replay_verified": replay["replay_verified"],
             "environment": environment(), "grouping_limit": recipe["grouping_limit"]}
@@ -332,10 +363,10 @@ def verify_pipeline(path: str | Path) -> dict:
     result = read_json(root / "pipeline.json")
     report = read_json(root / "qualification/qualification.json")
     if (result.get("completed") is not True or result.get("human_accuracy_validated") is not False
-            or result.get("reference_kind") != "model_generated" or result.get("replay_verified") is not True
+            or result.get("reference_kind") != dataset['reference_kind'] or result.get("replay_verified") is not True
             or result.get("selected_error_model") != report["selected_error_model"]
             or any(result.get(key) != session[key] for key in ("outcomes", "enrolled", "eligible"))):
-        raise ObservationError("machine-reference pipeline has inconsistent completion/provenance flags")
+        raise ObservationError("published-reference pipeline has inconsistent completion/provenance flags")
     verify_journal([json.loads(line) for line in (root / "events.jsonl").read_text().splitlines()])
-    return {"verified": True, "kind": "native_machine_reference_pipeline", "dataset": dataset,
+    return {"verified": True, "kind": "native_machine_reference_pipeline" if dataset['reference_kind'] == 'model_generated' else 'native_published_reference_pipeline', "dataset": dataset,
             "native_reexecuted": False, "human_accuracy_validated": False}

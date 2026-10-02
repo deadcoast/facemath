@@ -254,11 +254,14 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--timeout", type=float, default=90.)
     p.add_argument("--out", required=True)
 
-    p = sub.add_parser("dataset", help="fetch pinned assets, prepare machine-reference data, execute a native pipeline")
+    p = sub.add_parser("dataset", help="fetch pinned assets, prepare published-reference data, execute a native pipeline")
     d = p.add_subparsers(dest="dataset_command", required=True)
     q = d.add_parser("fetch"); q.add_argument("recipe"); q.add_argument("--out", required=True)
     q = d.add_parser("prepare"); q.add_argument("recipe"); q.add_argument("--out", required=True)
     q = d.add_parser("run"); q.add_argument("dataset"); q.add_argument("--model"); q.add_argument("--out", required=True)
+    q = d.add_parser("cohort-fetch"); q.add_argument("plan"); q.add_argument("--out", required=True)
+    q = d.add_parser("cohort"); q.add_argument("plan"); q.add_argument("--archive", required=True)
+    q.add_argument("--model", required=True); q.add_argument("--out", required=True)
 
     p = sub.add_parser("workspace", help="prepare portraits, import independent label revisions, freeze a study")
     w = p.add_subparsers(dest="workspace_command", required=True)
@@ -481,6 +484,13 @@ def execute(args: argparse.Namespace) -> dict:
         return data
     if args.command == "dataset":
         from .observation.dataset import fetch_dataset, prepare_dataset, run_pipeline, verify_dataset
+        if args.dataset_command == 'cohort-fetch':
+            from .observation.source_cohort import fetch_cohort
+            return {'assets': str(fetch_cohort(args.plan, args.out))}
+        if args.dataset_command == 'cohort':
+            from .observation.source_cohort import prepare_cohort
+            root = prepare_cohort(args.plan, args.archive, args.model, args.out)
+            return {'dataset': str(root), **verify_dataset(root)}
         if args.dataset_command == "fetch":
             root = fetch_dataset(args.recipe, args.out)
             return {"assets": str(root), "pins_verified": True, "inference_executed": False}

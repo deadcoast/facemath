@@ -1,0 +1,116 @@
+{
+  "format": "facemath.reference.v4",
+  "protocol_sha256": "db71853e5f9cc8f1929cf7329aad3d3111c9518cc5f10eb043e36ac530701972",
+  "names": [
+    "left_eye_outer",
+    "left_eye_inner",
+    "right_eye_inner",
+    "right_eye_outer",
+    "nose_tip",
+    "mouth_left",
+    "mouth_right",
+    "chin"
+  ],
+  "image_sha256": "04572448f3b7dcca1ef98f80e33a9a8aa345e52358b7f35e13a5a83d4a89598e",
+  "image_shape": [
+    198,
+    213
+  ],
+  "xy": [
+    [
+      63.99467200000001,
+      48.73541599999999
+    ],
+    [
+      89.238068,
+      51.429283999999996
+    ],
+    [
+      127.96246199999999,
+      51.93016299999999
+    ],
+    [
+      153.065727,
+      50.289882000000006
+    ],
+    [
+      112.53182000000001,
+      81.206628
+    ],
+    [
+      82.736568,
+      116.72160299999999
+    ],
+    [
+      133.765505,
+      116.951551
+    ],
+    [
+      107.73860099999999,
+      163.977786
+    ]
+  ],
+  "visible": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "rater_id": "published_dataset_annotation",
+  "kind": "external_dataset",
+  "source": "https://dlib.net/files/data/ibug_300W_large_face_landmark_dataset.tar.gz",
+  "prediction_exposure": "unknown",
+  "metadata": {
+    "annotation_sha256": "99dee497edbf5badf2be13c16796fc6c702a7dc05248c264a99b7ae84a906671",
+    "box_index": 0,
+    "cohort_archive_sha256": "aa3d1ec603ead25bfc94f60ad2adee8513dda71e593ce16d0906c46ff73bf81e",
+    "crop_basis": "inclusive_integer_68_point_extrema",
+    "crop_xyxy_exclusive": [
+      74,
+      84,
+      287,
+      282
+    ],
+    "grouping_limit": "One original LFPW source photograph per group; mirror derivatives excluded. Exact encoded/decoded aliases rejected. Person-level independence, related crops and model training overlap are not established; no population coverage claim.",
+    "image_terms": "iBUG annotations are research-only; not for commercial products or commercial algorithm training. Original photograph rights remain with their owners. https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/ https://ibug.doc.ic.ac.uk/resources/300-W/",
+    "label_source": "Original iBUG 300W semi-automatic PTS annotations, retained by the public dlib repack; no newly performed human testing; native training overlap unknown",
+    "mapping_requires_review": true,
+    "source_encoded_sha256": "cdc4a3b6e59c4e2724b550654fcad339c5c4d8e4b23d66ae3386121412c59039",
+    "source_format": "original_pts",
+    "source_indices_zero_based": [
+      36,
+      39,
+      42,
+      45,
+      30,
+      48,
+      54,
+      8
+    ],
+    "source_origin": 1,
+    "source_raster_sha256": "dbb0e427174e53ca3cf769d24f08bb55947f4c6468b57f0095dc1e1206b59597",
+    "source_schema": "ibug68",
+    "source_to_crop": [
+      [
+        1,
+        0,
+        -74
+      ],
+      [
+        0,
+        1,
+        -84
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "visibility": "no_occlusion_labels; in_crop_assumed_observable"
+  }
+}

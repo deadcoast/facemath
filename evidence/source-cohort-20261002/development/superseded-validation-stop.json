@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-10-02T14:54:22.0784557Z",
+  "reason": "Stop superseded validation after Linux exposed tar header hook incompatibility; preserve completed source native run and restart with final code",
+  "processes": [
+    {
+      "ProcessId": 81876,
+      "ParentProcessId": 83200,
+      "CommandLine": "runs/source-cohort-20261002/env311/Scripts/python.exe scripts/validate_current.py --out runs/source-cohort-20261002/release-check --native-dataset evidence/source-cohort-20261002/dataset --retain-evidence evidence/source-cohort-20261002/preseal"
+    },
+    {
+      "ProcessId": 43680,
+      "ParentProcessId": 81876,
+      "CommandLine": "\"C:\\Users\\ryanf\\AppData\\Roaming\\uv\\python\\cpython-3.11.14-windows-x86_64-none\\python.exe\" scripts/validate_current.py --out runs/source-cohort-20261002/release-check --native-dataset evidence/source-cohort-20261002/dataset --retain-evidence evidence/source-cohort-20261002/preseal"
+    },
+    {
+      "ProcessId": 64648,
+      "ParentProcessId": 43680,
+      "CommandLine": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\source-cohort-20261002\\env311\\Scripts\\python.exe -m facemath milestone-lab --out C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\source-cohort-20261002\\release-check\\source-lab"
+    },
+    {
+      "ProcessId": 74260,
+      "ParentProcessId": 64648,
+      "CommandLine": "\"C:\\Users\\ryanf\\AppData\\Roaming\\uv\\python\\cpython-3.11.14-windows-x86_64-none\\python.exe\" -m facemath milestone-lab --out C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\source-cohort-20261002\\release-check\\source-lab"
+    }
+  ]
+}

@@ -1,5 +1,13 @@
 # Beyond the Wave10 consolidation
 
+The 0.12.0 source-cohort adapter implements the next data gate with original
+published PTS references and 60 prospectively selected source images. It uses
+the same fit/calibrate/evaluate pipeline and retains complete source membership.
+See [the prospective design](SOURCED_COHORT_DESIGN.md) and its retained validation
+record for actual outcomes. Further domain expansion must use a new frozen plan;
+do not revise this cohort's settings after evaluating it. Unknown visibility,
+cross-photo dependence and native training overlap remain scientific limits.
+
 2026-10-02 update: automated sourcing, testing and release decisions are authorized.
 The 0.11 pipeline executes pinned native observations against published machine
 references without waiting for user-provided images or a human testing campaign.

@@ -1,0 +1,28 @@
+{
+  "command": [
+    "runs/source-cohort-20261002/env311/Scripts/python.exe",
+    "-m",
+    "facemath",
+    "dataset",
+    "cohort",
+    "examples/lfpw-cohort.json",
+    "--archive",
+    "runs/source-cohort-20261002/ibug_300W_large_face_landmark_dataset.tar.gz",
+    "--model",
+    "evidence/numerical-runtime-20261002/dataset/assets/face_landmarker.task",
+    "--out",
+    "runs/source-cohort-20261002/intake"
+  ],
+  "cwd": ".",
+  "started_utc": "2026-10-02T14:40:32.383836+00:00",
+  "finished_utc": "2026-10-02T14:40:32.852482+00:00",
+  "elapsed_seconds": 0.46899999998277053,
+  "returncode": 1,
+  "environment": {
+    "PYTHONPATH": null,
+    "UV_CACHE_DIR": null,
+    "UV_PROJECT_ENVIRONMENT": null,
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

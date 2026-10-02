@@ -1,3 +1,16 @@
+# 0.12.0 · Frozen original-annotation cohorts
+
+Add explicit pinned archive fetching, bounded streaming intake and deterministic
+source-image sampling before inference. The supplied LFPW plan enrolls 60 original
+image/PTS pairs across three frozen 20-group splits. Mirrors are excluded;
+original label precision, one-based origin, pixel crops and source lineage remain
+auditable. Transferred datasets recompute their selection and coordinate mapping.
+
+The existing native pipeline now carries external-dataset reference provenance
+alongside its prior machine-reference recipe. No second observer, alignment,
+fitting or calibration implementation is introduced. Published-reference agreement
+does not imply verified human anatomical accuracy or empirical query admission.
+
 # 0.11.2 · Explicit numerical runtime and transfer prerequisites
 
 Record compiled numerical distribution hashes, interpreter/build, platform,

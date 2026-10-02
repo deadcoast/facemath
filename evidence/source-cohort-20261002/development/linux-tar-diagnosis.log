@@ -1,0 +1,46 @@
+.......FF                                                                [100%]
+=================================== FAILURES ===================================
+_ test_archive_rejects_unsafe_members_and_preserves_failure[data/extension-x] __
+C:\Users\ryanf\github\_active\facemath\tests\test_source_cohort.py:127: in test_archive_rejects_unsafe_members_and_preserves_failure
+    ???
+src/facemath/observation/source_cohort.py:226: in prepare_cohort
+    with tarfile.open(archive_path, 'r|gz', tarinfo=_PlainTarInfo) as archive:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+runs/native-portability-20261002/linux-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/tarfile.py:1922: in open
+    t = cls(name, filemode, stream, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+runs/native-portability-20261002/linux-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/tarfile.py:1800: in __init__
+    self.firstmember = self.next()
+                       ^^^^^^^^^^^
+runs/native-portability-20261002/linux-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/tarfile.py:2799: in next
+    raise ReadError(str(e)) from None
+E   tarfile.ReadError: end of file header
+__ test_archive_rejects_unsafe_members_and_preserves_failure[data/longname-L] __
+C:\Users\ryanf\github\_active\facemath\tests\test_source_cohort.py:127: in test_archive_rejects_unsafe_members_and_preserves_failure
+    ???
+src/facemath/observation/source_cohort.py:226: in prepare_cohort
+    with tarfile.open(archive_path, 'r|gz', tarinfo=_PlainTarInfo) as archive:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+runs/native-portability-20261002/linux-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/tarfile.py:1922: in open
+    t = cls(name, filemode, stream, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+runs/native-portability-20261002/linux-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/tarfile.py:1800: in __init__
+    self.firstmember = self.next()
+                       ^^^^^^^^^^^
+runs/native-portability-20261002/linux-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/tarfile.py:2799: in next
+    raise ReadError(str(e)) from None
+E   tarfile.ReadError: end of file header
+=============================== warnings summary ===============================
+../../../../../../../tmp/facemath-source-cohort-20261002/env/lib/python3.11/site-packages/_pytest/cacheprovider.py:469
+  /tmp/facemath-source-cohort-20261002/env/lib/python3.11/site-packages/_pytest/cacheprovider.py:469: PytestCacheWarning: could not create cache path /mnt/c/Users/ryanf/github/_active/facemath/.pytest_cache/v/cache/nodeids: [Errno 13] Permission denied: '/mnt/c/Users/ryanf/github/_active/facemath/.pytest_cache/v/cache'
+    config.cache.set("cache/nodeids", sorted(self.cached_nodeids))
+
+../../../../../../../tmp/facemath-source-cohort-20261002/env/lib/python3.11/site-packages/_pytest/cacheprovider.py:423
+  /tmp/facemath-source-cohort-20261002/env/lib/python3.11/site-packages/_pytest/cacheprovider.py:423: PytestCacheWarning: could not create cache path /mnt/c/Users/ryanf/github/_active/facemath/.pytest_cache/v/cache/lastfailed: [Errno 13] Permission denied: '/mnt/c/Users/ryanf/github/_active/facemath/.pytest_cache/v/cache'
+    config.cache.set("cache/lastfailed", self.lastfailed)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_source_cohort.py::test_archive_rejects_unsafe_members_and_preserves_failure[data/extension-x]
+FAILED tests/test_source_cohort.py::test_archive_rejects_unsafe_members_and_preserves_failure[data/longname-L]
+2 failed, 7 passed, 20 deselected, 2 warnings in 3.34s
