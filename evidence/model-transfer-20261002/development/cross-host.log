@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/mnt/c/Users/ryanf/github/_active/facemath/runs/model-transfer-20261002/cross_host_control.py", line 11, in <module>
+    replay_transfer_bundle(run/'release/source-native/evaluation',target)
+  File "/mnt/c/Users/ryanf/github/_active/facemath/src/facemath/observation/transfer_io.py", line 152, in replay_transfer_bundle
+    verify_transfer_bundle(root)
+  File "/mnt/c/Users/ryanf/github/_active/facemath/src/facemath/observation/transfer_io.py", line 94, in verify_transfer_bundle
+    manifest = read_json(root / "manifest.json")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/ryanf/github/_active/facemath/src/facemath/observation/study.py", line 32, in read_json
+    return json.loads(Path(path).read_text(encoding="utf-8"), parse_constant=reject_constant)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/ryanf/github/_active/facemath/runs/native-portability-20261002/linux-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/pathlib.py", line 1058, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/ryanf/github/_active/facemath/runs/native-portability-20261002/linux-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/mnt/c/Users/ryanf/github/_active/facemath/runs/model-transfer-20261002/release/source-native/evaluation/manifest.json'

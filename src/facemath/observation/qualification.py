@@ -66,6 +66,8 @@ def _slice_coverage(rows: tuple[LocalizationRow, ...], quantile: float | None,
 
 
 def qualify(study: FrozenStudy, raw_report: dict[str, Any], session_status: dict[str, Any]) -> tuple[dict[str, Any], dict[str, np.ndarray], Any]:
+    if "frozen_model" in study.data:
+        raise ObservationError("frozen model transfer cannot refit qualification")
     rows = rows_from_report(raw_report)
     data = study.data
     if {r.case_id for r in rows} != {c["case_id"] for c in study.included}:

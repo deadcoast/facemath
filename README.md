@@ -1,6 +1,12 @@
 # FACEMATH · reproducible facial geometry
 
-Version **0.13.0** reports joint bound widths, complete delivery denominators and
+Version **0.14.0** exports complete fitted joint models and evaluates them on new
+frozen cohorts without changing the center, scatter or calibrated radius.
+Transfer freezes the full donor enrollment with the target before inference,
+rejects source/group/lineage overlap and retains failures and exact replay data.
+See [the transfer design](docs/MODEL_TRANSFER_DESIGN.md).
+
+Version 0.13.0 reports joint bound widths, complete delivery denominators and
 uncertain eye-span/mouth-width geometry in every joint qualification and replay.
 The HELEN example samples photograph roots before faces to keep related source
 files together. See [the frozen utility design](docs/BOUND_UTILITY_DESIGN.md).
@@ -24,6 +30,25 @@ The prior 0.10.1 blocker repairs remain documented in
 [the remediation record](docs/REVIEW_REMEDIATION_20261001.md).
 
 ## Run the sourced native pipeline
+
+To evaluate the saved HELEN model on the independent IBUG source selection:
+
+```shell
+uv run --locked --extra observer python -m facemath model-export evidence/bound-utility-20261002/preseal/native-pipeline/qualification --out runs/helen-model.json
+uv run --locked --extra observer python -m facemath dataset cohort examples/ibug-transfer-cohort.json --archive runs/lfpw-assets/source.tar.gz --model runs/lfpw-assets/face_landmarker.task --out runs/ibug-intake
+uv run --locked --extra observer python -m facemath dataset run runs/ibug-intake/dataset --frozen-model runs/helen-model.json --out runs/ibug-transfer
+uv run --locked --extra observer python -m facemath verify runs/ibug-transfer
+uv run --locked --extra observer python -m facemath replay runs/ibug-transfer --out runs/ibug-transfer-replay
+```
+
+Use the retained `evidence/model-transfer-20261002/helen-model.json` directly when
+the donor bundle is not available. The capsule and prepared dataset are portable;
+neither requires the original archive or donor images to execute. The target has
+20 evaluation groups and no fitting splits. Its source-disjointness checks do not
+prove person independence or exchangeability. `evaluation/transfer.json` records
+coverage, bound widths, unchanged model digests and full enrollment. This research
+transfer does not grant empirical query admission. See the
+[operations guide](docs/NATIVE_PIPELINE_OPERATIONS.md) for resumable execution.
 
 The original PTS cohort can be reproduced without a user-supplied image database:
 

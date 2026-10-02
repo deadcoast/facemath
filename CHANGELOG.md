@@ -134,3 +134,14 @@ Retained the original research modules and legacy commands for continuity. They 
 - HELEN source-root sampling selects at most one original face per photograph
   root before split assignment; original PTS assets remain transferable.
 - Research width diagnostics do not grant empirical admission.
+# 0.14.0 — frozen model transfer
+
+- Export the full fitted joint model and all donor enrollment in a verified,
+  portable capsule; preserve the exact serialized model bytes.
+- Freeze evaluation-only studies, reuse native acquisition, and evaluate/replay
+  without refitting the center, scatter or radius. Retain all failures and report
+  source/group/lineage leakage, raw reference errors and bound utility.
+- Add a prospective IBUG cohort with one face per photograph filename root,
+  including repeated JPEGs with separate face annotations within that root.
+- Extend source, installed-wheel and extracted-archive validation to execute the
+  transfer pipeline. Research transfer does not authorize empirical query admission.

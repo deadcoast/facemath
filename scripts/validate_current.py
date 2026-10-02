@@ -26,6 +26,7 @@ def main() -> None:
     parser.add_argument('--evidence',action='append',default=[])
     parser.add_argument('--retain-evidence',type=Path,help='new directory below repository evidence/ for pre-seal execution records')
     parser.add_argument('--native-dataset',type=Path,help='prepared dataset below evidence/; repeat actual native acquisition in source, wheel and archive')
+    parser.add_argument('--frozen-model',type=Path,help='retained model capsule; evaluate without fitting on the native dataset')
     args=parser.parse_args()
     root=Path(__file__).resolve().parents[1]
     out=args.out.resolve();out.mkdir(parents=True,exist_ok=False)
@@ -33,6 +34,13 @@ def main() -> None:
     env.pop('PYTHONPATH',None)
     env['UV_CACHE_DIR']=str(root/'.uv-cache')
     native_relative=None
+    capsule_relative=None
+    if args.frozen_model:
+        if not args.native_dataset:
+            parser.error('--frozen-model requires --native-dataset')
+        capsule_relative=args.frozen_model.resolve().relative_to(root)
+        if not any(args.frozen_model.resolve().is_relative_to((root/name).resolve()) for name in args.evidence):
+            args.evidence.append(capsule_relative.parent.as_posix())
     if args.native_dataset:
         native=args.native_dataset.resolve()
         native_relative=native.relative_to(root)
@@ -82,12 +90,14 @@ def main() -> None:
                         f'--basetemp={out / "source-temp"}'],source=root)
     if native_relative:
         run('source-native',[sys.executable,'-m','facemath','dataset','run',root/native_relative,
-                             '--out',out/'source-native'],source=root)
+                             '--out',out/'source-native',*(['--frozen-model',root/capsule_relative] if capsule_relative else [])],source=root)
     lab=workflow('source',root,root)
     run('wheel-build',[shutil.which('uv') or 'uv','build','--wheel','--out-dir',out/'wheels'])
     wheels=list((out/'wheels').glob('*.whl'))
     if len(wheels)!=1:raise ValueError('expected exactly one current wheel')
     native_args=['--native-dataset',root/native_relative] if native_relative else []
+    if capsule_relative:
+        native_args.extend(['--frozen-model',root/capsule_relative])
     run('wheel-check',[sys.executable,root/'scripts/check_wheel.py',wheels[0],
         '--tests',root/'tests','--bundle',lab/'positive/qualification',
         '--pair-bundle',lab/'admitted_pair','--out',out/'wheel-check','--milestone',*native_args])
@@ -127,7 +137,7 @@ def main() -> None:
     workflow('archive',extracted,extracted)
     if native_relative:
         run('archive-native',[sys.executable,'-m','facemath','dataset','run',extracted/native_relative,
-                              '--out',out/'archive-native'],extracted,extracted)
+                              '--out',out/'archive-native',*(['--frozen-model',extracted/capsule_relative] if capsule_relative else [])],extracted,extracted)
     # Post-extraction execution belongs in an adjacent result, never in the
     # already sealed inventory. The artifact's digest remains stable.
     result={'completed':True,'archive':verify(archive),'commands':records,

@@ -9,6 +9,7 @@ from hashlib import file_digest, sha256
 from pathlib import Path, PurePosixPath
 import shutil
 import tarfile
+import re
 from urllib.parse import urlsplit
 from urllib.request import urlopen
 
@@ -57,10 +58,21 @@ def validate_plan(plan: dict) -> None:
             raise ObservationError(f"cohort must declare {key}")
     _member_name(plan['candidate_prefix'])
     if plan.get('selection') not in ('sha256_seed_nul_member_blocks_v1',
-                                    'sha256_seed_nul_helen_source_blocks_v1'):
+                                    'sha256_seed_nul_helen_source_blocks_v1',
+                                    'sha256_seed_nul_ibug_source_blocks_v1'):
         raise ObservationError("unknown prospective selection algorithm")
     counts = plan.get('split_counts', {})
-    if set(counts) != set(SPLITS) or any(type(v) is not int or not 1 <= v <= 1000 for v in counts.values()):
+    evaluation_only = plan.get('evaluation_only', False)
+    if type(evaluation_only) is not bool:
+        raise ObservationError("evaluation_only must be boolean")
+    if set(counts) != set(SPLITS) or any(type(v) is not int or not 0 <= v <= 1000 for v in counts.values()):
+        raise ObservationError("declare bounded cohort split counts")
+    if evaluation_only:
+        if counts['development'] or counts['calibration'] or not counts['evaluation']:
+            raise ObservationError("evaluation-only cohort requires zero development/calibration and positive evaluation")
+        if plan.get('protocol', {}).get('bias_mode') != 'none' or 'joint_error' in plan.get('protocol', {}):
+            raise ObservationError("evaluation-only cohort cannot request a fit")
+    elif not all(counts.values()):
         raise ObservationError("declare positive bounded cohort split counts")
     if type(plan.get('coordinate_origin')) is not int or plan['coordinate_origin'] not in (0, 1):
         raise ObservationError("declare PTS coordinate origin 0 or 1")
@@ -112,11 +124,19 @@ def _inventory_rows(rows: list) -> dict:
     return files
 
 
+def _ibug_source_key(image: str) -> str:
+    path = PurePosixPath(image)
+    match = re.fullmatch(r'image_([0-9]+)(?:_([0-9]+))?', path.stem)
+    if match is None:
+        raise ObservationError("IBUG grouping requires image_source or image_source_face filenames")
+    return (path.parent / ('image_' + str(int(match[1])))).as_posix()
+
+
 def select_members(plan: dict, inventory: list) -> list[dict]:
     validate_plan(plan)
     files = _inventory_rows(inventory)
     prefix = plan['candidate_prefix'] + '/'
-    candidates, image_digests = [], set()
+    candidates, image_digests = [], {}
     for name in sorted(files):
         if not name.startswith(prefix) or '/' in name[len(prefix):] or not name.endswith('.pts'):
             continue
@@ -128,9 +148,10 @@ def select_members(plan: dict, inventory: list) -> list[dict]:
             raise ObservationError("PTS requires exactly one original image pair")
         image = matches[0]
         digest = files[image]['sha256']
-        if digest in image_digests:
+        group = _ibug_source_key(image) if plan['selection'] == 'sha256_seed_nul_ibug_source_blocks_v1' else None
+        if digest in image_digests and (group is None or image_digests[digest] != group):
             raise ObservationError("duplicate original image bytes in candidate universe")
-        image_digests.add(digest)
+        image_digests[digest] = group
         rank = sha256((plan['seed'] + '\0' + image).encode('utf-8')).hexdigest()
         candidates.append(dict(image=image, annotation=name, rank=rank))
     # Unpaired originals cannot disappear from the prospective universe.
@@ -142,17 +163,20 @@ def select_members(plan: dict, inventory: list) -> list[dict]:
             raise ObservationError("original image missing PTS annotation")
     candidate_count = len(candidates)
     candidates.sort(key=lambda r: (r['rank'], r['image']))
-    if plan['selection'] == 'sha256_seed_nul_helen_source_blocks_v1':
+    if plan['selection'] in ('sha256_seed_nul_helen_source_blocks_v1', 'sha256_seed_nul_ibug_source_blocks_v1'):
         # HELEN filenames retain an upstream photograph root and face suffix.
         # Rank roots independently of their number of faces, then take one
         # deterministically ranked original per root. Never split one root.
         groups = {}
         for row in candidates:
             path = PurePosixPath(row['image'])
-            root, separator, index = path.stem.rpartition('_')
-            if not separator or not root.isascii() or not root.isdecimal() or not index.isascii() or not index.isdecimal():
-                raise ObservationError("HELEN grouping requires numeric source_face filenames")
-            key = (path.parent / str(int(root))).as_posix()
+            if plan['selection'] == 'sha256_seed_nul_helen_source_blocks_v1':
+                root, separator, index = path.stem.rpartition('_')
+                if not separator or not root.isascii() or not root.isdecimal() or not index.isascii() or not index.isdecimal():
+                    raise ObservationError("HELEN grouping requires numeric source_face filenames")
+                key = (path.parent / str(int(root))).as_posix()
+            else:
+                key = _ibug_source_key(row['image'])
             if key not in groups:
                 groups[key] = {**row, 'source_group': key,
                     'source_group_rank': sha256((plan['seed'] + '\0' + key).encode()).hexdigest()}

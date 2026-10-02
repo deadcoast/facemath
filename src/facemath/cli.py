@@ -199,6 +199,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     p = sub.add_parser("study-freeze", help="snapshot enrolled images, references and protocol before inference")
     p.add_argument("study", help="prospective study JSON; no imported predictions")
+    p.add_argument("--frozen-model", help="exported model capsule for evaluation-only transfer")
     p.add_argument("--out", required=True)
 
     p = sub.add_parser("study-run", help="acquire or resume one native observation attempt per included source")
@@ -212,6 +213,13 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--raw", action="store_true", help="include every full receipt in console JSON")
 
     p = sub.add_parser("study-finalize", help="qualify a completed session; no model is rerun")
+    p.add_argument("session")
+    p.add_argument("--out", required=True)
+
+    p = sub.add_parser("model-export", help="export complete fitted joint state and full donor enrollment")
+    p.add_argument("qualification")
+    p.add_argument("--out", required=True)
+    p = sub.add_parser("transfer-finalize", help="evaluate a frozen-model acquisition without fitting")
     p.add_argument("session")
     p.add_argument("--out", required=True)
 
@@ -259,6 +267,7 @@ def build_parser() -> argparse.ArgumentParser:
     q = d.add_parser("fetch"); q.add_argument("recipe"); q.add_argument("--out", required=True)
     q = d.add_parser("prepare"); q.add_argument("recipe"); q.add_argument("--out", required=True)
     q = d.add_parser("run"); q.add_argument("dataset"); q.add_argument("--model"); q.add_argument("--out", required=True)
+    q.add_argument("--frozen-model", help="exported joint model capsule; target must have evaluation cases only")
     q = d.add_parser("cohort-fetch"); q.add_argument("plan"); q.add_argument("--out", required=True)
     q = d.add_parser("cohort"); q.add_argument("plan"); q.add_argument("--archive", required=True)
     q.add_argument("--model", required=True); q.add_argument("--out", required=True)
@@ -355,6 +364,12 @@ def _inspect_video(args: argparse.Namespace) -> dict:
 
 def _replay(args: argparse.Namespace) -> dict:
     root = Path(args.bundle)
+    if read_json(root / "manifest.json").get("format") in ("facemath.transfer_pipeline.v14", "facemath.transfer_bundle.v14"):
+        from .observation.transfer_io import replay_transfer_bundle, verify_transfer_pipeline
+        if read_json(root / "manifest.json")["format"] == "facemath.transfer_pipeline.v14":
+            verify_transfer_pipeline(root)
+            root = root / "evaluation"
+        return replay_transfer_bundle(root, args.out)
     if read_json(root / "manifest.json").get("format") == "facemath.native_pipeline_bundle.v11":
         from .observation.dataset import verify_pipeline
         from .observation.study_io import replay_qualification_bundle
@@ -470,6 +485,13 @@ def _session_summary(status: dict, directory: str | Path) -> dict:
 
 
 def execute(args: argparse.Namespace) -> dict:
+    if args.command == "model-export":
+        from .observation.transfer import export_model
+        return export_model(args.qualification, args.out)
+    if args.command == "transfer-finalize":
+        from .observation.transfer_io import finalize_transfer, verify_transfer_bundle
+        target = finalize_transfer(args.session, args.out)
+        return {"bundle": str(target), **verify_transfer_bundle(target)}
     if args.command == "runtime-profile":
         from .observation.numerics import compare_numeric_environments
         profile = numeric_environment()
@@ -497,6 +519,9 @@ def execute(args: argparse.Namespace) -> dict:
         if args.dataset_command == "prepare":
             root = prepare_dataset(args.recipe, args.out)
             return {"dataset": str(root), **verify_dataset(root)}
+        if args.frozen_model:
+            from .observation.transfer_io import run_transfer_pipeline
+            return run_transfer_pipeline(args.dataset, args.frozen_model, args.out, model=args.model)
         return run_pipeline(args.dataset, args.out, model=args.model)
     if args.command == "overview":
         from .observation.readout import inspect_readout
@@ -575,6 +600,12 @@ def execute(args: argparse.Namespace) -> dict:
             from .observation.study_runner import verify_session
             return _session_summary(verify_session(root), root)
         kind = read_json(root / "manifest.json").get("format")
+        if kind == "facemath.transfer_bundle.v14":
+            from .observation.transfer_io import verify_transfer_bundle
+            return verify_transfer_bundle(root)
+        if kind == "facemath.transfer_pipeline.v14":
+            from .observation.transfer_io import verify_transfer_pipeline
+            return verify_transfer_pipeline(root)
         if kind == "facemath.dataset_bundle.v11":
             from .observation.dataset import verify_dataset
             return verify_dataset(root)
@@ -659,7 +690,8 @@ def execute(args: argparse.Namespace) -> dict:
                 "runtime_version": runtime, "inference_executed": False, "model_validated": False}
     if args.command == "study-freeze":
         from .observation.study import freeze_study
-        study = freeze_study(args.study, args.out)
+        study = freeze_study(args.study, args.out,
+                             frozen_model=read_json(Path(args.frozen_model)) if args.frozen_model else None)
         return {"study": str(study.root), "sha256": study.digest, "enrolled": len(study.cases),
                 "eligible": len(study.included), "inference_executed": False}
     if args.command == "study-run":

@@ -1,0 +1,1223 @@
+{
+  "format": "facemath.milestone_laboratory.v10",
+  "seed": 31091,
+  "kind": "DETERMINISTIC SYNTHETIC WORKFLOW CONTROLS",
+  "positive_control": {
+    "source_count": 129,
+    "labels_initially_missing": true,
+    "ready_after_import": true,
+    "retained_revisions": 128,
+    "duplicate_import_idempotent": true,
+    "observer_calls": [
+      4,
+      128,
+      128
+    ],
+    "enrollment": {
+      "enrolled": 129,
+      "eligible": 128,
+      "prospectively_excluded": 1,
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 0,
+        "observed": 128,
+        "runtime_error": 0,
+        "timeout": 0
+      }
+    },
+    "admission": {
+      "format": "facemath.empirical_admission.v10",
+      "policy": {
+        "format": "facemath.empirical_admission_policy.v10",
+        "required_categories": [
+          "pixel_clear",
+          "pixel_smooth"
+        ],
+        "minimum_groups": 20,
+        "minimum_delivery": 0.8,
+        "minimum_coverage": 0.8,
+        "family_error": 0.1,
+        "evidence_kind": "synthetic_control",
+        "independent_groups_declared": true,
+        "sampling_design": "Deterministic branch/containment control. No population interpretation; does not establish real sampling assumptions."
+      },
+      "policy_sha256": "1876c1e4c545a929857fc8f04603fadb360d5a076142018b63efbfb67783ef75",
+      "calibration_sha256": "e354129d7a90b87a7e2af7905a6f72eee4d3fa184eeaf51d2cb9d3cd7b65d0a2",
+      "plan": {
+        "policy_sha256": "1876c1e4c545a929857fc8f04603fadb360d5a076142018b63efbfb67783ef75",
+        "planned_evaluation_groups": {
+          "pixel_clear": 24,
+          "pixel_smooth": 24
+        },
+        "perfect_success_minimum_groups": 20,
+        "best_possible_lower": {
+          "pixel_clear": 0.8575264022774743,
+          "pixel_smooth": 0.8575264022774743
+        },
+        "algebraically_feasible": true,
+        "meaning": "sample-size feasibility only, not expected accuracy; underpowered studies remain explicitly non-admissible"
+      },
+      "status": "admitted_synthetic_control",
+      "passed": true,
+      "all_required_categories_must_pass": true,
+      "tail_probability_per_endpoint": 0.025,
+      "multiplicity": 4,
+      "categories": [
+        {
+          "category": "pixel_clear",
+          "groups": 24,
+          "delivered": 24,
+          "covered": 24,
+          "delivery_lower": 0.8575264022774743,
+          "coverage_lower": 0.8575264022774743,
+          "delivery_target": 0.8,
+          "coverage_target": 0.8,
+          "passes": true,
+          "reasons": []
+        },
+        {
+          "category": "pixel_smooth",
+          "groups": 24,
+          "delivered": 24,
+          "covered": 24,
+          "delivery_lower": 0.8575264022774743,
+          "coverage_lower": 0.8575264022774743,
+          "delivery_target": 0.8,
+          "coverage_target": 0.8,
+          "passes": true,
+          "reasons": []
+        }
+      ],
+      "groups": [
+        {
+          "group_id": "group_31091_100",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00100"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_101",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00101"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_102",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00102"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_103",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00103"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_104",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00104"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_105",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00105"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_106",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00106"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_107",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00107"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_108",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00108"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_109",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00109"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_110",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00110"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_111",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00111"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_112",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00112"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_113",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00113"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_114",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00114"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_115",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00115"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_116",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00116"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_117",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00117"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_118",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00118"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_119",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00119"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_120",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00120"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_121",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00121"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_122",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00122"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_123",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00123"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_124",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00124"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_125",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00125"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_126",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00126"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_127",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00127"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_80",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00080"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_81",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00081"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_82",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00082"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_83",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00083"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_84",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00084"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_85",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00085"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_86",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00086"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_87",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00087"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_88",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00088"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_89",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00089"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_90",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00090"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_91",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00091"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_92",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00092"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_93",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00093"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_94",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00094"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_95",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00095"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_96",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00096"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_97",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00097"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_98",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00098"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_31091_99",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00099"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        }
+      ],
+      "all_evaluation_groups": 48,
+      "all_evaluation_delivered": 48,
+      "all_evaluation_covered": 48,
+      "outside_requested_scope_groups": 0,
+      "outside_requested_scope_delivered": 0,
+      "outside_requested_scope_covered": 0,
+      "guarantee": "one-sided exact binomial lower bounds with Bonferroni allocation across two endpoints per frozen category",
+      "assumptions": "conditional on frozen training/calibration, groups must be independent and comparable within category; curator declaration is not proof",
+      "limitations": [
+        "not a per-image posterior, identity score, or guarantee against hidden acquisition shift",
+        "does not select a subset of passing categories, refit q, or repair geometry using evaluation labels",
+        "cross-study multiple testing and repeated adaptive qualification attempts are not controlled",
+        "finite-sample conformal rank statements are not strengthened or reconditioned by acceptance",
+        "self-consistency and declared reference blinding are not external attestation"
+      ],
+      "content_sha256": "d3c3e12ab9ef54273c1d43ecb064221d3ef017d9a2c7caa972df271137996fbf"
+    },
+    "frozen_origin_present": true
+  },
+  "negative_control": {
+    "source_count": 129,
+    "labels_initially_missing": true,
+    "ready_after_import": true,
+    "retained_revisions": 128,
+    "duplicate_import_idempotent": true,
+    "observer_calls": [
+      4,
+      128,
+      128
+    ],
+    "enrollment": {
+      "enrolled": 129,
+      "eligible": 128,
+      "prospectively_excluded": 1,
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 0,
+        "observed": 128,
+        "runtime_error": 0,
+        "timeout": 0
+      }
+    },
+    "admission": {
+      "format": "facemath.empirical_admission.v10",
+      "policy": {
+        "format": "facemath.empirical_admission_policy.v10",
+        "required_categories": [
+          "pixel_clear",
+          "pixel_smooth"
+        ],
+        "minimum_groups": 20,
+        "minimum_delivery": 0.8,
+        "minimum_coverage": 0.8,
+        "family_error": 0.1,
+        "evidence_kind": "synthetic_control",
+        "independent_groups_declared": true,
+        "sampling_design": "Deterministic branch/containment control. No population interpretation; does not establish real sampling assumptions."
+      },
+      "policy_sha256": "1876c1e4c545a929857fc8f04603fadb360d5a076142018b63efbfb67783ef75",
+      "calibration_sha256": "9181eeb326f8efeb67bbcadf41448fa93b210e44f8b4b66ecd5205fefd202feb",
+      "plan": {
+        "policy_sha256": "1876c1e4c545a929857fc8f04603fadb360d5a076142018b63efbfb67783ef75",
+        "planned_evaluation_groups": {
+          "pixel_clear": 24,
+          "pixel_smooth": 24
+        },
+        "perfect_success_minimum_groups": 20,
+        "best_possible_lower": {
+          "pixel_clear": 0.8575264022774743,
+          "pixel_smooth": 0.8575264022774743
+        },
+        "algebraically_feasible": true,
+        "meaning": "sample-size feasibility only, not expected accuracy; underpowered studies remain explicitly non-admissible"
+      },
+      "status": "withheld",
+      "passed": false,
+      "all_required_categories_must_pass": true,
+      "tail_probability_per_endpoint": 0.025,
+      "multiplicity": 4,
+      "categories": [
+        {
+          "category": "pixel_clear",
+          "groups": 24,
+          "delivered": 24,
+          "covered": 24,
+          "delivery_lower": 0.8575264022774743,
+          "coverage_lower": 0.8575264022774743,
+          "delivery_target": 0.8,
+          "coverage_target": 0.8,
+          "passes": true,
+          "reasons": []
+        },
+        {
+          "category": "pixel_smooth",
+          "groups": 24,
+          "delivered": 24,
+          "covered": 0,
+          "delivery_lower": 0.8575264022774743,
+          "coverage_lower": 0.0,
+          "delivery_target": 0.8,
+          "coverage_target": 0.8,
+          "passes": false,
+          "reasons": [
+            "reference coverage lower bound below frozen target"
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "group_id": "group_36091_100",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00100"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_101",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00101"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_102",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00102"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_103",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00103"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_104",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00104"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_105",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00105"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_106",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00106"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_107",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00107"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_108",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00108"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_109",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00109"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_110",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00110"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_111",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00111"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_112",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00112"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_113",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00113"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_114",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00114"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_115",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00115"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_116",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00116"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_117",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00117"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_118",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00118"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_119",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00119"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_120",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00120"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_121",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00121"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_122",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00122"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_123",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00123"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_124",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00124"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_125",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00125"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_126",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00126"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_127",
+          "category": "pixel_smooth",
+          "case_ids": [
+            "case_00127"
+          ],
+          "delivered": true,
+          "covered": false,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_80",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00080"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_81",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00081"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_82",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00082"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_83",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00083"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_84",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00084"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_85",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00085"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_86",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00086"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_87",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00087"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_88",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00088"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_89",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00089"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_90",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00090"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_91",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00091"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_92",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00092"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_93",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00093"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_94",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00094"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_95",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00095"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_96",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00096"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_97",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00097"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_98",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00098"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        },
+        {
+          "group_id": "group_36091_99",
+          "category": "pixel_clear",
+          "case_ids": [
+            "case_00099"
+          ],
+          "delivered": true,
+          "covered": true,
+          "radius_available": true
+        }
+      ],
+      "all_evaluation_groups": 48,
+      "all_evaluation_delivered": 48,
+      "all_evaluation_covered": 24,
+      "outside_requested_scope_groups": 0,
+      "outside_requested_scope_delivered": 0,
+      "outside_requested_scope_covered": 0,
+      "guarantee": "one-sided exact binomial lower bounds with Bonferroni allocation across two endpoints per frozen category",
+      "assumptions": "conditional on frozen training/calibration, groups must be independent and comparable within category; curator declaration is not proof",
+      "limitations": [
+        "not a per-image posterior, identity score, or guarantee against hidden acquisition shift",
+        "does not select a subset of passing categories, refit q, or repair geometry using evaluation labels",
+        "cross-study multiple testing and repeated adaptive qualification attempts are not controlled",
+        "finite-sample conformal rank statements are not strengthened or reconditioned by acceptance",
+        "self-consistency and declared reference blinding are not external attestation"
+      ],
+      "content_sha256": "93e55bf1aea0aef2133819346b0d3b2d991e9532e8b274a8d3fc59eacb880797"
+    },
+    "frozen_origin_present": true
+  },
+  "admitted_pair": {
+    "raw_arrays_unchanged": true,
+    "raw_arrays_checked": 135,
+    "array_count": 191,
+    "known_reference_shape_rms": 0.08333333333333319,
+    "shape_bounds": {
+      "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+      "observed_rms": 0.08333333333333345,
+      "reference_set_center_rms": 0.08333333333333345,
+      "lower": 0.07081151304994406,
+      "upper": 0.09006813168888718,
+      "available": true,
+      "reason": "bounded",
+      "distance_matrix_lower": 0.049086128476031644,
+      "quotient_lipschitz_lower": 0.07081151304997248,
+      "quotient_lipschitz_upper": 0.09585515361669443,
+      "candidate_rotation_upper": 0.09006813168885876,
+      "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+      "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+      "arrays": [
+        "intrinsic_shape_deviation_radii",
+        "intrinsic_shape_candidate_rotation"
+      ]
+    },
+    "known_reference_shape_enclosed": true,
+    "verified": true,
+    "qualification_snapshot_replayed": true
+  },
+  "withheld_query": {
+    "observer_calls": 0,
+    "reason": "empirical admission withheld: pixel_smooth: reference coverage lower bound below frozen target"
+  },
+  "limits": [
+    "positive branch was engineered, not sampled human performance",
+    "the separately frozen negative branch uses the same acceptance policy and keeps failing cases",
+    "native observer and independent real-reference validation remain outstanding",
+    "raw-state replay is self-consistency, not external attestation of provenance"
+  ]
+}

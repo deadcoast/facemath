@@ -43,6 +43,8 @@ def finalize_session(session_path: str | Path, destination: str | Path) -> Path:
                     raise ObservationError("cannot qualify incomplete or contract-failed acquisition")
                 study = load_study(source / "study")
                 spec = study.data
+                if "frozen_model" in spec:
+                    raise ObservationError("frozen model transfer requires transfer-finalize; qualification would refit")
                 session = read_json(source / "session.json")
                 if session["engine_code_sha256"] != code_fingerprint():
                     raise ObservationError("qualification requires the acquisition's code")

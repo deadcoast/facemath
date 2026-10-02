@@ -64,6 +64,23 @@ def test_selection_is_order_independent_and_excludes_mirrors(cohort):
     assert len({r['image'] for r in selected}) == 4
 
 
+def test_evaluation_only_selection_is_explicit_and_never_allocates_fit_cases(cohort):
+    plan = deepcopy(cohort['plan'])
+    plan['split_counts'] = dict(development=0, calibration=0, evaluation=4)
+    with pytest.raises(ObservationError, match='positive'):
+        select_members(plan, cohort['inventory'])
+    plan['evaluation_only'] = True
+    with pytest.raises(ObservationError, match='fit'):
+        select_members(plan, cohort['inventory'])
+    plan['protocol']['bias_mode'] = 'none'
+    selected = select_members(plan, cohort['inventory'])
+    assert len(selected) == 4 and all(r['split'] == 'evaluation' for r in selected)
+    assert selected == select_members(plan, cohort['inventory'][::-1])
+    plan['split_counts']['calibration'] = 1
+    with pytest.raises(ObservationError, match='zero'):
+        select_members(plan, cohort['inventory'])
+
+
 def test_helen_group_selection_never_splits_related_sources(cohort):
     plan = deepcopy(cohort['plan'])
     plan['selection'] = 'sha256_seed_nul_helen_source_blocks_v1'
@@ -94,6 +111,24 @@ def test_helen_grouping_refuses_unknown_filename_convention(cohort):
     plan['selection'] = 'sha256_seed_nul_helen_source_blocks_v1'
     with pytest.raises(ObservationError, match='source_face'):
         select_members(plan, cohort['inventory'])
+
+
+def test_ibug_groups_optional_face_suffixes_and_leading_zero_aliases(cohort):
+    plan = deepcopy(cohort['plan']); inventory = deepcopy(cohort['inventory'])
+    plan['selection'] = 'sha256_seed_nul_ibug_source_blocks_v1'
+    for row in inventory:
+        row['name'] = row['name'].replace('image_0.', 'image_000_01.').replace('image_1.', 'image_0_2.')
+    inventory[2]['sha256'] = inventory[0]['sha256']  # same photograph, two face labels
+    selected = select_members(plan, inventory)
+    assert len({r['source_group'] for r in selected}) == 4
+    assert {r['candidate_groups'] for r in selected} == {5}
+    assert selected == select_members(plan, inventory[::-1])
+    alias = deepcopy(inventory); alias[4]['sha256'] = alias[0]['sha256']
+    with pytest.raises(ObservationError, match='duplicate original'):
+        select_members(plan, alias)
+    inventory[0]['name'] = inventory[0]['name'].replace('image_000_01', 'unknown')
+    with pytest.raises(ObservationError):
+        select_members(plan, inventory)
 
 
 def test_intake_transfer_preserves_original_pts_precision_and_pixels(cohort, tmp_path):

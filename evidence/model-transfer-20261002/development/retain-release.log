@@ -1,0 +1,73 @@
+{
+  "package": {
+    "verified": true,
+    "files": 6843,
+    "version": "0.14.0",
+    "archive_sha256": "054ad6bf5bccd9d2b8dd1b688f42a5a476e014e1ff192851e99d1cac3b38cb9a",
+    "kind": "archive",
+    "scope": "shipped-byte consistency, not external authenticity or numerical replay"
+  },
+  "suites": {
+    "windows_source_311": {
+      "tests": 1076,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1075,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "installed_wheel": {
+      "tests": 1076,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1075,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "extracted_archive": {
+      "tests": 1076,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1075,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "linux_311": {
+      "tests": 1076,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 1076,
+      "skip_reasons": []
+    }
+  },
+  "milestones": {
+    "source": {
+      "positive": "admitted_synthetic_control",
+      "negative": "withheld",
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "withheld_observer_calls": 0
+    },
+    "installed": {
+      "positive": "admitted_synthetic_control",
+      "negative": "withheld",
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "withheld_observer_calls": 0
+    },
+    "archive": {
+      "positive": "admitted_synthetic_control",
+      "negative": "withheld",
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "withheld_observer_calls": 0
+    }
+  }
+}

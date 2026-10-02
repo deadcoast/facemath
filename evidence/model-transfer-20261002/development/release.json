@@ -1,0 +1,28 @@
+{
+  "command": [
+    "./runs/model-transfer-20261002/env311/Scripts/python.exe",
+    "scripts/validate_current.py",
+    "--out",
+    "runs/model-transfer-20261002/release",
+    "--evidence",
+    "evidence/model-transfer-20261002",
+    "--retain-evidence",
+    "evidence/model-transfer-20261002/preseal",
+    "--native-dataset",
+    "evidence/model-transfer-20261002/dataset",
+    "--frozen-model",
+    "evidence/model-transfer-20261002/helen-model.json"
+  ],
+  "cwd": ".",
+  "started_utc": "2026-10-02T17:36:35.574007+00:00",
+  "finished_utc": "2026-10-02T18:10:35.406875+00:00",
+  "elapsed_seconds": 2039.8439999999828,
+  "returncode": 0,
+  "environment": {
+    "PYTHONPATH": null,
+    "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+    "UV_PROJECT_ENVIRONMENT": null,
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

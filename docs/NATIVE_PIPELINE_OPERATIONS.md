@@ -152,3 +152,29 @@ explicit reasons. Development/calibration summaries are diagnostics, not held-ou
 evidence. Exact replay recomputes the report; the fitted model digest binds each
 report to its center, scatter, protocol and radius. These diagnostics do not
 authorize empirical admission or change native coordinates.
+# Frozen model transfer (0.14)
+
+`model-export QUALIFICATION --out model.json` verifies a donor bundle and exports
+its complete pooled joint fit, serialized model bytes, study lock, references and
+manifest bindings. The capsule retains donor evaluation and excluded enrollment
+for leakage checks. It supplies no new empirical acceptance or external attestation.
+
+`dataset run DATASET --frozen-model model.json --out RUN` requires evaluation-only
+cases and the same observer/reference protocol. It snapshots the capsule before
+native observation, then evaluates and exactly replays the fixed model. Read
+`RUN/evaluation/transfer.json`, `RUN/evaluation/raw_validation/validation.json`
+and the raw arrays and acquisition receipts. The donor nominal coverage is labeled
+as donor design; no target-domain guarantee is asserted. Failed observations remain
+in eligible denominators, exclusions remain in full-enrollment utility denominators.
+
+For resumable operation, use `study-freeze SPEC --frozen-model model.json --out LOCK`,
+then the existing `study-run LOCK --model MODEL --out SESSION` (repeat to resume),
+and `transfer-finalize SESSION --out RESULT`. `study-finalize` refuses transfer
+locks because it would fit another model. `verify RESULT` checks retained bindings;
+`replay RESULT --out NEW` recomputes under the recorded code and numerical runtime.
+All outputs are create-only; failures and attempted observations are retained.
+
+Only pooled joint models are supported initially. Stratified models are refused;
+there is no pooled fallback. Published dataset label conventions, visibility and
+unknown native training overlap remain scientific limitations after successful
+execution. No additional human-supplied database or testing campaign is required.

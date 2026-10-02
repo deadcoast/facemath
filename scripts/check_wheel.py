@@ -22,6 +22,7 @@ def main() -> None:
     parser.add_argument('--out', required=True)
     parser.add_argument('--milestone', action='store_true', help='execute the installed CLI milestone control as well')
     parser.add_argument('--native-dataset', type=Path, help='execute a complete pinned native dataset pipeline from the installed wheel')
+    parser.add_argument('--frozen-model', type=Path, help='evaluate an exported frozen model on the native dataset')
     args = parser.parse_args()
     wheel = Path(args.wheel).resolve()
     tests = Path(args.tests).resolve()
@@ -51,7 +52,8 @@ def main() -> None:
             commands.append([sys.executable, '-m', 'facemath', 'milestone-lab', '--out', str(out / 'milestone')])
         if args.native_dataset:
             commands.append([sys.executable, '-m', 'facemath', 'dataset', 'run', str(args.native_dataset.resolve()),
-                             '--out', str(out / 'native-pipeline')])
+                             '--out', str(out / 'native-pipeline'),
+                             *(['--frozen-model', str(args.frozen_model.resolve())] if args.frozen_model else [])])
             commands.append([sys.executable, '-m', 'facemath', 'verify', str(out / 'native-pipeline')])
         for index, command in enumerate(commands):
             start = datetime.now(timezone.utc).isoformat()

@@ -1,0 +1,29 @@
+.......................F................................................ [ 72%]
+............................                                             [100%]
+================================== FAILURES ===================================
+_ test_transfer_preflight_rejects_training_or_protocol_changes[<lambda>-rater|consensus|raters] _
+
+donor = (WindowsPath('C:/Users/ryanf/github/_active/facemath/runs/model-transfer-20261002/focused-temp/donor0'), {'format': 'f...ates, no model-derived labels",\r\n  "prediction_exposure": "none_declared",\r\n  "metadata": {}\r\n}\r\n', ...}, ...})
+tmp_path = WindowsPath('C:/Users/ryanf/github/_active/facemath/runs/model-transfer-20261002/focused-temp/test_transfer_preflight_reject2')
+edit = <function <lambda> at 0x0000017C7F235F80>
+match = 'rater|consensus|raters'
+
+    @pytest.mark.parametrize('edit,match', [
+        (lambda d:d['cases'][0].update(split='calibration'), 'evaluation cases ONLY'),
+        (lambda d:d.update(alpha=.2), 'contracts'),
+        (lambda d:d.update(minimum_raters=2), 'rater|consensus|raters'),
+        (lambda d:d.update(joint_error={'shrinkage':.02,'floor_eye_spans':.001}), 'joint_error'),
+    ])
+    def test_transfer_preflight_rejects_training_or_protocol_changes(donor, tmp_path, edit, match):
+        _, capsule = donor
+        spec, executor = target(tmp_path)
+        data = read_json(spec); edit(data); spec.write_text(json.dumps(data))
+>       with pytest.raises(ObservationError, match=match):
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'rater|consensus|raters'
+E         Actual message: 'all four eye corners must be reference-observable for normalization'
+
+tests\test_model_transfer.py:80: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_model_transfer.py::test_transfer_preflight_rejects_training_or_protocol_changes[<lambda>-rater|consensus|raters]
+1 failed, 99 passed in 30.06s

@@ -1,5 +1,13 @@
 # Beyond the Wave10 consolidation
 
+The 0.14.0 transfer workflow exports the complete saved joint model with all donor
+enrollment, freezes an evaluation-only cohort before native inference and reuses
+the raw evaluator and relation graph without fitting. Its IBUG plan selects one
+face per filename source root; identical photograph files within that root are
+not independent samples. See [the transfer design](MODEL_TRANSFER_DESIGN.md).
+Further improvements must use a new development/calibration study and a new
+prespecified evaluation; the transfer outcomes cannot retune the HELEN model.
+
 The 0.13.0 utility milestone reuses the shared relation graph to report landmark
 diameters, eye-span and mouth-width bounds with every enrolled denominator.
 Its prospectively frozen HELEN plan selects one face per photograph filename root

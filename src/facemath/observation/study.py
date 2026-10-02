@@ -238,15 +238,22 @@ def load_study(path: str | Path) -> FrozenStudy:
             raise ObservationError("frozen empirical admission plan differs from enrolled evidence")
     from .workspace import verify_workspace_origin
     verify_workspace_origin(data, root)
+    if "frozen_model" in data:
+        from .transfer import require_transfer
+        require_transfer(data["frozen_model"], data, [(c, tuple(
+            ReferenceAnnotation.from_dict(read_json(local_file(root, n))) for n in c["references"]))
+            for c in data["cases"]])
     return FrozenStudy(root, canonical_json(data))
 
 
-def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
+def freeze_study(spec_path: str | Path, destination: str | Path, *, frozen_model: dict | None = None) -> FrozenStudy:
     """No detector is constructed by this function. Every source is preflighted."""
     spec_path, target = Path(spec_path).resolve(), Path(destination).resolve()
     if target.exists():
         raise FileExistsError(target)
     spec = read_json(spec_path)
+    if "frozen_model" in spec:
+        raise ObservationError("supply the frozen model capsule explicitly at freeze time")
     if spec.get("format") != STUDY_FORMAT:
         raise ObservationError("expected facemath.prospective_study.v5")
     if not isinstance(spec.get("domain"), str) or not spec["domain"].strip():
@@ -375,7 +382,13 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
     validate_study(tuple(cases))
     if mode in ("development_ocular", "development_joint_ocular", "development_joint_ocular_stratified") and len({c.group_id for c in cases if c.split == "development"}) < min_dev:
         raise ObservationError("too few prospectively enrolled development groups for selected bias mode")
-    if not any(c.split == "calibration" for c in cases) or not any(c.split == "evaluation" for c in cases):
+    if frozen_model is not None:
+        from .transfer import require_transfer
+        require_transfer(frozen_model, {**spec, "observer": observer.to_dict()}, [(
+            {**e, "eligibility": e.get("eligibility", "included"), "lineage_ids": e.get("lineage_ids", []),
+             "image_sha256": array_digest(image), "original_encoded_sha256": encoded}, refs)
+            for e, image, refs, encoded in loaded])
+    elif not any(c.split == "calibration" for c in cases) or not any(c.split == "evaluation" for c in cases):
         raise ObservationError("prospective qualification requires calibration and evaluation groups")
     target.parent.mkdir(parents=True, exist_ok=True)
     temp = Path(tempfile.mkdtemp(prefix=".facemath-study-", dir=target.parent))
@@ -409,6 +422,8 @@ def freeze_study(spec_path: str | Path, destination: str | Path) -> FrozenStudy:
                                  "model_receives": "source raster only; not reference coordinates, split or stratum"}}
         if "workspace_origin" in spec:
             lock["workspace_origin"] = spec["workspace_origin"]
+        if frozen_model is not None:
+            lock["frozen_model"] = frozen_model
         if joint_config is not None:
             lock["joint_error"] = joint_config
         if routing_policy is not None:
