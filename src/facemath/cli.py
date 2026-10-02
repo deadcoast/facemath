@@ -145,6 +145,10 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("bundle")
     p.add_argument("--out", required=True)
 
+    p = sub.add_parser("runtime-profile", help="record numerical kernels and check exact-replay prerequisites")
+    p.add_argument("--compare", help="retained environment.json, session.json, or runtime profile; exit 2 if incompatible")
+    p.add_argument("--out", help="new JSON file; never overwrite retained runtime evidence")
+
     p = sub.add_parser("capabilities", help="audit original mappings without claiming mathematical equivalence")
     p.add_argument("--out")
 
@@ -369,10 +373,8 @@ def _replay(args: argparse.Namespace) -> dict:
     env = read_json(root / "environment.json")
     if env["engine_code_sha256"] != code_fingerprint():
         raise ObservationError("source implementation differs; perform a new analysis, not an exact replay")
-    for name, version in numeric_environment().items():
-        previous = env["numeric_environment"][name]
-        if version != previous:
-            raise ObservationError(f"numeric runtime differs for {name}: {previous} vs {version}")
+    from .observation.numerics import require_numeric_environment
+    require_numeric_environment(env["numeric_environment"], "pair replay")
     evidence = read_json(root / "evidence.json")
     observations = read_json(root / "observations.json")
     allowed = {f.name for f in fields(InstrumentConfig)}
@@ -465,6 +467,18 @@ def _session_summary(status: dict, directory: str | Path) -> dict:
 
 
 def execute(args: argparse.Namespace) -> dict:
+    if args.command == "runtime-profile":
+        from .observation.numerics import compare_numeric_environments
+        profile = numeric_environment()
+        data = {"format": "facemath.runtime_profile.v12", "numeric_environment": profile,
+                "engine_code_sha256": code_fingerprint(), "inference_executed": False,
+                "exact_replay_verified": False}
+        if args.compare:
+            previous = read_json(args.compare)
+            data["comparison"] = compare_numeric_environments(previous.get("numeric_environment", previous), profile)
+        if args.out:
+            write_json_new(args.out, data)
+        return data
     if args.command == "dataset":
         from .observation.dataset import fetch_dataset, prepare_dataset, run_pipeline, verify_dataset
         if args.dataset_command == "fetch":
@@ -671,14 +685,16 @@ def execute(args: argparse.Namespace) -> dict:
     if args.command == "doctor":
         import importlib.metadata
         from hashlib import sha256
+        from .observation.runtime import OPENCV_DISTRIBUTIONS
         packages = {}
-        for name in ("facemath", "mediapipe", "numpy", "scipy", "opencv-python"):
+        for name in ("facemath", "mediapipe", "numpy", "scipy", *OPENCV_DISTRIBUTIONS):
             try:
                 packages[name] = importlib.metadata.version(name)
             except importlib.metadata.PackageNotFoundError:
                 packages[name] = None
         model = Path(args.model) if args.model else None
         data = {"format": "facemath.runtime_check.v4", "packages": packages,
+                "numeric_environment": numeric_environment(),
                 "model_present": bool(model and model.is_file()),
                 "model_sha256": sha256(model.read_bytes()).hexdigest() if model and model.is_file() else None,
                 "inference_executed": False,
@@ -719,6 +735,8 @@ def main(argv: list[str] | None = None) -> None:
         print(terminal_readout(result))
     else:
         print(json.dumps(result, indent=2, allow_nan=False))
+    if args.command == "runtime-profile" and not result.get("comparison", {}).get("compatible", True):
+        raise SystemExit(2)
 
 
 if __name__ == "__main__":

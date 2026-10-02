@@ -18,7 +18,8 @@ import numpy as np
 
 from .contracts import Observation, ObservationError, LandmarkProvider, array_digest, canonical_json, object_digest
 from .error_model import fit_localization_calibration, evaluate_coverage
-from .journal import Journal, environment, verify_journal, code_fingerprint, numeric_environment
+from .journal import Journal, environment, verify_journal, code_fingerprint
+from .numerics import require_numeric_environment
 from .reference import REFERENCE_NAMES, ReferenceAnnotation
 from .validation import ValidationCase, evaluate_study
 
@@ -222,8 +223,9 @@ def verify_validation_bundle(path: str | Path) -> dict[str, Any]:
 def replay_validation_bundle(path: str | Path, destination: str | Path) -> dict[str, Any]:
     root = Path(path); verify_validation_bundle(root)
     env = _json(root / "environment.json")
-    if env["engine_code_sha256"] != code_fingerprint() or env["numeric_environment"] != numeric_environment():
-        raise ObservationError("validation replay requires matching code and numeric runtime")
+    if env["engine_code_sha256"] != code_fingerprint():
+        raise ObservationError("validation replay requires matching code")
+    require_numeric_environment(env["numeric_environment"], "validation replay")
     alpha = _json(root / "manifest.json")["alpha"]
     target = run_validation_study(root / "study.lock.json", destination, alpha=alpha)
     previous, actual = _json(root / "validation.json"), _json(target / "validation.json")

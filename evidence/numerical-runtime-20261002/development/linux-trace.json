@@ -1,0 +1,26 @@
+{
+  "command": [
+    "wsl",
+    "--exec",
+    "env",
+    "OPENBLAS_NUM_THREADS=1",
+    "OMP_NUM_THREADS=1",
+    "PYTHONPATH=/mnt/c/Users/ryanf/github/_active/facemath/runs/native-portability-20261002/release-check/extracted/facemath-0.11.1/src",
+    "/mnt/c/Users/ryanf/github/_active/facemath/runs/native-portability-20261002/env-linux/bin/python",
+    "/mnt/c/Users/ryanf/github/_active/facemath/runs/numerical-runtime-20261002/trace_scores.py",
+    "/mnt/c/Users/ryanf/github/_active/facemath/evidence/native-portability-20261002/preseal/native-pipeline/qualification",
+    "/mnt/c/Users/ryanf/github/_active/facemath/runs/numerical-runtime-20261002/linux-trace-output.json"
+  ],
+  "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+  "started_utc": "2026-10-02T13:11:06.018319+00:00",
+  "finished_utc": "2026-10-02T13:11:22.708728+00:00",
+  "elapsed_seconds": 16.68699999997625,
+  "returncode": 0,
+  "environment": {
+    "PYTHONPATH": null,
+    "UV_CACHE_DIR": "C:\\Users\\ryanf\\AppData\\Local\\uv\\cache",
+    "UV_PROJECT_ENVIRONMENT": null,
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

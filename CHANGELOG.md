@@ -1,3 +1,17 @@
+# 0.11.2 · Explicit numerical runtime and transfer prerequisites
+
+Record compiled numerical distribution hashes, interpreter/build, platform,
+NumPy/OpenCV CPU dispatch, loaded BLAS identities and active thread limits.
+Acquisition workers, resume, qualification and replay refuse incompatible or
+legacy version-only profiles with actionable differences. `runtime-profile`
+writes portable JSON, compares retained environments and exits 2 on a mismatch.
+`doctor` reports every OpenCV distribution and the numerical profile.
+
+Read-only traces isolate the retained cross-host differences in Cholesky and
+linear solve. No mathematics, replay tolerances, observed coordinates, labels,
+splits, calibration ranks or admission rules change. Matching runtime profiles
+permit recomputation; they do not by themselves establish exact replay.
+
 # 0.11.1 · Native environment consistency and isolated validation
 
 Replace conflicting OpenCV wheel variants with one constrained contrib wheel.

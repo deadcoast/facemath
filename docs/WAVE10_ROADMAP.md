@@ -17,13 +17,15 @@ source-disjoint cohort. Hosted requalification currently cannot start because of
 a GitHub account billing/spending-limit condition; the original macOS native
 constructor abort remains unresolved.
 
-The numerical transfer investigation starts at `observation/joint.py`'s
-`joint_scored_rows`, `observation/journal.py`'s `numeric_environment`, and
-`observation/study_io.py`'s strict replay comparator. Record BLAS/LAPACK build and
-CPU execution details, isolate the score-rounding source, and specify the
-supported reproducibility boundary before changing any numerical contract.
-Do not round stored results or enlarge replay tolerances merely to pass this
-already observed cross-host control.
+The 0.11.2 investigation isolates differences in the Cholesky factor and following
+linear solve, despite identical retained residuals. The new
+[runtime contract](NUMERICAL_REPLAY_DESIGN.md) records actual kernel bytes and
+execution settings and refuses incompatible replays before recomputation.
+This establishes a necessary compatibility boundary, not cross-OS exact replay.
+The mathematics and exact comparator remain unchanged. The next substantive
+data gate is a larger prospectively frozen source-disjoint cohort; the sourced
+iBUG annotation path and its one-based coordinate convention are recorded in
+the design. Do not round results or widen tolerances to admit the old failure.
 
 ## Gate A — actual native observations and independent references
 

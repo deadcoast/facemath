@@ -1,0 +1,30 @@
+{
+  "command": [
+    "/mnt/c/Users/ryanf/github/_active/facemath/runs/numerical-runtime-20261002/env-linux/bin/python",
+    "-m",
+    "facemath",
+    "replay",
+    "/tmp/facemath-numeric-replay-negative-20261002/qualification",
+    "--out",
+    "/tmp/facemath-numeric-replay-negative-20261002/recomputed"
+  ],
+  "cwd": "/tmp/facemath-numeric-replay-negative-20261002",
+  "started_utc": "2026-10-02T13:52:23.818387+00:00",
+  "finished_utc": "2026-10-02T13:52:38.814980+00:00",
+  "returncode": 2,
+  "stdout": "",
+  "stderr": "FACEMATH: qualification replay requires matching numerical runtime: /execution/blas, /installation/interpreter/build, /installation/interpreter/compiler, /installation/interpreter/version, /installation/numpy_cpu/dispatch, /installation/opencv_build_sha256; use runtime-profile --compare with the retained environment.json; preserve this run and use its original runtime or a distinct new study\n",
+  "verification": {
+    "verified": true,
+    "kind": "observer_qualification",
+    "files": 623,
+    "arrays": 12,
+    "study_sha256": "8cc207c6e0cf133502beaa071b293a1f2a92c5509c4341f69f3ed19a7952cedf",
+    "manifest_content_sha256": "f15aa6ce3915572a526b15b9af7e1bc65fac65767eccf226f6311d499c2afe24",
+    "live_inference_reexecuted": false
+  },
+  "archive_sha256": "c61df3c3ca260cf3efbff0a7126b6aed9eb0f937e0f4256644dc946adedab98a",
+  "destination_created": false,
+  "source_manifest_unchanged": true,
+  "scope": "actual transferred byte verification and incompatible-runtime preflight; not successful numerical replay"
+}

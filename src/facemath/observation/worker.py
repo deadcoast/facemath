@@ -6,7 +6,8 @@ import sys
 import traceback
 
 from .contracts import ObservationError, ProviderUnavailable
-from .journal import code_fingerprint, numeric_environment
+from .journal import code_fingerprint
+from .numerics import require_numeric_environment
 from .provider import MediaPipeProvider, DetectionMiss
 from .study import ObserverDeclaration, load_rgb, read_json, write_json_new
 
@@ -23,8 +24,9 @@ def main(argv: list[str] | None = None) -> int:
         request = read_json(request_path)
         if request.get("format") != "facemath.worker_request.v5":
             raise ObservationError("unsupported worker request")
-        if request["engine_code_sha256"] != code_fingerprint() or request["numeric_environment"] != numeric_environment():
-            raise ObservationError("worker code/numeric environment differs from parent")
+        if request["engine_code_sha256"] != code_fingerprint():
+            raise ObservationError("worker code differs from parent")
+        require_numeric_environment(request["numeric_environment"], "worker")
         declaration = ObserverDeclaration.from_dict(request["observer"])
         if declaration.execution_kind != "native_mediapipe":
             raise ObservationError("native worker rejects synthetic declarations")

@@ -1,0 +1,124 @@
+{
+  "left": "evidence\\native-portability-20261002\\preseal\\native-pipeline\\qualification",
+  "right": "runs\\numerical-runtime-20261002\\release-check\\source-native\\qualification",
+  "arrays": [
+    {
+      "name": "development_group_bias_vectors",
+      "shape": [
+        2,
+        8,
+        2
+      ],
+      "dtype": "<f8",
+      "bytes_equal": true
+    },
+    {
+      "name": "development_bias_beta",
+      "shape": [
+        8,
+        2
+      ],
+      "dtype": "<f8",
+      "bytes_equal": true
+    },
+    {
+      "name": "development_joint_group_second_moments",
+      "shape": [
+        2,
+        16,
+        16
+      ],
+      "dtype": "<f8",
+      "bytes_equal": true
+    },
+    {
+      "name": "development_joint_covariance",
+      "shape": [
+        16,
+        16
+      ],
+      "dtype": "<f8",
+      "bytes_equal": true
+    },
+    {
+      "name": "development_joint_group_case_counts",
+      "shape": [
+        2
+      ],
+      "dtype": "<i8",
+      "bytes_equal": true
+    },
+    {
+      "name": "raw_error_vectors_px",
+      "shape": [
+        43,
+        8,
+        2
+      ],
+      "dtype": "<f8",
+      "bytes_equal": true
+    },
+    {
+      "name": "source_bias_vectors_px",
+      "shape": [
+        43,
+        8,
+        2
+      ],
+      "dtype": "<f8",
+      "bytes_equal": true
+    },
+    {
+      "name": "centered_error_vectors_px",
+      "shape": [
+        43,
+        8,
+        2
+      ],
+      "dtype": "<f8",
+      "bytes_equal": true
+    },
+    {
+      "name": "centered_error_valid",
+      "shape": [
+        43,
+        8
+      ],
+      "dtype": "|b1",
+      "bytes_equal": true
+    },
+    {
+      "name": "source_predicted_xy",
+      "shape": [
+        43,
+        8,
+        2
+      ],
+      "dtype": "<f8",
+      "bytes_equal": true
+    },
+    {
+      "name": "source_reference_xy",
+      "shape": [
+        43,
+        8,
+        2
+      ],
+      "dtype": "<f8",
+      "bytes_equal": true
+    },
+    {
+      "name": "covariance_px2",
+      "shape": [
+        43,
+        8,
+        2,
+        2
+      ],
+      "dtype": "<f8",
+      "bytes_equal": true
+    }
+  ],
+  "all_equal": true,
+  "scope": "saved measured and fitted numerical state only; different code/runtime provenance is preserved"
+}

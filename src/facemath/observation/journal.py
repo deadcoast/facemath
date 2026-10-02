@@ -20,12 +20,9 @@ def code_fingerprint() -> str:
     return object_digest(records)
 
 
-def numeric_environment() -> dict[str, str]:
-    """Versions of numerical kernels that may change measurement semantics."""
-    import cv2
-    import numpy as np
-    import scipy
-    return {"numpy": np.__version__, "scipy": scipy.__version__, "opencv": cv2.__version__}
+def numeric_environment() -> dict[str, Any]:
+    from .numerics import numeric_environment as profile
+    return profile()
 
 
 def environment() -> dict[str, Any]:

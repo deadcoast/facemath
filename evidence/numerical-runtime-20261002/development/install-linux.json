@@ -1,0 +1,31 @@
+{
+  "command": [
+    "wsl",
+    "--exec",
+    "env",
+    "UV_CACHE_DIR=/mnt/c/Users/ryanf/github/_active/facemath/runs/native-portability-20261002/linux-cache",
+    "UV_PROJECT_ENVIRONMENT=/mnt/c/Users/ryanf/github/_active/facemath/runs/numerical-runtime-20261002/env-linux",
+    "/mnt/c/Users/ryanf/github/_active/facemath/runs/native-portability-20261002/linux-tools/uv",
+    "sync",
+    "--locked",
+    "--offline",
+    "--python",
+    "/mnt/c/Users/ryanf/github/_active/facemath/runs/native-portability-20261002/env-linux/bin/python",
+    "--extra",
+    "dev",
+    "--extra",
+    "observer"
+  ],
+  "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+  "started_utc": "2026-10-02T13:27:20.742440+00:00",
+  "finished_utc": "2026-10-02T13:28:12.972179+00:00",
+  "elapsed_seconds": 52.23399999999674,
+  "returncode": 0,
+  "environment": {
+    "PYTHONPATH": null,
+    "UV_CACHE_DIR": "C:\\Users\\ryanf\\AppData\\Local\\uv\\cache",
+    "UV_PROJECT_ENVIRONMENT": null,
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

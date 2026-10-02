@@ -1,9 +1,9 @@
 # FACEMATH · reproducible facial geometry
 
-Version **0.11.1** hardens native pipeline portability: one OpenCV 4 contrib
-distribution, an explicit runtime binding check, isolated live tests and retained
-native failure diagnostics. The automated dataset pipeline introduced in 0.11.0
-can fetch assets,
+Version **0.11.2** binds exact replay to recorded numerical kernel bytes, CPU
+dispatch and thread settings, with a machine-readable compatibility command.
+The 0.11.1 isolated native execution and single OpenCV 4 contrib environment
+remain in place. The automated dataset pipeline can fetch assets,
 preserve source coordinates, freeze splits, observe, fit, calibrate, evaluate and
 replay. It also retains failed study artifacts and journals. No user-supplied
 image database or new human annotation campaign is required to run it.
@@ -35,6 +35,17 @@ bindings and recomputes dataset conversions; `replay` recomputes retained
 numerical results. Another `dataset run` creates a distinct native execution.
 See [pipeline operations](docs/NATIVE_PIPELINE_OPERATIONS.md) and
 [the design](docs/NATIVE_PIPELINE_DESIGN.md).
+
+Check a transferred run's numerical prerequisites before replay:
+
+```shell
+python -m facemath runtime-profile --compare runs/pilot-001/qualification/environment.json --out runs/runtime-comparison.json
+```
+
+Exit status 2 means the runtime is incompatible. Matching package versions alone
+are insufficient; even a matching profile still requires exact output comparison.
+Byte verification and inspection remain available across hosts. See the
+[numerical replay contract](docs/NUMERICAL_REPLAY_DESIGN.md).
 
 For reproducible development, use `uv sync --locked --extra dev`, then
 `uv run --locked python -m pytest -q`. The lock includes one OpenCV 4 contrib

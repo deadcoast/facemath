@@ -68,6 +68,23 @@ is a new experiment; compare its arrays explicitly rather than assuming bitwise
 determinism. Python source files and new retained evidence use Git byte-preserving
 attributes so checkout line-ending conversion cannot change their fingerprints.
 
+Starting with 0.11.2, use `python -m facemath runtime-profile --out runtime.json`
+to capture the numerical execution contract. Use `runtime-profile --compare
+RUN/qualification/environment.json --out comparison.json` on the receiving host.
+The JSON lists differing fields; an incompatible profile returns exit status 2.
+The output path must be new. A `session.json` or another runtime profile is also
+accepted as the comparison input. This command performs no inference or replay.
+
+The identity includes compiled dependency bytes, Python build, OS/architecture,
+CPU dispatch and numerical thread settings. It excludes installation paths.
+The software installation must remain immutable for the life of the process;
+restart after dependency changes. Current thread limits and dispatch environment
+variables are sampled on every request. A matching profile is a prerequisite,
+not proof of determinism: replay still compares the resulting evidence. Keep
+the original environment or run a distinct new study when it differs. Historical
+version-only profiles require their historical source/environment; do not rewrite
+retained metadata to bypass the new contract.
+
 Failures keep their actual partial files and journals. A failed pipeline has
 `failure.json` and `failure.events.jsonl` and no valid success manifest. Nested
 validation/finalization faults retain uniquely named `*.failure-*` directories.

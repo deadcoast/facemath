@@ -17,7 +17,8 @@ import tempfile
 import numpy as np
 
 from .contracts import ObservationError, array_digest, object_digest
-from .journal import Journal, code_fingerprint, environment, numeric_environment, verify_journal
+from .journal import Journal, code_fingerprint, environment, verify_journal
+from .numerics import require_numeric_environment
 from .qualification import qualify
 from .study import file_inventory, load_study, read_json, verify_inventory, write_json_new
 from .study_report import render_study_report
@@ -43,9 +44,9 @@ def finalize_session(session_path: str | Path, destination: str | Path) -> Path:
                 study = load_study(source / "study")
                 spec = study.data
                 session = read_json(source / "session.json")
-                if (session["engine_code_sha256"] != code_fingerprint()
-                        or session["numeric_environment"] != numeric_environment()):
-                    raise ObservationError("qualification requires the acquisition's code and numeric environment")
+                if session["engine_code_sha256"] != code_fingerprint():
+                    raise ObservationError("qualification requires the acquisition's code")
+                require_numeric_environment(session["numeric_environment"], "qualification")
                 step.update(study_sha256=study.digest, committed=status["committed"],
                             execution_kind=status["execution_kind"], no_inference_performed_here=True)
             # The Windows byte-range lock cannot be read by copytree. It is
@@ -147,8 +148,9 @@ def replay_qualification_bundle(path: str | Path, destination: str | Path) -> di
     root = Path(path).resolve()
     verify_qualification_bundle(root)
     env = read_json(root / "environment.json")
-    if env["engine_code_sha256"] != code_fingerprint() or env["numeric_environment"] != numeric_environment():
-        raise ObservationError("qualification replay requires matching source and numerical runtime")
+    if env["engine_code_sha256"] != code_fingerprint():
+        raise ObservationError("qualification replay requires matching source")
+    require_numeric_environment(env["numeric_environment"], "qualification replay")
     target = finalize_session(root / "acquisition", destination)
     for name in ("qualification.json", "localization_calibration.json"):
         if read_json(root / name) != read_json(target / name):

@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/tmp/facemath-numerical-runtime-20261002/env/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "-ra",
+    "--basetemp=/tmp/facemath-numerical-runtime-20261002/tests",
+    "-o",
+    "cache_dir=/tmp/facemath-numerical-runtime-20261002/cache",
+    "--junitxml=/mnt/c/Users/ryanf/github/_active/facemath/runs/numerical-runtime-20261002/linux.xml"
+  ],
+  "cwd": "/mnt/c/Users/ryanf/github/_active/facemath",
+  "started_utc": "2026-10-02T13:30:29.061984+00:00",
+  "returncode": 0,
+  "expected_returncode": 0,
+  "finished_utc": "2026-10-02T13:41:46.018878+00:00",
+  "environment": {
+    "PYTHONPATH": "/mnt/c/Users/ryanf/github/_active/facemath/src",
+    "UV_CACHE_DIR": "/mnt/c/Users/ryanf/github/_active/facemath/runs/native-portability-20261002/linux-cache",
+    "UV_PROJECT_ENVIRONMENT": "/tmp/facemath-numerical-runtime-20261002/env",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "FACEMATH_MODEL": "/mnt/c/Users/ryanf/github/_active/facemath/evidence/numerical-runtime-20261002/dataset/assets/face_landmarker.task",
+    "FACEMATH_FACE": "/mnt/c/Users/ryanf/github/_active/facemath/evidence/numerical-runtime-20261002/dataset/inputs/case_00000.png"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "archive": {
+    "verified": true,
+    "files": 7796,
+    "version": "0.11.2",
+    "archive_sha256": "785d5e7cde06b32d52313ceefb0d8981b2453a6d3c99950ff523a1485273414d",
+    "kind": "archive",
+    "scope": "shipped-byte consistency, not external authenticity or numerical replay"
+  },
+  "suites": {
+    "windows_source_311": {
+      "tests": 1005,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1004,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "installed_wheel": {
+      "tests": 1005,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1004,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "extracted_archive": {
+      "tests": 1005,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1004,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "windows_314": {
+      "tests": 1005,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "passed": 1003,
+      "skip_reasons": [
+        "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment",
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "linux_311": {
+      "tests": 1005,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 1005,
+      "skip_reasons": []
+    }
+  },
+  "milestone": {
+    "source": {
+      "positive": "admitted_synthetic_control",
+      "negative": "withheld",
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "withheld_observer_calls": 0
+    },
+    "installed": {
+      "positive": "admitted_synthetic_control",
+      "negative": "withheld",
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "withheld_observer_calls": 0
+    },
+    "archive": {
+      "positive": "admitted_synthetic_control",
+      "negative": "withheld",
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "withheld_observer_calls": 0
+    }
+  }
+}

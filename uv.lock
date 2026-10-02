@@ -510,7 +510,7 @@ wheels = [
 
 [[package]]
 name = "facemath"
-version = "0.11.1"
+version = "0.11.2"
 source = { editable = "." }
 dependencies = [
     { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
@@ -520,6 +520,7 @@ dependencies = [
     { name = "scikit-learn" },
     { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
     { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
+    { name = "threadpoolctl" },
 ]
 
 [package.optional-dependencies]
@@ -544,6 +545,7 @@ requires-dist = [
     { name = "scikit-image", specifier = ">=0.22" },
     { name = "scikit-learn", specifier = ">=1.4" },
     { name = "scipy", specifier = ">=1.12" },
+    { name = "threadpoolctl", specifier = ">=3.5" },
     { name = "torch", marker = "extra == 'telemetry'", specifier = ">=2.2" },
 ]
 provides-extras = ["observer", "telemetry", "dev"]

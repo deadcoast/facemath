@@ -1,0 +1,41 @@
+......................................sF.................F               [100%]
+================================== FAILURES ===================================
+________ test_module_entrypoint_reports_version_from_another_directory ________
+
+tmp_path = WindowsPath('C:/Users/ryanf/github/_active/facemath/runs/numerical-runtime-20261002/focused-temp/test_module_entrypoint_reports0')
+
+    def test_module_entrypoint_reports_version_from_another_directory(tmp_path):
+        result = subprocess.run([sys.executable, '-m', 'facemath', '--version'], cwd=tmp_path,
+                                text=True, capture_output=True, check=True)
+>       assert result.stdout.strip() == f'facemath {version("facemath")}'
+E       AssertionError: assert 'facemath 0.11.2' == 'facemath 0.11.1'
+E         
+E         - facemath 0.11.1
+E         ?               ^
+E         + facemath 0.11.2
+E         ?               ^
+
+tests\test_wave3_cli.py:37: AssertionError
+_____ test_lazy_public_api_preserves_original_classes_and_exposes_version _____
+
+    def test_lazy_public_api_preserves_original_classes_and_exposes_version():
+        import facemath
+        from facemath.core import Frame
+        from facemath.observation import FacialInstrument, InstrumentFailure
+        assert facemath.Frame is Frame
+        assert facemath.FacialInstrument is FacialInstrument
+        assert facemath.InstrumentFailure is InstrumentFailure
+>       assert facemath.__version__ == version('facemath')
+E       AssertionError: assert '0.11.2' == '0.11.1'
+E         
+E         - 0.11.1
+E         ?      ^
+E         + 0.11.2
+E         ?      ^
+
+tests\test_wave3_cli.py:150: AssertionError
+=========================== short test summary info ===========================
+SKIPPED [1] tests\test_wave5_execution.py:184: platform cannot create a directory symlink
+FAILED tests/test_wave3_cli.py::test_module_entrypoint_reports_version_from_another_directory
+FAILED tests/test_wave3_cli.py::test_lazy_public_api_preserves_original_classes_and_exposes_version
+2 failed, 55 passed, 1 skipped in 31.95s

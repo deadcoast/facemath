@@ -26,6 +26,7 @@ import numpy as np
 
 from .contracts import Observation, ObservationError, ProviderUnavailable, object_digest
 from .journal import code_fingerprint, numeric_environment
+from .numerics import require_numeric_environment
 from .provider import DetectionMiss
 from .runtime import require_supported_opencv
 from .study import (
@@ -274,8 +275,9 @@ def run_session(study_path: str | Path, destination: str | Path, executor: Obser
         if status["study_sha256"] != study.digest:
             raise ObservationError("resume study differs from frozen session")
         session = read_json(root / "session.json")
-        if session["engine_code_sha256"] != code_fingerprint() or session["numeric_environment"] != numeric_environment():
-            raise ObservationError("resume requires the same code and numerical runtime")
+        if session["engine_code_sha256"] != code_fingerprint():
+            raise ObservationError("resume requires the same code")
+        require_numeric_environment(session["numeric_environment"], "resume")
         if not status["contract_valid"]:
             raise ObservationError("contract-failed session cannot resume or qualify")
         if status["complete"]:
