@@ -152,10 +152,10 @@ def measure(state: CanonicalState, field: AnatomicalField, flow: FlowDiagnostics
         hold_value = float(np.sqrt(np.mean(np.sum(heldout[i, ids]**2, axis=1))))
         base_value = float(np.sqrt(np.mean(magnitudes[ids]**2)))
         measurements.append(Measurement(f"registration.heldout_{label}.rms", hold_value, "registered_eye_span_geomean",
-            len(ids), len(ids), "registration_sensitivity",
+            len(ids), total_ids, "registration_sensitivity",
             "evaluation region excluded from alignment anchors; exposes alignment-induced resemblance"))
         measurements.append(Measurement(f"registration.heldout_{label}.change", hold_value - base_value, "registered_eye_span_geomean",
-            len(ids), len(ids), "registration_sensitivity", "signed change from the primary registration residual"))
+            len(ids), total_ids, "registration_sensitivity", "signed change from the primary registration residual"))
     # Regions use an A-domain field and explicitly record its interpolation support.
     for region, region_mask in state.masks_a.items():
         observed_region = visible[state.anatomy.region_indices(region)].sum() >= 3

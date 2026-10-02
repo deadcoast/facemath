@@ -48,7 +48,13 @@ def finalize_session(session_path: str | Path, destination: str | Path) -> Path:
                     raise ObservationError("qualification requires the acquisition's code and numeric environment")
                 step.update(study_sha256=study.digest, committed=status["committed"],
                             execution_kind=status["execution_kind"], no_inference_performed_here=True)
-            shutil.copytree(source, temp / "acquisition")
+            # The Windows byte-range lock cannot be read by copytree. It is
+            # process coordination, not observation evidence. Keep the source
+            # locked throughout copying, and retain a canonical sentinel so
+            # later replay cannot add a file to the sealed inventory.
+            shutil.copytree(source, temp / "acquisition", ignore=lambda directory, names:
+                            {".runner.lock"} if Path(directory) == source else set())
+            (temp / "acquisition" / ".runner.lock").write_bytes(b"0")
         study = load_study(temp / "acquisition" / "study")
         receipts = {r["case_id"]: r for r in status["receipts"]}
         entries = []

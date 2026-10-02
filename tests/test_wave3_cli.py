@@ -1,6 +1,7 @@
 """End-to-end CLI contracts; detector inference remains a separate live test."""
 import json
 from dataclasses import replace
+from importlib.metadata import version
 from pathlib import Path
 import subprocess
 import sys
@@ -33,7 +34,7 @@ def demo(tmp_path):
 def test_module_entrypoint_reports_version_from_another_directory(tmp_path):
     result = subprocess.run([sys.executable, '-m', 'facemath', '--version'], cwd=tmp_path,
                             text=True, capture_output=True, check=True)
-    assert result.stdout.strip() == 'facemath 0.10.0'
+    assert result.stdout.strip() == f'facemath {version("facemath")}'
 
 
 def test_demo_verify_replay_roundtrip(demo, tmp_path):
@@ -146,7 +147,7 @@ def test_lazy_public_api_preserves_original_classes_and_exposes_version():
     assert facemath.Frame is Frame
     assert facemath.FacialInstrument is FacialInstrument
     assert facemath.InstrumentFailure is InstrumentFailure
-    assert facemath.__version__ == '0.10.0'
+    assert facemath.__version__ == version('facemath')
     assert 'FacialInstrument' in dir(facemath)
     with pytest.raises(AttributeError):
         getattr(facemath, 'invented_symbol')

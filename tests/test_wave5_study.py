@@ -132,10 +132,25 @@ def test_native_preflight_does_not_download_missing_model(tmp_path):
     assert not (tmp_path/'not-here.task').exists()
 
 
-def test_full_qualification_preserves_raw_rows_and_replays_exactly(tmp_path,inputs):
+def test_full_qualification_preserves_raw_rows_and_replays_exactly(tmp_path,inputs,monkeypatch):
     spec,executor,_=inputs;study=freeze_study(spec,tmp_path/'frozen')
     run_session(study.root,tmp_path/'session',executor)
+    import facemath.observation.study_io as module
+    original_copy=module.shutil.copytree
+    source=tmp_path/'session'
+    original_files={p.relative_to(source):p.read_bytes() for p in source.rglob('*') if p.is_file()}
+    def locked_copy(src,dst,*args,**kwargs):
+        if Path(src)==source:
+            with pytest.raises(ObservationError,match='writer'):
+                with writer_lock(source/'.runner.lock'):pass
+        return original_copy(src,dst,*args,**kwargs)
+    monkeypatch.setattr(module.shutil,'copytree',locked_copy)
     output=finalize_session(tmp_path/'session',tmp_path/'qualification')
+    for name,data in original_files.items():
+        assert (source/name).read_bytes()==data
+        if name!=Path('.runner.lock'):
+            assert (output/'acquisition'/name).read_bytes()==data
+    assert (output/'acquisition/.runner.lock').read_bytes()==b'0'
     assert verify_qualification_bundle(output)['verified']
     report=read_json(output/'qualification.json')
     assert report['raw_coordinates_changed'] is False

@@ -6,9 +6,11 @@ from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 import tempfile
+import zipfile
 
 
 def main() -> None:
@@ -18,6 +20,7 @@ def main() -> None:
     parser.add_argument('--bundle', required=True)
     parser.add_argument('--pair-bundle')
     parser.add_argument('--out', required=True)
+    parser.add_argument('--milestone', action='store_true', help='execute the installed CLI milestone control as well')
     args = parser.parse_args()
     wheel = Path(args.wheel).resolve()
     tests = Path(args.tests).resolve()
@@ -31,18 +34,23 @@ def main() -> None:
         config.write_text('[pytest]\nmarkers = live_observer: explicit local model integration\n')
         env = dict(os.environ, PYTHONPATH=str(target), OPENBLAS_NUM_THREADS='1', OMP_NUM_THREADS='1')
         commands = [
-            [sys.executable, '-m', 'pip', 'install', '--no-deps', '--no-index', '--target', str(target), str(wheel)],
+            [shutil.which('uv') or 'uv', 'pip', 'install', '--python', sys.executable,
+             '--no-deps', '--no-index', '--target', str(target), str(wheel)],
             [sys.executable, '-c', 'import facemath,json; from facemath.observation.journal import code_fingerprint; '
              'print(json.dumps({"file":facemath.__file__,"version":facemath.__version__,"code_sha256":code_fingerprint()}))'],
             [sys.executable, '-m', 'pytest', '-q', str(tests), '-c', str(config), f'--junitxml={out / "pytest.xml"}'],
+            [sys.executable, '-m', 'facemath', 'verify', str(bundle)],
             [sys.executable, '-m', 'facemath', 'replay', str(bundle), '--out', str(out / 'replayed')],
         ]
         if args.pair_bundle:
+            commands.append([sys.executable, '-m', 'facemath', 'verify', str(Path(args.pair_bundle).resolve())])
             commands.append([sys.executable, '-m', 'facemath', 'replay', str(Path(args.pair_bundle).resolve()),
                              '--out', str(out / 'pair-replayed')])
+        if args.milestone:
+            commands.append([sys.executable, '-m', 'facemath', 'milestone-lab', '--out', str(out / 'milestone')])
         for index, command in enumerate(commands):
             start = datetime.now(timezone.utc).isoformat()
-            result = subprocess.run(command, cwd=work, env=env, text=True, capture_output=True)
+            result = subprocess.run(command, cwd=work, env=env, text=True, encoding='utf-8', errors='replace', capture_output=True)
             record = {'command': command, 'cwd': str(work), 'started_utc': start,
                       'finished_utc': datetime.now(timezone.utc).isoformat(),
                       'returncode': result.returncode, 'stdout': result.stdout, 'stderr': result.stderr}
@@ -56,6 +64,15 @@ def main() -> None:
                 assert Path(imported['file']).is_relative_to(target), 'source-tree shadowing detected'
                 original = json.loads((bundle / 'environment.json').read_text())
                 assert imported['code_sha256'] == original['engine_code_sha256']
+                with zipfile.ZipFile(wheel) as archive:
+                    names = [n for n in archive.namelist() if n.startswith('facemath/') and n.endswith('.py')]
+                    assert names
+                    for name in names:
+                        assert (target / name).read_bytes() == archive.read(name), name
+                (out / 'installed-byte-check.json').write_text(json.dumps({
+                    'verified': True, 'python_files': len(names), 'import': imported,
+                    'scope': 'installed wheel Python bytes; same interpreter dependencies, not a new dependency stack'
+                }, indent=2), encoding='utf-8')
 
 
 if __name__ == '__main__':

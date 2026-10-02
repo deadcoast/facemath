@@ -1,0 +1,22 @@
+environment: exit 0
+lock-check: exit 0
+source-tests: exit 0
+source-milestone: exit 0
+source-qualification-verify: exit 0
+source-qualification-replay: exit 0
+source-pair-verify: exit 0
+source-pair-replay: exit 0
+wheel-build: exit 0
+wheel-check: exit 0
+Traceback (most recent call last):
+  File "C:\Users\ryanf\github\_active\facemath\scripts\validate_current.py", line 111, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "C:\Users\ryanf\github\_active\facemath\scripts\validate_current.py", line 91, in main
+    plan=package(root,wheels[0],out/'stage',archive,args.evidence,dry_run=True)
+  File "C:\Users\ryanf\github\_active\facemath\scripts\package_release.py", line 93, in package
+    check_wheel(wheel, root, version)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanf\github\_active\facemath\scripts\package_release.py", line 77, in check_wheel
+    raise ValueError('wheel version differs from project')
+ValueError: wheel version differs from project

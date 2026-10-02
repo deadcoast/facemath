@@ -1,0 +1,45 @@
+[
+  {
+    "name": "environment",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+      "-c",
+      "import json; from facemath.observation.journal import environment; print(json.dumps(environment(),indent=2))"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+    "started_utc": "2026-10-01T21:13:18.216206+00:00",
+    "pythonpath": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+    "returncode": 0,
+    "finished_utc": "2026-10-01T21:13:19.113195+00:00"
+  },
+  {
+    "name": "lock-check",
+    "command": [
+      "C:\\Users\\ryanf\\AppData\\Roaming\\Python\\Python313\\Scripts\\uv.EXE",
+      "lock",
+      "--check"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+    "started_utc": "2026-10-01T21:13:19.123218+00:00",
+    "pythonpath": null,
+    "returncode": 0,
+    "finished_utc": "2026-10-01T21:13:19.174092+00:00"
+  },
+  {
+    "name": "source-tests",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "-ra",
+      "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\final314\\source.xml",
+      "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\final314\\source-temp"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+    "started_utc": "2026-10-01T21:13:19.175181+00:00",
+    "pythonpath": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+    "returncode": 1,
+    "finished_utc": "2026-10-01T21:19:05.353239+00:00"
+  }
+]

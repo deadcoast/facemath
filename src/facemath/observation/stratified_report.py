@@ -20,9 +20,10 @@ def render_routing_study(routing: dict[str, Any] | None) -> str:
     for r in categories:
         c = next(x for x in coverage['strata'] if x['stratum'] == r['stratum'])['evaluation']
         q = 'WITHHELD' if r['quantile'] is None else f'{r["quantile"]:.6g}'
+        finite_groups = c['groups'] if r['quantile'] is not None else 0
         body.append(f'<tr><td><strong>{escape(r["stratum"])}</strong><small>{escape(r["status"].replace("_"," "))}</small></td>'
             f'<td>{len(r["group_scores"])}</td><td>{r["rank"]}</td><td class="num">{q}</td>'
-            f'<td>{c["covered_groups"] if c["covered_groups"] is not None else 0} / {c["groups"]}<small>{c["groups"] if r['quantile'] is not None else 0} with finite envelope</small></td></tr>')
+            f'<td>{c["covered_groups"] if c["covered_groups"] is not None else 0} / {c["groups"]}<small>{finite_groups} with finite envelope</small></td></tr>')
     return '''<section id="acquisition-routing" aria-labelledby="routing-title">
 <h2 id="routing-title">One error model. Different acquisition support.</h2>
 <p>Development fixes the shared mean and full covariance. Each prespecified acquisition category has its own calibration-group order statistic. The pooled radius is diagnostic only: there is no fallback when a category is absent, too small, or unbounded.</p>

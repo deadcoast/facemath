@@ -1,0 +1,575 @@
+{
+  "schema": "facemath.review_remediation.v1",
+  "version": "0.10.1",
+  "created_utc": "2026-10-01T22:00:02.590604+00:00",
+  "baseline_review_sha256": "ec9fb50eccadfc148f12981d1bcbd763735f96f6a19e125dd8c818a007c2790a",
+  "parent": {
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\Users\\ryanf\\github\\_active\\facemath\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "parent_archive": "C:\\Users\\ryanf\\github\\_active\\facemath\\packages\\facemath_wave_10.zip",
+    "parent_sha256": "1553cdb8462328422ddea3c87d07c31f933c16f4da47dadce05471d28059acf7",
+    "started_utc": "2026-10-01T21:01:51.382464+00:00",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "-ra",
+      "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\parent.xml",
+      "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\parent-temp"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\parent\\facemath_wave_10",
+    "returncode": 1,
+    "elapsed_seconds": 108.6010410785675
+  },
+  "engine_code_sha256": "3f504c6c8a2de06d4b44ecc520e12da34624737c918afe254bce6832ec36700a",
+  "environment": {
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "opencv-python": "4.14.0.94",
+      "mediapipe": null,
+      "pytest": "9.1.1"
+    },
+    "numeric_environment": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "opencv": "4.14.0"
+    },
+    "engine_code_sha256": "3f504c6c8a2de06d4b44ecc520e12da34624737c918afe254bce6832ec36700a"
+  },
+  "suites": {
+    "parent": {
+      "tests": 943,
+      "failures": 4,
+      "errors": 83,
+      "skipped": 2,
+      "passed": 854,
+      "seconds": 107.168,
+      "skips": [
+        {
+          "test": "test_live_mediapipe_provider",
+          "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+        },
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "first_patched_python314": {
+      "tests": 958,
+      "failures": 2,
+      "errors": 0,
+      "skipped": 2,
+      "passed": 954,
+      "seconds": 345.31,
+      "skips": [
+        {
+          "test": "test_live_mediapipe_provider",
+          "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+        },
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "first_patched_python311": {
+      "tests": 958,
+      "failures": 2,
+      "errors": 0,
+      "skipped": 2,
+      "passed": 954,
+      "seconds": 360.85,
+      "skips": [
+        {
+          "test": "test_live_mediapipe_provider",
+          "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+        },
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "source_python314": {
+      "tests": 958,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "passed": 956,
+      "seconds": 319.213,
+      "skips": [
+        {
+          "test": "test_live_mediapipe_provider",
+          "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+        },
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "source_python311": {
+      "tests": 958,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "passed": 956,
+      "seconds": 334.975,
+      "skips": [
+        {
+          "test": "test_live_mediapipe_provider",
+          "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+        },
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "installed_wheel_python314": {
+      "tests": 958,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "passed": 956,
+      "seconds": 219.292,
+      "skips": [
+        {
+          "test": "test_live_mediapipe_provider",
+          "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+        },
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "extracted_archive_python314": {
+      "tests": 959,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "passed": 957,
+      "seconds": 346.614,
+      "skips": [
+        {
+          "test": "test_live_mediapipe_provider",
+          "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+        },
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    }
+  },
+  "archive": {
+    "verified": true,
+    "files": 5842,
+    "version": "0.10.1",
+    "archive_sha256": "1aad162e54dacbdc0b66902697b30e36ef2d1584d137f178deff5251d8bf61ff",
+    "kind": "archive",
+    "scope": "shipped-byte consistency, not external authenticity or numerical replay",
+    "path": "packages/facemath-0.10.1-review-20261001.zip"
+  },
+  "wheel_bytes": {
+    "verified": true,
+    "python_files": 79,
+    "import": {
+      "file": "C:\\Users\\ryanf\\AppData\\Local\\Temp\\facemath-installed-682f29r2\\installed\\facemath\\__init__.py",
+      "version": "0.10.1",
+      "code_sha256": "3f504c6c8a2de06d4b44ecc520e12da34624737c918afe254bce6832ec36700a"
+    },
+    "scope": "installed wheel Python bytes; same interpreter dependencies, not a new dependency stack"
+  },
+  "packaging_followup": {
+    "reason": "Actual Windows wheel metadata exposed CRLF parser bug after source/wheel suites.",
+    "regressions": "6 passed on both Python 3.11 and 3.14 after parser correction",
+    "suite_count_difference": "Final archive adds one packaging regression; application source and wheel bytes unchanged.",
+    "failed_attempt": "evidence/review-remediation-20261001/packaging-correction/validation314-final.json",
+    "final_distinct_run": {
+      "completed": true,
+      "engine_code_sha256": "3f504c6c8a2de06d4b44ecc520e12da34624737c918afe254bce6832ec36700a",
+      "commands": [
+        {
+          "command": [
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\scripts\\package_release.py",
+            "--wheel",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\verified314\\wheels\\facemath-0.10.1-py3-none-any.whl",
+            "--stage",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\stage",
+            "--output",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\facemath-0.10.1.zip",
+            "--evidence",
+            "evidence/review-remediation-20261001",
+            "--dry-run"
+          ],
+          "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+          "started_utc": "2026-10-01T21:44:46.913476+00:00",
+          "environment": {
+            "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+            "OPENBLAS_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "UV_OFFLINE": "1"
+          },
+          "name": "selection",
+          "returncode": 0,
+          "finished_utc": "2026-10-01T21:44:47.578958+00:00"
+        },
+        {
+          "command": [
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\scripts\\package_release.py",
+            "--wheel",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\verified314\\wheels\\facemath-0.10.1-py3-none-any.whl",
+            "--stage",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\stage",
+            "--output",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\facemath-0.10.1.zip",
+            "--evidence",
+            "evidence/review-remediation-20261001"
+          ],
+          "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+          "started_utc": "2026-10-01T21:44:47.579469+00:00",
+          "environment": {
+            "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+            "OPENBLAS_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "UV_OFFLINE": "1"
+          },
+          "name": "package",
+          "returncode": 0,
+          "finished_utc": "2026-10-01T21:45:49.752879+00:00"
+        },
+        {
+          "command": [
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\scripts\\verify_release.py",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\facemath-0.10.1.zip"
+          ],
+          "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+          "started_utc": "2026-10-01T21:45:49.753714+00:00",
+          "environment": {
+            "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+            "OPENBLAS_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "UV_OFFLINE": "1"
+          },
+          "name": "archive-byte-verify",
+          "returncode": 0,
+          "finished_utc": "2026-10-01T21:45:51.269142+00:00"
+        },
+        {
+          "command": [
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\scripts\\verify_release.py",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1"
+          ],
+          "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1",
+          "started_utc": "2026-10-01T21:45:55.850553+00:00",
+          "environment": {
+            "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\src",
+            "OPENBLAS_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "UV_OFFLINE": "1"
+          },
+          "name": "extracted-byte-verify",
+          "returncode": 0,
+          "finished_utc": "2026-10-01T21:46:29.046034+00:00"
+        },
+        {
+          "command": [
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+            "-c",
+            "import facemath,json; from pathlib import Path; from facemath.observation.journal import code_fingerprint; assert Path(facemath.__file__).resolve().is_relative_to(Path.cwd()/\"src\"); print(json.dumps({\"import\":facemath.__file__,\"code_sha256\":code_fingerprint()}))"
+          ],
+          "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1",
+          "started_utc": "2026-10-01T21:46:29.047000+00:00",
+          "environment": {
+            "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\src",
+            "OPENBLAS_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "UV_OFFLINE": "1"
+          },
+          "name": "archive-import",
+          "returncode": 0,
+          "finished_utc": "2026-10-01T21:46:29.979592+00:00"
+        },
+        {
+          "command": [
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+            "-m",
+            "pytest",
+            "-q",
+            "-ra",
+            "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\archive.xml",
+            "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\archive-temp"
+          ],
+          "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1",
+          "started_utc": "2026-10-01T21:46:29.980345+00:00",
+          "environment": {
+            "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\src",
+            "OPENBLAS_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "UV_OFFLINE": "1"
+          },
+          "name": "archive-tests",
+          "returncode": 0,
+          "finished_utc": "2026-10-01T21:52:17.573982+00:00"
+        },
+        {
+          "command": [
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+            "-m",
+            "facemath",
+            "milestone-lab",
+            "--out",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\archive-lab"
+          ],
+          "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1",
+          "started_utc": "2026-10-01T21:52:17.574999+00:00",
+          "environment": {
+            "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\src",
+            "OPENBLAS_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "UV_OFFLINE": "1"
+          },
+          "name": "archive-milestone",
+          "returncode": 0,
+          "finished_utc": "2026-10-01T21:56:37.548649+00:00"
+        },
+        {
+          "command": [
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+            "-m",
+            "facemath",
+            "verify",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\archive-lab\\positive\\qualification"
+          ],
+          "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1",
+          "started_utc": "2026-10-01T21:56:37.549368+00:00",
+          "environment": {
+            "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\src",
+            "OPENBLAS_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "UV_OFFLINE": "1"
+          },
+          "name": "archive-qualification-verify",
+          "returncode": 0,
+          "finished_utc": "2026-10-01T21:56:42.825770+00:00"
+        },
+        {
+          "command": [
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+            "-m",
+            "facemath",
+            "replay",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\archive-lab\\positive\\qualification",
+            "--out",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\qualification-replay"
+          ],
+          "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1",
+          "started_utc": "2026-10-01T21:56:42.826359+00:00",
+          "environment": {
+            "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\src",
+            "OPENBLAS_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "UV_OFFLINE": "1"
+          },
+          "name": "archive-qualification-replay",
+          "returncode": 0,
+          "finished_utc": "2026-10-01T21:57:00.904218+00:00"
+        },
+        {
+          "command": [
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+            "-m",
+            "facemath",
+            "verify",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\archive-lab\\admitted_pair"
+          ],
+          "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1",
+          "started_utc": "2026-10-01T21:57:00.904877+00:00",
+          "environment": {
+            "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\src",
+            "OPENBLAS_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "UV_OFFLINE": "1"
+          },
+          "name": "archive-pair-verify",
+          "returncode": 0,
+          "finished_utc": "2026-10-01T21:57:22.041209+00:00"
+        },
+        {
+          "command": [
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+            "-m",
+            "facemath",
+            "replay",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\archive-lab\\admitted_pair",
+            "--out",
+            "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\pair-replay"
+          ],
+          "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1",
+          "started_utc": "2026-10-01T21:57:22.041975+00:00",
+          "environment": {
+            "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\src",
+            "OPENBLAS_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "UV_OFFLINE": "1"
+          },
+          "name": "archive-pair-replay",
+          "returncode": 0,
+          "finished_utc": "2026-10-01T21:58:32.756045+00:00"
+        }
+      ],
+      "prior_source_wheel_gates": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\verified314\\commands.json",
+      "prior_failed_wrapper": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\validation314-final.json",
+      "continuation_reason": "Release metadata parser corrected for actual CRLF wheel headers; application source and wheel bytes unchanged.",
+      "packaging_regressions": [
+        "packaging-final311.json",
+        "packaging-final314.json"
+      ],
+      "archive": {
+        "verified": true,
+        "files": 5842,
+        "version": "0.10.1",
+        "archive_sha256": "1aad162e54dacbdc0b66902697b30e36ef2d1584d137f178deff5251d8bf61ff",
+        "kind": "archive",
+        "scope": "shipped-byte consistency, not external authenticity or numerical replay"
+      }
+    }
+  },
+  "milestone": {
+    "positive_accepted": true,
+    "negative_withheld": true,
+    "raw_arrays_checked": 135,
+    "raw_arrays_unchanged": true,
+    "scope": "engineered synthetic controls, not native human-reference validation"
+  },
+  "implemented_findings": [
+    {
+      "id": "I01",
+      "change": "Locked stable acquisition snapshot with recreated ephemeral sentinel",
+      "files": [
+        "src/facemath/observation/study_io.py",
+        "tests/test_wave5_study.py"
+      ]
+    },
+    {
+      "id": "I02",
+      "change": "OpenCV 4 constraint and explicit Haar API/asset failures",
+      "files": [
+        "pyproject.toml",
+        "src/facemath/observation/provider.py",
+        "tests/test_wave3_provider.py"
+      ]
+    },
+    {
+      "id": "I03",
+      "change": "Original decoded ZIP names and complete path inventory checked before extraction",
+      "files": [
+        "src/facemath/observation/deployment.py",
+        "tests/test_wave10_snapshot.py"
+      ]
+    },
+    {
+      "id": "I04",
+      "change": "Python 3.11-compatible report expression; actual 3.11 suite executed",
+      "files": [
+        "src/facemath/observation/stratified_report.py"
+      ]
+    },
+    {
+      "id": "I05",
+      "change": "0.10.1 project/lock/wheel/installed identity; generated egg-info no longer tracked",
+      "files": [
+        "pyproject.toml",
+        "uv.lock",
+        "src/facemath/__init__.py",
+        "tests/test_wave3_cli.py"
+      ]
+    },
+    {
+      "id": "I06",
+      "change": "Explicit release staging, wheel parity, create-only versioned archive and sidecar",
+      "files": [
+        "scripts/package_release.py",
+        "scripts/verify_release.py",
+        "tests/test_release_packaging.py"
+      ]
+    },
+    {
+      "id": "I07",
+      "change": "Malformed ZIP fixture verifies local/central header bytes and original decoded names",
+      "files": [
+        "tests/test_wave10_snapshot.py"
+      ]
+    },
+    {
+      "id": "I08",
+      "change": "Held-out support preserves declared anatomical totals in JSON and HTML",
+      "files": [
+        "src/facemath/observation/measure.py",
+        "tests/test_wave3_instrument.py"
+      ]
+    }
+  ],
+  "development_progress": {
+    "D02": "Windows source 3.11/3.14 and installed/extracted 3.14 gates executed; hosted Linux/macOS and other Python matrix jobs not executed here",
+    "D03": "Lock refreshed and two isolated locked core environments tested; native-model/runtime compatibility remains unqualified",
+    "D13": "Driver source/wheel gates passed, then exposed CRLF packaging failure. Corrected packaging and archive gates executed in a distinct continuation; no fresh full single-driver rerun is claimed. Parent baseline and all failed attempts retained separately.",
+    "D14": "Historical root manifest distinguished from new staged manifests in README and remediation design"
+  },
+  "remaining_findings": [
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "D01",
+    "D02",
+    "D03",
+    "D04",
+    "D05",
+    "D06",
+    "D07",
+    "D08",
+    "D09",
+    "D10",
+    "D11",
+    "D12",
+    "D13",
+    "D14",
+    "D15",
+    "I09",
+    "I10",
+    "I11",
+    "I12",
+    "I13",
+    "I14",
+    "I15",
+    "I16"
+  ],
+  "limits": [
+    "No pinned native model/runtime or live independent-reference study was executed; models/ contains only its README.",
+    "No browser pointer/annotation-coordinate acceptance was executed; D05/D06 remain open.",
+    "I09-I16 and the remaining research/operational items are not claimed fixed.",
+    "The two skipped tests require real native assets and Windows directory-symlink permission respectively.",
+    "Installed-wheel testing uses the validated 3.14 numerical stack; it is not another independent dependency resolution.",
+    "Byte hashes and replay establish internal consistency, not external authenticity or human accuracy."
+  ],
+  "records": {
+    "preseal": "evidence/review-remediation-20261001/preseal",
+    "baseline_and_development": "evidence/review-remediation-20261001/baseline-and-development",
+    "postseal": "evidence/review-remediation-20261001/postseal"
+  }
+}

@@ -1,0 +1,55 @@
+........................................................................ [  7%]
+........................................................................ [ 15%]
+........................................................................ [ 22%]
+....F.................F................................................. [ 30%]
+....................s................................................... [ 37%]
+........................................................................ [ 45%]
+........................................................................ [ 52%]
+...s.................................................................... [ 60%]
+........................................................................ [ 67%]
+........................................................................ [ 75%]
+........................................................................ [ 82%]
+........................................................................ [ 90%]
+........................................................................ [ 97%]
+......................                                                   [100%]
+================================== FAILURES ===================================
+________ test_module_entrypoint_reports_version_from_another_directory ________
+
+tmp_path = WindowsPath('C:/Users/ryanf/github/_active/facemath/runs/review-remediation-20261001/source311-temp/test_module_entrypoint_reports0')
+
+    def test_module_entrypoint_reports_version_from_another_directory(tmp_path):
+        result = subprocess.run([sys.executable, '-m', 'facemath', '--version'], cwd=tmp_path,
+                                text=True, capture_output=True, check=True)
+>       assert result.stdout.strip() == 'facemath 0.10.0'
+E       AssertionError: assert 'facemath 0.10.1' == 'facemath 0.10.0'
+E         
+E         - facemath 0.10.0
+E         ?               ^
+E         + facemath 0.10.1
+E         ?               ^
+
+tests\test_wave3_cli.py:36: AssertionError
+_____ test_lazy_public_api_preserves_original_classes_and_exposes_version _____
+
+    def test_lazy_public_api_preserves_original_classes_and_exposes_version():
+        import facemath
+        from facemath.core import Frame
+        from facemath.observation import FacialInstrument, InstrumentFailure
+        assert facemath.Frame is Frame
+        assert facemath.FacialInstrument is FacialInstrument
+        assert facemath.InstrumentFailure is InstrumentFailure
+>       assert facemath.__version__ == '0.10.0'
+E       AssertionError: assert '0.10.1' == '0.10.0'
+E         
+E         - 0.10.0
+E         ?      ^
+E         + 0.10.1
+E         ?      ^
+
+tests\test_wave3_cli.py:149: AssertionError
+=========================== short test summary info ===========================
+SKIPPED [1] tests\test_wave3_provider.py:95: live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment
+SKIPPED [1] tests\test_wave5_execution.py:158: platform cannot create a directory symlink
+FAILED tests/test_wave3_cli.py::test_module_entrypoint_reports_version_from_another_directory
+FAILED tests/test_wave3_cli.py::test_lazy_public_api_preserves_original_classes_and_exposes_version
+2 failed, 954 passed, 2 skipped in 360.88s (0:06:00)

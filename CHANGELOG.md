@@ -1,3 +1,19 @@
+# 0.10.1 · Active workflow and release repairs
+
+Windows qualification now snapshots stable acquisition bytes while retaining the
+writer lock and recreating its temporary sentinel. Snapshot extraction validates
+original ZIP names and the full path inventory before writing. Held-out regional
+measurements preserve declared landmark totals. Python 3.11 report syntax is
+restored, and the existing coarse locator requires OpenCV 4 with explicit missing
+API/asset errors.
+
+The uv lock and generated package metadata match 0.10.1. Release packaging uses
+an explicit staging inventory, checked wheel bytes and create-only versioned
+archives. A current validation driver and CI configuration exercise source,
+installed-wheel and extracted-archive suites plus milestone, verify and replay.
+Historical evidence remains unchanged; this patch supplies no native or
+independent-human-reference acceptance.
+
 # 0.10.0 · Integrated observation-to-accepted-evidence milestone
 
 Consolidated blank reference workspaces, retained annotation revisions, frozen study origin, complete-group held-out acceptance, replay-backed deployment evidence, full-enrollment/context query leakage checks, explicit native smoke outcomes, and a compact inspectable pair readout. Research and empirically gated analyses remain separate paths through the same canonical instrument; attaching acceptance leaves raw geometry unchanged.

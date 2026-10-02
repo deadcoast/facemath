@@ -1,6 +1,7 @@
 from io import BytesIO
 from pathlib import Path
 import stat
+import struct
 import zipfile
 import warnings
 import pytest
@@ -16,14 +17,41 @@ def archive(names,symlink=False):
         with zipfile.ZipFile(out,'w') as z:
             for name in names:
                 i=zipfile.ZipInfo(name)
+                # Bypass ZipInfo's constructor normalization when writing this
+                # intentionally malformed fixture; inspect both raw headers below.
+                i.filename=name
                 if symlink:i.external_attr=(stat.S_IFLNK|0o777)<<16
                 z.writestr(i,b'original raw bytes')
-    return out.getvalue()
+    data=out.getvalue()
+    with zipfile.ZipFile(BytesIO(data)) as z:
+        central=z.start_dir
+        for name,info in zip(names,z.infolist()):
+            encoded=name.encode('utf-8')
+            offset=info.header_offset
+            size=struct.unpack_from('<H',data,offset+26)[0]
+            assert data[offset+30:offset+30+size]==encoded
+            size,extra,comment=struct.unpack_from('<HHH',data,central+28)
+            assert data[central+46:central+46+size]==encoded
+            assert info.orig_filename==name
+            central+=46+size+extra+comment
+    return data
 
 
-@pytest.mark.parametrize('name',['../escape','/escape','a/../../escape','a//b','a/./b','a\\b','C:/a','a:ads','file.','dir /file','CON','nul.txt','a/COM1.log','a/LPT9','folder/'])
+@pytest.mark.parametrize('name',['../escape','/escape','a/../../escape','a//b','a/./b','a\\b','a\x00b','C:/a','a:ads','file.','dir /file','CON','nul.txt','a/COM1.log','a/LPT9','folder/'])
 def test_unsafe_portable_archive_names_rejected(tmp_path,name):
-    with pytest.raises(ObservationError):unpack_snapshot(archive([name]),tmp_path)
+    with pytest.raises(ObservationError):unpack_snapshot(archive(['valid/first',name]),tmp_path)
+    assert list(tmp_path.iterdir())==[]
+
+
+@pytest.mark.parametrize('names',[['a','a/b'],['A/b','a']])
+def test_file_directory_collision_rejected_before_writing(tmp_path,names):
+    with pytest.raises(ObservationError,match='collision'):unpack_snapshot(archive(names),tmp_path)
+    assert list(tmp_path.iterdir())==[]
+
+
+def test_benign_slash_path_is_not_malformed(tmp_path):
+    unpack_snapshot(archive(['a/b']),tmp_path)
+    assert (tmp_path/'a/b').read_bytes()==b'original raw bytes'
 
 
 @pytest.mark.parametrize('names',[['same','same'],['same','SAME']])

@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env311\\Scripts\\python.exe",
+    "-c",
+    "from pathlib import Path; import sys,json,hashlib; paths=[p for d in (\"src/facemath\",\"scripts\",\"tests\") for p in Path(d).rglob(\"*.py\")]; records=[(str(p),hashlib.sha256(p.read_bytes()).hexdigest()) for p in paths if compile(p.read_bytes(),str(p),\"exec\")]; print(json.dumps({\"python\":sys.version,\"parsed\":len(records),\"files\":records},indent=2))"
+  ],
+  "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+  "started_utc": "2026-10-01T21:27:31.101979+00:00",
+  "finished_utc": "2026-10-01T21:27:31.346173+00:00",
+  "elapsed_seconds": 0.24419480003416538,
+  "returncode": 0,
+  "environment": {
+    "PYTHONPATH": null,
+    "UV_CACHE_DIR": null,
+    "UV_PROJECT_ENVIRONMENT": null,
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

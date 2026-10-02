@@ -149,3 +149,18 @@ def test_clipped_eye_anchor_cannot_silently_define_the_canonical_chart():
     b = phantom_observation(image, target)
     with pytest.raises(ObservationError, match='eye anchors'):
         FacialInstrument().run(image, image, a, b)
+
+
+@pytest.mark.parametrize('missing',[(),(12,),(10,11,12,13)])
+def test_heldout_region_keeps_declared_denominator_in_export(missing):
+    points=phantom_points(); target=points.copy()
+    for index in missing:
+        target[index]=[500+index,500]
+    image=render_phantom(points)
+    result=run(points,target,image_a=image,image_b=image)
+    ledger={m['name']:m for m in result.evidence()['measurement_profile']}
+    for name in ('geometry.nose.rms','registration.heldout_nose.rms','registration.heldout_nose.change'):
+        assert ledger[name]['support']==4-len(missing)
+        assert ledger[name]['total']==4
+        assert (ledger[name]['value'] is None)==(len(missing)==4)
+    np.testing.assert_array_equal(result.state.observation_b.xy,target)

@@ -59,9 +59,11 @@ def unpack_snapshot(data: bytes, destination: Path) -> None:
                 raise ObservationError("qualification snapshot exceeds extraction budget")
             seen = set()
             for info in entries:
-                name = info.filename
+                # ZipInfo truncates NULs and normalizes backslashes on Windows.
+                # Validate the original decoded name before using any alias.
+                name = info.orig_filename
                 path = PurePosixPath(name)
-                if (not name or "\\" in name or "\x00" in name or ":" in name
+                if (name != info.filename or not name or "\\" in name or "\x00" in name or ":" in name
                         or path.is_absolute() or any(p in ("", ".", "..") for p in name.split("/"))
                         or name.casefold() in seen
                         or any(p.rstrip(" .") != p for p in path.parts)
@@ -69,6 +71,14 @@ def unpack_snapshot(data: bytes, destination: Path) -> None:
                         or info.is_dir() or stat.S_ISLNK(info.external_attr >> 16)):
                     raise ObservationError("unsafe or duplicate qualification snapshot path")
                 seen.add(name.casefold())
+            # A file cannot also be a directory, including case aliases on
+            # Windows. Validate the entire inventory before publishing bytes.
+            for info in entries:
+                path = PurePosixPath(info.filename)
+                if any(parent.as_posix().casefold() in seen for parent in path.parents if parent != PurePosixPath('.')):
+                    raise ObservationError("unsafe qualification snapshot file/directory collision")
+            for info in entries:
+                path = PurePosixPath(info.filename)
                 target = destination.joinpath(*path.parts)
                 target.parent.mkdir(parents=True, exist_ok=True)
                 with target.open("xb") as stream:

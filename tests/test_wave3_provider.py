@@ -154,3 +154,16 @@ def test_absent_optional_runtime_is_explicit_not_a_fallback(tmp_path, monkeypatc
 def test_offline_coarse_locator_on_blank_raster_returns_no_landmark_claim():
     from facemath.observation.provider import locate_faces
     assert locate_faces(np.zeros((96, 112, 3), np.uint8)) == []
+
+
+@pytest.mark.parametrize('missing',['api','data','asset'])
+def test_coarse_locator_missing_prerequisites_are_explicit(tmp_path,monkeypatch,missing):
+    from facemath.observation import provider
+    if missing=='api':
+        monkeypatch.delattr(provider.cv2,'CascadeClassifier',raising=False)
+    elif missing=='data':
+        monkeypatch.delattr(provider.cv2,'data',raising=False)
+    else:
+        monkeypatch.setattr(provider.cv2.data,'haarcascades',str(tmp_path))
+    with pytest.raises(ProviderUnavailable,match='Haar API|asset not found'):
+        provider.locate_faces(np.zeros((96,112,3),np.uint8))

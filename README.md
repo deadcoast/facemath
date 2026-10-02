@@ -1,5 +1,21 @@
 # FACEMATH · Wave 10 milestone
 
+Version **0.10.1** repairs the active Windows qualification, portable-snapshot,
+compatibility and missing-landmark blockers identified in
+`REPOSITORY_REVIEW.json`. See [the remediation design and validation boundaries](docs/REVIEW_REMEDIATION_20261001.md).
+
+For reproducible development, use `uv sync --locked --extra dev`, then
+`uv run --locked python -m pytest -q`. The lock includes the supported OpenCV 4
+Haar locator dependency. Native observation still requires a separately pinned
+compatible runtime/model and independent portrait references.
+
+Run `uv run --locked python scripts/validate_current.py --out runs/validation-001`
+for source, installed-wheel and extracted-archive checks, including milestone
+controls and verify/replay. The destination must be new. This validates the
+executing host; the hosted CI matrix remains configuration until actually run.
+The root `RELEASE_MANIFEST.json` describes the historical Wave10 archive. New
+manifests are generated only inside new release stages.
+
 A local Python instrument for **projected facial geometry, observation error, and auditable source evidence**. It does not identify people or turn a visually chosen percentage into a biometric measurement.
 
 Wave 10 consolidates source intake → independent annotation → frozen acquisition → error-model qualification → measured query sources → geometric comparison into one operational workflow. The existing `Observation`, `CanonicalState`, error models, relation graph and evidence bundles remain authoritative.

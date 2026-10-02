@@ -180,7 +180,12 @@ def annotated_observation(image: np.ndarray, xy: np.ndarray, *, annotation_id: s
 def locate_faces(image: np.ndarray) -> list[dict[str, Any]]:
     """Offline coarse ROI proposals only. Never fabricates full mesh anatomy."""
     image = rgb_image(image)
-    path = Path(cv2.data.haarcascades) / "haarcascade_frontalface_default.xml"
+    cascade_dir = getattr(getattr(cv2, "data", None), "haarcascades", None)
+    if not callable(getattr(cv2, "CascadeClassifier", None)) or not cascade_dir:
+        raise ProviderUnavailable("OpenCV Haar API unavailable; install the supported opencv-python>=4.9,<5 dependency")
+    path = Path(cascade_dir) / "haarcascade_frontalface_default.xml"
+    if not path.is_file():
+        raise ProviderUnavailable(f"OpenCV frontal face cascade asset not found: {path}")
     detector = cv2.CascadeClassifier(str(path))
     if detector.empty():
         raise ProviderUnavailable("OpenCV frontal face cascade unavailable")

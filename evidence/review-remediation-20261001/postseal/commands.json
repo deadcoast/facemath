@@ -1,0 +1,234 @@
+[
+  {
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\scripts\\package_release.py",
+      "--wheel",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\verified314\\wheels\\facemath-0.10.1-py3-none-any.whl",
+      "--stage",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\stage",
+      "--output",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\facemath-0.10.1.zip",
+      "--evidence",
+      "evidence/review-remediation-20261001",
+      "--dry-run"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+    "started_utc": "2026-10-01T21:44:46.913476+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "UV_OFFLINE": "1"
+    },
+    "name": "selection",
+    "returncode": 0,
+    "finished_utc": "2026-10-01T21:44:47.578958+00:00"
+  },
+  {
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\scripts\\package_release.py",
+      "--wheel",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\verified314\\wheels\\facemath-0.10.1-py3-none-any.whl",
+      "--stage",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\stage",
+      "--output",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\facemath-0.10.1.zip",
+      "--evidence",
+      "evidence/review-remediation-20261001"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+    "started_utc": "2026-10-01T21:44:47.579469+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "UV_OFFLINE": "1"
+    },
+    "name": "package",
+    "returncode": 0,
+    "finished_utc": "2026-10-01T21:45:49.752879+00:00"
+  },
+  {
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\scripts\\verify_release.py",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\facemath-0.10.1.zip"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+    "started_utc": "2026-10-01T21:45:49.753714+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "UV_OFFLINE": "1"
+    },
+    "name": "archive-byte-verify",
+    "returncode": 0,
+    "finished_utc": "2026-10-01T21:45:51.269142+00:00"
+  },
+  {
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\scripts\\verify_release.py",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1",
+    "started_utc": "2026-10-01T21:45:55.850553+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\src",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "UV_OFFLINE": "1"
+    },
+    "name": "extracted-byte-verify",
+    "returncode": 0,
+    "finished_utc": "2026-10-01T21:46:29.046034+00:00"
+  },
+  {
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+      "-c",
+      "import facemath,json; from pathlib import Path; from facemath.observation.journal import code_fingerprint; assert Path(facemath.__file__).resolve().is_relative_to(Path.cwd()/\"src\"); print(json.dumps({\"import\":facemath.__file__,\"code_sha256\":code_fingerprint()}))"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1",
+    "started_utc": "2026-10-01T21:46:29.047000+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\src",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "UV_OFFLINE": "1"
+    },
+    "name": "archive-import",
+    "returncode": 0,
+    "finished_utc": "2026-10-01T21:46:29.979592+00:00"
+  },
+  {
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "-ra",
+      "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\archive.xml",
+      "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\archive-temp"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1",
+    "started_utc": "2026-10-01T21:46:29.980345+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\src",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "UV_OFFLINE": "1"
+    },
+    "name": "archive-tests",
+    "returncode": 0,
+    "finished_utc": "2026-10-01T21:52:17.573982+00:00"
+  },
+  {
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "milestone-lab",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\archive-lab"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1",
+    "started_utc": "2026-10-01T21:52:17.574999+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\src",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "UV_OFFLINE": "1"
+    },
+    "name": "archive-milestone",
+    "returncode": 0,
+    "finished_utc": "2026-10-01T21:56:37.548649+00:00"
+  },
+  {
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "verify",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\archive-lab\\positive\\qualification"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1",
+    "started_utc": "2026-10-01T21:56:37.549368+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\src",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "UV_OFFLINE": "1"
+    },
+    "name": "archive-qualification-verify",
+    "returncode": 0,
+    "finished_utc": "2026-10-01T21:56:42.825770+00:00"
+  },
+  {
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "replay",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\archive-lab\\positive\\qualification",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\qualification-replay"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1",
+    "started_utc": "2026-10-01T21:56:42.826359+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\src",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "UV_OFFLINE": "1"
+    },
+    "name": "archive-qualification-replay",
+    "returncode": 0,
+    "finished_utc": "2026-10-01T21:57:00.904218+00:00"
+  },
+  {
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "verify",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\archive-lab\\admitted_pair"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1",
+    "started_utc": "2026-10-01T21:57:00.904877+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\src",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "UV_OFFLINE": "1"
+    },
+    "name": "archive-pair-verify",
+    "returncode": 0,
+    "finished_utc": "2026-10-01T21:57:22.041209+00:00"
+  },
+  {
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\env314\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "replay",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\archive-lab\\admitted_pair",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\pair-replay"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1",
+    "started_utc": "2026-10-01T21:57:22.041975+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\review-remediation-20261001\\release-final\\extracted\\facemath-0.10.1\\src",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "UV_OFFLINE": "1"
+    },
+    "name": "archive-pair-replay",
+    "returncode": 0,
+    "finished_utc": "2026-10-01T21:58:32.756045+00:00"
+  }
+]

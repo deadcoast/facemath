@@ -1,0 +1,110 @@
+{
+  "format": "facemath.pair_readout.v10",
+  "recipe_sha256": "5ab307da7c03f940a28188deabedaf43e1f9b77e8cb3b33760fab0b5af81a197",
+  "scope": "projected geometry, not identity",
+  "empirical_admission": {
+    "status": "not_requested",
+    "passed": false,
+    "scope": "research analysis; empirical acceptance not asserted"
+  },
+  "localization_calibrated": false,
+  "registered_all_rms": {
+    "name": "geometry.all.rms",
+    "value": 6.092853693307236e-17,
+    "unit": "registered_eye_span_geomean",
+    "support": 17,
+    "total": 21,
+    "family": "landmarks",
+    "interpretation": "lower residual means closer projected layout under this registration gauge",
+    "interval": [
+      0.0033036300023537714,
+      0.0044926459836893366
+    ],
+    "interval_kind": "95_percent_conditional_observation_sensitivity_not_accuracy_CI",
+    "exclusion": null
+  },
+  "shape_distance": {
+    "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+    "observed_rms": null,
+    "reference_set_center_rms": null,
+    "lower": null,
+    "upper": null,
+    "available": false,
+    "reason": "no_localization_calibration",
+    "distance_matrix_lower": null,
+    "quotient_lipschitz_lower": null,
+    "quotient_lipschitz_upper": null,
+    "candidate_rotation_upper": null,
+    "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+    "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+    "arrays": [
+      "intrinsic_shape_deviation_radii",
+      "intrinsic_shape_candidate_rotation"
+    ]
+  },
+  "families": [
+    {
+      "family": "distance",
+      "prespecified_relations": 28,
+      "nominally_observable": 21,
+      "bounded_relations": 0,
+      "within": 0,
+      "outside": 0,
+      "unresolved_or_unavailable": 28,
+      "within_tolerance_fraction_bounds": null,
+      "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability",
+      "within_tolerance_percent_bounds": null
+    },
+    {
+      "family": "angle",
+      "prespecified_relations": 168,
+      "nominally_observable": 105,
+      "bounded_relations": 0,
+      "within": 0,
+      "outside": 0,
+      "unresolved_or_unavailable": 168,
+      "within_tolerance_fraction_bounds": null,
+      "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability",
+      "within_tolerance_percent_bounds": null
+    },
+    {
+      "family": "signed_double_area",
+      "prespecified_relations": 56,
+      "nominally_observable": 35,
+      "bounded_relations": 0,
+      "within": 0,
+      "outside": 0,
+      "unresolved_or_unavailable": 56,
+      "within_tolerance_fraction_bounds": null,
+      "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability",
+      "within_tolerance_percent_bounds": null
+    },
+    {
+      "family": "asymmetry",
+      "prespecified_relations": 4,
+      "nominally_observable": 2,
+      "bounded_relations": 0,
+      "within": 0,
+      "outside": 0,
+      "unresolved_or_unavailable": 4,
+      "within_tolerance_fraction_bounds": null,
+      "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability",
+      "within_tolerance_percent_bounds": null
+    }
+  ],
+  "percentage_meaning": "fraction of a prespecified, dependent relation inventory within explicit tolerances; NOT a probability of resemblance",
+  "array_file": "arrays.npz",
+  "exact_relation_rows": "intrinsic.json",
+  "execution_journal": "events.jsonl",
+  "source_measured": false,
+  "warning_count": 4,
+  "limits": [
+    "2D projected geometry, not identity recognition or proof of 3D shape",
+    "model contours and interpolated fields derive from the same landmarks; not independent evidence",
+    "sensitivity intervals are conditional perturbation intervals, not measured localization-accuracy confidence intervals",
+    "flow consistency tests image matching, not anatomical correctness across people",
+    "within-tolerance fractions have an explicit threshold and denominator; they are not resemblance probabilities",
+    "no population rarity without an exact-recipe held-out reference cohort",
+    "the report contains new tool-side evidence, not inaccessible historical model activations"
+  ]
+}

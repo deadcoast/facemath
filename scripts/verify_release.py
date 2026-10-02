@@ -23,7 +23,7 @@ def verify(path:Path)->dict:
             records={}
             for info in z.infolist():
                 name=info.filename
-                if (name in records or '\\' in name or '..' in PurePosixPath(name).parts
+                if (info.orig_filename != name or name in records or '\\' in name or '\x00' in name or '..' in PurePosixPath(name).parts
                         or not name.startswith(prefix) or PurePosixPath(name).is_absolute()
                         or stat.S_ISLNK(info.external_attr>>16) or info.is_dir()):
                     raise ValueError('unsafe or duplicate release member')
