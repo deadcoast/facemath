@@ -75,6 +75,9 @@ def main() -> None:
     run('environment',[sys.executable,'-c',
         'import json; from facemath.observation.journal import environment; print(json.dumps(environment(),indent=2))'],source=root)
     run('lock-check',[shutil.which('uv') or 'uv','lock','--check'])
+    if native_relative:
+        run('native-runtime',[sys.executable,root/'scripts/check_native_runtime.py',
+            '--dataset',root/native_relative,'--out',out/'native-runtime'],source=root)
     run('source-tests',[sys.executable,'-m','pytest','-q','-ra',f'--junitxml={out / "source.xml"}',
                         f'--basetemp={out / "source-temp"}'],source=root)
     if native_relative:
@@ -98,6 +101,7 @@ def main() -> None:
                 shutil.copyfile(path,retained/path.name)
         shutil.copytree(lab,retained/'laboratory')
         if native_relative:
+            shutil.copytree(out/'native-runtime',retained/'native-runtime')
             shutil.copytree(out/'source-native',retained/'native-pipeline')
         installed=retained/'wheel-check';installed.mkdir()
         for path in (out/'wheel-check').iterdir():

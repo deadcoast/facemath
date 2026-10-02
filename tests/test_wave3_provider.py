@@ -94,13 +94,18 @@ def test_wrong_model_hash_rejected_before_importing_optional_runtime(tmp_path):
 
 @pytest.mark.live_observer
 @pytest.mark.skipif(not (os.getenv('FACEMATH_MODEL') and os.getenv('FACEMATH_FACE')), reason='live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment')
-def test_live_mediapipe_provider():
-    import cv2
-    bgr=cv2.imread(os.environ['FACEMATH_FACE'])
-    assert bgr is not None
-    rgb=cv2.cvtColor(bgr,cv2.COLOR_BGR2RGB)
-    with MediaPipeProvider(os.environ['FACEMATH_MODEL']) as provider:
-        obs=provider.observe(rgb)
+def test_live_mediapipe_provider(tmp_path):
+    # An aborting native library must fail this test without killing pytest or
+    # losing its actual stderr. Exercise the same worker used by study runs.
+    from facemath.observation.native_check import native_smoke, verify_smoke
+    from facemath.observation.contracts import Observation
+    from facemath.observation.study import read_json
+    root = tmp_path / 'live-smoke'
+    report = native_smoke(os.environ['FACEMATH_FACE'], os.environ['FACEMATH_MODEL'], root)
+    stderr = root / 'attempt/stderr.txt'
+    assert report['status'] == 'observed', (report, stderr.read_text(errors='replace') if stderr.exists() else '')
+    assert verify_smoke(root)['verified']
+    obs = Observation.from_dict(read_json(root / 'observation.json'))
     assert obs.xy.shape==(478,2)
     assert np.isfinite(obs.samples).all()
 

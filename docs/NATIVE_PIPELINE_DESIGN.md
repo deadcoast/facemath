@@ -56,3 +56,18 @@ tampering after transfer, explicit machine-reference provenance and refusal of
 machine labels by empirical admission. The real pilot executes the pinned model.
 Source, installed-wheel and extracted-archive checks retain raw command records.
 The inherited milestone checks continue to test observed-state invariance.
+
+## Native portability repair
+
+The next patch starts from the actual 0.11.0 archive, SHA-256
+`bf181b9e8719b99f370bd1e0e17e1f4a187d053e397a7cce5413fb883791bfd4`.
+Its hosted regression matrix passed all twelve OS/Python combinations. Native
+Windows passed; Linux lacked `libEGL.so.1`, and macOS aborted in the native
+constructor inside pytest. Those original outputs remain failure evidence.
+
+Move live validation through the existing isolated worker and run a retained,
+strict native execution gate before the full test suite. A fatal library error
+must remain a failing gate with native stderr and return code, without aborting
+the validation controller. Install the required Linux shared libraries explicitly.
+Diagnose macOS from its isolated process output before selecting a remedy.
+No numerical settings, labels, splits or evaluation outcomes change in this repair.
