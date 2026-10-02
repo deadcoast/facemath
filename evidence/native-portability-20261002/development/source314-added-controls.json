@@ -1,0 +1,24 @@
+{
+  "command": [
+    "runs/native-portability-20261002/env314/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_wave5_execution.py",
+    "-k",
+    "actual_child_failure",
+    "--basetemp=runs/native-portability-20261002/source314-fault-temp"
+  ],
+  "cwd": ".",
+  "started_utc": "2026-10-02T11:39:52.121730+00:00",
+  "finished_utc": "2026-10-02T11:39:57.402823+00:00",
+  "elapsed_seconds": 5.281110399984755,
+  "returncode": 0,
+  "environment": {
+    "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath/src",
+    "UV_CACHE_DIR": null,
+    "UV_PROJECT_ENVIRONMENT": null,
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

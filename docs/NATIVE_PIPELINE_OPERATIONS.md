@@ -9,6 +9,23 @@ explicitly identifies its landmarks as shape-predictor outputs on PASCAL VOC
 photographs. The recipe retains this attribution, revision and all asset hashes.
 The retained Boost license covers dlib; it does not transfer photograph rights.
 
+Version 0.11.1 uses `opencv-contrib-python>=4.9,<5` as the sole `cv2` owner.
+OpenCV's [packaging instructions](https://pypi.org/project/opencv-contrib-python/)
+require selecting one wheel variant. Older FACEMATH observer environments may
+contain both `opencv-python` and `opencv-contrib-python`, with different binaries
+winning on different hosts. Preserve old environments for their original replay;
+create a fresh environment for new acquisition, for example by setting
+`UV_PROJECT_ENVIRONMENT=runs/observer-0111` before `uv sync --locked --python 3.11
+--extra dev --extra observer`. Do not reuse a mixed environment. Native preflight
+refuses multiple variants, unsupported versions or a metadata/binary mismatch.
+
+Ubuntu native execution needs `libegl1` and `libgles2`; the native CI job installs
+them explicitly. `scripts/check_native_runtime.py --dataset DATASET --out NEW_RUN`
+requires actual inference through the isolated worker and retains failures. The
+full release validator invokes it before pytest, so a native abort cannot erase
+the test controller's diagnostics. A successful process gate is not a coverage
+or accuracy claim.
+
 `dataset fetch` is the explicit network operation. It bounds downloads by pinned
 sizes and rejects changed bytes. A failed fetch retains the received artifact and
 a failure receipt. `dataset prepare` works offline, requires the entire declared
@@ -72,3 +89,15 @@ and byte checks, and actual native acquisition from source, installed wheel and
 extracted archive. It records commands, environments, return codes and raw logs.
 An executed Windows run does not establish Linux/macOS native compatibility;
 the hosted matrix records those platforms separately when actually executed.
+
+The 0.11.1 local Ubuntu/WSL2 pilot completes all 43 observations and its same-host
+replay. Its measured coordinate and augmentation arrays equal the Windows run
+byte-for-byte. A Linux bundle replayed on Windows nevertheless fails the strict
+qualification comparison: derived simultaneous scores differ in their final
+floating-point bits, while every saved numerical array remains byte-identical.
+Package version equality alone is therefore insufficient for cross-OS exact
+replay. Preserve the original bundle and runtime; the rejected recomputation is a
+distinct diagnostic result. No tolerance or saved result was changed to admit it.
+The measured Linux-to-Windows control has 12 identical saved arrays and a maximum
+absolute derived-score difference of `7.815970093361102e-14`. This value diagnoses
+that one run; it is not a new permissible replay tolerance.

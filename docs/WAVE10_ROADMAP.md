@@ -7,6 +7,24 @@ See [its operational contract](NATIVE_PIPELINE_OPERATIONS.md). Expand sourced
 datasets and assess useful error bounds next; retain the distinction between
 teacher-model agreement and independent anatomical accuracy throughout.
 
+The 0.11.1 portability repair removes competing OpenCV wheel distributions and
+retains isolated runtime failures. Windows and local Ubuntu/WSL2 both execute the
+43-case native pilot. Cross-host observed arrays match, but exact qualification
+replay rejects last-bit derived-score differences; retain this negative transfer
+control. Next work must define and test a portable numerical-runtime contract
+before claiming cross-OS exact replay, alongside expansion to a larger frozen
+source-disjoint cohort. Hosted requalification currently cannot start because of
+a GitHub account billing/spending-limit condition; the original macOS native
+constructor abort remains unresolved.
+
+The numerical transfer investigation starts at `observation/joint.py`'s
+`joint_scored_rows`, `observation/journal.py`'s `numeric_environment`, and
+`observation/study_io.py`'s strict replay comparator. Record BLAS/LAPACK build and
+CPU execution details, isolate the score-rounding source, and specify the
+supported reproducibility boundary before changing any numerical contract.
+Do not round stored results or enlarge replay tolerances merely to pass this
+already observed cross-host control.
+
 ## Gate A — actual native observations and independent references
 
 Execute `observer-smoke` with pinned local model/runtime on the intended machine. Preserve every process output and no-face/multi-face outcome. Do not treat model availability as anatomical accuracy. Acquire independently annotated original portraits under an explicit reference8 equivalence/visibility protocol. Use the new workspace and retained revisions rather than untracked spreadsheet coordinates.

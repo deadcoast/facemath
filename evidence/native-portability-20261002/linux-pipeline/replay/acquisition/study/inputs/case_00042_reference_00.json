@@ -1,0 +1,113 @@
+{
+  "format": "facemath.reference.v4",
+  "protocol_sha256": "db71853e5f9cc8f1929cf7329aad3d3111c9518cc5f10eb043e36ac530701972",
+  "names": [
+    "left_eye_outer",
+    "left_eye_inner",
+    "right_eye_inner",
+    "right_eye_outer",
+    "nose_tip",
+    "mouth_left",
+    "mouth_right",
+    "chin"
+  ],
+  "image_sha256": "c3e1415d5bf6114908b0e994411bc30b2337be6e3f0c11fd3e5869d9d5f79e57",
+  "image_shape": [
+    95,
+    95
+  ],
+  "xy": [
+    [
+      29.0,
+      34.0
+    ],
+    [
+      41.0,
+      35.0
+    ],
+    [
+      56.0,
+      34.0
+    ],
+    [
+      68.0,
+      32.0
+    ],
+    [
+      53.0,
+      49.0
+    ],
+    [
+      36.0,
+      60.0
+    ],
+    [
+      65.0,
+      58.0
+    ],
+    [
+      54.0,
+      84.0
+    ]
+  ],
+  "visible": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "rater_id": "published_teacher_model",
+  "kind": "model_generated",
+  "source": "https://github.com/davisking/dlib/tree/46fa4a281a35b16aed6577250d7dabbda0e74a2b/examples/faces",
+  "prediction_exposure": "unknown",
+  "metadata": {
+    "annotation_sha256": "b45d736ab07016dd552a95cedb569a5e1f0c4dacf9ba6db60861fec55c05c57e",
+    "box_index": 1,
+    "crop_xyxy_exclusive": [
+      250,
+      264,
+      345,
+      359
+    ],
+    "grouping_limit": "Whole source photograph is the dependence unit; person identities and cross-photo independence have not been established. No population coverage claim.",
+    "image_terms": "PASCAL VOC 2011 example photographs; original image rights remain with their owners. The retained dlib license covers dlib, not a transfer of photograph copyrights.",
+    "label_source": "Published dlib shape_predictor_68_face_landmarks.dat outputs; teacher version and training overlap unknown",
+    "mapping_requires_review": true,
+    "source_encoded_sha256": "2dc5d52a5388499cf912d7d99dc9d05e4bec7651153331f40e81ae4813bb317c",
+    "source_indices_zero_based": [
+      36,
+      39,
+      42,
+      45,
+      30,
+      48,
+      54,
+      8
+    ],
+    "source_origin": 0,
+    "source_raster_sha256": "a9ac87a18c9477d80aff9181f1565da6daa46bab25fcb5b72abb7656b2e7aba1",
+    "source_schema": "ibug68",
+    "source_to_crop": [
+      [
+        1,
+        0,
+        -250
+      ],
+      [
+        0,
+        1,
+        -264
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "visibility": "no_occlusion_labels; in_crop_assumed_observable"
+  }
+}

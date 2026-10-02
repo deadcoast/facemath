@@ -1,0 +1,34 @@
+{
+  "command": [
+    "wsl",
+    "-d",
+    "Ubuntu",
+    "--",
+    "env",
+    "OPENBLAS_NUM_THREADS=1",
+    "OMP_NUM_THREADS=1",
+    "PYTHONPATH=/mnt/c/Users/ryanf/github/_active/facemath/src",
+    "MPLCONFIGDIR=/mnt/c/Users/ryanf/github/_active/facemath/runs/native-portability-20261002/linux-mpl",
+    "FACEMATH_MODEL=/mnt/c/Users/ryanf/github/_active/facemath/evidence/native-portability-20261002/dataset/assets/face_landmarker.task",
+    "FACEMATH_FACE=/mnt/c/Users/ryanf/github/_active/facemath/evidence/native-portability-20261002/dataset/inputs/case_00000.png",
+    "/mnt/c/Users/ryanf/github/_active/facemath/runs/native-portability-20261002/env-linux/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "-ra",
+    "--junitxml=runs/native-portability-20261002/linux.xml",
+    "--basetemp=runs/native-portability-20261002/linux-temp"
+  ],
+  "cwd": ".",
+  "started_utc": "2026-10-02T11:37:12.479861+00:00",
+  "finished_utc": "2026-10-02T11:45:50.574498+00:00",
+  "elapsed_seconds": 518.1089999999967,
+  "returncode": 2,
+  "environment": {
+    "PYTHONPATH": null,
+    "UV_CACHE_DIR": "C:\\Users\\ryanf\\AppData\\Local\\uv\\cache",
+    "UV_PROJECT_ENVIRONMENT": null,
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

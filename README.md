@@ -1,6 +1,9 @@
 # FACEMATH · reproducible facial geometry
 
-Version **0.11.0** adds a pinned, automated native dataset pipeline: fetch assets,
+Version **0.11.1** hardens native pipeline portability: one OpenCV 4 contrib
+distribution, an explicit runtime binding check, isolated live tests and retained
+native failure diagnostics. The automated dataset pipeline introduced in 0.11.0
+can fetch assets,
 preserve source coordinates, freeze splits, observe, fit, calibrate, evaluate and
 replay. It also retains failed study artifacts and journals. No user-supplied
 image database or new human annotation campaign is required to run it.
@@ -34,8 +37,8 @@ See [pipeline operations](docs/NATIVE_PIPELINE_OPERATIONS.md) and
 [the design](docs/NATIVE_PIPELINE_DESIGN.md).
 
 For reproducible development, use `uv sync --locked --extra dev`, then
-`uv run --locked python -m pytest -q`. The lock includes the supported OpenCV 4
-Haar locator dependency. The native recipe supplies explicit runtime/model pins;
+`uv run --locked python -m pytest -q`. The lock includes one OpenCV 4 contrib
+distribution shared by the Haar locator and MediaPipe. The native recipe supplies explicit runtime/model pins;
 human-reference empirical admission remains a separate optional evidence gate.
 
 Run `uv run --locked python scripts/validate_current.py --out runs/validation-001`

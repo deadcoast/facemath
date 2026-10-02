@@ -103,6 +103,32 @@ def test_simulated_timeout_is_recorded_without_a_second_attempt(tmp_path, monkey
     assert read_json(out/'process.json')['timed_out']
 
 
+@pytest.mark.parametrize('failure', ['nonzero_exit', 'timeout'])
+def test_actual_child_failure_retains_output_and_controller_survives(tmp_path, monkeypatch, failure):
+    """A real process boundary, with a fault fixture rather than model inference."""
+    actual_run = subprocess.run
+    calls = []
+    program = ('import sys,time; print("fault-fixture-started", flush=True); '
+               'print("retained native stderr fixture", file=sys.stderr, flush=True); '
+               + ('sys.exit(23)' if failure == 'nonzero_exit' else 'time.sleep(30)'))
+    def launch_fault(command, **kwargs):
+        calls.append(command)
+        return actual_run([sys.executable, '-c', program], **kwargs)
+    monkeypatch.setattr('facemath.observation.study_runner.subprocess.run', launch_fault)
+    out = tmp_path / 'attempt'; out.mkdir()
+    result = NativeExecutor(tmp_path/'unused.task', timeout_seconds=3).execute(
+        tmp_path/'source.png', ObserverDeclaration.mediapipe('1'*64, '1.0.1'), out)
+    assert len(calls) == 1 and result.observation is None
+    assert 'fault-fixture-started' in (out/'stdout.txt').read_text()
+    assert 'retained native stderr fixture' in (out/'stderr.txt').read_text()
+    assert not (out/'response.json').exists()
+    process = read_json(out/'process.json')
+    if failure == 'timeout':
+        assert result.status == 'timeout' and process['timed_out']
+    else:
+        assert result.status == 'runtime_error' and process['returncode'] == 23
+
+
 def test_model_declaration_creation_is_not_inference(tmp_path):
     path=tmp_path/'opaque.task';path.write_bytes(b'test bytes; not a real model')
     args=build_parser().parse_args(['observer-pin','--model',str(path),'--runtime-version','1.0.1',

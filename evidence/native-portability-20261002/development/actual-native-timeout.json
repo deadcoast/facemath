@@ -1,0 +1,27 @@
+{
+  "command": [
+    "runs/native-portability-20261002/env311/Scripts/python.exe",
+    "-m",
+    "facemath",
+    "observer-smoke",
+    "evidence/native-portability-20261002/dataset/inputs/case_00000.png",
+    "--model",
+    "evidence/native-portability-20261002/dataset/assets/face_landmarker.task",
+    "--timeout",
+    "0.001",
+    "--out",
+    "runs/native-portability-20261002/actual-native-timeout"
+  ],
+  "cwd": ".",
+  "started_utc": "2026-10-02T11:39:50.275908+00:00",
+  "finished_utc": "2026-10-02T11:39:51.977788+00:00",
+  "elapsed_seconds": 1.702999999979511,
+  "returncode": 0,
+  "environment": {
+    "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath/src",
+    "UV_CACHE_DIR": null,
+    "UV_PROJECT_ENVIRONMENT": null,
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

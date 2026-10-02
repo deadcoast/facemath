@@ -1,3 +1,22 @@
+# 0.11.1 · Native environment consistency and isolated validation
+
+Replace conflicting OpenCV wheel variants with one constrained contrib wheel.
+Native acquisition refuses ambiguous distributions and mismatched loaded
+bindings. Environment evidence reports every OpenCV variant. Live tests execute
+through the existing isolated worker, and the release validator retains an early
+native execution gate. Linux CI installs EGL/GLES dependencies explicitly.
+Actual process exit/timeout controls retain stdout, stderr and terminal status.
+Numerical algorithms, observed coordinates, dataset splits and confidence levels
+remain unchanged. macOS native requalification remains open until executed.
+
+# 0.11.0 · Sourced native training and replay pipelines
+
+Pinned source assets and explicit crop transforms feed the existing prospective
+study freezer, isolated acquisition, development fit, calibration, evaluation and
+exact replay. The public dlib/PASCAL pilot retains 43 machine-labeled face crops
+from nine source photographs. Failed runs keep their actual partial evidence.
+Machine-reference agreement remains distinct from independent anatomical accuracy.
+
 # 0.10.1 · Active workflow and release repairs
 
 Windows qualification now snapshots stable acquisition bytes while retaining the

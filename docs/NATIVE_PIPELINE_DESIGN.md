@@ -71,3 +71,13 @@ must remain a failing gate with native stderr and return code, without aborting
 the validation controller. Install the required Linux shared libraries explicitly.
 Diagnose macOS from its isolated process output before selecting a remedy.
 No numerical settings, labels, splits or evaluation outcomes change in this repair.
+
+The inherited observer lock also installed two distributions sharing `cv2`:
+`opencv-python==4.14.0.94` and `opencv-contrib-python==5.0.0.93`. Hosted native
+Linux/macOS loaded 5.0.0 while the Windows pilot loaded 4.14.0. Replace both with
+one `opencv-contrib-python>=4.9,<5` dependency. Native preflight and direct provider
+construction require that single distribution and a matching loaded 4.x binding.
+Environment records list all four OpenCV wheel variants so conflicts stay visible.
+This fixes a demonstrated environment ambiguity; it does not establish the cause
+of the macOS abort. The next hosted jobs were refused before execution because of
+an account billing/spending-limit condition; retain that scheduler evidence too.

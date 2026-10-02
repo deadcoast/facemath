@@ -1,0 +1,31 @@
+{
+  "command": [
+    "wsl",
+    "-d",
+    "Ubuntu",
+    "--",
+    "env",
+    "OPENBLAS_NUM_THREADS=1",
+    "OMP_NUM_THREADS=1",
+    "PYTHONPATH=/mnt/c/Users/ryanf/github/_active/facemath/src",
+    "/tmp/facemath-portability-20261002-env/bin/python",
+    "-m",
+    "facemath",
+    "replay",
+    "runs/native-portability-20261002/release-check/source-native",
+    "--out",
+    "runs/native-portability-20261002/cross-windows-to-linux"
+  ],
+  "cwd": ".",
+  "started_utc": "2026-10-02T11:52:26.137923+00:00",
+  "finished_utc": "2026-10-02T11:52:38.036589+00:00",
+  "elapsed_seconds": 11.89100000000326,
+  "returncode": 2,
+  "environment": {
+    "PYTHONPATH": null,
+    "UV_CACHE_DIR": "C:\\Users\\ryanf\\AppData\\Local\\uv\\cache",
+    "UV_PROJECT_ENVIRONMENT": null,
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

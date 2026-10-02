@@ -1,0 +1,85 @@
+{
+  "archive": {
+    "path": "packages/facemath-0.11.1-portability-20261002.zip",
+    "bytes": 312005929,
+    "sha256": "417bb4e81b9725c2ede1dad6d020c3af4658c85f82f768044ce606652a77c6d2",
+    "validation": "postseal/validation.json"
+  },
+  "suites": {
+    "windows_source": {
+      "tests": 993,
+      "passed": 992,
+      "errors": 0,
+      "failures": 0,
+      "skips": [
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "installed_wheel": {
+      "tests": 993,
+      "passed": 992,
+      "errors": 0,
+      "failures": 0,
+      "skips": [
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "extracted_archive": {
+      "tests": 993,
+      "passed": 992,
+      "errors": 0,
+      "failures": 0,
+      "skips": [
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "linux_wsl": {
+      "tests": 993,
+      "passed": 993,
+      "errors": 0,
+      "failures": 0,
+      "skips": []
+    },
+    "windows_python314": {
+      "passed": 989,
+      "skipped": 2,
+      "additional_process_controls_passed": 2,
+      "records": [
+        "development/source314.json",
+        "development/source314-added-controls.json"
+      ]
+    }
+  },
+  "milestone_controls": {
+    "source": {
+      "positive": "admitted_synthetic_control",
+      "negative": "withheld",
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "withheld_query_observer_calls": 0
+    },
+    "installed": {
+      "positive": "admitted_synthetic_control",
+      "negative": "withheld",
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "withheld_query_observer_calls": 0
+    },
+    "archive": {
+      "positive": "admitted_synthetic_control",
+      "negative": "withheld",
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "withheld_query_observer_calls": 0
+    }
+  }
+}

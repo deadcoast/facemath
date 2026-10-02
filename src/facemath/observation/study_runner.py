@@ -27,6 +27,7 @@ import numpy as np
 from .contracts import Observation, ObservationError, ProviderUnavailable, object_digest
 from .journal import code_fingerprint, numeric_environment
 from .provider import DetectionMiss
+from .runtime import require_supported_opencv
 from .study import (
     FrozenStudy, ObserverDeclaration, file_inventory, load_study, read_json,
     write_json_new, verify_inventory, load_rgb,
@@ -116,7 +117,9 @@ class NativeExecutor:
             raise ProviderUnavailable("MediaPipe is not installed in this interpreter") from exc
         if version != declaration.runtime_version:
             raise ProviderUnavailable("MediaPipe runtime differs from the frozen declaration")
+        opencv = require_supported_opencv()
         return {"ready": True, "kind": "native_mediapipe", "model_sha256": actual,
+                "opencv_runtime": opencv,
                 "runtime_version": version, "python_executable": sys.executable,
                 "timeout_seconds": self.timeout, "inference_executed": False,
                 "network_isolation": "not supplied by this process wrapper"}

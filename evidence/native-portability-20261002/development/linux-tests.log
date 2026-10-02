@@ -1,0 +1,13 @@
+........................................................................ [  7%]
+........................................................................ [ 14%]
+...................
+=============================== warnings summary ===============================
+runs/native-portability-20261002/env-linux/lib/python3.11/site-packages/_pytest/cacheprovider.py:469
+  /mnt/c/Users/ryanf/github/_active/facemath/runs/native-portability-20261002/env-linux/lib/python3.11/site-packages/_pytest/cacheprovider.py:469: PytestCacheWarning: could not create cache path /mnt/c/Users/ryanf/github/_active/facemath/.pytest_cache/v/cache/nodeids: [Errno 13] Permission denied: '/mnt/c/Users/ryanf/github/_active/facemath/.pytest_cache/v/cache'
+    config.cache.set("cache/nodeids", sorted(self.cached_nodeids))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! KeyboardInterrupt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/mnt/c/Users/ryanf/github/_active/facemath/src/facemath/observation/validation_io.py:52: KeyboardInterrupt
+(to show a full traceback on KeyboardInterrupt use --full-trace)
+163 passed, 1 warning in 518.60s (0:08:38)

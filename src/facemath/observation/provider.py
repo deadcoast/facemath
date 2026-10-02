@@ -14,6 +14,7 @@ import cv2
 import numpy as np
 
 from .anatomy import SEMANTIC_21
+from .runtime import require_supported_opencv
 from .contracts import (
     Observation, ObservationError, ProviderUnavailable, array_digest,
     canonical_json, object_digest, rgb_image,
@@ -78,6 +79,7 @@ class MediaPipeProvider:
         model_hash = sha256(path.read_bytes()).hexdigest()
         if expected_sha256 is not None and model_hash != expected_sha256:
             raise ProviderUnavailable("model SHA-256 mismatch")
+        require_supported_opencv()
         try:
             import mediapipe as mp
         except ImportError as exc:
@@ -182,7 +184,7 @@ def locate_faces(image: np.ndarray) -> list[dict[str, Any]]:
     image = rgb_image(image)
     cascade_dir = getattr(getattr(cv2, "data", None), "haarcascades", None)
     if not callable(getattr(cv2, "CascadeClassifier", None)) or not cascade_dir:
-        raise ProviderUnavailable("OpenCV Haar API unavailable; install the supported opencv-python>=4.9,<5 dependency")
+        raise ProviderUnavailable("OpenCV Haar API unavailable; install the supported opencv-contrib-python>=4.9,<5 dependency")
     path = Path(cascade_dir) / "haarcascade_frontalface_default.xml"
     if not path.is_file():
         raise ProviderUnavailable(f"OpenCV frontal face cascade asset not found: {path}")

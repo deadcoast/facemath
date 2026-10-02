@@ -1,0 +1,942 @@
+{
+  "format": "facemath.prospective_study.v5",
+  "domain": "Small public PASCAL VOC example crops: native model-to-machine-reference consistency only",
+  "observer": {
+    "provider": "mediapipe",
+    "provider_fingerprint": "05fb85e38d783a48b77f2fddff63bbc64ed02b6920290ae3e59c1c28d26fb785",
+    "schema": "mediapipe478.v1",
+    "noise_floor_px": 0.75,
+    "attempted_samples": 7,
+    "execution_kind": "native_mediapipe",
+    "model_sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+    "runtime_version": "1.0.1"
+  },
+  "observer_recipe_sha256": "d805baa53707cce9795a34b3e0e88347021888c1b708ee62a073d9da4a735c37",
+  "minimum_raters": 1,
+  "maximum_cases_per_group": 7,
+  "minimum_development_groups": 2,
+  "alpha": 0.1,
+  "bias_mode": "development_joint_ocular",
+  "strata": [
+    "all"
+  ],
+  "cases": [
+    {
+      "case_id": "case_00000",
+      "group_id": "source_2007_007763",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2007_007763"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00000.png",
+      "image_sha256": "1e985433d887077fa8921d46b38963b74a47602ce4e361fe5c09922464b06db2",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "91cb880b5c3e0547789b431da78c325f3a7e73a9a5fbeace64f82fdffae3292c",
+      "references": [
+        "inputs/case_00000_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00001",
+      "group_id": "source_2007_007763",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2007_007763"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00001.png",
+      "image_sha256": "3913d48f48a2063f29220227748d3bd27000538ef563726939ffc1c6127669ae",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "0dcf432e57063e99579261424f85b6ebe8e57a784bcfeecb94ffe78edd838c57",
+      "references": [
+        "inputs/case_00001_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00002",
+      "group_id": "source_2007_007763",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2007_007763"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00002.png",
+      "image_sha256": "c44b956b7711cc9383d6027e8ab5ce5c65529d49018aaa8bc5ad7e1eb6f89a48",
+      "image_shape": [
+        66,
+        69
+      ],
+      "original_encoded_sha256": "c52b1ee74a4de8c9da6a32363abe6fe3151cb7fb37f0b488d1e5a92d2fe8a7e5",
+      "references": [
+        "inputs/case_00002_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00003",
+      "group_id": "source_2007_007763",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2007_007763"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00003.png",
+      "image_sha256": "616d77f04c5ca14127094c93372edea14cab852bad0fef8e17265a40b1de0a3d",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "45068954fa08b608d0b10246bf8daab3233790b7ff47b396dff9ead7e3e410ff",
+      "references": [
+        "inputs/case_00003_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00004",
+      "group_id": "source_2007_007763",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2007_007763"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00004.png",
+      "image_sha256": "da5ac66010e531b75585d32ba85ec005d6d87b18c47efa4591ea19809b5b0436",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "b5ce1bce5a0433d1ae40779fc70ccabf094c1ee9e2700cafc8779c31fa85832e",
+      "references": [
+        "inputs/case_00004_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00005",
+      "group_id": "source_2007_007763",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2007_007763"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00005.png",
+      "image_sha256": "6ba9ab2c9debea1b87528cdefd2569200e620ef14f2f5d3585101341724ded65",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "06b6ab3b72286c2f89e54c2880e524ad02ff220e3e1825fa6e68c261e34b5de3",
+      "references": [
+        "inputs/case_00005_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00006",
+      "group_id": "source_2007_007763",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2007_007763"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00006.png",
+      "image_sha256": "273bdb4909b336461685c17995bf4e3ad97ea56069e2d2b95f692a696781f9d5",
+      "image_shape": [
+        66,
+        69
+      ],
+      "original_encoded_sha256": "b6195ec97755b364ca6d161cfc1a5da262fb5b408de202145af6f8c72441e94e",
+      "references": [
+        "inputs/case_00006_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00007",
+      "group_id": "source_2008_002079",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2008_002079"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00007.png",
+      "image_sha256": "cd7cd2d1a5ff1414b48454cd807e610e13f4ba4776efa5eaf827da2e21d3975a",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "20e0a19797da0cc5b73eaf89f970dc388b77143c4f9d8e19fe5c7ccf98cf0bce",
+      "references": [
+        "inputs/case_00007_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00008",
+      "group_id": "source_2008_002079",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2008_002079"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00008.png",
+      "image_sha256": "72c2699dbd6a4e37b45afa430eecc6ae5425cccbabf39349cac6481607c90b92",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "b9eb6d931628859c073045876a906b022cda1bd2f48a11957654486129a1545c",
+      "references": [
+        "inputs/case_00008_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00009",
+      "group_id": "source_2008_002079",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2008_002079"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00009.png",
+      "image_sha256": "a6d6130940b724e70be00fee5b0e8bdfc0997328534c962ff19bc7eae7fb2df5",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "d93f4de5e896070a4e4cd0755ceedbbc41006d2d28f154954cd0e09179474d83",
+      "references": [
+        "inputs/case_00009_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00010",
+      "group_id": "source_2008_002079",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2008_002079"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00010.png",
+      "image_sha256": "70ad28859d921f37483259178588981e6945c20c0a8c834cb0119fe7cbe20939",
+      "image_shape": [
+        66,
+        66
+      ],
+      "original_encoded_sha256": "3430549e844ff6223a743a25f036e8e5db472c445c87bba757a088f1ceb9fa4b",
+      "references": [
+        "inputs/case_00010_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00011",
+      "group_id": "source_2008_002079",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2008_002079"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00011.png",
+      "image_sha256": "45870209f271964c7f20a725bb83731c387a7e61ab04d05ffdaf6a39197d4900",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "0843088cc645040d6693623a3e2fbd5fed3b180dfbd33eb6851a05252541615b",
+      "references": [
+        "inputs/case_00011_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00012",
+      "group_id": "source_2008_002079",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2008_002079"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00012.png",
+      "image_sha256": "d2a9f6df1ef65a42b5bee55e15b5b40eb7e02f96640e9443b5a21a849431f8ee",
+      "image_shape": [
+        66,
+        66
+      ],
+      "original_encoded_sha256": "0c6d4f4922901cee0a3c1f55d8521822a5cd2c205578d5699161272ebf8a51a3",
+      "references": [
+        "inputs/case_00012_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00013",
+      "group_id": "source_2008_001009",
+      "split": "development",
+      "lineage_ids": [
+        "pascal_2008_001009"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00013.png",
+      "image_sha256": "d7d6381f0a398961a88cb3e50ad6500232bc1b141ed6804fe88bcb9551c5ca27",
+      "image_shape": [
+        114,
+        114
+      ],
+      "original_encoded_sha256": "9461ad06b98de5cae20300d0bb3db5df29631b8308b386ccc7f1cef7acb7f6e8",
+      "references": [
+        "inputs/case_00013_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00014",
+      "group_id": "source_2008_001009",
+      "split": "development",
+      "lineage_ids": [
+        "pascal_2008_001009"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00014.png",
+      "image_sha256": "9e8c7b334c455b500041fd5ff435098ac4b694315df06e4308e6df610b8010ca",
+      "image_shape": [
+        137,
+        136
+      ],
+      "original_encoded_sha256": "9f19c5133cf134a135970674c45d912d96c8d9e229fae2e9331a0742b7bf7780",
+      "references": [
+        "inputs/case_00014_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00015",
+      "group_id": "source_2008_001322",
+      "split": "development",
+      "lineage_ids": [
+        "pascal_2008_001322"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00015.png",
+      "image_sha256": "8cb2f86cce07c982c6544fd121e9ce9f75c104fb42fa49d821b7bbd81ebce12f",
+      "image_shape": [
+        114,
+        114
+      ],
+      "original_encoded_sha256": "17b089ffed15a665d98297435251250c79448a100633209dde9cd24568b6170f",
+      "references": [
+        "inputs/case_00015_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00016",
+      "group_id": "source_2008_001322",
+      "split": "development",
+      "lineage_ids": [
+        "pascal_2008_001322"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00016.png",
+      "image_sha256": "099d4a5496d6baeaf66e1a2324b47a4d8f60f6937c691569e3a47ac9ec7e854d",
+      "image_shape": [
+        95,
+        95
+      ],
+      "original_encoded_sha256": "b32c47f87fb1a2a7f01a12a16b2310b0a57062de5b349c8a5b6d22ac27bed241",
+      "references": [
+        "inputs/case_00016_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00017",
+      "group_id": "source_2008_001322",
+      "split": "development",
+      "lineage_ids": [
+        "pascal_2008_001322"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00017.png",
+      "image_sha256": "f8fcf56b1958676a4d36d197ec82863bbb60276269b1626384aaa2a401dbfc58",
+      "image_shape": [
+        136,
+        136
+      ],
+      "original_encoded_sha256": "bb161bf345885984c72bd070b69f6b32aea00ce545f663a1186da6d56004f4e2",
+      "references": [
+        "inputs/case_00017_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00018",
+      "group_id": "source_2008_002470",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2008_002470"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00018.png",
+      "image_sha256": "efd6fd0d2f4b70dbd0089360b18ee14604e0360f220ad47cf0c6aeef498a3638",
+      "image_shape": [
+        81,
+        78
+      ],
+      "original_encoded_sha256": "e892454d46ca6f4a3ebf53bf9b52b836ccc25ffd9dc713322f439ac8a57b93d8",
+      "references": [
+        "inputs/case_00018_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00019",
+      "group_id": "source_2008_002470",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2008_002470"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00019.png",
+      "image_sha256": "c5ac211b7c28dad8c18359626ec091d669cb65ce32ee1dc4d122eded97711705",
+      "image_shape": [
+        66,
+        66
+      ],
+      "original_encoded_sha256": "be5c5e25f79418be45d3e54aefaad67cdb51b1adcd4f962c7fa06ba73d0b78f3",
+      "references": [
+        "inputs/case_00019_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00020",
+      "group_id": "source_2008_002470",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2008_002470"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00020.png",
+      "image_sha256": "45cce974c6b6907752421b3171e57f63b142bb5c127d1f3d0b76b37a99a99a5b",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "68169bc65a631dbf92b333b20bdbe327cf478428d0b1db4e658a341d3821d112",
+      "references": [
+        "inputs/case_00020_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00021",
+      "group_id": "source_2008_002470",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2008_002470"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00021.png",
+      "image_sha256": "d9045fb5547088277347e0ba9df29822f3dfa5a1da13dcc70dee627fa8418874",
+      "image_shape": [
+        66,
+        66
+      ],
+      "original_encoded_sha256": "7cdc447082ea7d61b8b87228281b62136496d5b59c74149a43bc99e2fcbab329",
+      "references": [
+        "inputs/case_00021_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00022",
+      "group_id": "source_2008_002470",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2008_002470"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00022.png",
+      "image_sha256": "95273c5ed4463f9ede42cd22f4946e2240f124130d5fd7d10378b7ad4b500534",
+      "image_shape": [
+        66,
+        66
+      ],
+      "original_encoded_sha256": "b7632d63abebfa9ba3c3956821e1be87a900335d7c546e5d28ae91595b5f517e",
+      "references": [
+        "inputs/case_00022_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00023",
+      "group_id": "source_2008_002470",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2008_002470"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00023.png",
+      "image_sha256": "3fcfe33e174ad3bf1458857b83efc8c81f6d56c77d03e5ea5fbbf6ba380d66a4",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "91e425a2b93d000738cc8bd1f565f86052a501ae08ffc36a6e2a3129ad47e963",
+      "references": [
+        "inputs/case_00023_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00024",
+      "group_id": "source_2008_002506",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2008_002506"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00024.png",
+      "image_sha256": "6f18ec1f1f4e712b2098862139e7c4d1fa63729d3401bf516aa26fad1e202c31",
+      "image_shape": [
+        165,
+        165
+      ],
+      "original_encoded_sha256": "ec2b1fe9985f15e98ab7a87957b6a893559fe67ed13aeef6d44c01bceb252eda",
+      "references": [
+        "inputs/case_00024_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00025",
+      "group_id": "source_2008_002506",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2008_002506"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00025.png",
+      "image_sha256": "02d06b5efafe7480b23f873521e449207f45be96c83826c3b4a1e7f4f5c11605",
+      "image_shape": [
+        137,
+        137
+      ],
+      "original_encoded_sha256": "11e683cddae1fbdc702da680d0e498def42579bef3dda256a4f0c535a3b06d7a",
+      "references": [
+        "inputs/case_00025_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00026",
+      "group_id": "source_2008_002506",
+      "split": "calibration",
+      "lineage_ids": [
+        "pascal_2008_002506"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00026.png",
+      "image_sha256": "3037dee9c855e8ae8ba2ecc921b0028d50c104e131c9d4e0e1c9faede17379a5",
+      "image_shape": [
+        137,
+        136
+      ],
+      "original_encoded_sha256": "3bb699bd573b27b5a9b6c02f1a1d2863690be46861786bbb6f07412a736a0df4",
+      "references": [
+        "inputs/case_00026_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00027",
+      "group_id": "source_2008_004176",
+      "split": "evaluation",
+      "lineage_ids": [
+        "pascal_2008_004176"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00027.png",
+      "image_sha256": "294a7f4fee09e211189376bf071e9701cb2d6c37c847e2ccca43d4d970b58c78",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "ed7f642bf8ddcb11d6fdf3573f84be4a6b5eeef46b9e60ab6eb92845b2d6db9b",
+      "references": [
+        "inputs/case_00027_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00028",
+      "group_id": "source_2008_004176",
+      "split": "evaluation",
+      "lineage_ids": [
+        "pascal_2008_004176"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00028.png",
+      "image_sha256": "c587e57047b6ad0064a51aaae31b6abfa6434a0ce8d4209b292668389cdc20c5",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "246220ff2d05406e5f001c0de1f0b9a3bedea268362183ed219f8449330b7a01",
+      "references": [
+        "inputs/case_00028_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00029",
+      "group_id": "source_2008_004176",
+      "split": "evaluation",
+      "lineage_ids": [
+        "pascal_2008_004176"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00029.png",
+      "image_sha256": "e2b5aaa976631a17c945608ead7ccb8a4eb8ec2694bd152e0939fa3b27d077f8",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "17ccb3ee1b0221eeddb6132d6f2fd043293790a830470a0f35bbc5db7095f1d0",
+      "references": [
+        "inputs/case_00029_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00030",
+      "group_id": "source_2008_004176",
+      "split": "evaluation",
+      "lineage_ids": [
+        "pascal_2008_004176"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00030.png",
+      "image_sha256": "89955f2036cf80ab329e16403732482e002f33a37f030fae8930e2453382a2bf",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "3c2894fb9142831d24c271b674e8e102ca89a1e25860d6a0b506128105f712b9",
+      "references": [
+        "inputs/case_00030_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00031",
+      "group_id": "source_2008_004176",
+      "split": "evaluation",
+      "lineage_ids": [
+        "pascal_2008_004176"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00031.png",
+      "image_sha256": "17b616f0ecae8b39c0098ef498a45011c8e65bc6f17ac89e66796f4b2b9ed4f0",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "b7a431eef3295c337124ca198d1bedfa6d702db2be120e60bd085606224b7a36",
+      "references": [
+        "inputs/case_00031_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00032",
+      "group_id": "source_2008_004176",
+      "split": "evaluation",
+      "lineage_ids": [
+        "pascal_2008_004176"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00032.png",
+      "image_sha256": "71a2afbe910f7f48a97d5f3c3a4a4152ee7ebba6eca1f11caa208e11a8c75d5f",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "ce5b17d4be7c56df7670dfe888545b5fbd23af34f374f9c2f75f7c556b8b6fe3",
+      "references": [
+        "inputs/case_00032_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00033",
+      "group_id": "source_2008_004176",
+      "split": "evaluation",
+      "lineage_ids": [
+        "pascal_2008_004176"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00033.png",
+      "image_sha256": "3e3248bc8248f5866084a9ec5516e746b73d608185935f74acc87d01ef36fa70",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "401d5bbd87e2851153a09187eac908005b2d54e3a9757301663688fdd9e1b406",
+      "references": [
+        "inputs/case_00033_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00034",
+      "group_id": "source_2008_007676",
+      "split": "evaluation",
+      "lineage_ids": [
+        "pascal_2008_007676"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00034.png",
+      "image_sha256": "af979a8e6ca24b26cef8123b4766d0276eec3d75dbc74b89530e705cda69abd0",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "8a0daa3282efc53035dd8e65469ddf9bffaa1d402d7c5a6dd4c877a49c1a60c1",
+      "references": [
+        "inputs/case_00034_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00035",
+      "group_id": "source_2008_007676",
+      "split": "evaluation",
+      "lineage_ids": [
+        "pascal_2008_007676"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00035.png",
+      "image_sha256": "082baa6f84b2ee9371556246c7150e3ab44ce0bf526efcb92738fc9fcf778ba7",
+      "image_shape": [
+        66,
+        66
+      ],
+      "original_encoded_sha256": "ebd4eb1908fbf6d7e214d7f652a64ca6317816f44634bbee1eb3e6d077b51559",
+      "references": [
+        "inputs/case_00035_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00036",
+      "group_id": "source_2008_007676",
+      "split": "evaluation",
+      "lineage_ids": [
+        "pascal_2008_007676"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00036.png",
+      "image_sha256": "aa46164ba2dae5c2111eafb22c66fed2b7fc0131fc2d465348b3aed051684d0b",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "acf1b10912095e5583604cf32865a18bb6cffdaec3c5cda3495a7e83b81fde5c",
+      "references": [
+        "inputs/case_00036_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00037",
+      "group_id": "source_2008_007676",
+      "split": "evaluation",
+      "lineage_ids": [
+        "pascal_2008_007676"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00037.png",
+      "image_sha256": "7d884998ddfca90341100c370618b0ab8343bc491f6788975c289e54fa844fcb",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "1b0362fffdf708e941f41f1bd8cb6501cae6a4dbcb57a627b4733faa6f83a8e9",
+      "references": [
+        "inputs/case_00037_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00038",
+      "group_id": "source_2008_007676",
+      "split": "evaluation",
+      "lineage_ids": [
+        "pascal_2008_007676"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00038.png",
+      "image_sha256": "d6eb33ca09adbe5510431e2daf3b83a9321ce2650d4ce86bc1f92a41b8bf659e",
+      "image_shape": [
+        57,
+        57
+      ],
+      "original_encoded_sha256": "546ad5236c61c92fff5af0144465a2a5b3075a3b1f40618e2de0ed96182763a6",
+      "references": [
+        "inputs/case_00038_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00039",
+      "group_id": "source_2008_007676",
+      "split": "evaluation",
+      "lineage_ids": [
+        "pascal_2008_007676"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00039.png",
+      "image_sha256": "62a3ae7c0c9c603465d4176b3087becbc189918fb67ede93a7627b30cd05ae68",
+      "image_shape": [
+        81,
+        78
+      ],
+      "original_encoded_sha256": "be119ceace2baefbbd51a5fa8c346ce893fccd2147155b28f6e29218e008680e",
+      "references": [
+        "inputs/case_00039_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00040",
+      "group_id": "source_2008_007676",
+      "split": "evaluation",
+      "lineage_ids": [
+        "pascal_2008_007676"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00040.png",
+      "image_sha256": "38cef14215f4c2c5e3224ee0015060c6bbd1d46b45d9755ea7ecdfb58831ddc2",
+      "image_shape": [
+        66,
+        66
+      ],
+      "original_encoded_sha256": "b3bbac3739a23a072d6ce89c4bf04f21e260ffc32797c12461806f71b19bb54f",
+      "references": [
+        "inputs/case_00040_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00041",
+      "group_id": "source_2009_004587",
+      "split": "evaluation",
+      "lineage_ids": [
+        "pascal_2009_004587"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00041.png",
+      "image_sha256": "3b4763b700aff39be9ed3937d9a9d5af2d0b752d8b700603bd15522ca14c0bd0",
+      "image_shape": [
+        114,
+        113
+      ],
+      "original_encoded_sha256": "d2de3924f72eb1c2e845f4010e0e6ce38f277b514d63e1e4134b3662fd2eebdf",
+      "references": [
+        "inputs/case_00041_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "case_00042",
+      "group_id": "source_2009_004587",
+      "split": "evaluation",
+      "lineage_ids": [
+        "pascal_2009_004587"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00042.png",
+      "image_sha256": "c3e1415d5bf6114908b0e994411bc30b2337be6e3f0c11fd3e5869d9d5f79e57",
+      "image_shape": [
+        95,
+        95
+      ],
+      "original_encoded_sha256": "f474209d05246c5d9c3d83afb4a2115495d4dd24c03f59bb6b8f957ac0cbbd44",
+      "references": [
+        "inputs/case_00042_reference_00.json"
+      ]
+    }
+  ],
+  "timeout_seconds": 90.0,
+  "native_case_isolation": "fresh_process_per_source",
+  "image_coordinate_convention": "decoded_stored_raster_ignore_EXIF_orientation",
+  "engine_code_sha256": "bc6d6e24b3ed1c73eb0a8ef778a3321c0ae10454f815f943db698aed6e1ada9b",
+  "protocol_sha256": "db71853e5f9cc8f1929cf7329aad3d3111c9518cc5f10eb043e36ac530701972",
+  "source_manifest_sha256": "e0e3e60278c69842f453b8b52eb8a26fb974a1a11a3f93cb8a2726d1524daade",
+  "declarations": {
+    "chronology_and_blinding": "curator-declared, not externally attested",
+    "model_receives": "source raster only; not reference coordinates, split or stratum"
+  },
+  "joint_error": {
+    "shrinkage": 0.02,
+    "floor_eye_spans": 0.001
+  }
+}

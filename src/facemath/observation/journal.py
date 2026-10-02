@@ -29,8 +29,9 @@ def numeric_environment() -> dict[str, str]:
 
 
 def environment() -> dict[str, Any]:
+    from .runtime import OPENCV_DISTRIBUTIONS
     packages = {}
-    for name in ("numpy", "scipy", "opencv-python", "mediapipe", "pytest"):
+    for name in ("numpy", "scipy", *OPENCV_DISTRIBUTIONS, "mediapipe", "pytest"):
         try:
             packages[name] = importlib.metadata.version(name)
         except importlib.metadata.PackageNotFoundError:

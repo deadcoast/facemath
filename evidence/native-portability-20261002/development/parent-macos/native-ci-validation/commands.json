@@ -1,0 +1,66 @@
+[
+  {
+    "name": "environment",
+    "command": [
+      "/Users/runner/work/facemath/facemath/.venv/bin/python",
+      "-c",
+      "import json; from facemath.observation.journal import environment; print(json.dumps(environment(),indent=2))"
+    ],
+    "cwd": "/Users/runner/work/facemath/facemath",
+    "started_utc": "2026-10-02T10:17:54.819943+00:00",
+    "environment": {
+      "PYTHONPATH": "/Users/runner/work/facemath/facemath/src",
+      "UV_CACHE_DIR": "/Users/runner/work/facemath/facemath/.uv-cache",
+      "UV_OFFLINE": null,
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-02T10:17:55.395536+00:00"
+  },
+  {
+    "name": "lock-check",
+    "command": [
+      "/Users/runner/hostedtoolcache/uv/0.12.22/aarch64/uv",
+      "lock",
+      "--check"
+    ],
+    "cwd": "/Users/runner/work/facemath/facemath",
+    "started_utc": "2026-10-02T10:17:55.396110+00:00",
+    "environment": {
+      "PYTHONPATH": null,
+      "UV_CACHE_DIR": "/Users/runner/work/facemath/facemath/.uv-cache",
+      "UV_OFFLINE": null,
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-02T10:17:55.448603+00:00"
+  },
+  {
+    "name": "source-tests",
+    "command": [
+      "/Users/runner/work/facemath/facemath/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "-ra",
+      "--junitxml=/Users/runner/work/facemath/facemath/runs/native-ci-validation/source.xml",
+      "--basetemp=/Users/runner/work/facemath/facemath/runs/native-ci-validation/source-temp"
+    ],
+    "cwd": "/Users/runner/work/facemath/facemath",
+    "started_utc": "2026-10-02T10:17:55.449104+00:00",
+    "environment": {
+      "PYTHONPATH": "/Users/runner/work/facemath/facemath/src",
+      "UV_CACHE_DIR": "/Users/runner/work/facemath/facemath/.uv-cache",
+      "UV_OFFLINE": null,
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": -6,
+    "finished_utc": "2026-10-02T10:19:45.584202+00:00"
+  }
+]
