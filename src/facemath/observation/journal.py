@@ -77,3 +77,22 @@ def verify_journal(records: list[dict[str, Any]]) -> None:
         if payload["sequence"] != sequence or payload["previous_sha256"] != previous or object_digest(payload) != digest:
             raise ValueError(f"journal chain mismatch at record {sequence}")
         previous = digest
+
+
+def retain_failed_run(temp: Path, destination: Path, journal: Journal, exc: Exception) -> None:
+    """Keep actual partial artifacts and events; never repair or replace a run."""
+    from uuid import uuid4
+    from .study import write_json_new
+    journal.record("execution.failed", {"exception": type(exc).__name__, "detail": str(exc)})
+    exc.failure_path = str(temp)
+    try:
+        with (temp / "failure.events.jsonl").open("x", encoding="utf-8") as stream:
+            stream.write(journal.jsonl())
+        write_json_new(temp / "failure.json", {"completed": False, "exception": type(exc).__name__,
+            "detail": str(exc), "intended_destination": str(destination)})
+        failed = destination.with_name(destination.name + ".failure-" + uuid4().hex)
+        temp.rename(failed)
+        exc.failure_path = str(failed)
+    except OSError as retention_error:
+        # Even a full disk must not erase the original exception or partial files.
+        exc.add_note(f"Failure metadata could not be fully written; retained {temp}: {retention_error}")

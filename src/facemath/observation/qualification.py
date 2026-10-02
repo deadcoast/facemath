@@ -188,6 +188,9 @@ def qualify(study: FrozenStudy, raw_report: dict[str, Any], session_status: dict
         warnings.append("Empirical aggregate coverage is below the nominal target; this is reported, not repaired using evaluation labels.")
     if study.observer.execution_kind == "synthetic_fixture":
         warnings.append("Every observation in this study is a controlled synthetic fixture, not live human-landmark inference.")
+    machine_references = any(r.reference_kind == "model_generated" for r in rows)
+    if machine_references:
+        warnings.append("Machine-generated references measure agreement with the teacher model; they do not establish anatomical accuracy or independent human-reference acceptance.")
     measured_acquisition = data.get("measured_acquisition")
     if measured_acquisition is not None:
         groups = measured_acquisition["groups"]
@@ -201,7 +204,8 @@ def qualify(study: FrozenStudy, raw_report: dict[str, Any], session_status: dict
     report = {"format": "facemath.qualification.v5", "study_sha256": study.digest,
         "raw_validation_sha256": raw_report["content_sha256"], "observer_recipe_sha256": study.observer.recipe_sha256,
         "execution_kind": study.observer.execution_kind,
-        "live_human_observer_validation": study.observer.execution_kind == "native_mediapipe" and session_status["outcomes"]["observed"] > 0,
+        "live_human_observer_validation": (study.observer.execution_kind == "native_mediapipe"
+            and session_status["outcomes"]["observed"] > 0 and not machine_references),
         "domain": data["domain"], "bias_mode_selected_before_acquisition": data["bias_mode"],
         "raw_coordinates_changed": False, "estimator_selected_using_evaluation": False,
         "enrollment": {k: session_status[k] for k in ("enrolled", "eligible", "prospectively_excluded", "committed", "outcomes")},
@@ -222,7 +226,8 @@ def qualify(study: FrozenStudy, raw_report: dict[str, Any], session_status: dict
             "coverage": coverage},
         "slices": slices, "cases": per_case, "per_landmark": per_landmark,
         "warnings": warnings,
-        "interpretation": "error-to-independent-reference study; centered residuals describe the error model, not changed detector outputs or facial resemblance",
+        "interpretation": ("error-to-machine-reference agreement; centered residuals describe the error model, not changed detector outputs or facial resemblance"
+            if machine_references else "error-to-independent-reference study; centered residuals describe the error model, not changed detector outputs or facial resemblance"),
         "guarantee_limit": ("category-local new-group rank argument requires exchangeable whole groups within each frozen acquisition category; no per-image or hidden-shift guarantee" if routing_report else
             "marginal new-group conformal rank argument needs exchangeable groups under the frozen protocol; no per-image or conditional-slice guarantee"),
         "array_order": {"cases": [r.case_id for r in rows], "reference_points": list(REFERENCE_NAMES)}}

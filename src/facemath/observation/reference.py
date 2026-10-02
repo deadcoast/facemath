@@ -39,7 +39,8 @@ REFERENCE_PROTOCOL = {
     "mapping_limit": "nominal cross-dataset semantic correspondence, not validated anatomical equivalence",
 }
 REFERENCE_PROTOCOL_SHA256 = object_digest(REFERENCE_PROTOCOL)
-REFERENCE_KINDS = ("human_blind", "external_dataset", "manual_unblinded", "synthetic_fixture")
+REFERENCE_KINDS = ("human_blind", "external_dataset", "manual_unblinded", "synthetic_fixture", "model_generated")
+CALIBRATION_REFERENCE_KINDS = ("human_blind", "external_dataset", "synthetic_fixture", "model_generated")
 
 
 def check_digest(value: str, name: str) -> None:

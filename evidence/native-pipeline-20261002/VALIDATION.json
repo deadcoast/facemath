@@ -1,0 +1,422 @@
+{
+  "schema": "facemath.native_pipeline_validation.v11",
+  "version": "0.11.0",
+  "created_utc": "2026-10-02T10:11:50.479554+00:00",
+  "engine_code_sha256": "4ad3d1dbf7c299ef6d0cc88adfd5a50a4fc95fe23ee7f6ff9766df0b98ef3e3e",
+  "parent": {
+    "path": "packages/facemath-0.10.1-review-20261001.zip",
+    "bytes": 238118157,
+    "sha256": "1aad162e54dacbdc0b66902697b30e36ef2d1584d137f178deff5251d8bf61ff",
+    "extracted_baseline": "parent-tests.json",
+    "byte_inventory": "parent-byte-check.json"
+  },
+  "suites": {
+    "parent_0_10_1": {
+      "tests": 959,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 2,
+      "passed": 957,
+      "skips": [
+        {
+          "test": "test_live_mediapipe_provider",
+          "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+        },
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "source_python311": {
+      "tests": 982,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 1,
+      "passed": 981,
+      "skips": [
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "source_python314": {
+      "tests": 982,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 2,
+      "passed": 980,
+      "skips": [
+        {
+          "test": "test_live_mediapipe_provider",
+          "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+        },
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "installed_wheel": {
+      "tests": 982,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 1,
+      "passed": 981,
+      "skips": [
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "extracted_archive": {
+      "tests": 982,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 1,
+      "passed": 981,
+      "skips": [
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    }
+  },
+  "native_repetitions": {
+    "pilot": {
+      "observations": 43,
+      "exact_observation_objects_equal_to_pilot": 43,
+      "max_xy_difference_px": 0.0,
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 0,
+        "observed": 43,
+        "runtime_error": 0,
+        "timeout": 0
+      },
+      "fingerprint": "4ad3d1dbf7c299ef6d0cc88adfd5a50a4fc95fe23ee7f6ff9766df0b98ef3e3e"
+    },
+    "source": {
+      "observations": 43,
+      "exact_observation_objects_equal_to_pilot": 43,
+      "max_xy_difference_px": 0.0,
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 0,
+        "observed": 43,
+        "runtime_error": 0,
+        "timeout": 0
+      },
+      "fingerprint": "4ad3d1dbf7c299ef6d0cc88adfd5a50a4fc95fe23ee7f6ff9766df0b98ef3e3e"
+    },
+    "installed_wheel": {
+      "observations": 43,
+      "exact_observation_objects_equal_to_pilot": 43,
+      "max_xy_difference_px": 0.0,
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 0,
+        "observed": 43,
+        "runtime_error": 0,
+        "timeout": 0
+      },
+      "fingerprint": "4ad3d1dbf7c299ef6d0cc88adfd5a50a4fc95fe23ee7f6ff9766df0b98ef3e3e"
+    },
+    "extracted_archive": {
+      "observations": 43,
+      "exact_observation_objects_equal_to_pilot": 43,
+      "max_xy_difference_px": 0.0,
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 0,
+        "observed": 43,
+        "runtime_error": 0,
+        "timeout": 0
+      },
+      "fingerprint": "4ad3d1dbf7c299ef6d0cc88adfd5a50a4fc95fe23ee7f6ff9766df0b98ef3e3e"
+    }
+  },
+  "milestone_controls": {
+    "source": {
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "positive_admitted": true,
+      "negative_withheld": true
+    },
+    "installed_wheel": {
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "positive_admitted": true,
+      "negative_withheld": true
+    },
+    "extracted_archive": {
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "positive_admitted": true,
+      "negative_withheld": true
+    }
+  },
+  "pilot": {
+    "completed": true,
+    "reference_kind": "model_generated",
+    "human_accuracy_validated": false,
+    "outcomes": {
+      "contract_error": 0,
+      "interrupted": 0,
+      "multiple_faces": 0,
+      "no_face": 0,
+      "observed": 43,
+      "runtime_error": 0,
+      "timeout": 0
+    },
+    "enrolled": 43,
+    "eligible": 43,
+    "selected_error_model": {
+      "calibration_sha256": "aa70d124bbbea71fd453c1482ccfa718e84331d6a20f9403cb5381d9a324364a",
+      "quantile": null,
+      "rank": 5,
+      "radius_mode": "one_pooled_radius",
+      "bias_sha256": "adffe94476120152ea09ae20277e1565a4248916eea1a6ef94c56cf1ee7561be",
+      "joint_scatter_sha256": "0f499adfc461aec44794b4ded79b55bcfbe25ae8fb3337cb9d63027af30ed3a6",
+      "error_geometry": "full16_shared_latent_ellipsoid",
+      "q_comparability": "score definitions differ across model types; compare coverage and widths, not q alone",
+      "development_groups": 2,
+      "fitted_development_groups": 2,
+      "development_cases_rejected": [],
+      "coverage": {
+        "calibration_sha256": "499c14938691aab4513fb3bb24bcb70eb8d7a6fd3097ad5766c2aacf57b2980a",
+        "nominal_coverage": 0.9,
+        "finite_envelope": false,
+        "evaluation_cases": 16,
+        "evaluation_groups": 3,
+        "covered_groups": null,
+        "empirical_group_coverage": null,
+        "failures": 0,
+        "cases": [
+          {
+            "case_id": "case_00027",
+            "group_id": "source_2008_004176",
+            "score": 37.0108220718005,
+            "assessable": true,
+            "covered": null
+          },
+          {
+            "case_id": "case_00028",
+            "group_id": "source_2008_004176",
+            "score": 30.19398883996854,
+            "assessable": true,
+            "covered": null
+          },
+          {
+            "case_id": "case_00029",
+            "group_id": "source_2008_004176",
+            "score": 22.307738125073183,
+            "assessable": true,
+            "covered": null
+          },
+          {
+            "case_id": "case_00030",
+            "group_id": "source_2008_004176",
+            "score": 36.03105586013224,
+            "assessable": true,
+            "covered": null
+          },
+          {
+            "case_id": "case_00031",
+            "group_id": "source_2008_004176",
+            "score": 34.65925767724478,
+            "assessable": true,
+            "covered": null
+          },
+          {
+            "case_id": "case_00032",
+            "group_id": "source_2008_004176",
+            "score": 44.45652415274468,
+            "assessable": true,
+            "covered": null
+          },
+          {
+            "case_id": "case_00033",
+            "group_id": "source_2008_004176",
+            "score": 42.234312221362565,
+            "assessable": true,
+            "covered": null
+          },
+          {
+            "case_id": "case_00034",
+            "group_id": "source_2008_007676",
+            "score": 34.4274093111202,
+            "assessable": true,
+            "covered": null
+          },
+          {
+            "case_id": "case_00035",
+            "group_id": "source_2008_007676",
+            "score": 27.84976388023482,
+            "assessable": true,
+            "covered": null
+          },
+          {
+            "case_id": "case_00036",
+            "group_id": "source_2008_007676",
+            "score": 21.920021292701325,
+            "assessable": true,
+            "covered": null
+          },
+          {
+            "case_id": "case_00037",
+            "group_id": "source_2008_007676",
+            "score": 49.210487114409766,
+            "assessable": true,
+            "covered": null
+          },
+          {
+            "case_id": "case_00038",
+            "group_id": "source_2008_007676",
+            "score": 27.186608979116787,
+            "assessable": true,
+            "covered": null
+          },
+          {
+            "case_id": "case_00039",
+            "group_id": "source_2008_007676",
+            "score": 34.0242964015999,
+            "assessable": true,
+            "covered": null
+          },
+          {
+            "case_id": "case_00040",
+            "group_id": "source_2008_007676",
+            "score": 56.149690100005664,
+            "assessable": true,
+            "covered": null
+          },
+          {
+            "case_id": "case_00041",
+            "group_id": "source_2009_004587",
+            "score": 26.42475263020576,
+            "assessable": true,
+            "covered": null
+          },
+          {
+            "case_id": "case_00042",
+            "group_id": "source_2009_004587",
+            "score": 21.879741033391966,
+            "assessable": true,
+            "covered": null
+          }
+        ],
+        "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage",
+        "full_error_model_sha256": "aa70d124bbbea71fd453c1482ccfa718e84331d6a20f9403cb5381d9a324364a",
+        "score_centering": "development_joint_ocular",
+        "binomial_95_interval": null
+      }
+    },
+    "replay_verified": true,
+    "environment": {
+      "python": "3.11.14 (main, Oct 14 2025, 21:21:22) [MSC v.1944 64 bit (AMD64)]",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "packages": {
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "opencv-python": "4.14.0.94",
+        "mediapipe": "1.0.1",
+        "pytest": "9.1.1"
+      },
+      "numeric_environment": {
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "opencv": "4.14.0"
+      },
+      "engine_code_sha256": "4ad3d1dbf7c299ef6d0cc88adfd5a50a4fc95fe23ee7f6ff9766df0b98ef3e3e"
+    },
+    "grouping_limit": "Whole source photograph is the dependence unit; person identities and cross-photo independence have not been established. No population coverage claim."
+  },
+  "archive": {
+    "path": "packages/facemath-0.11.0-native-20261002.zip",
+    "bytes": 384113104,
+    "sha256": "bf181b9e8719b99f370bd1e0e17e1f4a187d053e397a7cce5413fb883791bfd4",
+    "validation": {
+      "verified": true,
+      "files": 9636,
+      "version": "0.11.0",
+      "archive_sha256": "bf181b9e8719b99f370bd1e0e17e1f4a187d053e397a7cce5413fb883791bfd4",
+      "kind": "archive",
+      "scope": "shipped-byte consistency, not external authenticity or numerical replay"
+    }
+  },
+  "review_progress": {
+    "I16": {
+      "status": "implemented_and_tested",
+      "files": [
+        "src/facemath/observation/journal.py",
+        "src/facemath/observation/study_io.py",
+        "src/facemath/observation/validation_io.py",
+        "tests/test_failed_study_evidence.py"
+      ],
+      "result": "Partial validation/finalization bytes and actual journals survive injected faults; repeated failures create distinct runs."
+    },
+    "P01": {
+      "status": "native_execution_completed_on_tested_host",
+      "files": [
+        "examples/native-dlib-pilot.json",
+        "evidence/native-pipeline-20261002/pilot/session",
+        "models/README.md"
+      ],
+      "result": "Pinned real model executed on Windows/Python 3.11; all 43 enrolled crops observed.",
+      "next_action": "Assess the separate hosted native jobs before claiming other-platform compatibility."
+    },
+    "D01": {
+      "status": "automated_machine_reference_pipeline_completed",
+      "files": [
+        "src/facemath/observation/dataset.py",
+        "tests/test_native_dataset.py",
+        "docs/NATIVE_PIPELINE_OPERATIONS.md"
+      ],
+      "result": "Sourced data, native observations, trained joint error model and exact replay are retained and transferable.",
+      "next_action": "Enroll a larger diverse source-disjoint dataset before fitting; retain label origin and evaluate error-bound utility without retuning evaluation."
+    },
+    "D03": {
+      "status": "partial",
+      "files": [
+        "uv.lock",
+        "examples/native-dlib-pilot.json",
+        ".github/workflows/milestone.yml"
+      ],
+      "result": "Locked MediaPipe 1.0.1 executed on Python 3.11; Python 3.14 source regressions run separately.",
+      "next_action": "Retain completed native compatibility results for each intended host/runtime."
+    },
+    "D07": {
+      "status": "partial",
+      "files": [
+        "src/facemath/observation/study_runner.py"
+      ],
+      "result": "Windows workers launch hidden and real success paths were executed.",
+      "next_action": "Qualify timeout/interruption descendant cleanup with actual native processes."
+    }
+  },
+  "limits": [
+    "Teacher-model agreement is not independent anatomical accuracy.",
+    "The 90% radius is unbounded: rank five exceeds four calibration groups. No evaluation retuning occurred.",
+    "Nine source-photo groups are not externally verified person-independent samples.",
+    "Bitwise agreement of these repeated runs does not prove universal native determinism.",
+    "Installed-wheel tests use the same dependency environment; hosted CI results are recorded separately.",
+    "Post-seal evidence is adjacent to the immutable archive, not retrospectively inserted."
+  ],
+  "records": {
+    "preseal": "evidence/native-pipeline-20261002/preseal",
+    "postseal": "evidence/native-pipeline-20261002/postseal",
+    "development": "evidence/native-pipeline-20261002/development"
+  }
+}

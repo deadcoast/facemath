@@ -1,0 +1,172 @@
+{
+  "archive": {
+    "path": "packages/facemath-0.11.0-native-20261002.zip",
+    "bytes": 384113104,
+    "sha256": "bf181b9e8719b99f370bd1e0e17e1f4a187d053e397a7cce5413fb883791bfd4",
+    "validation": {
+      "verified": true,
+      "files": 9636,
+      "version": "0.11.0",
+      "archive_sha256": "bf181b9e8719b99f370bd1e0e17e1f4a187d053e397a7cce5413fb883791bfd4",
+      "kind": "archive",
+      "scope": "shipped-byte consistency, not external authenticity or numerical replay"
+    }
+  },
+  "suites": {
+    "parent_0_10_1": {
+      "tests": 959,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 2,
+      "passed": 957,
+      "skips": [
+        {
+          "test": "test_live_mediapipe_provider",
+          "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+        },
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "source_python311": {
+      "tests": 982,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 1,
+      "passed": 981,
+      "skips": [
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "source_python314": {
+      "tests": 982,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 2,
+      "passed": 980,
+      "skips": [
+        {
+          "test": "test_live_mediapipe_provider",
+          "reason": "live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment"
+        },
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "installed_wheel": {
+      "tests": 982,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 1,
+      "passed": 981,
+      "skips": [
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    },
+    "extracted_archive": {
+      "tests": 982,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 1,
+      "passed": 981,
+      "skips": [
+        {
+          "test": "test_session_symlink_is_not_silently_followed",
+          "reason": "platform cannot create a directory symlink"
+        }
+      ]
+    }
+  },
+  "native_repetitions": {
+    "pilot": {
+      "observations": 43,
+      "exact_observation_objects_equal_to_pilot": 43,
+      "max_xy_difference_px": 0.0,
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 0,
+        "observed": 43,
+        "runtime_error": 0,
+        "timeout": 0
+      },
+      "fingerprint": "4ad3d1dbf7c299ef6d0cc88adfd5a50a4fc95fe23ee7f6ff9766df0b98ef3e3e"
+    },
+    "source": {
+      "observations": 43,
+      "exact_observation_objects_equal_to_pilot": 43,
+      "max_xy_difference_px": 0.0,
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 0,
+        "observed": 43,
+        "runtime_error": 0,
+        "timeout": 0
+      },
+      "fingerprint": "4ad3d1dbf7c299ef6d0cc88adfd5a50a4fc95fe23ee7f6ff9766df0b98ef3e3e"
+    },
+    "installed_wheel": {
+      "observations": 43,
+      "exact_observation_objects_equal_to_pilot": 43,
+      "max_xy_difference_px": 0.0,
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 0,
+        "observed": 43,
+        "runtime_error": 0,
+        "timeout": 0
+      },
+      "fingerprint": "4ad3d1dbf7c299ef6d0cc88adfd5a50a4fc95fe23ee7f6ff9766df0b98ef3e3e"
+    },
+    "extracted_archive": {
+      "observations": 43,
+      "exact_observation_objects_equal_to_pilot": 43,
+      "max_xy_difference_px": 0.0,
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 0,
+        "observed": 43,
+        "runtime_error": 0,
+        "timeout": 0
+      },
+      "fingerprint": "4ad3d1dbf7c299ef6d0cc88adfd5a50a4fc95fe23ee7f6ff9766df0b98ef3e3e"
+    }
+  },
+  "milestone_controls": {
+    "source": {
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "positive_admitted": true,
+      "negative_withheld": true
+    },
+    "installed_wheel": {
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "positive_admitted": true,
+      "negative_withheld": true
+    },
+    "extracted_archive": {
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "positive_admitted": true,
+      "negative_withheld": true
+    }
+  }
+}

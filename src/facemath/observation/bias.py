@@ -78,7 +78,8 @@ class DevelopmentBias:
         if not np.allclose(beta, gv.mean(axis=0), atol=1e-14, rtol=1e-12):
             raise ObservationError("bias mean does not match retained equal-group inputs")
         check_digest(self.observer_recipe_sha256, "bias observer recipe")
-        if self.reference_kind not in ("human_blind", "external_dataset", "synthetic_fixture"):
+        from .reference import CALIBRATION_REFERENCE_KINDS
+        if self.reference_kind not in CALIBRATION_REFERENCE_KINDS:
             raise ObservationError("unsupported development reference provenance")
         for name in ("fitted_groups", "development_groups", "development_images",
                      "development_lineages", "development_reference_digests"):

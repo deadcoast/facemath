@@ -105,8 +105,9 @@ def finalize_session(session_path: str | Path, destination: str | Path) -> Path:
             raise FileExistsError(target)
         os.rename(temp, target)
         return target
-    except Exception:
-        shutil.rmtree(temp, ignore_errors=True)
+    except Exception as exc:
+        from .journal import retain_failed_run
+        retain_failed_run(temp, target, journal, exc)
         raise
 
 

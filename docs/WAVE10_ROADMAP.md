@@ -1,5 +1,12 @@
 # Beyond the Wave10 consolidation
 
+2026-10-02 update: automated sourcing, testing and release decisions are authorized.
+The 0.11 pipeline executes pinned native observations against published machine
+references without waiting for user-provided images or a human testing campaign.
+See [its operational contract](NATIVE_PIPELINE_OPERATIONS.md). Expand sourced
+datasets and assess useful error bounds next; retain the distinction between
+teacher-model agreement and independent anatomical accuracy throughout.
+
 ## Gate A — actual native observations and independent references
 
 Execute `observer-smoke` with pinned local model/runtime on the intended machine. Preserve every process output and no-face/multi-face outcome. Do not treat model availability as anatomical accuracy. Acquire independently annotated original portraits under an explicit reference8 equivalence/visibility protocol. Use the new workspace and retained revisions rather than untracked spreadsheet coordinates.

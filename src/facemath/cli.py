@@ -250,6 +250,12 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--timeout", type=float, default=90.)
     p.add_argument("--out", required=True)
 
+    p = sub.add_parser("dataset", help="fetch pinned assets, prepare machine-reference data, execute a native pipeline")
+    d = p.add_subparsers(dest="dataset_command", required=True)
+    q = d.add_parser("fetch"); q.add_argument("recipe"); q.add_argument("--out", required=True)
+    q = d.add_parser("prepare"); q.add_argument("recipe"); q.add_argument("--out", required=True)
+    q = d.add_parser("run"); q.add_argument("dataset"); q.add_argument("--model"); q.add_argument("--out", required=True)
+
     p = sub.add_parser("workspace", help="prepare portraits, import independent label revisions, freeze a study")
     w = p.add_subparsers(dest="workspace_command", required=True)
     q = w.add_parser("prepare"); q.add_argument("spec"); q.add_argument("--out", required=True)
@@ -342,6 +348,11 @@ def _inspect_video(args: argparse.Namespace) -> dict:
 
 def _replay(args: argparse.Namespace) -> dict:
     root = Path(args.bundle)
+    if read_json(root / "manifest.json").get("format") == "facemath.native_pipeline_bundle.v11":
+        from .observation.dataset import verify_pipeline
+        from .observation.study_io import replay_qualification_bundle
+        verify_pipeline(root)
+        return replay_qualification_bundle(root / "qualification", args.out)
     if read_json(root / "manifest.json").get("format") == "facemath.acquisition_group_bundle.v9":
         from .observation.acquisition import load_group, write_group
         group = load_group(root)
@@ -454,6 +465,15 @@ def _session_summary(status: dict, directory: str | Path) -> dict:
 
 
 def execute(args: argparse.Namespace) -> dict:
+    if args.command == "dataset":
+        from .observation.dataset import fetch_dataset, prepare_dataset, run_pipeline, verify_dataset
+        if args.dataset_command == "fetch":
+            root = fetch_dataset(args.recipe, args.out)
+            return {"assets": str(root), "pins_verified": True, "inference_executed": False}
+        if args.dataset_command == "prepare":
+            root = prepare_dataset(args.recipe, args.out)
+            return {"dataset": str(root), **verify_dataset(root)}
+        return run_pipeline(args.dataset, args.out, model=args.model)
     if args.command == "overview":
         from .observation.readout import inspect_readout
         return inspect_readout(args.bundle)
@@ -531,6 +551,12 @@ def execute(args: argparse.Namespace) -> dict:
             from .observation.study_runner import verify_session
             return _session_summary(verify_session(root), root)
         kind = read_json(root / "manifest.json").get("format")
+        if kind == "facemath.dataset_bundle.v11":
+            from .observation.dataset import verify_dataset
+            return verify_dataset(root)
+        if kind == "facemath.native_pipeline_bundle.v11":
+            from .observation.dataset import verify_pipeline
+            return verify_pipeline(root)
         if kind == "facemath.native_smoke_bundle.v10":
             from .observation.native_check import verify_smoke
             return verify_smoke(root)
@@ -675,6 +701,8 @@ def main(argv: list[str] | None = None) -> None:
     try:
         result = execute(args)
     except (ObservationError, ProviderUnavailable, OSError, KeyError, json.JSONDecodeError) as exc:
+        if hasattr(exc, "failure_path"):
+            print(f"Retained failed run: {exc.failure_path}", file=sys.stderr)
         if hasattr(exc, "journal_jsonl") and getattr(args, "out", None):
             journal_path = Path(str(args.out) + ".failure.events.jsonl")
             try:

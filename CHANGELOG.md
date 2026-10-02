@@ -69,3 +69,13 @@ Added strict immutable image-bound observations, a shared anatomical grammar, a 
 Repaired signed-scale proper registration, implicit reflection behavior, mutating CKA, undirected Laplacian input/isolated-node handling, temporal mask use, and the low-rank-video interpretation. Added an honest mathematical capability audit instead of equating a section-name registry with complete implementation.
 
 Retained the original research modules and legacy commands for continuity. They are not all fully audited or proven equivalent to every equation in the prior discussion. The real MediaPipe inference integration remains explicitly unexecuted in the captured environment; no human calibration population or detector weights are included.
+# 0.11.0 — pinned native data pipelines
+
+- Add explicit pinned asset fetch, source-preserving dlib dataset conversion and
+  an automated freeze/observe/fit/calibrate/evaluate/replay pipeline.
+- Retain model-generated reference provenance throughout research calibration;
+  preserve the independent-reference empirical admission gate.
+- Keep failed validation/finalization artifacts and actual journals in distinct
+  directories. Launch Windows native workers without console windows.
+- Extend release validation to repeat real native acquisition from source,
+  installed wheels and extracted archives; preserve source/evidence bytes in Git.

@@ -133,7 +133,8 @@ class NativeExecutor:
             "timeout_seconds": self.timeout, "started_at": utc_now()})
         with (directory / "stdout.txt").open("xb") as stdout, (directory / "stderr.txt").open("xb") as stderr:
             try:
-                result = subprocess.run(command, stdout=stdout, stderr=stderr, timeout=self.timeout, check=False)
+                result = subprocess.run(command, stdout=stdout, stderr=stderr, timeout=self.timeout, check=False,
+                                        creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
             except subprocess.TimeoutExpired:
                 write_json_new(directory / "process.json", {"timed_out": True, "returncode": None, "completed_at": utc_now()})
                 return AttemptOutcome("timeout", detail="native worker exceeded frozen session timeout; not automatically retried")

@@ -34,5 +34,37 @@ jobs:
             runs/ci-validation/wheels/*.whl
             runs/ci-validation/wheel-check/*.json
             runs/ci-validation/wheel-check/*.xml
-# Configuration for future hosted execution. This file is not evidence that
-# Windows/macOS or all matrix combinations ran in the development container.
+  native-pipeline:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked --extra dev --extra observer
+      - run: uv run --locked --extra observer python -m facemath dataset fetch examples/native-dlib-pilot.json --out runs/native-assets
+      - run: uv run --locked --extra observer python -m facemath dataset prepare runs/native-assets/recipe.json --out evidence/native-ci/dataset
+      - run: uv run --locked --extra observer python scripts/validate_current.py --out runs/native-ci-validation --native-dataset evidence/native-ci/dataset --retain-evidence evidence/native-ci/preseal
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-pipeline-${{ matrix.os }}-3.11
+          path: |
+            runs/native-assets/*.json
+            runs/native-ci-validation/*.json
+            runs/native-ci-validation/*.log
+            runs/native-ci-validation/*.xml
+            runs/native-ci-validation/*.zip
+            runs/native-ci-validation/wheel-check/*.json
+            runs/native-ci-validation/wheel-check/*.xml
+            runs/native-ci-validation/source-native
+            runs/native-ci-validation/archive-native
+# CI configuration is distinct from the execution records retained by each job.

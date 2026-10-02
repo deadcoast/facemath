@@ -11,7 +11,6 @@ from pathlib import Path
 from typing import Any
 import json
 import os
-import shutil
 import tempfile
 
 import cv2
@@ -184,8 +183,9 @@ def run_validation_study(study_path: str | Path, destination: str | Path, *,
         if destination.exists():
             raise FileExistsError(destination)
         os.rename(temp, destination)
-    except Exception:
-        shutil.rmtree(temp, ignore_errors=True)
+    except Exception as exc:
+        from .journal import retain_failed_run
+        retain_failed_run(temp, destination, journal, exc)
         raise
     return destination
 

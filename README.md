@@ -1,13 +1,42 @@
-# FACEMATH · Wave 10 milestone
+# FACEMATH · reproducible facial geometry
 
-Version **0.10.1** repairs the active Windows qualification, portable-snapshot,
-compatibility and missing-landmark blockers identified in
-`REPOSITORY_REVIEW.json`. See [the remediation design and validation boundaries](docs/REVIEW_REMEDIATION_20261001.md).
+Version **0.11.0** adds a pinned, automated native dataset pipeline: fetch assets,
+preserve source coordinates, freeze splits, observe, fit, calibrate, evaluate and
+replay. It also retains failed study artifacts and journals. No user-supplied
+image database or new human annotation campaign is required to run it.
+The prior 0.10.1 blocker repairs remain documented in
+[the remediation record](docs/REVIEW_REMEDIATION_20261001.md).
+
+## Run the sourced native pipeline
+
+```shell
+uv sync --locked --python 3.11 --extra dev --extra observer
+uv run --locked --extra observer python -m facemath dataset fetch examples/native-dlib-pilot.json --out runs/pilot-assets
+uv run --locked --extra observer python -m facemath dataset prepare runs/pilot-assets/recipe.json --out runs/pilot-dataset
+uv run --locked --extra observer python -m facemath dataset run runs/pilot-dataset --out runs/pilot-001
+uv run --locked --extra observer python -m facemath verify runs/pilot-001
+uv run --locked --extra observer python -m facemath replay runs/pilot-001 --out runs/pilot-001-replay
+```
+
+The recipe pins nine public PASCAL example photographs, 43 published dlib model
+annotations, and Google's Face Landmarker model. The real Windows/Python 3.11
+pilot observed all 43 crops and exactly replayed its fitted joint error model.
+These labels measure **machine-reference agreement**. The small calibration
+inventory correctly yields an unbounded radius; evaluation outcomes do not
+change the frozen split, fit, or confidence level.
+
+Transfer the complete run directory. It contains original asset bytes and pins,
+crop transforms, labels, frozen group splits, native process records, observations,
+fitted center/scatter, calibration, evaluation and replay. `verify` checks those
+bindings and recomputes dataset conversions; `replay` recomputes retained
+numerical results. Another `dataset run` creates a distinct native execution.
+See [pipeline operations](docs/NATIVE_PIPELINE_OPERATIONS.md) and
+[the design](docs/NATIVE_PIPELINE_DESIGN.md).
 
 For reproducible development, use `uv sync --locked --extra dev`, then
 `uv run --locked python -m pytest -q`. The lock includes the supported OpenCV 4
-Haar locator dependency. Native observation still requires a separately pinned
-compatible runtime/model and independent portrait references.
+Haar locator dependency. The native recipe supplies explicit runtime/model pins;
+human-reference empirical admission remains a separate optional evidence gate.
 
 Run `uv run --locked python scripts/validate_current.py --out runs/validation-001`
 for source, installed-wheel and extracted-archive checks, including milestone

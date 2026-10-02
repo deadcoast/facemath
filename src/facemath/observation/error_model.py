@@ -82,7 +82,8 @@ class LocalizationCalibration:
         check_digest(self.study_sha256, "study digest")
         if not isinstance(self.domain, str) or not self.domain.strip():
             raise ObservationError("calibration domain must be explicitly declared")
-        if self.reference_kind not in ("human_blind", "external_dataset", "synthetic_fixture"):
+        from .reference import CALIBRATION_REFERENCE_KINDS
+        if self.reference_kind not in CALIBRATION_REFERENCE_KINDS:
             raise ObservationError("exposed manual labels cannot calibrate localization accuracy")
         groups = tuple((str(k), v) for k, v in self.group_scores)
         if any(not k or (v is not None and (not np.isfinite(v) or v < 0)) for k, v in groups):
@@ -109,7 +110,9 @@ class LocalizationCalibration:
         return {
             "format": "facemath.localization_calibration.v4", **asdict(self),
             "protocol_sha256": REFERENCE_PROTOCOL_SHA256, "names": list(REFERENCE_NAMES),
-            "scope": "synthetic_only" if self.reference_kind == "synthetic_fixture" else "declared_reference_domain_only",
+            "scope": ("synthetic_only" if self.reference_kind == "synthetic_fixture" else
+                      "machine_reference_agreement_only" if self.reference_kind == "model_generated" else
+                      "declared_reference_domain_only"),
             "score": "group_max_of_case_max_reference8_mahalanobis",
             "guarantee": "marginal new-group simultaneous-reference coverage under exchangeability and frozen protocol; not per-image posterior certainty",
             "unbounded": self.quantile is None,
@@ -334,7 +337,9 @@ class LocalizationEnvelope:
             "query_groups": list(self.query_groups), "query_lineages": [list(x) for x in self.query_lineages], "domain": self.domain,
             "nominal_per_source_coverage": 1-self.calibration.alpha,
             "pair_union_bound": max(0, 1-2*self.calibration.alpha),
-            "scope": "synthetic_only" if self.calibration.reference_kind == "synthetic_fixture" else "calibration_reference_domain",
+            "scope": ("synthetic_only" if self.calibration.reference_kind == "synthetic_fixture" else
+                      "machine_reference_agreement_only" if self.calibration.reference_kind == "model_generated" else
+                      "calibration_reference_domain"),
             "gauge": "observed_transforms_and_observed_normalizer_held_fixed; NOT re-fitted_true_shape_geometry",
             "interpretation": "conservative geometric gap bounds from calibrated reference ellipses; full covariance pushforward with fixed observed gauge; no extrapolation to unannotated vertices",
             "rows": [{"name": name, "observed_gap_ipd": float(self.observed_gap_ipd[i]) if self.supported[i] else None,

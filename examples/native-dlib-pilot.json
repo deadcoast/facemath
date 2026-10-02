@@ -1,0 +1,188 @@
+{
+  "format": "facemath.dlib_dataset_recipe.v11",
+  "name": "dlib-pascal-machine-reference-pilot",
+  "upstream_revision": "46fa4a281a35b16aed6577250d7dabbda0e74a2b",
+  "source": "https://github.com/davisking/dlib/tree/46fa4a281a35b16aed6577250d7dabbda0e74a2b/examples/faces",
+  "label_source": "Published dlib shape_predictor_68_face_landmarks.dat outputs; teacher version and training overlap unknown",
+  "image_terms": "PASCAL VOC 2011 example photographs; original image rights remain with their owners. The retained dlib license covers dlib, not a transfer of photograph copyrights.",
+  "label_kind": "model_generated",
+  "coordinate_origin": 0,
+  "box_margin": 0.25,
+  "annotations": [
+    "training_with_face_landmarks.xml",
+    "testing_with_face_landmarks.xml"
+  ],
+  "model_asset": "face_landmarker.task",
+  "runtime_version": "1.0.1",
+  "protocol": {
+    "domain": "Small public PASCAL VOC example crops: native model-to-machine-reference consistency only",
+    "minimum_raters": 1,
+    "maximum_cases_per_group": 7,
+    "minimum_development_groups": 2,
+    "timeout_seconds": 90,
+    "alpha": 0.1,
+    "bias_mode": "development_joint_ocular",
+    "joint_error": {
+      "shrinkage": 0.02,
+      "floor_eye_spans": 0.001
+    },
+    "strata": [
+      "all"
+    ]
+  },
+  "grouping_limit": "Whole source photograph is the dependence unit; person identities and cross-photo independence have not been established. No population coverage claim.",
+  "assets": [
+    {
+      "sha256": "d7895a98681f5e3818fb5d95cd75fdeba7c0e0c74cc9b22193df2909eb8f6ce5",
+      "bytes": 50646,
+      "url": "https://raw.githubusercontent.com/davisking/dlib/46fa4a281a35b16aed6577250d7dabbda0e74a2b/examples/faces/training_with_face_landmarks.xml",
+      "path": "training_with_face_landmarks.xml"
+    },
+    {
+      "sha256": "17d9897dd55d38179f51dc18371b3f4495a606aaa2846e25a3cb6a58b3a97c89",
+      "bytes": 89619,
+      "url": "https://raw.githubusercontent.com/davisking/dlib/46fa4a281a35b16aed6577250d7dabbda0e74a2b/examples/faces/2007_007763.jpg",
+      "path": "2007_007763.jpg"
+    },
+    {
+      "sha256": "f929bdf416d756b37eb90c119b892eba5d21041b134883e18d827bce641fb48f",
+      "bytes": 92641,
+      "url": "https://raw.githubusercontent.com/davisking/dlib/46fa4a281a35b16aed6577250d7dabbda0e74a2b/examples/faces/2008_002079.jpg",
+      "path": "2008_002079.jpg"
+    },
+    {
+      "sha256": "2509864113a286bf245161d0317a18c38b6a6641135969847a7e59dff359c52c",
+      "bytes": 41770,
+      "url": "https://raw.githubusercontent.com/davisking/dlib/46fa4a281a35b16aed6577250d7dabbda0e74a2b/examples/faces/2008_001009.jpg",
+      "path": "2008_001009.jpg"
+    },
+    {
+      "sha256": "2ea5a60f5347baab8da6eccce43b0320d63da1368d7710fb15cbff8a790bc626",
+      "bytes": 65344,
+      "url": "https://raw.githubusercontent.com/davisking/dlib/46fa4a281a35b16aed6577250d7dabbda0e74a2b/examples/faces/2008_001322.jpg",
+      "path": "2008_001322.jpg"
+    },
+    {
+      "sha256": "b45d736ab07016dd552a95cedb569a5e1f0c4dacf9ba6db60861fec55c05c57e",
+      "bytes": 69937,
+      "url": "https://raw.githubusercontent.com/davisking/dlib/46fa4a281a35b16aed6577250d7dabbda0e74a2b/examples/faces/testing_with_face_landmarks.xml",
+      "path": "testing_with_face_landmarks.xml"
+    },
+    {
+      "sha256": "14b543e3ac55b497aaaba9dc03a39be04c8ae670851b3f78f9f5adb08295d780",
+      "bytes": 91349,
+      "url": "https://raw.githubusercontent.com/davisking/dlib/46fa4a281a35b16aed6577250d7dabbda0e74a2b/examples/faces/2008_002470.jpg",
+      "path": "2008_002470.jpg"
+    },
+    {
+      "sha256": "ede6804edf0ec005144ffe7f0f2b56bd2aa1d21beee79d29f72cb16ead19a447",
+      "bytes": 79316,
+      "url": "https://raw.githubusercontent.com/davisking/dlib/46fa4a281a35b16aed6577250d7dabbda0e74a2b/examples/faces/2008_002506.jpg",
+      "path": "2008_002506.jpg"
+    },
+    {
+      "sha256": "92a075f5e1d279f009ab4809592aaf0109e429adf3266e5aa8ce2755730b41c2",
+      "bytes": 93821,
+      "url": "https://raw.githubusercontent.com/davisking/dlib/46fa4a281a35b16aed6577250d7dabbda0e74a2b/examples/faces/2008_004176.jpg",
+      "path": "2008_004176.jpg"
+    },
+    {
+      "sha256": "09a0e07d6fb3b4276e73b9f6450b5c69d97d3e3b75807948caf6defd40260e6f",
+      "bytes": 110034,
+      "url": "https://raw.githubusercontent.com/davisking/dlib/46fa4a281a35b16aed6577250d7dabbda0e74a2b/examples/faces/2008_007676.jpg",
+      "path": "2008_007676.jpg"
+    },
+    {
+      "sha256": "2dc5d52a5388499cf912d7d99dc9d05e4bec7651153331f40e81ae4813bb317c",
+      "bytes": 79462,
+      "url": "https://raw.githubusercontent.com/davisking/dlib/46fa4a281a35b16aed6577250d7dabbda0e74a2b/examples/faces/2009_004587.jpg",
+      "path": "2009_004587.jpg"
+    },
+    {
+      "sha256": "8d8291caf1cee26d23acf3eb67c9f9a2d58f1c681b16a4fbe8cbfb9e3c0b5a9b",
+      "bytes": 1337,
+      "url": "https://raw.githubusercontent.com/davisking/dlib/46fa4a281a35b16aed6577250d7dabbda0e74a2b/dlib/LICENSE.txt",
+      "path": "dlib-LICENSE.txt"
+    },
+    {
+      "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+      "bytes": 3758596,
+      "url": "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task",
+      "path": "face_landmarker.task"
+    }
+  ],
+  "images": [
+    {
+      "path": "2007_007763.jpg",
+      "group_id": "source_2007_007763",
+      "lineage_ids": [
+        "pascal_2007_007763"
+      ],
+      "split": "calibration"
+    },
+    {
+      "path": "2008_002079.jpg",
+      "group_id": "source_2008_002079",
+      "lineage_ids": [
+        "pascal_2008_002079"
+      ],
+      "split": "calibration"
+    },
+    {
+      "path": "2008_001009.jpg",
+      "group_id": "source_2008_001009",
+      "lineage_ids": [
+        "pascal_2008_001009"
+      ],
+      "split": "development"
+    },
+    {
+      "path": "2008_001322.jpg",
+      "group_id": "source_2008_001322",
+      "lineage_ids": [
+        "pascal_2008_001322"
+      ],
+      "split": "development"
+    },
+    {
+      "path": "2008_002470.jpg",
+      "group_id": "source_2008_002470",
+      "lineage_ids": [
+        "pascal_2008_002470"
+      ],
+      "split": "calibration"
+    },
+    {
+      "path": "2008_002506.jpg",
+      "group_id": "source_2008_002506",
+      "lineage_ids": [
+        "pascal_2008_002506"
+      ],
+      "split": "calibration"
+    },
+    {
+      "path": "2008_004176.jpg",
+      "group_id": "source_2008_004176",
+      "lineage_ids": [
+        "pascal_2008_004176"
+      ],
+      "split": "evaluation"
+    },
+    {
+      "path": "2008_007676.jpg",
+      "group_id": "source_2008_007676",
+      "lineage_ids": [
+        "pascal_2008_007676"
+      ],
+      "split": "evaluation"
+    },
+    {
+      "path": "2009_004587.jpg",
+      "group_id": "source_2009_004587",
+      "lineage_ids": [
+        "pascal_2009_004587"
+      ],
+      "split": "evaluation"
+    }
+  ]
+}
