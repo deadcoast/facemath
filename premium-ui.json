@@ -1,0 +1,12 @@
+{
+  "profile": "product-admin",
+  "sourceRoots": ["src/facemath/observation"],
+  "locale": "en",
+  "canonicalMap": "DESIGN.md",
+  "requiredCapabilities": ["Scrollbar"],
+  "commands": {
+    "unit": "python -m pytest -q tests/test_structural_comparison.py"
+  },
+  "requiredCommands": ["unit"],
+  "evidence": {"failurePaths": "tests/test_structural_comparison.py"}
+}

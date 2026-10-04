@@ -1,0 +1,33 @@
+{
+  "source_static_audit": "premium-audit.json",
+  "source_static_limit": "Auditor does not parse Python-generated templates. Rendered reports were separately audited.",
+  "rendered_audit": "rendered-premium-audit.json",
+  "rendered_static_exit": 1,
+  "findings": [
+    {
+      "rule": "affordance.actionless-button",
+      "id": "intrinsic-csv",
+      "reports": [
+        "nominal",
+        "calibrated"
+      ],
+      "binding": "report.html el(intrinsic-csv).addEventListener(click) via local el helper",
+      "resolution": "Browser click downloaded 168 selected angle rows in both reports."
+    },
+    {
+      "rule": "affordance.actionless-button",
+      "id": "joint-covariance-csv",
+      "reports": [
+        "calibrated"
+      ],
+      "binding": "report.html el(joint-covariance-csv).addEventListener(click) via local el helper",
+      "resolution": "Browser click downloaded 256 source covariance entries."
+    }
+  ],
+  "browser_evidence": "browser-03/browser.json",
+  "assessment": "Three literal-markup heuristic findings have actual registered handlers and executed downloads; raw static failure remains retained, not rewritten as zero findings.",
+  "design_lint": "design-lint.json",
+  "design_lint_errors": 0,
+  "design_lint_warnings": 4,
+  "design_lint_warning_scope": "runtime-owned color tokens are documented in prose rather than component frontmatter references"
+}

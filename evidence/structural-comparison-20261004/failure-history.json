@@ -1,0 +1,25 @@
+{
+  "retained": [
+    {
+      "path": "development-logs/focused-01.log",
+      "result": "18 passed, ACL subprocess failed because Windows PowerShell module autoload was incompatible; corrected to installed PowerShell 7"
+    },
+    {
+      "path": "development-logs/intake.log",
+      "result": "pre-inference refusal of incomplete evaluation-only plan; corrected plan explicitly forbids fitting"
+    },
+    {
+      "path": "native-01/failure.json",
+      "result": "real frozen model transfer refused before inference due missing decoded image_shape; fixed public freeze boundary and tested inherited registry"
+    },
+    {
+      "path": "development-logs/release-01/source-tests.log",
+      "result": "1195 passed, 1 failed, 1 skipped; invariant count expected old 135 instead of 139; original 135 plus 4 observed structural arrays now required"
+    },
+    {
+      "path": "browser-01",
+      "result": "interactions passed; narrow screenshots unusable after End scrolled page; browser-02 restores visible heading before capture"
+    }
+  ],
+  "overwritten_results": false
+}

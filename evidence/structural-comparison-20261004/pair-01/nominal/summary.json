@@ -1,0 +1,913 @@
+{
+  "format": "facemath.pair_readout.v10",
+  "recipe_sha256": "b02821c2d6fc01c93ffaaa47884a13efe131b5b0c4495b90195d8f5261ff67f1",
+  "scope": "projected geometry, not identity",
+  "empirical_admission": {
+    "status": "not_requested",
+    "passed": false,
+    "scope": "research analysis; empirical acceptance not asserted"
+  },
+  "localization_calibrated": false,
+  "registered_all_rms": {
+    "name": "geometry.all.rms",
+    "value": 0.09749764064377278,
+    "unit": "registered_eye_span_geomean",
+    "support": 478,
+    "total": 478,
+    "family": "landmarks",
+    "interpretation": "lower residual means closer projected layout under this registration gauge",
+    "interval": [
+      0.09299799479653421,
+      0.10264547050248073
+    ],
+    "interval_kind": "95_percent_conditional_observation_sensitivity_not_accuracy_CI",
+    "exclusion": null
+  },
+  "shape_distance": {
+    "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+    "observed_rms": 0.07290945150888407,
+    "reference_set_center_rms": 0.07290945150888407,
+    "lower": null,
+    "upper": null,
+    "available": false,
+    "reason": "no_localization_calibration",
+    "distance_matrix_lower": null,
+    "quotient_lipschitz_lower": null,
+    "quotient_lipschitz_upper": null,
+    "candidate_rotation_upper": null,
+    "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+    "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+    "arrays": [
+      "intrinsic_shape_deviation_radii",
+      "intrinsic_shape_candidate_rotation"
+    ]
+  },
+  "families": [
+    {
+      "family": "distance",
+      "prespecified_relations": 28,
+      "nominally_observable": 28,
+      "bounded_relations": 0,
+      "within": 0,
+      "outside": 0,
+      "unresolved_or_unavailable": 28,
+      "within_tolerance_fraction_bounds": null,
+      "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability",
+      "within_tolerance_percent_bounds": null
+    },
+    {
+      "family": "angle",
+      "prespecified_relations": 168,
+      "nominally_observable": 168,
+      "bounded_relations": 0,
+      "within": 0,
+      "outside": 0,
+      "unresolved_or_unavailable": 168,
+      "within_tolerance_fraction_bounds": null,
+      "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability",
+      "within_tolerance_percent_bounds": null
+    },
+    {
+      "family": "signed_double_area",
+      "prespecified_relations": 56,
+      "nominally_observable": 56,
+      "bounded_relations": 0,
+      "within": 0,
+      "outside": 0,
+      "unresolved_or_unavailable": 56,
+      "within_tolerance_fraction_bounds": null,
+      "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability",
+      "within_tolerance_percent_bounds": null
+    },
+    {
+      "family": "asymmetry",
+      "prespecified_relations": 4,
+      "nominally_observable": 4,
+      "bounded_relations": 0,
+      "within": 0,
+      "outside": 0,
+      "unresolved_or_unavailable": 4,
+      "within_tolerance_fraction_bounds": null,
+      "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability",
+      "within_tolerance_percent_bounds": null
+    }
+  ],
+  "structural_comparison": {
+    "format": "facemath.structural_comparison.v18",
+    "recipe_sha256": "fee3d1d5e51704421b49ae9eb418632502704172e03443c4bf449236269363db",
+    "prespecified_measurements": 14,
+    "calibration_sha256": null,
+    "source_quantiles": [
+      null,
+      null
+    ],
+    "observed_counts": {
+      "within_tolerance": 7,
+      "outside_tolerance": 7,
+      "unavailable": 0
+    },
+    "reference_counts": {
+      "within_tolerance_under_envelope": 0,
+      "outside_tolerance_under_envelope": 0,
+      "unresolved_at_tolerance": 0,
+      "unavailable": 14
+    },
+    "rows": [
+      {
+        "key": "left_eye_width",
+        "label": "Viewer-left eye width",
+        "operation": "width",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer"
+        ],
+        "a_coefficients": [
+          -1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 0,
+        "observed_a": 0.49581703136101407,
+        "observed_b": 0.49670128120753176,
+        "observed_delta_b_minus_a": 0.0008842498465176929,
+        "observed_absolute_gap": 0.0008842498465176929,
+        "observed_status": "within_tolerance",
+        "reference_status": "unavailable",
+        "source_intervals": [
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          },
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          }
+        ],
+        "reference_delta_b_minus_a": null,
+        "reference_absolute_gap": null
+      },
+      {
+        "key": "right_eye_width",
+        "label": "Viewer-right eye width",
+        "operation": "width",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer"
+        ],
+        "a_coefficients": [
+          0.0,
+          0.0,
+          -1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 1,
+        "observed_a": 0.427560430057286,
+        "observed_b": 0.4321718872553427,
+        "observed_delta_b_minus_a": 0.004611457198056723,
+        "observed_absolute_gap": 0.004611457198056723,
+        "observed_status": "within_tolerance",
+        "reference_status": "unavailable",
+        "source_intervals": [
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          },
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          }
+        ],
+        "reference_delta_b_minus_a": null,
+        "reference_absolute_gap": null
+      },
+      {
+        "key": "inner_eye_gap",
+        "label": "Inner-eye gap",
+        "operation": "width",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer"
+        ],
+        "a_coefficients": [
+          0.0,
+          -1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 2,
+        "observed_a": 0.5384144026003636,
+        "observed_b": 0.540926878321857,
+        "observed_delta_b_minus_a": 0.00251247572149349,
+        "observed_absolute_gap": 0.00251247572149349,
+        "observed_status": "within_tolerance",
+        "reference_status": "unavailable",
+        "source_intervals": [
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          },
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          }
+        ],
+        "reference_delta_b_minus_a": null,
+        "reference_absolute_gap": null
+      },
+      {
+        "key": "mouth_width",
+        "label": "Mouth width",
+        "operation": "width",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "mouth_left",
+          "mouth_right"
+        ],
+        "a_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.0,
+          1.0,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 3,
+        "observed_a": 0.8017089601813181,
+        "observed_b": 0.7526104834617481,
+        "observed_delta_b_minus_a": -0.04909847671957002,
+        "observed_absolute_gap": 0.04909847671957002,
+        "observed_status": "within_tolerance",
+        "reference_status": "unavailable",
+        "source_intervals": [
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          },
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          }
+        ],
+        "reference_delta_b_minus_a": null,
+        "reference_absolute_gap": null
+      },
+      {
+        "key": "eye_to_nose_height",
+        "label": "Eye line to nose height",
+        "operation": "height",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "nose_tip"
+        ],
+        "a_coefficients": [
+          -0.25,
+          -0.25,
+          -0.25,
+          -0.25,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 4,
+        "observed_a": 0.4156165342207533,
+        "observed_b": 0.5625822453459365,
+        "observed_delta_b_minus_a": 0.1469657111251832,
+        "observed_absolute_gap": 0.1469657111251832,
+        "observed_status": "outside_tolerance",
+        "reference_status": "unavailable",
+        "source_intervals": [
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          },
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          }
+        ],
+        "reference_delta_b_minus_a": null,
+        "reference_absolute_gap": null
+      },
+      {
+        "key": "eye_to_mouth_height",
+        "label": "Eye line to mouth height",
+        "operation": "height",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "mouth_left",
+          "mouth_right"
+        ],
+        "a_coefficients": [
+          -0.25,
+          -0.25,
+          -0.25,
+          -0.25,
+          0.0,
+          0.5,
+          0.5,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 5,
+        "observed_a": 1.0870132102508472,
+        "observed_b": 1.1381182024902876,
+        "observed_delta_b_minus_a": 0.05110499223944043,
+        "observed_absolute_gap": 0.05110499223944043,
+        "observed_status": "outside_tolerance",
+        "reference_status": "unavailable",
+        "source_intervals": [
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          },
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          }
+        ],
+        "reference_delta_b_minus_a": null,
+        "reference_absolute_gap": null
+      },
+      {
+        "key": "eye_to_chin_height",
+        "label": "Eye line to chin height",
+        "operation": "height",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "chin"
+        ],
+        "a_coefficients": [
+          -0.25,
+          -0.25,
+          -0.25,
+          -0.25,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 6,
+        "observed_a": 1.8392679611603162,
+        "observed_b": 1.756664040024139,
+        "observed_delta_b_minus_a": -0.08260392113617732,
+        "observed_absolute_gap": 0.08260392113617732,
+        "observed_status": "outside_tolerance",
+        "reference_status": "unavailable",
+        "source_intervals": [
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          },
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          }
+        ],
+        "reference_delta_b_minus_a": null,
+        "reference_absolute_gap": null
+      },
+      {
+        "key": "nose_to_mouth_height",
+        "label": "Nose to mouth height",
+        "operation": "height",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "nose_tip",
+          "mouth_left",
+          "mouth_right"
+        ],
+        "a_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.0,
+          0.5,
+          0.5,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 7,
+        "observed_a": 0.671396676030094,
+        "observed_b": 0.5755359571443512,
+        "observed_delta_b_minus_a": -0.09586071888574277,
+        "observed_absolute_gap": 0.09586071888574277,
+        "observed_status": "outside_tolerance",
+        "reference_status": "unavailable",
+        "source_intervals": [
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          },
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          }
+        ],
+        "reference_delta_b_minus_a": null,
+        "reference_absolute_gap": null
+      },
+      {
+        "key": "mouth_to_chin_height",
+        "label": "Mouth to chin height",
+        "operation": "height",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "mouth_left",
+          "mouth_right",
+          "chin"
+        ],
+        "a_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.5,
+          -0.5,
+          1.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 8,
+        "observed_a": 0.7522547509094689,
+        "observed_b": 0.6185458375338512,
+        "observed_delta_b_minus_a": -0.13370891337561774,
+        "observed_absolute_gap": 0.13370891337561774,
+        "observed_status": "outside_tolerance",
+        "reference_status": "unavailable",
+        "source_intervals": [
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          },
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          }
+        ],
+        "reference_delta_b_minus_a": null,
+        "reference_absolute_gap": null
+      },
+      {
+        "key": "nose_lateral_offset",
+        "label": "Nose lateral offset",
+        "operation": "offset",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "nose_tip"
+        ],
+        "a_coefficients": [
+          -0.25,
+          -0.25,
+          -0.25,
+          -0.25,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 9,
+        "observed_a": 0.1630338433012264,
+        "observed_b": 0.15498866611973244,
+        "observed_delta_b_minus_a": -0.008045177181493945,
+        "observed_absolute_gap": 0.008045177181493945,
+        "observed_status": "within_tolerance",
+        "reference_status": "unavailable",
+        "source_intervals": [
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          },
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          }
+        ],
+        "reference_delta_b_minus_a": null,
+        "reference_absolute_gap": null
+      },
+      {
+        "key": "mouth_lateral_offset",
+        "label": "Mouth lateral offset",
+        "operation": "offset",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "mouth_left",
+          "mouth_right"
+        ],
+        "a_coefficients": [
+          -0.25,
+          -0.25,
+          -0.25,
+          -0.25,
+          0.0,
+          0.5,
+          0.5,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 10,
+        "observed_a": 0.0952738779777313,
+        "observed_b": 0.016994739435131058,
+        "observed_delta_b_minus_a": -0.07827913854260024,
+        "observed_absolute_gap": 0.07827913854260024,
+        "observed_status": "outside_tolerance",
+        "reference_status": "unavailable",
+        "source_intervals": [
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          },
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          }
+        ],
+        "reference_delta_b_minus_a": null,
+        "reference_absolute_gap": null
+      },
+      {
+        "key": "chin_lateral_offset",
+        "label": "Chin lateral offset",
+        "operation": "offset",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "chin"
+        ],
+        "a_coefficients": [
+          -0.25,
+          -0.25,
+          -0.25,
+          -0.25,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 11,
+        "observed_a": 0.1494267937186815,
+        "observed_b": -0.002041720343202644,
+        "observed_delta_b_minus_a": -0.15146851406188416,
+        "observed_absolute_gap": 0.15146851406188416,
+        "observed_status": "outside_tolerance",
+        "reference_status": "unavailable",
+        "source_intervals": [
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          },
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          }
+        ],
+        "reference_delta_b_minus_a": null,
+        "reference_absolute_gap": null
+      },
+      {
+        "key": "mouth_corner_height_difference",
+        "label": "Right minus left mouth height",
+        "operation": "height",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "mouth_left",
+          "mouth_right"
+        ],
+        "a_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.0,
+          1.0,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 12,
+        "observed_a": -0.027778794835858295,
+        "observed_b": -0.005237419131656878,
+        "observed_delta_b_minus_a": 0.022541375704201415,
+        "observed_absolute_gap": 0.022541375704201415,
+        "observed_status": "within_tolerance",
+        "reference_status": "unavailable",
+        "source_intervals": [
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          },
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          }
+        ],
+        "reference_delta_b_minus_a": null,
+        "reference_absolute_gap": null
+      },
+      {
+        "key": "eye_width_asymmetry",
+        "label": "Eye-width asymmetry",
+        "operation": "asymmetry",
+        "unit": "signed_length_contrast",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer"
+        ],
+        "a_coefficients": [
+          -1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          -1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 13,
+        "observed_a": 0.07392058411181761,
+        "observed_b": 0.06947061896402294,
+        "observed_delta_b_minus_a": -0.0044499651477946656,
+        "observed_absolute_gap": 0.0044499651477946656,
+        "observed_status": "within_tolerance",
+        "reference_status": "unavailable",
+        "source_intervals": [
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          },
+          {
+            "lower": null,
+            "upper": null,
+            "reason": "no_localization_calibration"
+          }
+        ],
+        "reference_delta_b_minus_a": null,
+        "reference_absolute_gap": null
+      }
+    ],
+    "delta_convention": "B minus A",
+    "axis_convention": "viewer-left to viewer-right eye midpoint; positive height is clockwise perpendicular in stored-raster xy",
+    "normalization": "each source's own uncertain reference eye span; eye-width asymmetry uses sum of eye widths",
+    "meaning": "projected configuration under image pose and expression; dependent measurements, not identity probability or physical depth",
+    "bounds_meaning": "analytic outer intervals from the existing shared reference-error sets; no refit, new alignment or independent votes",
+    "missingness": "all fourteen measurements remain; false array masks mark zero sentinels"
+  },
+  "percentage_meaning": "fraction of a prespecified, dependent relation inventory within explicit tolerances; NOT a probability of resemblance",
+  "array_file": "arrays.npz",
+  "exact_relation_rows": "intrinsic.json",
+  "execution_journal": "events.jsonl",
+  "source_measured": false,
+  "warning_count": 5,
+  "limits": [
+    "2D projected geometry, not identity recognition or proof of 3D shape",
+    "model contours and interpolated fields derive from the same landmarks; not independent evidence",
+    "sensitivity intervals are conditional perturbation intervals, not measured localization-accuracy confidence intervals",
+    "flow consistency tests image matching, not anatomical correctness across people",
+    "within-tolerance fractions have an explicit threshold and denominator; they are not resemblance probabilities",
+    "no population rarity without an exact-recipe held-out reference cohort",
+    "the report contains new tool-side evidence, not inaccessible historical model activations"
+  ]
+}

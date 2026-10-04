@@ -1,0 +1,23 @@
+..............F....                                                      [100%]
+================================== FAILURES ===================================
+____________ test_windows_published_output_inherits_parent_access _____________
+
+tmp_path = WindowsPath('C:/Users/ryanf/github/_active/facemath/runs/structural-comparison-20261004/focused-temp-01/test_windows_published_output_0')
+
+    def test_windows_published_output_inherits_parent_access(tmp_path):
+        stage = publication_stage(tmp_path, '.result-')
+        (stage/'result.json').write_text('{"value": 1}')
+        target = tmp_path/'published'; stage.rename(target)
+        if os.name == 'nt':
+            # Query the actual DACL, not a mock of mkdir or a synthetic permission fixture.
+            script = "$a=Get-Acl -LiteralPath $env:FACEMATH_ACL_TARGET; [pscustomobject]@{protected=$a.AreAccessRulesProtected;inherited=@($a.Access | Where-Object IsInherited).Count} | ConvertTo-Json -Compress"
+            result = subprocess.run(['powershell', '-NoProfile', '-Command', script],
+                env={**os.environ, 'FACEMATH_ACL_TARGET': str(target)}, capture_output=True, text=True, check=True)
+            acl = json.loads(result.stdout)
+>           assert acl['protected'] is False and acl['inherited'] > 0
+E           assert (None is False)
+
+tests\test_publication.py:32: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_publication.py::test_windows_published_output_inherits_parent_access
+1 failed, 18 passed in 4.43s

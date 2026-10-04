@@ -1,5 +1,43 @@
 # FACEMATH · reproducible facial geometry
 
+Version **0.18.0** returns fourteen named structural measurements in the normal
+image-pair analysis: eye widths and spacing, mouth width, eye/nose/mouth/chin
+heights, lateral offsets, mouth-corner height difference and eye-width asymmetry.
+The CLI JSON includes `comparison.structural_comparison`; `overview` and the
+report show A, B, signed B-minus-A differences and available reference bounds.
+Each measurement uses the existing observations and shared error graph.
+
+```shell
+python -m facemath analyze portrait-a.png portrait-b.png --model models/face_landmarker.task --out runs/my-comparison
+python -m facemath overview runs/my-comparison
+```
+
+Open `runs/my-comparison/report.html` to inspect the named rows and image overlay.
+Widths and heights use each image's eye-midpoint span; pose and expression affect
+them. Without an attached research calibration, observed values are available
+and reference bounds explicitly remain unavailable. Missing points retain their
+rows. These are projected geometric measurements, not an identity score.
+
+Published output directories now inherit the chosen parent's access permissions,
+fixing Windows results that the execution account could validate but the user
+could not read. Frozen transfer also carries decoded image dimensions into the
+inherited enrollment-registry check. See [the implementation contract](docs/STRUCTURAL_COMPARISON_DESIGN.md).
+
+[Open the native comparison](evidence/structural-comparison-20261004/pair-01/calibrated/report.html)
+or [read its values](evidence/structural-comparison-20261004/pair-01/comparison.json).
+Both are from the first two entries of the new frozen evaluation window, with
+all 478 vertices, flow, edges and 96 sensitivity draws. Calibration preserves
+146 observed-state arrays. The measured rows are available; all fourteen
+reference comparisons remain unresolved under the broad frozen error model.
+
+The new HELEN `[192,212)` window observed 20/20 sources without refitting. Against
+published PTS labels, mouth width meets the existing 0.05 eye-span tolerance in
+16/20 sources and eye-to-nose height in 14/20. The complete dependent measurement
+inventory and errors are retained in [the label-agreement audit](evidence/structural-comparison-20261004/published-label-agreement.json).
+For later source selection, use `evidence/structural-comparison-20261004/next-registry.json`
+(335 registered cases). This does not close the independent anatomical and
+visibility validation gate.
+
 Version **0.17.0** versions the native landmark correspondence. New observations
 use MediaPipe vertex **4** for `nose_tip`, selected from retained development
 evidence. Historical observations and prepared datasets keep vertex 1. The

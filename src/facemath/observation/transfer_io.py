@@ -6,7 +6,7 @@ from hashlib import sha256
 import os
 from pathlib import Path
 import shutil
-import tempfile
+from .publication import publication_stage
 
 import numpy as np
 
@@ -29,7 +29,7 @@ def finalize_transfer(session_path: str | Path, destination: str | Path) -> Path
     if target == source or target.is_relative_to(source):
         raise ObservationError("transfer output must be outside the acquisition session")
     target.parent.mkdir(parents=True, exist_ok=True)
-    temp = Path(tempfile.mkdtemp(prefix=".facemath-transfer-", dir=target.parent))
+    temp = publication_stage(target.parent, ".facemath-transfer-")
     journal = Journal()
     try:
         with writer_lock(source / ".runner.lock"):

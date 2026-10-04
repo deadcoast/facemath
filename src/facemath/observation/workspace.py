@@ -9,7 +9,8 @@ from __future__ import annotations
 
 from hashlib import sha256
 from pathlib import Path
-from tempfile import TemporaryDirectory, mkdtemp
+from tempfile import TemporaryDirectory
+from .publication import publication_stage
 from typing import Any
 import os
 import shutil
@@ -151,7 +152,7 @@ def prepare_workspace(spec_path: str | Path, destination: str | Path) -> Path:
             ApertureSource(image, tuple(lineages), tuple(item["acquisition_aperture"]))
         loaded.append((item, image, sha256(path.read_bytes()).hexdigest()))
     target.parent.mkdir(parents=True, exist_ok=True)
-    temp = Path(mkdtemp(prefix=".facemath-workspace-", dir=target.parent))
+    temp = publication_stage(target.parent, ".facemath-workspace-")
     try:
         (temp / "sources").mkdir(); (temp / "workbenches").mkdir(); (temp / "labels").mkdir()
         cases = []

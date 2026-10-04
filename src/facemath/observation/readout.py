@@ -24,6 +24,7 @@ def pair_readout(evidence: dict) -> dict:
         "localization_calibrated": evidence.get("localization_envelope") is not None,
         "registered_all_rms": measured.get("geometry.all.rms"),
         "shape_distance": intrinsic.get("shape_distance"), "families": family_rows,
+        "structural_comparison": intrinsic.get("structural_comparison"),
         "percentage_meaning": "fraction of a prespecified, dependent relation inventory within explicit tolerances; NOT a probability of resemblance",
         "array_file": "arrays.npz", "exact_relation_rows": "intrinsic.json", "execution_journal": "events.jsonl",
         "source_measured": evidence.get("measured_acquisition") is not None,
@@ -52,6 +53,32 @@ All requested categories must pass. Thresholds and family error were frozen befo
 <p>Independent comparable groups are declared, not proven by their identifiers. No guarantee against hidden shift or repeated cross-study model selection.</p></section>'''
 
 
+def _value(value: float | None, *, signed: bool = False) -> str:
+    return "Unavailable" if value is None else format(value, "+.5g" if signed else ".5g")
+
+
+def render_structure(data: dict | None) -> str:
+    if data is None:
+        return ""
+    rows = []
+    for row in data["rows"]:
+        interval = row["reference_delta_b_minus_a"]
+        bounds = ("Unavailable" if interval is None else f"[{_value(interval[0], signed=True)}, {_value(interval[1], signed=True)}]")
+        reasons = "; ".join(f"{s}: {r['reason'].replace('_', ' ')}" for s, r in zip(("A", "B"), row["source_intervals"]))
+        unit = "contrast" if row["operation"] == "asymmetry" else "eye spans"
+        status = row["reference_status"].replace("_", " ")
+        rows.append(f'<tr><th scope="row">{escape(row["label"])}<small>{unit} · tolerance {_value(row["tolerance"])}</small></th>'
+            f'<td>{_value(row["observed_a"])}</td><td>{_value(row["observed_b"])}</td>'
+            f'<td>{_value(row["observed_delta_b_minus_a"], signed=True)}<small>{escape(row["observed_status"].replace("_", " "))}</small></td>'
+            f'<td>{bounds}<small>{escape(status)}' + (f' · {escape(reasons)}' if interval is None else '') + '</small></td></tr>')
+    counts = data["observed_counts"]
+    return f'''<section id="structure"><h2>Facial structure · A compared with B</h2>
+<p>Observed measurements in each image, normalized by its eye-midpoint span. Positive differences mean B is larger; lateral offsets increase toward viewer-right. Heights follow the eye line's clockwise perpendicular. Pose and expression affect these projected measurements.</p>
+<div class="scroll" role="region" aria-label="Structural comparison table" tabindex="0"><table><caption>Fourteen fixed measurements · {counts['within_tolerance']} observed within tolerance · {counts['outside_tolerance']} outside · {counts['unavailable']} unavailable</caption>
+<thead><tr><th scope="col">Measurement</th><th scope="col">Observed A</th><th scope="col">Observed B</th><th scope="col">B − A</th><th scope="col">Reference interval for B − A</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
+<p>Observed differences use the measured coordinates. Reference intervals use the attached error model; an unresolved interval cannot establish agreement. Eye-width asymmetry is (left − right)/(left + right). These dependent measurements do not form an identity or resemblance probability.</p></section>'''
+
+
 def render_pair_readout(evidence: dict) -> str:
     data = pair_readout(evidence)
     shape = data["shape_distance"]
@@ -72,7 +99,7 @@ def render_pair_readout(evidence: dict) -> str:
         cells = "".join(f"<td>{v}</td>" for v in counts)
         rows.append(f'<tr><td>{escape(family["family"])}</td>{cells}<td>{text}</td></tr>')
     rows = "".join(rows)
-    return f'''<section id="readout"><h2>Comparison at a glance</h2><p>{escape(shape_text)}</p>
+    return f'''{render_structure(data["structural_comparison"])}<section id="readout"><h2>Comparison at a glance</h2><p>{escape(shape_text)}</p>
 <div class="scroll"><table><thead><tr><th>Relations</th><th>Declared total</th><th>Within</th><th>Outside</th><th>Unresolved</th><th>Within-tolerance range</th></tr></thead><tbody>{rows}</tbody></table></div>
 <p>{escape(data["percentage_meaning"])}. Missing relations remain in the denominator. Detailed rows and exact values remain below and in intrinsic.json.</p>
 {admission_panel(evidence.get("empirical_admission"))}</section>'''
@@ -105,6 +132,15 @@ def terminal_readout(data: dict) -> str:
         for row in admission.get("categories", []):
             lines.append(f"│   {row['category']}: {row['covered']}/{row['groups']} covered; " + ("pass" if row['passes'] else "WITHHELD"))
     else:
+        structure = data.get("structural_comparison")
+        if structure:
+            lines.append("├── Facial structure (B minus A; own eye spans unless marked contrast)")
+            for row in structure["rows"]:
+                interval = row["reference_delta_b_minus_a"]
+                bounds = "unavailable" if interval is None else f"[{_value(interval[0], signed=True)}, {_value(interval[1], signed=True)}]"
+                unit = " contrast" if row["operation"] == "asymmetry" else ""
+                lines.append(f"│   {row['label']}: A={_value(row['observed_a'])} B={_value(row['observed_b'])} "
+                    f"delta={_value(row['observed_delta_b_minus_a'], signed=True)}{unit}; reference delta {bounds} ({row['reference_status']})")
         shape = data.get("shape_distance") or {}
         n = shape.get("observed_rms")
         lines.append("├── Observed shape RMS: " + ("unavailable" if n is None else f"{n:.7g} eye spans"))

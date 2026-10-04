@@ -1,3 +1,18 @@
+# 0.18.0 — named structural image-pair comparison
+
+- Return fourteen named A/B measurements and signed differences through the
+  production CLI, terminal overview and existing report.
+- Propagate reference bounds through the same correlated source graph, including
+  uncertain normalization, missing support and per-source radii. Keep measured
+  coordinates and the original 256-relation inventory intact.
+- Publish all seven artifact families with ordinary inherited directory access;
+  private Windows staging ACLs previously prevented the user from reading outputs.
+- Supply decoded image dimensions before checking a transferred model's inherited
+  enrollment registry. The real native failure and corrected execution are retained.
+- Freeze twenty new HELEN sources for evaluation with the v0.17 model unchanged.
+  Published-label agreement and structural measurements do not establish human
+  anatomical acceptance.
+
 # 0.17.0 — versioned native landmark correspondence
 
 - Select MediaPipe vertex 4 for the new nose-tip correspondence; preserve all

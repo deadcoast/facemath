@@ -341,7 +341,9 @@ def _analyze(args: argparse.Namespace) -> dict:
 
             result = FacialInstrument(config, DeferredProvider(), **extra).run(image_a, image_b, obs_a, obs_b)
     output = write_bundle(result, args.out, image_a, image_b)
-    return {"bundle": str(output), "report": str(output / "report.html"), **verify_bundle(output)}
+    from .observation.readout import pair_readout
+    return {"bundle": str(output), "report": str(output / "report.html"),
+            "comparison": pair_readout(result.evidence()), **verify_bundle(output)}
 
 
 def _inspect_video(args: argparse.Namespace) -> dict:

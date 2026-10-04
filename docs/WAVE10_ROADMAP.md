@@ -1,5 +1,19 @@
 # Beyond the Wave10 consolidation
 
+Current state after 0.18.0: named projected structure now reaches the pair API,
+CLI and report through the existing source graph. The frozen v0.17 model was
+evaluated on HELEN `[192,212)` without refitting; twenty native observations and
+all per-measurement PTS errors are retained. Fourteen reference comparisons for
+the declared pair remain unresolved, so usable measured values do not imply
+resolved anatomical agreement. The current registry is
+`evidence/structural-comparison-20261004/next-registry.json` (335 cases).
+
+Gate A still needs independent anatomical and visibility references. The new
+structural label-agreement audit identifies which measurements disagree, but
+evaluation outcomes cannot retune the frozen model. Any model correction needs
+separate prospective development/calibration and fresh evaluation sources.
+The sections below retain earlier milestone priorities and evidence.
+
 The 0.16.0 enrollment registry implements the source-reuse gate across explicitly
 registered studies and model versions. It retains all splits and exclusions;
 observation outcomes never remove a source from registration. The next native

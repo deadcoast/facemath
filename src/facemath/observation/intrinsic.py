@@ -29,6 +29,7 @@ from .intrinsic_sets import (
     absolute_difference, displacement, pad,
 )
 from .reference import REFERENCE_NAMES, REFERENCE_PROTOCOL_SHA256, mapped_prediction
+from .structure import StructuralComparison, measure_structure
 
 FAMILIES = ("distance", "angle", "signed_double_area", "asymmetry")
 STATUS = {0: "no_localization_calibration", 1: "within_tolerance_under_envelope",
@@ -307,6 +308,7 @@ class IntrinsicProfile:
     directions: int
     joint: JointRelationAudit | None = None
     source_quantiles: tuple[float | None, float | None] | None = None
+    structural_comparison: StructuralComparison | None = None
     recipe_sha256: str = field(init=False)
 
     def __post_init__(self) -> None:
@@ -349,6 +351,8 @@ class IntrinsicProfile:
         recipe = {"implementation": "intrinsic.reference8.outer_relations.v8",
                   "error_set": "joint_full16" if self.joint is not None else "product_marginals", "protocol": REFERENCE_PROTOCOL_SHA256,
                   "directions": self.directions, "relations": [r.metadata() for r in self.relations]}
+        if self.structural_comparison is not None:
+            recipe["structural_recipe_sha256"] = self.structural_comparison.recipe_sha256
         object.__setattr__(self, "recipe_sha256", object_digest(recipe))
 
     def arrays(self) -> dict[str, np.ndarray]:
@@ -367,6 +371,8 @@ class IntrinsicProfile:
         result["intrinsic_source_quantile_available"] = frozen_array([q is not None for q in self.source_quantiles], bool)
         if self.joint is not None:
             result.update(self.joint.arrays())
+        if self.structural_comparison is not None:
+            result.update(self.structural_comparison.arrays())
         return result
 
     @property
@@ -403,6 +409,7 @@ class IntrinsicProfile:
                 "within_tolerance_fraction_bounds": [inside/len(ids), (len(ids)-outside)/len(ids)] if self.calibration_sha256 is not None else None,
                 "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"})
         return {"format": "facemath.intrinsic_profile.v7",
+            "structural_comparison": self.structural_comparison.to_dict() if self.structural_comparison is not None else None,
             "joint_error_geometry": self.joint.to_dict() if self.joint is not None else None, "recipe_sha256": self.recipe_sha256,
             "observation_digests": list(self.observation_digests), "reference_names": list(REFERENCE_NAMES),
             "calibration_sha256": self.calibration_sha256, "scope": self.scope,
@@ -510,4 +517,6 @@ def measure_intrinsic(state: CanonicalState, localization: LocalizationEnvelope 
         (state.observation_a.digest, state.observation_b.digest),
         "nominal_observation_only" if localization is None else
         "synthetic_only" if localization.calibration.reference_kind == "synthetic_fixture" else "conditional_reference_domain",
-        state.config.intrinsic_directions, joint=joint_audit, source_quantiles=quantiles)
+        state.config.intrinsic_directions, joint=joint_audit, source_quantiles=quantiles,
+        structural_comparison=measure_structure(raw, supports, evaluators, quantiles,
+            localization.calibration.digest if localization is not None else None, state.config))

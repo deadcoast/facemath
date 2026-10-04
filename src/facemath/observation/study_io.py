@@ -12,7 +12,7 @@ from typing import Any
 import json
 import os
 import shutil
-import tempfile
+from .publication import publication_stage
 
 import numpy as np
 
@@ -33,7 +33,7 @@ def finalize_session(session_path: str | Path, destination: str | Path) -> Path:
     if target == source or target.is_relative_to(source):
         raise ObservationError("qualification output must be outside the acquisition session")
     target.parent.mkdir(parents=True, exist_ok=True)
-    temp = Path(tempfile.mkdtemp(prefix=".facemath-qualify-", dir=target.parent))
+    temp = publication_stage(target.parent, ".facemath-qualify-")
     journal = Journal()
     try:
         with writer_lock(source / ".runner.lock"):

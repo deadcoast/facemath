@@ -14,7 +14,7 @@ import json
 import math
 import os
 import shutil
-import tempfile
+from .publication import publication_stage
 
 import cv2
 import numpy as np
@@ -330,7 +330,7 @@ def write_group(group: MeasuredGroup, destination: str | Path) -> Path:
     if destination.exists():
         raise FileExistsError(destination)
     destination.parent.mkdir(parents=True, exist_ok=True)
-    temp = Path(tempfile.mkdtemp(prefix=".facemath-acquisition-", dir=destination.parent))
+    temp = publication_stage(destination.parent, ".facemath-acquisition-")
     try:
         group.recompute()
         for i, s in enumerate(group.sources):

@@ -112,9 +112,12 @@ class InstrumentResult:
             "intrinsic_source_supported", "intrinsic_nominal", "intrinsic_nominal_valid",
             "intrinsic_relation_a", "intrinsic_relation_b", "intrinsic_support_normals",
         }
+        structural_observed = {"structure_nominal", "structure_nominal_valid",
+                               "structure_expression_a", "structure_expression_b"}
         return {key: value for key, value in self.arrays().items()
                 if not key.startswith(("localization_", "acquisition_"))
-                and (not key.startswith("intrinsic_") or key in intrinsic_observed)}
+                and (not key.startswith("intrinsic_") or key in intrinsic_observed)
+                and (not key.startswith("structure_") or key in structural_observed)}
 
 
 class InstrumentFailure(ObservationError):

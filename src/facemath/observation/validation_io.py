@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 import json
 import os
-import tempfile
+from .publication import publication_stage
 
 import cv2
 import numpy as np
@@ -101,7 +101,7 @@ def run_validation_study(study_path: str | Path, destination: str | Path, *,
     from .validation import validate_study
     validate_study(tuple(preflight))
     destination.parent.mkdir(parents=True, exist_ok=True)
-    temp = Path(tempfile.mkdtemp(prefix=".facemath-validation-", dir=destination.parent))
+    temp = publication_stage(destination.parent, ".facemath-validation-")
     journal = Journal()
     try:
         with journal.step("validation.preflight", {"study_file_sha256": sha256(study_path.read_bytes()).hexdigest()}) as output:

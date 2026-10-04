@@ -1,0 +1,38 @@
+{
+  "findings": [
+    {
+      "severity": "warning",
+      "path": "colors.panel",
+      "message": "'panel' is defined but never referenced by any component.",
+      "rule": "orphaned-tokens"
+    },
+    {
+      "severity": "warning",
+      "path": "colors.ink",
+      "message": "'ink' is defined but never referenced by any component.",
+      "rule": "orphaned-tokens"
+    },
+    {
+      "severity": "warning",
+      "path": "colors.muted",
+      "message": "'muted' is defined but never referenced by any component.",
+      "rule": "orphaned-tokens"
+    },
+    {
+      "severity": "warning",
+      "path": "colors.line",
+      "message": "'line' is defined but never referenced by any component.",
+      "rule": "orphaned-tokens"
+    },
+    {
+      "severity": "info",
+      "message": "Design system defines 6 colors, 2 typography scales, 1 rounding level, 1 spacing token, 3 components.",
+      "rule": "token-summary"
+    }
+  ],
+  "summary": {
+    "errors": 0,
+    "warnings": 4,
+    "infos": 1
+  }
+}

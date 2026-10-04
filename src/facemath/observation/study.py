@@ -13,7 +13,7 @@ from typing import Any, Mapping
 import json
 import os
 import shutil
-import tempfile
+from .publication import publication_stage
 
 import cv2
 import numpy as np
@@ -417,7 +417,8 @@ def freeze_study(spec_path: str | Path, destination: str | Path, *, frozen_model
         from .transfer import require_transfer
         require_transfer(frozen_model, {**spec, "observer": observer.to_dict()}, [(
             {**e, "eligibility": e.get("eligibility", "included"), "lineage_ids": e.get("lineage_ids", []),
-             "image_sha256": array_digest(image), "original_encoded_sha256": encoded}, refs)
+             "image_sha256": array_digest(image), "image_shape": list(image.shape[:2]),
+             "original_encoded_sha256": encoded}, refs)
             for e, image, refs, encoded in loaded])
     elif not any(c.split == "calibration" for c in cases) or not any(c.split == "evaluation" for c in cases):
         raise ObservationError("prospective qualification requires calibration and evaluation groups")
@@ -428,7 +429,7 @@ def freeze_study(spec_path: str | Path, destination: str | Path, *, frozen_model
              "image_sha256": array_digest(image), "image_shape": list(image.shape[:2]),
              "original_encoded_sha256": encoded}, refs) for e, image, refs, encoded in loaded])
     target.parent.mkdir(parents=True, exist_ok=True)
-    temp = Path(tempfile.mkdtemp(prefix=".facemath-study-", dir=target.parent))
+    temp = publication_stage(target.parent, ".facemath-study-")
     try:
         (temp / "inputs").mkdir()
         frozen_cases = []

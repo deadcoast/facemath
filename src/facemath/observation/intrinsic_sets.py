@@ -338,6 +338,24 @@ class SourceRelations:
         denominator = outer(d.lower**2, d.upper**2, nonnegative=True)
         return divide(self.bilinear(a, b, "cross"), denominator)
 
+    def projected_ratio(self, a: Array, *, perpendicular: bool = False) -> Interval:
+        """Signed eye-axis projection / uncertain eye span, on this same graph."""
+        a = coefficients(a)
+        d = self.eye_span
+        if not d.available:
+            return Interval.missing(d.reason)
+        if d.lower <= 0:
+            return Interval.missing("denominator_may_vanish")
+        if not self.observable(a):
+            return Interval.missing("unobserved_dependency")
+        if not np.any(a):
+            return Interval(0., 0., True, "algebraically_zero")
+        if np.array_equal(a, EYE_VECTOR) or np.array_equal(a, -EYE_VECTOR):
+            value = 0. if perpendicular else (1. if np.array_equal(a, EYE_VECTOR) else -1.)
+            return Interval(value, value, True, "shared_expression_cancels")
+        denominator = outer(d.lower**2, d.upper**2, nonnegative=True)
+        return divide(self.bilinear(EYE_VECTOR, a, "cross" if perpendicular else "dot"), denominator)
+
     def asymmetry(self, a: Array, b: Array) -> Interval:
         """Signed (left_length-right_length)/(left_length+right_length)."""
         la, lb = self.norm(a), self.norm(b)

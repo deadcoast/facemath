@@ -228,6 +228,17 @@ def test_registry_survives_finalization_replay_and_qualification_snapshot(regist
     assert capsule['format'] == 'facemath.frozen_model_capsule.v16'
     assert json.loads(capsule['registry_json']) == registered[2]
     load_capsule(capsule)
+    # Exercise the public freeze boundary with an inherited registry capsule.
+    # Its decoded raster metadata must be complete before overlap validation.
+    fresh_spec, _ = input_study(tmp_path/'transfer-inputs', seed=71604)
+    fresh_data = read_json(fresh_spec)
+    fresh_data['cases'] = [c for c in fresh_data['cases'] if c['split'] == 'evaluation']
+    fresh_data['bias_mode'] = 'none'
+    fresh_spec.write_text(json.dumps(fresh_data))
+    transferred = freeze_study(fresh_spec, tmp_path/'transfer-study', frozen_model=capsule)
+    assert load_study(transferred.root).data['frozen_model'] == capsule
+    assert all(len(c['image_shape']) == 2 for c in transferred.cases)
+    assert all(c['split'] == 'evaluation' for c in transferred.cases)
     # An inherited registry source is not in the new donor's own enrollment.
     cases = enrolled(registered[0])
     for case, _ in cases:

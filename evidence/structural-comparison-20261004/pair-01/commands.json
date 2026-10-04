@@ -1,0 +1,107 @@
+[
+  {
+    "name": "nominal",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "analyze",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\structural-comparison-20261004\\native-02\\study\\inputs\\case_00000.png",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\structural-comparison-20261004\\native-02\\study\\inputs\\case_00001.png",
+      "--observation-a",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\structural-comparison-20261004\\native-02\\session\\cases\\case_00000\\observation.json",
+      "--observation-b",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\structural-comparison-20261004\\native-02\\session\\cases\\case_00001\\observation.json",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\structural-comparison-20261004\\pair-01\\nominal"
+    ],
+    "started_utc": "2026-10-04T08:59:15.000959+00:00",
+    "finished_utc": "2026-10-04T08:59:18.558466+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "calibrated",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "analyze",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\structural-comparison-20261004\\native-02\\study\\inputs\\case_00000.png",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\structural-comparison-20261004\\native-02\\study\\inputs\\case_00001.png",
+      "--observation-a",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\structural-comparison-20261004\\native-02\\session\\cases\\case_00000\\observation.json",
+      "--observation-b",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\structural-comparison-20261004\\native-02\\session\\cases\\case_00001\\observation.json",
+      "--localization-calibration",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\structural-comparison-20261004\\native-02\\evaluation\\localization_calibration.json",
+      "--domain",
+      "Frozen HELEN roots [132,192), new correspondence-v2 joint fit; published PTS agreement; anatomical equivalence and visibility unresolved",
+      "--query-groups",
+      "source_51e52fc3d1b494d5a514bd3de03331b5d3ac2775218cad4eb2f5ae798573541a",
+      "source_ae068f32092f767b0bff968983321b98e4b2233ac567c6e00007a5f30b01e72e",
+      "--lineage-a",
+      "source_51e52fc3d1b494d5a514bd3de03331b5d3ac2775218cad4eb2f5ae798573541a",
+      "--lineage-b",
+      "source_ae068f32092f767b0bff968983321b98e4b2233ac567c6e00007a5f30b01e72e",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\structural-comparison-20261004\\pair-01\\calibrated"
+    ],
+    "started_utc": "2026-10-04T08:59:18.558965+00:00",
+    "finished_utc": "2026-10-04T08:59:22.453109+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "nominal-verify",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "verify",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\structural-comparison-20261004\\pair-01\\nominal"
+    ],
+    "started_utc": "2026-10-04T08:59:22.454610+00:00",
+    "finished_utc": "2026-10-04T08:59:24.206220+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "calibrated-verify",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "verify",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\structural-comparison-20261004\\pair-01\\calibrated"
+    ],
+    "started_utc": "2026-10-04T08:59:24.206719+00:00",
+    "finished_utc": "2026-10-04T08:59:26.017839+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "replay",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "replay",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\structural-comparison-20261004\\pair-01\\calibrated",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\structural-comparison-20261004\\pair-01\\replayed"
+    ],
+    "started_utc": "2026-10-04T08:59:26.018838+00:00",
+    "finished_utc": "2026-10-04T08:59:30.723501+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "terminal",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "overview",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\structural-comparison-20261004\\pair-01\\calibrated"
+    ],
+    "started_utc": "2026-10-04T08:59:30.724507+00:00",
+    "finished_utc": "2026-10-04T08:59:32.426423+00:00",
+    "returncode": 0
+  }
+]
