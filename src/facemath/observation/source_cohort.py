@@ -19,6 +19,11 @@ from .study import read_json, write_json_new
 
 PLAN_FORMAT = "facemath.pts_cohort_plan.v12"
 RECIPE_FORMAT = "facemath.pts_dataset_recipe.v12"
+WINDOW_PLAN_FORMAT = "facemath.pts_cohort_plan.v15"
+WINDOW_RECIPE_FORMAT = "facemath.pts_dataset_recipe.v15"
+RECIPE_FORMATS = (RECIPE_FORMAT, WINDOW_RECIPE_FORMAT)
+GROUP_SELECTIONS = ('sha256_seed_nul_helen_source_blocks_v1',
+                    'sha256_seed_nul_ibug_source_blocks_v1')
 SPLITS = ("development", "calibration", "evaluation")
 MAX_MEMBERS = 20000
 MAX_MEMBER_BYTES = 128 * 1024**2
@@ -51,7 +56,7 @@ def _member_name(value: str) -> str:
 
 
 def validate_plan(plan: dict) -> None:
-    if not isinstance(plan, dict) or plan.get('format') != PLAN_FORMAT:
+    if not isinstance(plan, dict) or plan.get('format') not in (PLAN_FORMAT, WINDOW_PLAN_FORMAT):
         raise ObservationError("unknown PTS cohort plan")
     for key in ('name', 'source', 'label_source', 'image_terms', 'grouping_limit', 'runtime_version', 'seed'):
         if not isinstance(plan.get(key), str) or not plan[key].strip():
@@ -61,6 +66,14 @@ def validate_plan(plan: dict) -> None:
                                     'sha256_seed_nul_helen_source_blocks_v1',
                                     'sha256_seed_nul_ibug_source_blocks_v1'):
         raise ObservationError("unknown prospective selection algorithm")
+    if plan['format'] == WINDOW_PLAN_FORMAT:
+        if plan['selection'] not in GROUP_SELECTIONS:
+            raise ObservationError("source windows require photograph-root grouping")
+        offset = plan.get('selection_offset')
+        if type(offset) is not int or not 0 <= offset <= MAX_MEMBERS:
+            raise ObservationError("selection_offset must be a bounded nonnegative integer")
+    elif 'selection_offset' in plan:
+        raise ObservationError("selection_offset requires the v15 source-window plan format")
     counts = plan.get('split_counts', {})
     evaluation_only = plan.get('evaluation_only', False)
     if type(evaluation_only) is not bool:
@@ -163,7 +176,7 @@ def select_members(plan: dict, inventory: list) -> list[dict]:
             raise ObservationError("original image missing PTS annotation")
     candidate_count = len(candidates)
     candidates.sort(key=lambda r: (r['rank'], r['image']))
-    if plan['selection'] in ('sha256_seed_nul_helen_source_blocks_v1', 'sha256_seed_nul_ibug_source_blocks_v1'):
+    if plan['selection'] in GROUP_SELECTIONS:
         # HELEN filenames retain an upstream photograph root and face suffix.
         # Rank roots independently of their number of faces, then take one
         # deterministically ranked original per root. Never split one root.
@@ -183,13 +196,15 @@ def select_members(plan: dict, inventory: list) -> list[dict]:
         candidates = sorted(groups.values(), key=lambda r: (r['source_group_rank'], r['source_group']))
         candidates = [{**r, 'candidate_groups': len(groups)} for r in candidates]
     required = sum(plan['split_counts'].values())
-    if len(candidates) < required:
-        raise ObservationError("candidate inventory is smaller than frozen cohort")
-    selected, offset = [], 0
+    offset = plan.get('selection_offset', 0)
+    if len(candidates) < offset + required:
+        raise ObservationError("candidate inventory is smaller than frozen cohort window")
+    selected = []
     for split in SPLITS:
         count = plan['split_counts'][split]
-        for row in candidates[offset:offset + count]:
-            selected.append({**row, 'split': split, 'candidate_count': candidate_count})
+        for position, row in enumerate(candidates[offset:offset + count], start=offset):
+            selected.append({**row, 'split': split, 'candidate_count': candidate_count,
+                **({'selection_index': position} if plan['format'] == WINDOW_PLAN_FORMAT else {})})
         offset += count
     return selected
 
@@ -211,11 +226,20 @@ def make_recipe(plan: dict, inventory: list) -> dict:
                            lineage_ids=[group], split=row['split']))
         annotations.append(names['annotation'])
     assets.append(dict(path='face_landmarker.task', **plan['model']))
-    return dict(format=RECIPE_FORMAT, label_kind='external_dataset', model_asset='face_landmarker.task',
+    cohort = {'plan': plan, 'inventory': sorted(inventory, key=lambda r: r['name']), 'selection': selected}
+    window = plan['format'] == WINDOW_PLAN_FORMAT
+    if window:
+        start, count, total = plan['selection_offset'], len(selected), selected[0]['candidate_groups']
+        cohort['selection_window'] = dict(unit='photograph_filename_root', start_inclusive=start,
+            stop_exclusive=start + count, candidate_annotations=selected[0]['candidate_count'],
+            candidate_source_groups=total, skipped_before=start, selected=count,
+            remaining_after=total - start - count)
+    return dict(format=WINDOW_RECIPE_FORMAT if window else RECIPE_FORMAT,
+        label_kind='external_dataset', model_asset='face_landmarker.task',
         **{key: plan[key] for key in ('name', 'source', 'label_source', 'image_terms', 'grouping_limit',
                                      'runtime_version', 'coordinate_origin', 'box_margin', 'protocol')},
         assets=assets, images=images, annotations=annotations,
-        cohort={'plan': plan, 'inventory': sorted(inventory, key=lambda r: r['name']), 'selection': selected})
+        cohort=cohort)
 
 
 def verify_recipe(recipe: dict) -> None:

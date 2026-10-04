@@ -1,0 +1,891 @@
+{
+  "schema": "facemath.source_window_validation.v1",
+  "version": "0.15.0",
+  "created_utc": "2026-10-04T00:18:42.468304+00:00",
+  "engine_code_sha256": "cb44e9a75e4259b0ceb48ab73b1b47107ed339a744ff53572ceef2fa61231949",
+  "parent_commit": "381e15af01427ae78cf01717d9f1c2a7fe8067ed",
+  "parent": {
+    "parent": "C:\\Users\\ryanf\\github\\_active\\facemath\\packages\\facemath-0.14.0-transfer-20261002.zip",
+    "sha256": "054ad6bf5bccd9d2b8dd1b688f42a5a476e014e1ff192851e99d1cac3b38cb9a",
+    "bytes": 322471793,
+    "archive_verification": {
+      "verified": true,
+      "files": 6843,
+      "version": "0.14.0",
+      "archive_sha256": "054ad6bf5bccd9d2b8dd1b688f42a5a476e014e1ff192851e99d1cac3b38cb9a",
+      "kind": "archive",
+      "scope": "shipped-byte consistency, not external authenticity or numerical replay"
+    },
+    "extracted_verification": {
+      "verified": true,
+      "files": 6843,
+      "version": "0.14.0",
+      "kind": "extracted_files",
+      "scope": "shipped-byte consistency, not external authenticity or numerical replay"
+    },
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\model-transfer-20261002\\env311\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "-ra",
+      "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\transfer-holdout-20261003\\parent.xml",
+      "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\transfer-holdout-20261003\\parent-temp"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\transfer-holdout-20261003\\parent\\facemath-0.14.0",
+    "started_utc": "2026-10-03T23:23:59.903287+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\transfer-holdout-20261003\\parent\\facemath-0.14.0\\src",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "FACEMATH_MODEL": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\transfer-holdout-20261003\\parent\\facemath-0.14.0\\evidence\\model-transfer-20261002\\dataset\\assets\\face_landmarker.task",
+      "FACEMATH_FACE": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\transfer-holdout-20261003\\parent\\facemath-0.14.0\\evidence\\model-transfer-20261002\\dataset\\inputs\\case_00000.png"
+    },
+    "returncode": 0,
+    "seconds": 261.96899999998277,
+    "finished_utc": "2026-10-03T23:28:21.878495+00:00"
+  },
+  "source_python_modules": 86,
+  "historical_review_sha256": "ec9fb50eccadfc148f12981d1bcbd763735f96f6a19e125dd8c818a007c2790a",
+  "historical_review_scope": "Unchanged historical 79-module review; the current continuation review is separately scoped",
+  "prospective_plan": "prospective-freeze.json",
+  "selection_window": {
+    "unit": "photograph_filename_root",
+    "start_inclusive": 60,
+    "stop_exclusive": 120,
+    "candidate_annotations": 330,
+    "candidate_source_groups": 298,
+    "skipped_before": 60,
+    "selected": 60,
+    "remaining_after": 178
+  },
+  "source_overlap_checks": [
+    {
+      "dataset": "evidence\\bound-utility-20261002\\dataset",
+      "source_hash_overlap": [],
+      "group_overlap": []
+    },
+    {
+      "dataset": "evidence\\source-cohort-20261002\\dataset",
+      "source_hash_overlap": [],
+      "group_overlap": []
+    },
+    {
+      "dataset": "evidence\\model-transfer-20261002\\dataset",
+      "source_hash_overlap": [],
+      "group_overlap": []
+    },
+    {
+      "dataset": "evidence\\native-pipeline-20261002\\pilot\\dataset",
+      "source_hash_overlap": [],
+      "group_overlap": []
+    }
+  ],
+  "frozen_model": {
+    "capsule_sha256": "7b78c5ab49ac5e5d0b44fde0f0dc82aa4e21450d299b147f7b9f5cfe4bbd77a6",
+    "model_bytes_sha256": "ad529bcd81fe8c2860cb5e5cbf38131dada45565c7d2f2a5eaf2d33d65993ce4",
+    "refit_performed": false,
+    "unchanged_in_all_four_runs": true
+  },
+  "suites": {
+    "parent": {
+      "tests": 1076,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1075,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "windows_source": {
+      "tests": 1097,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1096,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "installed_wheel": {
+      "tests": 1097,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1096,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "extracted_archive": {
+      "tests": 1097,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1096,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "linux_source": {
+      "tests": 1097,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 1097,
+      "skip_reasons": []
+    }
+  },
+  "milestone_controls": {
+    "source": {
+      "positive": "admitted_synthetic_control",
+      "negative": "withheld",
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "withheld_observer_calls": 0
+    },
+    "installed": {
+      "positive": "admitted_synthetic_control",
+      "negative": "withheld",
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "withheld_observer_calls": 0
+    },
+    "archive": {
+      "positive": "admitted_synthetic_control",
+      "negative": "withheld",
+      "raw_arrays_checked": 135,
+      "raw_arrays_unchanged": true,
+      "withheld_observer_calls": 0
+    }
+  },
+  "native_runs": {
+    "windows_source": {
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 0,
+        "observed": 60,
+        "runtime_error": 0,
+        "timeout": 0
+      },
+      "enrolled": 60,
+      "eligible": 60,
+      "prospectively_excluded": 0,
+      "coverage": {
+        "calibration_sha256": "f8f75c60037e2b453a046fe91611df5f4d27b02279bf8b6ef51e87b419faa361",
+        "finite_envelope": true,
+        "evaluation_cases": 60,
+        "evaluation_groups": 60,
+        "covered_groups": 56,
+        "empirical_group_coverage": 0.9333333333333333,
+        "failures": 4,
+        "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage",
+        "donor_nominal_coverage": 0.9,
+        "target_coverage_guaranteed": false
+      },
+      "raw_localization": {
+        "attempted_cases": 60,
+        "complete_cases": 56,
+        "failed_cases": 4,
+        "groups": 60,
+        "reference_kind": "external_dataset",
+        "successful_case_mean_nme": 0.04106819061957079,
+        "unconditional_auc": 0.5500302208840061,
+        "auc_threshold_ipd": 0.1,
+        "pck_threshold_ipd": 0.05,
+        "eligible_landmarks": 480,
+        "observed_landmarks": 476,
+        "pck_including_failures": 0.7354166666666667,
+        "per_landmark": [
+          {
+            "name": "left_eye_outer",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 58,
+            "pck": 0.9666666666666667,
+            "median_error_px": 4.302728960867267
+          },
+          {
+            "name": "left_eye_inner",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 49,
+            "pck": 0.8166666666666667,
+            "median_error_px": 8.45416638938392
+          },
+          {
+            "name": "right_eye_inner",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 51,
+            "pck": 0.85,
+            "median_error_px": 9.027910907989778
+          },
+          {
+            "name": "right_eye_outer",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 55,
+            "pck": 0.9166666666666666,
+            "median_error_px": 3.8550378306609803
+          },
+          {
+            "name": "nose_tip",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 8,
+            "pck": 0.13333333333333333,
+            "median_error_px": 23.393665532547356
+          },
+          {
+            "name": "mouth_left",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 55,
+            "pck": 0.9166666666666666,
+            "median_error_px": 6.034245212385471
+          },
+          {
+            "name": "mouth_right",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 52,
+            "pck": 0.8666666666666667,
+            "median_error_px": 4.644579082593458
+          },
+          {
+            "name": "chin",
+            "eligible": 60,
+            "observed": 56,
+            "within_tolerance": 25,
+            "pck": 0.4166666666666667,
+            "median_error_px": 13.73163102164423
+          }
+        ],
+        "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+        "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+        "covariance_limit": "perturbation repeatability is not localization accuracy",
+        "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+      },
+      "bound_utility": {
+        "enrolled_cases": 60,
+        "eligible_cases": 60,
+        "prospectively_excluded": 0,
+        "enrolled_groups": 60,
+        "complete_landmark_groups": 56,
+        "finite_ratio_groups": 60,
+        "reasons": {
+          "bounded": 56,
+          "partial_reference_support": 4
+        },
+        "landmark_diameter": {
+          "total": 480,
+          "finite": 476,
+          "unavailable": 4,
+          "minimum": 0.4642792077493886,
+          "median": 0.6826458619214679,
+          "maximum": 2.055135537118501
+        },
+        "eye_span": {
+          "total": 60,
+          "finite": 60,
+          "unavailable": 0,
+          "minimum": 0.7750379014326026,
+          "median": 0.7750379014326026,
+          "maximum": 0.7750379014326026
+        },
+        "mouth_width": {
+          "total": 60,
+          "finite": 60,
+          "unavailable": 0,
+          "minimum": 0.7436541225269491,
+          "median": 0.7463786976905696,
+          "maximum": 0.7524932970298279
+        },
+        "mouth_eye_ratio": {
+          "total": 60,
+          "finite": 60,
+          "unavailable": 0,
+          "minimum": 1.4619891988100528,
+          "median": 1.604645160487443,
+          "maximum": 1.9024289262825587
+        }
+      },
+      "report_sha256": "3c97210f12e01b25785e7b983de66b8a9460b41fc616a7b68b80f924eee1aa4a",
+      "fit_performed": false,
+      "raw_coordinates_changed": false,
+      "empirical_admission": false,
+      "exact_retained_replay": true
+    },
+    "windows_installed": {
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 0,
+        "observed": 60,
+        "runtime_error": 0,
+        "timeout": 0
+      },
+      "enrolled": 60,
+      "eligible": 60,
+      "prospectively_excluded": 0,
+      "coverage": {
+        "calibration_sha256": "f8f75c60037e2b453a046fe91611df5f4d27b02279bf8b6ef51e87b419faa361",
+        "finite_envelope": true,
+        "evaluation_cases": 60,
+        "evaluation_groups": 60,
+        "covered_groups": 56,
+        "empirical_group_coverage": 0.9333333333333333,
+        "failures": 4,
+        "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage",
+        "donor_nominal_coverage": 0.9,
+        "target_coverage_guaranteed": false
+      },
+      "raw_localization": {
+        "attempted_cases": 60,
+        "complete_cases": 56,
+        "failed_cases": 4,
+        "groups": 60,
+        "reference_kind": "external_dataset",
+        "successful_case_mean_nme": 0.04106819061957079,
+        "unconditional_auc": 0.5500302208840061,
+        "auc_threshold_ipd": 0.1,
+        "pck_threshold_ipd": 0.05,
+        "eligible_landmarks": 480,
+        "observed_landmarks": 476,
+        "pck_including_failures": 0.7354166666666667,
+        "per_landmark": [
+          {
+            "name": "left_eye_outer",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 58,
+            "pck": 0.9666666666666667,
+            "median_error_px": 4.302728960867267
+          },
+          {
+            "name": "left_eye_inner",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 49,
+            "pck": 0.8166666666666667,
+            "median_error_px": 8.45416638938392
+          },
+          {
+            "name": "right_eye_inner",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 51,
+            "pck": 0.85,
+            "median_error_px": 9.027910907989778
+          },
+          {
+            "name": "right_eye_outer",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 55,
+            "pck": 0.9166666666666666,
+            "median_error_px": 3.8550378306609803
+          },
+          {
+            "name": "nose_tip",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 8,
+            "pck": 0.13333333333333333,
+            "median_error_px": 23.393665532547356
+          },
+          {
+            "name": "mouth_left",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 55,
+            "pck": 0.9166666666666666,
+            "median_error_px": 6.034245212385471
+          },
+          {
+            "name": "mouth_right",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 52,
+            "pck": 0.8666666666666667,
+            "median_error_px": 4.644579082593458
+          },
+          {
+            "name": "chin",
+            "eligible": 60,
+            "observed": 56,
+            "within_tolerance": 25,
+            "pck": 0.4166666666666667,
+            "median_error_px": 13.73163102164423
+          }
+        ],
+        "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+        "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+        "covariance_limit": "perturbation repeatability is not localization accuracy",
+        "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+      },
+      "bound_utility": {
+        "enrolled_cases": 60,
+        "eligible_cases": 60,
+        "prospectively_excluded": 0,
+        "enrolled_groups": 60,
+        "complete_landmark_groups": 56,
+        "finite_ratio_groups": 60,
+        "reasons": {
+          "bounded": 56,
+          "partial_reference_support": 4
+        },
+        "landmark_diameter": {
+          "total": 480,
+          "finite": 476,
+          "unavailable": 4,
+          "minimum": 0.4642792077493886,
+          "median": 0.6826458619214679,
+          "maximum": 2.055135537118501
+        },
+        "eye_span": {
+          "total": 60,
+          "finite": 60,
+          "unavailable": 0,
+          "minimum": 0.7750379014326026,
+          "median": 0.7750379014326026,
+          "maximum": 0.7750379014326026
+        },
+        "mouth_width": {
+          "total": 60,
+          "finite": 60,
+          "unavailable": 0,
+          "minimum": 0.7436541225269491,
+          "median": 0.7463786976905696,
+          "maximum": 0.7524932970298279
+        },
+        "mouth_eye_ratio": {
+          "total": 60,
+          "finite": 60,
+          "unavailable": 0,
+          "minimum": 1.4619891988100528,
+          "median": 1.604645160487443,
+          "maximum": 1.9024289262825587
+        }
+      },
+      "report_sha256": "3c97210f12e01b25785e7b983de66b8a9460b41fc616a7b68b80f924eee1aa4a",
+      "fit_performed": false,
+      "raw_coordinates_changed": false,
+      "empirical_admission": false,
+      "exact_retained_replay": true
+    },
+    "windows_archive": {
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 0,
+        "observed": 60,
+        "runtime_error": 0,
+        "timeout": 0
+      },
+      "enrolled": 60,
+      "eligible": 60,
+      "prospectively_excluded": 0,
+      "coverage": {
+        "calibration_sha256": "f8f75c60037e2b453a046fe91611df5f4d27b02279bf8b6ef51e87b419faa361",
+        "finite_envelope": true,
+        "evaluation_cases": 60,
+        "evaluation_groups": 60,
+        "covered_groups": 56,
+        "empirical_group_coverage": 0.9333333333333333,
+        "failures": 4,
+        "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage",
+        "donor_nominal_coverage": 0.9,
+        "target_coverage_guaranteed": false
+      },
+      "raw_localization": {
+        "attempted_cases": 60,
+        "complete_cases": 56,
+        "failed_cases": 4,
+        "groups": 60,
+        "reference_kind": "external_dataset",
+        "successful_case_mean_nme": 0.04106819061957079,
+        "unconditional_auc": 0.5500302208840061,
+        "auc_threshold_ipd": 0.1,
+        "pck_threshold_ipd": 0.05,
+        "eligible_landmarks": 480,
+        "observed_landmarks": 476,
+        "pck_including_failures": 0.7354166666666667,
+        "per_landmark": [
+          {
+            "name": "left_eye_outer",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 58,
+            "pck": 0.9666666666666667,
+            "median_error_px": 4.302728960867267
+          },
+          {
+            "name": "left_eye_inner",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 49,
+            "pck": 0.8166666666666667,
+            "median_error_px": 8.45416638938392
+          },
+          {
+            "name": "right_eye_inner",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 51,
+            "pck": 0.85,
+            "median_error_px": 9.027910907989778
+          },
+          {
+            "name": "right_eye_outer",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 55,
+            "pck": 0.9166666666666666,
+            "median_error_px": 3.8550378306609803
+          },
+          {
+            "name": "nose_tip",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 8,
+            "pck": 0.13333333333333333,
+            "median_error_px": 23.393665532547356
+          },
+          {
+            "name": "mouth_left",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 55,
+            "pck": 0.9166666666666666,
+            "median_error_px": 6.034245212385471
+          },
+          {
+            "name": "mouth_right",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 52,
+            "pck": 0.8666666666666667,
+            "median_error_px": 4.644579082593458
+          },
+          {
+            "name": "chin",
+            "eligible": 60,
+            "observed": 56,
+            "within_tolerance": 25,
+            "pck": 0.4166666666666667,
+            "median_error_px": 13.73163102164423
+          }
+        ],
+        "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+        "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+        "covariance_limit": "perturbation repeatability is not localization accuracy",
+        "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+      },
+      "bound_utility": {
+        "enrolled_cases": 60,
+        "eligible_cases": 60,
+        "prospectively_excluded": 0,
+        "enrolled_groups": 60,
+        "complete_landmark_groups": 56,
+        "finite_ratio_groups": 60,
+        "reasons": {
+          "bounded": 56,
+          "partial_reference_support": 4
+        },
+        "landmark_diameter": {
+          "total": 480,
+          "finite": 476,
+          "unavailable": 4,
+          "minimum": 0.4642792077493886,
+          "median": 0.6826458619214679,
+          "maximum": 2.055135537118501
+        },
+        "eye_span": {
+          "total": 60,
+          "finite": 60,
+          "unavailable": 0,
+          "minimum": 0.7750379014326026,
+          "median": 0.7750379014326026,
+          "maximum": 0.7750379014326026
+        },
+        "mouth_width": {
+          "total": 60,
+          "finite": 60,
+          "unavailable": 0,
+          "minimum": 0.7436541225269491,
+          "median": 0.7463786976905696,
+          "maximum": 0.7524932970298279
+        },
+        "mouth_eye_ratio": {
+          "total": 60,
+          "finite": 60,
+          "unavailable": 0,
+          "minimum": 1.4619891988100528,
+          "median": 1.604645160487443,
+          "maximum": 1.9024289262825587
+        }
+      },
+      "report_sha256": "3c97210f12e01b25785e7b983de66b8a9460b41fc616a7b68b80f924eee1aa4a",
+      "fit_performed": false,
+      "raw_coordinates_changed": false,
+      "empirical_admission": false,
+      "exact_retained_replay": true
+    },
+    "linux_source": {
+      "outcomes": {
+        "contract_error": 0,
+        "interrupted": 0,
+        "multiple_faces": 0,
+        "no_face": 0,
+        "observed": 60,
+        "runtime_error": 0,
+        "timeout": 0
+      },
+      "enrolled": 60,
+      "eligible": 60,
+      "prospectively_excluded": 0,
+      "coverage": {
+        "calibration_sha256": "f8f75c60037e2b453a046fe91611df5f4d27b02279bf8b6ef51e87b419faa361",
+        "finite_envelope": true,
+        "evaluation_cases": 60,
+        "evaluation_groups": 60,
+        "covered_groups": 56,
+        "empirical_group_coverage": 0.9333333333333333,
+        "failures": 4,
+        "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage",
+        "donor_nominal_coverage": 0.9,
+        "target_coverage_guaranteed": false
+      },
+      "raw_localization": {
+        "attempted_cases": 60,
+        "complete_cases": 56,
+        "failed_cases": 4,
+        "groups": 60,
+        "reference_kind": "external_dataset",
+        "successful_case_mean_nme": 0.04106819061957079,
+        "unconditional_auc": 0.5500302208840061,
+        "auc_threshold_ipd": 0.1,
+        "pck_threshold_ipd": 0.05,
+        "eligible_landmarks": 480,
+        "observed_landmarks": 476,
+        "pck_including_failures": 0.7354166666666667,
+        "per_landmark": [
+          {
+            "name": "left_eye_outer",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 58,
+            "pck": 0.9666666666666667,
+            "median_error_px": 4.302728960867267
+          },
+          {
+            "name": "left_eye_inner",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 49,
+            "pck": 0.8166666666666667,
+            "median_error_px": 8.45416638938392
+          },
+          {
+            "name": "right_eye_inner",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 51,
+            "pck": 0.85,
+            "median_error_px": 9.027910907989778
+          },
+          {
+            "name": "right_eye_outer",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 55,
+            "pck": 0.9166666666666666,
+            "median_error_px": 3.8550378306609803
+          },
+          {
+            "name": "nose_tip",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 8,
+            "pck": 0.13333333333333333,
+            "median_error_px": 23.393665532547356
+          },
+          {
+            "name": "mouth_left",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 55,
+            "pck": 0.9166666666666666,
+            "median_error_px": 6.034245212385471
+          },
+          {
+            "name": "mouth_right",
+            "eligible": 60,
+            "observed": 60,
+            "within_tolerance": 52,
+            "pck": 0.8666666666666667,
+            "median_error_px": 4.644579082593458
+          },
+          {
+            "name": "chin",
+            "eligible": 60,
+            "observed": 56,
+            "within_tolerance": 25,
+            "pck": 0.4166666666666667,
+            "median_error_px": 13.73163102164423
+          }
+        ],
+        "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+        "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+        "covariance_limit": "perturbation repeatability is not localization accuracy",
+        "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+      },
+      "bound_utility": {
+        "enrolled_cases": 60,
+        "eligible_cases": 60,
+        "prospectively_excluded": 0,
+        "enrolled_groups": 60,
+        "complete_landmark_groups": 56,
+        "finite_ratio_groups": 60,
+        "reasons": {
+          "bounded": 56,
+          "partial_reference_support": 4
+        },
+        "landmark_diameter": {
+          "total": 480,
+          "finite": 476,
+          "unavailable": 4,
+          "minimum": 0.4642792077493886,
+          "median": 0.6826458619214679,
+          "maximum": 2.055135537118501
+        },
+        "eye_span": {
+          "total": 60,
+          "finite": 60,
+          "unavailable": 0,
+          "minimum": 0.7750379014326026,
+          "median": 0.7750379014326026,
+          "maximum": 0.7750379014326026
+        },
+        "mouth_width": {
+          "total": 60,
+          "finite": 60,
+          "unavailable": 0,
+          "minimum": 0.7436541225269491,
+          "median": 0.7463786976905696,
+          "maximum": 0.7524932970298279
+        },
+        "mouth_eye_ratio": {
+          "total": 60,
+          "finite": 60,
+          "unavailable": 0,
+          "minimum": 1.4619891988100528,
+          "median": 1.604645160487443,
+          "maximum": 1.9024289262825587
+        }
+      },
+      "report_sha256": "3f7436a7abb3bf5760bb423a9b51f603108d00e91c267be27bed82a88453a4b1",
+      "fit_performed": false,
+      "raw_coordinates_changed": false,
+      "empirical_admission": false,
+      "exact_retained_replay": true
+    }
+  },
+  "raw_invariance": {
+    "source": {
+      "arrays_checked": 120,
+      "unchanged": true,
+      "model_bytes_unchanged": true
+    },
+    "installed": {
+      "arrays_checked": 120,
+      "unchanged": true,
+      "model_bytes_unchanged": true
+    },
+    "archive": {
+      "arrays_checked": 120,
+      "unchanged": true,
+      "model_bytes_unchanged": true
+    },
+    "linux": {
+      "arrays_checked": 120,
+      "unchanged": true,
+      "model_bytes_unchanged": true
+    }
+  },
+  "repeatability": {
+    "installed": {
+      "report_exact": true,
+      "all_outcomes_equal": true,
+      "nominal_and_sample_arrays_exact": true,
+      "raw_validation_arrays_exact": true
+    },
+    "archive": {
+      "report_exact": true,
+      "all_outcomes_equal": true,
+      "nominal_and_sample_arrays_exact": true,
+      "raw_validation_arrays_exact": true
+    },
+    "linux": {
+      "report_exact": false,
+      "all_outcomes_equal": true,
+      "nominal_and_sample_arrays_exact": true,
+      "raw_validation_arrays_exact": true
+    }
+  },
+  "compatibility": "development/compatibility.result.json",
+  "support_diagnostics": "development/support-diagnostics.result.json",
+  "cross_host_negative_control": "development/cross-host.result.json",
+  "cross_host_report_comparison": "development/linux-comparison.result.json",
+  "package": {
+    "verified": true,
+    "files": 8809,
+    "version": "0.15.0",
+    "archive_sha256": "d70ccf98be02e28494e55162393fc3df6eb7eecbac2dddfe5c96e8f332bf7fc2",
+    "kind": "archive",
+    "scope": "shipped-byte consistency, not external authenticity or numerical replay",
+    "path": "packages\\facemath-0.15.0-source-window-20261003.zip",
+    "bytes": 1061848418
+  },
+  "source_archive_parity": {
+    "files_checked": 241,
+    "exact": true
+  },
+  "installed_bytes": "postseal/wheel-check/installed-byte-check.json",
+  "command_records": [
+    "development/parent-baseline.json",
+    "development/focused.json",
+    "postseal/commands.json",
+    "postseal/wheel-check/command-*.json",
+    "development/linux-*.json"
+  ],
+  "preserved_failures": [
+    {
+      "record": "development/linux.json",
+      "reason": "WSL service denied sandbox access before any Linux code ran",
+      "actual_error": "Wsl/Service/E_ACCESSDENIED",
+      "resolution": "Distinct approved isolated offline execution in linux-authorized.json"
+    }
+  ],
+  "completion_boundary": {
+    "empirical_query_admission": false,
+    "person_independence_established": false,
+    "visibility_known": false,
+    "anatomical_equivalence_validated": false,
+    "native_training_overlap_known": false,
+    "repeated_runs_are_independent_samples": false,
+    "adaptive_cross_study_selection_controlled": false,
+    "cross_os_exact_replay": false,
+    "general_prior_enrollment_registry": false,
+    "stratified_model_transfer": false,
+    "hosted_ci": "Not invoked this turn; previous billing-blocked attempts are historical evidence only",
+    "macos_native": "Not executed this turn; previous constructor abort remains unresolved"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "frozen_utc": "2026-10-03T23:31:20.805238+00:00",
+  "engine_code_sha256": "cb44e9a75e4259b0ceb48ab73b1b47107ed339a744ff53572ceef2fa61231949",
+  "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+  "capsule_sha256": "7b78c5ab49ac5e5d0b44fde0f0dc82aa4e21450d299b147f7b9f5cfe4bbd77a6",
+  "calibration_sha256": "8f779b5a706f8188218a1e18a1dd5bcfb100e30632baa8efb90b9f9dc5dff4fd",
+  "model_bytes_sha256": "ad529bcd81fe8c2860cb5e5cbf38131dada45565c7d2f2a5eaf2d33d65993ce4",
+  "radius": 16.220889465226026,
+  "enrolled": 60,
+  "eligible": 60,
+  "split_counts": {
+    "development": 0,
+    "calibration": 0,
+    "evaluation": 60
+  },
+  "selection_window": {
+    "unit": "photograph_filename_root",
+    "start_inclusive": 60,
+    "stop_exclusive": 120,
+    "candidate_annotations": 330,
+    "candidate_source_groups": 298,
+    "skipped_before": 60,
+    "selected": 60,
+    "remaining_after": 178
+  },
+  "source_overlap_checks": [
+    {
+      "dataset": "evidence\\bound-utility-20261002\\dataset",
+      "source_hash_overlap": [],
+      "group_overlap": []
+    },
+    {
+      "dataset": "evidence\\source-cohort-20261002\\dataset",
+      "source_hash_overlap": [],
+      "group_overlap": []
+    },
+    {
+      "dataset": "evidence\\model-transfer-20261002\\dataset",
+      "source_hash_overlap": [],
+      "group_overlap": []
+    },
+    {
+      "dataset": "evidence\\native-pipeline-20261002\\pilot\\dataset",
+      "source_hash_overlap": [],
+      "group_overlap": []
+    }
+  ],
+  "donor_first_window_reproduced": true,
+  "prior_plan_sha256": "3db3e973727e023fcf64145bffac96b149b09d8cdedef3ee74d376c06f1ee3bb",
+  "plan_sha256": "9b0bf1f7605d891fddeb09c0b493787c4944153c0fd77c68f7e83c383f4a2df2",
+  "inference_executed": false,
+  "fit_performed": false,
+  "empirical_admission": false,
+  "limit": "source separation and published-label agreement do not establish person independence or anatomical accuracy"
+}

@@ -1,5 +1,15 @@
 # Beyond the Wave10 consolidation
 
+The 0.15.0 source-window workflow continues Gate B with a second HELEN holdout,
+keeping the 0.13 model and its calibration fixed. It partitions the ranked source
+universe after photograph grouping, then applies the existing evaluation-only
+transfer checks. See [the window design](SOURCE_WINDOW_DESIGN.md) and
+`evidence/source-window-20261003/VALIDATION.json` for executed outcomes. A new
+window is not a new fit or an empirical approval; source-disjoint published-label
+agreement still leaves anatomical equivalence, visibility, person independence
+and native-training overlap unresolved. Any future model change requires its own
+development/calibration study and a new evaluation plan before outcomes.
+
 The 0.14.0 transfer workflow exports the complete saved joint model with all donor
 enrollment, freezes an evaluation-only cohort before native inference and reuses
 the raw evaluator and relation graph without fitting. Its IBUG plan selects one

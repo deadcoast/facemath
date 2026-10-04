@@ -1,3 +1,15 @@
+# 0.15.0 · Frozen photograph-group holdout windows
+
+Add explicit, bounded source-rank windows after HELEN/IBUG photograph grouping.
+Versioned plans and recipes retain the complete candidate universe, selection
+indices and before/selected/after counts; verification recomputes these bindings.
+Legacy plans retain their original output and refuse the new offset field.
+
+The new HELEN plan keeps the donor's seed and pins, skips its first 60 roots and
+enrolls the next 60 for evaluation with the unchanged saved model. Native
+outcomes, missingness, utility and every group denominator remain visible.
+No fitted state, calibration, coordinates or empirical-admission policy changes.
+
 # 0.12.0 · Frozen original-annotation cohorts
 
 Add explicit pinned archive fetching, bounded streaming intake and deterministic

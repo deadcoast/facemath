@@ -1,0 +1,354 @@
+{
+  "schema": "facemath.continuation_review.v1",
+  "version": "0.15.0",
+  "created_utc": "2026-10-04T00:18:42.468304+00:00",
+  "parent_commit": "381e15af01427ae78cf01717d9f1c2a7fe8067ed",
+  "engine_code_sha256": "cb44e9a75e4259b0ceb48ab73b1b47107ed339a744ff53572ceef2fa61231949",
+  "review_scope": {
+    "authority": [
+      "AGENTS.md",
+      "README.md",
+      "docs/MODEL_TRANSFER_DESIGN.md",
+      "docs/WAVE10_ROADMAP.md"
+    ],
+    "inspected": [
+      "src/facemath/observation/source_cohort.py",
+      "src/facemath/observation/dataset.py",
+      "src/facemath/observation/transfer.py",
+      "src/facemath/observation/transfer_io.py",
+      "tests/test_source_cohort.py",
+      "tests/test_model_transfer.py",
+      "scripts/validate_current.py",
+      "scripts/check_wheel.py"
+    ],
+    "scope": "Continuation of source intake and frozen transfer; not a new audit of every historical research module",
+    "historical_review": "REPOSITORY_REVIEW.json",
+    "historical_review_unchanged_sha256": "ec9fb50eccadfc148f12981d1bcbd763735f96f6a19e125dd8c818a007c2790a"
+  },
+  "completed": [
+    {
+      "id": "SW-01",
+      "change": "Versioned deterministic photograph-root windows after grouping, before split allocation",
+      "evidence": [
+        "docs/SOURCE_WINDOW_DESIGN.md",
+        "tests/test_source_cohort.py"
+      ],
+      "done": "Integer bounds, exhausted inventory, split/group separation, order invariance and resealed tampering tested; old reader refusal and legacy recipe parity executed"
+    },
+    {
+      "id": "SW-02",
+      "change": "Frozen 60-portrait HELEN holdout with unchanged donor model and no source/group aliases against retained cohorts",
+      "evidence": [
+        "examples/helen-transfer-window.json",
+        "evidence/source-window-20261003/prospective-freeze.json"
+      ],
+      "done": "Distinct native source, wheel, archive and Linux acquisitions; full enrollment retained; no refit or empirical admission"
+    },
+    {
+      "id": "SW-03",
+      "change": "Full regression, milestone controls, replay and portable package validation",
+      "evidence": [
+        "evidence/source-window-20261003/VALIDATION.json"
+      ],
+      "done": "Source, wheel and extracted archive passed; observed arrays/model bytes audited"
+    }
+  ],
+  "tests": {
+    "parent": {
+      "tests": 1076,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1075,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "windows_source": {
+      "tests": 1097,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1096,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "installed_wheel": {
+      "tests": 1097,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1096,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "extracted_archive": {
+      "tests": 1097,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1096,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "linux_source": {
+      "tests": 1097,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 1097,
+      "skip_reasons": []
+    }
+  },
+  "native_holdout": {
+    "outcomes": {
+      "contract_error": 0,
+      "interrupted": 0,
+      "multiple_faces": 0,
+      "no_face": 0,
+      "observed": 60,
+      "runtime_error": 0,
+      "timeout": 0
+    },
+    "enrolled": 60,
+    "eligible": 60,
+    "prospectively_excluded": 0,
+    "coverage": {
+      "calibration_sha256": "f8f75c60037e2b453a046fe91611df5f4d27b02279bf8b6ef51e87b419faa361",
+      "finite_envelope": true,
+      "evaluation_cases": 60,
+      "evaluation_groups": 60,
+      "covered_groups": 56,
+      "empirical_group_coverage": 0.9333333333333333,
+      "failures": 4,
+      "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage",
+      "donor_nominal_coverage": 0.9,
+      "target_coverage_guaranteed": false
+    },
+    "raw_localization": {
+      "attempted_cases": 60,
+      "complete_cases": 56,
+      "failed_cases": 4,
+      "groups": 60,
+      "reference_kind": "external_dataset",
+      "successful_case_mean_nme": 0.04106819061957079,
+      "unconditional_auc": 0.5500302208840061,
+      "auc_threshold_ipd": 0.1,
+      "pck_threshold_ipd": 0.05,
+      "eligible_landmarks": 480,
+      "observed_landmarks": 476,
+      "pck_including_failures": 0.7354166666666667,
+      "per_landmark": [
+        {
+          "name": "left_eye_outer",
+          "eligible": 60,
+          "observed": 60,
+          "within_tolerance": 58,
+          "pck": 0.9666666666666667,
+          "median_error_px": 4.302728960867267
+        },
+        {
+          "name": "left_eye_inner",
+          "eligible": 60,
+          "observed": 60,
+          "within_tolerance": 49,
+          "pck": 0.8166666666666667,
+          "median_error_px": 8.45416638938392
+        },
+        {
+          "name": "right_eye_inner",
+          "eligible": 60,
+          "observed": 60,
+          "within_tolerance": 51,
+          "pck": 0.85,
+          "median_error_px": 9.027910907989778
+        },
+        {
+          "name": "right_eye_outer",
+          "eligible": 60,
+          "observed": 60,
+          "within_tolerance": 55,
+          "pck": 0.9166666666666666,
+          "median_error_px": 3.8550378306609803
+        },
+        {
+          "name": "nose_tip",
+          "eligible": 60,
+          "observed": 60,
+          "within_tolerance": 8,
+          "pck": 0.13333333333333333,
+          "median_error_px": 23.393665532547356
+        },
+        {
+          "name": "mouth_left",
+          "eligible": 60,
+          "observed": 60,
+          "within_tolerance": 55,
+          "pck": 0.9166666666666666,
+          "median_error_px": 6.034245212385471
+        },
+        {
+          "name": "mouth_right",
+          "eligible": 60,
+          "observed": 60,
+          "within_tolerance": 52,
+          "pck": 0.8666666666666667,
+          "median_error_px": 4.644579082593458
+        },
+        {
+          "name": "chin",
+          "eligible": 60,
+          "observed": 56,
+          "within_tolerance": 25,
+          "pck": 0.4166666666666667,
+          "median_error_px": 13.73163102164423
+        }
+      ],
+      "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
+      "reference_limit": "errors are relative to recorded annotations; blinding is declared, not independently attested",
+      "covariance_limit": "perturbation repeatability is not localization accuracy",
+      "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
+    },
+    "bound_utility": {
+      "enrolled_cases": 60,
+      "eligible_cases": 60,
+      "prospectively_excluded": 0,
+      "enrolled_groups": 60,
+      "complete_landmark_groups": 56,
+      "finite_ratio_groups": 60,
+      "reasons": {
+        "bounded": 56,
+        "partial_reference_support": 4
+      },
+      "landmark_diameter": {
+        "total": 480,
+        "finite": 476,
+        "unavailable": 4,
+        "minimum": 0.4642792077493886,
+        "median": 0.6826458619214679,
+        "maximum": 2.055135537118501
+      },
+      "eye_span": {
+        "total": 60,
+        "finite": 60,
+        "unavailable": 0,
+        "minimum": 0.7750379014326026,
+        "median": 0.7750379014326026,
+        "maximum": 0.7750379014326026
+      },
+      "mouth_width": {
+        "total": 60,
+        "finite": 60,
+        "unavailable": 0,
+        "minimum": 0.7436541225269491,
+        "median": 0.7463786976905696,
+        "maximum": 0.7524932970298279
+      },
+      "mouth_eye_ratio": {
+        "total": 60,
+        "finite": 60,
+        "unavailable": 0,
+        "minimum": 1.4619891988100528,
+        "median": 1.604645160487443,
+        "maximum": 1.9024289262825587
+      }
+    },
+    "report_sha256": "3c97210f12e01b25785e7b983de66b8a9460b41fc616a7b68b80f924eee1aa4a",
+    "fit_performed": false,
+    "raw_coordinates_changed": false,
+    "empirical_admission": false,
+    "exact_retained_replay": true
+  },
+  "artifacts": {
+    "validation": "evidence/source-window-20261003/VALIDATION.json",
+    "archive": {
+      "verified": true,
+      "files": 8809,
+      "version": "0.15.0",
+      "archive_sha256": "d70ccf98be02e28494e55162393fc3df6eb7eecbac2dddfe5c96e8f332bf7fc2",
+      "kind": "archive",
+      "scope": "shipped-byte consistency, not external authenticity or numerical replay",
+      "path": "packages\\facemath-0.15.0-source-window-20261003.zip",
+      "bytes": 1061848418
+    },
+    "wheel": "runs/transfer-holdout-20261003/release/wheels/facemath-0.15.0-py3-none-any.whl"
+  },
+  "completion_boundary": {
+    "empirical_query_admission": false,
+    "person_independence_established": false,
+    "visibility_known": false,
+    "anatomical_equivalence_validated": false,
+    "native_training_overlap_known": false,
+    "repeated_runs_are_independent_samples": false,
+    "adaptive_cross_study_selection_controlled": false,
+    "cross_os_exact_replay": false,
+    "general_prior_enrollment_registry": false,
+    "stratified_model_transfer": false,
+    "hosted_ci": "Not invoked this turn; previous billing-blocked attempts are historical evidence only",
+    "macos_native": "Not executed this turn; previous constructor abort remains unresolved"
+  },
+  "open_gates": [
+    {
+      "id": "NEXT-01",
+      "priority": "P1",
+      "title": "Independent reference semantics and visibility",
+      "evidence": [
+        "docs/WAVE10_ROADMAP.md",
+        "evidence/source-window-20261003/VALIDATION.json"
+      ],
+      "impact": "Published PTS agreement cannot authorize anatomical accuracy or empirical queries",
+      "next_action": "Freeze independently produced reference8 equivalence/visibility labels and acquisition categories before native outcomes",
+      "done_criteria": "Retained reference provenance and all categories/group denominators evaluated under a frozen policy",
+      "dependencies": [
+        "Independent reference evidence; not a detector availability check"
+      ]
+    },
+    {
+      "id": "NEXT-02",
+      "priority": "P1",
+      "title": "Cross-study enrollment registry remains open",
+      "impact": "Rank windows separate one pinned source universe; donor guards do not track arbitrary unrelated prior evaluations",
+      "next_action": "Design a pinned registry of prior source/group/lineage enrollment across model and study versions",
+      "done_criteria": "Prospective exclusions cover every registered split, failure and exclusion without result-dependent replacement",
+      "dependencies": [
+        "Explicit registry scope, immutable exports and same-source alias policy"
+      ]
+    },
+    {
+      "id": "NEXT-03",
+      "priority": "P1",
+      "title": "New model or domain changes require fresh development and calibration",
+      "impact": "These transfer outcomes are evaluation evidence and cannot tune the existing HELEN fit",
+      "next_action": "Prespecify useful-width/domain criteria and a distinct development/calibration study before a new evaluation",
+      "done_criteria": "New frozen fit family/protocol with complete held-out coverage, missingness and utility evidence",
+      "dependencies": [
+        "New source enrollment; no reuse of this holdout as fresh acceptance"
+      ]
+    },
+    {
+      "id": "NEXT-04",
+      "priority": "P1",
+      "title": "Stratified transfer routing and denominators",
+      "impact": "Only pooled full16 transfer is supported",
+      "next_action": "Specify domain/category routing before implementing stratified capsules",
+      "done_criteria": "Preserve each category fit/radius/protocol and all category denominators without pooled fallback",
+      "dependencies": [
+        "Prospective routing contract and category enrollment"
+      ]
+    },
+    {
+      "id": "NEXT-05",
+      "priority": "P1",
+      "title": "macOS and hosted execution remain open",
+      "impact": "Local Windows/Linux evidence does not establish hosted or macOS native operation",
+      "next_action": "Diagnose retained macOS native constructor abort and run the configured hosted matrix when infrastructure permits",
+      "done_criteria": "Actual native process receipts and full platform regressions",
+      "dependencies": [
+        "macOS runtime and functioning hosted scheduler"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "parent": "C:\\Users\\ryanf\\github\\_active\\facemath\\packages\\facemath-0.14.0-transfer-20261002.zip",
+  "sha256": "054ad6bf5bccd9d2b8dd1b688f42a5a476e014e1ff192851e99d1cac3b38cb9a",
+  "bytes": 322471793,
+  "archive_verification": {
+    "verified": true,
+    "files": 6843,
+    "version": "0.14.0",
+    "archive_sha256": "054ad6bf5bccd9d2b8dd1b688f42a5a476e014e1ff192851e99d1cac3b38cb9a",
+    "kind": "archive",
+    "scope": "shipped-byte consistency, not external authenticity or numerical replay"
+  },
+  "extracted_verification": {
+    "verified": true,
+    "files": 6843,
+    "version": "0.14.0",
+    "kind": "extracted_files",
+    "scope": "shipped-byte consistency, not external authenticity or numerical replay"
+  },
+  "command": [
+    "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\model-transfer-20261002\\env311\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "-ra",
+    "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\transfer-holdout-20261003\\parent.xml",
+    "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\transfer-holdout-20261003\\parent-temp"
+  ],
+  "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\transfer-holdout-20261003\\parent\\facemath-0.14.0",
+  "started_utc": "2026-10-03T23:23:59.903287+00:00",
+  "environment": {
+    "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\transfer-holdout-20261003\\parent\\facemath-0.14.0\\src",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "FACEMATH_MODEL": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\transfer-holdout-20261003\\parent\\facemath-0.14.0\\evidence\\model-transfer-20261002\\dataset\\assets\\face_landmarker.task",
+    "FACEMATH_FACE": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\transfer-holdout-20261003\\parent\\facemath-0.14.0\\evidence\\model-transfer-20261002\\dataset\\inputs\\case_00000.png"
+  },
+  "returncode": 0,
+  "seconds": 261.96899999998277,
+  "finished_utc": "2026-10-03T23:28:21.878495+00:00"
+}

@@ -1,5 +1,20 @@
 # Automated native dataset operations
 
+`examples/helen-transfer-window.json` uses the v15 photograph-window plan. Its
+required `selection_offset: 60` starts after the donor's first 60 HELEN roots;
+`split_counts` enrolls the next 60 solely for evaluation. Keep archive, candidate
+prefix, grouping algorithm and seed identical when constructing disjoint rank
+windows. Changing any of these can change the partition. The transfer freezer
+still independently rejects overlap with the full donor enrollment.
+
+Use the same `dataset cohort` and `dataset run --frozen-model` commands as for
+the IBUG transfer. Inspect `recipe.json` → `cohort.selection_window` for the
+zero-based half-open range, full candidate counts and skipped/selected/remaining
+groups. Per-source `selection_index` records the global rank. Offsets count roots
+after grouping; no root is split across windows. An exhausted window fails before
+inference and is never shortened or filled with replacements. v12 recipes retain
+their original representation; v15 plans and recipes require a supporting reader.
+
 For original PTS references, use `examples/lfpw-cohort.json` and the
 `dataset cohort-fetch` / `dataset cohort` commands shown in the README. The plan
 pins a 1.8 GB public source archive and the native model. Intake validates all

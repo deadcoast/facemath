@@ -38,8 +38,8 @@ def _name(value: str) -> str:
 
 def _recipe(path: Path) -> dict:
     recipe = read_json(path)
-    from .source_cohort import RECIPE_FORMAT as PTS_FORMAT, verify_recipe
-    pts = recipe.get("format") == PTS_FORMAT
+    from .source_cohort import RECIPE_FORMATS as PTS_FORMATS, verify_recipe
+    pts = recipe.get("format") in PTS_FORMATS
     if pts:
         verify_recipe(recipe)
     elif recipe.get("format") != RECIPE_FORMAT or recipe.get("label_kind") != "model_generated":

@@ -1,0 +1,925 @@
+{
+  "domain": "Prospectively frozen HELEN testset source-root window [60,120); unchanged donor model and published PTS agreement; visibility, person independence and native training overlap unknown",
+  "minimum_raters": 1,
+  "maximum_cases_per_group": 1,
+  "minimum_development_groups": 2,
+  "timeout_seconds": 90,
+  "alpha": 0.1,
+  "bias_mode": "none",
+  "strata": [
+    "all"
+  ],
+  "format": "facemath.prospective_study.v5",
+  "observer": {
+    "provider": "mediapipe",
+    "provider_fingerprint": "05fb85e38d783a48b77f2fddff63bbc64ed02b6920290ae3e59c1c28d26fb785",
+    "schema": "mediapipe478.v1",
+    "noise_floor_px": 0.75,
+    "attempted_samples": 7,
+    "execution_kind": "native_mediapipe",
+    "model_sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+    "runtime_version": "1.0.1"
+  },
+  "cases": [
+    {
+      "case_id": "case_00000",
+      "group_id": "source_00423a43e27b366fff495ecaf8c14f7356822565c270ab37abba1e660ea9be0e",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_00423a43e27b366fff495ecaf8c14f7356822565c270ab37abba1e660ea9be0e"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00000.png",
+      "references": [
+        "inputs/case_00000.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00001",
+      "group_id": "source_8df79a5db7dedeeb01c659cef3f992fe32b061330db39e342c4552d7a12c2b99",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_8df79a5db7dedeeb01c659cef3f992fe32b061330db39e342c4552d7a12c2b99"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00001.png",
+      "references": [
+        "inputs/case_00001.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00002",
+      "group_id": "source_4dfb88605ed9b7737714d65d403fa4231650792aba724da879acb7efe36427ce",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_4dfb88605ed9b7737714d65d403fa4231650792aba724da879acb7efe36427ce"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00002.png",
+      "references": [
+        "inputs/case_00002.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00003",
+      "group_id": "source_6a84850693af076895f43b470648d0d0960e02446f99d43504513d9a93a7abd0",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_6a84850693af076895f43b470648d0d0960e02446f99d43504513d9a93a7abd0"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00003.png",
+      "references": [
+        "inputs/case_00003.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00004",
+      "group_id": "source_21c986ce32dcc4cf475b7e609f33f70305dd333084b071aa1e8427237e4f1499",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_21c986ce32dcc4cf475b7e609f33f70305dd333084b071aa1e8427237e4f1499"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00004.png",
+      "references": [
+        "inputs/case_00004.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00005",
+      "group_id": "source_8f06a29674ac11458f72345687474e88f7fb6d6fda35e57543170130af642571",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_8f06a29674ac11458f72345687474e88f7fb6d6fda35e57543170130af642571"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00005.png",
+      "references": [
+        "inputs/case_00005.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00006",
+      "group_id": "source_f3941391aeac93a6933b4cd080dad969b13281fb1963ee449dab0877abcfd751",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_f3941391aeac93a6933b4cd080dad969b13281fb1963ee449dab0877abcfd751"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00006.png",
+      "references": [
+        "inputs/case_00006.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00007",
+      "group_id": "source_b3005b8886992f7bd33e0bd44151390bcc4bf4cf8c5852409584d9fe2f17559c",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_b3005b8886992f7bd33e0bd44151390bcc4bf4cf8c5852409584d9fe2f17559c"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00007.png",
+      "references": [
+        "inputs/case_00007.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00008",
+      "group_id": "source_5b203da791f23c6d58ab4ede61d6dd199c2d928427b7ea722c8c08e1b5f9f885",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_5b203da791f23c6d58ab4ede61d6dd199c2d928427b7ea722c8c08e1b5f9f885"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00008.png",
+      "references": [
+        "inputs/case_00008.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00009",
+      "group_id": "source_5beef659716df9b3e05c89ce207881105fb362e5e3bac7324a4de6f22a5dff4e",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_5beef659716df9b3e05c89ce207881105fb362e5e3bac7324a4de6f22a5dff4e"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00009.png",
+      "references": [
+        "inputs/case_00009.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00010",
+      "group_id": "source_261d3346e9a7080f783d006abb58386dc3014cb58d6d493f6d3d2440625b6ea7",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_261d3346e9a7080f783d006abb58386dc3014cb58d6d493f6d3d2440625b6ea7"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00010.png",
+      "references": [
+        "inputs/case_00010.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00011",
+      "group_id": "source_fc4dfc3724be26e82295e69b1f6961706ef187fe2d1c3f1af217b286ea635fec",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_fc4dfc3724be26e82295e69b1f6961706ef187fe2d1c3f1af217b286ea635fec"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00011.png",
+      "references": [
+        "inputs/case_00011.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00012",
+      "group_id": "source_616b43ddd31c50dabe41edae78db49936d00c2950024514812760700959f852f",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_616b43ddd31c50dabe41edae78db49936d00c2950024514812760700959f852f"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00012.png",
+      "references": [
+        "inputs/case_00012.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00013",
+      "group_id": "source_58c50dcb948580584ce42696e35fe83b190254577714d4fbed1af81cc2fa8a6e",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_58c50dcb948580584ce42696e35fe83b190254577714d4fbed1af81cc2fa8a6e"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00013.png",
+      "references": [
+        "inputs/case_00013.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00014",
+      "group_id": "source_84bf14674457954bc4c323e6bf42cc96e60f3229f6284785c9e48ed5c3a976d0",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_84bf14674457954bc4c323e6bf42cc96e60f3229f6284785c9e48ed5c3a976d0"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00014.png",
+      "references": [
+        "inputs/case_00014.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00015",
+      "group_id": "source_35f744f2981a90839ff43c93e53011ce544fe392b7d14a8a0da87c15dc43a1c3",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_35f744f2981a90839ff43c93e53011ce544fe392b7d14a8a0da87c15dc43a1c3"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00015.png",
+      "references": [
+        "inputs/case_00015.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00016",
+      "group_id": "source_c009901a05f91509c0275fa9d21ed49217910f98f7a3ff76af4806df1da2f995",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_c009901a05f91509c0275fa9d21ed49217910f98f7a3ff76af4806df1da2f995"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00016.png",
+      "references": [
+        "inputs/case_00016.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00017",
+      "group_id": "source_1921496a88aaf056fd13a29c20058794c1c840b7f6c669829575d24cfd5fb385",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_1921496a88aaf056fd13a29c20058794c1c840b7f6c669829575d24cfd5fb385"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00017.png",
+      "references": [
+        "inputs/case_00017.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00018",
+      "group_id": "source_36458401f47f26765da24f11c4eb1f576609cc4a0347156864f5044c33db05b9",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_36458401f47f26765da24f11c4eb1f576609cc4a0347156864f5044c33db05b9"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00018.png",
+      "references": [
+        "inputs/case_00018.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00019",
+      "group_id": "source_d314b55c53b0375f3a4fc9193be5b2a17839a5b7c1f4acd3bdf40965b6ba74c2",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_d314b55c53b0375f3a4fc9193be5b2a17839a5b7c1f4acd3bdf40965b6ba74c2"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00019.png",
+      "references": [
+        "inputs/case_00019.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00020",
+      "group_id": "source_8a2f93e9fb9d2029808c5f6e351e3b01a8f427ef4ee7a750f3ce6bd66f359855",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_8a2f93e9fb9d2029808c5f6e351e3b01a8f427ef4ee7a750f3ce6bd66f359855"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00020.png",
+      "references": [
+        "inputs/case_00020.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00021",
+      "group_id": "source_acfd6d6b6f8d2268fc3184cda4018d53b02b234ce30c9b1246300b15a36c37a0",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_acfd6d6b6f8d2268fc3184cda4018d53b02b234ce30c9b1246300b15a36c37a0"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00021.png",
+      "references": [
+        "inputs/case_00021.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00022",
+      "group_id": "source_f568f0db306e05fe4bb19915529906751e46ba64ea970a30e72babf1e144e58c",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_f568f0db306e05fe4bb19915529906751e46ba64ea970a30e72babf1e144e58c"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00022.png",
+      "references": [
+        "inputs/case_00022.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00023",
+      "group_id": "source_633ec1d3755c3686f8181fb70f349b1803dc33ccc2d08aeb2ee878ff19b945a5",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_633ec1d3755c3686f8181fb70f349b1803dc33ccc2d08aeb2ee878ff19b945a5"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00023.png",
+      "references": [
+        "inputs/case_00023.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00024",
+      "group_id": "source_5e693066a0bdadae6193530182b624f1ef99bb5af638b169380d378a82037f01",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_5e693066a0bdadae6193530182b624f1ef99bb5af638b169380d378a82037f01"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00024.png",
+      "references": [
+        "inputs/case_00024.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00025",
+      "group_id": "source_b62c5a4fe62b655e5af34f7c5c362ad1928ed480f47806faad88ec84a3a8b6e7",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_b62c5a4fe62b655e5af34f7c5c362ad1928ed480f47806faad88ec84a3a8b6e7"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00025.png",
+      "references": [
+        "inputs/case_00025.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00026",
+      "group_id": "source_ac8ea420c340c1a38fd48dd8e96fc64b7756aa449940b30f674d8dcd0bc0ba43",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_ac8ea420c340c1a38fd48dd8e96fc64b7756aa449940b30f674d8dcd0bc0ba43"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00026.png",
+      "references": [
+        "inputs/case_00026.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00027",
+      "group_id": "source_5a12b722189b58c029d07c8f554ece52dfecc4cfcb2d423118606f5bfc8f1e42",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_5a12b722189b58c029d07c8f554ece52dfecc4cfcb2d423118606f5bfc8f1e42"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00027.png",
+      "references": [
+        "inputs/case_00027.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00028",
+      "group_id": "source_0ee9eeafd0b31dc4d8867d544f00be326e36ee8dabc98986b2e2ef390e640818",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_0ee9eeafd0b31dc4d8867d544f00be326e36ee8dabc98986b2e2ef390e640818"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00028.png",
+      "references": [
+        "inputs/case_00028.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00029",
+      "group_id": "source_52ea18a9a6de445875d06fbcc86dd6d556c5797d657e50e2cf9a175220c872eb",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_52ea18a9a6de445875d06fbcc86dd6d556c5797d657e50e2cf9a175220c872eb"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00029.png",
+      "references": [
+        "inputs/case_00029.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00030",
+      "group_id": "source_9e78b173b8f2addf24b298f458f2cad44a982061afb1810286dcea9574c698d7",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_9e78b173b8f2addf24b298f458f2cad44a982061afb1810286dcea9574c698d7"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00030.png",
+      "references": [
+        "inputs/case_00030.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00031",
+      "group_id": "source_d857accf640da408e2c4047c8f43ea16380edecb417376ba25dabb3dbde7a370",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_d857accf640da408e2c4047c8f43ea16380edecb417376ba25dabb3dbde7a370"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00031.png",
+      "references": [
+        "inputs/case_00031.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00032",
+      "group_id": "source_1cb0101a104fbc65abeac657db1f650e21d881704e3b98a370fda14d5999e5b7",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_1cb0101a104fbc65abeac657db1f650e21d881704e3b98a370fda14d5999e5b7"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00032.png",
+      "references": [
+        "inputs/case_00032.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00033",
+      "group_id": "source_d4afc3667dedc52f21aa3e4d64e30339a6c7c78b3015ca04eec633ba246aa7f8",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_d4afc3667dedc52f21aa3e4d64e30339a6c7c78b3015ca04eec633ba246aa7f8"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00033.png",
+      "references": [
+        "inputs/case_00033.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00034",
+      "group_id": "source_68fe8d395649b851d98f5275c6a4590361690f9e69a5a3e1a194819ad3f25da6",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_68fe8d395649b851d98f5275c6a4590361690f9e69a5a3e1a194819ad3f25da6"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00034.png",
+      "references": [
+        "inputs/case_00034.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00035",
+      "group_id": "source_71c48b65ee6d8fcecfd48f362fd5ab5a19f676564f6f682e529dd1414ddfce70",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_71c48b65ee6d8fcecfd48f362fd5ab5a19f676564f6f682e529dd1414ddfce70"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00035.png",
+      "references": [
+        "inputs/case_00035.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00036",
+      "group_id": "source_feb0ae80d8df266f38488121c98289ddc5f623d985fc102208e138c501d55168",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_feb0ae80d8df266f38488121c98289ddc5f623d985fc102208e138c501d55168"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00036.png",
+      "references": [
+        "inputs/case_00036.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00037",
+      "group_id": "source_902dc288b3724fe6ed9c090e908f755bc594314534fe269b20af737239e4062c",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_902dc288b3724fe6ed9c090e908f755bc594314534fe269b20af737239e4062c"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00037.png",
+      "references": [
+        "inputs/case_00037.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00038",
+      "group_id": "source_ffb2322c7344410ce747c2d488e5668281136381631fecfb342e91dd8222dfe0",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_ffb2322c7344410ce747c2d488e5668281136381631fecfb342e91dd8222dfe0"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00038.png",
+      "references": [
+        "inputs/case_00038.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00039",
+      "group_id": "source_e62d374646f6b23b2c4b38cf5ea63822faac925bbba5984b302bfee37ccfd787",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_e62d374646f6b23b2c4b38cf5ea63822faac925bbba5984b302bfee37ccfd787"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00039.png",
+      "references": [
+        "inputs/case_00039.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00040",
+      "group_id": "source_f8db82e1a98db2cddc56f36de5cd83bff01c4701d4300b4cd90936eefadc9221",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_f8db82e1a98db2cddc56f36de5cd83bff01c4701d4300b4cd90936eefadc9221"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00040.png",
+      "references": [
+        "inputs/case_00040.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00041",
+      "group_id": "source_35c83f417fb8bcf3cdae73c35a0bb0c18e91f9a200278e2a807fcb521297b9f5",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_35c83f417fb8bcf3cdae73c35a0bb0c18e91f9a200278e2a807fcb521297b9f5"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00041.png",
+      "references": [
+        "inputs/case_00041.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00042",
+      "group_id": "source_9a4331150beece4693d29bb8e28dc15bfe097b0bfa3bc6c6b2f826b700528e69",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_9a4331150beece4693d29bb8e28dc15bfe097b0bfa3bc6c6b2f826b700528e69"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00042.png",
+      "references": [
+        "inputs/case_00042.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00043",
+      "group_id": "source_a010573838760d29f215bcf25c00473edf6f89eab54e987943c2afeec29a523d",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_a010573838760d29f215bcf25c00473edf6f89eab54e987943c2afeec29a523d"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00043.png",
+      "references": [
+        "inputs/case_00043.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00044",
+      "group_id": "source_7579aed24e7d257d41528cc8bddd9efb620404271456704227bf1bac8f24a1b5",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_7579aed24e7d257d41528cc8bddd9efb620404271456704227bf1bac8f24a1b5"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00044.png",
+      "references": [
+        "inputs/case_00044.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00045",
+      "group_id": "source_846cd81dbde21867b25d86ff67b69ebc0fa94e9b24f65aeea4d38c304a19a6bc",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_846cd81dbde21867b25d86ff67b69ebc0fa94e9b24f65aeea4d38c304a19a6bc"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00045.png",
+      "references": [
+        "inputs/case_00045.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00046",
+      "group_id": "source_7bb8f73a586ffcfc55b0c8f14c0be929bc4be46d1e70cafc01ab882102568137",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_7bb8f73a586ffcfc55b0c8f14c0be929bc4be46d1e70cafc01ab882102568137"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00046.png",
+      "references": [
+        "inputs/case_00046.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00047",
+      "group_id": "source_a98510206bc113a916116846aa25d4b7494a532e2a2cd77b819d2b94918dca75",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_a98510206bc113a916116846aa25d4b7494a532e2a2cd77b819d2b94918dca75"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00047.png",
+      "references": [
+        "inputs/case_00047.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00048",
+      "group_id": "source_6ffb6bc4ed5f2944878a30d332da190532ea9ac65dff8d92a9619de5e05d38bf",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_6ffb6bc4ed5f2944878a30d332da190532ea9ac65dff8d92a9619de5e05d38bf"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00048.png",
+      "references": [
+        "inputs/case_00048.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00049",
+      "group_id": "source_3c8372a777b131536535c06348f788c76e5c3bd75834b38d9959d153448428f3",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_3c8372a777b131536535c06348f788c76e5c3bd75834b38d9959d153448428f3"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00049.png",
+      "references": [
+        "inputs/case_00049.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00050",
+      "group_id": "source_a2d36ad3e6cd9afcb589b630fbc2fba6deea0eb740eb27bce0447e4afc3284bc",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_a2d36ad3e6cd9afcb589b630fbc2fba6deea0eb740eb27bce0447e4afc3284bc"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00050.png",
+      "references": [
+        "inputs/case_00050.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00051",
+      "group_id": "source_459c790bf844388093d894352ab199c6392fa6e40da2365451c8f78d5ac8a3af",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_459c790bf844388093d894352ab199c6392fa6e40da2365451c8f78d5ac8a3af"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00051.png",
+      "references": [
+        "inputs/case_00051.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00052",
+      "group_id": "source_5513fc33230c6a941fe018c4952cb5129991137cdb3f04720fbe764770c775de",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_5513fc33230c6a941fe018c4952cb5129991137cdb3f04720fbe764770c775de"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00052.png",
+      "references": [
+        "inputs/case_00052.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00053",
+      "group_id": "source_65236a1e35d301388973cdb640e245408d035446246a3daf2e24798fe8e405e3",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_65236a1e35d301388973cdb640e245408d035446246a3daf2e24798fe8e405e3"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00053.png",
+      "references": [
+        "inputs/case_00053.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00054",
+      "group_id": "source_00f4d47c821dbc87a3cb9444d081a13bba22f0956718a5a526d89cb840b956e5",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_00f4d47c821dbc87a3cb9444d081a13bba22f0956718a5a526d89cb840b956e5"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00054.png",
+      "references": [
+        "inputs/case_00054.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00055",
+      "group_id": "source_1d6084d8146c5ec6298e316f9f885889311e48d4a43542fb3c93ac1542c7732f",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_1d6084d8146c5ec6298e316f9f885889311e48d4a43542fb3c93ac1542c7732f"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00055.png",
+      "references": [
+        "inputs/case_00055.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00056",
+      "group_id": "source_a3a7c1d469bde074a2a4f7023438a63c2c38c8205962451c1dc81e405bf01010",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_a3a7c1d469bde074a2a4f7023438a63c2c38c8205962451c1dc81e405bf01010"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00056.png",
+      "references": [
+        "inputs/case_00056.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00057",
+      "group_id": "source_b6319930283fde977bb1c1e557fb36c9887b5a4d5cdf396fb1c4aae3d4e2f822",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_b6319930283fde977bb1c1e557fb36c9887b5a4d5cdf396fb1c4aae3d4e2f822"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00057.png",
+      "references": [
+        "inputs/case_00057.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00058",
+      "group_id": "source_27b079f78ae0f95d61fcc88357417f1e4975575cfc517d02324012ecf89864f4",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_27b079f78ae0f95d61fcc88357417f1e4975575cfc517d02324012ecf89864f4"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00058.png",
+      "references": [
+        "inputs/case_00058.reference.json"
+      ]
+    },
+    {
+      "case_id": "case_00059",
+      "group_id": "source_bf44f0a1bfcbf51ebc29f0cc0d5de1975ee5aaafc66b4a323b596096c98a005e",
+      "split": "evaluation",
+      "lineage_ids": [
+        "source_bf44f0a1bfcbf51ebc29f0cc0d5de1975ee5aaafc66b4a323b596096c98a005e"
+      ],
+      "stratum": "all",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00059.png",
+      "references": [
+        "inputs/case_00059.reference.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "command": [
+    "runs\\transfer-holdout-20261003\\env311\\Scripts\\python.exe",
+    "scripts\\validate_current.py",
+    "--out",
+    "runs\\transfer-holdout-20261003\\release",
+    "--native-dataset",
+    "evidence\\source-window-20261003\\dataset",
+    "--frozen-model",
+    "evidence\\source-window-20261003\\helen-model.json",
+    "--evidence",
+    "evidence/source-window-20261003",
+    "--retain-evidence",
+    "evidence/source-window-20261003/preseal"
+  ],
+  "cwd": ".",
+  "started_utc": "2026-10-03T23:31:54.578619+00:00",
+  "finished_utc": "2026-10-04T00:13:48.922973+00:00",
+  "elapsed_seconds": 2514.3429999999935,
+  "returncode": 0,
+  "environment": {
+    "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+    "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+    "UV_PROJECT_ENVIRONMENT": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\transfer-holdout-20261003\\env311",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

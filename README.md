@@ -1,5 +1,12 @@
 # FACEMATH · reproducible facial geometry
 
+Version **0.15.0** adds frozen photograph-group sampling windows for new holdouts.
+The supplied HELEN plan retains the donor seed and selects ranked roots 60–119
+for evaluation with the unchanged saved model. Selection retains the complete
+candidate inventory and before/selected/after counts, rejects exhausted windows
+and recomputes its range during verification. See
+[the source-window design](docs/SOURCE_WINDOW_DESIGN.md).
+
 Version **0.14.0** exports complete fitted joint models and evaluates them on new
 frozen cohorts without changing the center, scatter or calibrated radius.
 Transfer freezes the full donor enrollment with the target before inference,
@@ -30,6 +37,21 @@ The prior 0.10.1 blocker repairs remain documented in
 [the remediation record](docs/REVIEW_REMEDIATION_20261001.md).
 
 ## Run the sourced native pipeline
+
+To evaluate the next 60 HELEN sources after the original donor cohort:
+
+```shell
+uv run --locked --extra observer python -m facemath dataset cohort examples/helen-transfer-window.json --archive runs/lfpw-assets/source.tar.gz --model runs/lfpw-assets/face_landmarker.task --out runs/helen-holdout-intake
+uv run --locked --extra observer python -m facemath dataset run runs/helen-holdout-intake/dataset --frozen-model evidence/source-window-20261003/helen-model.json --out runs/helen-holdout
+uv run --locked --extra observer python -m facemath verify runs/helen-holdout
+uv run --locked --extra observer python -m facemath replay runs/helen-holdout --out runs/helen-holdout-replay
+```
+
+The offset counts photograph roots after grouping, with the same archive,
+candidate prefix, algorithm and seed as the donor. It does not count faces or
+successful detections. Source separation is checked before native transfer;
+all failures remain in the frozen enrollment. This published-label research
+experiment does not authorize empirical queries or establish person independence.
 
 To evaluate the saved HELEN model on the independent IBUG source selection:
 

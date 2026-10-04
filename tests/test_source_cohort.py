@@ -246,3 +246,118 @@ def test_declared_oversized_member_is_refused_before_payload_read(cohort,tmp_pat
     cohort['plan']['archive']=pin(cohort['archive']);cohort['path'].write_text(json.dumps(cohort['plan']))
     with pytest.raises(ObservationError,match='member size'):
         prepare_cohort(cohort['path'],cohort['archive'],cohort['model'],tmp_path/'huge')
+
+
+def window_plan(cohort, offset=0, count=4):
+    plan = deepcopy(cohort['plan'])
+    plan.update(format='facemath.pts_cohort_plan.v15', selection_offset=offset,
+                selection='sha256_seed_nul_ibug_source_blocks_v1', evaluation_only=True,
+                split_counts=dict(development=0, calibration=0, evaluation=count))
+    plan['protocol']['bias_mode'] = 'none'
+    return plan
+
+
+@pytest.mark.parametrize('selector', ['ibug', 'helen'])
+def test_windows_partition_ranked_roots_after_grouping(cohort, selector):
+    plan = window_plan(cohort, count=5)
+    inventory = deepcopy(cohort['inventory'])
+    # Six annotations but five roots. Related faces must not straddle windows.
+    for row in inventory:
+        row['name'] = row['name'].replace('image_1.', 'image_000_02.')
+        if selector == 'helen':
+            row['name'] = row['name'].replace('image_000_02.', '000_02.')
+            for i in (0, 2, 3, 4, 5):
+                row['name'] = row['name'].replace(f'image_{i}.', f'{i}_01.')
+    if selector == 'helen':
+        plan['selection'] = 'sha256_seed_nul_helen_source_blocks_v1'
+    all_rows = select_members(plan, inventory)
+    first, second = deepcopy(plan), deepcopy(plan)
+    first['split_counts']['evaluation'] = 2
+    second.update(selection_offset=2)
+    second['split_counts']['evaluation'] = 3
+    left, right = select_members(first, inventory), select_members(second, inventory[::-1])
+    assert left + right == all_rows
+    assert not {r['source_group'] for r in left} & {r['source_group'] for r in right}
+    assert [r['selection_index'] for r in right] == [2, 3, 4]
+    assert {r['candidate_count'] for r in all_rows} == {6}
+    assert {r['candidate_groups'] for r in all_rows} == {5}
+    recipe = make_recipe(second, inventory)
+    assert recipe['cohort']['selection_window'] == dict(unit='photograph_filename_root',
+        start_inclusive=2, stop_exclusive=5, candidate_annotations=6,
+        candidate_source_groups=5, skipped_before=2, selected=3, remaining_after=0)
+    verify_recipe(recipe)
+
+
+def test_window_split_blocks_and_zero_offset_preserve_legacy_order(cohort):
+    plan = deepcopy(cohort['plan'])
+    plan['selection'] = 'sha256_seed_nul_ibug_source_blocks_v1'
+    old = select_members(plan, cohort['inventory'])
+    old_recipe = make_recipe(plan, cohort['inventory'])
+    plan.update(format='facemath.pts_cohort_plan.v15', selection_offset=0)
+    current = select_members(plan, cohort['inventory'])
+    assert [{k:v for k,v in r.items() if k != 'selection_index'} for r in current] == old
+    assert old_recipe['format'] == 'facemath.pts_dataset_recipe.v12'
+    assert 'selection_window' not in old_recipe['cohort']
+    plan['selection_offset'] = 2
+    current = select_members(plan, cohort['inventory'])
+    assert [r['selection_index'] for r in current] == [2, 3, 4, 5]
+    assert [r['split'] for r in current] == ['development','development','calibration','evaluation']
+
+
+@pytest.mark.parametrize('offset', [-1, True, False, 1.0, '1', None, 20001, [], {}])
+def test_window_offsets_are_explicit_bounded_integers(cohort, offset):
+    with pytest.raises(ObservationError, match='selection_offset'):
+        select_members(window_plan(cohort, offset), cohort['inventory'])
+
+
+def test_missing_offset_and_legacy_or_ungrouped_windows_are_refused(cohort):
+    plan = window_plan(cohort)
+    del plan['selection_offset']
+    with pytest.raises(ObservationError, match='selection_offset'):
+        select_members(plan, cohort['inventory'])
+    plan = window_plan(cohort)
+    plan['format'] = 'facemath.pts_cohort_plan.v12'
+    with pytest.raises(ObservationError, match='v15'):
+        select_members(plan, cohort['inventory'])
+    plan = window_plan(cohort)
+    plan['selection'] = 'sha256_seed_nul_member_blocks_v1'
+    with pytest.raises(ObservationError, match='photograph-root'):
+        select_members(plan, cohort['inventory'])
+
+
+@pytest.mark.parametrize('offset', [3, 6, 20000])
+def test_exhausted_window_never_truncates_wraps_or_replaces(cohort, offset):
+    with pytest.raises(ObservationError, match='smaller.*window'):
+        select_members(window_plan(cohort, offset), cohort['inventory'])
+
+
+def test_skipped_candidates_still_require_intact_pairing(cohort):
+    plan = window_plan(cohort, offset=2)
+    whole = select_members(window_plan(cohort, count=6), cohort['inventory'])
+    broken = [r for r in cohort['inventory'] if r['name'] != whole[0]['annotation']]
+    with pytest.raises(ObservationError, match='missing PTS'):
+        select_members(plan, broken)
+
+
+@pytest.mark.parametrize('field', ['selection', 'selection_window', 'selection_offset', 'format'])
+def test_resealed_window_tampering_is_recomputed(cohort, tmp_path, field):
+    plan = window_plan(cohort, offset=2)
+    cohort['path'].write_text(json.dumps(plan))
+    dataset = prepare_cohort(cohort['path'], cohort['archive'], cohort['model'], tmp_path/'window')
+    assert verify_dataset(dataset)['cases'] == 4
+    recipe = read_json(dataset/'recipe.json')
+    assert recipe['format'] == 'facemath.pts_dataset_recipe.v15'
+    if field == 'selection':
+        recipe['cohort']['selection'][0]['selection_index'] = 0
+    elif field == 'selection_window':
+        recipe['cohort']['selection_window']['skipped_before'] = 0
+    elif field == 'selection_offset':
+        recipe['cohort']['plan']['selection_offset'] = 0
+    else:
+        recipe['format'] = 'facemath.pts_dataset_recipe.v12'
+    (dataset/'recipe.json').write_text(json.dumps(recipe))
+    manifest = {'format':'facemath.dataset_bundle.v11', 'files':file_inventory(dataset, exclude=('manifest.json',))}
+    manifest['content_sha256'] = object_digest(manifest)
+    (dataset/'manifest.json').write_text(json.dumps(manifest))
+    with pytest.raises(ObservationError, match='frozen selection'):
+        verify_dataset(dataset)

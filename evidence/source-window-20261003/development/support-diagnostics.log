@@ -1,0 +1,100 @@
+{
+  "raw_report_sha256": "40f4a243806a31d24123399c0c86b4e2c7cd16f9e343e0153286027426b6fc44",
+  "evidence_scope": "Read-only diagnosis of this completed frozen source run; not a new fit or threshold",
+  "rows": [
+    {
+      "case_id": "case_00041",
+      "group_id": "source_35c83f417fb8bcf3cdae73c35a0bb0c18e91f9a200278e2a807fcb521297b9f5",
+      "image_shape_hw": [
+        722,
+        749
+      ],
+      "landmark": "chin",
+      "predicted_xy_px": [
+        586.3726171255112,
+        726.0218372344971
+      ],
+      "reference_xy_px": [
+        607.906578,
+        721.0
+      ],
+      "stored_raster_max_y_px": 721,
+      "below_image_by_px": 5.02183723449707,
+      "failure": "unobservable_predicted_reference_points",
+      "reference_annotation_present": true,
+      "native_observation_present": true
+    },
+    {
+      "case_id": "case_00042",
+      "group_id": "source_9a4331150beece4693d29bb8e28dc15bfe097b0bfa3bc6c6b2f826b700528e69",
+      "image_shape_hw": [
+        2247,
+        3049
+      ],
+      "landmark": "chin",
+      "predicted_xy_px": [
+        1648.0282529592514,
+        2362.6641651391983
+      ],
+      "reference_xy_px": [
+        1655.466412,
+        2246.0
+      ],
+      "stored_raster_max_y_px": 2246,
+      "below_image_by_px": 116.6641651391983,
+      "failure": "unobservable_predicted_reference_points",
+      "reference_annotation_present": true,
+      "native_observation_present": true
+    },
+    {
+      "case_id": "case_00046",
+      "group_id": "source_7bb8f73a586ffcfc55b0c8f14c0be929bc4be46d1e70cafc01ab882102568137",
+      "image_shape_hw": [
+        679,
+        940
+      ],
+      "landmark": "chin",
+      "predicted_xy_px": [
+        467.627534866333,
+        685.9969650506973
+      ],
+      "reference_xy_px": [
+        460.736968,
+        678.0
+      ],
+      "stored_raster_max_y_px": 678,
+      "below_image_by_px": 7.996965050697327,
+      "failure": "unobservable_predicted_reference_points",
+      "reference_annotation_present": true,
+      "native_observation_present": true
+    },
+    {
+      "case_id": "case_00048",
+      "group_id": "source_6ffb6bc4ed5f2944878a30d332da190532ea9ac65dff8d92a9619de5e05d38bf",
+      "image_shape_hw": [
+        689,
+        894
+      ],
+      "landmark": "chin",
+      "predicted_xy_px": [
+        469.73449444770813,
+        706.92411839962
+      ],
+      "reference_xy_px": [
+        501.572502,
+        688.0
+      ],
+      "stored_raster_max_y_px": 688,
+      "below_image_by_px": 18.924118399620056,
+      "failure": "unobservable_predicted_reference_points",
+      "reference_annotation_present": true,
+      "native_observation_present": true
+    }
+  ],
+  "denominator": 60,
+  "observed_landmarks": 476,
+  "enrolled_landmarks": 480,
+  "raw_coordinates_changed": false,
+  "replacement_or_retry_performed": false,
+  "inference": "These four incomplete-case failures arise from out-of-image predicted chins, not absent reference labels"
+}
