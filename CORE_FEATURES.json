@@ -1,0 +1,81 @@
+{
+  "format": "facemath.core_feature_release.v19",
+  "version": "0.19.0",
+  "code_sha256": "6ec1ff8b6b1df885899542bf829ddc30938b77b2335a1349ea4cde7016d26dc3",
+  "parent": {
+    "archive": "C:\\Users\\ryanf\\github\\_active\\facemath\\packages\\facemath-0.18.0-structure-20261004.zip",
+    "sha256": "4c0e2933e6f61b45f17fd8e4942e5c6d862848ccda7c8649ce081c90a1a8c81b",
+    "extracted": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\structural-comparison-20261004\\release-02\\extracted\\facemath-0.18.0",
+    "synchronized_parent": "2656371416b28b471c39bde2ff9a09ae3da84fdc"
+  },
+  "tests": {
+    "source": {
+      "tests": 1220,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 1,
+      "passed": 1219
+    },
+    "wheel": {
+      "tests": 1220,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 1,
+      "passed": 1219
+    },
+    "archive": {
+      "tests": 1220,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 1,
+      "passed": 1219
+    }
+  },
+  "archive": {
+    "path": "packages/facemath-0.19.0-core-20261004.zip",
+    "sha256": "387acf24ae6714b610a83075be4746444cb8b4bb4ba4264c3d5a55e0398416c4",
+    "bytes": 915923516,
+    "files": 7967
+  },
+  "functions": {
+    "displacement_components": "regional shift, centered mismatch, exact RMS decomposition and frozen support denominators",
+    "polar_components": "proper rotation, right stretch, logarithmic area and deviatoric/shear components of the existing maps",
+    "deformation_components": "supported A-domain pixel aggregation with explicit unsupported output",
+    "compare_regions": "seven fixed regions from the single canonical state; no second registration"
+  },
+  "fixed": "optional holdout registration no longer discards a valid primary comparison; failed sensitivity refits retain slots and withhold intervals",
+  "pair": {
+    "report": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\pair-01\\calibrated\\report.html",
+    "audit": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\pair-01\\regional-audit.json",
+    "raw_arrays_unchanged": 158,
+    "supported_triangles": 898
+  },
+  "native": {
+    "selection_window": [
+      212,
+      232
+    ],
+    "sources": 20,
+    "fit_performed": false,
+    "calibration_sha256": "09d1a8e986a4775a37599d13eead864960223018ab368207d9b50aa6e0d9fb84",
+    "radius": 15.468775983904042,
+    "covered_groups": 20,
+    "array_parity": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-release-20261004\\native-array-parity.json"
+  },
+  "verification": {
+    "commands": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-release-20261004\\commands.json",
+    "wheel_bytes": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-release-20261004\\wheel-check\\installed-byte-check.json",
+    "browser": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\browser-01\\browser.json",
+    "ordinary_user_access": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\ordinary-user-verify.json"
+  },
+  "next_registry": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\next-registry.json",
+  "registered_cases": 355,
+  "failures_retained": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\failure-history.json",
+  "open": [
+    "Full-mesh regional components have no independently established anatomical accuracy or propagated localization intervals",
+    "Deformation is directional and weighted by supported A-domain pixels; not an exchange-symmetric surface statistic",
+    "Published PTS labels and filename grouping do not establish independent human visibility labels, person independence or native-training exclusion",
+    "Frozen transfer retains the donor domain label; that declaration alone is not proof of target transfer validity",
+    "Validation is on this Windows runtime; the installed wheel shares interpreter dependencies"
+  ]
+}

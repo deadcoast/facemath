@@ -1,0 +1,36 @@
+{
+  "format": "facemath.development_failures.v19",
+  "failures": [
+    {
+      "record": "development-logs/inherited-partial-failure.log",
+      "kind": "inherited_core_failure",
+      "outcome": "primary registration succeeded; optional holdout aborted the full pair",
+      "resolution": "development-logs/partial-repaired.log retains primary success and unavailable holdouts"
+    },
+    {
+      "record": "development-logs/core-focused-01.log",
+      "kind": "test_integration_error",
+      "outcome": "62 passed, one failed because the new test used a nonexistent export helper",
+      "resolution": "correct existing write_bundle and CLI replay APIs; focused and final targeted logs retained"
+    },
+    {
+      "kind": "editable_environment_setup",
+      "command": "uv pip install --python runs/enrollment-registry-20261003/env311/Scripts/python.exe --no-deps --no-build-isolation -e . --offline",
+      "returncode": 1,
+      "observed_stderr": "ModuleNotFoundError: No module named setuptools",
+      "raw_output_location": "tool response in this development conversation; this entry is a summary, not a retained raw shell log",
+      "resolution": "editable-install-02 used the declared isolated build requirements from the existing uv cache"
+    },
+    {
+      "record": "development-logs/registry-extend.log",
+      "kind": "correct_registry_refusal",
+      "returncode": 2,
+      "outcome": "registry extension cannot change the prior scope",
+      "resolution": "registry-extend-02 preserves the exact inherited scope and adds the twenty enrolled cases"
+    }
+  ],
+  "code_sha256": "6ec1ff8b6b1df885899542bf829ddc30938b77b2335a1349ea4cde7016d26dc3",
+  "open": [
+    "Full-mesh component accuracy and independent anatomical/visibility validation remain open; no fit or empirical admission performed."
+  ]
+}

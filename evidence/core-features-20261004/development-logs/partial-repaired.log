@@ -1,0 +1,118 @@
+{
+  "scope": "Synthetic clipping control using retained native geometry; not a new native observation",
+  "removed_indices": [
+    61,
+    127,
+    152,
+    168,
+    172,
+    291,
+    356,
+    397
+  ],
+  "primary_fit_anchors": [
+    "left_eye",
+    "right_eye",
+    "nose_tip"
+  ],
+  "primary_fit_completed": true,
+  "completed": true,
+  "measurements": [
+    {
+      "name": "registration.heldout_eyes.rms",
+      "value": null,
+      "unit": "registered_eye_span_geomean",
+      "support": 12,
+      "total": 12,
+      "family": "registration_sensitivity",
+      "interpretation": "region excluded from alignment anchors",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": "holdout_registration_unavailable: fewer than three observable registration anchors"
+    },
+    {
+      "name": "registration.heldout_eyes.change",
+      "value": null,
+      "unit": "registered_eye_span_geomean",
+      "support": 12,
+      "total": 12,
+      "family": "registration_sensitivity",
+      "interpretation": "region excluded from alignment anchors",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": "holdout_registration_unavailable: fewer than three observable registration anchors"
+    },
+    {
+      "name": "registration.heldout_nose.rms",
+      "value": null,
+      "unit": "registered_eye_span_geomean",
+      "support": 9,
+      "total": 10,
+      "family": "registration_sensitivity",
+      "interpretation": "region excluded from alignment anchors",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": "holdout_registration_unavailable: fewer than three observable registration anchors"
+    },
+    {
+      "name": "registration.heldout_nose.change",
+      "value": null,
+      "unit": "registered_eye_span_geomean",
+      "support": 9,
+      "total": 10,
+      "family": "registration_sensitivity",
+      "interpretation": "region excluded from alignment anchors",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": "holdout_registration_unavailable: fewer than three observable registration anchors"
+    },
+    {
+      "name": "registration.heldout_mouth.rms",
+      "value": 4.2263640565660064e-16,
+      "unit": "registered_eye_span_geomean",
+      "support": 10,
+      "total": 12,
+      "family": "registration_sensitivity",
+      "interpretation": "evaluation region excluded from alignment anchors; exposes alignment-induced resemblance",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "registration.heldout_mouth.change",
+      "value": -2.0146300305396266e-16,
+      "unit": "registered_eye_span_geomean",
+      "support": 10,
+      "total": 12,
+      "family": "registration_sensitivity",
+      "interpretation": "signed change from the primary registration residual",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "registration.heldout_jaw.rms",
+      "value": 4.263209652954722e-16,
+      "unit": "registered_eye_span_geomean",
+      "support": 18,
+      "total": 21,
+      "family": "registration_sensitivity",
+      "interpretation": "evaluation region excluded from alignment anchors; exposes alignment-induced resemblance",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    },
+    {
+      "name": "registration.heldout_jaw.change",
+      "value": -2.0984102585188585e-16,
+      "unit": "registered_eye_span_geomean",
+      "support": 18,
+      "total": 21,
+      "family": "registration_sensitivity",
+      "interpretation": "signed change from the primary registration residual",
+      "interval": null,
+      "interval_kind": null,
+      "exclusion": null
+    }
+  ]
+}

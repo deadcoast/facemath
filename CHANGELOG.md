@@ -1,3 +1,16 @@
+# 0.19.0 — regional movement and finite deformation
+
+- Compute regional translation and mean-centered contour mismatch from the one
+  canonical pair, retaining their exact squared-RMS decomposition.
+- Decompose the existing triangle maps into proper rotation, logarithmic stretch,
+  area change and deviatoric/shear components. Export all arrays and support masks.
+- Keep fixed landmark denominators in within-tolerance missingness ranges, and
+  retain the original A-domain pixel denominators for deformation summaries.
+- Continue supported primary comparisons when optional holdout registration
+  fails. Preserve requested sensitivity draw slots and withhold incomplete intervals.
+- Expose seven regional profiles through the production API, CLI and overview;
+  include component values in the existing report's measurement ledger.
+
 # 0.18.0 — named structural image-pair comparison
 
 - Return fourteen named A/B measurements and signed differences through the

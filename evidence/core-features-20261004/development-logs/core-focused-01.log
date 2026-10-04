@@ -1,0 +1,14 @@
+......................F........................................          [100%]
+================================== FAILURES ===================================
+______ test_production_profile_exports_components_and_exact_existing_rms ______
+
+tmp_path = WindowsPath('C:/Users/ryanf/github/_active/facemath/runs/core-features-20261004/focused-01/test_production_profile_export0')
+
+    def test_production_profile_exports_components_and_exact_existing_rms(tmp_path):
+>       from facemath.observation.artifacts import export_bundle, replay_bundle
+E       ImportError: cannot import name 'export_bundle' from 'facemath.observation.artifacts' (C:\Users\ryanf\github\_active\facemath\src\facemath\observation\artifacts.py)
+
+tests\test_regional_comparison.py:205: ImportError
+=========================== short test summary info ===========================
+FAILED tests/test_regional_comparison.py::test_production_profile_exports_components_and_exact_existing_rms
+1 failed, 62 passed in 4.30s

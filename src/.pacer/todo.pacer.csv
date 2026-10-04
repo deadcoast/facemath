@@ -1,1 +1,4 @@
 ID,Kind,Pos,Title,Status,Tier,Produce,In,Out,Binds,Needs,Probe,Exit,Next,Tags
+PAC-007,AREA,A3,Core regional comparison functions,DONE,,,,,,,,,,
+PAC-008,PHASE,A3.P1,Separate movement and deformation in the existing pair engine,DONE,integrated,,,,,,,"Region movement, shape mismatch and finite deformation are computed from one canonical state and exposed by the production result.",,
+PAC-009,PACE,A3.P1.01,Implement regional comparison and partial-support behavior,DONE,,Compute supported regional movement and finite deformation; retain useful pair results when an optional holdout fit is unavailable.,OVR-009;OVR-015;OVR-016;OVR-018;OVR-026;OVR-027;OVR-028,facemath/observation/regional.py,OGM-005,,"""..\runs\enrollment-registry-20261003\env311\Scripts\python.exe"" -m pytest -q ../tests/test_regional_comparison.py --basetemp=.pacer/run/core-pace-01",,integrate,

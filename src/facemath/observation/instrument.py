@@ -40,6 +40,16 @@ class InstrumentResult:
             "normalization": {"kind": "geometric_mean_of_registered_interocular_spans",
                               "canonical_pixels": self.state.normalization_span_px},
             "measurement_profile": [m.to_dict() for m in self.profile.measurements],
+            "regional_comparison": self.profile.regional.to_dict(),
+            "registration_diagnostics": {
+                "heldout": [{"region": name, "available": bool(available), "failure": failure}
+                    for name, available, failure in zip(self.profile.heldout_labels,
+                        self.profile.heldout_fit_supported, self.profile.heldout_failures)],
+                "sensitivity": {"requested_draws": len(self.profile.sensitivity_draws),
+                    "completed_draws": int(self.profile.sensitivity_draw_supported.sum()),
+                    "failures": [{"draw": i, "reason": reason} for i, reason in self.profile.sensitivity_failures],
+                    "intervals_available": bool(self.profile.sensitivity_draw_supported.all()),
+                    "incomplete_experiment_rule": "retain all slots; withhold intervals; no successful-draw-only quantiles"}},
             "warnings": list(self.profile.warnings),
             "consensus_similarity_percent": None,
             "population_percentile": None,
@@ -82,7 +92,10 @@ class InstrumentResult:
             "anatomical_support": field.valid, "landmark_residual_vectors": profile.residual_vectors,
             "relational_distortion": profile.relational_distortion,
             "heldout_residual_vectors": profile.heldout_residuals, "sensitivity_draws": profile.sensitivity_draws,
+            "heldout_fit_supported": profile.heldout_fit_supported,
+            "sensitivity_draw_supported": profile.sensitivity_draw_supported,
         }
+        arrays.update(profile.regional.arrays())
         arrays.update({f"region_a_{k}": v for k, v in state.masks_a.items()})
         arrays.update({f"region_b_{k}": v for k, v in state.masks_b.items()})
         if self.flow is not None:

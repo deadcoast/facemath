@@ -158,3 +158,8 @@ def test_cli_returns_structural_values_from_the_production_pair_path(tmp_path):
     assert result.returncode == 0, result.stderr
     data = json.loads(result.stdout)
     assert len(data['comparison']['structural_comparison']['rows']) == 14
+    regional = data['comparison']['regional_comparison']
+    assert len(regional['rows']) == 7
+    assert regional['rows'][-1]['region'] == 'all'
+    assert regional['rows'][-1]['displacement']['total_rms'] > 0
+    assert regional['rows'][-1]['deformation']['anisotropic_log_strain_rms'] > 0

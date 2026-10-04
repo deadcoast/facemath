@@ -43,12 +43,14 @@ def test_both_frozen_branches_run_and_raw_geometry_stays_unchanged(milestone):
         assert c['observer_calls']==[4,38,38] and c['enrollment']['prospectively_excluded']==1
         assert c['duplicate_import_idempotent'] and c['frozen_origin_present']
     pair=report['admitted_pair']
-    # Preserve the original 135 arrays and also require all four new observed
-    # structure arrays to participate in qualification-invariance checking.
-    assert pair['raw_arrays_unchanged'] and pair['raw_arrays_checked']==135+4
+    # Original 135, four structural, ten regional, and two diagnostic masks.
+    # Every new observed component must participate in qualification invariance.
+    assert pair['raw_arrays_unchanged'] and pair['raw_arrays_checked']==135+4+10+2
     with np.load(root/'admitted_pair/arrays.npz') as arrays:
         assert all('structure_'+name in arrays.files for name in
                    ('nominal', 'nominal_valid', 'expression_a', 'expression_b'))
+        assert sum(name.startswith('regional_') for name in arrays.files)==10
+        assert {'heldout_fit_supported', 'sensitivity_draw_supported'} <= set(arrays.files)
     assert pair['known_reference_shape_enclosed'] and pair['verified']
     assert report['withheld_query']['observer_calls']==0
     journal=(root/'withheld_query.events.jsonl').read_text()

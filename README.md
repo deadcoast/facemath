@@ -1,5 +1,31 @@
 # FACEMATH · reproducible facial geometry
 
+Version **0.19.0** adds core regional comparison functions for the eyes, nose,
+mouth, jaw, central face and complete landmark set. Each region now separates
+its measured B-minus-A shift from contour change after translation. The existing
+triangle maps are decomposed into rotation, area expansion/compression and
+anisotropic stretch/shear. No additional alignment is fitted.
+
+`analyze` returns these values under `comparison.regional_comparison`; `overview`
+prints the regional shifts, centered RMS, area ratios, stretch and support counts.
+The existing report's measurement ledger includes the component measurements.
+The full polar factors, logarithmic stretch tensors and support masks are exported
+in `arrays.npz`. These describe observed projected geometry; the reference8
+localization model does not supply confidence bounds for the full mesh.
+
+A failed optional holdout registration now leaves the primary comparison usable,
+with its own unavailable result and retained failure reason. Failed sensitivity
+refits keep their requested slots and withhold intervals instead of dropping
+failed draws. See [the core-function contract](docs/REGIONAL_COMPARISON_DESIGN.md).
+
+[Native core-function comparison](evidence/core-features-20261004/pair-01/calibrated/report.html)
+and [component data](evidence/core-features-20261004/pair-01/regional-audit.json)
+use the first two sources in the frozen HELEN `[212,232)` evaluation window.
+The production run observed 20/20 sources with the existing model unchanged.
+For this pair, 898 supported triangle maps were decomposed and 158 observed-state
+arrays remained unchanged when adding calibration. The next enrollment registry
+is `evidence/core-features-20261004/next-registry.json` (355 cases).
+
 Version **0.18.0** returns fourteen named structural measurements in the normal
 image-pair analysis: eye widths and spacing, mouth width, eye/nose/mouth/chin
 heights, lateral offsets, mouth-corner height difference and eye-width asymmetry.

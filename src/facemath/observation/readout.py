@@ -25,6 +25,8 @@ def pair_readout(evidence: dict) -> dict:
         "registered_all_rms": measured.get("geometry.all.rms"),
         "shape_distance": intrinsic.get("shape_distance"), "families": family_rows,
         "structural_comparison": intrinsic.get("structural_comparison"),
+        "regional_comparison": evidence.get("regional_comparison"),
+        "registration_diagnostics": evidence.get("registration_diagnostics"),
         "percentage_meaning": "fraction of a prespecified, dependent relation inventory within explicit tolerances; NOT a probability of resemblance",
         "array_file": "arrays.npz", "exact_relation_rows": "intrinsic.json", "execution_journal": "events.jsonl",
         "source_measured": evidence.get("measured_acquisition") is not None,
@@ -132,6 +134,16 @@ def terminal_readout(data: dict) -> str:
         for row in admission.get("categories", []):
             lines.append(f"│   {row['category']}: {row['covered']}/{row['groups']} covered; " + ("pass" if row['passes'] else "WITHHELD"))
     else:
+        regional = data.get("regional_comparison")
+        if regional:
+            lines.append("├── Regional movement and deformation (observed geometry)")
+            for row in regional["rows"]:
+                movement, deformation = row["displacement"], row["deformation"]
+                shift = movement["shift_b_minus_a"]
+                shift_text = "unavailable" if shift is None else f"({_value(shift[0], signed=True)}, {_value(shift[1], signed=True)})"
+                lines.append(f"│   {row['region']}: shift={shift_text}; centered RMS={_value(movement['centered_rms'])}; "
+                    f"area ratio={_value(deformation['area_ratio_mean'])}; anisotropic stretch={_value(deformation['anisotropic_log_strain_rms'])}; "
+                    f"landmarks={movement['supported']}/{movement['total']}, pixels={deformation['supported_pixels']}/{deformation['total_pixels']}")
         structure = data.get("structural_comparison")
         if structure:
             lines.append("├── Facial structure (B minus A; own eye spans unless marked contrast)")

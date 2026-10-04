@@ -1,0 +1,336 @@
+{
+  "format": "facemath.regional_pair_check.v19",
+  "selection": "first two frozen evaluation entries, no outcome replacement",
+  "cases": [
+    "case_00000",
+    "case_00001"
+  ],
+  "raw_arrays_checked": 158,
+  "raw_arrays_unchanged": true,
+  "polar_reconstruction_and_energy_identity": true,
+  "supported_triangles": 898,
+  "same_components_before_after_calibration_and_replay": true,
+  "regional_comparison": {
+    "format": "facemath.regional_comparison.v19",
+    "recipe_sha256": "21fb8c86acaae50b6c9db322690d570cf2a53a35bbe7a0aeb8d827e661146a2f",
+    "rows": [
+      {
+        "region": "left_eye",
+        "displacement": {
+          "total": 6,
+          "supported": 6,
+          "within_tolerance": 1,
+          "tolerance": 0.05,
+          "within_tolerance_fraction_bounds": [
+            0.16666666666666666,
+            0.16666666666666666
+          ],
+          "shift_b_minus_a": [
+            0.0514059189567459,
+            -0.03150514449873231
+          ],
+          "translation_magnitude": 0.06029214404608224,
+          "total_rms": 0.061474981702685415,
+          "centered_rms": 0.012001280834643248,
+          "maximum_displacement": 0.07156146608655765,
+          "unavailable_reason": null
+        },
+        "deformation": {
+          "total_pixels": 329,
+          "supported_pixels": 329,
+          "support_fraction": 1.0,
+          "rotation_mean_rad": -0.08481344157460051,
+          "rotation_rms_rad": 0.1828877113006473,
+          "rotation_resultant_length": 0.9869288947546525,
+          "log_area_mean": -0.07806329439520392,
+          "log_area_rms": 0.2916600357589182,
+          "area_ratio_mean": 0.9624236435288661,
+          "anisotropic_log_strain_rms": 0.3339930700124218,
+          "chart_shear_mean": 0.10972312819659515,
+          "chart_shear_rms": 0.19733823049044646,
+          "log_stretch_rms": 0.39253555131448814,
+          "unavailable_reason": null,
+          "rotation_mean_unavailable_reason": null
+        }
+      },
+      {
+        "region": "right_eye",
+        "displacement": {
+          "total": 6,
+          "supported": 6,
+          "within_tolerance": 1,
+          "tolerance": 0.05,
+          "within_tolerance_fraction_bounds": [
+            0.16666666666666666,
+            0.16666666666666666
+          ],
+          "shift_b_minus_a": [
+            -0.049927244501527274,
+            -0.03899148953713961
+          ],
+          "translation_magnitude": 0.06334876478543329,
+          "total_rms": 0.06500469876290897,
+          "centered_rms": 0.014578918389797895,
+          "maximum_displacement": 0.08475078376762706,
+          "unavailable_reason": null
+        },
+        "deformation": {
+          "total_pixels": 306,
+          "supported_pixels": 294,
+          "support_fraction": 0.9607843137254902,
+          "rotation_mean_rad": 0.03365526716451042,
+          "rotation_rms_rad": 0.2724414091948896,
+          "rotation_resultant_length": 0.964132211808932,
+          "log_area_mean": -0.06861623122581062,
+          "log_area_rms": 0.3279038039014373,
+          "area_ratio_mean": 0.9849119488912945,
+          "anisotropic_log_strain_rms": 0.47765587543883664,
+          "chart_shear_mean": -0.044570389405298116,
+          "chart_shear_rms": 0.2655005500273344,
+          "log_stretch_rms": 0.5309572371177904,
+          "unavailable_reason": null,
+          "rotation_mean_unavailable_reason": null
+        }
+      },
+      {
+        "region": "nose",
+        "displacement": {
+          "total": 10,
+          "supported": 10,
+          "within_tolerance": 2,
+          "tolerance": 0.05,
+          "within_tolerance_fraction_bounds": [
+            0.2,
+            0.2
+          ],
+          "shift_b_minus_a": [
+            0.030046800298055558,
+            0.08084361248975815
+          ],
+          "translation_magnitude": 0.08624673842265232,
+          "total_rms": 0.09428748962553832,
+          "centered_rms": 0.03810027311372694,
+          "maximum_displacement": 0.1420101236709218,
+          "unavailable_reason": null
+        },
+        "deformation": {
+          "total_pixels": 1690,
+          "supported_pixels": 1686,
+          "support_fraction": 0.9976331360946745,
+          "rotation_mean_rad": -0.012225267656127909,
+          "rotation_rms_rad": 0.16880788980039876,
+          "rotation_resultant_length": 0.9861068097041561,
+          "log_area_mean": 0.008078750315296276,
+          "log_area_rms": 0.4383907489158038,
+          "area_ratio_mean": 1.0666062197011819,
+          "anisotropic_log_strain_rms": 0.41132893813075766,
+          "chart_shear_mean": -0.01673365808149843,
+          "chart_shear_rms": 0.16384042270534857,
+          "log_stretch_rms": 0.5150579770387566,
+          "unavailable_reason": null,
+          "rotation_mean_unavailable_reason": null
+        }
+      },
+      {
+        "region": "mouth",
+        "displacement": {
+          "total": 12,
+          "supported": 12,
+          "within_tolerance": 4,
+          "tolerance": 0.05,
+          "within_tolerance_fraction_bounds": [
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "shift_b_minus_a": [
+            0.02861662916829502,
+            0.025889919453063796
+          ],
+          "translation_magnitude": 0.03859014633610301,
+          "total_rms": 0.06679015800559347,
+          "centered_rms": 0.05451353787978081,
+          "maximum_displacement": 0.09041989329902898,
+          "unavailable_reason": null
+        },
+        "deformation": {
+          "total_pixels": 1680,
+          "supported_pixels": 1610,
+          "support_fraction": 0.9583333333333334,
+          "rotation_mean_rad": -0.0458664899951237,
+          "rotation_rms_rad": 0.14694791276735952,
+          "rotation_resultant_length": 0.9903173349900543,
+          "log_area_mean": -1.1279434210196857,
+          "log_area_rms": 1.8802610810117184,
+          "area_ratio_mean": 0.6288889844174058,
+          "anisotropic_log_strain_rms": 1.2834093813737606,
+          "chart_shear_mean": 0.04005089104371939,
+          "chart_shear_rms": 0.13026431241417075,
+          "log_stretch_rms": 1.8479260013815102,
+          "unavailable_reason": null,
+          "rotation_mean_unavailable_reason": null
+        }
+      },
+      {
+        "region": "jaw",
+        "displacement": {
+          "total": 21,
+          "supported": 21,
+          "within_tolerance": 7,
+          "tolerance": 0.05,
+          "within_tolerance_fraction_bounds": [
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "shift_b_minus_a": [
+            -0.02361133463114598,
+            -0.020182154232999343
+          ],
+          "translation_magnitude": 0.031061462820487492,
+          "total_rms": 0.09122383493409233,
+          "centered_rms": 0.0857728021434184,
+          "maximum_displacement": 0.1907781628240635,
+          "unavailable_reason": null
+        },
+        "deformation": {
+          "total_pixels": 19144,
+          "supported_pixels": 18740,
+          "support_fraction": 0.9788967822816548,
+          "rotation_mean_rad": -0.008160107376948222,
+          "rotation_rms_rad": 0.13096244871263485,
+          "rotation_resultant_length": 0.9916065638521417,
+          "log_area_mean": -0.08241624915501924,
+          "log_area_rms": 0.594730802316385,
+          "area_ratio_mean": 1.003252361176877,
+          "anisotropic_log_strain_rms": 0.45329385128554134,
+          "chart_shear_mean": -0.016438468479395167,
+          "chart_shear_rms": 0.11998273348563863,
+          "log_stretch_rms": 0.6183265150591748,
+          "unavailable_reason": null,
+          "rotation_mean_unavailable_reason": null
+        }
+      },
+      {
+        "region": "central",
+        "displacement": {
+          "total": 34,
+          "supported": 34,
+          "within_tolerance": 8,
+          "tolerance": 0.05,
+          "within_tolerance_fraction_bounds": [
+            0.23529411764705882,
+            0.23529411764705882
+          ],
+          "shift_b_minus_a": [
+            0.019198223521511987,
+            0.02047456923879751
+          ],
+          "translation_magnitude": 0.028067414770445984,
+          "total_rms": 0.07484515680339013,
+          "centered_rms": 0.06938312276791675,
+          "maximum_displacement": 0.1420101236709218,
+          "unavailable_reason": null
+        },
+        "deformation": {
+          "total_pixels": 4005,
+          "supported_pixels": 3919,
+          "support_fraction": 0.9785268414481898,
+          "rotation_mean_rad": -0.02883635855202844,
+          "rotation_rms_rad": 0.17177501551445043,
+          "rotation_resultant_length": 0.9858685936126746,
+          "log_area_mean": -0.47160605528107036,
+          "log_area_rms": 1.2451066417612373,
+          "area_ratio_mean": 0.8719088652776865,
+          "anisotropic_log_strain_rms": 0.8808775827602469,
+          "chart_shear_mean": 0.015122276536489924,
+          "chart_shear_rms": 0.16455067411655,
+          "log_stretch_rms": 1.2454278744626317,
+          "unavailable_reason": null,
+          "rotation_mean_unavailable_reason": null
+        }
+      },
+      {
+        "region": "all",
+        "displacement": {
+          "total": 478,
+          "supported": 478,
+          "within_tolerance": 142,
+          "tolerance": 0.05,
+          "within_tolerance_fraction_bounds": [
+            0.29707112970711297,
+            0.29707112970711297
+          ],
+          "shift_b_minus_a": [
+            0.010588916003632641,
+            0.010040190925752488
+          ],
+          "translation_magnitude": 0.01459214089698801,
+          "total_rms": 0.07579658686616046,
+          "centered_rms": 0.07437870666126065,
+          "maximum_displacement": 0.20103633366688217,
+          "unavailable_reason": null
+        },
+        "deformation": {
+          "total_pixels": 32828,
+          "supported_pixels": 32131,
+          "support_fraction": 0.9787681247715365,
+          "rotation_mean_rad": -0.006382703156649671,
+          "rotation_rms_rad": 0.1418764125777451,
+          "rotation_resultant_length": 0.9901043724693581,
+          "log_area_mean": -0.07446392025243168,
+          "log_area_rms": 0.5495335958856197,
+          "area_ratio_mean": 1.013629303377706,
+          "anisotropic_log_strain_rms": 0.4385885695421584,
+          "chart_shear_mean": -0.022751972536948908,
+          "chart_shear_rms": 0.15108333675978497,
+          "log_stretch_rms": 0.5859637530057012,
+          "unavailable_reason": null,
+          "rotation_mean_unavailable_reason": null
+        }
+      }
+    ],
+    "displacement_units": "geometric_mean_registered_eye_span",
+    "direction": "B minus A in the existing canonical chart; x viewer-right, y image-down",
+    "deformation_direction": "existing A-to-B piecewise-affine map, uniformly weighted supported A-domain pixels",
+    "shear_definition": "off-diagonal entry of log(U) in the canonical chart, not engineering shear or an axis-invariant scalar",
+    "fraction_bounds_meaning": "missingness range over the declared landmark inventory, not a confidence interval",
+    "meaning": "observed projected model geometry, not physical strain or independent anatomical validation",
+    "localization_uncertainty_propagated": false,
+    "missingness": "all seven regions retained; zero array sentinels require the associated support mask"
+  },
+  "registration_diagnostics": {
+    "heldout": [
+      {
+        "region": "eyes",
+        "available": true,
+        "failure": null
+      },
+      {
+        "region": "nose",
+        "available": true,
+        "failure": null
+      },
+      {
+        "region": "mouth",
+        "available": true,
+        "failure": null
+      },
+      {
+        "region": "jaw",
+        "available": true,
+        "failure": null
+      }
+    ],
+    "sensitivity": {
+      "requested_draws": 96,
+      "completed_draws": 96,
+      "failures": [],
+      "intervals_available": true,
+      "incomplete_experiment_rule": "retain all slots; withhold intervals; no successful-draw-only quantiles"
+    }
+  },
+  "limits": [
+    "native projected model geometry; independent anatomical accuracy not established",
+    "regional deformation uses inherited A-domain support; no exchange-symmetric surface claim",
+    "the full mesh regional components have no propagated localization confidence intervals"
+  ]
+}

@@ -38,6 +38,17 @@ def run(pair: Path, out: Path, executable: str) -> dict:
                         lo, hi = row['reference_delta_b_minus_a']
                         assert f'[{lo:+.5g}, {hi:+.5g}]' in cells.nth(3).inner_text()
                 record['checks'].append(branch+': fourteen rows equal exported measurements')
+                evidence = json.loads((root/'evidence.json').read_text(encoding='utf-8'))
+                regional = [row for row in evidence['measurement_profile'] if row['name'].startswith('regional.')]
+                if regional:
+                    assert len(regional) == 56
+                    for measured in regional:
+                        row = page.get_by_text(measured['name'], exact=True).locator('xpath=ancestor::tr')
+                        expected = 'WITHHELD' if measured['value'] is None else format(measured['value'], '.6g')
+                        assert row.locator('td').nth(1).inner_text() == expected
+                    page.get_by_text(regional[0]['name'], exact=True).scroll_into_view_if_needed()
+                    page.screenshot(path=str(out/f'{branch}-regional.png'))
+                    record['checks'].append(branch+': all 56 regional component ledger values equal exported measurements')
                 page.locator('#structure').scroll_into_view_if_needed()
                 page.screenshot(path=str(out/f'{branch}-desktop.png'))
                 # Open the actual disclosure, then operate the native slider by keyboard.

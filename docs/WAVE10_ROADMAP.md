@@ -1,5 +1,11 @@
 # Beyond the Wave10 consolidation
 
+Current core-function pass: 0.19.0 decomposes regional movement and the existing
+finite-deformation field, and preserves valid primary comparisons when optional
+registration diagnostics lack support. These measured full-mesh components have
+no independent contour or localization-accuracy validation. Gate A remains open;
+component calculations cannot replace independent anatomical/visibility labels.
+
 Current state after 0.18.0: named projected structure now reaches the pair API,
 CLI and report through the existing source graph. The frozen v0.17 model was
 evaluated on HELEN `[192,212)` without refitting; twenty native observations and
