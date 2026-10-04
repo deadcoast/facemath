@@ -87,6 +87,15 @@ Unavailable rows remain visible; no loading state is invented for sealed data.
 | Scrollbar | artifacts.py report CSS | Existing report shell | System colors in forced-colors mode | Browser narrow viewport and keyboard scroll |
 | Read-only table | readout.py | Typed comparison profile | Nominal, calibrated, partial support | Structural tests and real native report |
 | Form | annotation_ui.py | reference.py and workspace.py | Blind native reference, explicitly synthetic control | Browser download through intake/freeze |
+| Pair submission | facemath/workspace_ui.py | facemath/workspace.py and CLI analyze | Pending, complete, failed, cancelled, interrupted | Browser uploads through native analysis |
+
+The pair workspace reuses `artifacts.py:REPORT_TOKENS` as its canonical palette
+and the existing readout renderers for measurements. Its two-image selection
+surface stacks below 760px. The document owns vertical scrolling; structure
+and edge tables own horizontal scrolling at 790px and 1120px minimum width.
+Pending work has an honest activity message and cancellation, never a fabricated
+percentage. Failures retain their logs and selections. History and reconnect
+open the original run; a new comparison creates a distinct output directory.
 
 The reference workbench is the existing editing sibling. Its CSS owns its
 established palette: background #11171d, panel #19232c, ink #e9f0f4, muted #a5b6c2,

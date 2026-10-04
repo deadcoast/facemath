@@ -1,5 +1,28 @@
 # FACEMATH · reproducible facial geometry
 
+## Open the application
+
+Choose two PNG/JPEG portraits in the local application, select **Compare images**,
+and inspect measured facial structure, registered blends and image-edge
+differences. Completed comparisons stay available after refresh or restart.
+Failures retain their input images and execution logs. Downloads contain the
+complete report, measurements, arrays and original uploaded bytes.
+
+```shell
+python -m facemath app --model models/face_landmarker.task --out runs/comparisons
+```
+
+Open the local address printed by the command. The model must already exist;
+the application does not download it. In this development checkout, the retained
+runtime and model can be launched with `./Start-Facemath.ps1` in PowerShell.
+The application computes the existing full analysis with all channels enabled.
+Research-calibrated bounds and qualified analysis remain available through
+`analyze`; the initial application reports observed comparisons.
+
+See [the application workflow](docs/WORKSPACE_DESIGN.md).
+
+## Development history
+
 Version **0.21.0** compares image edges around the eyes, mouth and jaw. Both
 rasters are sampled on identical contour-normal rays in the existing canonical
 alignment. `analyze` returns `comparison.edge_comparison`; `overview` and the

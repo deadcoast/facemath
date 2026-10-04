@@ -10,6 +10,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import threading
 import zipfile
 
 
@@ -60,13 +61,26 @@ def main() -> None:
             commands.append([sys.executable, '-m', 'facemath', 'verify', str(out / 'native-pipeline')])
         for index, command in enumerate(commands):
             start = datetime.now(timezone.utc).isoformat()
-            result = subprocess.run(command, cwd=work, env=env, text=True, encoding='utf-8', errors='replace', capture_output=True)
+            process = subprocess.Popen(command, cwd=work, env=env, text=True, encoding='utf-8',
+                                       errors='replace', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            stdout, stderr = [], []
+            def forward(stream, retained, destination):
+                for line in stream:
+                    retained.append(line)
+                    print(line, end='', file=destination, flush=True)
+                stream.close()
+            readers = [threading.Thread(target=forward, args=(process.stdout, stdout, sys.stdout)),
+                       threading.Thread(target=forward, args=(process.stderr, stderr, sys.stderr))]
+            for reader in readers:
+                reader.start()
+            process.wait()
+            for reader in readers:
+                reader.join()
+            result = subprocess.CompletedProcess(command, process.returncode, ''.join(stdout), ''.join(stderr))
             record = {'command': command, 'cwd': str(work), 'started_utc': start,
                       'finished_utc': datetime.now(timezone.utc).isoformat(),
                       'returncode': result.returncode, 'stdout': result.stdout, 'stderr': result.stderr}
             (out / f'command-{index:02}.json').write_text(json.dumps(record, indent=2), encoding='utf-8')
-            print(result.stdout, end='')
-            print(result.stderr, end='', file=sys.stderr)
             if result.returncode:
                 raise SystemExit(result.returncode)
             if index == 1:

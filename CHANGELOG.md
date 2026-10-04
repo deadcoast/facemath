@@ -1,3 +1,14 @@
+# 0.22.0 — local image-pair application
+
+- Add `facemath app`: select PNG/JPEG images in a browser and execute the existing
+  complete native analysis, with all measurement channels retained.
+- Show structural and edge measurements beside registered images and a keyboard
+  blend control; open the complete report or download its raw numerical bundle.
+- Retain run history, original uploads, exact commands and failure logs. Support
+  cancellation, retry into a new run, refresh and interrupted-run recovery.
+- Bind to loopback with a private capability path and explicit upload boundaries.
+- Share report tokens and give edge tables a usable minimum width on phones.
+
 # 0.21.0 — paired image-edge displacement
 
 - Compare both canonical rasters on shared contour-normal rays for the eyes,

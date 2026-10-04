@@ -60,6 +60,9 @@ def _edge_overlay(result: InstrumentResult, anchor: str) -> np.ndarray:
     return image
 
 
+REPORT_TOKENS = ':root{--bg:#10141a;--panel:#192029;--ink:#e7eef4;--muted:#a2b1c1;--line:#354252;--accent:#71ddd6;--scroll-thumb:#a2b1c1;--scroll-track:#192029;--scroll-hover:#e7eef4;--scroll-active:#71ddd6;scrollbar-color:var(--scroll-thumb) var(--scroll-track);scrollbar-width:auto}'
+
+
 def _html(result: InstrumentResult, arrays: dict[str, np.ndarray]) -> str:
     def uri(image: np.ndarray) -> str:
         return "data:image/png;base64," + b64encode(_png(image)).decode()
@@ -108,10 +111,11 @@ def _html(result: InstrumentResult, arrays: dict[str, np.ndarray]) -> str:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>FACEMATH · Anatomical observation instrument</title>
 <style>
-:root{{--bg:#10141a;--panel:#192029;--ink:#e7eef4;--muted:#a2b1c1;--line:#354252;--accent:#71ddd6;--scroll-thumb:#a2b1c1;--scroll-track:#192029;--scroll-hover:#e7eef4;--scroll-active:#71ddd6;scrollbar-color:var(--scroll-thumb) var(--scroll-track);scrollbar-width:auto}}
+{REPORT_TOKENS}
 *::-webkit-scrollbar{{width:12px;height:12px}}*::-webkit-scrollbar-track{{background:var(--scroll-track)}}*::-webkit-scrollbar-thumb{{background:var(--scroll-thumb);border:3px solid var(--scroll-track)}}*::-webkit-scrollbar-thumb:hover{{background:var(--scroll-hover)}}*::-webkit-scrollbar-thumb:active{{background:var(--scroll-active)}}
 :focus-visible{{outline:2px solid var(--accent);outline-offset:3px}}a:hover,summary:hover{{color:var(--ink)}}a:active,summary:active{{color:var(--accent)}}a,summary,input[type=range]{{cursor:pointer}}
 #structure table{{min-width:790px;font-variant-numeric:tabular-nums}}#structure caption{{text-align:left;padding:12px 14px;color:var(--muted)}}#structure th[scope=row]{{font-weight:500;background:transparent}}#structure td{{white-space:nowrap}}#structure td small{{white-space:normal}}
+#edge-comparison table{{min-width:1120px;font-variant-numeric:tabular-nums}}
 @media(forced-colors:active){{:root{{scrollbar-color:auto}}:focus-visible{{outline-color:Highlight}}}}
 *{{box-sizing:border-box}}body{{background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,sans-serif;margin:0}}
 main{{max-width:1320px;padding:38px 30px 80px;margin:auto}}.eyebrow{{font:12px/1.5 ui-monospace,monospace;letter-spacing:.15em;color:var(--accent)}}

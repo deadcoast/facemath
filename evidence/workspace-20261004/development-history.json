@@ -1,0 +1,16 @@
+{
+  "parent_archive": "packages/facemath-0.21.0-paired-edges-20261004.zip",
+  "parent_sha256": "bccd8509edcd81c2fe5992477405ba852aa0b929d83d34fd13a7403a66a281ea",
+  "parent_files_reverified": 5997,
+  "baseline_reused": true,
+  "baseline": "Original extracted-package execution copied into parent/, 1240 passed and 1 Windows directory-symlink skip. It was not rerun.",
+  "failures": [
+    {"stage": "source inspection", "result": "Two malformed PowerShell reads failed: unsupported brace glob and a nonnumeric Select-Object count. Corrected reads completed. These were not test runs."},
+    {"stage": "first application launch", "result": "argparse rejected a duplicate workspace subcommand. Existing annotation workspace was preserved; new application uses app."},
+    {"stage": "browser-01", "result": "Playwright string predicate violated the app CSP. The submitted native job itself completed. Predicate changed to a function without weakening CSP."},
+    {"stage": "browser-01 disconnect", "result": "Server tried to write a second error response after client disconnect. Connection errors now leave the durable submitted job unchanged."},
+    {"stage": "evidence copy", "result": "Copying the live workspace lock was refused by Windows. Run directories were retained; later collection explicitly excludes the active lock."}
+  ],
+  "failure_log_scope": "Descriptions of actual tool results. Full tracebacks remain in the tool transcript; this file is not a fabricated raw command log.",
+  "pre_final_browser": "browser/ and comparisons/ retain browser-03, executed before the final navigation and port-argument repairs. Final fingerprint evidence is separately named."
+}

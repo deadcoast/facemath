@@ -18,7 +18,7 @@ from verify_release import verify
 SOURCE_DIRS = ('src/facemath', 'tests', 'scripts', 'docs', 'examples', '.github')
 ROOT_FILES = ('pyproject.toml', 'uv.lock', 'README.md', 'AGENTS.md', 'CHANGELOG.md',
               '.gitattributes', '.gitignore', 'REPOSITORY_REVIEW.json', 'models/README.md',
-              'DESIGN.md', 'premium-ui.json')
+              'DESIGN.md', 'premium-ui.json', 'Start-Facemath.ps1')
 EXCLUDED = {'__pycache__', '.pytest_cache', '.mypy_cache', '.ruff_cache', '.git',
             '.venv', '.uv-cache', '.commit-audit', 'build', 'runs', 'packages', 'dist'}
 

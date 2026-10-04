@@ -1,5 +1,11 @@
 # Beyond the Wave10 consolidation
 
+Current application pass: 0.22.0 connects local image selection to the existing
+native pair instrument, durable run history, failure recovery and complete
+measurement reports. The selected pair executes all channels with measured
+coordinates intact. This makes the existing comparison accessible; it does not
+close the independent reference or anatomical-accuracy gates below.
+
 Current paired-image pass: 0.21.0 adds common-ray image-edge displacement to the
 existing diagnostic channel. It exposes contour-normal image differences and
 explicit rejection accounting without moving landmarks or fitting new geometry.

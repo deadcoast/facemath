@@ -87,6 +87,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--version", action="version", version=f"facemath {__version__}")
     sub = parser.add_subparsers(dest="command", required=True)
 
+    p = sub.add_parser("app", help="local image-pair application with native analysis and saved results")
+    p.add_argument("--model", required=True, help="existing local MediaPipe Face Landmarker .task model")
+    p.add_argument("--model-sha256")
+    p.add_argument("--out", default="runs/comparisons", help="directory for saved comparisons")
+    p.add_argument("--port", type=int, default=0, help="loopback port; 0 chooses an available port")
+
     p = sub.add_parser("analyze", help="Wave 3 integrated pair instrument")
     p.add_argument("image_a")
     p.add_argument("image_b")
@@ -787,6 +793,10 @@ def main(argv: list[str] | None = None) -> None:
         return
     args = build_parser().parse_args(arguments)
     try:
+        if args.command == "app":
+            from .workspace import serve
+            serve(args)
+            return
         result = execute(args)
     except (ObservationError, ProviderUnavailable, OSError, KeyError, json.JSONDecodeError) as exc:
         if hasattr(exc, "failure_path"):
