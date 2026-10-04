@@ -1,0 +1,33 @@
+.F....................................................................   [100%]
+================================== FAILURES ===================================
+_______ test_maps_and_triangle_weights_use_exact_existing_pixel_support _______
+
+pair = (InstrumentResult(state=CanonicalState(observation_a=Observation(image_sha256='25437421df5b41d06edfd3815712d5c765f74e5...0],
+        ...,
+        [63, 63, 63],
+        [55, 55, 55],
+        [51, 51, 51]]], shape=(224, 256, 3), dtype=uint8))
+
+    def test_maps_and_triangle_weights_use_exact_existing_pixel_support(pair):
+        result, _, _ = pair
+        images = dict(regional_map_images(result))
+        polar = result.profile.regional.polar
+        for row in regional_inspection(result)['rows']:
+            selected = regional_pixel_support(result.state, result.field, polar, row['region'], result.profile.regional.landmark_supported)
+            ids, weights = np.unique(result.field.simplex_index[selected], return_counts=True)
+            assert [t['index'] for t in row['triangles']] == ids.tolist()
+            assert [t['pixels'] for t in row['triangles']] == weights.tolist()
+            for t in row['triangles']:
+                i = t['index']
+                assert t['rotation_deg'] == np.rad2deg(polar.rotation_rad[i])
+                assert t['area_ratio'] == np.exp(polar.log_area[i])
+>               assert t['anisotropy'] == np.linalg.norm(polar.deviatoric_log_stretch[i])
+E               AssertionError: assert 0.27061580906524224 == np.float64(0.2706158090652423)
+E                +  where np.float64(0.2706158090652423) = <function norm at 0x000002103C4CB270>(array([[ 0.18002144,  0.06487479],\n       [ 0.06487479, -0.18002144]]))
+E                +    where <function norm at 0x000002103C4CB270> = <module 'numpy.linalg' from 'C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Lib\\site-packages\\numpy\\linalg\\__init__.py'>.norm
+E                +      where <module 'numpy.linalg' from 'C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Lib\\site-packages\\numpy\\linalg\\__init__.py'> = np.linalg
+
+tests\test_regional_inspection.py:61: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_regional_inspection.py::test_maps_and_triangle_weights_use_exact_existing_pixel_support
+1 failed, 69 passed in 8.72s

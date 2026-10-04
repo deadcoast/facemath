@@ -1,0 +1,193 @@
+{
+  "version": "0.24.0",
+  "code_sha256": "7882fe49fb76b72400bcce1a6a4705fbfaa387f1ee57d40b9cd9519c6b11a8f7",
+  "tests": {
+    "source": {
+      "tests": 1275,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1274,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ],
+      "live_provider_passed": true
+    },
+    "wheel": {
+      "tests": 1275,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1274,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ],
+      "live_provider_passed": true
+    },
+    "archive": {
+      "tests": 1275,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1274,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ],
+      "live_provider_passed": true
+    }
+  },
+  "milestones": {
+    "source": {
+      "raw_arrays_unchanged": true,
+      "raw_arrays_checked": 358,
+      "array_count": 425,
+      "known_reference_shape_rms": 0.08333333333333319,
+      "shape_bounds": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.08333333333333345,
+        "reference_set_center_rms": 0.08333333333333345,
+        "lower": 0.07081151304994406,
+        "upper": 0.09006813168888718,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.049086128476031644,
+        "quotient_lipschitz_lower": 0.07081151304997248,
+        "quotient_lipschitz_upper": 0.09585515361669443,
+        "candidate_rotation_upper": 0.09006813168885876,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "known_reference_shape_enclosed": true,
+      "verified": true,
+      "qualification_snapshot_replayed": true
+    },
+    "wheel": {
+      "raw_arrays_unchanged": true,
+      "raw_arrays_checked": 358,
+      "array_count": 425,
+      "known_reference_shape_rms": 0.08333333333333319,
+      "shape_bounds": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.08333333333333345,
+        "reference_set_center_rms": 0.08333333333333345,
+        "lower": 0.07081151304994406,
+        "upper": 0.09006813168888718,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.049086128476031644,
+        "quotient_lipschitz_lower": 0.07081151304997248,
+        "quotient_lipschitz_upper": 0.09585515361669443,
+        "candidate_rotation_upper": 0.09006813168885876,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "known_reference_shape_enclosed": true,
+      "verified": true,
+      "qualification_snapshot_replayed": true
+    },
+    "archive": {
+      "raw_arrays_unchanged": true,
+      "raw_arrays_checked": 358,
+      "array_count": 425,
+      "known_reference_shape_rms": 0.08333333333333319,
+      "shape_bounds": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.08333333333333345,
+        "reference_set_center_rms": 0.08333333333333345,
+        "lower": 0.07081151304994406,
+        "upper": 0.09006813168888718,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.049086128476031644,
+        "quotient_lipschitz_lower": 0.07081151304997248,
+        "quotient_lipschitz_upper": 0.09585515361669443,
+        "candidate_rotation_upper": 0.09006813168885876,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "known_reference_shape_enclosed": true,
+      "verified": true,
+      "qualification_snapshot_replayed": true
+    }
+  },
+  "workflow": {
+    "version": "0.24.0",
+    "code_sha256": "7882fe49fb76b72400bcce1a6a4705fbfaa387f1ee57d40b9cd9519c6b11a8f7",
+    "browser": {
+      "passed": true,
+      "run_id": "46c7f5e2480640ffa961be947df2f3de",
+      "browser": "154.0.4258.53",
+      "source": "real browser uploads into native analyze",
+      "structure_rows": 14,
+      "edge_rows": 8,
+      "numeric_cells_compared": 42,
+      "reload": true,
+      "download": true,
+      "bilateral_rows": 5,
+      "bilateral_numeric_components_compared": 30,
+      "bilateral_keyboard_disclosures": 5,
+      "bilateral_marker_pairs_compared": 10,
+      "regional_keyboard_disclosures": 7,
+      "regional_maps": 21,
+      "regional_landmark_coordinates_compared": 567,
+      "regional_triangle_rows_compared": 2140,
+      "keyboard_blend": true,
+      "narrow_keyboard_scroll": true,
+      "page_errors": [],
+      "invalid_upload": true,
+      "no_face_run": "70ac1b48192a471d82fff2d2b2716d89",
+      "cancelled_run": "084b0c4aa4a14c989822c5bc03e6cde2",
+      "success_reopened_after_failure": true
+    },
+    "native_pair_audit": {
+      "raw_arrays_checked": 365,
+      "raw_arrays_unchanged": true,
+      "regional_inspection_identical_with_calibration_and_replay": true,
+      "map_images_identical": 21,
+      "fit_performed": false,
+      "new_cohort": false,
+      "scope": "Retained native observations; no new independent anatomical validation"
+    },
+    "parent_baseline": {
+      "parent_archive": "packages/facemath-0.23.0-bilateral-comparison-20261004.zip",
+      "sha256": "3c33975bc77b6410f1a3e9fac9725a4c32479bfd725850964cb4c8a101fbc17d",
+      "baseline": "Reused the completed actual 0.23 extracted-archive execution from this development session; not a new test execution.",
+      "source_run": "runs/bilateral-20261004/release-02",
+      "passed": 1268,
+      "skipped": 1,
+      "skip_reason": "platform cannot create a directory symlink"
+    },
+    "inherited_arrays_unchanged": 392,
+    "observed_arrays_calibration_unchanged": 365,
+    "development_failure": "targeted-01: 69 passed, 1 failed: scalar versus batched Frobenius norm differed by one ULP; analytic comparison uses 1e-14 tolerance. No production calculation changed for this failure.",
+    "scope": "Inspect existing observed geometry; no new cohort, fit or independent anatomical accuracy validation"
+  },
+  "installed_bytes": {
+    "verified": true,
+    "python_files": 95,
+    "import": {
+      "file": "C:\\Users\\ryanf\\AppData\\Local\\Temp\\facemath-installed-ogda3075\\installed\\facemath\\__init__.py",
+      "version": "0.24.0",
+      "code_sha256": "7882fe49fb76b72400bcce1a6a4705fbfaa387f1ee57d40b9cd9519c6b11a8f7"
+    },
+    "scope": "installed wheel Python bytes; same interpreter dependencies, not a new dependency stack"
+  },
+  "archive": {
+    "path": "packages/facemath-0.24.0-regional-inspection-20261004.zip",
+    "sha256": "546d173fd161c123204c1e0a8d6b691f3ee39afbb6c5995196fa2b2bb0b2ca87",
+    "files": 6059
+  },
+  "evidence": "evidence/regional-inspection-release-20261004"
+}
