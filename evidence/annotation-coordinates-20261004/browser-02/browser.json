@@ -1,0 +1,14 @@
+{
+  "format": "facemath.annotation_browser.v20",
+  "started_utc": "2026-10-04T11:52:08.307722+00:00",
+  "workbench": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\annotation-coordinates-20261004\\corrected-01\\workbench.html",
+  "annotations": "automated indexed-raster fixtures, not human labels",
+  "oracle": "painted pixel centers through actual DOM content box and Canvas CTM",
+  "views": [],
+  "passed": false,
+  "browser": "154.0.4258.53",
+  "failure": "Traceback (most recent call last):\n  File \"C:\\Users\\ryanf\\github\\_active\\facemath\\scripts\\browser_qa_annotation.py\", line 127, in run\n    page.evaluate(\"Storage.prototype.setItem=function(){throw new Error('controlled storage unavailable');}\")\n  File \"C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\structural-comparison-20261004\\browser-env\\Lib\\site-packages\\playwright\\sync_api\\_generated.py\", line 9413, in evaluate\n    self._sync(\n  File \"C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\structural-comparison-20261004\\browser-env\\Lib\\site-packages\\playwright\\_impl\\_sync_base.py\", line 115, in _sync\n    return task.result()\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\structural-comparison-20261004\\browser-env\\Lib\\site-packages\\playwright\\_impl\\_page.py\", line 474, in evaluate\n    return await self._main_frame.evaluate(expression, arg)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\structural-comparison-20261004\\browser-env\\Lib\\site-packages\\playwright\\_impl\\_frame.py\", line 346, in evaluate\n    await self._channel.send(\n  File \"C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\structural-comparison-20261004\\browser-env\\Lib\\site-packages\\playwright\\_impl\\_connection.py\", line 76, in send\n    return await self._connection.wrap_api_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\structural-comparison-20261004\\browser-env\\Lib\\site-packages\\playwright\\_impl\\_connection.py\", line 632, in wrap_api_call\n    raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nplaywright._impl._errors.Error: Page.evaluate: Error: controlled storage unavailable\n    at Storage.setItem (eval at evaluate (:311:30), <anonymous>:1:44)\n    at UtilityScript.evaluate (<anonymous>:318:18)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n",
+  "console_errors": [],
+  "remote_requests": [],
+  "finished_utc": "2026-10-04T11:52:09.914027+00:00"
+}

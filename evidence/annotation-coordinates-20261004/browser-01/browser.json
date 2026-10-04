@@ -1,0 +1,14 @@
+{
+  "format": "facemath.annotation_browser.v20",
+  "started_utc": "2026-10-04T11:51:12.721143+00:00",
+  "workbench": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\annotation-coordinates-20261004\\corrected-01\\workbench.html",
+  "annotations": "automated indexed-raster fixtures, not human labels",
+  "oracle": "painted pixel centers through actual DOM content box and Canvas CTM",
+  "views": [],
+  "passed": false,
+  "browser": "154.0.4258.53",
+  "failure": "Traceback (most recent call last):\n  File \"C:\\Users\\ryanf\\github\\_active\\facemath\\scripts\\browser_qa_annotation.py\", line 79, in run\n    assert max(abs(a-b) for a,b in zip(pos,anchored))<.002\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "console_errors": [],
+  "remote_requests": [],
+  "finished_utc": "2026-10-04T11:51:14.057745+00:00"
+}

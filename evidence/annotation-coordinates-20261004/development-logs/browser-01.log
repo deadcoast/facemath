@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\ryanf\github\_active\facemath\scripts\browser_qa_annotation.py", line 150, in <module>
+    print(json.dumps(run(args.workbench.resolve(),args.out.resolve(),args.browser),indent=2))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanf\github\_active\facemath\scripts\browser_qa_annotation.py", line 79, in run
+    assert max(abs(a-b) for a,b in zip(pos,anchored))<.002
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

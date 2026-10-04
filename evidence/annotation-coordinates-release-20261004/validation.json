@@ -1,0 +1,388 @@
+{
+  "completed": true,
+  "archive": {
+    "verified": true,
+    "files": 6081,
+    "version": "0.20.0",
+    "archive_sha256": "97ba5d1da07a37922c8d86954bcf57448eac94e1261e1fd6d662f36632181900",
+    "kind": "archive",
+    "scope": "shipped-byte consistency, not external authenticity or numerical replay"
+  },
+  "commands": [
+    {
+      "name": "environment",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-c",
+        "import json; from facemath.observation.journal import environment; print(json.dumps(environment(),indent=2))"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T12:09:52.875327+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:09:53.914236+00:00"
+    },
+    {
+      "name": "lock-check",
+      "command": [
+        "C:\\Users\\ryanf\\AppData\\Roaming\\Python\\Python313\\Scripts\\uv.EXE",
+        "lock",
+        "--check"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T12:09:53.923747+00:00",
+      "environment": {
+        "PYTHONPATH": null,
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:09:53.972343+00:00"
+    },
+    {
+      "name": "source-tests",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "-ra",
+        "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\source.xml",
+        "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\source-temp"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T12:09:53.972845+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:15:17.311420+00:00"
+    },
+    {
+      "name": "source-milestone",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "milestone-lab",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\source-lab"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T12:15:17.311920+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:19:12.175203+00:00"
+    },
+    {
+      "name": "source-qualification-verify",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "verify",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\source-lab\\positive\\qualification"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T12:19:12.175702+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:19:16.720786+00:00"
+    },
+    {
+      "name": "source-qualification-replay",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "replay",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\source-lab\\positive\\qualification",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\source-qualification-replay"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T12:19:16.721286+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:19:34.493960+00:00"
+    },
+    {
+      "name": "source-pair-verify",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "verify",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\source-lab\\admitted_pair"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T12:19:34.494461+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:19:56.282807+00:00"
+    },
+    {
+      "name": "source-pair-replay",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "replay",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\source-lab\\admitted_pair",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\source-pair-replay"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T12:19:56.283307+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:20:58.607239+00:00"
+    },
+    {
+      "name": "wheel-build",
+      "command": [
+        "C:\\Users\\ryanf\\AppData\\Roaming\\Python\\Python313\\Scripts\\uv.EXE",
+        "build",
+        "--wheel",
+        "--out-dir",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\wheels"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T12:20:58.616257+00:00",
+      "environment": {
+        "PYTHONPATH": null,
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:21:00.906250+00:00"
+    },
+    {
+      "name": "wheel-check",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\scripts\\check_wheel.py",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\wheels\\facemath-0.20.0-py3-none-any.whl",
+        "--tests",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\tests",
+        "--bundle",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\source-lab\\positive\\qualification",
+        "--pair-bundle",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\source-lab\\admitted_pair",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\wheel-check",
+        "--milestone"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T12:21:00.907251+00:00",
+      "environment": {
+        "PYTHONPATH": null,
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:32:09.031604+00:00"
+    },
+    {
+      "name": "archive-tests",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "-ra",
+        "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\archive.xml",
+        "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\archive-temp"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\extracted\\facemath-0.20.0",
+      "started_utc": "2026-10-04T12:33:56.366166+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\extracted\\facemath-0.20.0\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:39:55.418010+00:00"
+    },
+    {
+      "name": "archive-milestone",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "milestone-lab",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\archive-lab"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\extracted\\facemath-0.20.0",
+      "started_utc": "2026-10-04T12:39:55.418010+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\extracted\\facemath-0.20.0\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:43:16.537671+00:00"
+    },
+    {
+      "name": "archive-qualification-verify",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "verify",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\archive-lab\\positive\\qualification"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\extracted\\facemath-0.20.0",
+      "started_utc": "2026-10-04T12:43:16.537671+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\extracted\\facemath-0.20.0\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:43:20.551111+00:00"
+    },
+    {
+      "name": "archive-qualification-replay",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "replay",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\archive-lab\\positive\\qualification",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\archive-qualification-replay"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\extracted\\facemath-0.20.0",
+      "started_utc": "2026-10-04T12:43:20.551111+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\extracted\\facemath-0.20.0\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:43:36.137290+00:00"
+    },
+    {
+      "name": "archive-pair-verify",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "verify",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\archive-lab\\admitted_pair"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\extracted\\facemath-0.20.0",
+      "started_utc": "2026-10-04T12:43:36.137290+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\extracted\\facemath-0.20.0\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:43:54.384404+00:00"
+    },
+    {
+      "name": "archive-pair-replay",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "replay",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\archive-lab\\admitted_pair",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\archive-pair-replay"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\extracted\\facemath-0.20.0",
+      "started_utc": "2026-10-04T12:43:54.385401+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\extracted\\facemath-0.20.0\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:44:49.053274+00:00"
+    }
+  ],
+  "native_pipeline_executed": false,
+  "limits": [
+    "synthetic controls and optional machine-reference native benchmark are not human-reference validation",
+    "installed wheel shares interpreter dependencies",
+    "only this executed host/runtime is validated"
+  ]
+}

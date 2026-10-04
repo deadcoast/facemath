@@ -1,5 +1,26 @@
 # FACEMATH · reproducible facial geometry
 
+Version **0.20.0** repairs reference-coordinate input. Workbench clicks, markers,
+zoom anchors and the magnifier now share a content-box transform with explicit
+pixel-center coordinates. First/last pixels remain selectable at fractional
+display scales. Alt-arrows provide keyboard panning alongside Alt-drag.
+
+New drafts carry the capture version, image, protocol, reference kind and rater.
+Restore is an explicit in-page action; legacy drafts remain in their original
+storage namespace and are never silently shifted. Prepared synthetic workspaces
+now emit synthetic references that their own importer accepts. Native workspaces
+continue to request declared blind references. The unchanged reference format
+retains capture metadata through import and study freeze.
+
+The inherited browser exported up to 0.535 pixels of error on an indexed raster.
+The repaired six-case browser matrix exported the exact expected coordinates at
+0.001-pixel resolution. These are automated UI controls, not human annotations
+or a claim of anatomical accuracy. See [the input repair contract](docs/ANNOTATION_COORDINATES_DESIGN.md).
+
+`overview` also handles redirected Windows text encodings: readable ASCII
+decoration replaces unsupported glyphs, and unrepresentable labels use reversible
+escapes. Numeric results stay unchanged; UTF-8 output keeps the existing layout.
+
 Version **0.19.0** adds core regional comparison functions for the eyes, nose,
 mouth, jaw, central face and complete landmark set. Each region now separates
 its measured B-minus-A shift from contour change after translation. The existing

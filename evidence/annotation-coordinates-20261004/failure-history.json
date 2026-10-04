@@ -1,0 +1,11 @@
+{
+  "parent_coordinate_failure": "parent/coordinate-failure.json",
+  "parent_workspace_kind_failure": "workspace-parent/failure.json",
+  "browser_01": "Wheel anchor control originally used a fractional requested pointer position; corrected to the actual integer WheelEvent location, keeping the same 0.002-pixel assertion.",
+  "browser_02": "Storage fault injection returned a function to Playwright, which invoked it. Wrapped installation in an explicit function; no application change.",
+  "browser_03_and_04": "Narrow edge-center clicks rejected browser float rounding before quantization; raw values retained in edge-rounding-failure.json. Fixed production capture to quantize before domain check.",
+  "pair_regression_01": "Windows CP1252 UnicodeEncodeError in overview, retained in pair-regression-01/terminal.log. Fixed production stream-aware text rendering.",
+  "setup_edit_helper": "Initial edit helper used Windows default text decoding and stopped before writing. Corrected helper to explicit UTF-8.",
+  "final_browser": "browser-05/browser.json",
+  "prior_artifacts_overwritten": false
+}

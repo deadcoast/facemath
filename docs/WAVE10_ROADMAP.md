@@ -1,5 +1,12 @@
 # Beyond the Wave10 consolidation
 
+Current input repair: 0.20.0 resolves the documented D05 canvas-center defect
+and the prepared synthetic workspace's incompatible reference kind. Real browser
+exports now survive the existing intake/freeze path unchanged. This repairs a
+prerequisite for Gate A; automated clicks are not independent human labels.
+No new native cohort or model fit is justified by this UI repair. Use the 355-case
+registry from the core-feature pass for subsequent prospective enrollment.
+
 Current core-function pass: 0.19.0 decomposes regional movement and the existing
 finite-deformation field, and preserves valid primary comparisons when optional
 registration diagnostics lack support. These measured full-mesh components have

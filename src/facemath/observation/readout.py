@@ -124,7 +124,7 @@ def inspect_readout(root: str | Path) -> dict:
             "report": str(root / "report.html")}
 
 
-def terminal_readout(data: dict) -> str:
+def terminal_readout(data: dict, *, encoding: str = "utf-8") -> str:
     lines = ["FACEMATH ◆ EVIDENCE", "│"]
     admission = data.get("empirical_admission") or {}
     lines.append(f"├── Empirical acceptance: {admission.get('status', 'not_requested')}")
@@ -167,4 +167,12 @@ def terminal_readout(data: dict) -> str:
                 lines.append(f"│   {f['family']:<20} {lo:6.2f}–{hi:6.2f}% within tolerance; {f['unresolved_or_unavailable']} unresolved")
         lines.append("│   Fractions are dependent relation counts, not resemblance probabilities.")
     lines.append(f"└── Report: {data['report']}")
-    return "\n".join(lines)
+    text = "\n".join(lines)
+    try:
+        text.encode(encoding)
+    except UnicodeEncodeError:
+        # Keep values intact in redirected Windows/code-page streams. Replace
+        # only decoration; escape unrepresentable source labels/paths reversibly.
+        text = text.translate(str.maketrans({"◆": "*", "│": "|", "├": "+", "└": "\\", "─": "-", "–": "-"}))
+        text = text.encode(encoding, errors="backslashreplace").decode(encoding)
+    return text

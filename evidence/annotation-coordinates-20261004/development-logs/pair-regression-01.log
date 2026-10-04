@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\ryanf\github\_active\facemath\scripts\check_regional_pair.py", line 61, in <module>
+    main()
+  File "C:\Users\ryanf\github\_active\facemath\scripts\check_regional_pair.py", line 19, in main
+    run_pair()  # Same arguments; preserves create-only results and every command log.
+    ^^^^^^^^^^
+  File "C:\Users\ryanf\github\_active\facemath\scripts\check_structural_pair.py", line 54, in main
+    run('terminal', ['overview', out/'calibrated'])
+  File "C:\Users\ryanf\github\_active\facemath\scripts\check_structural_pair.py", line 39, in run
+    raise RuntimeError(f'{name} failed; see retained log')
+RuntimeError: terminal failed; see retained log

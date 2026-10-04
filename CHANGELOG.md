@@ -218,3 +218,16 @@ Retained the original research modules and legacy commands for continuity. They 
   including repeated JPEGs with separate face annotations within that root.
 - Extend source, installed-wheel and extracted-archive validation to execute the
   transfer pipeline. Research transfer does not authorize empirical query admission.
+# 0.20.0 — reference-coordinate input
+
+- Correct pixel-center capture across canvas borders, padding, display scaling,
+  zoom and pan; align rendered markers and the magnifier with exported points.
+- Version draft storage and capture metadata; keep legacy drafts separate and
+  provide explicit in-page restoration with keyboard focus recovery.
+- Emit synthetic reference provenance from synthetic workspaces, fixing the
+  prepared-workbench/import mismatch. Preserve downloaded coordinates and
+  metadata through workspace import and freeze.
+- Retain the original 0.535-pixel failure and browser rounding failures; no
+  historical annotation, model, coordinate array or calibration is rewritten.
+- Keep `overview` usable under strict Windows CP1252 redirection without changing
+  measured values; retain the original failed native-pair command.

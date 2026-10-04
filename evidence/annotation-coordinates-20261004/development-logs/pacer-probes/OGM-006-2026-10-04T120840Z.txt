@@ -1,0 +1,90 @@
+$ powershell -NoProfile -File ../runs/annotation-coordinates-20261004/probe.ps1
+# actor=codex exit=0 at=2026-10-04T12:08:40Z
+....                                                                     [100%]
+============================== warnings summary ===============================
+..\runs\enrollment-registry-20261003\env311\Lib\site-packages\_pytest\cacheprovider.py:469
+  C:\Users\ryanf\github\_active\facemath\runs\enrollment-registry-20261003\env311\Lib\site-packages\_pytest\cacheprovider.py:469: PytestCacheWarning: could not create cache path C:\Users\ryanf\github\_active\facemath\.pytest_cache\v\cache\nodeids: [WinError 5] Access is denied: 'C:\\Users\\ryanf\\github\\_active\\facemath\\.pytest_cache\\v\\cache'
+    config.cache.set("cache/nodeids", sorted(self.cached_nodeids))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+4 passed, 1 warning in 10.24s
+{
+  "format": "facemath.annotation_browser.v20",
+  "started_utc": "2026-10-04T12:08:33.829214+00:00",
+  "workbench": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\annotation-coordinates-20261004\\workbench.html",
+  "annotations": "automated indexed-raster fixtures, not human labels",
+  "oracle": "painted pixel centers through actual DOM content box and Canvas CTM",
+  "views": [
+    {
+      "name": "desktop",
+      "device_scale_factor": 1,
+      "maximum_error_px": 0,
+      "edge_centers": true,
+      "zoom_pan_and_keyboard": true,
+      "marker_and_lens": true,
+      "draft_restore_and_isolation": true,
+      "invalid_draft_and_storage_failure": true,
+      "file_navigation": true
+    },
+    {
+      "name": "fractional-dpr",
+      "device_scale_factor": 1.25,
+      "maximum_error_px": 0,
+      "edge_centers": true,
+      "zoom_pan_and_keyboard": true,
+      "marker_and_lens": true,
+      "draft_restore_and_isolation": true,
+      "invalid_draft_and_storage_failure": true,
+      "file_navigation": true
+    },
+    {
+      "name": "retina",
+      "device_scale_factor": 2,
+      "maximum_error_px": 0,
+      "edge_centers": true,
+      "zoom_pan_and_keyboard": true,
+      "marker_and_lens": true,
+      "draft_restore_and_isolation": true,
+      "invalid_draft_and_storage_failure": true,
+      "file_navigation": true
+    },
+    {
+      "name": "narrow",
+      "device_scale_factor": 3,
+      "maximum_error_px": 0,
+      "edge_centers": true,
+      "zoom_pan_and_keyboard": true,
+      "marker_and_lens": true,
+      "draft_restore_and_isolation": true,
+      "invalid_draft_and_storage_failure": true,
+      "file_navigation": true
+    },
+    {
+      "name": "border-padding",
+      "device_scale_factor": 1,
+      "maximum_error_px": 0,
+      "edge_centers": true,
+      "zoom_pan_and_keyboard": true,
+      "marker_and_lens": true,
+      "draft_restore_and_isolation": true,
+      "invalid_draft_and_storage_failure": true,
+      "file_navigation": true
+    },
+    {
+      "name": "css-scale",
+      "device_scale_factor": 1.5,
+      "maximum_error_px": 0,
+      "edge_centers": true,
+      "zoom_pan_and_keyboard": true,
+      "marker_and_lens": true,
+      "draft_restore_and_isolation": true,
+      "invalid_draft_and_storage_failure": true,
+      "file_navigation": true
+    }
+  ],
+  "passed": true,
+  "browser": "154.0.4258.53",
+  "console_errors": [],
+  "remote_requests": [],
+  "finished_utc": "2026-10-04T12:08:40.507071+00:00"
+}

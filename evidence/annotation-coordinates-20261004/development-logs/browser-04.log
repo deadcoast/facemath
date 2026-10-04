@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\ryanf\github\_active\facemath\scripts\browser_qa_annotation.py", line 157, in <module>
+    print(json.dumps(run(args.workbench.resolve(),args.out.resolve(),args.browser),indent=2))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanf\github\_active\facemath\scripts\browser_qa_annotation.py", line 59, in run
+    assert not page.locator('#export').is_disabled(),(name,page.evaluate('points'),page.locator('#status').inner_text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('narrow', [None, None, None, None, {'visible': True, 'xy': [24.25, 15.5]}, {'visible': True, 'xy': [15, 21]}, {'visible': True, 'xy': [32, 21]}, {'visible': True, 'xy': [24, 28]}], 'Recorded chin.')

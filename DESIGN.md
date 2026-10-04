@@ -80,6 +80,22 @@ Unavailable rows remain visible; no loading state is invented for sealed data.
 |---|---|---|---|---|
 | Scrollbar | artifacts.py report CSS | Existing report shell | System colors in forced-colors mode | Browser narrow viewport and keyboard scroll |
 | Read-only table | readout.py | Typed comparison profile | Nominal, calibrated, partial support | Structural tests and real native report |
+| Form | annotation_ui.py | reference.py and workspace.py | Blind native reference, explicitly synthetic control | Browser download through intake/freeze |
+
+The reference workbench is the existing editing sibling. Its CSS owns its
+established palette: background #11171d, panel #19232c, ink #e9f0f4, muted #a5b6c2,
+line #33444f, accent #7ee0d4 and amber #edbe78. It keeps system sans labels and
+monospace coordinates, a desktop canvas/sidebar and narrow stacked layout.
+Its scrollbar roles follow the report baseline using those local tokens.
+
+`annotation_ui.py` owns the source/canvas transform, point edits and local draft
+recovery. `reference.py` owns exported coordinate semantics; `workspace.py` owns
+immutable intake. The source image stays prediction-free. Draft recovery is an
+inline region with explicit Restore/Keep actions and focus returning to the
+canvas. Switching raters clears displayed annotations. Old coordinate conventions
+must not be silently migrated. `scripts/browser_qa_annotation.py` exercises
+actual file navigation, pointer capture, exports, keyboard, storage failure and
+the narrow layout; the associated intake test consumes a retained real download.
 
 ## Do's and Don'ts
 

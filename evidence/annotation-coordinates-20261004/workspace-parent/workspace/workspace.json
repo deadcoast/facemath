@@ -1,0 +1,194 @@
+{
+  "format": "facemath.reference_workspace.v10",
+  "study": {
+    "format": "facemath.prospective_study.v5",
+    "domain": "synthetic-wave10-workflow-controls-NOT-A-HUMAN-STUDY",
+    "observer": {
+      "provider": "synthetic_milestone_containment_observer",
+      "provider_fingerprint": "7223088ba52e68495cf92915a2b1ff19c78c741840d69674a92a6bbfa77b13b9",
+      "schema": "semantic21.v1",
+      "noise_floor_px": 0.18,
+      "attempted_samples": 7,
+      "execution_kind": "synthetic_fixture",
+      "model_sha256": null,
+      "runtime_version": null
+    },
+    "minimum_raters": 1,
+    "maximum_cases_per_group": 2,
+    "minimum_development_groups": 5,
+    "alpha": 0.1,
+    "bias_mode": "development_joint_ocular_stratified",
+    "joint_error": {
+      "shrinkage": 0.02,
+      "floor_eye_spans": 0.001
+    },
+    "strata": [
+      "pixel_clear",
+      "pixel_smooth",
+      "__unmatched__",
+      "__ambiguous__"
+    ],
+    "stratified_error": {
+      "definition": "Schematic stored-raster apertures; all enrolled group members. Clear: minimum detail >=0.30; smooth: minimum detail in [0.05,0.30). Both need >=96px, range>=0.10 and code-tail fractions<0.20. Engineering demonstration selected using three source-only development probes, not human recommendations.",
+      "minimum_calibration_groups": 9,
+      "measurement_policy": {
+        "format": "facemath.measured_acquisition_policy.v9",
+        "recipe": "declared_aperture_RGB_integer299_587_114_div255000_AREA_Sobel_interior.v9",
+        "definition": "Schematic stored-raster apertures; all enrolled group members. Clear: minimum detail >=0.30; smooth: minimum detail in [0.05,0.30). Both need >=96px, range>=0.10 and code-tail fractions<0.20. Engineering demonstration selected using three source-only development probes, not human recommendations.",
+        "rules": [
+          {
+            "category": "pixel_clear",
+            "predicates": [
+              {
+                "feature": "min.native_short_edge_px",
+                "op": ">=",
+                "threshold": 96.0
+              },
+              {
+                "feature": "min.code_range_90",
+                "op": ">=",
+                "threshold": 0.1
+              },
+              {
+                "feature": "max.low_code_fraction",
+                "op": "<",
+                "threshold": 0.2
+              },
+              {
+                "feature": "max.high_code_fraction",
+                "op": "<",
+                "threshold": 0.2
+              },
+              {
+                "feature": "min.detail_ratio",
+                "op": ">=",
+                "threshold": 0.3
+              }
+            ],
+            "deployment_permitted": true
+          },
+          {
+            "category": "pixel_smooth",
+            "predicates": [
+              {
+                "feature": "min.native_short_edge_px",
+                "op": ">=",
+                "threshold": 96.0
+              },
+              {
+                "feature": "min.code_range_90",
+                "op": ">=",
+                "threshold": 0.1
+              },
+              {
+                "feature": "max.low_code_fraction",
+                "op": "<",
+                "threshold": 0.2
+              },
+              {
+                "feature": "max.high_code_fraction",
+                "op": "<",
+                "threshold": 0.2
+              },
+              {
+                "feature": "min.detail_ratio",
+                "op": ">=",
+                "threshold": 0.05
+              },
+              {
+                "feature": "min.detail_ratio",
+                "op": "<",
+                "threshold": 0.3
+              }
+            ],
+            "deployment_permitted": true
+          }
+        ],
+        "maximum_group_members": 2,
+        "analysis_max_side": 128,
+        "low_code": 0.00392156862745098,
+        "high_code": 0.996078431372549,
+        "variance_floor": 1e-08,
+        "group_reducers": [
+          "min",
+          "max"
+        ],
+        "feature_order": [
+          "native_short_edge_px",
+          "native_area_px2",
+          "code_mean",
+          "code_p05",
+          "code_p95",
+          "code_range_90",
+          "low_code_fraction",
+          "high_code_fraction",
+          "detail_ratio"
+        ],
+        "routing": "one simultaneous match; zero or multiple matches withhold deployment",
+        "aperture": "explicit integer xyxy half-open source rectangle; omission means full stored raster",
+        "enrollment": "all declared group members, including prospectively excluded observation cases"
+      }
+    },
+    "admission_policy": {
+      "format": "facemath.empirical_admission_policy.v10",
+      "required_categories": [
+        "pixel_clear",
+        "pixel_smooth"
+      ],
+      "minimum_groups": 2,
+      "minimum_delivery": 0.1,
+      "minimum_coverage": 0.1,
+      "family_error": 0.1,
+      "evidence_kind": "synthetic_control",
+      "independent_groups_declared": true,
+      "sampling_design": "Deterministic branch/containment control. No population interpretation; does not establish real sampling assumptions."
+    }
+  },
+  "rater_ids": [
+    "known-render-coordinates"
+  ],
+  "source_description": "SYNTHETIC WORKFLOW CONTROL; never presented as a human study",
+  "cases": [
+    {
+      "case_id": "case_00000",
+      "group_id": "group_31091_0",
+      "lineage_ids": [
+        "lineage_31091_0"
+      ],
+      "split": "development",
+      "image": "sources/source_00000.png",
+      "acquisition_aperture": [
+        35,
+        40,
+        210,
+        230
+      ],
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image_sha256": "460d2a856d353afa7c2ffe6ebfce3ea8c8d7a7a30fd56e1ffb050d616bc0eca3",
+      "image_shape": [
+        280,
+        320
+      ],
+      "original_encoded_sha256": "51feacdd571b3b4c3a948505f715c1ec45f5a1b142f80d09d1a2fed73bcec14d",
+      "workbenches": {
+        "known-render-coordinates": "workbenches/source_00000_rater_000.html"
+      }
+    }
+  ],
+  "files": {
+    "sources/source_00000.png": {
+      "sha256": "51feacdd571b3b4c3a948505f715c1ec45f5a1b142f80d09d1a2fed73bcec14d",
+      "bytes": 86312
+    },
+    "workbenches/source_00000_rater_000.html": {
+      "sha256": "aa9bd32ea5373c0893289b14c837b59ec99a64fc7924627a1afab10636eba037",
+      "bytes": 131408
+    }
+  },
+  "predictions_shown": false,
+  "created_at": "2026-10-04T11:56:34.594181+00:00",
+  "revision_rule": "latest explicit import per case/rater; every prior label remains retained",
+  "limit": "IDs do not prove independent humans; hashes do not attest real capture or blindness",
+  "content_sha256": "350e7a220099141ef54dd9f8a9e508304fb2679d2a7883177dd212fc97b5e251"
+}

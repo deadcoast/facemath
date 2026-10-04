@@ -1,0 +1,107 @@
+[
+  {
+    "name": "nominal",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "analyze",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\study\\inputs\\case_00000.png",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\study\\inputs\\case_00001.png",
+      "--observation-a",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\session\\cases\\case_00000\\observation.json",
+      "--observation-b",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\session\\cases\\case_00001\\observation.json",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\annotation-coordinates-20261004\\pair-regression-01\\nominal"
+    ],
+    "started_utc": "2026-10-04T12:01:53.878040+00:00",
+    "finished_utc": "2026-10-04T12:01:58.810879+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "calibrated",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "analyze",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\study\\inputs\\case_00000.png",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\study\\inputs\\case_00001.png",
+      "--observation-a",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\session\\cases\\case_00000\\observation.json",
+      "--observation-b",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\session\\cases\\case_00001\\observation.json",
+      "--localization-calibration",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\evaluation\\localization_calibration.json",
+      "--domain",
+      "Frozen HELEN roots [132,192), new correspondence-v2 joint fit; published PTS agreement; anatomical equivalence and visibility unresolved",
+      "--query-groups",
+      "source_eaa3f36687ed7e693bee4b1dc002120a077f1cc7e3adb71d7a40c61320740577",
+      "source_2c3a325da349a97419d8ee8b78b5255e5b0451d8b87dd516793226570cd3ab85",
+      "--lineage-a",
+      "source_eaa3f36687ed7e693bee4b1dc002120a077f1cc7e3adb71d7a40c61320740577",
+      "--lineage-b",
+      "source_2c3a325da349a97419d8ee8b78b5255e5b0451d8b87dd516793226570cd3ab85",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\annotation-coordinates-20261004\\pair-regression-01\\calibrated"
+    ],
+    "started_utc": "2026-10-04T12:01:58.811387+00:00",
+    "finished_utc": "2026-10-04T12:02:02.134034+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "nominal-verify",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "verify",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\annotation-coordinates-20261004\\pair-regression-01\\nominal"
+    ],
+    "started_utc": "2026-10-04T12:02:02.134531+00:00",
+    "finished_utc": "2026-10-04T12:02:03.257528+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "calibrated-verify",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "verify",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\annotation-coordinates-20261004\\pair-regression-01\\calibrated"
+    ],
+    "started_utc": "2026-10-04T12:02:03.258028+00:00",
+    "finished_utc": "2026-10-04T12:02:04.474543+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "replay",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "replay",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\annotation-coordinates-20261004\\pair-regression-01\\calibrated",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\annotation-coordinates-20261004\\pair-regression-01\\replayed"
+    ],
+    "started_utc": "2026-10-04T12:02:04.475048+00:00",
+    "finished_utc": "2026-10-04T12:02:07.569124+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "terminal",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "overview",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\annotation-coordinates-20261004\\pair-regression-01\\calibrated"
+    ],
+    "started_utc": "2026-10-04T12:02:07.569624+00:00",
+    "finished_utc": "2026-10-04T12:02:08.709670+00:00",
+    "returncode": 1
+  }
+]

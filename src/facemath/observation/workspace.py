@@ -166,7 +166,8 @@ def prepare_workspace(spec_path: str | Path, destination: str | Path) -> Path:
                 for j, rater in enumerate(raters):
                     html = f"workbenches/source_{i:05d}_rater_{j:03d}.html"
                     create_annotation_workspace(image, temp / html,
-                        source=f"{spec['source_description']} | case {item['case_id']} | assigned rater {rater}")
+                        source=f"{spec['source_description']} | case {item['case_id']} | assigned rater {rater}",
+                        kind="human_blind" if observer.execution_kind == "native_mediapipe" else "synthetic_fixture")
                     case["workbenches"][rater] = html
             cases.append(case)
         payload = {"format": FORMAT, "study": settings, "rater_ids": raters,

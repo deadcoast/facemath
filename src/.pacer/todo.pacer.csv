@@ -1,1 +1,4 @@
 ID,Kind,Pos,Title,Status,Tier,Produce,In,Out,Binds,Needs,Probe,Exit,Next,Tags
+PAC-010,AREA,A4,Source-coordinate reference input,DONE,,,,,,,,,,
+PAC-011,PHASE,A4.P1,Repair reference capture before independent labeling,DONE,integrated,,,,,,,"Real browser clicks and exports preserve source pixel centers through borders, zoom and pan; legacy drafts remain separate.",,
+PAC-012,PACE,A4.P1.01,Repair and version reference-coordinate capture,DONE,,Implement correct source-to-canvas mapping and draft compatibility in the production workbench; exercise actual exported references.,OVR-029;OVR-003;OVR-023;OVR-016;OVR-017,facemath/observation/annotation_ui.py;facemath/observation/workspace.py;facemath/observation/readout.py;facemath/cli.py,OGM-006;OGM-003,,powershell -NoProfile -File ../runs/annotation-coordinates-20261004/probe.ps1,,integrate,

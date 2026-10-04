@@ -804,7 +804,7 @@ def main(argv: list[str] | None = None) -> None:
         raise SystemExit(2) from None
     if args.command == "overview" and not args.raw:
         from .observation.readout import terminal_readout
-        print(terminal_readout(result))
+        print(terminal_readout(result, encoding=getattr(sys.stdout, "encoding", None) or "utf-8"))
     else:
         print(json.dumps(result, indent=2, allow_nan=False))
     if args.command == "runtime-profile" and not result.get("comparison", {}).get("compatible", True):

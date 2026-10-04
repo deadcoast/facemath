@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\ryanf\github\_active\facemath\src\facemath\__main__.py", line 2, in <module>
+    main()
+  File "C:\Users\ryanf\github\_active\facemath\src\facemath\cli.py", line 807, in main
+    print(terminal_readout(result))
+  File "C:\Users\ryanf\AppData\Roaming\uv\python\cpython-3.11.14-windows-x86_64-none\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u25c6' in position 9: character maps to <undefined>

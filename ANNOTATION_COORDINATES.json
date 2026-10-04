@@ -1,0 +1,130 @@
+{
+  "format": "facemath.reference_input_release.v20",
+  "version": "0.20.0",
+  "code_sha256": "dfd4f67ca7040d6ba0a925eac66af61e1b1a57654de05b5a0816ccc4866980be",
+  "parent": {
+    "archive": "C:\\Users\\ryanf\\github\\_active\\facemath\\packages\\facemath-0.19.0-core-20261004.zip",
+    "sha256": "387acf24ae6714b610a83075be4746444cb8b4bb4ba4264c3d5a55e0398416c4",
+    "extracted": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\core-features-20261004\\release-01\\extracted\\facemath-0.19.0",
+    "byte_check": {
+      "verified": true,
+      "files": 7967,
+      "version": "0.19.0",
+      "kind": "extracted_files",
+      "scope": "shipped-byte consistency, not external authenticity or numerical replay"
+    },
+    "baseline": {
+      "name": "archive-tests",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "-ra",
+        "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\core-features-20261004\\release-01\\archive.xml",
+        "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\core-features-20261004\\release-01\\archive-temp"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\core-features-20261004\\release-01\\extracted\\facemath-0.19.0",
+      "started_utc": "2026-10-04T10:52:28.685794+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\core-features-20261004\\release-01\\extracted\\facemath-0.19.0\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T10:57:26.118019+00:00"
+    },
+    "baseline_reused": true,
+    "reason": "The immediately preceding release executed the inherited full suite from these unchanged extracted bytes. Preserve that actual run rather than repeat it before any source edit."
+  },
+  "tests": {
+    "source": {
+      "tests": 1224,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 1,
+      "live_observer_smoke_passed": true,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ],
+      "passed": 1223
+    },
+    "wheel": {
+      "tests": 1224,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 1,
+      "live_observer_smoke_passed": true,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ],
+      "passed": 1223
+    },
+    "archive": {
+      "tests": 1224,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 1,
+      "live_observer_smoke_passed": true,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ],
+      "passed": 1223
+    }
+  },
+  "milestones": {
+    "source": {
+      "raw_arrays_unchanged": 151,
+      "qualification_snapshot_replayed": true,
+      "withheld_query_observer_calls": 0,
+      "scope": "synthetic workflow control, not human accuracy"
+    },
+    "wheel": {
+      "raw_arrays_unchanged": 151,
+      "qualification_snapshot_replayed": true,
+      "withheld_query_observer_calls": 0,
+      "scope": "synthetic workflow control, not human accuracy"
+    },
+    "archive": {
+      "raw_arrays_unchanged": 151,
+      "qualification_snapshot_replayed": true,
+      "withheld_query_observer_calls": 0,
+      "scope": "synthetic workflow control, not human accuracy"
+    }
+  },
+  "archive": {
+    "path": "packages/facemath-0.20.0-reference-input-20261004.zip",
+    "sha256": "97ba5d1da07a37922c8d86954bcf57448eac94e1261e1fd6d662f36632181900",
+    "bytes": 317452572,
+    "files": 6081
+  },
+  "changes": [
+    "Source pixel-center capture, marker and magnifier alignment through content-box transforms",
+    "Versioned draft isolation and explicit in-page restore; keyboard pan",
+    "Prepared workspace reference kind follows frozen observer execution kind",
+    "Windows redirected overview preserves values with stream-compatible decoration"
+  ],
+  "behavior": {
+    "parent_maximum_coordinate_error_px": 0.535,
+    "corrected_browser": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\annotation-coordinates-20261004\\browser-05\\browser.json",
+    "corrected_maximum_export_error_px": 0,
+    "browser_export_fixture": "tests/fixtures/annotation-v20/desktop.reference.json",
+    "intake_freeze_regression": "tests/test_annotation_coordinates.py",
+    "terminal_regression": "tests/test_terminal_encoding.py",
+    "native_pair_regression": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\annotation-coordinates-20261004\\pair-parity.json"
+  },
+  "failures": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\annotation-coordinates-20261004\\failure-history.json",
+  "workbench": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\annotation-coordinates-20261004\\portrait-workbench.html",
+  "verification": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\annotation-coordinates-release-20261004\\commands.json",
+  "installed_wheel_bytes": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\annotation-coordinates-release-20261004\\wheel-check\\installed-byte-check.json",
+  "native_inference": "Existing pinned live-observer smoke asset used by tests; pair regression reuses earlier native observations, no new cohort or fit.",
+  "open": [
+    "Independent anatomical and visibility references still required; automated clicks are synthetic controls",
+    "Legacy draft and exported annotation bytes remain unchanged; old labels are not retrospectively corrected",
+    "Browser matrix executed on headless Edge on Windows, not every browser/platform",
+    "Installed wheel uses the existing interpreter dependencies"
+  ]
+}
