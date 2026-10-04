@@ -27,6 +27,13 @@ components:
 
 # FACEMATH report
 
+Regional inspection uses seven native disclosures with a two-column image grid,
+stacking on narrow screens. Measured landmarks use the existing circle/cross/line
+legend. Deformation maps use fixed, labeled color scales; missing region pixels
+are hatched and exterior pixels dimmed. Numerical tables retain original values
+and have their own keyboard-scrollable height limit. `regional_view.py` owns the
+shared CSS and color definitions used by the application and portable report.
+
 The bilateral comparison uses the same numerical table and disclosure controls.
 Each of five fixed rows has an expandable pair of images with a dashed midline,
 white predicted-point circle, cyan observed-point cross and connecting amber

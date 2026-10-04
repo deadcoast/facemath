@@ -23,6 +23,14 @@ See [the application workflow](docs/WORKSPACE_DESIGN.md).
 
 ## Development history
 
+Version **0.24.0** makes regional movement and deformation inspectable. Expand
+an eye, nose, mouth, jaw, central face or whole-face region to see measured A→B
+landmark segments and maps of rotation, area change and anisotropic stretch.
+Coordinate and triangle tables retain exact values, support and missingness.
+Map display scales are fixed across regions; saturation is labeled separately
+from the numerical measurements. The same inspector works in downloaded reports.
+See the [regional inspection contract](docs/REGIONAL_INSPECTION_DESIGN.md).
+
 Version **0.23.0** compares bilateral configuration around the existing eye-defined
 midline: outer and inner eye corners, mouth corners, nose and chin. The application
 shows horizontal and vertical components in A and B, their signed changes and

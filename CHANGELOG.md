@@ -1,3 +1,14 @@
+# 0.24.0 — regional spatial inspection
+
+- Connect seven regional comparisons to expandable app and portable-report views.
+- Show measured A→B landmark segments, coordinates, displacement and residuals
+  after regional mean subtraction without fitting another alignment.
+- Render rotation, area-ratio and anisotropic-stretch maps from the existing
+  A-domain field, with fixed display scales and explicit saturation counts.
+- Retain missing support as hatched pixels and unavailable values; expose original
+  triangle IDs, pixel weights and unclipped component values.
+- Keep every inherited numerical array unchanged and retain old-bundle readouts.
+
 # 0.23.0 — bilateral configuration comparison
 
 - Compute horizontal/vertical bilateral residuals for outer eyes, inner eyes,

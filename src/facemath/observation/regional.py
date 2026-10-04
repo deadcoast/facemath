@@ -199,6 +199,15 @@ class RegionalComparison:
             "missingness": "all seven regions retained; zero array sentinels require the associated support mask"}
 
 
+def regional_pixel_support(state: CanonicalState, field: AnatomicalField,
+                           polar: PolarComponents, region: str, visible: np.ndarray) -> np.ndarray:
+    """The shared A-domain selector for aggregation and spatial inspection."""
+    region_mask = state.masks_a["face" if region == "all" else region]
+    observed_region = np.count_nonzero(visible[state.anatomy.region_indices(region)]) >= 3
+    return (region_mask & field.valid & observed_region
+            & polar.supported[np.maximum(field.simplex_index, 0)])
+
+
 def compare_regions(state: CanonicalState, field: AnatomicalField) -> RegionalComparison:
     visible = state.observation_a.in_bounds & state.observation_b.in_bounds
     polar = polar_components(field.jacobians, field.valid_triangles)
@@ -213,8 +222,7 @@ def compare_regions(state: CanonicalState, field: AnatomicalField) -> RegionalCo
         measured = displacement_components(state.xy_a[ids], state.xy_b[ids], visible[ids], span, state.config.tolerance_ipd)
         region_mask = state.masks_a["face" if region == "all" else region]
         observed_region = np.count_nonzero(visible[ids]) >= 3
-        selected = region_mask & field.valid & observed_region
-        selected &= polar.supported[np.maximum(field.simplex_index, 0)]
+        selected = regional_pixel_support(state, field, polar, region, visible)
         deformed = deformation_components(polar, field.simplex_index[selected], int(region_mask.sum()),
             exclusion="fewer_than_three_supported_region_landmarks" if not observed_region else None)
         rows.append(RegionalRow(region, measured, deformed))

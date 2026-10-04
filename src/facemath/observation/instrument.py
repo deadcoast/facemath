@@ -43,6 +43,7 @@ class InstrumentResult:
         return {"bilateral_display_segments": segments, "bilateral_display_axes": axes}
 
     def evidence(self) -> dict:
+        from .regional_view import regional_inspection
         return {
             "format": "facemath.evidence.v3", "recipe_sha256": self.state.recipe_sha256,
             "observation_a_sha256": self.state.observation_a.digest,
@@ -52,6 +53,7 @@ class InstrumentResult:
                               "canonical_pixels": self.state.normalization_span_px},
             "measurement_profile": [m.to_dict() for m in self.profile.measurements],
             "regional_comparison": self.profile.regional.to_dict(),
+            "regional_inspection": regional_inspection(self),
             "registration_diagnostics": {
                 "heldout": [{"region": name, "available": bool(available), "failure": failure}
                     for name, available, failure in zip(self.profile.heldout_labels,

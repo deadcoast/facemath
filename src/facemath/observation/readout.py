@@ -34,6 +34,7 @@ def pair_readout(evidence: dict) -> dict:
         "structural_comparison": intrinsic.get("structural_comparison"),
         "bilateral_comparison": bilateral,
         "regional_comparison": evidence.get("regional_comparison"),
+        **({"regional_inspection": evidence["regional_inspection"]} if "regional_inspection" in evidence else {}),
         "edge_comparison": (evidence.get("edge_diagnostics") or {}).get("paired_comparison"),
         "registration_diagnostics": evidence.get("registration_diagnostics"),
         "percentage_meaning": "fraction of a prespecified, dependent relation inventory within explicit tolerances; NOT a probability of resemblance",
@@ -164,6 +165,87 @@ def render_bilateral(data: dict | None, *, image_prefix: str = "") -> str:
 {''.join(locations)}</section>'''
 
 
+def render_regional(data: dict | None, inspection: dict | None, *, image_prefix: str = "") -> str:
+    if data is None:
+        return ""
+    def vector(v):
+        return "Unavailable" if v is None else f"({_value(v[0], signed=True)}, {_value(v[1], signed=True)})"
+    rows, views = [], []
+    for row in data["rows"]:
+        d, f = row["displacement"], row["deformation"]
+        label = row["region"].replace("_", " ").capitalize()
+        lo, hi = d["within_tolerance_fraction_bounds"]
+        rows.append(f'<tr data-region-row="{row["region"]}"><th scope="row">{label}</th>'
+            f'<td>{vector(d["shift_b_minus_a"])}<small>{d["supported"]} / {d["total"]} landmarks</small></td>'
+            f'<td>{_value(d["centered_rms"])}</td><td>{_value(d["total_rms"])}</td>'
+            f'<td>{_value(f["area_ratio_mean"])}<small>B/A area</small></td>'
+            f'<td>{_value(f["anisotropic_log_strain_rms"])}</td>'
+            f'<td>{f["supported_pixels"]} / {f["total_pixels"]}<small>{escape((f["unavailable_reason"] or "supported A-domain pixels").replace("_", " "))}</small></td>'
+            f'<td>{100*lo:.1f}–{100*hi:.1f}%<small>tolerance {_value(d["tolerance"])} eye spans</small></td></tr>')
+        if inspection is None:
+            continue
+        spatial = next(r for r in inspection["rows"] if r["region"] == row["region"])
+        n = inspection["canvas_size"]
+        markers, points = [], []
+        for p in spatial["landmarks"]:
+            if p["supported"]:
+                a, b = p["a"], p["b"]
+                title = escape(f'{p["name"]}: B − A {vector(p["delta"])} eye spans')
+                markers.append(f'<g data-landmark="{p["index"]}"><title>{title}</title>'
+                    f'<path stroke="#ffca80" d="M {a[0]} {a[1]} L {b[0]} {b[1]}"/>'
+                    f'<circle stroke="#fff" cx="{a[0]}" cy="{a[1]}" r="2"/>'
+                    f'<path stroke="#79d7d0" d="M {b[0]-2} {b[1]} h 4 M {b[0]} {b[1]-2} v 4"/></g>')
+            status = ("Within tolerance" if p["within_tolerance"] else "Outside tolerance") if p["supported"] else "Unavailable: point outside at least one source raster"
+            points.append(f'<tr data-landmark-row="{p["index"]}"><th scope="row">{escape(p["name"])}</th>'
+                f'<td>{vector(p["a"])}</td><td>{vector(p["b"])}</td><td>{vector(p["delta"])}</td>'
+                f'<td>{vector(p["centered_delta"])}</td><td>{_value(p["magnitude"])}<small>{status}</small></td></tr>')
+        gallery = [f'<figure><svg role="img" aria-label="{label} measured A to B displacement" viewBox="-.5 -.5 {n} {n}">'
+            f'<image href="{escape(image_prefix + "canonical_a.png", quote=True)}" x="-.5" y="-.5" width="{n}" height="{n}"/>'
+            f'<image href="{escape(image_prefix + "canonical_b.png", quote=True)}" opacity=".5" x="-.5" y="-.5" width="{n}" height="{n}"/>'
+            f'<g fill="none" stroke-width="1">{"".join(markers)}</g></svg>'
+            f'<figcaption>Measured displacement at actual scale · white circle A, cyan cross B, amber segment A→B. '
+            f'{d["supported"]} / {d["total"]} landmarks. Mean shift {vector(d["shift_b_minus_a"])} eye spans.</figcaption></figure>']
+        if spatial["maps_available"]:
+            for m in spatial["maps"]:
+                ticks = "".join(f"<span>{escape(tick)}</span>" for tick in m["ticks"])
+                gallery.append(f'<figure data-regional-map="{m["key"]}"><img '
+                    f'src="{escape(image_prefix + m["image"], quote=True)}" alt="{label}: {escape(m["label"])} on supported image A pixels">'
+                    f'<div class="regional-legend" data-scale="{m["key"]}" aria-hidden="true"></div>'
+                    f'<div class="regional-ticks">{ticks}</div><figcaption>{escape(m["label"])}. '
+                    f'{m["below_scale_pixels"]} pixels below the display range; {m["above_scale_pixels"]} above. '
+                    'Exact values remain in the triangle table.</figcaption></figure>')
+        else:
+            gallery.append(f'<p>Deformation maps unavailable: {escape(spatial["unavailable_reason"].replace("_", " "))}.</p>')
+        triangles = "".join(f'<tr data-triangle="{t["index"]}"><th scope="row">{t["index"]}</th>'
+            f'<td>{", ".join(map(str, t["vertices"]))}</td><td>{t["pixels"]}</td>'
+            f'<td>{_value(t["rotation_deg"], signed=True)}</td><td>{_value(t["area_ratio"])}</td>'
+            f'<td>{_value(t["anisotropy"])}</td><td>{_value(t["chart_shear"], signed=True)}</td></tr>'
+            for t in spatial["triangles"])
+        views.append(f'<details data-region="{row["region"]}"><summary>Inspect {label.lower()} · '
+            f'{d["supported"]}/{d["total"]} landmarks · {f["supported_pixels"]}/{f["total_pixels"]} pixels</summary>'
+            f'<div class="regional-gallery">{"".join(gallery)}</div>'
+            f'<p>{spatial["unresolved_pixels"]} unresolved region pixels are hatched. Pixels outside the region are dimmed. '
+            'Map colors use fixed display scales across every region and comparison. Saturation does not discard the measured value.</p>'
+            '<details><summary>Inspect landmark coordinates and displacement</summary>'
+            f'<div class="scroll regional-values" role="region" aria-label="{label} landmark values" tabindex="0"><table>'
+            '<thead><tr><th scope="col">Landmark</th><th scope="col">A · canonical px</th><th scope="col">B · canonical px</th>'
+            '<th scope="col">B − A · eye spans</th><th scope="col">After regional mean subtraction</th><th scope="col">Magnitude</th></tr></thead>'
+            f'<tbody>{"".join(points)}</tbody></table></div></details>'
+            '<details><summary>Inspect local triangle values</summary>'
+            f'<p>Positive rotation is clockwise in image coordinates. Area ratio 1 means unchanged area. '
+            f'Pixel weights use only this region. {escape((spatial["unavailable_reason"] or "").replace("_", " "))}</p>'
+            f'<div class="scroll regional-values" role="region" aria-label="{label} triangle values" tabindex="0"><table>'
+            '<thead><tr><th scope="col">Triangle</th><th scope="col">Vertex indices</th><th scope="col">Region pixels</th>'
+            '<th scope="col">Rotation · degrees</th><th scope="col">Area ratio B/A</th><th scope="col">Anisotropic log stretch</th>'
+            f'<th scope="col">Signed chart shear</th></tr></thead><tbody>{triangles}</tbody></table></div></details></details>')
+    return f'''<section id="regional"><h2>Regional movement and shape change</h2>
+<p>Locate which parts move together and which change shape. Mean shift is B minus A. Centered RMS measures the remaining landmark mismatch after subtracting that shift; total RMS retains both. All displacement values use the existing registered eye span.</p>
+<div class="scroll" role="region" aria-label="Regional comparison table" tabindex="0"><table>
+<caption>Seven fixed regions · observed projected geometry</caption><thead><tr><th scope="col">Region</th><th scope="col">Mean shift · x, y</th><th scope="col">Centered RMS</th><th scope="col">Total RMS</th><th scope="col">Mean area ratio</th><th scope="col">Anisotropic stretch RMS</th><th scope="col">Pixel support</th><th scope="col">Within-tolerance range</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
+<p>The tolerance range retains missing landmarks in the denominator; it is not a confidence interval. Deformation uses the existing A→B triangle map, weighted by supported A pixels. These model-derived fields are affected by pose and expression; localization uncertainty is not propagated into these maps.</p>
+{''.join(views)}</section>'''
+
+
 def render_pair_readout(evidence: dict, *, image_prefix: str = "") -> str:
     data = pair_readout(evidence)
     shape = data["shape_distance"]
@@ -184,7 +266,7 @@ def render_pair_readout(evidence: dict, *, image_prefix: str = "") -> str:
         cells = "".join(f"<td>{v}</td>" for v in counts)
         rows.append(f'<tr><td>{escape(family["family"])}</td>{cells}<td>{text}</td></tr>')
     rows = "".join(rows)
-    return f'''{render_structure(data["structural_comparison"])}{render_bilateral(data["bilateral_comparison"], image_prefix=image_prefix)}{render_edge_comparison(data["edge_comparison"])}<section id="readout"><h2>Comparison at a glance</h2><p>{escape(shape_text)}</p>
+    return f'''{render_structure(data["structural_comparison"])}{render_bilateral(data["bilateral_comparison"], image_prefix=image_prefix)}{render_regional(data["regional_comparison"], data.get("regional_inspection"), image_prefix=image_prefix)}{render_edge_comparison(data["edge_comparison"])}<section id="readout"><h2>Comparison at a glance</h2><p>{escape(shape_text)}</p>
 <div class="scroll"><table><thead><tr><th>Relations</th><th>Declared total</th><th>Within</th><th>Outside</th><th>Unresolved</th><th>Within-tolerance range</th></tr></thead><tbody>{rows}</tbody></table></div>
 <p>{escape(data["percentage_meaning"])}. Missing relations remain in the denominator. Detailed rows and exact values remain below and in intrinsic.json.</p>
 {admission_panel(evidence.get("empirical_admission"))}</section>'''

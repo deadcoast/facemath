@@ -21,6 +21,7 @@ import numpy as np
 from .contracts import ObservationError, array_digest, canonical_json
 from .instrument import InstrumentResult
 from .journal import verify_journal
+from .regional_view import REGIONAL_CSS, regional_map_images
 
 
 def _png(image: np.ndarray) -> bytes:
@@ -112,6 +113,7 @@ def _html(result: InstrumentResult, arrays: dict[str, np.ndarray]) -> str:
 <title>FACEMATH · Anatomical observation instrument</title>
 <style>
 {REPORT_TOKENS}
+{REGIONAL_CSS}
 *::-webkit-scrollbar{{width:12px;height:12px}}*::-webkit-scrollbar-track{{background:var(--scroll-track)}}*::-webkit-scrollbar-thumb{{background:var(--scroll-thumb);border:3px solid var(--scroll-track)}}*::-webkit-scrollbar-thumb:hover{{background:var(--scroll-hover)}}*::-webkit-scrollbar-thumb:active{{background:var(--scroll-active)}}
 :focus-visible{{outline:2px solid var(--accent);outline-offset:3px}}a:hover,summary:hover{{color:var(--ink)}}a:active,summary:active{{color:var(--accent)}}a,summary,input[type=range]{{cursor:pointer}}
 #structure table{{min-width:790px;font-variant-numeric:tabular-nums}}#structure caption{{text-align:left;padding:12px 14px;color:var(--muted)}}#structure th[scope=row]{{font-weight:500;background:transparent}}#structure td{{white-space:nowrap}}#structure td small{{white-space:normal}}
@@ -191,6 +193,8 @@ def write_bundle(result: InstrumentResult, destination: str | Path,
         for name, image in (("source_a.png", source_a), ("source_b.png", source_b),
                             ("canonical_a.png", result.state.image_a), ("canonical_b.png", result.state.image_b),
                             ("landmark_overlay.png", _overlay(result))):
+            (temp / name).write_bytes(_png(image))
+        for name, image in regional_map_images(result):
             (temp / name).write_bytes(_png(image))
         (temp / "report.html").write_text(_html(result, arrays), encoding="utf-8")
         manifest: dict[str, Any] = {

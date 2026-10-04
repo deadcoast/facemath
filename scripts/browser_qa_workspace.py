@@ -71,6 +71,43 @@ def main():
                 assert response.ok and response.headers['content-type'] == 'image/png'
         page.locator('#bilateral').scroll_into_view_if_needed()
         page.screenshot(path=str(args.out / 'bilateral.png'), full_page=True)
+        regional = summary['regional_inspection']
+        assert page.locator('#regional [data-region-row]').count() == 7
+        regional_points = 0
+        regional_triangles = 0
+        for row in regional['rows']:
+            disclosure = page.locator(f'details[data-region="{row["region"]}"]')
+            disclosure.locator(':scope > summary').focus()
+            page.keyboard.press('Enter')
+            assert disclosure.get_attribute('open') is not None
+            for point in row['landmarks']:
+                if point['supported']:
+                    marker = disclosure.locator(f'g[data-landmark="{point["index"]}"]')
+                    assert float(marker.locator('circle').get_attribute('cx')) == point['a'][0]
+                    assert float(marker.locator('circle').get_attribute('cy')) == point['a'][1]
+                    regional_points += 1
+            for m in row['maps'] if row['maps_available'] else []:
+                img = disclosure.locator(f'[data-regional-map="{m["key"]}"] img')
+                assert img.is_visible() and img.evaluate('e => e.complete && e.naturalWidth > 0')
+                assert m['image'] in img.get_attribute('src')
+            for nested in disclosure.locator(':scope > details').all():
+                nested.locator(':scope > summary').focus()
+                page.keyboard.press('Enter')
+            for point in row['landmarks']:
+                cell = disclosure.locator(f'[data-landmark-row="{point["index"]}"] td').nth(2)
+                expected = 'Unavailable' if point['delta'] is None else '(' + ', '.join(format(v, '+.5g') for v in point['delta']) + ')'
+                assert cell.inner_text() == expected
+            for t in row['triangles']:
+                cells = disclosure.locator(f'[data-triangle="{t["index"]}"] td')
+                assert int(cells.nth(1).inner_text()) == t['pixels']
+                assert cells.nth(2).inner_text() == format(t['rotation_deg'], '+.5g')
+                assert cells.nth(3).inner_text() == format(t['area_ratio'], '.5g')
+                regional_triangles += 1
+            # Keep the overview compact after exercising each region.
+            if row['region'] != 'jaw':
+                disclosure.locator(':scope > summary').click()
+        page.locator('details[data-region="jaw"]').scroll_into_view_if_needed()
+        page.screenshot(path=str(args.out / 'regional.png'))
         with page.expect_download() as downloaded:
             page.locator("#download").click()
         downloaded.value.save_as(str(args.out / "comparison.zip"))
@@ -82,6 +119,14 @@ def main():
         assert page.locator('details[data-bilateral="mouth"] svg').count() == 2
         page.locator('details[data-bilateral="mouth"]').scroll_into_view_if_needed()
         page.screenshot(path=str(args.out / 'bilateral-narrow.png'))
+        page.locator('details[data-region="jaw"] > summary').click()
+        assert page.locator('details[data-region="jaw"] [data-regional-map]').count() == 3
+        page.locator('details[data-region="jaw"]').scroll_into_view_if_needed()
+        page.screenshot(path=str(args.out / 'regional-narrow.png'))
+        regional_table = page.get_by_role('region', name='Regional comparison table', exact=True)
+        regional_table.focus()
+        page.keyboard.press('ArrowRight')
+        page.wait_for_function("() => document.querySelector('#regional .scroll').scrollLeft > 0")
         table = page.get_by_role("region", name="Image-edge comparison table", exact=True)
         table.scroll_into_view_if_needed()
         table.focus()
@@ -118,10 +163,13 @@ def main():
             "edge_rows": 8, "numeric_cells_compared": 42, "reload": True, "download": True,
             "bilateral_rows": 5, "bilateral_numeric_components_compared": 30,
             "bilateral_keyboard_disclosures": 5, "bilateral_marker_pairs_compared": 10,
+            "regional_keyboard_disclosures": 7, "regional_maps": 21,
+            "regional_landmark_coordinates_compared": regional_points,
+            "regional_triangle_rows_compared": regional_triangles,
             "keyboard_blend": True, "narrow_keyboard_scroll": True, "page_errors": errors,
             "invalid_upload": True, "no_face_run": failure_id, "cancelled_run": cancelled_id,
             "success_reopened_after_failure": True}, indent=2), encoding="utf-8")
-        print("Complete: real native results, 42 numeric cells, download, reload, keyboard blend and narrow scrolling", flush=True)
+        print(f"Complete: native results, {regional_points} regional markers, {regional_triangles} triangle rows, download, reload and keyboard access", flush=True)
         browser.close()
 
 
