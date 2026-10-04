@@ -1,0 +1,188 @@
+........................................................................ [  6%]
+................................................................F....... [ 12%]
+........................................................................ [ 18%]
+........................................................................ [ 24%]
+........................................................................ [ 31%]
+.........................................................F.............. [ 37%]
+...F.................................................................... [ 43%]
+.sFFF................................................................... [ 49%]
+........................................................................ [ 56%]
+..........................................................s............. [ 62%]
+........................................................................ [ 68%]
+........................................................................ [ 74%]
+........................................................................ [ 80%]
+........................................................................ [ 87%]
+........................................................................ [ 93%]
+........................................................................ [ 99%]
+.....                                                                    [100%]
+================================== FAILURES ===================================
+_________ test_current_environment_has_one_matching_supported_binding _________
+
+    def test_current_environment_has_one_matching_supported_binding():
+>       state = runtime.require_supported_opencv()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_native_runtime.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def require_supported_opencv() -> dict:
+        """Refuse conflicting distributions and bindings outside the declared ABI.
+    
+        All four wheel variants write the same cv2 namespace. Metadata for one wheel
+        cannot establish which binary won when multiple distributions are installed.
+        """
+        state = opencv_runtime()
+        installed = state['distributions']
+        message = ('native acquisition requires one opencv-contrib-python>=4.9,<5 '
+                   'distribution; create a fresh locked observer environment')
+        if set(installed) != {'opencv-contrib-python'}:
+>           raise ProviderUnavailable(f'{message}; found {installed}')
+E           facemath.observation.contracts.ProviderUnavailable: native acquisition requires one opencv-contrib-python>=4.9,<5 distribution; create a fresh locked observer environment; found {'opencv-python': '5.0.0.93'}
+
+src\facemath\observation\runtime.py:37: ProviderUnavailable
+________ test_module_entrypoint_reports_version_from_another_directory ________
+
+tmp_path = WindowsPath('C:/Users/ryanf/github/_active/facemath/runs/landmark-repair-20261004/parent-temp/test_module_entrypoint_reports0')
+
+    def test_module_entrypoint_reports_version_from_another_directory(tmp_path):
+        result = subprocess.run([sys.executable, '-m', 'facemath', '--version'], cwd=tmp_path,
+                                text=True, capture_output=True, check=True)
+>       assert result.stdout.strip() == f'facemath {version("facemath")}'
+E       AssertionError: assert 'facemath 0.16.0' == 'facemath 0.8.0'
+E         
+E         - facemath 0.8.0
+E         ?            ^
+E         + facemath 0.16.0
+E         ?            ^^
+
+tests\test_wave3_cli.py:37: AssertionError
+_____ test_lazy_public_api_preserves_original_classes_and_exposes_version _____
+
+    def test_lazy_public_api_preserves_original_classes_and_exposes_version():
+        import facemath
+        from facemath.core import Frame
+        from facemath.observation import FacialInstrument, InstrumentFailure
+        assert facemath.Frame is Frame
+        assert facemath.FacialInstrument is FacialInstrument
+        assert facemath.InstrumentFailure is InstrumentFailure
+>       assert facemath.__version__ == version('facemath')
+E       AssertionError: assert '0.16.0' == '0.8.0'
+E         
+E         - 0.8.0
+E         + 0.16.0
+
+tests\test_wave3_cli.py:150: AssertionError
+__ test_provider_constructor_passes_documented_options_and_binds_model_hash ___
+
+tmp_path = WindowsPath('C:/Users/ryanf/github/_active/facemath/runs/landmark-repair-20261004/parent-temp/test_provider_constructor_pass0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001F55498C590>
+
+    def test_provider_constructor_passes_documented_options_and_binds_model_hash(tmp_path, monkeypatch):
+        """Exercises API assembly with a fake runtime; not a live detector result."""
+        import importlib.metadata
+        import sys
+        from hashlib import sha256
+        seen = {}
+        detector = FakeDetector(np.random.default_rng(21).uniform(20, 60, (478, 2)), (96, 112))
+        def capture_options(**kwargs):
+            seen.update(kwargs)
+            return SimpleNamespace(**kwargs)
+        runtime = SimpleNamespace(
+            Image=lambda **kwargs: kwargs,
+            ImageFormat=SimpleNamespace(SRGB='srgb'),
+            tasks=SimpleNamespace(
+                BaseOptions=lambda **kwargs: SimpleNamespace(**kwargs),
+                vision=SimpleNamespace(
+                    RunningMode=SimpleNamespace(IMAGE='image-mode'),
+                    FaceLandmarkerOptions=capture_options,
+                    FaceLandmarker=SimpleNamespace(create_from_options=lambda options: detector),
+                ),
+            ),
+        )
+        monkeypatch.setitem(sys.modules, 'mediapipe', runtime)
+        original = importlib.metadata.version
+        monkeypatch.setattr(importlib.metadata, 'version', lambda name: 'mock-runtime' if name == 'mediapipe' else original(name))
+        model = tmp_path / 'fake-api-test.task'
+        model.write_bytes(b'API fixture, not model weights')
+>       with MediaPipeProvider(model) as provider:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_wave3_provider.py:140: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\facemath\observation\provider.py:82: in __init__
+    require_supported_opencv()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def require_supported_opencv() -> dict:
+        """Refuse conflicting distributions and bindings outside the declared ABI.
+    
+        All four wheel variants write the same cv2 namespace. Metadata for one wheel
+        cannot establish which binary won when multiple distributions are installed.
+        """
+        state = opencv_runtime()
+        installed = state['distributions']
+        message = ('native acquisition requires one opencv-contrib-python>=4.9,<5 '
+                   'distribution; create a fresh locked observer environment')
+        if set(installed) != {'opencv-contrib-python'}:
+>           raise ProviderUnavailable(f'{message}; found {installed}')
+E           facemath.observation.contracts.ProviderUnavailable: native acquisition requires one opencv-contrib-python>=4.9,<5 distribution; create a fresh locked observer environment; found {'opencv-python': '5.0.0.93'}
+
+src\facemath\observation\runtime.py:37: ProviderUnavailable
+___________ test_absent_optional_runtime_is_explicit_not_a_fallback ___________
+
+tmp_path = WindowsPath('C:/Users/ryanf/github/_active/facemath/runs/landmark-repair-20261004/parent-temp/test_absent_optional_runtime_i0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001F5590EDE10>
+
+    def test_absent_optional_runtime_is_explicit_not_a_fallback(tmp_path, monkeypatch):
+        import sys
+        monkeypatch.setitem(sys.modules, 'mediapipe', None)
+        model = tmp_path / 'fake.task'
+        model.write_bytes(b'not model weights')
+>       with pytest.raises(ProviderUnavailable, match='facemath'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'facemath'
+E         Actual message: "native acquisition requires one opencv-contrib-python>=4.9,<5 distribution; create a fresh locked observer environment; found {'opencv-python': '5.0.0.93'}"
+
+tests\test_wave3_provider.py:155: AssertionError
+____ test_offline_coarse_locator_on_blank_raster_returns_no_landmark_claim ____
+
+    def test_offline_coarse_locator_on_blank_raster_returns_no_landmark_claim():
+        from facemath.observation.provider import locate_faces
+>       assert locate_faces(np.zeros((96, 112, 3), np.uint8)) == []
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_wave3_provider.py:161: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+image = array([[[0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        ...,
+        [0, 0, 0],
+        [0, 0, 0],
+        [0...    [0, 0, 0],
+        ...,
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]]], shape=(96, 112, 3), dtype=uint8)
+
+    def locate_faces(image: np.ndarray) -> list[dict[str, Any]]:
+        """Offline coarse ROI proposals only. Never fabricates full mesh anatomy."""
+        image = rgb_image(image)
+        cascade_dir = getattr(getattr(cv2, "data", None), "haarcascades", None)
+        if not callable(getattr(cv2, "CascadeClassifier", None)) or not cascade_dir:
+>           raise ProviderUnavailable("OpenCV Haar API unavailable; install the supported opencv-contrib-python>=4.9,<5 dependency")
+E           facemath.observation.contracts.ProviderUnavailable: OpenCV Haar API unavailable; install the supported opencv-contrib-python>=4.9,<5 dependency
+
+src\facemath\observation\provider.py:187: ProviderUnavailable
+=========================== short test summary info ===========================
+SKIPPED [1] tests\test_wave3_provider.py:95: live MediaPipe requires local model and a supplied test face; no weights/runtime available in build environment
+SKIPPED [1] tests\test_wave5_execution.py:184: platform cannot create a directory symlink
+FAILED tests/test_native_runtime.py::test_current_environment_has_one_matching_supported_binding
+FAILED tests/test_wave3_cli.py::test_module_entrypoint_reports_version_from_another_directory
+FAILED tests/test_wave3_cli.py::test_lazy_public_api_preserves_original_classes_and_exposes_version
+FAILED tests/test_wave3_provider.py::test_provider_constructor_passes_documented_options_and_binds_model_hash
+FAILED tests/test_wave3_provider.py::test_absent_optional_runtime_is_explicit_not_a_fallback
+FAILED tests/test_wave3_provider.py::test_offline_coarse_locator_on_blank_raster_returns_no_landmark_claim
+6 failed, 1149 passed, 2 skipped in 307.93s (0:05:07)

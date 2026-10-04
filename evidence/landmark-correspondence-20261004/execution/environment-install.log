@@ -1,0 +1,23 @@
+Using Python 3.11.14 environment at: runs\enrollment-registry-20261003\env311
+Resolved 1 package in 1ms
+   Building facemath @ file:///C:/Users/ryanf/github/_active/facemath
+  × Failed to build `facemath @ file:///C:/Users/ryanf/github/_active/facemath`
+  ├─▶ The build backend returned an error
+  ╰─▶ Call to `setuptools.build_meta.build_editable` failed (exit code: 1)
+
+      [stderr]
+      Traceback (most recent call last):
+        File "<string>", line 8, in <module>
+      ModuleNotFoundError: No module named 'setuptools'
+
+      hint: This error likely indicates that `facemath@0.17.0` depends
+      on `setuptools`, but doesn't declare it as a build dependency. If
+      `facemath` is a first-party package, consider adding `setuptools`
+      to its `build-system.requires`. Otherwise, either add it to your
+      `pyproject.toml` under:
+
+      [tool.uv.extra-build-dependencies]
+      facemath = ["setuptools"]
+
+      or `uv pip install setuptools` into the environment and re-run with
+      `--no-build-isolation`.

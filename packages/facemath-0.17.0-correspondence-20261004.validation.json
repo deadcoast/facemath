@@ -1,0 +1,991 @@
+{
+  "format": "facemath.landmark_repair.v17",
+  "created_utc": "2026-10-04T06:55:21.733374+00:00",
+  "version": "0.17.0",
+  "engine_code_sha256": "1ca9b8f5739855b50e715437bf7e13054d39f917d0537f4d6bd27636a695292b",
+  "pacer_validation": {
+    "validation": {
+      "revision": "3f0f11def96caf2b075709f0813abe1bb33eb9648ee5299149d8b054dc8848a9",
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stop": {
+      "result": "PACER stop tier=prototype pace=none next=implement"
+    }
+  },
+  "implementation_status": "versioned_correspondence_repair_validated",
+  "anatomical_accuracy_accepted": false,
+  "global_research_inventory_complete": false,
+  "changes": [
+    {
+      "path": "src/facemath/observation/qualification.py",
+      "result": "Published dataset agreement no longer claims live blind-human validation; recorded native execution and declared reference kinds are separate."
+    },
+    {
+      "path": "src/facemath/observation/correspondence.py",
+      "result": "Immutable legacy MP1 and new MP4 assignments; new recipe binds correspondence identity and full anchor map."
+    },
+    {
+      "path": "src/facemath/observation/contracts.py",
+      "result": "Explicit v17 observations; historical v3 serialization/digests preserved; unknown or downgraded correspondence refused."
+    },
+    {
+      "path": "src/facemath/observation/study.py",
+      "result": "Frozen native worker correspondence and model compatibility use the same identity as reference prediction."
+    },
+    {
+      "path": "src/facemath/observation/canonical.py",
+      "result": "Mixed pair/anatomy correspondence refuses before geometry; existing full-mesh instrument retained."
+    },
+    {
+      "path": "src/facemath/observation/source_cohort.py",
+      "result": "Explicit v17 PTS plans; legacy recipes remain unchanged."
+    },
+    {
+      "path": "scripts/check_wheel.py",
+      "result": "Isolated pytest basetemp avoids shared Windows temporary-directory collisions; skip reasons retained."
+    }
+  ],
+  "parent": {
+    "parent": "C:\\Users\\ryanf\\github\\_active\\facemath\\packages\\facemath-0.16.0-enrollment-registry-20261003.zip",
+    "started": "2026-10-04T05:14:52.159491+00:00",
+    "sha256": "2fc6d608b1af69d92178244f80af430eaa74f01bec50106f6a3c6d05eceac1aa",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "-ra",
+      "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\parent-temp",
+      "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\parent.xml"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\parent\\facemath-0.16.0",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\parent\\facemath-0.16.0\\src",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1"
+    },
+    "returncode": 1,
+    "finished": "2026-10-04T05:20:18.994530+00:00"
+  },
+  "supported_parent_baseline": {
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "-ra",
+      "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\parent-supported-temp"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\parent\\facemath-0.16.0",
+    "started_utc": "2026-10-04T05:21:32.162611+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\parent\\facemath-0.16.0\\src",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "FACEMATH_MODEL": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\enrollment-registry-20261003\\dataset\\assets\\face_landmarker.task",
+      "FACEMATH_FACE": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\enrollment-registry-20261003\\dataset\\inputs\\case_00000.png"
+    },
+    "returncode": 0,
+    "seconds": 273.5,
+    "finished_utc": "2026-10-04T05:26:05.666285+00:00",
+    "summary": "1156 passed, 1 Windows directory-symlink skip; live smoke executed"
+  },
+  "preserved_historical_evidence": {
+    "historical_observations_unchanged": 19,
+    "legacy_roundtrips_exact": true,
+    "legacy_recipe_unchanged": true,
+    "diagnosis_sha256": "e17e208507c8b80436c40dfd77fa2048de6d8b79e42d378e875242ef13f770cb",
+    "diagnosis_html_sha256": "96cde37bd452c09d44950073270a823e920fb932b6a53957effc7c97c61f02b6"
+  },
+  "pre_fix_reproduction": {
+    "failure_reproduced": true,
+    "recipe_before": "d805baa53707cce9795a34b3e0e88347021888c1b708ee62a073d9da4a735c37",
+    "recipe_after": "d805baa53707cce9795a34b3e0e88347021888c1b708ee62a073d9da4a735c37",
+    "nose_before": [
+      402.1690261363983,
+      323.9691817164421
+    ],
+    "nose_after": [
+      403.4621360898018,
+      302.7542708516121
+    ],
+    "scope": "in-memory mutation in isolated diagnostic process; no file or observation bytes changed"
+  },
+  "superseded_candidate": {
+    "status": "superseded_and_stopped",
+    "at_utc": "2026-10-04T06:03:23.983000+00:00",
+    "reason": "Published dataset references were incorrectly labeled live_human_observer_validation=true. Source was fixed after the first archive had been sealed; the incomplete archive validation was stopped.",
+    "termination": "write_stdin control-C for owned release-01 exec session returned exit 1",
+    "preserved_run": "runs/landmark-repair-20261004/release-01",
+    "preserved_preseal_copy": "runs/landmark-repair-20261004/superseded-preseal-01",
+    "replacement_run": "runs/landmark-repair-20261004/release-02",
+    "same_frozen_source_plan": true,
+    "evaluation_already_seen": true,
+    "model_settings_changed": false,
+    "archive_qualified": false
+  },
+  "reference_reporting": {
+    "native_observation_executed": true,
+    "reference_kinds": [
+      "external_dataset"
+    ],
+    "declared_blind_human_references": false,
+    "live_human_observer_validation": false,
+    "external_reference_provenance_verified": false,
+    "anatomical_equivalence_verified": false,
+    "scope": "execution is recorded; reference kind and blinding are declarations, not external attestation"
+  },
+  "reporting_correction": {
+    "known_outcome_reexecution": true,
+    "first_run": "runs/landmark-repair-20261004/release-01/source-native",
+    "final_run": "runs\\landmark-repair-20261004\\release-02\\source-native",
+    "raw_observation_bytes_identical": true,
+    "fitted_model_bytes_identical": true,
+    "original_human_validation_flag": true,
+    "final_human_validation_flag": false,
+    "reference_evidence": {
+      "native_observation_executed": true,
+      "reference_kinds": [
+        "external_dataset"
+      ],
+      "declared_blind_human_references": false,
+      "live_human_observer_validation": false,
+      "external_reference_provenance_verified": false,
+      "anatomical_equivalence_verified": false,
+      "scope": "execution is recorded; reference kind and blinding are declarations, not external attestation"
+    },
+    "same_frozen_plan": true,
+    "settings_or_thresholds_retuned": false,
+    "additional_independent_sources": 0
+  },
+  "known_outcome_reexecution": true,
+  "legacy_model_refusal": {
+    "legacy_capsule_validated": true,
+    "legacy_model_sha256": "8f779b5a706f8188218a1e18a1dd5bcfb100e30632baa8efb90b9f9dc5dff4fd",
+    "refused_before_inference": true,
+    "reason": "transfer must preserve observer/rater/alpha contracts and cannot fit or admit",
+    "new_observer_recipe_sha256": "7f8ec09f36ddc9bf42ea8f6d75dde150529cb009b4bde49294fdeba11e884614",
+    "old_observer_recipe_sha256": "d805baa53707cce9795a34b3e0e88347021888c1b708ee62a073d9da4a735c37",
+    "native_calls": 0,
+    "scope": "known legacy native capsule rejected at recipe comparison, before enrollment or inference"
+  },
+  "validation": {
+    "source": {
+      "tests": 1178,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1177,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "installed_wheel": {
+      "tests": 1178,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1177,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    },
+    "extracted_archive": {
+      "tests": 1178,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1177,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ]
+    }
+  },
+  "installed_package": {
+    "verified": true,
+    "python_files": 88,
+    "import": {
+      "file": "C:\\Users\\ryanf\\AppData\\Local\\Temp\\facemath-installed-z5h7guq6\\installed\\facemath\\__init__.py",
+      "version": "0.17.0",
+      "code_sha256": "1ca9b8f5739855b50e715437bf7e13054d39f917d0537f4d6bd27636a695292b"
+    },
+    "scope": "installed wheel Python bytes; same interpreter dependencies, not a new dependency stack"
+  },
+  "native_study": {
+    "final_provenance_flag_corrected": true,
+    "plan": "examples/helen-correspondence-cohort.json",
+    "source_window": [
+      132,
+      192
+    ],
+    "registry_prior_cases": 255,
+    "next_registry_cases": 315,
+    "enrolled": 60,
+    "observed": 60,
+    "development_enrolled": 20,
+    "development_fitted": 19,
+    "development_rejected": [
+      [
+        "case_00002",
+        "unobservable_predicted_reference_points"
+      ]
+    ],
+    "calibration_groups": 20,
+    "evaluation_groups": 20,
+    "evaluation_covered_groups": 19,
+    "nose_median_old_eye_spans": 0.12026227959623571,
+    "nose_median_new_eye_spans": 0.05254879175679484,
+    "nose_relative_median_reduction": 0.5630484310357307,
+    "nose_within_005_old": 2,
+    "nose_within_005_new": 10,
+    "nose_cases_improved": 17,
+    "nose_cases_worsened": 3,
+    "raw_error_unit": "reference eye span",
+    "bound_width_unit": "observed eye span",
+    "chin": {
+      "name": "chin",
+      "enrolled": 20,
+      "observed": 20,
+      "within_005": 7,
+      "median_error_eye_spans": 0.07012140588001814
+    },
+    "bound_utility": {
+      "enrolled_cases": 20,
+      "eligible_cases": 20,
+      "prospectively_excluded": 0,
+      "enrolled_groups": 20,
+      "complete_landmark_groups": 20,
+      "finite_ratio_groups": 20,
+      "reasons": {
+        "bounded": 20
+      },
+      "landmark_diameter": {
+        "total": 160,
+        "finite": 160,
+        "unavailable": 0,
+        "minimum": 0.5252644574997152,
+        "median": 0.7537169187764949,
+        "maximum": 2.526402751782802
+      },
+      "eye_span": {
+        "total": 20,
+        "finite": 20,
+        "unavailable": 0,
+        "minimum": 0.6529595894283171,
+        "median": 0.6529595894283171,
+        "maximum": 0.6529595894283171
+      },
+      "mouth_width": {
+        "total": 20,
+        "finite": 20,
+        "unavailable": 0,
+        "minimum": 1.3398076632114535,
+        "median": 1.3604022282391375,
+        "maximum": 1.387134645241718
+      },
+      "mouth_eye_ratio": {
+        "total": 20,
+        "finite": 20,
+        "unavailable": 0,
+        "minimum": 2.0176801898125634,
+        "median": 2.213799459538492,
+        "maximum": 2.378648291981
+      }
+    },
+    "observed_arrays_unchanged_across_qualification": 120,
+    "source_wheel_archive_native_arrays_and_model_bytes_match": true,
+    "repeated_executions_are_new_independent_sources": false,
+    "empirical_admission": false
+  },
+  "native_pair": {
+    "cases": [
+      "case_00040",
+      "case_00041"
+    ],
+    "raw_arrays_unchanged": true,
+    "raw_arrays_checked": 142,
+    "raw_array_sha256": {
+      "observation_a_xy": "a70fb75aa64832625eb3c133f6a366ddbea2fce839ba7f2b94af911b7691f188",
+      "observation_b_xy": "b7d69aaa018dd99d0f09482968c69a4bced4994e289ca0a27e97eceb216a1ed6",
+      "landmark_supported": "db4a641a233232847e538bb0e910c0a9d89a7f16cf2b3d54c04285b68bf12f70",
+      "sensitivity_region_supported": "6d2924ef2583c5d66b0013a9d63b072d94409471a2abdbc7b7cb59496b9587e6",
+      "observation_a_samples": "57ee561853c81418eed3808f645240e36b9a1b5352fd3095698463606587efff",
+      "observation_b_samples": "2d2062a5989356610313739587c8c06163f1cacb0053acef63585636f60cecfb",
+      "observation_a_covariance": "d945f812dda1f6ba06a8c9dfadc9d40d08054a071d47d4bbc0fee6c48732ca3d",
+      "observation_b_covariance": "a8582500bbf54bea13b983507d4d0754db36110ad44abc5a5e363ce902ba4e57",
+      "canonical_a_xy": "341c15cd7ca07e588be224e5eb72ba87eea09bed1876fe8f0dbafca887db0098",
+      "canonical_b_xy": "92db507b2ac81ae7569f3af0ab75f806519bb1812e0c9f33ab197d73fbe74d9c",
+      "source_to_canonical_a": "ff5ee6218c4999e4434d8eb806702f1d573b46fb99473aad7e97e84eaa7c1a63",
+      "source_to_canonical_b": "929e909c905cc99ab2b71767abbdd3aaf6aa0d0b3a2dfdbc02daf150974834fb",
+      "canonical_to_source_a": "afa661a2bd7400d6a4a826f4c71b717b154f59248ffdc518bc76f9bec9e000dc",
+      "canonical_to_source_b": "c22e01ad29050ae4fa2afcb9f904fe047de38e05ed38614733b60df77acd3cb9",
+      "source_support_a": "610a045698b3aa535518ead20729374e3a95e40bee8909c14498b61a3372bf23",
+      "source_support_b": "40abcd2fa020998972b0ad471a67206458051634e41d3be2cc807adaed1bbdf9",
+      "photometric_support": "86b2d466c1f08eb1529ffddd04b18d21bac544b66dce491733609f5d35823933",
+      "registration_weights": "69c7d2f932eb1074519c533372d5e824ef1a0928e6e4710b79f837b5078e84bd",
+      "anatomical_uv": "c016f4d2e138a353dcd34792be76e3cb3fd1a596ee79981901a9fc95f0c63165",
+      "triangle_indices": "a3769b40508485f817856d0a226f9da8d9a9ab9bcc78ba65dc89db0453202046",
+      "simplex_index": "beb70185d93381722a9842c3531315a5c41bd479f9863e74ea14ca326d0c4473",
+      "triangle_jacobians": "a48e4fc2384602c386fa8b3fa2d0c119381c8a79d478c223f95175684a6f9e37",
+      "triangle_determinants": "2d3d881c2a1af56c10ef3ae0305b2b67b8432dfe37e0b581b8fc6bbda461f9b9",
+      "triangle_green_strain": "9e1b4050bf32361ea324a03a9c66b53452331458d1a6173b3ed1a2d72b01049d",
+      "triangle_principal_log_stretch": "b32929c8481cd2f5939668abbf59e5de4b04b9619306fa356d16c9b5ddde7208",
+      "triangle_condition": "85e557acaff6f26d572e29a5faa68c8d63cc0768c72c073d462e98e31fcf054a",
+      "triangle_valid": "0c22d94e03157e96eed82e49285a89a65946ae3ed04789fb436ead69911358e4",
+      "anatomical_support": "52321f84ec8c08e09fea0ad10277550c38342c33932c7b5009dfec9ad7c81158",
+      "landmark_residual_vectors": "efbcb188e4d2a1940415472d1c48054d3c4e6cfe2de8a0e7b460b74b5c6568f8",
+      "relational_distortion": "dd48306f4b0689a082d5fe67dd05371bfa73f2c93a9f3c60aee11c264e42cfc2",
+      "heldout_residual_vectors": "4d57402378f51faad5449414b57af875113790dd31465317fb4906cef9eacb7e",
+      "sensitivity_draws": "23194aab0b508195556fa1ac0d442e293acb04a4ec17ad9e9bac30343c63e462",
+      "region_a_face": "63de77beb4314711730df2830a759dc89e11a34d6f38f06f3736c351254b02f6",
+      "region_a_left_eye": "6b840934b4e8f3e9863699830498ffc19fb5ca1b6e5640612f10727d6603b9ac",
+      "region_a_right_eye": "2ac3fb0f82e68512a2dadeaa9b1d5dc0eded349f99e9cc9c1a412d0aa7c980a9",
+      "region_a_nose": "82c9bc640996a4804005a49e2162a699acd2b193c6d493156bbf583cb202d3a4",
+      "region_a_mouth": "d9c34e7c111de00438c23de32621539ee37fb8d81333f323a6c251d30488214f",
+      "region_a_jaw": "11a1376914a69926697a020f33df5a9db8e7d4e0d69fe814f2d6cdccd03bee4b",
+      "region_a_central": "deff76f302cd7d28cb8ae2f82b5cbdf2004153773f157eee0e5e97253e983e53",
+      "region_b_face": "76a781ac307daabd847625161b5df952a95552be710a88e313ce248159ed2692",
+      "region_b_left_eye": "c674c6e782ccbde2a0c15710e0286bdb0716b7c74c8211b3dd2069f2316260fb",
+      "region_b_right_eye": "a1cf1fc862c3938b08dcc7dc699d355c4ab1ad9d5d735a5440538d637bca7128",
+      "region_b_nose": "bfee04dd3299abf9247e0cbc92eef0b4292f59a10dee6624c2579f94af1024ec",
+      "region_b_mouth": "f9b05fc9d1a45a86daf41daefb24b950adb43c858ed8da4626cd3b2baf112815",
+      "region_b_jaw": "b975a82bd699ee3a5502e7d38d4721100ac5b4b4a4177e1ca04ebf292a4e7f17",
+      "region_b_central": "4e0b97caada1fafc28de4f74ea1ce5518617f49e0412e9c1209c089336e531e1",
+      "flow_uv": "ba66336b3ad9042dda2e8ba68e20de3d89d25ff8abd44a581fd0f641c87c8f2f",
+      "flow_cycle_error_px": "ef898d92f935ad07074b5f44aa4e1e7b41c2a2f6d37aaed7fe7156c9df188333",
+      "flow_texture_observability": "d223e5e6ce77edfa2562f9646ad964a3fd71ab3edf346f54cfb015fc2bbf3459",
+      "flow_photometric_residual": "7f50f9f4fb158a332e8312c3fc2648c02b4faa4c831bf71db205b22ef6c7b3e2",
+      "flow_anatomical_disagreement_px": "9a60c204a06b6b6ebec3e076784a7fd116bc25ae279e9efba3e9aee953b9e989",
+      "flow_admissible": "e60adb1f6cb5dc947cee1f1e5b90ad6bef9d2b37f301537f227d873d5ace98fc",
+      "flow_concordant": "17713b94b50c9b3f5c287a82b89eee297430f69bdf9471e9d8f1ed0f75a24171",
+      "edge_a_left_eye_points": "1a196e84f9f6807415d4045e8b4e620cee7b6c2786fe9652732a66ed8573b8dc",
+      "edge_a_left_eye_normals": "0ec5cdc647450e576044f7c66a79d0ca862487b25685eeca59f168a1e69c6b5b",
+      "edge_a_left_eye_offsets": "2abaa98594433ea5f3c1386e77ace22ad785648c6a6452098dd28b174a54e82f",
+      "edge_a_left_eye_response": "44e3302176942750686e218a17b184edb76a1de9431252fef52fad3ad507d213",
+      "edge_a_left_eye_orientation": "c59c0680ae9a0a3058a93553e01934c6f3589a96678884125abe0d59ecabf0a6",
+      "edge_a_left_eye_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+      "edge_a_left_eye_accepted": "4b6f9b2831384deea9202eb875616449e326a2222d0932193b270215745cae2d",
+      "edge_a_left_eye_best_offset_px": "f8974cfc04451da4a3c42c22989f9c67b140c08f1960a6657fa68d996e5ebdf7",
+      "edge_a_left_eye_peak_strength": "de4777a6968f5a60231276fe18aa30fb980780c1e38bf5c6bfbba566067ece1f",
+      "edge_a_left_eye_ambiguity_ratio": "d7eb4065db5c6079ec7223d6a1c394df9deb2470b988ed4a4493d9176d15a29e",
+      "edge_a_right_eye_points": "cf32b68c2fe29f80990daccfc98a0b0ed9d36db3948d6279b5520f8e93c3ef11",
+      "edge_a_right_eye_normals": "785fb36448648c55fb729730907e23d968b333720f3ffbd9b5988a7d89738fe8",
+      "edge_a_right_eye_offsets": "2abaa98594433ea5f3c1386e77ace22ad785648c6a6452098dd28b174a54e82f",
+      "edge_a_right_eye_response": "632c93ca647441fb78d3a9e67939336ce70498ed310b1db01eff2731fec89875",
+      "edge_a_right_eye_orientation": "6c81b1bce3bc7897bf7f6ee0d967e4bed726ceb47d0a7c62b6258689e5e7926d",
+      "edge_a_right_eye_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+      "edge_a_right_eye_accepted": "dbc87f3bb0ce944395c1e96fdf446ff9dfd09ddd58b7ea57d5828fdd438dfe8a",
+      "edge_a_right_eye_best_offset_px": "ffea862ea73b9b8c250e943fc4ba22c672eaab9ef8517353e322058a019643bd",
+      "edge_a_right_eye_peak_strength": "9b9b4c85a6f220d6e0f5a34aa4bd27e01bf1f8b6895fb22d6e7e76343ab728fe",
+      "edge_a_right_eye_ambiguity_ratio": "092b305e73db064027a301eccb74f618c3c43a4bcf7b50c05b0a074f291015d8",
+      "edge_a_mouth_points": "e7203a9d5c05a6b89bd9a45d3b36c49b7a06e65de30e096472076f12732be232",
+      "edge_a_mouth_normals": "37887593dd3f4267e67e1aa1b2b90b3b42e8e948ac4d4b907a027ab3e30b0f57",
+      "edge_a_mouth_offsets": "2abaa98594433ea5f3c1386e77ace22ad785648c6a6452098dd28b174a54e82f",
+      "edge_a_mouth_response": "450c92f58a9f093199064680f5d8b01e888be24ad5b1ad275c2a669a8f45dd56",
+      "edge_a_mouth_orientation": "26105b2afe010519e4329ec2850256b1da2878026269fefcbae637c23e60b174",
+      "edge_a_mouth_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+      "edge_a_mouth_accepted": "21255e2eb2c853e0dc8477c8e73b74ab58e49e959e48a0b9df179654f88b559d",
+      "edge_a_mouth_best_offset_px": "5a7bbeee17ffd9b194e63bc15d8e81828b541ea4250a224b74e7e22b388e1ddf",
+      "edge_a_mouth_peak_strength": "4e43b9e74ee93933f9d9ed1fd6a1046255515a1bcb221238284b2700eba8d523",
+      "edge_a_mouth_ambiguity_ratio": "09ab3cb0bfa20a23e010e8add8a9121b563c4f0d68a581a4e97c3247a8f2a050",
+      "edge_a_jaw_points": "2e24f99aa471ee197650aaee31a6d94f546cdef935660b089223f29aaf28cddb",
+      "edge_a_jaw_normals": "11180fd003a58ca2f987ca50fc1fc665a94f8c187c09b3efe2e66db3d0642a95",
+      "edge_a_jaw_offsets": "2abaa98594433ea5f3c1386e77ace22ad785648c6a6452098dd28b174a54e82f",
+      "edge_a_jaw_response": "439b3dbca36b0ced974f9088b711cf5acd592255bb4d26834ed79a9a9398f0b9",
+      "edge_a_jaw_orientation": "83d3796ec4f8595253ec13d851ca8df17eb3821c182ba7e5292876bb62d8eceb",
+      "edge_a_jaw_ray_supported": "83cb47670d22823a88d0602efa5fc5a28429d0adcff941e6a16479d9726ade9f",
+      "edge_a_jaw_accepted": "f2cb462e960d97a1f0b1f6d68f57c02cd759f93f72276a0c5bed568454e6572d",
+      "edge_a_jaw_best_offset_px": "8b1e0d0d836ebe706cebbf39586e0f78be66d9c217ecf4781434a24675923f30",
+      "edge_a_jaw_peak_strength": "939535874bf7e40389a8d326ee442a147bc7da8fc75f211e1cc4c44e7df26665",
+      "edge_a_jaw_ambiguity_ratio": "4a36ca7b13566ff12f32e72da14c0ace3da44abfc43dac556984b77f4ef19ef6",
+      "edge_b_left_eye_points": "34e539ea496ffefb7078d6554e3832b92a620470776ff716820b5acb84c32469",
+      "edge_b_left_eye_normals": "470d1f02ba363d909206b710a805cf2514e224fd8b221482dbfd8f491cb40fcf",
+      "edge_b_left_eye_offsets": "2abaa98594433ea5f3c1386e77ace22ad785648c6a6452098dd28b174a54e82f",
+      "edge_b_left_eye_response": "f5ee3bdf961f332ba1c5c82c574ca431eba0246e4722e94d1c1f77e494432eea",
+      "edge_b_left_eye_orientation": "64af6a9f6312e45c9b43ec103488501826486fd2637dc547c636d87b676036a3",
+      "edge_b_left_eye_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+      "edge_b_left_eye_accepted": "5a9b652fa968fd8cb374c0c33efdf8fd2953ae56bb565a91cb59cec7bb827c4d",
+      "edge_b_left_eye_best_offset_px": "479bf9b603bfbf746ea6e528693f2ecf53f15e7d95cc906b8dfa030a56fc84b2",
+      "edge_b_left_eye_peak_strength": "a3e86eeb7ab6b0769ff2f2627748600a4c6a229ff79a4641b95e3012e9975e80",
+      "edge_b_left_eye_ambiguity_ratio": "86beacd4d2dabeb6af5e36da4e61b65ff63f157d4ff8342bb1c4360c9b7d279a",
+      "edge_b_right_eye_points": "78e465f6be2d0eb832767a0717b9c146f74ae10fa02a1cb45b05115a5ca8b23b",
+      "edge_b_right_eye_normals": "f31911592498fa46921a5dd81768b278095c0a56f247238bddd43f9758cd5081",
+      "edge_b_right_eye_offsets": "2abaa98594433ea5f3c1386e77ace22ad785648c6a6452098dd28b174a54e82f",
+      "edge_b_right_eye_response": "7cdc952d476cad6172267e23734b583ab9ca0a238b8458fd98db48d292881973",
+      "edge_b_right_eye_orientation": "5331e534d41df2b2489eeb889446d7ad51a45f704e4be9ee55fee0e121b32301",
+      "edge_b_right_eye_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+      "edge_b_right_eye_accepted": "573c59a048e7035ccc9e3dffe9d890d73203f939885e1e1d42185c78b183e987",
+      "edge_b_right_eye_best_offset_px": "5a19969409cac4b3c4b06b870256698c7eed865c8fd8dc85080ce649f44aa826",
+      "edge_b_right_eye_peak_strength": "f1a138a8f7bb2be6b69a10f406321067ee1a672684d69df5e5cb471b24f4e509",
+      "edge_b_right_eye_ambiguity_ratio": "1c8baed367dad8db9a428727822278e6d9e32d87b5cddf6a6a498aa511e2b1c1",
+      "edge_b_mouth_points": "6d1fa2330ac591820729dbd80e56a6a86c118b64bde164aba56518983e6ace20",
+      "edge_b_mouth_normals": "949d5917cc6e650a62f1e2681d7f8b02c4b3da8dfbf2fa2ad19a70851f46977c",
+      "edge_b_mouth_offsets": "2abaa98594433ea5f3c1386e77ace22ad785648c6a6452098dd28b174a54e82f",
+      "edge_b_mouth_response": "de440958db6e54f3bfadc1b58e452cfcb27f10ec6e58346c88eda6665e697494",
+      "edge_b_mouth_orientation": "e554361c9f928ee83802ad60c871c5bda10ee1e124f2c982d853934d9dc5dcbf",
+      "edge_b_mouth_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+      "edge_b_mouth_accepted": "b12fbda5c94bbd408924d816e59171a019735878082ccbf23f94420598719cee",
+      "edge_b_mouth_best_offset_px": "ecf0c7832aebbbc6859c62fa228511759b0789de1e97190777ff68af247ac3b7",
+      "edge_b_mouth_peak_strength": "3c0f27a325f2341b1faaa2d27aad1803e5a1f3fdb47855580a7ca1d81f8a1a45",
+      "edge_b_mouth_ambiguity_ratio": "85cd44fa1fbfb9611b5c9e29e78882d0b1ced0fb3c1a65dcbd4dcf03ca6db507",
+      "edge_b_jaw_points": "8ee63b68053aa8d936fa9f8e736b53b4f8d68aa249f15de321525f7e543c48bf",
+      "edge_b_jaw_normals": "ba2072974c2f7d7e3407509d80c3b4bf8fb6910e89138e4c12b9f20b7f5683b2",
+      "edge_b_jaw_offsets": "2abaa98594433ea5f3c1386e77ace22ad785648c6a6452098dd28b174a54e82f",
+      "edge_b_jaw_response": "88ca9532a641b278e2c6478f7162adad04eb075901f33b7ed2dac139c1ca45da",
+      "edge_b_jaw_orientation": "34d226b367e6470b4836f80f6b054b728fe5010605547a7d8452bc1f29d6216d",
+      "edge_b_jaw_ray_supported": "46d8b0e591307942528fc0f34f387c88b336cd9e4f5d7cffde46b4c9303a29e5",
+      "edge_b_jaw_accepted": "44dbbbb4db62180d607ea7b49847f38c831fa17f21a6ab567789863f5e284b2b",
+      "edge_b_jaw_best_offset_px": "68be0232e5aeb294c6ef9cbb03269ab6dade624e265df38f8468587f0905a44c",
+      "edge_b_jaw_peak_strength": "9d353e80d2a465b3251d8ee740906117699e9a63f13dbd10881a09d40173a24c",
+      "edge_b_jaw_ambiguity_ratio": "4e0dc3ad898dfd3363c63c978d1a3ae406c6647ec7f4657592dd59797d46efee",
+      "intrinsic_raw_points": "3503bd282e94ca0aa98b583e5d500eab173d4687707d872fbe580080755a7778",
+      "intrinsic_source_covariance": "3cf8732daa0008cf68363072c93346fa2220afb347a197b7f1f926676b4317fa",
+      "intrinsic_source_chart": "6d1a68840128f99ea566766b7db86f0a9f7b5def7a768bb94126023029e37e85",
+      "intrinsic_source_supported": "0546b734e89eeda8fff9c3cc04e96fd3212ead7ae61f7fcb48bd82dacb876467",
+      "intrinsic_nominal": "f491a64ceb2db5123ead140c1a70895b3d42debe8d3585265d87241a3f36b084",
+      "intrinsic_nominal_valid": "38012a87475e44c75ce1a642a6439d3ccf926acfaa92e265c9c5387ae5847c91",
+      "intrinsic_relation_a": "4d0c45f2fc2c91f88144ea78feeed0be84b34f0718bcad45529a2332c9d86836",
+      "intrinsic_relation_b": "c51bbb3dc312e09adf29977b42c15ac30e4a0b77ef4c4f56eb1218527831d37e",
+      "intrinsic_support_normals": "ad1896baf51f3f592905f190c88bd271f77c064497c409e907ca2478230bef7a"
+    },
+    "native_vertices_per_image": 478,
+    "relational_matrix_shape": [
+      478,
+      478
+    ],
+    "config": {
+      "engine": "facemath-observation-7.0",
+      "canvas_size": 256,
+      "eye_span_px": 80.0,
+      "minimum_source_eye_span_px": 8.0,
+      "huber_delta_ipd": 0.04,
+      "fit_iterations": 8,
+      "uncertainty_draws": 96,
+      "seed": 0,
+      "tolerance_ipd": 0.05,
+      "max_triangle_condition": 100.0,
+      "fb_threshold_px": 1.5,
+      "texture_floor": 2e-05,
+      "sparse_dense_tolerance_ipd": 0.04,
+      "enable_flow": true,
+      "enable_edges": true,
+      "edge_samples": 32,
+      "edge_radius_ipd": 0.05,
+      "edge_gradient_floor": 0.025,
+      "edge_maximum_ambiguity": 0.85,
+      "enable_intrinsic": true,
+      "intrinsic_length_tolerance": 0.05,
+      "intrinsic_angle_tolerance_rad": 0.08726646259971647,
+      "intrinsic_area_tolerance": 0.05,
+      "intrinsic_asymmetry_tolerance": 0.05,
+      "intrinsic_directions": 128
+    },
+    "calibration_sha256": "09d1a8e986a4775a37599d13eead864960223018ab368207d9b50aa6e0d9fb84",
+    "empirical_admission": false,
+    "scope": "Full native pair instrument on two declared evaluation portraits; attaching the research model preserves measured geometry"
+  },
+  "artifacts": {
+    "native_pair_report": "evidence/landmark-correspondence-20261004/native-pair-final/calibrated/report.html",
+    "source_audit": "evidence/landmark-correspondence-20261004/source-audit-final.json",
+    "heldout_plot": "evidence/landmark-correspondence-20261004/evaluation-nose-errors.png",
+    "model": "evidence/landmark-correspondence-20261004/model-final.json",
+    "next_registry": "evidence/landmark-correspondence-20261004/next-registry.json",
+    "raw_release_records": "evidence/landmark-correspondence-release-20261004",
+    "archive": "packages/facemath-0.17.0-correspondence-20261004.zip",
+    "archive_sha256": "ea5fec7d4f162696d2c61390801147f7d38f86adbb37a5ead7f9ccd676b1d2a2",
+    "wheel": "runs\\landmark-repair-20261004\\release-02\\wheels\\facemath-0.17.0-py3-none-any.whl"
+  },
+  "remaining": [
+    {
+      "id": "LOCALIZATION-PRECISION",
+      "status": "NOT_ACCEPTED",
+      "evidence": "10/20 nose points meet 0.05; broad marginal diameters median 0.754 and maximum 2.526 eye spans; three nose cases worsened.",
+      "next": "Diagnose residuals only on development inputs; freeze any revised estimator and a new unseen evaluation before outcomes."
+    },
+    {
+      "id": "CHIN-CORRESPONDENCE",
+      "status": "UNRESOLVED",
+      "evidence": "7/20 within 0.05; median error 0.070121 eye spans; no replacement selected.",
+      "next": "Review original development chin contour/pose/visibility semantics before proposing a new mapping."
+    },
+    {
+      "id": "ANATOMICAL-VALIDATION",
+      "status": "OPEN",
+      "evidence": "Published PTS agreement does not verify anatomy, visibility, person independence or native-training separation.",
+      "next": "Acquire independently supported anatomical/visibility references under a frozen protocol."
+    },
+    {
+      "id": "CROSS-PLATFORM",
+      "status": "NOT_EXECUTED_FOR_017",
+      "evidence": "This repair validates Windows with the retained Python 3.11 runtime.",
+      "next": "Run other supported hosts separately; exact replay must enforce recorded numerical-runtime compatibility."
+    },
+    {
+      "id": "CHECKOUT-ENVIRONMENT",
+      "status": "STALE_ENVIRONMENT_RETAINED",
+      "evidence": "The initial .venv baseline failed on OpenCV 5 and stale 0.8 metadata; no tests were weakened.",
+      "next": "Use runs/enrollment-registry-20261003/env311/Scripts/python.exe, the validated 0.17 interpreter, or sync a supported locked environment."
+    }
+  ],
+  "completion_boundary": "Implementation, native study, raw-array invariance and Windows source/wheel/archive validation complete. Product precision, anatomical acceptance and the historical research inventory are not declared complete.",
+  "publication": {
+    "committed": false,
+    "pushed": false,
+    "package_created_locally": true
+  },
+  "commands": [
+    {
+      "name": "environment",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-c",
+        "import json; from facemath.observation.journal import environment; print(json.dumps(environment(),indent=2))"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T06:01:19.105910+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:01:19.985595+00:00"
+    },
+    {
+      "name": "lock-check",
+      "command": [
+        "C:\\Users\\ryanf\\AppData\\Roaming\\Python\\Python313\\Scripts\\uv.EXE",
+        "lock",
+        "--check"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T06:01:19.994102+00:00",
+      "environment": {
+        "PYTHONPATH": null,
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:01:20.015640+00:00"
+    },
+    {
+      "name": "native-runtime",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\scripts\\check_native_runtime.py",
+        "--dataset",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\landmark-correspondence-20261004\\intake\\dataset",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\native-runtime"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T06:01:20.016644+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:01:24.955345+00:00"
+    },
+    {
+      "name": "source-tests",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "-ra",
+        "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\source.xml",
+        "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\source-temp"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T06:01:24.955345+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:06:11.454489+00:00"
+    },
+    {
+      "name": "source-native",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "dataset",
+        "run",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\landmark-correspondence-20261004\\intake\\dataset",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\source-native",
+        "--registry",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\landmark-correspondence-20261004\\registry.json"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T06:06:11.454489+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:09:04.502717+00:00"
+    },
+    {
+      "name": "source-milestone",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "milestone-lab",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\source-lab"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T06:09:04.503720+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:12:34.185126+00:00"
+    },
+    {
+      "name": "source-qualification-verify",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "verify",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\source-lab\\positive\\qualification"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T06:12:34.186126+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:12:38.586871+00:00"
+    },
+    {
+      "name": "source-qualification-replay",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "replay",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\source-lab\\positive\\qualification",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\source-qualification-replay"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T06:12:38.587875+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:12:55.281031+00:00"
+    },
+    {
+      "name": "source-pair-verify",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "verify",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\source-lab\\admitted_pair"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T06:12:55.282032+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:13:15.127676+00:00"
+    },
+    {
+      "name": "source-pair-replay",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "replay",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\source-lab\\admitted_pair",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\source-pair-replay"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T06:13:15.127676+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:14:12.415107+00:00"
+    },
+    {
+      "name": "wheel-build",
+      "command": [
+        "C:\\Users\\ryanf\\AppData\\Roaming\\Python\\Python313\\Scripts\\uv.EXE",
+        "build",
+        "--wheel",
+        "--out-dir",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\wheels"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T06:14:12.422614+00:00",
+      "environment": {
+        "PYTHONPATH": null,
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:14:14.865930+00:00"
+    },
+    {
+      "name": "wheel-check",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\scripts\\check_wheel.py",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\wheels\\facemath-0.17.0-py3-none-any.whl",
+        "--tests",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\tests",
+        "--bundle",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\source-lab\\positive\\qualification",
+        "--pair-bundle",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\source-lab\\admitted_pair",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\wheel-check",
+        "--milestone",
+        "--native-dataset",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\landmark-correspondence-20261004\\intake\\dataset",
+        "--registry",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\landmark-correspondence-20261004\\registry.json"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+      "started_utc": "2026-10-04T06:14:14.865930+00:00",
+      "environment": {
+        "PYTHONPATH": null,
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:27:54.404331+00:00"
+    },
+    {
+      "name": "archive-tests",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "-ra",
+        "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\archive.xml",
+        "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\archive-temp"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\extracted\\facemath-0.17.0",
+      "started_utc": "2026-10-04T06:31:36.754825+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\extracted\\facemath-0.17.0\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:39:46.477146+00:00"
+    },
+    {
+      "name": "archive-milestone",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "milestone-lab",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\archive-lab"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\extracted\\facemath-0.17.0",
+      "started_utc": "2026-10-04T06:39:46.478644+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\extracted\\facemath-0.17.0\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:46:00.918330+00:00"
+    },
+    {
+      "name": "archive-qualification-verify",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "verify",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\archive-lab\\positive\\qualification"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\extracted\\facemath-0.17.0",
+      "started_utc": "2026-10-04T06:46:00.919330+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\extracted\\facemath-0.17.0\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:46:08.836017+00:00"
+    },
+    {
+      "name": "archive-qualification-replay",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "replay",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\archive-lab\\positive\\qualification",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\archive-qualification-replay"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\extracted\\facemath-0.17.0",
+      "started_utc": "2026-10-04T06:46:08.836515+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\extracted\\facemath-0.17.0\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:46:36.848504+00:00"
+    },
+    {
+      "name": "archive-pair-verify",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "verify",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\archive-lab\\admitted_pair"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\extracted\\facemath-0.17.0",
+      "started_utc": "2026-10-04T06:46:36.849511+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\extracted\\facemath-0.17.0\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:47:11.710327+00:00"
+    },
+    {
+      "name": "archive-pair-replay",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "replay",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\archive-lab\\admitted_pair",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\archive-pair-replay"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\extracted\\facemath-0.17.0",
+      "started_utc": "2026-10-04T06:47:11.711833+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\extracted\\facemath-0.17.0\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:48:57.770096+00:00"
+    },
+    {
+      "name": "archive-native",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "dataset",
+        "run",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\extracted\\facemath-0.17.0\\evidence\\landmark-correspondence-20261004\\intake\\dataset",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\archive-native",
+        "--registry",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\extracted\\facemath-0.17.0\\evidence\\landmark-correspondence-20261004\\registry.json"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\extracted\\facemath-0.17.0",
+      "started_utc": "2026-10-04T06:48:57.771101+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\landmark-repair-20261004\\release-02\\extracted\\facemath-0.17.0\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T06:53:47.169274+00:00"
+    }
+  ]
+}

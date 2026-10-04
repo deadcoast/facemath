@@ -169,3 +169,24 @@ def test_attempt_contract(outcome):
     else:
         with pytest.raises(ObservationError):AttemptOutcome(outcome)
         assert AttemptOutcome(outcome,detail='recorded reason').status==outcome
+
+
+@pytest.mark.parametrize('kind', ['external_dataset', 'model_generated', 'synthetic_fixture', 'manual_unblinded'])
+def test_native_execution_does_not_promote_reference_kind_to_human_validation(kind):
+    from facemath.observation.qualification import reference_evidence
+    evidence = reference_evidence('native_mediapipe', 60, {kind})
+    assert evidence['native_observation_executed']
+    assert evidence['reference_kinds'] == [kind]
+    assert not evidence['live_human_observer_validation']
+    assert not evidence['external_reference_provenance_verified']
+    assert not evidence['anatomical_equivalence_verified']
+
+
+def test_declared_blind_references_require_recorded_native_observations():
+    from facemath.observation.qualification import reference_evidence
+    assert not reference_evidence('native_mediapipe', 0, {'human_blind'})['live_human_observer_validation']
+    assert not reference_evidence('synthetic_fixture', 60, {'human_blind'})['live_human_observer_validation']
+    evidence = reference_evidence('native_mediapipe', 60, {'human_blind'})
+    assert evidence['live_human_observer_validation']
+    assert not evidence['external_reference_provenance_verified']
+    assert not evidence['anatomical_equivalence_verified']

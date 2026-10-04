@@ -77,8 +77,11 @@ class Observation:
     sample_labels: tuple[str, ...] = ("source",)
     source_notes: tuple[str, ...] = ()
     metadata_json: str = "{}"
+    correspondence: str | None = None
 
     def __post_init__(self) -> None:
+        from .correspondence import require_correspondence
+        require_correspondence(self.schema, self.correspondence)
         names = tuple(self.names)
         xy, samples = frozen_array(self.xy), frozen_array(self.samples)
         if len(set(names)) != len(names) or any(not n for n in names):
@@ -137,7 +140,9 @@ class Observation:
 
     def to_dict(self) -> dict[str, Any]:
         return {
-            "format": "facemath.observation.v3", "image_sha256": self.image_sha256,
+            "format": "facemath.observation.v17" if self.correspondence is not None else "facemath.observation.v3",
+            **({"correspondence": self.correspondence} if self.correspondence is not None else {}),
+            "image_sha256": self.image_sha256,
             "image_shape": list(self.image_shape), "schema": self.schema,
             "names": list(self.names), "xy": self.xy.tolist(), "samples": self.samples.tolist(),
             "provider": self.provider, "provider_fingerprint": self.provider_fingerprint,
@@ -149,8 +154,11 @@ class Observation:
 
     @classmethod
     def from_dict(cls, obj: Mapping[str, Any]) -> Observation:
-        if obj.get("format") != "facemath.observation.v3":
+        if obj.get("format") not in ("facemath.observation.v3", "facemath.observation.v17"):
             raise ObservationError("unsupported observation format")
+        if ((obj["format"] == "facemath.observation.v17" and obj.get("correspondence") is None)
+                or (obj["format"] == "facemath.observation.v3" and "correspondence" in obj)):
+            raise ObservationError("observation format requires its original correspondence identity")
         return cls(
             image_sha256=obj["image_sha256"], image_shape=tuple(obj["image_shape"]),
             schema=obj["schema"], names=tuple(obj["names"]), xy=obj["xy"], samples=obj["samples"],
@@ -158,6 +166,7 @@ class Observation:
             noise_floor_px=obj["noise_floor_px"], attempted_samples=obj["attempted_samples"],
             sample_labels=tuple(obj["sample_labels"]), source_notes=tuple(obj["source_notes"]),
             metadata_json=canonical_json(obj["metadata"]),
+            correspondence=obj.get("correspondence"),
         )
 
 

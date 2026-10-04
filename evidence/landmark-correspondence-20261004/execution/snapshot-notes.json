@@ -1,0 +1,9 @@
+{
+  "during_run_snapshots": [
+    {
+      "partial_snapshot": "historical-preservation.log",
+      "complete_snapshot": "historical-preservation.completed.log"
+    }
+  ],
+  "reason": "The preservation command copied its own open log before printing its result. The completed log is retained under a distinct name."
+}

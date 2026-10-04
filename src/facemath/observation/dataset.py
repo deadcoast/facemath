@@ -44,6 +44,8 @@ def _recipe(path: Path) -> dict:
         verify_recipe(recipe)
     elif recipe.get("format") != RECIPE_FORMAT or recipe.get("label_kind") != "model_generated":
         raise ObservationError("this adapter requires an explicit model_generated dlib recipe")
+    if not pts and "correspondence" in recipe:
+        raise ObservationError("explicit correspondence requires a v17 PTS dataset recipe")
     if type(recipe.get("coordinate_origin")) is not int or recipe["coordinate_origin"] not in (0, 1):
         raise ObservationError("declare coordinate origin 0 or 1")
     margin = recipe.get("box_margin")
@@ -232,7 +234,8 @@ def _plan(recipe: dict, assets: Path) -> tuple[list, dict]:
             records.append({"case_id": case_id, "source": entry["path"], "annotation": annotation,
                             "source_box_index": box_index, "image_sha256": ref.image_sha256,
                             "reference_sha256": ref.digest, **metadata})
-    observer = ObserverDeclaration.mediapipe(pins[recipe["model_asset"]]["sha256"], recipe["runtime_version"])
+    observer = ObserverDeclaration.mediapipe(pins[recipe["model_asset"]]["sha256"], recipe["runtime_version"],
+                                           correspondence=recipe.get("correspondence"))
     spec = {**recipe["protocol"], "format": "facemath.prospective_study.v5", "observer": observer.to_dict(),
             "cases": [case for case, _, _ in cases]}
     return cases, {"study_spec": spec, "conversions": records}

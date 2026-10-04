@@ -41,7 +41,8 @@ def main() -> None:
              '--no-deps', '--no-index', '--target', str(target), str(wheel)],
             [sys.executable, '-c', 'import facemath,json; from facemath.observation.journal import code_fingerprint; '
              'print(json.dumps({"file":facemath.__file__,"version":facemath.__version__,"code_sha256":code_fingerprint()}))'],
-            [sys.executable, '-m', 'pytest', '-q', str(tests), '-c', str(config), f'--junitxml={out / "pytest.xml"}'],
+            [sys.executable, '-m', 'pytest', '-q', '-ra', str(tests), '-c', str(config),
+             f'--basetemp={work / "pytest-temp"}', f'--junitxml={out / "pytest.xml"}'],
             [sys.executable, '-m', 'facemath', 'verify', str(bundle)],
             [sys.executable, '-m', 'facemath', 'replay', str(bundle), '--out', str(out / 'replayed')],
         ]

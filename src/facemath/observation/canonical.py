@@ -12,7 +12,7 @@ from typing import Mapping
 import cv2
 import numpy as np
 
-from .anatomy import Anatomy, anatomical_masks, eye_span
+from .anatomy import Anatomy, anatomy_for, anatomical_masks, eye_span
 from .contracts import Observation, ObservationError, frozen_array, object_digest
 from .provider import apply_points
 
@@ -272,6 +272,8 @@ def canonicalize(image_a: np.ndarray, image_b: np.ndarray, a: Observation, b: Ob
     b.require_image(image_b)
     if a.schema != b.schema or a.names != b.names:
         raise ObservationError("both observations must use identical semantic ordering")
+    if anatomy.digest != anatomy_for(a).digest or anatomy.digest != anatomy_for(b).digest:
+        raise ObservationError("both observations and canonical anatomy must use identical correspondence")
     warnings = []
     for label, obs in (("a", a), ("b", b)):
         span = eye_span(obs.xy, anatomy)

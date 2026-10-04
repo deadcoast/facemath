@@ -13,19 +13,9 @@ import cv2
 import numpy as np
 
 from .contracts import Observation, ObservationError, object_digest
+from .correspondence import SEMANTIC_21, MP_ANCHORS, mediapipe_anchors
 
-# Names shared with Wave 2, now with an explicit image-side convention.
-SEMANTIC_21 = (
-    "temple_left", "temple_right", "left_eye_outer", "left_eye_inner",
-    "left_eye_top", "left_eye_bottom", "right_eye_inner", "right_eye_outer",
-    "right_eye_top", "right_eye_bottom", "nose_bridge", "nose_tip",
-    "left_nostril", "right_nostril", "mouth_left", "mouth_right",
-    "upper_lip", "lower_lip", "chin", "jaw_left", "jaw_right",
-)
-MP_ANCHORS = dict(zip(SEMANTIC_21, (
-    127, 356, 33, 133, 159, 145, 362, 263, 386, 374, 168, 1,
-    98, 327, 61, 291, 0, 17, 152, 172, 397,
-)))
+# Re-export the immutable historical table for existing research consumers.
 MP_CONTOURS = {
     "left_eye": (33, 160, 158, 133, 153, 144),
     "right_eye": (263, 387, 385, 362, 380, 373),
@@ -77,8 +67,12 @@ def anatomy_for(obs: Observation) -> Anatomy:
     if obs.schema == "mediapipe478.v1":
         if obs.names != tuple(f"mp_{i:03}" for i in range(478)):
             raise ObservationError("MediaPipe schema requires exactly the ordered 478 stable IDs")
-        anchors = {k: (v,) for k, v in MP_ANCHORS.items()}
+        anchors = {k: (v,) for k, v in mediapipe_anchors(obs.correspondence).items()}
         contours = MP_CONTOURS
+        if obs.correspondence is not None:
+            # Include the selected apex in the shared nose region, retaining
+            # every old path vertex and the historical grammar for v3 inputs.
+            contours = {**MP_CONTOURS, "nose": (168, 197, 5, 4, 1, 2, 98, 97, 2, 326, 327)}
     elif obs.schema == "semantic21.v1":
         if set(obs.names) != set(SEMANTIC_21):
             raise ObservationError("semantic21 schema needs all 21 semantic names")

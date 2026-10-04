@@ -1,0 +1,1522 @@
+{
+  "format": "facemath.bundle.v3",
+  "recipe_sha256": "7948667e69aab1534823272c1f192acb5fa8eadf76a1cf8fed193edc5fcb5185",
+  "files": {
+    "arrays.npz": {
+      "sha256": "7d1bc84606c24574204d51ba463827ab7c6b802e0a7c1474312b9aa16773a99e",
+      "bytes": 4723719
+    },
+    "canonical_a.png": {
+      "sha256": "4886b2ff70468467867b72d70a83f0da284a24c7a0aa1c507a2a6d500660f854",
+      "bytes": 142205
+    },
+    "canonical_b.png": {
+      "sha256": "83b74b380c71ac7ad0987a4f72f8e1b8cd1985ae55524c7b808f6df7f860e100",
+      "bytes": 122120
+    },
+    "environment.json": {
+      "sha256": "fb811c27b30abf7ff04992872de888ef606ed783aec4aed5f5ad7a1fdd2b7dbf",
+      "bytes": 60621
+    },
+    "events.jsonl": {
+      "sha256": "1a3fbcf6a7f92528e3752715a28197546b003eccc9726b0b3a1ae13a74227ead",
+      "bytes": 51308
+    },
+    "evidence.json": {
+      "sha256": "56004de8e625504d2f2ae0160103cb0cf5a9550ebe1e874c68c614986de20ef5",
+      "bytes": 372677
+    },
+    "intrinsic.csv": {
+      "sha256": "41cce7780ce0f7566bd3064008b1f5286478754db775383733eb9ab779c2eaaf",
+      "bytes": 49639
+    },
+    "intrinsic.json": {
+      "sha256": "d558427b16a0a469fb2a4f0f58c999f7ec376f0a17e2f1df7b003f4965329f5c",
+      "bytes": 321237
+    },
+    "landmark_overlay.png": {
+      "sha256": "f5390aa569871257ae4982eddda4d7200a71a6953b50b7f854fdeb0ae59fad97",
+      "bytes": 142351
+    },
+    "localization_calibration.json": {
+      "sha256": "8cddf503c1bcdcf43b6dafd446abdc1d533d61b6563180971f5c8afaa5c029ef",
+      "bytes": 219518
+    },
+    "observations.json": {
+      "sha256": "babaa4baf1470c94414e8a73a3db98662a3e33bcc77b3250e9b06addb198c36a",
+      "bytes": 1680301
+    },
+    "report.html": {
+      "sha256": "0c484caf094c42125b874e896f76d594d26ddf1e926d2102a15ce0758919d0a2",
+      "bytes": 1213119
+    },
+    "source_a.png": {
+      "sha256": "cb4bf4994679b6829d43410c56b976606991def87c1b470b1b18555e5fbc4ed3",
+      "bytes": 4412720
+    },
+    "source_b.png": {
+      "sha256": "aa3015cc5c70f91ec54dfcdc66633aa99d80d8bd6d1954f03afdefd8a23cf9d1",
+      "bytes": 1407278
+    },
+    "summary.json": {
+      "sha256": "2612a14138bfd7b2bed7a508a31d2439c929b373bf28e24d6f7fbb7def7c56a1",
+      "bytes": 4877
+    }
+  },
+  "arrays": {
+    "anatomical_support": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "52321f84ec8c08e09fea0ad10277550c38342c33932c7b5009dfec9ad7c81158"
+    },
+    "anatomical_uv": {
+      "shape": [
+        256,
+        256,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "c016f4d2e138a353dcd34792be76e3cb3fd1a596ee79981901a9fc95f0c63165"
+    },
+    "canonical_a_xy": {
+      "shape": [
+        478,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "341c15cd7ca07e588be224e5eb72ba87eea09bed1876fe8f0dbafca887db0098"
+    },
+    "canonical_b_xy": {
+      "shape": [
+        478,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "92db507b2ac81ae7569f3af0ab75f806519bb1812e0c9f33ab197d73fbe74d9c"
+    },
+    "canonical_to_source_a": {
+      "shape": [
+        3,
+        3
+      ],
+      "dtype": "<f8",
+      "sha256": "afa661a2bd7400d6a4a826f4c71b717b154f59248ffdc518bc76f9bec9e000dc"
+    },
+    "canonical_to_source_b": {
+      "shape": [
+        3,
+        3
+      ],
+      "dtype": "<f8",
+      "sha256": "c22e01ad29050ae4fa2afcb9f904fe047de38e05ed38614733b60df77acd3cb9"
+    },
+    "edge_a_jaw_accepted": {
+      "shape": [
+        32
+      ],
+      "dtype": "|b1",
+      "sha256": "f2cb462e960d97a1f0b1f6d68f57c02cd759f93f72276a0c5bed568454e6572d"
+    },
+    "edge_a_jaw_ambiguity_ratio": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "4a36ca7b13566ff12f32e72da14c0ace3da44abfc43dac556984b77f4ef19ef6"
+    },
+    "edge_a_jaw_best_offset_px": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "8b1e0d0d836ebe706cebbf39586e0f78be66d9c217ecf4781434a24675923f30"
+    },
+    "edge_a_jaw_normals": {
+      "shape": [
+        32,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "11180fd003a58ca2f987ca50fc1fc665a94f8c187c09b3efe2e66db3d0642a95"
+    },
+    "edge_a_jaw_offsets": {
+      "shape": [
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "2abaa98594433ea5f3c1386e77ace22ad785648c6a6452098dd28b174a54e82f"
+    },
+    "edge_a_jaw_orientation": {
+      "shape": [
+        32,
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "83d3796ec4f8595253ec13d851ca8df17eb3821c182ba7e5292876bb62d8eceb"
+    },
+    "edge_a_jaw_peak_strength": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "939535874bf7e40389a8d326ee442a147bc7da8fc75f211e1cc4c44e7df26665"
+    },
+    "edge_a_jaw_points": {
+      "shape": [
+        32,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "2e24f99aa471ee197650aaee31a6d94f546cdef935660b089223f29aaf28cddb"
+    },
+    "edge_a_jaw_ray_supported": {
+      "shape": [
+        32
+      ],
+      "dtype": "|b1",
+      "sha256": "83cb47670d22823a88d0602efa5fc5a28429d0adcff941e6a16479d9726ade9f"
+    },
+    "edge_a_jaw_response": {
+      "shape": [
+        32,
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "439b3dbca36b0ced974f9088b711cf5acd592255bb4d26834ed79a9a9398f0b9"
+    },
+    "edge_a_left_eye_accepted": {
+      "shape": [
+        32
+      ],
+      "dtype": "|b1",
+      "sha256": "4b6f9b2831384deea9202eb875616449e326a2222d0932193b270215745cae2d"
+    },
+    "edge_a_left_eye_ambiguity_ratio": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "d7eb4065db5c6079ec7223d6a1c394df9deb2470b988ed4a4493d9176d15a29e"
+    },
+    "edge_a_left_eye_best_offset_px": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "f8974cfc04451da4a3c42c22989f9c67b140c08f1960a6657fa68d996e5ebdf7"
+    },
+    "edge_a_left_eye_normals": {
+      "shape": [
+        32,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "0ec5cdc647450e576044f7c66a79d0ca862487b25685eeca59f168a1e69c6b5b"
+    },
+    "edge_a_left_eye_offsets": {
+      "shape": [
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "2abaa98594433ea5f3c1386e77ace22ad785648c6a6452098dd28b174a54e82f"
+    },
+    "edge_a_left_eye_orientation": {
+      "shape": [
+        32,
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "c59c0680ae9a0a3058a93553e01934c6f3589a96678884125abe0d59ecabf0a6"
+    },
+    "edge_a_left_eye_peak_strength": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "de4777a6968f5a60231276fe18aa30fb980780c1e38bf5c6bfbba566067ece1f"
+    },
+    "edge_a_left_eye_points": {
+      "shape": [
+        32,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "1a196e84f9f6807415d4045e8b4e620cee7b6c2786fe9652732a66ed8573b8dc"
+    },
+    "edge_a_left_eye_ray_supported": {
+      "shape": [
+        32
+      ],
+      "dtype": "|b1",
+      "sha256": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71"
+    },
+    "edge_a_left_eye_response": {
+      "shape": [
+        32,
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "44e3302176942750686e218a17b184edb76a1de9431252fef52fad3ad507d213"
+    },
+    "edge_a_mouth_accepted": {
+      "shape": [
+        32
+      ],
+      "dtype": "|b1",
+      "sha256": "21255e2eb2c853e0dc8477c8e73b74ab58e49e959e48a0b9df179654f88b559d"
+    },
+    "edge_a_mouth_ambiguity_ratio": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "09ab3cb0bfa20a23e010e8add8a9121b563c4f0d68a581a4e97c3247a8f2a050"
+    },
+    "edge_a_mouth_best_offset_px": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "5a7bbeee17ffd9b194e63bc15d8e81828b541ea4250a224b74e7e22b388e1ddf"
+    },
+    "edge_a_mouth_normals": {
+      "shape": [
+        32,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "37887593dd3f4267e67e1aa1b2b90b3b42e8e948ac4d4b907a027ab3e30b0f57"
+    },
+    "edge_a_mouth_offsets": {
+      "shape": [
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "2abaa98594433ea5f3c1386e77ace22ad785648c6a6452098dd28b174a54e82f"
+    },
+    "edge_a_mouth_orientation": {
+      "shape": [
+        32,
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "26105b2afe010519e4329ec2850256b1da2878026269fefcbae637c23e60b174"
+    },
+    "edge_a_mouth_peak_strength": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "4e43b9e74ee93933f9d9ed1fd6a1046255515a1bcb221238284b2700eba8d523"
+    },
+    "edge_a_mouth_points": {
+      "shape": [
+        32,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "e7203a9d5c05a6b89bd9a45d3b36c49b7a06e65de30e096472076f12732be232"
+    },
+    "edge_a_mouth_ray_supported": {
+      "shape": [
+        32
+      ],
+      "dtype": "|b1",
+      "sha256": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71"
+    },
+    "edge_a_mouth_response": {
+      "shape": [
+        32,
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "450c92f58a9f093199064680f5d8b01e888be24ad5b1ad275c2a669a8f45dd56"
+    },
+    "edge_a_right_eye_accepted": {
+      "shape": [
+        32
+      ],
+      "dtype": "|b1",
+      "sha256": "dbc87f3bb0ce944395c1e96fdf446ff9dfd09ddd58b7ea57d5828fdd438dfe8a"
+    },
+    "edge_a_right_eye_ambiguity_ratio": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "092b305e73db064027a301eccb74f618c3c43a4bcf7b50c05b0a074f291015d8"
+    },
+    "edge_a_right_eye_best_offset_px": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "ffea862ea73b9b8c250e943fc4ba22c672eaab9ef8517353e322058a019643bd"
+    },
+    "edge_a_right_eye_normals": {
+      "shape": [
+        32,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "785fb36448648c55fb729730907e23d968b333720f3ffbd9b5988a7d89738fe8"
+    },
+    "edge_a_right_eye_offsets": {
+      "shape": [
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "2abaa98594433ea5f3c1386e77ace22ad785648c6a6452098dd28b174a54e82f"
+    },
+    "edge_a_right_eye_orientation": {
+      "shape": [
+        32,
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "6c81b1bce3bc7897bf7f6ee0d967e4bed726ceb47d0a7c62b6258689e5e7926d"
+    },
+    "edge_a_right_eye_peak_strength": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "9b9b4c85a6f220d6e0f5a34aa4bd27e01bf1f8b6895fb22d6e7e76343ab728fe"
+    },
+    "edge_a_right_eye_points": {
+      "shape": [
+        32,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "cf32b68c2fe29f80990daccfc98a0b0ed9d36db3948d6279b5520f8e93c3ef11"
+    },
+    "edge_a_right_eye_ray_supported": {
+      "shape": [
+        32
+      ],
+      "dtype": "|b1",
+      "sha256": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71"
+    },
+    "edge_a_right_eye_response": {
+      "shape": [
+        32,
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "632c93ca647441fb78d3a9e67939336ce70498ed310b1db01eff2731fec89875"
+    },
+    "edge_b_jaw_accepted": {
+      "shape": [
+        32
+      ],
+      "dtype": "|b1",
+      "sha256": "44dbbbb4db62180d607ea7b49847f38c831fa17f21a6ab567789863f5e284b2b"
+    },
+    "edge_b_jaw_ambiguity_ratio": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "4e0dc3ad898dfd3363c63c978d1a3ae406c6647ec7f4657592dd59797d46efee"
+    },
+    "edge_b_jaw_best_offset_px": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "68be0232e5aeb294c6ef9cbb03269ab6dade624e265df38f8468587f0905a44c"
+    },
+    "edge_b_jaw_normals": {
+      "shape": [
+        32,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "ba2072974c2f7d7e3407509d80c3b4bf8fb6910e89138e4c12b9f20b7f5683b2"
+    },
+    "edge_b_jaw_offsets": {
+      "shape": [
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "2abaa98594433ea5f3c1386e77ace22ad785648c6a6452098dd28b174a54e82f"
+    },
+    "edge_b_jaw_orientation": {
+      "shape": [
+        32,
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "34d226b367e6470b4836f80f6b054b728fe5010605547a7d8452bc1f29d6216d"
+    },
+    "edge_b_jaw_peak_strength": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "9d353e80d2a465b3251d8ee740906117699e9a63f13dbd10881a09d40173a24c"
+    },
+    "edge_b_jaw_points": {
+      "shape": [
+        32,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "8ee63b68053aa8d936fa9f8e736b53b4f8d68aa249f15de321525f7e543c48bf"
+    },
+    "edge_b_jaw_ray_supported": {
+      "shape": [
+        32
+      ],
+      "dtype": "|b1",
+      "sha256": "46d8b0e591307942528fc0f34f387c88b336cd9e4f5d7cffde46b4c9303a29e5"
+    },
+    "edge_b_jaw_response": {
+      "shape": [
+        32,
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "88ca9532a641b278e2c6478f7162adad04eb075901f33b7ed2dac139c1ca45da"
+    },
+    "edge_b_left_eye_accepted": {
+      "shape": [
+        32
+      ],
+      "dtype": "|b1",
+      "sha256": "5a9b652fa968fd8cb374c0c33efdf8fd2953ae56bb565a91cb59cec7bb827c4d"
+    },
+    "edge_b_left_eye_ambiguity_ratio": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "86beacd4d2dabeb6af5e36da4e61b65ff63f157d4ff8342bb1c4360c9b7d279a"
+    },
+    "edge_b_left_eye_best_offset_px": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "479bf9b603bfbf746ea6e528693f2ecf53f15e7d95cc906b8dfa030a56fc84b2"
+    },
+    "edge_b_left_eye_normals": {
+      "shape": [
+        32,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "470d1f02ba363d909206b710a805cf2514e224fd8b221482dbfd8f491cb40fcf"
+    },
+    "edge_b_left_eye_offsets": {
+      "shape": [
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "2abaa98594433ea5f3c1386e77ace22ad785648c6a6452098dd28b174a54e82f"
+    },
+    "edge_b_left_eye_orientation": {
+      "shape": [
+        32,
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "64af6a9f6312e45c9b43ec103488501826486fd2637dc547c636d87b676036a3"
+    },
+    "edge_b_left_eye_peak_strength": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "a3e86eeb7ab6b0769ff2f2627748600a4c6a229ff79a4641b95e3012e9975e80"
+    },
+    "edge_b_left_eye_points": {
+      "shape": [
+        32,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "34e539ea496ffefb7078d6554e3832b92a620470776ff716820b5acb84c32469"
+    },
+    "edge_b_left_eye_ray_supported": {
+      "shape": [
+        32
+      ],
+      "dtype": "|b1",
+      "sha256": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71"
+    },
+    "edge_b_left_eye_response": {
+      "shape": [
+        32,
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "f5ee3bdf961f332ba1c5c82c574ca431eba0246e4722e94d1c1f77e494432eea"
+    },
+    "edge_b_mouth_accepted": {
+      "shape": [
+        32
+      ],
+      "dtype": "|b1",
+      "sha256": "b12fbda5c94bbd408924d816e59171a019735878082ccbf23f94420598719cee"
+    },
+    "edge_b_mouth_ambiguity_ratio": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "85cd44fa1fbfb9611b5c9e29e78882d0b1ced0fb3c1a65dcbd4dcf03ca6db507"
+    },
+    "edge_b_mouth_best_offset_px": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "ecf0c7832aebbbc6859c62fa228511759b0789de1e97190777ff68af247ac3b7"
+    },
+    "edge_b_mouth_normals": {
+      "shape": [
+        32,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "949d5917cc6e650a62f1e2681d7f8b02c4b3da8dfbf2fa2ad19a70851f46977c"
+    },
+    "edge_b_mouth_offsets": {
+      "shape": [
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "2abaa98594433ea5f3c1386e77ace22ad785648c6a6452098dd28b174a54e82f"
+    },
+    "edge_b_mouth_orientation": {
+      "shape": [
+        32,
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "e554361c9f928ee83802ad60c871c5bda10ee1e124f2c982d853934d9dc5dcbf"
+    },
+    "edge_b_mouth_peak_strength": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "3c0f27a325f2341b1faaa2d27aad1803e5a1f3fdb47855580a7ca1d81f8a1a45"
+    },
+    "edge_b_mouth_points": {
+      "shape": [
+        32,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "6d1fa2330ac591820729dbd80e56a6a86c118b64bde164aba56518983e6ace20"
+    },
+    "edge_b_mouth_ray_supported": {
+      "shape": [
+        32
+      ],
+      "dtype": "|b1",
+      "sha256": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71"
+    },
+    "edge_b_mouth_response": {
+      "shape": [
+        32,
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "de440958db6e54f3bfadc1b58e452cfcb27f10ec6e58346c88eda6665e697494"
+    },
+    "edge_b_right_eye_accepted": {
+      "shape": [
+        32
+      ],
+      "dtype": "|b1",
+      "sha256": "573c59a048e7035ccc9e3dffe9d890d73203f939885e1e1d42185c78b183e987"
+    },
+    "edge_b_right_eye_ambiguity_ratio": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "1c8baed367dad8db9a428727822278e6d9e32d87b5cddf6a6a498aa511e2b1c1"
+    },
+    "edge_b_right_eye_best_offset_px": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "5a19969409cac4b3c4b06b870256698c7eed865c8fd8dc85080ce649f44aa826"
+    },
+    "edge_b_right_eye_normals": {
+      "shape": [
+        32,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "f31911592498fa46921a5dd81768b278095c0a56f247238bddd43f9758cd5081"
+    },
+    "edge_b_right_eye_offsets": {
+      "shape": [
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "2abaa98594433ea5f3c1386e77ace22ad785648c6a6452098dd28b174a54e82f"
+    },
+    "edge_b_right_eye_orientation": {
+      "shape": [
+        32,
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "5331e534d41df2b2489eeb889446d7ad51a45f704e4be9ee55fee0e121b32301"
+    },
+    "edge_b_right_eye_peak_strength": {
+      "shape": [
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "f1a138a8f7bb2be6b69a10f406321067ee1a672684d69df5e5cb471b24f4e509"
+    },
+    "edge_b_right_eye_points": {
+      "shape": [
+        32,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "78e465f6be2d0eb832767a0717b9c146f74ae10fa02a1cb45b05115a5ca8b23b"
+    },
+    "edge_b_right_eye_ray_supported": {
+      "shape": [
+        32
+      ],
+      "dtype": "|b1",
+      "sha256": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71"
+    },
+    "edge_b_right_eye_response": {
+      "shape": [
+        32,
+        19
+      ],
+      "dtype": "<f8",
+      "sha256": "7cdc952d476cad6172267e23734b583ab9ca0a238b8458fd98db48d292881973"
+    },
+    "flow_admissible": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "e60adb1f6cb5dc947cee1f1e5b90ad6bef9d2b37f301537f227d873d5ace98fc"
+    },
+    "flow_anatomical_disagreement_px": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "<f8",
+      "sha256": "9a60c204a06b6b6ebec3e076784a7fd116bc25ae279e9efba3e9aee953b9e989"
+    },
+    "flow_concordant": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "17713b94b50c9b3f5c287a82b89eee297430f69bdf9471e9d8f1ed0f75a24171"
+    },
+    "flow_cycle_error_px": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "<f8",
+      "sha256": "ef898d92f935ad07074b5f44aa4e1e7b41c2a2f6d37aaed7fe7156c9df188333"
+    },
+    "flow_photometric_residual": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "<f8",
+      "sha256": "7f50f9f4fb158a332e8312c3fc2648c02b4faa4c831bf71db205b22ef6c7b3e2"
+    },
+    "flow_texture_observability": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "<f8",
+      "sha256": "d223e5e6ce77edfa2562f9646ad964a3fd71ab3edf346f54cfb015fc2bbf3459"
+    },
+    "flow_uv": {
+      "shape": [
+        256,
+        256,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "ba66336b3ad9042dda2e8ba68e20de3d89d25ff8abd44a581fd0f641c87c8f2f"
+    },
+    "heldout_residual_vectors": {
+      "shape": [
+        4,
+        478,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "4d57402378f51faad5449414b57af875113790dd31465317fb4906cef9eacb7e"
+    },
+    "intrinsic_centered": {
+      "shape": [
+        2,
+        256
+      ],
+      "dtype": "<f8",
+      "sha256": "c07a2b5e3c5b243868d6bbe07d2b45107701a5a22563f2b08fcff36f54659b2a"
+    },
+    "intrinsic_centered_valid": {
+      "shape": [
+        2,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "38012a87475e44c75ce1a642a6439d3ccf926acfaa92e265c9c5387ae5847c91"
+    },
+    "intrinsic_eye_span_available": {
+      "shape": [
+        2
+      ],
+      "dtype": "|b1",
+      "sha256": "647f1883d3ee86e6c216ca3d2181e898dc85cf72fda6fd4d8c6236fc3ab54381"
+    },
+    "intrinsic_eye_span_bounds": {
+      "shape": [
+        2,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "41af08eda6a8f74cd05826c31b300f0ac2fd6986d72624692940c13f92b3a4a7"
+    },
+    "intrinsic_gap_available": {
+      "shape": [
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "117d71de453a4d110465f9e76d13fde1904e08f0b58bbc8fdf51a60168ed5ff1"
+    },
+    "intrinsic_gap_lower": {
+      "shape": [
+        256
+      ],
+      "dtype": "<f8",
+      "sha256": "20bf641814193b4f465e94c2bd0d527cff48283a99b19343f7b1f6933e14a394"
+    },
+    "intrinsic_gap_upper": {
+      "shape": [
+        256
+      ],
+      "dtype": "<f8",
+      "sha256": "f03da92ced812bffe6449185c2979a922fa46fd73c4553ad015d0149953eee30"
+    },
+    "intrinsic_joint_covariance": {
+      "shape": [
+        2,
+        16,
+        16
+      ],
+      "dtype": "<f8",
+      "sha256": "c2521c78dbad85dff7d950a5af6ca06d66a5e3b1f7eaf4b09b5ddff19ed1c861"
+    },
+    "intrinsic_joint_marginal_available": {
+      "shape": [
+        2,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "76584c503ad7e9d1e2dffdfb2c14cc2953646579310cbca76a546ffc4fb5f9a1"
+    },
+    "intrinsic_joint_marginal_covariance": {
+      "shape": [
+        2,
+        8,
+        2,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "4fd7148c860a145196f94a66db6745c3075eb0c257551ea3b99bd124b8edee7b"
+    },
+    "intrinsic_joint_marginal_lower": {
+      "shape": [
+        2,
+        256
+      ],
+      "dtype": "<f8",
+      "sha256": "234cb51a741779f504fe20a1578edf69e6ab23338c0225866989a7adfb5ee25b"
+    },
+    "intrinsic_joint_marginal_upper": {
+      "shape": [
+        2,
+        256
+      ],
+      "dtype": "<f8",
+      "sha256": "d703e492724279fb13c5be088444b1b1c68e2fdc469804566738feae4564564f"
+    },
+    "intrinsic_joint_mode_eigenvalues": {
+      "shape": [
+        2,
+        16
+      ],
+      "dtype": "<f8",
+      "sha256": "1a121f96dde6ac41397a318532fd8afbad4fe87abbb00d2823c609345a568a0f"
+    },
+    "intrinsic_joint_mode_vectors": {
+      "shape": [
+        2,
+        16,
+        16
+      ],
+      "dtype": "<f8",
+      "sha256": "df3b0f857f34092db17b9d4c1df5c8f1e3c694c0d68c7d74072cc132fa287ae1"
+    },
+    "intrinsic_nominal": {
+      "shape": [
+        2,
+        256
+      ],
+      "dtype": "<f8",
+      "sha256": "f491a64ceb2db5123ead140c1a70895b3d42debe8d3585265d87241a3f36b084"
+    },
+    "intrinsic_nominal_valid": {
+      "shape": [
+        2,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "38012a87475e44c75ce1a642a6439d3ccf926acfaa92e265c9c5387ae5847c91"
+    },
+    "intrinsic_raw_points": {
+      "shape": [
+        2,
+        8,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "3503bd282e94ca0aa98b583e5d500eab173d4687707d872fbe580080755a7778"
+    },
+    "intrinsic_relation_a": {
+      "shape": [
+        256,
+        8
+      ],
+      "dtype": "<f8",
+      "sha256": "4d0c45f2fc2c91f88144ea78feeed0be84b34f0718bcad45529a2332c9d86836"
+    },
+    "intrinsic_relation_b": {
+      "shape": [
+        256,
+        8
+      ],
+      "dtype": "<f8",
+      "sha256": "c51bbb3dc312e09adf29977b42c15ac30e4a0b77ef4c4f56eb1218527831d37e"
+    },
+    "intrinsic_shape_candidate_rotation": {
+      "shape": [
+        2,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "22b98f0601f09f9f9865fe54a2cf6dd06ec489ff969d65c72fffdfde0f425249"
+    },
+    "intrinsic_shape_deviation_radii": {
+      "shape": [
+        2,
+        8
+      ],
+      "dtype": "<f8",
+      "sha256": "e9f09aedacf1028406aa7ad3ae7c99ffdc3f3339687834d07abec2eaf548f2c4"
+    },
+    "intrinsic_source_available": {
+      "shape": [
+        2,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "0af7556ba4e906f2df2b8ee60299ff13c8e542f16e204ad6daf961ea1175e783"
+    },
+    "intrinsic_source_centers": {
+      "shape": [
+        2,
+        8,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "33bd4e42c31ed3beca91a1f8a630f0dee01f8705761184eae6a3763a86a1cdad"
+    },
+    "intrinsic_source_chart": {
+      "shape": [
+        2,
+        3,
+        3
+      ],
+      "dtype": "<f8",
+      "sha256": "6d1a68840128f99ea566766b7db86f0a9f7b5def7a768bb94126023029e37e85"
+    },
+    "intrinsic_source_covariance": {
+      "shape": [
+        2,
+        8,
+        2,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "3cf8732daa0008cf68363072c93346fa2220afb347a197b7f1f926676b4317fa"
+    },
+    "intrinsic_source_lower": {
+      "shape": [
+        2,
+        256
+      ],
+      "dtype": "<f8",
+      "sha256": "72c8fc2e93c860f2342ef8936174c5604809edd0e4ec7b40acaae84610e05aef"
+    },
+    "intrinsic_source_quantile_available": {
+      "shape": [
+        2
+      ],
+      "dtype": "|b1",
+      "sha256": "647f1883d3ee86e6c216ca3d2181e898dc85cf72fda6fd4d8c6236fc3ab54381"
+    },
+    "intrinsic_source_quantiles": {
+      "shape": [
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "0b1a39510a24ef3a122a1da0e695e3fb04d5e3deddf4be2ac651f7925841cbf2"
+    },
+    "intrinsic_source_supported": {
+      "shape": [
+        2,
+        8
+      ],
+      "dtype": "|b1",
+      "sha256": "0546b734e89eeda8fff9c3cc04e96fd3212ead7ae61f7fcb48bd82dacb876467"
+    },
+    "intrinsic_source_upper": {
+      "shape": [
+        2,
+        256
+      ],
+      "dtype": "<f8",
+      "sha256": "0eb67fd49b83ae910ac732035b02cb19b12107a90c65f6aa19ff05456b5a6d41"
+    },
+    "intrinsic_statuses": {
+      "shape": [
+        256
+      ],
+      "dtype": "<i8",
+      "sha256": "af4f2378122745356e353053cbe16387c569be55855afa63e89770117ad89963"
+    },
+    "intrinsic_support_normals": {
+      "shape": [
+        128,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "ad1896baf51f3f592905f190c88bd271f77c064497c409e907ca2478230bef7a"
+    },
+    "landmark_residual_vectors": {
+      "shape": [
+        478,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "efbcb188e4d2a1940415472d1c48054d3c4e6cfe2de8a0e7b460b74b5c6568f8"
+    },
+    "landmark_supported": {
+      "shape": [
+        478
+      ],
+      "dtype": "|b1",
+      "sha256": "db4a641a233232847e538bb0e910c0a9d89a7f16cf2b3d54c04285b68bf12f70"
+    },
+    "localization_canonical_bias_px": {
+      "shape": [
+        2,
+        8,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "e63d1e38d1706c340761af68b87ecd1de140eab21b05131bf2ca641fc1043cc1"
+    },
+    "localization_canonical_points": {
+      "shape": [
+        2,
+        8,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "46013539c592671c393690630f66b692d7749e412a0c34f7200608953fd2366c"
+    },
+    "localization_canonical_radii_px": {
+      "shape": [
+        2,
+        8
+      ],
+      "dtype": "<f8",
+      "sha256": "d50c68ecf585f73079eef1f5909d53aa708994a5837390a816e28022bfe99b5f"
+    },
+    "localization_ellipse_combined_support": {
+      "shape": [
+        8,
+        128
+      ],
+      "dtype": "<f8",
+      "sha256": "d774cd25d94959bdbbf5397ed611d044ebc61ee19b71a42450d13ebc7640d6c6"
+    },
+    "localization_ellipse_lower_ipd": {
+      "shape": [
+        8
+      ],
+      "dtype": "<f8",
+      "sha256": "3444ee496bb336a31134dc7877b13406ec20a1e4aa950fb936a3f5e738cd9bfa"
+    },
+    "localization_ellipse_normalized_covariances": {
+      "shape": [
+        2,
+        8,
+        2,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "d7fb90ab445b2e14af8b100cee74060008b9457a57dd7c02de226e90f7e410bb"
+    },
+    "localization_ellipse_normals": {
+      "shape": [
+        128,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "ad1896baf51f3f592905f190c88bd271f77c064497c409e907ca2478230bef7a"
+    },
+    "localization_ellipse_upper_ipd": {
+      "shape": [
+        8
+      ],
+      "dtype": "<f8",
+      "sha256": "6ada63325b57dd9d8f136b1e4a6aed49f5839530f357d2a45930338c5136c415"
+    },
+    "localization_lower_ipd": {
+      "shape": [
+        8
+      ],
+      "dtype": "<f8",
+      "sha256": "3444ee496bb336a31134dc7877b13406ec20a1e4aa950fb936a3f5e738cd9bfa"
+    },
+    "localization_model_centered_gap_ipd": {
+      "shape": [
+        8
+      ],
+      "dtype": "<f8",
+      "sha256": "1084173c2b3b7b8a911521200b8d39b46db88c7f524e7ef5dbe71ce25413680e"
+    },
+    "localization_observed_gap_ipd": {
+      "shape": [
+        8
+      ],
+      "dtype": "<f8",
+      "sha256": "d5c6599eebd7ca661b967e1e1316fb392d76e02f12edd17e9f33e4e77690ca72"
+    },
+    "localization_radial_budget_ipd": {
+      "shape": [
+        8
+      ],
+      "dtype": "<f8",
+      "sha256": "ffe6a41334e3a0290bf762d049da2c11403c4fc3b86acb435d5e56efe215f628"
+    },
+    "localization_reference_center_points": {
+      "shape": [
+        2,
+        8,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "cdda4e1b1ec9669fc0e762f3f420898000e5524ab86857fcb51a6a5b0bb18d6b"
+    },
+    "localization_source_bias_px": {
+      "shape": [
+        2,
+        8,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "56b12a971662bf820a19e32406512e3b446965740ab21f927e70b11b4ea7da4b"
+    },
+    "localization_source_quantiles": {
+      "shape": [
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "0b1a39510a24ef3a122a1da0e695e3fb04d5e3deddf4be2ac651f7925841cbf2"
+    },
+    "localization_source_radii_px": {
+      "shape": [
+        2,
+        8
+      ],
+      "dtype": "<f8",
+      "sha256": "74c6087283c4633ccac4f6f233243ebfaefda4cb160b9b24909500bb580b449a"
+    },
+    "localization_supported": {
+      "shape": [
+        8
+      ],
+      "dtype": "|b1",
+      "sha256": "ed203cf2aca716b00b14bba951c125124725466c673202611d752e4c54e64589"
+    },
+    "localization_upper_ipd": {
+      "shape": [
+        8
+      ],
+      "dtype": "<f8",
+      "sha256": "6ada63325b57dd9d8f136b1e4a6aed49f5839530f357d2a45930338c5136c415"
+    },
+    "observation_a_covariance": {
+      "shape": [
+        478,
+        2,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "d945f812dda1f6ba06a8c9dfadc9d40d08054a071d47d4bbc0fee6c48732ca3d"
+    },
+    "observation_a_samples": {
+      "shape": [
+        7,
+        478,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "57ee561853c81418eed3808f645240e36b9a1b5352fd3095698463606587efff"
+    },
+    "observation_a_xy": {
+      "shape": [
+        478,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "a70fb75aa64832625eb3c133f6a366ddbea2fce839ba7f2b94af911b7691f188"
+    },
+    "observation_b_covariance": {
+      "shape": [
+        478,
+        2,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "a8582500bbf54bea13b983507d4d0754db36110ad44abc5a5e363ce902ba4e57"
+    },
+    "observation_b_samples": {
+      "shape": [
+        7,
+        478,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "2d2062a5989356610313739587c8c06163f1cacb0053acef63585636f60cecfb"
+    },
+    "observation_b_xy": {
+      "shape": [
+        478,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "b7d69aaa018dd99d0f09482968c69a4bced4994e289ca0a27e97eceb216a1ed6"
+    },
+    "photometric_support": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "86b2d466c1f08eb1529ffddd04b18d21bac544b66dce491733609f5d35823933"
+    },
+    "region_a_central": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "deff76f302cd7d28cb8ae2f82b5cbdf2004153773f157eee0e5e97253e983e53"
+    },
+    "region_a_face": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "63de77beb4314711730df2830a759dc89e11a34d6f38f06f3736c351254b02f6"
+    },
+    "region_a_jaw": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "11a1376914a69926697a020f33df5a9db8e7d4e0d69fe814f2d6cdccd03bee4b"
+    },
+    "region_a_left_eye": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "6b840934b4e8f3e9863699830498ffc19fb5ca1b6e5640612f10727d6603b9ac"
+    },
+    "region_a_mouth": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "d9c34e7c111de00438c23de32621539ee37fb8d81333f323a6c251d30488214f"
+    },
+    "region_a_nose": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "82c9bc640996a4804005a49e2162a699acd2b193c6d493156bbf583cb202d3a4"
+    },
+    "region_a_right_eye": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "2ac3fb0f82e68512a2dadeaa9b1d5dc0eded349f99e9cc9c1a412d0aa7c980a9"
+    },
+    "region_b_central": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "4e0b97caada1fafc28de4f74ea1ce5518617f49e0412e9c1209c089336e531e1"
+    },
+    "region_b_face": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "76a781ac307daabd847625161b5df952a95552be710a88e313ce248159ed2692"
+    },
+    "region_b_jaw": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "b975a82bd699ee3a5502e7d38d4721100ac5b4b4a4177e1ca04ebf292a4e7f17"
+    },
+    "region_b_left_eye": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "c674c6e782ccbde2a0c15710e0286bdb0716b7c74c8211b3dd2069f2316260fb"
+    },
+    "region_b_mouth": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "f9b05fc9d1a45a86daf41daefb24b950adb43c858ed8da4626cd3b2baf112815"
+    },
+    "region_b_nose": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "bfee04dd3299abf9247e0cbc92eef0b4292f59a10dee6624c2579f94af1024ec"
+    },
+    "region_b_right_eye": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "a1cf1fc862c3938b08dcc7dc699d355c4ab1ad9d5d735a5440538d637bca7128"
+    },
+    "registration_weights": {
+      "shape": [
+        11
+      ],
+      "dtype": "<f8",
+      "sha256": "69c7d2f932eb1074519c533372d5e824ef1a0928e6e4710b79f837b5078e84bd"
+    },
+    "relational_distortion": {
+      "shape": [
+        478,
+        478
+      ],
+      "dtype": "<f8",
+      "sha256": "dd48306f4b0689a082d5fe67dd05371bfa73f2c93a9f3c60aee11c264e42cfc2"
+    },
+    "sensitivity_draws": {
+      "shape": [
+        96,
+        7
+      ],
+      "dtype": "<f8",
+      "sha256": "23194aab0b508195556fa1ac0d442e293acb04a4ec17ad9e9bac30343c63e462"
+    },
+    "sensitivity_region_supported": {
+      "shape": [
+        7
+      ],
+      "dtype": "|b1",
+      "sha256": "6d2924ef2583c5d66b0013a9d63b072d94409471a2abdbc7b7cb59496b9587e6"
+    },
+    "simplex_index": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "<i4",
+      "sha256": "beb70185d93381722a9842c3531315a5c41bd479f9863e74ea14ca326d0c4473"
+    },
+    "source_support_a": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "610a045698b3aa535518ead20729374e3a95e40bee8909c14498b61a3372bf23"
+    },
+    "source_support_b": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "|b1",
+      "sha256": "40abcd2fa020998972b0ad471a67206458051634e41d3be2cc807adaed1bbdf9"
+    },
+    "source_to_canonical_a": {
+      "shape": [
+        3,
+        3
+      ],
+      "dtype": "<f8",
+      "sha256": "ff5ee6218c4999e4434d8eb806702f1d573b46fb99473aad7e97e84eaa7c1a63"
+    },
+    "source_to_canonical_b": {
+      "shape": [
+        3,
+        3
+      ],
+      "dtype": "<f8",
+      "sha256": "929e909c905cc99ab2b71767abbdd3aaf6aa0d0b3a2dfdbc02daf150974834fb"
+    },
+    "triangle_condition": {
+      "shape": [
+        916
+      ],
+      "dtype": "<f8",
+      "sha256": "85e557acaff6f26d572e29a5faa68c8d63cc0768c72c073d462e98e31fcf054a"
+    },
+    "triangle_determinants": {
+      "shape": [
+        916
+      ],
+      "dtype": "<f8",
+      "sha256": "2d3d881c2a1af56c10ef3ae0305b2b67b8432dfe37e0b581b8fc6bbda461f9b9"
+    },
+    "triangle_green_strain": {
+      "shape": [
+        916,
+        2,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "9e1b4050bf32361ea324a03a9c66b53452331458d1a6173b3ed1a2d72b01049d"
+    },
+    "triangle_indices": {
+      "shape": [
+        916,
+        3
+      ],
+      "dtype": "<i4",
+      "sha256": "a3769b40508485f817856d0a226f9da8d9a9ab9bcc78ba65dc89db0453202046"
+    },
+    "triangle_jacobians": {
+      "shape": [
+        916,
+        2,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "a48e4fc2384602c386fa8b3fa2d0c119381c8a79d478c223f95175684a6f9e37"
+    },
+    "triangle_principal_log_stretch": {
+      "shape": [
+        916,
+        2
+      ],
+      "dtype": "<f8",
+      "sha256": "b32929c8481cd2f5939668abbf59e5de4b04b9619306fa356d16c9b5ddde7208"
+    },
+    "triangle_valid": {
+      "shape": [
+        916
+      ],
+      "dtype": "|b1",
+      "sha256": "0c22d94e03157e96eed82e49285a89a65946ae3ed04789fb436ead69911358e4"
+    }
+  },
+  "array_semantics": {
+    "coordinates": "xy pixel coordinates; rows use observation.names; image arrays are y,x",
+    "anatomical_uv": "A-domain B-minus-A displacement; zero outside support is a sentinel, not agreement",
+    "triangle_jacobians": "d(B_coordinates)/d(A_coordinates); piecewise-affine inferred anatomy",
+    "triangle_green_strain": "0.5*(F.T@F-I); geometric distortion, not physical tissue deformation",
+    "triangle_principal_log_stretch": "log singular values of F; invalid triangles excluded by triangle_valid",
+    "heldout_residual_vectors": {
+      "axis_0": [
+        "eyes",
+        "nose",
+        "mouth",
+        "jaw"
+      ],
+      "units": "registered_eye_span_geomean"
+    },
+    "sensitivity_draws": {
+      "axis_1": [
+        "left_eye",
+        "right_eye",
+        "nose",
+        "mouth",
+        "jaw",
+        "central",
+        "all"
+      ],
+      "kind": "conditional_observation_sensitivity",
+      "missingness": "columns with sensitivity_region_supported=false contain zero sentinels, never interpreted as measurements"
+    },
+    "landmark_supported": "source-coordinate in-bounds intersection for both observations",
+    "flow_admissible": "heuristic texture/cycle/overlap support, not correctness probability",
+    "edge_*": "landmark-guided normal-ray gradient response; offsets are meaningful only where accepted; not independent anatomy or landmark corrections",
+    "intrinsic_*": "source-chart reference8 relations with uncertain eye-span normalization; arrays use the 256-row registry in intrinsic.json; source axes A,B; missing bounds use explicit masks; no independent votes",
+    "localization_*": "eight reference-protocol points only; source-ellipse-derived outer gap bounds in the fixed observed coordinate gauge; no extrapolation to 478 points"
+  },
+  "integrity_limit": "self-consistency hashes; not an externally signed execution attestation",
+  "manifest_content_sha256": "59d8be2e9007985bbf17d52a82f3d818ac963da2591ad3d5a431217381a07be0"
+}

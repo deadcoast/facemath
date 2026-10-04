@@ -1,0 +1,47 @@
+{
+  "format": "facemath.pts_cohort_plan.v17",
+  "name": "helen-correspondence-v2-60-new-fit",
+  "source": "https://dlib.net/files/data/ibug_300W_large_face_landmark_dataset.tar.gz",
+  "label_source": "Original iBUG 300W semi-automatic PTS annotations, retained by the public dlib repack; no newly performed human testing; native training overlap unknown",
+  "image_terms": "iBUG annotations are research-only; not for commercial products or commercial algorithm training. Original photograph rights remain with their owners. https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/ https://ibug.doc.ic.ac.uk/resources/300-W/",
+  "grouping_limit": "At most one original face per numeric HELEN photograph filename root. Mirrors excluded and exact aliases rejected. Filename roots do not establish person independence, unknown related photographs or model training overlap; no population coverage claim. Window [132,192) excludes the previous HELEN enrollment and is checked against the retained 255-case registry. Correspondence selected on earlier development only; no outcome-dependent replacement or retuning.",
+  "runtime_version": "1.0.1",
+  "seed": "facemath-helen-utility-60-v1-20261002",
+  "selection": "sha256_seed_nul_helen_source_blocks_v1",
+  "candidate_prefix": "ibug_300W_large_face_landmark_dataset/helen/testset",
+  "split_counts": {
+    "development": 20,
+    "calibration": 20,
+    "evaluation": 20
+  },
+  "coordinate_origin": 1,
+  "box_margin": 0.25,
+  "archive": {
+    "bytes": 1798323356,
+    "sha256": "aa3d1ec603ead25bfc94f60ad2adee8513dda71e593ce16d0906c46ff73bf81e",
+    "url": "https://dlib.net/files/data/ibug_300W_large_face_landmark_dataset.tar.gz"
+  },
+  "model": {
+    "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+    "bytes": 3758596,
+    "url": "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task"
+  },
+  "protocol": {
+    "domain": "Frozen HELEN roots [132,192), new correspondence-v2 joint fit; published PTS agreement; anatomical equivalence and visibility unresolved",
+    "minimum_raters": 1,
+    "maximum_cases_per_group": 1,
+    "minimum_development_groups": 2,
+    "timeout_seconds": 90,
+    "alpha": 0.1,
+    "bias_mode": "development_joint_ocular",
+    "joint_error": {
+      "shrinkage": 0.02,
+      "floor_eye_spans": 0.001
+    },
+    "strata": [
+      "all"
+    ]
+  },
+  "selection_offset": 132,
+  "correspondence": "mediapipe478.reference8.v2"
+}

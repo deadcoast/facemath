@@ -14,6 +14,7 @@ import cv2
 import numpy as np
 
 from .anatomy import SEMANTIC_21
+from .correspondence import MP_REFERENCE8_V2, require_correspondence
 from .runtime import require_supported_opencv
 from .contracts import (
     Observation, ObservationError, ProviderUnavailable, array_digest,
@@ -69,8 +70,13 @@ class MediaPipeProvider:
     local after explicitly installing the optional package and model artifact.
     """
 
+    correspondence: str | None = MP_REFERENCE8_V2
+
     def __init__(self, model_path: str | Path, expected_sha256: str | None = None,
-                 noise_floor_px: float = .75, use_augmentations: bool = True) -> None:
+                 noise_floor_px: float = .75, use_augmentations: bool = True, *,
+                 correspondence: str | None = MP_REFERENCE8_V2) -> None:
+        require_correspondence("mediapipe478.v1", correspondence)
+        self.correspondence = correspondence
         if not np.isfinite(noise_floor_px) or noise_floor_px <= 0:
             raise ObservationError("noise floor must be finite and positive")
         path = Path(model_path)
@@ -153,6 +159,7 @@ class MediaPipeProvider:
             canonical_json({"model_sha256": self.model_hash, "runtime_version": self.version,
                             "raw_detector_outputs": raw, "failed_augmentations": failures,
                             "per_landmark_confidence": None}),
+            correspondence=self.correspondence,
         )
 
     def close(self) -> None:

@@ -1,3 +1,16 @@
+# 0.17.0 — versioned native landmark correspondence
+
+- Select MediaPipe vertex 4 for the new nose-tip correspondence; preserve all
+  native coordinates and historical vertex-1 observations.
+- Bind correspondence into study/observation formats, shared anatomy and model
+  compatibility. Refuse mixed mappings and legacy model reuse under the new map.
+- Freeze an explicit v17 PTS cohort plan for new fitting, calibration and held-out
+  evaluation. Old dataset recipes retain their original correspondence.
+- Retain the chin discrepancy and independent anatomical validation as open
+  scientific results; no evaluation-driven retuning or rewritten old evidence.
+- Correct the qualification report's human-validation flag: published dataset
+  agreement records native execution and declared provenance separately.
+
 # 0.16.0 · Complete cross-study enrollment registries
 
 Export every enrolled case from verified study locks with exact manifest-bound

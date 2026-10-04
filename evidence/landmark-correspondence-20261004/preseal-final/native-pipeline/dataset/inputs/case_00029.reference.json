@@ -1,0 +1,116 @@
+{
+  "format": "facemath.reference.v4",
+  "protocol_sha256": "db71853e5f9cc8f1929cf7329aad3d3111c9518cc5f10eb043e36ac530701972",
+  "names": [
+    "left_eye_outer",
+    "left_eye_inner",
+    "right_eye_inner",
+    "right_eye_outer",
+    "nose_tip",
+    "mouth_left",
+    "mouth_right",
+    "chin"
+  ],
+  "image_sha256": "eb5324b8e9d9b8161cee020a5ed0a607c8e4ab7772cbc6bc6ef5ad72a9197c5f",
+  "image_shape": [
+    552,
+    496
+  ],
+  "xy": [
+    [
+      118.23039399999999,
+      190.43042400000002
+    ],
+    [
+      178.29257,
+      182.664878
+    ],
+    [
+      259.82850299999996,
+      170.04317400000002
+    ],
+    [
+      324.753097,
+      155.19901299999998
+    ],
+    [
+      219.28928099999996,
+      237.432185
+    ],
+    [
+      173.62863599999997,
+      329.50848800000006
+    ],
+    [
+      320.220378,
+      302.709696
+    ],
+    [
+      274.65388399999995,
+      458.776109
+    ]
+  ],
+  "visible": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "rater_id": "published_dataset_annotation",
+  "kind": "external_dataset",
+  "source": "https://dlib.net/files/data/ibug_300W_large_face_landmark_dataset.tar.gz",
+  "prediction_exposure": "unknown",
+  "metadata": {
+    "annotation_sha256": "233fea4ab2c1df1267c0de34d74e5cf87e4b90cae3b67dace511d019f2c36fa7",
+    "box_index": 0,
+    "cohort_archive_sha256": "aa3d1ec603ead25bfc94f60ad2adee8513dda71e593ce16d0906c46ff73bf81e",
+    "crop_basis": "inclusive_integer_68_point_extrema",
+    "crop_xyxy_exclusive": [
+      308,
+      283,
+      804,
+      835
+    ],
+    "grouping_limit": "At most one original face per numeric HELEN photograph filename root. Mirrors excluded and exact aliases rejected. Filename roots do not establish person independence, unknown related photographs or model training overlap; no population coverage claim. Window [132,192) excludes the previous HELEN enrollment and is checked against the retained 255-case registry. Correspondence selected on earlier development only; no outcome-dependent replacement or retuning.",
+    "image_terms": "iBUG annotations are research-only; not for commercial products or commercial algorithm training. Original photograph rights remain with their owners. https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/ https://ibug.doc.ic.ac.uk/resources/300-W/",
+    "label_source": "Original iBUG 300W semi-automatic PTS annotations, retained by the public dlib repack; no newly performed human testing; native training overlap unknown",
+    "mapping_requires_review": true,
+    "source_encoded_sha256": "7dadd2cf595c041442b1138a9d71520831e28d78506ab69d0dc7c2d06604eea4",
+    "source_format": "original_pts",
+    "source_indices_zero_based": [
+      36,
+      39,
+      42,
+      45,
+      30,
+      48,
+      54,
+      8
+    ],
+    "source_origin": 1,
+    "source_raster_sha256": "2bbba17c142aa2df5f0e6300e72ddaa8b29d1228ebcbfb9b89fbf173f0b17bd1",
+    "source_schema": "ibug68",
+    "source_to_crop": [
+      [
+        1,
+        0,
+        -308
+      ],
+      [
+        0,
+        1,
+        -283
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "visibility": "no_occlusion_labels; in_crop_assumed_observable"
+  }
+}

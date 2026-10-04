@@ -19,6 +19,7 @@ import cv2
 import numpy as np
 
 from .contracts import Observation, ObservationError, array_digest, canonical_json, object_digest
+from .correspondence import MP_REFERENCE8_V2, correspondence_recipe, require_correspondence
 from .journal import code_fingerprint, numeric_environment
 from .reference import REFERENCE_PROTOCOL_SHA256, ReferenceAnnotation, consensus, check_digest, observer_recipe
 from .validation import ValidationCase, validate_study
@@ -107,8 +108,10 @@ class ObserverDeclaration:
     execution_kind: str
     model_sha256: str | None = None
     runtime_version: str | None = None
+    correspondence: str | None = None
 
     def __post_init__(self) -> None:
+        require_correspondence(self.schema, self.correspondence)
         check_digest(self.provider_fingerprint, "observer fingerprint")
         if self.execution_kind not in ("native_mediapipe", "synthetic_fixture"):
             raise ObservationError("declare native_mediapipe or synthetic_fixture execution")
@@ -132,6 +135,7 @@ class ObserverDeclaration:
         return object_digest({"provider": self.provider, "provider_fingerprint": self.provider_fingerprint,
             "schema": self.schema, "noise_floor_px": self.noise_floor_px,
             "attempted_samples": self.attempted_samples, "reference_protocol_sha256": REFERENCE_PROTOCOL_SHA256,
+            **correspondence_recipe(self.schema, self.correspondence),
             "score": "max_reference8_mahalanobis_to_independent_consensus.v1"})
 
     def require_observation(self, observation: Observation, image: np.ndarray) -> None:
@@ -145,18 +149,23 @@ class ObserverDeclaration:
 
     def to_dict(self) -> dict[str, Any]:
         from dataclasses import asdict
-        return asdict(self)
+        data = asdict(self)
+        if self.correspondence is None:
+            del data["correspondence"]
+        return data
 
     @classmethod
     def from_dict(cls, obj: Mapping[str, Any]) -> ObserverDeclaration:
+        if "correspondence" in obj and obj["correspondence"] is None:
+            raise ObservationError("explicit correspondence must be a supported identity")
         return cls(**dict(obj))
 
     @classmethod
     def mediapipe(cls, model_sha256: str, runtime_version: str, *, noise_floor_px: float = .75,
-                  augment: bool = True) -> ObserverDeclaration:
+                  augment: bool = True, correspondence: str | None = MP_REFERENCE8_V2) -> ObserverDeclaration:
         from .provider import mediapipe_fingerprint
         return cls("mediapipe", mediapipe_fingerprint(model_sha256, runtime_version), "mediapipe478.v1",
-                   noise_floor_px, 7 if augment else 1, "native_mediapipe", model_sha256, runtime_version)
+                   noise_floor_px, 7 if augment else 1, "native_mediapipe", model_sha256, runtime_version, correspondence)
 
 
 @dataclass(frozen=True)

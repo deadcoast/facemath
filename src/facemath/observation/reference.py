@@ -15,6 +15,7 @@ import numpy as np
 
 from .anatomy import anatomy_for
 from .contracts import Observation, ObservationError, canonical_json, frozen_array, object_digest
+from .correspondence import correspondence_recipe
 
 REFERENCE_NAMES = (
     "left_eye_outer", "left_eye_inner", "right_eye_inner", "right_eye_outer",
@@ -182,6 +183,7 @@ def observer_recipe(observation: Observation) -> str:
         "schema": observation.schema, "noise_floor_px": observation.noise_floor_px,
         "attempted_samples": observation.attempted_samples,
         "reference_protocol_sha256": REFERENCE_PROTOCOL_SHA256,
+        **correspondence_recipe(observation.schema, observation.correspondence),
         "score": "max_reference8_mahalanobis_to_independent_consensus.v1",
     })
 

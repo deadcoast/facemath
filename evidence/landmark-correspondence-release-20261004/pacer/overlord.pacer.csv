@@ -1,0 +1,13 @@
+ID,Path,Symbol,Kind,Purpose,Tier,Tags
+OVR-001,facemath/observation/contracts.py,,FILE,Serialize image-bound observations with immutable native arrays and explicit or historical correspondence.,,
+OVR-002,facemath/observation/anatomy.py,,FILE,Select one anatomical grammar from the observation correspondence for reference and full-pair geometry.,,
+OVR-003,facemath/observation/reference.py,,FILE,Predict reference points and covariances from native vertices and bind calibration to the observer recipe.,,
+OVR-004,facemath/observation/provider.py,,FILE,"Execute pinned native inference while retaining full coordinates, samples and correspondence identity.",,
+OVR-005,facemath/observation/study.py,,FILE,"Freeze observer declarations, study enrollment and execution contracts before acquisition.",,
+OVR-006,facemath/observation/worker.py,,FILE,Execute the frozen observer declaration in an isolated worker without inheriting a changed default.,,
+OVR-007,facemath/observation/dataset.py,,FILE,Prepare pinned datasets and preserve each recipe's original correspondence during study construction.,,
+OVR-008,facemath/observation/source_cohort.py,,FILE,Select prospectively ordered source groups and bind explicit correspondence in versioned cohort recipes.,,
+OVR-009,facemath/observation/canonical.py,,FILE,Create the shared canonical state and refuse mixed correspondence before geometric processing.,,
+OVR-010,facemath/observation/correspondence.py,,FILE,Freeze native vertex assignments and bind explicit correspondence to observer recipe hashes.,,
+OVR-011,facemath/__init__.py,,FILE,Expose the validated package version without loading legacy research modules.,,
+OVR-012,facemath/observation/qualification.py,,FILE,Report frozen-model qualification and distinguish native execution from reference provenance.,,

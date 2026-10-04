@@ -1,0 +1,4 @@
+ID,Kind,Pos,Title,Status,Tier,Produce,In,Out,Binds,Needs,Probe,Exit,Next,Tags
+PAC-002,PHASE,A1.P1,Version mapping and measure a fresh native study,DONE,integrated,,,,,,,Versioned mapping enforced; regression and native held-out results retained; unresolved accuracy stated.,,
+PAC-003,PACE,A1.P1.01,Implement and validate landmark correspondence,DONE,,"Version landmark mapping across observation, anatomy, study, calibration and transfer; validate a fresh pinned native study.",OVR-001;OVR-002;OVR-003;OVR-004;OVR-005;OVR-006;OVR-007;OVR-008;OVR-009;OVR-010;OVR-011;OVR-012,facemath/observation/correspondence.py,OGM-001;OGM-002,,"""..\runs\enrollment-registry-20261003\env311\Scripts\python.exe"" -m pytest -q ../tests/test_landmark_correspondence.py ../tests/test_wave5_study.py --basetemp=.pacer/run/mapping-04",,absorb,
+PAC-001,AREA,A1,Landmark correspondence repair,DONE,,,,,,,,,,

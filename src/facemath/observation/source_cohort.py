@@ -21,7 +21,10 @@ PLAN_FORMAT = "facemath.pts_cohort_plan.v12"
 RECIPE_FORMAT = "facemath.pts_dataset_recipe.v12"
 WINDOW_PLAN_FORMAT = "facemath.pts_cohort_plan.v15"
 WINDOW_RECIPE_FORMAT = "facemath.pts_dataset_recipe.v15"
-RECIPE_FORMATS = (RECIPE_FORMAT, WINDOW_RECIPE_FORMAT)
+CORRESPONDENCE_PLAN_FORMAT = "facemath.pts_cohort_plan.v17"
+CORRESPONDENCE_RECIPE_FORMAT = "facemath.pts_dataset_recipe.v17"
+WINDOW_PLAN_FORMATS = (WINDOW_PLAN_FORMAT, CORRESPONDENCE_PLAN_FORMAT)
+RECIPE_FORMATS = (RECIPE_FORMAT, WINDOW_RECIPE_FORMAT, CORRESPONDENCE_RECIPE_FORMAT)
 GROUP_SELECTIONS = ('sha256_seed_nul_helen_source_blocks_v1',
                     'sha256_seed_nul_ibug_source_blocks_v1')
 SPLITS = ("development", "calibration", "evaluation")
@@ -56,8 +59,14 @@ def _member_name(value: str) -> str:
 
 
 def validate_plan(plan: dict) -> None:
-    if not isinstance(plan, dict) or plan.get('format') not in (PLAN_FORMAT, WINDOW_PLAN_FORMAT):
+    if not isinstance(plan, dict) or plan.get('format') not in (PLAN_FORMAT, *WINDOW_PLAN_FORMATS):
         raise ObservationError("unknown PTS cohort plan")
+    from .correspondence import MP_REFERENCE8_V2
+    if plan['format'] == CORRESPONDENCE_PLAN_FORMAT:
+        if plan.get('correspondence') != MP_REFERENCE8_V2:
+            raise ObservationError("v17 plan requires an explicit supported correspondence")
+    elif 'correspondence' in plan:
+        raise ObservationError("explicit correspondence requires a v17 cohort plan")
     for key in ('name', 'source', 'label_source', 'image_terms', 'grouping_limit', 'runtime_version', 'seed'):
         if not isinstance(plan.get(key), str) or not plan[key].strip():
             raise ObservationError(f"cohort must declare {key}")
@@ -66,7 +75,7 @@ def validate_plan(plan: dict) -> None:
                                     'sha256_seed_nul_helen_source_blocks_v1',
                                     'sha256_seed_nul_ibug_source_blocks_v1'):
         raise ObservationError("unknown prospective selection algorithm")
-    if plan['format'] == WINDOW_PLAN_FORMAT:
+    if plan['format'] in WINDOW_PLAN_FORMATS:
         if plan['selection'] not in GROUP_SELECTIONS:
             raise ObservationError("source windows require photograph-root grouping")
         offset = plan.get('selection_offset')
@@ -204,7 +213,7 @@ def select_members(plan: dict, inventory: list) -> list[dict]:
         count = plan['split_counts'][split]
         for position, row in enumerate(candidates[offset:offset + count], start=offset):
             selected.append({**row, 'split': split, 'candidate_count': candidate_count,
-                **({'selection_index': position} if plan['format'] == WINDOW_PLAN_FORMAT else {})})
+                **({'selection_index': position} if plan['format'] in WINDOW_PLAN_FORMATS else {})})
         offset += count
     return selected
 
@@ -227,14 +236,16 @@ def make_recipe(plan: dict, inventory: list) -> dict:
         annotations.append(names['annotation'])
     assets.append(dict(path='face_landmarker.task', **plan['model']))
     cohort = {'plan': plan, 'inventory': sorted(inventory, key=lambda r: r['name']), 'selection': selected}
-    window = plan['format'] == WINDOW_PLAN_FORMAT
+    window = plan['format'] in WINDOW_PLAN_FORMATS
     if window:
         start, count, total = plan['selection_offset'], len(selected), selected[0]['candidate_groups']
         cohort['selection_window'] = dict(unit='photograph_filename_root', start_inclusive=start,
             stop_exclusive=start + count, candidate_annotations=selected[0]['candidate_count'],
             candidate_source_groups=total, skipped_before=start, selected=count,
             remaining_after=total - start - count)
-    return dict(format=WINDOW_RECIPE_FORMAT if window else RECIPE_FORMAT,
+    explicit = plan['format'] == CORRESPONDENCE_PLAN_FORMAT
+    return dict(format=CORRESPONDENCE_RECIPE_FORMAT if explicit else WINDOW_RECIPE_FORMAT if window else RECIPE_FORMAT,
+        **({'correspondence': plan['correspondence']} if explicit else {}),
         label_kind='external_dataset', model_asset='face_landmarker.task',
         **{key: plan[key] for key in ('name', 'source', 'label_source', 'image_terms', 'grouping_limit',
                                      'runtime_version', 'coordinate_origin', 'box_margin', 'protocol')},

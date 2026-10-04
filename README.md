@@ -1,5 +1,43 @@
 # FACEMATH · reproducible facial geometry
 
+Version **0.17.0** versions the native landmark correspondence. New observations
+use MediaPipe vertex **4** for `nose_tip`, selected from retained development
+evidence. Historical observations and prepared datasets keep vertex 1. The
+correspondence is bound into observation/study serialization and calibration
+compatibility; incompatible mappings cannot be pooled, compared or transferred.
+All 478 native coordinates and perturbation samples remain intact. This change
+requires a new fit and calibration; it does not repair the old model in place.
+See [the repair design](docs/LANDMARK_CORRESPONDENCE_DESIGN.md).
+
+`examples/helen-correspondence-cohort.json` freezes a new 60-source HELEN window
+`[132,192)` against the retained enrollment registry. Use the pinned assets from
+the preceding intake:
+
+```shell
+python -m facemath dataset cohort examples/helen-correspondence-cohort.json --archive runs/source-cohort-20261002/ibug_300W_large_face_landmark_dataset.tar.gz --model evidence/enrollment-registry-20261003/dataset/assets/face_landmarker.task --out runs/correspondence-intake
+python -m facemath dataset run runs/correspondence-intake/dataset --registry evidence/enrollment-registry-20261003/next-registry.json --out runs/correspondence-study
+```
+
+This measures published-label agreement. The chin discrepancy and independent
+anatomical/visibility validation remain open. The original landmark diagnosis
+and historical model evidence remain unchanged.
+
+The new native study observed 60/60 sources. On its 20 evaluation groups, the
+prespecified nose mapping reduced median error from 0.1203 to 0.0525 eye spans;
+10/20 nose points met the fixed 0.05 threshold, compared with 2/20 using vertex 1.
+The separately fitted joint model covered 19/20 groups. These results establish
+improved recorded agreement, with substantial remaining localization error.
+[Raw audit](evidence/landmark-correspondence-20261004/source-audit-final.json) ·
+[Full native pair report](evidence/landmark-correspondence-20261004/native-pair-final/calibrated/report.html).
+The pair retains all 478 vertices; flow, edges and 96 sensitivity draws execute,
+and all 142 raw geometry arrays remain unchanged when adding the research model.
+Use `evidence/landmark-correspondence-20261004/next-registry.json` for subsequent
+source selection; it extends the same scope to all 315 enrolled cases.
+Qualification separately reports native execution and declared reference kinds.
+Published PTS labels do not set the blind-human validation flag. The first repair
+run exposed that reporting defect and is retained as superseded evidence; final
+validation repeats the same frozen plan without retuning or claiming new sources.
+
 Version **0.16.0** adds immutable cross-study enrollment registries. Export a
 verified study's complete enrollment, retain earlier snapshots when extending a
 registry, and pass `--registry` to `study-freeze` or `dataset run`. Any registered

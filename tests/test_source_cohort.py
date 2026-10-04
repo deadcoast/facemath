@@ -257,6 +257,40 @@ def window_plan(cohort, offset=0, count=4):
     return plan
 
 
+def test_explicit_correspondence_survives_preparation_and_reverification(cohort, tmp_path):
+    from facemath.observation.correspondence import MP_REFERENCE8_V2
+    from facemath.observation.study import ObserverDeclaration
+    plan = window_plan(cohort)
+    plan.update(format='facemath.pts_cohort_plan.v17', correspondence=MP_REFERENCE8_V2)
+    cohort['path'].write_text(json.dumps(plan))
+    dataset = prepare_cohort(cohort['path'], cohort['archive'], cohort['model'], tmp_path/'v17')
+    assert verify_dataset(dataset)['conversion_recomputed']
+    recipe = read_json(dataset/'recipe.json')
+    assert recipe['correspondence'] == MP_REFERENCE8_V2
+    assert recipe['format'] == 'facemath.pts_dataset_recipe.v17'
+    decl = ObserverDeclaration.from_dict(read_json(dataset/'study.spec.json')['observer'])
+    assert decl.correspondence == MP_REFERENCE8_V2
+    recipe['correspondence'] = None
+    with pytest.raises(ObservationError, match='frozen selection'):
+        verify_recipe(recipe)
+
+
+@pytest.mark.parametrize('identity', [None, '', 'unknown', 4])
+def test_correspondence_plan_refuses_missing_or_unknown_identity(cohort, identity):
+    plan = window_plan(cohort)
+    plan.update(format='facemath.pts_cohort_plan.v17', correspondence=identity)
+    with pytest.raises(ObservationError, match='correspondence'):
+        select_members(plan, cohort['inventory'])
+
+
+def test_correspondence_cannot_be_silently_ignored_by_old_plan(cohort):
+    from facemath.observation.correspondence import MP_REFERENCE8_V2
+    plan = window_plan(cohort)
+    plan['correspondence'] = MP_REFERENCE8_V2
+    with pytest.raises(ObservationError, match='v17'):
+        make_recipe(plan, cohort['inventory'])
+
+
 @pytest.mark.parametrize('selector', ['ibug', 'helen'])
 def test_windows_partition_ranked_roots_after_grouping(cohort, selector):
     plan = window_plan(cohort, count=5)

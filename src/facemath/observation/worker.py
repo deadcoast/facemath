@@ -33,7 +33,8 @@ def main(argv: list[str] | None = None) -> int:
         image = load_rgb(request["image"])
         with MediaPipeProvider(request["model"], declaration.model_sha256,
                                noise_floor_px=declaration.noise_floor_px,
-                               use_augmentations=declaration.attempted_samples == 7) as provider:
+                               use_augmentations=declaration.attempted_samples == 7,
+                               correspondence=declaration.correspondence) as provider:
             if provider.version != declaration.runtime_version:
                 raise ObservationError("worker observer runtime mismatch")
             observation = provider.observe(image)
