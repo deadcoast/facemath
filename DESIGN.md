@@ -102,6 +102,7 @@ Unavailable rows remain visible; no loading state is invented for sealed data.
 | Read-only table | readout.py | Typed comparison profile | Nominal, calibrated, partial support | Structural tests and real native report |
 | Form | annotation_ui.py | reference.py and workspace.py | Blind native reference, explicitly synthetic control | Browser download through intake/freeze |
 | Pair submission | facemath/workspace_ui.py | facemath/workspace.py and CLI analyze | Pending, complete, failed, cancelled, interrupted | Browser uploads through native analysis |
+| Source crop | facemath/workspace_ui.py | facemath/workspace_input.py integer slice | Pointer drag, numeric edit, whole-image reset | Indexed pixels, EXIF controls and native retry |
 
 The pair workspace reuses `artifacts.py:REPORT_TOKENS` as its canonical palette
 and the existing readout renderers for measurements. Its two-image selection
@@ -110,6 +111,14 @@ and edge tables own horizontal scrolling at 790px and 1120px minimum width.
 Pending work has an honest activity message and cancellation, never a fabricated
 percentage. Failures retain their logs and selections. History and reconnect
 open the original run; a new comparison creates a distinct output directory.
+
+Source selection uses a stored-orientation canvas with an amber crop outline
+and a dimmed exterior. Left, top, width and height are native number inputs;
+keyboard users can select exactly the same pixels without dragging. Invalid
+bounds remain visible with a local explanation and prevent submission. Previews
+may shrink for display; selected analysis pixels never do. On narrow screens,
+the two image editors stack. The portable input-selection view reuses report
+tokens and shows original and selected images, dimensions and coordinate offset.
 
 The reference workbench is the existing editing sibling. Its CSS owns its
 established palette: background #11171d, panel #19232c, ink #e9f0f4, muted #a5b6c2,

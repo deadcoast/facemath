@@ -2,11 +2,15 @@
 
 ## Open the application
 
-Choose two PNG/JPEG portraits in the local application, select **Compare images**,
+Choose two PNG/JPEG portraits in the local application, crop to one face when
+needed, select **Compare images**,
 and inspect measured facial structure, registered blends and image-edge
 differences. Completed comparisons stay available after refresh or restart.
 Failures retain their input images and execution logs. Downloads contain the
-complete report, measurements, arrays and original uploaded bytes.
+complete report, measurements, arrays, original uploaded bytes and selected crops.
+Drag a rectangle or enter exact pixel bounds; **Use whole image** clears the crop.
+After comparison, **Input selection** shows the original frame, selected pixels
+and their coordinate offset. Previews and analysis use stored image orientation.
 
 ```shell
 python -m facemath app --model models/face_landmarker.task --out runs/comparisons
@@ -22,6 +26,14 @@ Research-calibrated bounds and qualified analysis remain available through
 See [the application workflow](docs/WORKSPACE_DESIGN.md).
 
 ## Development history
+
+Version **0.25.0** adds explicit source selection before native observation.
+Pointer and numeric controls choose an integer pixel slice without resizing.
+The existing full comparison analyzes that lossless crop; originals, crop bounds,
+hashes and the translation back to original pixel centers remain in the download.
+Whole-image analysis continues to use the original upload. A two-face input can
+be retried with a selected face in a distinct saved run. See the
+[source selection contract](docs/SOURCE_SELECTION_DESIGN.md).
 
 Version **0.24.0** makes regional movement and deformation inspectable. Expand
 an eye, nose, mouth, jaw, central face or whole-face region to see measured A→B

@@ -1,7 +1,6 @@
 """Loopback image-pair application; the existing analyze command owns all maths."""
 from __future__ import annotations
 
-import base64
 from datetime import datetime, timezone
 from hashlib import sha256
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -22,8 +21,8 @@ import cv2
 import numpy as np
 
 from .observation.contracts import ObservationError
+from .workspace_input import MAX_IMAGE_BYTES, decode_upload, png, select_input, selection_page, source_preview
 
-MAX_IMAGE_BYTES = 16 * 1024 * 1024
 MAX_REQUEST_BYTES = 2 * ((MAX_IMAGE_BYTES + 2) // 3 * 4) + 65536
 RUN_ID = re.compile(r"[0-9a-f]{32}\Z")
 
@@ -93,29 +92,13 @@ class Workspace:
 
     @staticmethod
     def _image(item: dict) -> tuple[str, bytes, np.ndarray]:
-        if not isinstance(item, dict) or not isinstance(item.get("name"), str):
-            raise ValueError("Each image needs its filename and encoded contents.")
-        value = item.get("data")
-        if not isinstance(value, str) or len(value) > (MAX_IMAGE_BYTES + 2) // 3 * 4:
-            raise ValueError("Each image must be at most 16 MiB.")
-        raw = base64.b64decode(value, validate=True)
-        if not raw or len(raw) > MAX_IMAGE_BYTES:
-            raise ValueError("Each image must be at most 16 MiB.")
-        if not (raw.startswith(b"\x89PNG\r\n\x1a\n") or raw.startswith(b"\xff\xd8\xff")):
-            raise ValueError("Choose a PNG or JPEG image.")
-        image = cv2.imdecode(np.frombuffer(raw, np.uint8), cv2.IMREAD_COLOR | cv2.IMREAD_IGNORE_ORIENTATION)
-        if image is None or min(image.shape[:2]) < 8:
-            raise ValueError("The image could not be decoded. Choose a valid PNG or JPEG.")
-        if image.shape[0] * image.shape[1] > 30_000_000:
-            raise ValueError("Images must contain at most 30 million pixels.")
-        name = item["name"].replace("\\", "/").split("/")[-1][:180]
-        return name, raw, image
+        return decode_upload(item)
 
     def submit(self, request: dict) -> dict:
         with self.lock:
             if self.active:
                 raise BlockingIOError("A comparison is already running. Wait for it or cancel it first.")
-            images = [self._image(request.get(key)) for key in ("a", "b")]
+            images = [select_input(request.get(key)) for key in ("a", "b")]
             tolerance = request.get("tolerance", .05)
             if isinstance(tolerance, bool) or not isinstance(tolerance, (int, float)) or not .001 <= tolerance <= 1:
                 raise ValueError("Tolerance must be between 0.001 and 1 eye span.")
@@ -123,18 +106,18 @@ class Workspace:
             directory = self.root / run_id
             directory.mkdir()
             inputs = []
-            for key, (name, raw, decoded) in zip(("a", "b"), images):
+            for key, selected in zip(("a", "b"), images):
                 source = directory / f"input_{key}.image"
-                source.write_bytes(raw)
-                # Browser previews use the same stored-raster orientation as analysis.
-                ok, preview = cv2.imencode(".png", decoded)
-                if not ok:
-                    raise OSError("Could not write the source preview.")
-                (directory / f"preview_{key}.png").write_bytes(preview.tobytes())
-                inputs.append({"name": name, "sha256": sha256(raw).hexdigest(),
-                               "width": decoded.shape[1], "height": decoded.shape[0]})
+                source.write_bytes(selected.original)
+                (directory / f"preview_{key}.png").write_bytes(png(selected.pixels))
+                analysis_bytes = png(selected.selected) if selected.cropped else selected.original
+                info = selected.record(key, analysis_bytes)
+                if selected.cropped:
+                    (directory / info["analysis"]["file"]).write_bytes(analysis_bytes)
+                inputs.append(info)
+            (directory / "selection.html").write_text(selection_page(inputs), encoding="utf-8")
             command = [sys.executable, "-m", "facemath", "analyze",
-                str(directory / "input_a.image"), str(directory / "input_b.image"),
+                *(str(directory / item["analysis"]["file"]) for item in inputs),
                 "--model", str(self.model), "--model-sha256", self.model_hash,
                 "--tolerance", str(tolerance), "--out", str(directory / "result")]
             record = {"id": run_id, "status": "running", "created": now(),
@@ -191,6 +174,9 @@ class Workspace:
                                 archive.write(path, "result/" + path.name)
                         for name in ("input_a.image", "input_b.image", "request.json", "command.json", "stdout.log", "stderr.log"):
                             archive.write(directory / name, name)
+                        for name in ("selection.html", "preview_a.png", "preview_b.png", "analysis_a.png", "analysis_b.png"):
+                            if (directory / name).is_file():
+                                archive.write(directory / name, name)
                     record.update(status="complete", message="Comparison ready. Inspect measured differences and their available support.")
             except Exception as exc:
                 record.update(status="failed", message=f"Could not publish the comparison: {exc}")
@@ -297,7 +283,7 @@ class Handler(BaseHTTPRequestHandler):
                     html = render_pair_readout(evidence, image_prefix=f"runs/{parts[1]}/result/")
                     self._send(200, html.encode(), "text/html; charset=utf-8")
                     return
-                elif relative in {"preview_a.png", "preview_b.png", "stderr.log", "stdout.log", "command.json", "comparison.zip"}:
+                elif relative in {"preview_a.png", "preview_b.png", "analysis_a.png", "analysis_b.png", "selection.html", "request.json", "stderr.log", "stdout.log", "command.json", "comparison.zip"}:
                     path = work.root / parts[1] / relative
                 else:
                     raise FileNotFoundError("File not found.")
@@ -330,6 +316,8 @@ class Handler(BaseHTTPRequestHandler):
                 raise ValueError("Expected an image-pair request.")
             if route == "api/jobs":
                 self._json(202, self.server.workspace.submit(data))
+            elif route == "api/preview":
+                self._json(200, source_preview(data.get("image")))
             elif re.fullmatch(r"api/jobs/[0-9a-f]{32}/cancel", route):
                 self._json(200, self.server.workspace.cancel(route.split("/")[-2]))
             else:

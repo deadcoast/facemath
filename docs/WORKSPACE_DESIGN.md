@@ -20,7 +20,9 @@ the initial workspace makes observed comparisons without claiming those bounds.
 
 Each submission creates a unique directory. Uploaded PNG/JPEG bytes are retained;
 the worker decodes stored-raster coordinates and browser result previews use
-that same orientation. Browser selection previews may display EXIF orientation.
+that same orientation. In 0.22, browser selection previews could display EXIF
+orientation; 0.25 replaces them with stored-raster previews and explicit integer
+crops, as defined in [SOURCE_SELECTION_DESIGN.md](SOURCE_SELECTION_DESIGN.md).
 One native worker runs at a time. Status moves from running to complete, failed,
 cancelled or interrupted. Results become available after the process exits
 successfully and its bundle verifies. Failed work keeps inputs and logs; retry

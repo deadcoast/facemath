@@ -1,3 +1,14 @@
+# 0.25.0 — source image selection
+
+- Select a face with pointer cropping or exact pixel bounds before running the
+  existing native comparison; reset either image to its complete source raster.
+- Decode input previews in the same stored-raster orientation as analysis,
+  including JPEG files with EXIF display rotations.
+- Analyze exact lossless pixel slices without resampling. Retain originals,
+  bounds, hashes and crop-to-original translations in saved input records.
+- Include a portable input-selection view and crop files in comparison downloads.
+- Clear stale terminal status when retrying a failed comparison.
+
 # 0.24.0 — regional spatial inspection
 
 - Connect seven regional comparisons to expandable app and portable-report views.
