@@ -1,0 +1,116 @@
+{
+  "format": "facemath.reference.v4",
+  "protocol_sha256": "db71853e5f9cc8f1929cf7329aad3d3111c9518cc5f10eb043e36ac530701972",
+  "names": [
+    "left_eye_outer",
+    "left_eye_inner",
+    "right_eye_inner",
+    "right_eye_outer",
+    "nose_tip",
+    "mouth_left",
+    "mouth_right",
+    "chin"
+  ],
+  "image_sha256": "a41b76033a81e765411dc12134095b8aeeb6fe89bff6b45607c8786091f4f5b2",
+  "image_shape": [
+    1471,
+    1420
+  ],
+  "xy": [
+    [
+      440.2972689999999,
+      404.378776
+    ],
+    [
+      598.7377140000001,
+      402.44764999999995
+    ],
+    [
+      847.228705,
+      427.81985699999996
+    ],
+    [
+      1004.9854049999999,
+      436.92221800000004
+    ],
+    [
+      751.356,
+      636.2966289999999
+    ],
+    [
+      535.655058,
+      869.833791
+    ],
+    [
+      894.4676529999999,
+      883.2905780000001
+    ],
+    [
+      676.137727,
+      1232.510094
+    ]
+  ],
+  "visible": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "rater_id": "published_dataset_annotation",
+  "kind": "external_dataset",
+  "source": "https://dlib.net/files/data/ibug_300W_large_face_landmark_dataset.tar.gz",
+  "prediction_exposure": "unknown",
+  "metadata": {
+    "annotation_sha256": "9d10fab3f39e1bef905e3a55fa0ad602d38cf8b6465577fe749182702e53f57c",
+    "box_index": 0,
+    "cohort_archive_sha256": "aa3d1ec603ead25bfc94f60ad2adee8513dda71e593ce16d0906c46ff73bf81e",
+    "crop_basis": "inclusive_integer_68_point_extrema",
+    "crop_xyxy_exclusive": [
+      852,
+      577,
+      2272,
+      2048
+    ],
+    "grouping_limit": "At most one original face per numeric HELEN photograph filename root. Mirrors excluded and exact aliases rejected. Filename roots do not establish person independence, unknown related photographs or model training overlap; no population coverage claim. The unchanged seed and rank window follow the prior 60-source donor cohort; no resampling or outcome-dependent replacement. This study was chosen after prior studies and does not correct adaptive cross-study selection. This 12-source window is an integration check chosen before its outcomes; no acceptance threshold or new fit.",
+    "image_terms": "iBUG annotations are research-only; not for commercial products or commercial algorithm training. Original photograph rights remain with their owners. https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/ https://ibug.doc.ic.ac.uk/resources/300-W/",
+    "label_source": "Original iBUG 300W semi-automatic PTS annotations, retained by the public dlib repack; no newly performed human testing; native training overlap unknown",
+    "mapping_requires_review": true,
+    "source_encoded_sha256": "74aa7f5f9b70c543eac636db8c61ccc913c1626d07dd22e058d005898ab1ab2a",
+    "source_format": "original_pts",
+    "source_indices_zero_based": [
+      36,
+      39,
+      42,
+      45,
+      30,
+      48,
+      54,
+      8
+    ],
+    "source_origin": 1,
+    "source_raster_sha256": "6e3f4bd99fe746f0a42ddfc3888d6795997dd489696be15b06e5fd4cfecdd262",
+    "source_schema": "ibug68",
+    "source_to_crop": [
+      [
+        1,
+        0,
+        -852
+      ],
+      [
+        0,
+        1,
+        -577
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "visibility": "no_occlusion_labels; in_crop_assumed_observable"
+  }
+}

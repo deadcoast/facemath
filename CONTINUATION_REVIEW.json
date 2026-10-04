@@ -1,210 +1,300 @@
 {
   "schema": "facemath.continuation_review.v1",
-  "version": "0.15.0",
-  "created_utc": "2026-10-04T00:18:42.468304+00:00",
-  "parent_commit": "381e15af01427ae78cf01717d9f1c2a7fe8067ed",
-  "engine_code_sha256": "cb44e9a75e4259b0ceb48ab73b1b47107ed339a744ff53572ceef2fa61231949",
+  "version": "0.16.0",
+  "created_utc": "2026-10-04T02:09:00.868283+00:00",
+  "parent_commit": "66a87e5d0fbf1f0aafcb77ad8a853c82229c0d02",
+  "engine_code_sha256": "a560b0752c875922e3afe93403273b37268804a6d3e8d4e8f3d6a35de226dc8a",
   "review_scope": {
     "authority": [
       "AGENTS.md",
       "README.md",
-      "docs/MODEL_TRANSFER_DESIGN.md",
+      "docs/ENROLLMENT_REGISTRY_DESIGN.md",
       "docs/WAVE10_ROADMAP.md"
     ],
     "inspected": [
-      "src/facemath/observation/source_cohort.py",
-      "src/facemath/observation/dataset.py",
+      "src/facemath/observation/enrollment.py",
+      "src/facemath/observation/study.py",
       "src/facemath/observation/transfer.py",
+      "src/facemath/observation/deployment.py",
+      "src/facemath/observation/dataset.py",
       "src/facemath/observation/transfer_io.py",
-      "tests/test_source_cohort.py",
-      "tests/test_model_transfer.py",
+      "src/facemath/cli.py",
+      "tests/test_enrollment_registry.py",
       "scripts/validate_current.py",
       "scripts/check_wheel.py"
     ],
-    "scope": "Continuation of source intake and frozen transfer; not a new audit of every historical research module",
+    "scope": "Cross-study source reuse, frozen enrollment propagation and native integration; not a new audit of every historical mathematics module",
     "historical_review": "REPOSITORY_REVIEW.json",
-    "historical_review_unchanged_sha256": "ec9fb50eccadfc148f12981d1bcbd763735f96f6a19e125dd8c818a007c2790a"
+    "historical_review_unchanged_sha256": "ec9fb50eccadfc148f12981d1bcbd763735f96f6a19e125dd8c818a007c2790a",
+    "previous_continuation": "evidence/enrollment-registry-20261003/development/parent-continuation.json"
   },
   "completed": [
     {
-      "id": "SW-01",
-      "change": "Versioned deterministic photograph-root windows after grouping, before split allocation",
+      "id": "ER-01",
+      "change": "NEXT-02 immutable full-enrollment receipts and scoped registries",
       "evidence": [
-        "docs/SOURCE_WINDOW_DESIGN.md",
-        "tests/test_source_cohort.py"
+        "docs/ENROLLMENT_REGISTRY_DESIGN.md",
+        "tests/test_enrollment_registry.py"
       ],
-      "done": "Integer bounds, exhausted inventory, split/group separation, order invariance and resealed tampering tested; old reader refusal and legacy recipe parity executed"
+      "done": "Full splits, failures and exclusions; shared source/hash/group/lineage aliases; immutable append; no automatic replacement"
     },
     {
-      "id": "SW-02",
-      "change": "Frozen 60-portrait HELEN holdout with unchanged donor model and no source/group aliases against retained cohorts",
-      "evidence": [
-        "examples/helen-transfer-window.json",
-        "evidence/source-window-20261003/prospective-freeze.json"
-      ],
-      "done": "Distinct native source, wheel, archive and Linux acquisitions; full enrollment retained; no refit or empirical admission"
+      "id": "ER-02",
+      "change": "Versioned study/model binding and qualification query/context propagation",
+      "done": "Recomputed guards on load/acquisition/replay; inherited registry carried by model capsules; old-reader refusal executed"
     },
     {
-      "id": "SW-03",
-      "change": "Full regression, milestone controls, replay and portable package validation",
+      "id": "ER-03",
+      "change": "243-case prospective registry plus 12-source native integration",
+      "done": "Prior 60-source cohort refused before inference; distinct source/wheel/archive/Linux runs; unchanged model; future registry retains all 255 cases"
+    },
+    {
+      "id": "ER-04",
+      "change": "Full source, installed wheel, extracted archive and Ubuntu validation",
       "evidence": [
-        "evidence/source-window-20261003/VALIDATION.json"
+        "evidence/enrollment-registry-20261003/VALIDATION.json"
       ],
-      "done": "Source, wheel and extracted archive passed; observed arrays/model bytes audited"
+      "done": "Required controls, replay, source/package bytes and original observation arrays verified"
     }
   ],
   "tests": {
     "parent": {
-      "tests": 1076,
+      "tests": 1097,
       "failures": 0,
       "errors": 0,
       "skipped": 1,
-      "passed": 1075,
+      "passed": 1096,
       "skip_reasons": [
         "platform cannot create a directory symlink"
       ]
     },
     "windows_source": {
-      "tests": 1097,
+      "tests": 1157,
       "failures": 0,
       "errors": 0,
       "skipped": 1,
-      "passed": 1096,
+      "passed": 1156,
       "skip_reasons": [
         "platform cannot create a directory symlink"
       ]
     },
     "installed_wheel": {
-      "tests": 1097,
+      "tests": 1157,
       "failures": 0,
       "errors": 0,
       "skipped": 1,
-      "passed": 1096,
+      "passed": 1156,
       "skip_reasons": [
         "platform cannot create a directory symlink"
       ]
     },
     "extracted_archive": {
-      "tests": 1097,
+      "tests": 1157,
       "failures": 0,
       "errors": 0,
       "skipped": 1,
-      "passed": 1096,
+      "passed": 1156,
       "skip_reasons": [
         "platform cannot create a directory symlink"
       ]
     },
     "linux_source": {
-      "tests": 1097,
+      "tests": 1157,
       "failures": 0,
       "errors": 0,
       "skipped": 0,
-      "passed": 1097,
+      "passed": 1157,
       "skip_reasons": []
     }
   },
-  "native_holdout": {
+  "native_integration": {
     "outcomes": {
       "contract_error": 0,
       "interrupted": 0,
       "multiple_faces": 0,
       "no_face": 0,
-      "observed": 60,
+      "observed": 12,
       "runtime_error": 0,
       "timeout": 0
     },
-    "enrolled": 60,
-    "eligible": 60,
+    "enrolled": 12,
+    "eligible": 12,
     "prospectively_excluded": 0,
     "coverage": {
       "calibration_sha256": "f8f75c60037e2b453a046fe91611df5f4d27b02279bf8b6ef51e87b419faa361",
       "finite_envelope": true,
-      "evaluation_cases": 60,
-      "evaluation_groups": 60,
-      "covered_groups": 56,
-      "empirical_group_coverage": 0.9333333333333333,
-      "failures": 4,
+      "evaluation_cases": 12,
+      "evaluation_groups": 12,
+      "covered_groups": 12,
+      "empirical_group_coverage": 1.0,
+      "failures": 0,
+      "cases": [
+        {
+          "case_id": "case_00000",
+          "group_id": "source_58d946ce127ac2d75ca9afbad2f0637d5691724e2b95b1c6b65ee065f3815ec7",
+          "score": 4.322745564115456,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00001",
+          "group_id": "source_eefed9a21f8e0ed791b92c2a2f121524d8f4b995fdec0e6aff94e0262ae9fe1b",
+          "score": 8.08463027585694,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00002",
+          "group_id": "source_fede4d1483aa3299979a2bd8f1596d4b8503253e83e2a772bfaf7aacefc8e9fd",
+          "score": 11.217571737534051,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00003",
+          "group_id": "source_04f0eadd0029278199d8a12493d5da918d9175d7ccab9de6230fcb5a90de210d",
+          "score": 5.854162115147081,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00004",
+          "group_id": "source_ec340e101c38ff1142c4dfaaeb9e102a194fd4a5ab84c4f64c07ec1ea6e78105",
+          "score": 8.377535035166265,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00005",
+          "group_id": "source_c06f5735b7b34b6c974b1630b6dea9082b3e93ea4cbb97d0ccfe40ec97c1fec6",
+          "score": 8.55317677330076,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00006",
+          "group_id": "source_d86c22765249dee737e00cac41c831c7a5b8d53dbe4d17cf30e30f57d183bd58",
+          "score": 6.7059567830648845,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00007",
+          "group_id": "source_ea3a8a007a5b0f47d5c5662f00ab787337256dc7451700ab5b3c23b1807d1c27",
+          "score": 8.49229378262469,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00008",
+          "group_id": "source_9797eb7cbc548c0eb7a2456fe5d2e050c117d7faeb6788d34ac56c3288f18ec5",
+          "score": 7.7583893086716005,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00009",
+          "group_id": "source_edae4db73113854d7d385c7e6945574f5cc45bdcc9fa4d44eb6c8e8730c6b3a8",
+          "score": 7.475018656714165,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00010",
+          "group_id": "source_77a211141097bd32b8e052b828619a191933399089f842bc9ae2157dbcb200ef",
+          "score": 7.318152378812068,
+          "assessable": true,
+          "covered": true
+        },
+        {
+          "case_id": "case_00011",
+          "group_id": "source_ec03d8b6fab7ed1cfde5146d3b79c25c5213bf283c54eebb2c534985fceecf13",
+          "score": 7.606627038184741,
+          "assessable": true,
+          "covered": true
+        }
+      ],
       "interpretation": "held-out reference coverage, not facial resemblance or a guarantee of deployment coverage",
       "donor_nominal_coverage": 0.9,
       "target_coverage_guaranteed": false
     },
     "raw_localization": {
-      "attempted_cases": 60,
-      "complete_cases": 56,
-      "failed_cases": 4,
-      "groups": 60,
+      "attempted_cases": 12,
+      "complete_cases": 12,
+      "failed_cases": 0,
+      "groups": 12,
       "reference_kind": "external_dataset",
-      "successful_case_mean_nme": 0.04106819061957079,
-      "unconditional_auc": 0.5500302208840061,
+      "successful_case_mean_nme": 0.03877586480063786,
+      "unconditional_auc": 0.6122413519936214,
       "auc_threshold_ipd": 0.1,
       "pck_threshold_ipd": 0.05,
-      "eligible_landmarks": 480,
-      "observed_landmarks": 476,
-      "pck_including_failures": 0.7354166666666667,
+      "eligible_landmarks": 96,
+      "observed_landmarks": 96,
+      "pck_including_failures": 0.7604166666666666,
       "per_landmark": [
         {
           "name": "left_eye_outer",
-          "eligible": 60,
-          "observed": 60,
-          "within_tolerance": 58,
-          "pck": 0.9666666666666667,
-          "median_error_px": 4.302728960867267
+          "eligible": 12,
+          "observed": 12,
+          "within_tolerance": 12,
+          "pck": 1.0,
+          "median_error_px": 2.858322512149818
         },
         {
           "name": "left_eye_inner",
-          "eligible": 60,
-          "observed": 60,
-          "within_tolerance": 49,
-          "pck": 0.8166666666666667,
-          "median_error_px": 8.45416638938392
+          "eligible": 12,
+          "observed": 12,
+          "within_tolerance": 8,
+          "pck": 0.6666666666666666,
+          "median_error_px": 7.590211521411694
         },
         {
           "name": "right_eye_inner",
-          "eligible": 60,
-          "observed": 60,
-          "within_tolerance": 51,
-          "pck": 0.85,
-          "median_error_px": 9.027910907989778
+          "eligible": 12,
+          "observed": 12,
+          "within_tolerance": 12,
+          "pck": 1.0,
+          "median_error_px": 8.797745848182387
         },
         {
           "name": "right_eye_outer",
-          "eligible": 60,
-          "observed": 60,
-          "within_tolerance": 55,
+          "eligible": 12,
+          "observed": 12,
+          "within_tolerance": 11,
           "pck": 0.9166666666666666,
-          "median_error_px": 3.8550378306609803
+          "median_error_px": 3.464962762755219
         },
         {
           "name": "nose_tip",
-          "eligible": 60,
-          "observed": 60,
-          "within_tolerance": 8,
-          "pck": 0.13333333333333333,
-          "median_error_px": 23.393665532547356
+          "eligible": 12,
+          "observed": 12,
+          "within_tolerance": 1,
+          "pck": 0.08333333333333333,
+          "median_error_px": 19.792691748382914
         },
         {
           "name": "mouth_left",
-          "eligible": 60,
-          "observed": 60,
-          "within_tolerance": 55,
-          "pck": 0.9166666666666666,
-          "median_error_px": 6.034245212385471
+          "eligible": 12,
+          "observed": 12,
+          "within_tolerance": 12,
+          "pck": 1.0,
+          "median_error_px": 5.456277362507117
         },
         {
           "name": "mouth_right",
-          "eligible": 60,
-          "observed": 60,
-          "within_tolerance": 52,
-          "pck": 0.8666666666666667,
-          "median_error_px": 4.644579082593458
+          "eligible": 12,
+          "observed": 12,
+          "within_tolerance": 12,
+          "pck": 1.0,
+          "median_error_px": 5.405497571360281
         },
         {
           "name": "chin",
-          "eligible": 60,
-          "observed": 56,
-          "within_tolerance": 25,
+          "eligible": 12,
+          "observed": 12,
+          "within_tolerance": 5,
           "pck": 0.4166666666666667,
-          "median_error_px": 13.73163102164423
+          "median_error_px": 13.687635055142113
         }
       ],
       "failure_policy": "every failed attempt stays in case/PCK/AUC denominators; NME conditional on complete cases is labeled",
@@ -213,68 +303,387 @@
       "rater_agreement_limit": "disagreement needs at least two raters; zero with one rater is not evidence of agreement"
     },
     "bound_utility": {
-      "enrolled_cases": 60,
-      "eligible_cases": 60,
+      "enrolled_cases": 12,
+      "eligible_cases": 12,
       "prospectively_excluded": 0,
-      "enrolled_groups": 60,
-      "complete_landmark_groups": 56,
-      "finite_ratio_groups": 60,
+      "enrolled_groups": 12,
+      "complete_landmark_groups": 12,
+      "finite_ratio_groups": 12,
       "reasons": {
-        "bounded": 56,
-        "partial_reference_support": 4
+        "bounded": 12
       },
       "landmark_diameter": {
-        "total": 480,
-        "finite": 476,
-        "unavailable": 4,
+        "total": 96,
+        "finite": 96,
+        "unavailable": 0,
         "minimum": 0.4642792077493886,
-        "median": 0.6826458619214679,
+        "median": 0.7015678808173116,
         "maximum": 2.055135537118501
       },
       "eye_span": {
-        "total": 60,
-        "finite": 60,
+        "total": 12,
+        "finite": 12,
         "unavailable": 0,
         "minimum": 0.7750379014326026,
         "median": 0.7750379014326026,
         "maximum": 0.7750379014326026
       },
       "mouth_width": {
-        "total": 60,
-        "finite": 60,
+        "total": 12,
+        "finite": 12,
         "unavailable": 0,
-        "minimum": 0.7436541225269491,
-        "median": 0.7463786976905696,
-        "maximum": 0.7524932970298279
+        "minimum": 0.7442160626803468,
+        "median": 0.7463471657786143,
+        "maximum": 0.747831580348115
       },
       "mouth_eye_ratio": {
-        "total": 60,
-        "finite": 60,
+        "total": 12,
+        "finite": 12,
         "unavailable": 0,
-        "minimum": 1.4619891988100528,
-        "median": 1.604645160487443,
-        "maximum": 1.9024289262825587
+        "minimum": 1.5225136026261579,
+        "median": 1.6227321380583608,
+        "maximum": 1.7693091542238413
       }
     },
-    "report_sha256": "3c97210f12e01b25785e7b983de66b8a9460b41fc616a7b68b80f924eee1aa4a",
+    "report_sha256": "6d52ca0afa17cd3381369925e7b140e7a127ff66c8fe621d40ae07bb19468bc0",
     "fit_performed": false,
     "raw_coordinates_changed": false,
     "empirical_admission": false,
     "exact_retained_replay": true
   },
+  "registry": {
+    "prospective_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+    "prospective_scope": "The retained dlib pilot, LFPW original-PTS cohort, HELEN donor, IBUG frozen transfer and HELEN roots 60-119 holdout; one complete source lock per plan, not independent replicas. Other studies, unknown person aliases and native training enrollment are outside this snapshot.",
+    "registered_studies": 5,
+    "registered_cases": 243,
+    "registered_sources": [
+      {
+        "name": "pilot",
+        "source": "evidence/native-pipeline-20261002/preseal/native-pipeline/study",
+        "study_sha256": "399ab02d5b4295a8215d9fce75b8d517559d12170d99ac51b2b7786a8a6d8d79",
+        "receipt_sha256": "a163217e4d965c3753870b27b59553c4f3878dfda86ede4deca0af777780b576",
+        "enrolled": 43,
+        "eligible": 43
+      },
+      {
+        "name": "lfpw",
+        "source": "evidence/source-cohort-20261002/preseal/native-pipeline/study",
+        "study_sha256": "8aac26bf5455057209143a1a47345ae8d5f75d9f21724d7e1ee076385280b937",
+        "receipt_sha256": "13a3ed8257564db164b627d9c80065ce3f0087c45dc9b2b721d37d566b75d4eb",
+        "enrolled": 60,
+        "eligible": 60
+      },
+      {
+        "name": "helen-donor",
+        "source": "evidence/bound-utility-20261002/preseal/native-pipeline/study",
+        "study_sha256": "3d3d4bfed7cfbe4a2e813020e1a4c35b98198c00386226667f730541ff115822",
+        "receipt_sha256": "b250aa9b8f5a570ad8deb5b0f9aa71179aa1d918dee6741012ec5a85db5e0f0c",
+        "enrolled": 60,
+        "eligible": 60
+      },
+      {
+        "name": "ibug-transfer",
+        "source": "evidence/model-transfer-20261002/preseal/native-pipeline/study",
+        "study_sha256": "ff46226db6b494a5901c66e2542532a13d8d0ee4d472b02de9a8e3baadd7a7a3",
+        "receipt_sha256": "b963d80c8700a37a516d10a8797c27f5d356782af4ee561ae44f25e8a0983250",
+        "enrolled": 20,
+        "eligible": 20
+      },
+      {
+        "name": "helen-holdout",
+        "source": "evidence/source-window-20261003/preseal/native-pipeline/study",
+        "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+        "receipt_sha256": "034c428b89aa378d123704dcf527f877d80ee5ea2107dcbf1e605ba3e90dd33e",
+        "enrolled": 60,
+        "eligible": 60
+      }
+    ],
+    "target_check": {
+      "alias_policy": "exact_source_hashes_and_shared_group_lineage_ids.v1",
+      "disjoint": true,
+      "eligible": 12,
+      "enrolled": 12,
+      "format": "facemath.enrollment_check.v16",
+      "limit": "declared registered enrollment only; not external authenticity, person independence, training-data coverage or empirical admission",
+      "overlapping_cases": 0,
+      "overlaps": [],
+      "prospectively_excluded": 0,
+      "registered_cases": 243,
+      "registered_studies": 5,
+      "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+      "scope": "The retained dlib pilot, LFPW original-PTS cohort, HELEN donor, IBUG frozen transfer and HELEN roots 60-119 holdout; one complete source lock per plan, not independent replicas. Other studies, unknown person aliases and native training enrollment are outside this snapshot.",
+      "splits": {
+        "calibration": 0,
+        "development": 0,
+        "evaluation": 12
+      },
+      "target_enrollment_sha256": "a493a10557620116dc3127ca321860222aef99c142a19d7d47d90f29a3820ffc"
+    },
+    "prior_overlap": "prior-overlap.json",
+    "prior_pipeline_refused_before_observation": true,
+    "future_registry": {
+      "created_utc": "2026-10-04T01:00:47.726391+00:00",
+      "previous_registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+      "next_registry_sha256": "b40861eb0f74b741c45caf4b0a227d69aa45517fb8584425edf4cbf725e06447",
+      "scope_expansion": "distinct root with all six complete exports; immutable five-study prospective snapshot preserved",
+      "every_prior_row_retained": true,
+      "previous_cases": 243,
+      "registered_cases": 255,
+      "added_cases": 12,
+      "membership_changed_by_outcome": false,
+      "current_study_sha256": "fda570cbfca27db9ec0ad24c65c07a8ce763b6cc0704f26737e2c2d4bae91015",
+      "next_action": "Use next-registry.json as --prior when registering further studies, and as --registry before acquisition"
+    },
+    "future_registry_path": "next-registry.json",
+    "guards": {
+      "all_checks_recomputed": true,
+      "prospective_study_sha256": "599513a4bf970d6e4bf9d73aec3ddb9d3c1fed87613f9b2cc9492629088eba9f",
+      "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+      "pipelines": {
+        "source": [
+          {
+            "path": "study",
+            "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+            "registry_file_sha256": "02820461e790deeb33ccbd539da4c86e1faaffa46ba35e050415059d4c7b7d8d",
+            "enrolled": 12,
+            "disjoint": true
+          },
+          {
+            "path": "session/study",
+            "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+            "registry_file_sha256": "02820461e790deeb33ccbd539da4c86e1faaffa46ba35e050415059d4c7b7d8d",
+            "enrolled": 12,
+            "disjoint": true
+          },
+          {
+            "path": "evaluation/acquisition/study",
+            "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+            "registry_file_sha256": "02820461e790deeb33ccbd539da4c86e1faaffa46ba35e050415059d4c7b7d8d",
+            "enrolled": 12,
+            "disjoint": true
+          },
+          {
+            "path": "replay/acquisition/study",
+            "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+            "registry_file_sha256": "02820461e790deeb33ccbd539da4c86e1faaffa46ba35e050415059d4c7b7d8d",
+            "enrolled": 12,
+            "disjoint": true
+          }
+        ],
+        "installed": [
+          {
+            "path": "study",
+            "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+            "registry_file_sha256": "02820461e790deeb33ccbd539da4c86e1faaffa46ba35e050415059d4c7b7d8d",
+            "enrolled": 12,
+            "disjoint": true
+          },
+          {
+            "path": "session/study",
+            "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+            "registry_file_sha256": "02820461e790deeb33ccbd539da4c86e1faaffa46ba35e050415059d4c7b7d8d",
+            "enrolled": 12,
+            "disjoint": true
+          },
+          {
+            "path": "evaluation/acquisition/study",
+            "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+            "registry_file_sha256": "02820461e790deeb33ccbd539da4c86e1faaffa46ba35e050415059d4c7b7d8d",
+            "enrolled": 12,
+            "disjoint": true
+          },
+          {
+            "path": "replay/acquisition/study",
+            "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+            "registry_file_sha256": "02820461e790deeb33ccbd539da4c86e1faaffa46ba35e050415059d4c7b7d8d",
+            "enrolled": 12,
+            "disjoint": true
+          }
+        ],
+        "archive": [
+          {
+            "path": "study",
+            "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+            "registry_file_sha256": "02820461e790deeb33ccbd539da4c86e1faaffa46ba35e050415059d4c7b7d8d",
+            "enrolled": 12,
+            "disjoint": true
+          },
+          {
+            "path": "session/study",
+            "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+            "registry_file_sha256": "02820461e790deeb33ccbd539da4c86e1faaffa46ba35e050415059d4c7b7d8d",
+            "enrolled": 12,
+            "disjoint": true
+          },
+          {
+            "path": "evaluation/acquisition/study",
+            "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+            "registry_file_sha256": "02820461e790deeb33ccbd539da4c86e1faaffa46ba35e050415059d4c7b7d8d",
+            "enrolled": 12,
+            "disjoint": true
+          },
+          {
+            "path": "replay/acquisition/study",
+            "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+            "registry_file_sha256": "02820461e790deeb33ccbd539da4c86e1faaffa46ba35e050415059d4c7b7d8d",
+            "enrolled": 12,
+            "disjoint": true
+          }
+        ],
+        "linux": [
+          {
+            "path": "study",
+            "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+            "registry_file_sha256": "75410fe8fa9b8cad77d6164b6ecbb281782b86eb2ec7b28f1254379d4e70eb97",
+            "enrolled": 12,
+            "disjoint": true
+          },
+          {
+            "path": "session/study",
+            "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+            "registry_file_sha256": "75410fe8fa9b8cad77d6164b6ecbb281782b86eb2ec7b28f1254379d4e70eb97",
+            "enrolled": 12,
+            "disjoint": true
+          },
+          {
+            "path": "evaluation/acquisition/study",
+            "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+            "registry_file_sha256": "75410fe8fa9b8cad77d6164b6ecbb281782b86eb2ec7b28f1254379d4e70eb97",
+            "enrolled": 12,
+            "disjoint": true
+          },
+          {
+            "path": "replay/acquisition/study",
+            "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+            "registry_file_sha256": "75410fe8fa9b8cad77d6164b6ecbb281782b86eb2ec7b28f1254379d4e70eb97",
+            "enrolled": 12,
+            "disjoint": true
+          }
+        ]
+      },
+      "prior_outcomes": [
+        {
+          "name": "pilot",
+          "study_sha256": "399ab02d5b4295a8215d9fce75b8d517559d12170d99ac51b2b7786a8a6d8d79",
+          "enrolled": 43,
+          "outcomes": {
+            "contract_error": 0,
+            "interrupted": 0,
+            "multiple_faces": 0,
+            "no_face": 0,
+            "observed": 43,
+            "runtime_error": 0,
+            "timeout": 0
+          },
+          "failures": [],
+          "excluded_registered": 0
+        },
+        {
+          "name": "lfpw",
+          "study_sha256": "8aac26bf5455057209143a1a47345ae8d5f75d9f21724d7e1ee076385280b937",
+          "enrolled": 60,
+          "outcomes": {
+            "contract_error": 0,
+            "interrupted": 0,
+            "multiple_faces": 0,
+            "no_face": 0,
+            "observed": 60,
+            "runtime_error": 0,
+            "timeout": 0
+          },
+          "failures": [],
+          "excluded_registered": 0
+        },
+        {
+          "name": "helen-donor",
+          "study_sha256": "3d3d4bfed7cfbe4a2e813020e1a4c35b98198c00386226667f730541ff115822",
+          "enrolled": 60,
+          "outcomes": {
+            "contract_error": 0,
+            "interrupted": 0,
+            "multiple_faces": 1,
+            "no_face": 1,
+            "observed": 58,
+            "runtime_error": 0,
+            "timeout": 0
+          },
+          "failures": [
+            {
+              "case_id": "case_00012",
+              "status": "multiple_faces",
+              "registered": true
+            },
+            {
+              "case_id": "case_00038",
+              "status": "no_face",
+              "registered": true
+            }
+          ],
+          "excluded_registered": 0
+        },
+        {
+          "name": "ibug-transfer",
+          "study_sha256": "ff46226db6b494a5901c66e2542532a13d8d0ee4d472b02de9a8e3baadd7a7a3",
+          "enrolled": 20,
+          "outcomes": {
+            "contract_error": 0,
+            "interrupted": 0,
+            "multiple_faces": 0,
+            "no_face": 1,
+            "observed": 19,
+            "runtime_error": 0,
+            "timeout": 0
+          },
+          "failures": [
+            {
+              "case_id": "case_00003",
+              "status": "no_face",
+              "registered": true
+            }
+          ],
+          "excluded_registered": 0
+        },
+        {
+          "name": "helen-holdout",
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "enrolled": 60,
+          "outcomes": {
+            "contract_error": 0,
+            "interrupted": 0,
+            "multiple_faces": 0,
+            "no_face": 0,
+            "observed": 60,
+            "runtime_error": 0,
+            "timeout": 0
+          },
+          "failures": [],
+          "excluded_registered": 0
+        }
+      ],
+      "observed_registry_cases": 243,
+      "next_registry_cases": 255,
+      "old_cohort_refused_before_observer": true,
+      "windows_registry_bytes_equal": true,
+      "all_hosts_registry_objects_equal": true,
+      "requalification_sources_already_registered": true,
+      "registered_requalification_overlap": 12,
+      "model_capsule_and_query_inheritance": "exercised by explicit synthetic contract tests; not empirical reference validation"
+    }
+  },
   "artifacts": {
-    "validation": "evidence/source-window-20261003/VALIDATION.json",
+    "validation": "evidence/enrollment-registry-20261003/VALIDATION.json",
     "archive": {
       "verified": true,
-      "files": 8809,
-      "version": "0.15.0",
-      "archive_sha256": "d70ccf98be02e28494e55162393fc3df6eb7eecbac2dddfe5c96e8f332bf7fc2",
+      "files": 20384,
+      "version": "0.16.0",
+      "archive_sha256": "2fc6d608b1af69d92178244f80af430eaa74f01bec50106f6a3c6d05eceac1aa",
       "kind": "archive",
       "scope": "shipped-byte consistency, not external authenticity or numerical replay",
-      "path": "packages\\facemath-0.15.0-source-window-20261003.zip",
-      "bytes": 1061848418
+      "path": "packages/facemath-0.16.0-enrollment-registry-20261003.zip",
+      "bytes": 1352768224
     },
-    "wheel": "runs/transfer-holdout-20261003/release/wheels/facemath-0.15.0-py3-none-any.whl"
+    "next_registry": "evidence/enrollment-registry-20261003/next-registry.json",
+    "wheel": "runs/enrollment-registry-20261003/release-03/wheels/facemath-0.16.0-py3-none-any.whl"
   },
   "completion_boundary": {
     "empirical_query_admission": false,
@@ -285,8 +694,11 @@
     "repeated_runs_are_independent_samples": false,
     "adaptive_cross_study_selection_controlled": false,
     "cross_os_exact_replay": false,
-    "general_prior_enrollment_registry": false,
+    "general_prior_enrollment_registry": true,
+    "registry_complete_for_all_research": false,
+    "registry_limit": "explicitly registered full study locks and model inheritance; external scope completeness unproven",
     "stratified_model_transfer": false,
+    "new_scientific_acceptance_threshold": false,
     "hosted_ci": "Not invoked this turn; previous billing-blocked attempts are historical evidence only",
     "macos_native": "Not executed this turn; previous constructor abort remains unresolved"
   },
@@ -307,14 +719,14 @@
       ]
     },
     {
-      "id": "NEXT-02",
+      "id": "NEXT-06",
       "priority": "P1",
-      "title": "Cross-study enrollment registry remains open",
-      "impact": "Rank windows separate one pinned source universe; donor guards do not track arbitrary unrelated prior evaluations",
-      "next_action": "Design a pinned registry of prior source/group/lineage enrollment across model and study versions",
-      "done_criteria": "Prospective exclusions cover every registered split, failure and exclusion without result-dependent replacement",
+      "title": "Prospective registry stewardship and independent source identities",
+      "impact": "The registry cannot infer omitted studies, undeclared aliases or native training overlap",
+      "next_action": "Use next-registry.json for future freezing and append every new complete source plan before further evaluation; separately establish person-level identity and reference provenance",
+      "done_criteria": "Explicit scope inventory covers prior research, stable source-qualified aliases are independently documented, and new enrollment is frozen before outcomes",
       "dependencies": [
-        "Explicit registry scope, immutable exports and same-source alias policy"
+        "Independent provenance and an explicit sampling/selection policy; hashes alone do not establish truth"
       ]
     },
     {

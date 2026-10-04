@@ -1,0 +1,226 @@
+{
+  "format": "facemath.prospective_study.v5",
+  "domain": "schematic-ocular-bias-and-unseen-shift-controls-v5-NOT-HUMAN",
+  "observer": {
+    "provider": "synthetic_ocular_bias_observer",
+    "provider_fingerprint": "d2a647af949d4b6f047c0d6bcd25c2d650b3fb6dbf52f7ebcaae1dab32cc1321",
+    "schema": "semantic21.v1",
+    "noise_floor_px": 0.18,
+    "attempted_samples": 7,
+    "execution_kind": "synthetic_fixture",
+    "model_sha256": null,
+    "runtime_version": null
+  },
+  "observer_recipe_sha256": "1810e953805e27fd960a285fbaf2a2f765653e957541ea8c4307b75c6afc76c9",
+  "minimum_raters": 1,
+  "maximum_cases_per_group": 1,
+  "minimum_development_groups": 5,
+  "alpha": 0.1,
+  "bias_mode": "development_ocular",
+  "strata": [
+    "clear",
+    "degraded",
+    "unseen_shift"
+  ],
+  "cases": [
+    {
+      "case_id": "control_000",
+      "group_id": "independent_draw_000",
+      "split": "development",
+      "lineage_ids": [
+        "render_25091_0"
+      ],
+      "stratum": "degraded",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00000.png",
+      "image_sha256": "497b8655d0368485aaa01d18f8f965624e62810c149eacbfdf9e4e3cd3052132",
+      "image_shape": [
+        280,
+        320
+      ],
+      "original_encoded_sha256": "688f0c47186efa28313237ee6336cd0843c43005c8849b80c8c6c4e54360cce6",
+      "references": [
+        "inputs/case_00000_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "control_001",
+      "group_id": "independent_draw_001",
+      "split": "development",
+      "lineage_ids": [
+        "render_25091_1"
+      ],
+      "stratum": "clear",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00001.png",
+      "image_sha256": "70ea7cf594cd31cfc4e016483f42b78cf5fc3c83d906e13d215ce2079d697a6c",
+      "image_shape": [
+        280,
+        320
+      ],
+      "original_encoded_sha256": "aa92128701d2ef20484db8654547d10910497797359b237b06583fec8fe20b74",
+      "references": [
+        "inputs/case_00001_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "control_002",
+      "group_id": "independent_draw_002",
+      "split": "development",
+      "lineage_ids": [
+        "render_25091_2"
+      ],
+      "stratum": "clear",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00002.png",
+      "image_sha256": "f36ab72beb1d41f8a61e9b6c59507027cd4072cc485c5fd04375ea9244fae89b",
+      "image_shape": [
+        280,
+        320
+      ],
+      "original_encoded_sha256": "b4fe785fefd464987d6e63994b692e1af2c0f4831dec751ced27627dbea3acb1",
+      "references": [
+        "inputs/case_00002_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "control_003",
+      "group_id": "independent_draw_003",
+      "split": "development",
+      "lineage_ids": [
+        "render_25091_3"
+      ],
+      "stratum": "degraded",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00003.png",
+      "image_sha256": "d4a0b94c37bad0ea324b64fa347b59649f8815ca0d9e9ed9f43013793ec8d388",
+      "image_shape": [
+        280,
+        320
+      ],
+      "original_encoded_sha256": "10c143367a12504da30ce306cba4a45e3b980d38d60fad0e963fa7d8267f36f3",
+      "references": [
+        "inputs/case_00003_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "control_004",
+      "group_id": "independent_draw_004",
+      "split": "development",
+      "lineage_ids": [
+        "render_25091_4"
+      ],
+      "stratum": "clear",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00004.png",
+      "image_sha256": "d167cad72649e108f891cbd4cf5d65023d302b0ee4c98af9f63f22bd5aac9074",
+      "image_shape": [
+        280,
+        320
+      ],
+      "original_encoded_sha256": "e1b5389bdc2123ed0538bea09ec302ff7b912ffe669d2b54138b40a153a5f327",
+      "references": [
+        "inputs/case_00004_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "control_005",
+      "group_id": "independent_draw_005",
+      "split": "development",
+      "lineage_ids": [
+        "render_25091_5"
+      ],
+      "stratum": "clear",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00005.png",
+      "image_sha256": "8631ba551ec02df46c722abeeb2731b16bf1f3fa0fe6919e63264c92544fa74f",
+      "image_shape": [
+        280,
+        320
+      ],
+      "original_encoded_sha256": "4cfa85691878ec9ab8b0f39a2d947b44f8ba51d78871808fc4613ecadf117efb",
+      "references": [
+        "inputs/case_00005_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "control_006",
+      "group_id": "independent_draw_006",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_25091_6"
+      ],
+      "stratum": "degraded",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00006.png",
+      "image_sha256": "f0e2bb79ed64f509b897bf85e8b9cd2eb1cc9bd10f237a834b688dede55da0e8",
+      "image_shape": [
+        280,
+        320
+      ],
+      "original_encoded_sha256": "e6b427062f1bfdcc50515d566354ac5d71a31cf13111335d3b7114a4f2744c8f",
+      "references": [
+        "inputs/case_00006_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "control_007",
+      "group_id": "independent_draw_007",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_25091_7"
+      ],
+      "stratum": "unseen_shift",
+      "eligibility": "included",
+      "exclusion_reason": "",
+      "image": "inputs/case_00007.png",
+      "image_sha256": "b4c46d823fe6b23ea0195550f92d63574511dc2dad77f82c90fd3492b6a590f6",
+      "image_shape": [
+        280,
+        320
+      ],
+      "original_encoded_sha256": "b1c025e41d77b69416142e781e2b91f184c5ef279782de6d58b3bf4be0e86a31",
+      "references": [
+        "inputs/case_00007_reference_00.json"
+      ]
+    },
+    {
+      "case_id": "control_008",
+      "group_id": "independent_draw_008",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_25091_8"
+      ],
+      "stratum": "unseen_shift",
+      "eligibility": "excluded",
+      "exclusion_reason": "prespecified excluded enrollment control; never sent to observer",
+      "image": "inputs/case_00008.png",
+      "image_sha256": "3c47c50ffa22f3018d5e20d4d03368c0d5d177b42348a482d1b557705a50c34f",
+      "image_shape": [
+        280,
+        320
+      ],
+      "original_encoded_sha256": "c39eda7a353a9286adf2582dd7258e3dc11ed2aad027193f25364ffec130fbe4",
+      "references": [
+        "inputs/case_00008_reference_00.json"
+      ]
+    }
+  ],
+  "timeout_seconds": 90.0,
+  "native_case_isolation": "fresh_process_per_source",
+  "image_coordinate_convention": "decoded_stored_raster_ignore_EXIF_orientation",
+  "engine_code_sha256": "dd1fbf7dd9d1d4cc5ee0ef10653f1a316a2d10bf70247000f29e1b74e38ba57d",
+  "protocol_sha256": "db71853e5f9cc8f1929cf7329aad3d3111c9518cc5f10eb043e36ac530701972",
+  "source_manifest_sha256": "ddf64d6add0c5ff2f308f99dcf9c663938271c9510123648023f314369448906",
+  "declarations": {
+    "chronology_and_blinding": "curator-declared, not externally attested",
+    "model_receives": "source raster only; not reference coordinates, split or stratum"
+  }
+}

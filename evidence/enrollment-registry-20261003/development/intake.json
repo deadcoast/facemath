@@ -1,0 +1,28 @@
+{
+  "command": [
+    "runs/enrollment-registry-20261003/env311/Scripts/python.exe",
+    "-m",
+    "facemath",
+    "dataset",
+    "cohort",
+    "examples/helen-registry-window.json",
+    "--archive",
+    "runs/source-cohort-20261002/ibug_300W_large_face_landmark_dataset.tar.gz",
+    "--model",
+    "evidence/source-window-20261003/dataset/assets/face_landmarker.task",
+    "--out",
+    "runs/enrollment-registry-20261003/intake"
+  ],
+  "cwd": ".",
+  "started_utc": "2026-10-04T00:45:57.817090+00:00",
+  "finished_utc": "2026-10-04T00:46:12.941308+00:00",
+  "elapsed_seconds": 15.125,
+  "returncode": 0,
+  "environment": {
+    "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+    "UV_CACHE_DIR": null,
+    "UV_PROJECT_ENVIRONMENT": null,
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

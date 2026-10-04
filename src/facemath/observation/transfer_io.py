@@ -166,7 +166,8 @@ def replay_transfer_bundle(path: str | Path, destination: str | Path) -> dict:
 
 
 def run_transfer_pipeline(dataset: str | Path, capsule_path: str | Path, destination: str | Path,
-                          *, model: str | Path | None = None) -> dict:
+                          *, model: str | Path | None = None, registry: str | Path | None = None) -> dict:
+    from .enrollment import read_registry
     from .dataset import verify_dataset, _seal
     from .study import freeze_study
     from .study_runner import NativeExecutor, run_session
@@ -182,7 +183,8 @@ def run_transfer_pipeline(dataset: str | Path, capsule_path: str | Path, destina
         with journal.step("transfer_pipeline.freeze_before_inference", {}) as step:
             shutil.copytree(source, root / "dataset")
             write_json_new(root / "frozen_model.json", capsule)
-            study = freeze_study(root / "dataset/study.spec.json", root / "study", frozen_model=capsule)
+            study = freeze_study(root / "dataset/study.spec.json", root / "study", frozen_model=capsule,
+                                 enrollment_registry=read_registry(registry) if registry is not None else None)
             step.update(study_sha256=study.digest, capsule_sha256=capsule["content_sha256"])
         recipe = read_json(root / "dataset/recipe.json")
         model_path = Path(model) if model else root / "dataset/assets" / recipe["model_asset"]

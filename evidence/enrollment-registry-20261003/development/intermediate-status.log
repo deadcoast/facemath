@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-10-04T02:01:08.205504+00:00",
+  "disposition": "superseded intermediate validation",
+  "reason": "Empty registry/prior path guard was completed after this run began; only attempt 03 uses one frozen final fingerprint throughout",
+  "initial_windows_environment_code_sha256": "4127cf05dcf6747a95aefe155904f46ea9c4d5197666ea8b100885f416b3d7c6",
+  "later_windows_study_code_sha256": "a560b0752c875922e3afe93403273b37268804a6d3e8d4e8f3d6a35de226dc8a",
+  "windows_commands_returncode": 0,
+  "windows_source": {
+    "tests": 1156,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 1,
+    "passed": 1155
+  },
+  "windows_archive": {
+    "tests": 1157,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 1,
+    "passed": 1156
+  },
+  "linux": {
+    "tests": 1156,
+    "errors": 17,
+    "failures": 0,
+    "skipped": 0,
+    "passed": 1139
+  },
+  "linux_command_returncode": 1,
+  "linux_error": "study code differs; freeze a new study rather than mutating its protocol",
+  "retained_linux_fixture": "evidence/enrollment-registry-20261003/superseded-02/linux-fixture",
+  "final_qualification_attempt": "release-03 and linux-native-03",
+  "final_qualification": false
+}

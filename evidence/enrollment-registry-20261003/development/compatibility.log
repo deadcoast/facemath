@@ -1,0 +1,47 @@
+{
+  "current_reader_verified": true,
+  "study_sha256": "fda570cbfca27db9ec0ad24c65c07a8ce763b6cc0704f26737e2c2d4bae91015",
+  "old_reader_refusals": [
+    {
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "verify",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\prospective-lock"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\parent\\facemath-0.15.0",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\parent\\facemath-0.15.0\\src"
+      },
+      "started_utc": "2026-10-04T00:54:12.271297+00:00",
+      "finished_utc": "2026-10-04T00:54:13.091895+00:00",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "synthetic_capsule": false
+    },
+    {
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-c",
+        "import sys; from facemath.observation.study import read_json; from facemath.observation.transfer import load_capsule; from facemath.observation.contracts import ObservationError\ntry: load_capsule(read_json(sys.argv[1]))\nexcept ObservationError as e: print(str(e)); sys.exit(2)\n",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\focused-03-temp\\test_registry_survives_finaliz0\\model.json"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\parent\\facemath-0.15.0",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\parent\\facemath-0.15.0\\src"
+      },
+      "started_utc": "2026-10-04T00:54:13.092896+00:00",
+      "finished_utc": "2026-10-04T00:54:13.576337+00:00",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "synthetic_capsule": true
+    }
+  ],
+  "legacy_recipes_recomputed_unchanged": [
+    "evidence/source-cohort-20261002/dataset/recipe.json",
+    "evidence/bound-utility-20261002/dataset/recipe.json",
+    "evidence/model-transfer-20261002/dataset/recipe.json",
+    "evidence/source-window-20261003/dataset/recipe.json"
+  ]
+}

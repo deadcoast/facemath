@@ -1,3 +1,23 @@
+# 0.16.0 · Complete cross-study enrollment registries
+
+Export every enrolled case from verified study locks with exact manifest-bound
+study/reference bytes. Build immutable, explicitly scoped registry snapshots that
+retain prior generations. Check shared source hashes and group/lineage aliases
+across all splits, failures and prospective exclusions without replacement.
+Explicit null, empty-path and malformed registry inputs are refused rather than
+being treated as missing options. The pre-fix null bypass remains retained as a
+distinct diagnostic; final validation uses the repaired code fingerprint.
+
+Registry-bound v16 studies reject overlapping cohorts before inference and
+recompute their checks during verification and replay. Registry-bound model
+capsules preserve inherited exclusions on transfer; qualification snapshots carry
+them into query/context guards. Older readers refuse the new formats. Legacy
+registry-free studies and capsules retain their existing behavior.
+
+A fixed 12-source HELEN window supplies native integration evidence with the
+unchanged donor fit, calibrated radius, crop convention and observer. No new
+empirical policy, anatomical-reference claim or utility threshold is introduced.
+
 # 0.15.0 · Frozen photograph-group holdout windows
 
 Add explicit, bounded source-rank windows after HELEN/IBUG photograph grouping.

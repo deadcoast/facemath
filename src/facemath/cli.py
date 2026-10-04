@@ -200,6 +200,7 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("study-freeze", help="snapshot enrolled images, references and protocol before inference")
     p.add_argument("study", help="prospective study JSON; no imported predictions")
     p.add_argument("--frozen-model", help="exported model capsule for evaluation-only transfer")
+    p.add_argument("--registry", help="immutable prior-enrollment registry; refuse any source overlap")
     p.add_argument("--out", required=True)
 
     p = sub.add_parser("study-run", help="acquire or resume one native observation attempt per included source")
@@ -219,6 +220,12 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("model-export", help="export complete fitted joint state and full donor enrollment")
     p.add_argument("qualification")
     p.add_argument("--out", required=True)
+    p = sub.add_parser("enrollment", help="export full enrollment, build immutable registries and check source reuse")
+    e = p.add_subparsers(dest="enrollment_command", required=True)
+    q = e.add_parser("export"); q.add_argument("study"); q.add_argument("--out", required=True)
+    q = e.add_parser("build"); q.add_argument("--receipt", action="append", required=True)
+    q.add_argument("--scope", required=True); q.add_argument("--prior"); q.add_argument("--out", required=True)
+    q = e.add_parser("check"); q.add_argument("registry"); q.add_argument("study"); q.add_argument("--out", required=True)
     p = sub.add_parser("transfer-finalize", help="evaluate a frozen-model acquisition without fitting")
     p.add_argument("session")
     p.add_argument("--out", required=True)
@@ -268,6 +275,7 @@ def build_parser() -> argparse.ArgumentParser:
     q = d.add_parser("prepare"); q.add_argument("recipe"); q.add_argument("--out", required=True)
     q = d.add_parser("run"); q.add_argument("dataset"); q.add_argument("--model"); q.add_argument("--out", required=True)
     q.add_argument("--frozen-model", help="exported joint model capsule; target must have evaluation cases only")
+    q.add_argument("--registry", help="immutable prior-enrollment registry bound before inference")
     q = d.add_parser("cohort-fetch"); q.add_argument("plan"); q.add_argument("--out", required=True)
     q = d.add_parser("cohort"); q.add_argument("plan"); q.add_argument("--archive", required=True)
     q.add_argument("--model", required=True); q.add_argument("--out", required=True)
@@ -485,6 +493,24 @@ def _session_summary(status: dict, directory: str | Path) -> dict:
 
 
 def execute(args: argparse.Namespace) -> dict:
+    if args.command == "enrollment":
+        from .observation.enrollment import export_enrollment, build_registry, load_registry, check_enrollment, read_registry
+        from .observation.study import load_study
+        if args.enrollment_command == "export":
+            return export_enrollment(args.study, args.out)
+        if args.enrollment_command == "build":
+            registry = build_registry([read_json(p) for p in args.receipt], args.scope,
+                                      prior=read_registry(args.prior) if args.prior is not None else None)
+            write_json_new(args.out, registry)
+            rows = load_registry(registry)
+            return {"registry": args.out, "content_sha256": registry["content_sha256"],
+                    "scope": registry["scope"], "registered_studies": len({r["study_sha256"] for r in rows}),
+                    "registered_cases": len(rows), "inference_executed": False}
+        study = load_study(args.study)
+        result = check_enrollment(read_registry(args.registry), [(c, study.references(c)) for c in study.cases])
+        result.update(target_study_sha256=study.digest, inference_executed=False)
+        write_json_new(args.out, result)
+        return result
     if args.command == "model-export":
         from .observation.transfer import export_model
         return export_model(args.qualification, args.out)
@@ -521,8 +547,8 @@ def execute(args: argparse.Namespace) -> dict:
             return {"dataset": str(root), **verify_dataset(root)}
         if args.frozen_model:
             from .observation.transfer_io import run_transfer_pipeline
-            return run_transfer_pipeline(args.dataset, args.frozen_model, args.out, model=args.model)
-        return run_pipeline(args.dataset, args.out, model=args.model)
+            return run_transfer_pipeline(args.dataset, args.frozen_model, args.out, model=args.model, registry=args.registry)
+        return run_pipeline(args.dataset, args.out, model=args.model, registry=args.registry)
     if args.command == "overview":
         from .observation.readout import inspect_readout
         return inspect_readout(args.bundle)
@@ -623,7 +649,7 @@ def execute(args: argparse.Namespace) -> dict:
         if kind == "facemath.qualification_bundle.v5":
             from .observation.study_io import verify_qualification_bundle
             return verify_qualification_bundle(root)
-        if kind == "facemath.study_lock_manifest.v5":
+        if kind in ("facemath.study_lock_manifest.v5", "facemath.study_lock_manifest.v16"):
             from .observation.study import load_study
             study = load_study(root)
             return {"verified": True, "kind": "frozen_study", "study_sha256": study.digest,
@@ -690,8 +716,10 @@ def execute(args: argparse.Namespace) -> dict:
                 "runtime_version": runtime, "inference_executed": False, "model_validated": False}
     if args.command == "study-freeze":
         from .observation.study import freeze_study
+        from .observation.enrollment import read_registry
         study = freeze_study(args.study, args.out,
-                             frozen_model=read_json(Path(args.frozen_model)) if args.frozen_model else None)
+                             frozen_model=read_json(Path(args.frozen_model)) if args.frozen_model else None,
+                             enrollment_registry=read_registry(args.registry) if args.registry is not None else None)
         return {"study": str(study.root), "sha256": study.digest, "enrolled": len(study.cases),
                 "eligible": len(study.included), "inference_executed": False}
     if args.command == "study-run":
@@ -778,6 +806,8 @@ def main(argv: list[str] | None = None) -> None:
     else:
         print(json.dumps(result, indent=2, allow_nan=False))
     if args.command == "runtime-profile" and not result.get("comparison", {}).get("compatible", True):
+        raise SystemExit(2)
+    if args.command == "enrollment" and args.enrollment_command == "check" and not result["disjoint"]:
         raise SystemExit(2)
 
 

@@ -1,0 +1,25 @@
+{
+  "command": [
+    "runs/enrollment-registry-20261003/env311/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_enrollment_registry.py",
+    "tests/test_model_transfer.py",
+    "tests/test_wave10_integration.py",
+    "--basetemp=runs/enrollment-registry-20261003/focused-02-temp",
+    "--junitxml=runs/enrollment-registry-20261003/focused-02.xml"
+  ],
+  "cwd": ".",
+  "started_utc": "2026-10-04T00:45:46.763013+00:00",
+  "finished_utc": "2026-10-04T00:47:53.171699+00:00",
+  "elapsed_seconds": 126.40599999995902,
+  "returncode": 0,
+  "environment": {
+    "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+    "UV_CACHE_DIR": null,
+    "UV_PROJECT_ENVIRONMENT": null,
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

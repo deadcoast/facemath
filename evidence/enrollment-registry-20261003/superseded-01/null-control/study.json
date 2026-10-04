@@ -1,0 +1,145 @@
+{
+  "format": "facemath.prospective_study.v5",
+  "domain": "schematic-ocular-bias-and-unseen-shift-controls-v5-NOT-HUMAN",
+  "observer": {
+    "provider": "synthetic_ocular_bias_observer",
+    "provider_fingerprint": "d2a647af949d4b6f047c0d6bcd25c2d650b3fb6dbf52f7ebcaae1dab32cc1321",
+    "schema": "semantic21.v1",
+    "noise_floor_px": 0.18,
+    "attempted_samples": 7,
+    "execution_kind": "synthetic_fixture",
+    "model_sha256": null,
+    "runtime_version": null
+  },
+  "minimum_raters": 1,
+  "maximum_cases_per_group": 1,
+  "minimum_development_groups": 5,
+  "alpha": 0.1,
+  "bias_mode": "development_ocular",
+  "strata": [
+    "clear",
+    "degraded",
+    "unseen_shift"
+  ],
+  "cases": [
+    {
+      "case_id": "control_000",
+      "group_id": "independent_draw_000",
+      "split": "development",
+      "lineage_ids": [
+        "render_25091_0"
+      ],
+      "image": "control_000.png",
+      "references": [
+        "control_000_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_001",
+      "group_id": "independent_draw_001",
+      "split": "development",
+      "lineage_ids": [
+        "render_25091_1"
+      ],
+      "image": "control_001.png",
+      "references": [
+        "control_001_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_002",
+      "group_id": "independent_draw_002",
+      "split": "development",
+      "lineage_ids": [
+        "render_25091_2"
+      ],
+      "image": "control_002.png",
+      "references": [
+        "control_002_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_003",
+      "group_id": "independent_draw_003",
+      "split": "development",
+      "lineage_ids": [
+        "render_25091_3"
+      ],
+      "image": "control_003.png",
+      "references": [
+        "control_003_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_004",
+      "group_id": "independent_draw_004",
+      "split": "development",
+      "lineage_ids": [
+        "render_25091_4"
+      ],
+      "image": "control_004.png",
+      "references": [
+        "control_004_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_005",
+      "group_id": "independent_draw_005",
+      "split": "development",
+      "lineage_ids": [
+        "render_25091_5"
+      ],
+      "image": "control_005.png",
+      "references": [
+        "control_005_reference.json"
+      ],
+      "stratum": "clear"
+    },
+    {
+      "case_id": "control_006",
+      "group_id": "independent_draw_006",
+      "split": "calibration",
+      "lineage_ids": [
+        "render_25091_6"
+      ],
+      "image": "control_006.png",
+      "references": [
+        "control_006_reference.json"
+      ],
+      "stratum": "degraded"
+    },
+    {
+      "case_id": "control_007",
+      "group_id": "independent_draw_007",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_25091_7"
+      ],
+      "image": "control_007.png",
+      "references": [
+        "control_007_reference.json"
+      ],
+      "stratum": "unseen_shift"
+    },
+    {
+      "case_id": "control_008",
+      "group_id": "independent_draw_008",
+      "split": "evaluation",
+      "lineage_ids": [
+        "render_25091_8"
+      ],
+      "image": "control_008.png",
+      "references": [
+        "control_008_reference.json"
+      ],
+      "stratum": "unseen_shift",
+      "eligibility": "excluded",
+      "exclusion_reason": "prespecified excluded enrollment control; never sent to observer"
+    }
+  ]
+}

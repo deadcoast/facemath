@@ -1,0 +1,30 @@
+{
+  "command": [
+    "runs/enrollment-registry-20261003/env311/Scripts/python.exe",
+    "scripts/validate_current.py",
+    "--out",
+    "runs/enrollment-registry-20261003/release-02",
+    "--native-dataset",
+    "evidence/enrollment-registry-20261003/dataset",
+    "--frozen-model",
+    "evidence/enrollment-registry-20261003/helen-model.json",
+    "--registry",
+    "evidence/enrollment-registry-20261003/registry.json",
+    "--evidence",
+    "evidence/enrollment-registry-20261003",
+    "--retain-evidence",
+    "evidence/enrollment-registry-20261003/preseal-02"
+  ],
+  "cwd": ".",
+  "started_utc": "2026-10-04T01:21:18.512664+00:00",
+  "finished_utc": "2026-10-04T01:57:32.666951+00:00",
+  "elapsed_seconds": 2174.155999999959,
+  "returncode": 0,
+  "environment": {
+    "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+    "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+    "UV_PROJECT_ENVIRONMENT": null,
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

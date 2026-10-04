@@ -94,6 +94,7 @@ class ValidatedQualification:
     report_json: str
     study_json: str
     calibration: Any
+    enrollment_json: str | None
 
     @classmethod
     def from_directory(cls, root: str | Path) -> ValidatedQualification:
@@ -115,12 +116,15 @@ class ValidatedQualification:
             replay_qualification_bundle(root, Path(directory) / "recomputed")
             report = read_json(root / "qualification.json")
             study = read_json(root / "acquisition/study/study.lock.json")
+            registry = (read_json(root / "acquisition/study/enrollment_registry.json")
+                        if "enrollment_registry" in study else None)
             calibration = load_localization_calibration(read_json(root / "localization_calibration.json"))
         obj = object.__new__(cls)
         object.__setattr__(obj, "snapshot", data)
         object.__setattr__(obj, "report_json", canonical_json(report))
         object.__setattr__(obj, "study_json", canonical_json(study))
         object.__setattr__(obj, "calibration", calibration)
+        object.__setattr__(obj, "enrollment_json", canonical_json(registry) if registry is not None else None)
         return obj
 
     @property
@@ -159,6 +163,9 @@ class ValidatedQualification:
             raise ObservationError("query calibration differs from replayed admitted study")
         if groups is None or len(groups) != 2:
             raise ObservationError("empirically admitted analysis requires two complete measured source groups")
+        if self.enrollment_json is not None:
+            from .enrollment import require_query_disjoint
+            require_query_disjoint(json.loads(self.enrollment_json), groups)
         admission = self.report["empirical_admission"]
         permitted = set(admission["policy"]["required_categories"])
         cases = self.study["cases"]

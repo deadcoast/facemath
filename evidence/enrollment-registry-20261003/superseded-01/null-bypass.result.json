@@ -1,0 +1,21 @@
+{
+  "command": [
+    "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+    "-m",
+    "facemath",
+    "study-freeze",
+    "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\null-control\\study.json",
+    "--registry",
+    "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\null-registry.json",
+    "--out",
+    "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\null-bypass-lock"
+  ],
+  "started_utc": "2026-10-04T01:16:24.015647+00:00",
+  "finished_utc": "2026-10-04T01:16:24.983699+00:00",
+  "returncode": 0,
+  "expected_returncode": 2,
+  "stdout": "{\n  \"study\": \"C:\\\\Users\\\\ryanf\\\\github\\\\_active\\\\facemath\\\\runs\\\\enrollment-registry-20261003\\\\null-bypass-lock\",\n  \"sha256\": \"fc1eaea754d6f78f1bafdb2f02f1f9d849c7a327fdc4ba4389bbbda23b3b693c\",\n  \"enrolled\": 9,\n  \"eligible\": 8,\n  \"inference_executed\": false\n}\n",
+  "stderr": "",
+  "observer_calls": 0,
+  "defect": "Explicit JSON null registry was silently treated as absent"
+}

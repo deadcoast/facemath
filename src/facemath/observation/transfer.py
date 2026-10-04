@@ -12,6 +12,7 @@ from .reference import ReferenceAnnotation, REFERENCE_PROTOCOL_SHA256, check_dig
 from .study import ObserverDeclaration, read_json, write_json_new
 
 CAPSULE_FORMAT = "facemath.frozen_model_capsule.v14"
+REGISTRY_CAPSULE_FORMAT = "facemath.frozen_model_capsule.v16"
 REPORT_FORMAT = "facemath.model_transfer.v14"
 SOURCE_HASHES = ("source_encoded_sha256", "source_raster_sha256")
 
@@ -27,7 +28,7 @@ def _bound_json(capsule: dict, text: str, name: str) -> dict:
 def load_capsule(capsule: dict) -> JointCalibration:
     """Validate the full fitted state and donor enrollment, including exclusions."""
     unsigned = {k: v for k, v in capsule.items() if k != "content_sha256"}
-    if capsule.get("format") != CAPSULE_FORMAT or object_digest(unsigned) != capsule.get("content_sha256"):
+    if capsule.get("format") not in (CAPSULE_FORMAT, REGISTRY_CAPSULE_FORMAT) or object_digest(unsigned) != capsule.get("content_sha256"):
         raise ObservationError("frozen model capsule digest mismatch")
     manifest = dict(capsule["donor_manifest"])
     digest = manifest.pop("content_sha256")
@@ -55,6 +56,17 @@ def load_capsule(capsule: dict) -> JointCalibration:
                 raise ObservationError("capsule donor reference/image mismatch")
             if case["eligibility"] == "included" and ref.kind != model.reference_kind:
                 raise ObservationError("capsule donor reference kind mismatch")
+    if "enrollment_registry" in study:
+        from .enrollment import require_disjoint
+        if capsule["format"] != REGISTRY_CAPSULE_FORMAT or study["format"] != "facemath.prospective_study.v16":
+            raise ObservationError("registry donor requires a v16 model capsule")
+        registry = _bound_json(capsule, capsule["registry_json"], "acquisition/study/enrollment_registry.json")
+        check = require_disjoint(registry, [(c, tuple(refs[n] for n in c["references"])) for c in study["cases"]])
+        if (study["enrollment_registry"]["content_sha256"] != registry["content_sha256"]
+                or study["enrollment_registry"]["check"] != check):
+            raise ObservationError("capsule donor registry binding mismatch")
+    elif capsule["format"] == REGISTRY_CAPSULE_FORMAT or "registry_json" in capsule or study["format"] != "facemath.prospective_study.v5":
+        raise ObservationError("capsule registry format differs from donor study")
     dev = [c for c in study["cases"] if c["split"] == "development" and c["eligibility"] == "included"]
     cal = [c for c in study["cases"] if c["split"] == "calibration" and c["eligibility"] == "included"]
     for cases, images, groups, lineages, references in (
@@ -86,6 +98,9 @@ def export_model(qualification: str | Path, destination: str | Path) -> dict:
                             for c in study["cases"] for n in c["references"]},
         "donor_manifest": read_json(root / "manifest.json"),
         "limit": "verified donor byte consistency and complete fitted state; not external authenticity, new inference or empirical admission"}
+    if "enrollment_registry" in study:
+        capsule["format"] = REGISTRY_CAPSULE_FORMAT
+        capsule["registry_json"] = (root / "acquisition/study/enrollment_registry.json").read_bytes().decode("utf-8")
     capsule["content_sha256"] = object_digest(capsule)
     model = load_capsule(capsule)
     write_json_new(target, capsule)
@@ -119,6 +134,9 @@ def require_transfer(capsule: dict, spec: dict, cases_and_references: list | tup
         images.update(_image_tokens(case, refs)); groups.add(case["group_id"]); lineages.update(case["lineage_ids"])
     if not cases_and_references or not any(c["eligibility"] == "included" for c, refs in cases_and_references):
         raise ObservationError("transfer requires eligible evaluation cases")
+    if "registry_json" in capsule:
+        from .enrollment import require_disjoint
+        require_disjoint(json.loads(capsule["registry_json"]), cases_and_references)
     for case, refs in cases_and_references:
         if case["split"] != "evaluation":
             raise ObservationError("transfer accepts evaluation cases ONLY")

@@ -193,3 +193,26 @@ Only pooled joint models are supported initially. Stratified models are refused;
 there is no pooled fallback. Published dataset label conventions, visibility and
 unknown native training overlap remain scientific limitations after successful
 execution. No additional human-supplied database or testing campaign is required.
+# Prior enrollment registry (0.16.0)
+
+Use `enrollment export STUDY --out RECEIPT` on a verified frozen study directory.
+The receipt includes every split and exclusion even if the acquisition session
+failed, was interrupted or never started. Exporting does not require successful
+observation outcomes. `enrollment build --receipt RECEIPT --scope DESCRIPTION
+--out REGISTRY` creates a new snapshot; repeat `--receipt` for additional studies.
+To extend it, supply `--prior OLD_REGISTRY` with the same scope and new studies.
+Every prior snapshot is retained. Repeated study digests and overwrites fail.
+
+Supply `--registry REGISTRY` to `study-freeze` or `dataset run` before acquisition.
+An overlap fails the entire cohort; the tool does not drop, replace or rerank a
+source. `enrollment check REGISTRY STUDY --out REPORT` reports every alias and
+all denominators, returning exit 2 on overlap. It is a retrospective check when
+the supplied study has already run, not proof of prospective chronology.
+
+Registry-bound locks and fitted-model capsules use v16 formats. Their exact
+registry bytes and checks survive qualification, transfer and replay; empirical
+query/context checks also bar prior registered sources. The source-hash namespace
+includes crop rasters, encoded inputs and recorded original encoded/raster
+aliases. Group and lineage IDs share a separate exact, case-sensitive namespace.
+Use stable source-qualified IDs. Reused generic IDs conservatively collide;
+undeclared person aliases and unregistered studies remain outside the check.

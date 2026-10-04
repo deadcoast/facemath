@@ -1,0 +1,169 @@
+{
+  "source_count": 39,
+  "labels_initially_missing": true,
+  "ready_after_import": true,
+  "retained_revisions": 38,
+  "duplicate_import_idempotent": true,
+  "observer_calls": [
+    4,
+    38,
+    38
+  ],
+  "enrollment": {
+    "enrolled": 39,
+    "eligible": 38,
+    "prospectively_excluded": 1,
+    "outcomes": {
+      "contract_error": 0,
+      "interrupted": 0,
+      "multiple_faces": 0,
+      "no_face": 0,
+      "observed": 38,
+      "runtime_error": 0,
+      "timeout": 0
+    }
+  },
+  "admission": {
+    "format": "facemath.empirical_admission.v10",
+    "policy": {
+      "format": "facemath.empirical_admission_policy.v10",
+      "required_categories": [
+        "pixel_clear",
+        "pixel_smooth"
+      ],
+      "minimum_groups": 2,
+      "minimum_delivery": 0.1,
+      "minimum_coverage": 0.1,
+      "family_error": 0.1,
+      "evidence_kind": "synthetic_control",
+      "independent_groups_declared": true,
+      "sampling_design": "Deterministic branch/containment control. No population interpretation; does not establish real sampling assumptions."
+    },
+    "policy_sha256": "83f5861b01d88f4981f7817c0a56a816710ae89f2cda4facd70e61fbeb3c76b4",
+    "calibration_sha256": "130b5cf3bb80887901d0047c257aec81d18a4c5f481f6beb0eb4565f015f566c",
+    "plan": {
+      "policy_sha256": "83f5861b01d88f4981f7817c0a56a816710ae89f2cda4facd70e61fbeb3c76b4",
+      "planned_evaluation_groups": {
+        "pixel_clear": 3,
+        "pixel_smooth": 3
+      },
+      "perfect_success_minimum_groups": 2,
+      "best_possible_lower": {
+        "pixel_clear": 0.2924017738212866,
+        "pixel_smooth": 0.2924017738212866
+      },
+      "algebraically_feasible": true,
+      "meaning": "sample-size feasibility only, not expected accuracy; underpowered studies remain explicitly non-admissible"
+    },
+    "status": "admitted_synthetic_control",
+    "passed": true,
+    "all_required_categories_must_pass": true,
+    "tail_probability_per_endpoint": 0.025,
+    "multiplicity": 4,
+    "categories": [
+      {
+        "category": "pixel_clear",
+        "groups": 3,
+        "delivered": 3,
+        "covered": 3,
+        "delivery_lower": 0.2924017738212866,
+        "coverage_lower": 0.2924017738212866,
+        "delivery_target": 0.1,
+        "coverage_target": 0.1,
+        "passes": true,
+        "reasons": []
+      },
+      {
+        "category": "pixel_smooth",
+        "groups": 3,
+        "delivered": 3,
+        "covered": 3,
+        "delivery_lower": 0.2924017738212866,
+        "coverage_lower": 0.2924017738212866,
+        "delivery_target": 0.1,
+        "coverage_target": 0.1,
+        "passes": true,
+        "reasons": []
+      }
+    ],
+    "groups": [
+      {
+        "group_id": "group_31091_32",
+        "category": "pixel_clear",
+        "case_ids": [
+          "case_00032"
+        ],
+        "delivered": true,
+        "covered": true,
+        "radius_available": true
+      },
+      {
+        "group_id": "group_31091_33",
+        "category": "pixel_clear",
+        "case_ids": [
+          "case_00033"
+        ],
+        "delivered": true,
+        "covered": true,
+        "radius_available": true
+      },
+      {
+        "group_id": "group_31091_34",
+        "category": "pixel_clear",
+        "case_ids": [
+          "case_00034"
+        ],
+        "delivered": true,
+        "covered": true,
+        "radius_available": true
+      },
+      {
+        "group_id": "group_31091_35",
+        "category": "pixel_smooth",
+        "case_ids": [
+          "case_00035"
+        ],
+        "delivered": true,
+        "covered": true,
+        "radius_available": true
+      },
+      {
+        "group_id": "group_31091_36",
+        "category": "pixel_smooth",
+        "case_ids": [
+          "case_00036"
+        ],
+        "delivered": true,
+        "covered": true,
+        "radius_available": true
+      },
+      {
+        "group_id": "group_31091_37",
+        "category": "pixel_smooth",
+        "case_ids": [
+          "case_00037"
+        ],
+        "delivered": true,
+        "covered": true,
+        "radius_available": true
+      }
+    ],
+    "all_evaluation_groups": 6,
+    "all_evaluation_delivered": 6,
+    "all_evaluation_covered": 6,
+    "outside_requested_scope_groups": 0,
+    "outside_requested_scope_delivered": 0,
+    "outside_requested_scope_covered": 0,
+    "guarantee": "one-sided exact binomial lower bounds with Bonferroni allocation across two endpoints per frozen category",
+    "assumptions": "conditional on frozen training/calibration, groups must be independent and comparable within category; curator declaration is not proof",
+    "limitations": [
+      "not a per-image posterior, identity score, or guarantee against hidden acquisition shift",
+      "does not select a subset of passing categories, refit q, or repair geometry using evaluation labels",
+      "cross-study multiple testing and repeated adaptive qualification attempts are not controlled",
+      "finite-sample conformal rank statements are not strengthened or reconditioned by acceptance",
+      "self-consistency and declared reference blinding are not external attestation"
+    ],
+    "content_sha256": "8c3998f2e5042a07facb5d4ac0848318018b206de329c5b3547c52d567d5c3ee"
+  },
+  "frozen_origin_present": true
+}

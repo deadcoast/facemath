@@ -1,0 +1,82 @@
+{
+  "all_routes_refused": true,
+  "observer_sessions_created": 0,
+  "commands": [
+    {
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "study-freeze",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\null-control\\study.json",
+        "--registry",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\null-registry.json",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\null-fixed-03-lock"
+      ],
+      "started_utc": "2026-10-04T01:25:37.795042+00:00",
+      "finished_utc": "2026-10-04T01:25:38.679270+00:00",
+      "returncode": 2,
+      "expected_returncode": 2
+    },
+    {
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "enrollment",
+        "build",
+        "--receipt",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\enrollment-registry-20261003\\exports\\pilot.json",
+        "--scope",
+        "malformed prior control",
+        "--prior",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\null-registry.json",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\null-fixed-03-registry.json"
+      ],
+      "started_utc": "2026-10-04T01:25:38.681780+00:00",
+      "finished_utc": "2026-10-04T01:25:39.559227+00:00",
+      "returncode": 2,
+      "expected_returncode": 2
+    },
+    {
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "dataset",
+        "run",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\enrollment-registry-20261003\\dataset",
+        "--registry",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\null-registry.json",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\null-fixed-03-pipeline"
+      ],
+      "started_utc": "2026-10-04T01:25:39.562741+00:00",
+      "finished_utc": "2026-10-04T01:25:42.601957+00:00",
+      "returncode": 2,
+      "expected_returncode": 2
+    },
+    {
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "facemath",
+        "dataset",
+        "run",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\enrollment-registry-20261003\\dataset",
+        "--frozen-model",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\enrollment-registry-20261003\\helen-model.json",
+        "--registry",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\null-registry.json",
+        "--out",
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\null-fixed-03-transfer"
+      ],
+      "started_utc": "2026-10-04T01:25:42.607960+00:00",
+      "finished_utc": "2026-10-04T01:25:44.491344+00:00",
+      "returncode": 2,
+      "expected_returncode": 2
+    }
+  ]
+}

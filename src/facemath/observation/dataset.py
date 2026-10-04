@@ -291,7 +291,9 @@ def verify_dataset(path: str | Path) -> dict:
             "human_accuracy_validated": False}
 
 
-def run_pipeline(dataset: str | Path, destination: str | Path, *, model: str | Path | None = None) -> dict:
+def run_pipeline(dataset: str | Path, destination: str | Path, *, model: str | Path | None = None,
+                 registry: str | Path | None = None) -> dict:
+    from .enrollment import read_registry
     from .study_runner import NativeExecutor, run_session
     from .study_io import finalize_session, replay_qualification_bundle
     source, root = Path(dataset).resolve(), Path(destination).resolve()
@@ -305,7 +307,8 @@ def run_pipeline(dataset: str | Path, destination: str | Path, *, model: str | P
             shutil.copytree(source, root / "dataset")
             step.update(verify_dataset(root / "dataset"))
         with journal.step("pipeline.freeze_before_inference", {}) as step:
-            study = freeze_study(root / "dataset/study.spec.json", root / "study")
+            study = freeze_study(root / "dataset/study.spec.json", root / "study",
+                                 enrollment_registry=read_registry(registry) if registry is not None else None)
             step.update(study_sha256=study.digest)
         recipe = _recipe(root / "dataset/recipe.json")
         model_path = Path(model) if model else root / "dataset/assets" / recipe["model_asset"]

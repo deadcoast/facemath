@@ -1,0 +1,1344 @@
+{
+  "format": "facemath.enrollment_check.v16",
+  "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+  "scope": "The retained dlib pilot, LFPW original-PTS cohort, HELEN donor, IBUG frozen transfer and HELEN roots 60-119 holdout; one complete source lock per plan, not independent replicas. Other studies, unknown person aliases and native training enrollment are outside this snapshot.",
+  "alias_policy": "exact_source_hashes_and_shared_group_lineage_ids.v1",
+  "registered_studies": 5,
+  "registered_cases": 243,
+  "target_enrollment_sha256": "037080d2ce441a363a915ece8fce7b1b8439e27dae85717d4a768bbf6c06554f",
+  "enrolled": 60,
+  "eligible": 60,
+  "prospectively_excluded": 0,
+  "splits": {
+    "development": 0,
+    "calibration": 0,
+    "evaluation": 60
+  },
+  "disjoint": false,
+  "overlapping_cases": 60,
+  "overlaps": [
+    {
+      "case_id": "case_00000",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00000",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "79e60d5dc43914d3b7f84dd394af4adbf070e4d40425d36e707acd47f23f20af",
+            "d09d055fdd72910a780bf2e441bc099d9f1d2334131144854b525367c04386a9",
+            "d11f8e1b5a702aa6280aa330238689ab8c7eb955596f723def788baebbb16497",
+            "e357c0de8301e80e1518768f0149640d69a38c5450d11d682123d5cab72cdb2d"
+          ],
+          "identity_aliases": [
+            "source_00423a43e27b366fff495ecaf8c14f7356822565c270ab37abba1e660ea9be0e"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00001",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00001",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "0967af3be09afedb8b5293937c23aec153c8d6f75a589f2a7f69443dd18e9cdd",
+            "106ab23cd196c3aabedb1ab0e3602cc8babca17267f2b7aa077636d0eb7bd515",
+            "9501dfae50eae986e57417c6f6000696000d0a4f846d258bd07b1277c9e61f1e",
+            "c0e2ea8ba2beed1f8dea2d8652009e54c2c34e30d50bd0dc7ffd3a2b950b5e24"
+          ],
+          "identity_aliases": [
+            "source_8df79a5db7dedeeb01c659cef3f992fe32b061330db39e342c4552d7a12c2b99"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00002",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00002",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "11eab00be2cafd100b0b8a77ad928efc5d694e81339de4566fda5dcd13ad289e",
+            "31e060de81001aed86270a44544893b5fe5dfcbeb91f8cc41d1c1cfec432637f",
+            "7aeed93a56474f40758b471a17c2b5f57eb880e5b5f9ff7b684bae55b753e304",
+            "7bab59e1e1e7d8dc2e47ac4399b7de9036209af46392ad1db62725cb34afaf1d"
+          ],
+          "identity_aliases": [
+            "source_4dfb88605ed9b7737714d65d403fa4231650792aba724da879acb7efe36427ce"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00003",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00003",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "233a02f540dbad68281cb01d0427fe1432ee086a8251459403cf4bacf7afb2ae",
+            "73f93f0349c7162ba7d5c4482637c4d2d3196e9aeb5428c9f15efff459e9a224",
+            "d7c822d759ee9bf8625761c7e376fa8ef3a75fcbc2aa46fcdf9831e4074c482e",
+            "e5c75ef1f4b7e2de0640789a9678ee4cade985cb72618b6b3c148e71dacccc60"
+          ],
+          "identity_aliases": [
+            "source_6a84850693af076895f43b470648d0d0960e02446f99d43504513d9a93a7abd0"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00004",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00004",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "2c8d35e6d7440d3d170ccb164f97f7c27c8d429f706625f6e5d36a282c1254a9",
+            "4faf7fc2fecb96c5680d8a80ae8696643313f048328a771f486bb04910db19e4",
+            "65b98ac7d687ec26896b2178a7626a1667a9f958ada0500d8dd720b4b5f1e762",
+            "be4837cf224707f3a280b884151baac528d35ff7ff5df6af716549688377bf9a"
+          ],
+          "identity_aliases": [
+            "source_21c986ce32dcc4cf475b7e609f33f70305dd333084b071aa1e8427237e4f1499"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00005",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00005",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "32f76977a3e0f6e8f1a070bacf8bd64c9d0a411702fda202c6705a53da83594d",
+            "5a685f74971cb38bbd6acc99332d13ef7f8391954c0b9c83183c80ccaa579d89",
+            "d2e571e6ec2372cb4b8e0d3dc544aafd0e34483d52a99971027771394a6a7f99",
+            "efe1b57ac46c73f155c0f898de47e05e06ea667ef5c7842bdf2e9ad225ce1e55"
+          ],
+          "identity_aliases": [
+            "source_8f06a29674ac11458f72345687474e88f7fb6d6fda35e57543170130af642571"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00006",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00006",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "5847a4bd3492aad6163b4e72f5e95963d446786543189a89e600291288a52008",
+            "5e673128aea77be5da8e380f792bdbcc15fba3b338b893fb9edd1505bd67bf8e",
+            "7e729b7f29464727393955046930b0e2c18efa88da54d7398241b8af58f05749",
+            "e3ba83e8d421038edbfe10217b116d89d4a0855541d91c7218e1318d63a617ee"
+          ],
+          "identity_aliases": [
+            "source_f3941391aeac93a6933b4cd080dad969b13281fb1963ee449dab0877abcfd751"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00007",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00007",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "380625dce72ecf2485c11a0748db7bccef0fa165282a8f5233506bdc4895d73c",
+            "860097fbe64d030f37d99fe2b78972856b2d9e312404fbbd5fee82fbb64436be",
+            "95e031cc3ff99bd2db09928cb4e058e3ea18aee12765ecca5c4b7f291d0c59f1",
+            "b9d5c328a9a7207db2c96870ce24a145f8564580eea3efdb027892959c312168"
+          ],
+          "identity_aliases": [
+            "source_b3005b8886992f7bd33e0bd44151390bcc4bf4cf8c5852409584d9fe2f17559c"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00008",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00008",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "17ef82c3311ce3ef14173056d60423f5da60c7bcaa0ae86925f3dd9c2184a137",
+            "87ae5a43fe7c9ef166d3255e3b2c5ad3cff204946dcbed0f1e85a2660d3cab42",
+            "f6518c6e3f4a30993a0aec78bff4262df12ed3154c63655c1bf86c30d626a92a",
+            "f6e6f32b660e3564088b0263bb83521b9fed9c3517197a09971df14f5504165e"
+          ],
+          "identity_aliases": [
+            "source_5b203da791f23c6d58ab4ede61d6dd199c2d928427b7ea722c8c08e1b5f9f885"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00009",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00009",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "2dce4df824012f81973ced3255fd9617aee7490a5f596d8a5750fdeb80671977",
+            "84dfbbc6803ea2110c986afeb48eaf335b9e352876a985a285774478d5b188d3",
+            "877580c5a47e0ad28b706d7e6e7979a2b61893ec020c95b999508e3eae23a73f",
+            "e42436c5a90e3b8aa6a66f9429d14f135813072772b1252e938af822c8dc20d6"
+          ],
+          "identity_aliases": [
+            "source_5beef659716df9b3e05c89ce207881105fb362e5e3bac7324a4de6f22a5dff4e"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00010",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00010",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "0f389a3f6e7719d23007b6bbaf1ee0454d8a073075ebdb88b7c4ad0faef6cbce",
+            "106da9425f4de88b1e79d2f8a541158cc9b1bf8d9f6ed16529e21ccbc8eccc37",
+            "568dd75e589db2c5394e5fa28de0c8483265efb84984d8861b39ce782c2afc5a",
+            "84c7a8c524772e20938ecff6aa72572a7100335afd4ee91849d4a7085478d1bf"
+          ],
+          "identity_aliases": [
+            "source_261d3346e9a7080f783d006abb58386dc3014cb58d6d493f6d3d2440625b6ea7"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00011",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00011",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "3d343146b88b6c600b9d948aa7a156a8cbfa88c381f137a40369318f62903ddd",
+            "8308428ac972c0684207f7cab90922ee4dead58bb5877e34bd0b81ee8c273ff2",
+            "aa7c2f23503ba29feccf82275826a8af9d3f67a5f3b40b9dba9faea58cced54a",
+            "b7d775228953605e64b052765f2aa0ffd0a01cd4b07ad59b591fe3155c1807e3"
+          ],
+          "identity_aliases": [
+            "source_fc4dfc3724be26e82295e69b1f6961706ef187fe2d1c3f1af217b286ea635fec"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00012",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00012",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "95e0f4ec52751f3345ba562fdb7549420a8dad1c816972d8da6b2c81832dc768",
+            "a0309872fb0072fd7b1601b535d02b86c524357d6583503df935f4f95402c224",
+            "a3f7939bf0d8da39d016c73a28fb5aea35ceea2552fe48b870de6b2a7b2e7bf5",
+            "d3918f2efe21652ad302d94763ba8ea58355b1dfa7140bf32ea55acf3c1580c6"
+          ],
+          "identity_aliases": [
+            "source_616b43ddd31c50dabe41edae78db49936d00c2950024514812760700959f852f"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00013",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00013",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "2345f48bf03c4335f323b1a57466994b28d6ce52623be62911f8e19cc87412af",
+            "40cc525b70de8fcf1f637947ff158c68349066d95537b85024edd1b362b0eba0",
+            "7a69a89c9941ae7de82bad534ab97c1de022cb17722485766c2fbe72c9416d63",
+            "b59a7e8d78ecf803f6deca7b29ccc30b0f1b0b811e7e68c201c60b155c254fbe"
+          ],
+          "identity_aliases": [
+            "source_58c50dcb948580584ce42696e35fe83b190254577714d4fbed1af81cc2fa8a6e"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00014",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00014",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "06016023013e966a77e80a7cdb044037454792e07ec65be1096be332ecd93bd6",
+            "5651fb5f0862ace3dd5ee51db93953ad6bd11d53d780b04f7a27687455e698f0",
+            "79879b4ab7f3b82953e2cda49291d4ddd7f89cb3b90cc8c391318c2ff4e833c0",
+            "d853c7a991999c9e90e9ede8c87ec60b7d9d2cf47f65d2ee90e7b413fc1f35bb"
+          ],
+          "identity_aliases": [
+            "source_84bf14674457954bc4c323e6bf42cc96e60f3229f6284785c9e48ed5c3a976d0"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00015",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00015",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "6ba5275bbe151c7f1fa8bf3938c5f9eeb186e9a61aa7980209cba4546681e5b2",
+            "bb9d8fc5e4e57c2fd9b8c5fa1897f031d4cc045cc1e182d5e7b5d77a0cace14c",
+            "c4cb2bb3fcda45ea77083324a1a08a9dd52b4b7984cce44fda9fc5f06e0965ac",
+            "ec7dcc29e5a3dcc2f34c01be98ad03114e448e6a75facaeda19cac78da3872d3"
+          ],
+          "identity_aliases": [
+            "source_35f744f2981a90839ff43c93e53011ce544fe392b7d14a8a0da87c15dc43a1c3"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00016",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00016",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "16a820fbc5db14bdde9f6a62f54de8f627047cb145f56775072a4453f8e0b727",
+            "2472ff7febeb8bbeb22460d24bd32c2c5469c993c8608602302cd19e20ac4ff6",
+            "839819deaa8dcd90fed9f77aa8ae3131b0448625d0d372a4da97601d48dca59e",
+            "e0844675b91b2a393b7f23ada883e3b3227a19929b1e910c65d4d44a2ba87a37"
+          ],
+          "identity_aliases": [
+            "source_c009901a05f91509c0275fa9d21ed49217910f98f7a3ff76af4806df1da2f995"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00017",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00017",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "439264e3356eeefab9fab0fd981dc8b32b260c17f9e883d7c912dd641b00de13",
+            "a682e53d0f60108f7394c7e57841df1bc25f994e7831b8a7c868141256f72ea7",
+            "e3e9c05d5e79551b9f95cfeeaba883e6ab405701066aa84bb15051e90724137d",
+            "ee3e5adf818779347f51eee9b92b6c8edbd58dfcb7f36978cc4c44c9aa579d63"
+          ],
+          "identity_aliases": [
+            "source_1921496a88aaf056fd13a29c20058794c1c840b7f6c669829575d24cfd5fb385"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00018",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00018",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "11fd372f00f97022ea52c02337e3d61c67e0b8ae60b91e848479ed8dd2829b6e",
+            "2d71aab356fadad7d21cf386c39f19f15962267b853b4891f9e4fa30a8df6fd1",
+            "995f03e8c6c89011963a14c6922125928da2b1543976bb863d54fd45f24ed250",
+            "c6a330f78d9aa2455d163b499764da2f2f3ee84519e2416ce8d6ae8b181a6bae"
+          ],
+          "identity_aliases": [
+            "source_36458401f47f26765da24f11c4eb1f576609cc4a0347156864f5044c33db05b9"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00019",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00019",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "0654630660ff7464418e99162496f0c1faf3ba822c5de3aafa92374322beb9c5",
+            "19ec8aee7a55338699d81044aac4188fcb7403d6a654c58da8a27742050713d9",
+            "2dc10655f00a59ae45043c3fa18c22aa6336f7cfbf43a067a4bc4a2b779ab71b",
+            "758aa81c3a8fc00d0042298614cba86ed9c77ed0c72f6c860b7acabeb7c277fa"
+          ],
+          "identity_aliases": [
+            "source_d314b55c53b0375f3a4fc9193be5b2a17839a5b7c1f4acd3bdf40965b6ba74c2"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00020",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00020",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "2eef6c36c308f2af554cf18d498cf223a48c127a42121433a29c3d5d5e61e874",
+            "4b387d4af44405125a9abae7d2db5ea88f0127454ba2054dcd79a2125e5baa28",
+            "5ad7b44839fb5de38e515d35ce54ad4de4e723bf3fb40e0dcb26bd05467163a0",
+            "9f5d15aca3b7195b840e38ae0947f21e937d3010cb082529e4671df7236ebaa4"
+          ],
+          "identity_aliases": [
+            "source_8a2f93e9fb9d2029808c5f6e351e3b01a8f427ef4ee7a750f3ce6bd66f359855"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00021",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00021",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "469127ef8f7cd9a96a1fe7d21b2c64aac8f776dca65cf4db62343f0475ebb691",
+            "691254b80bba0ea6bb13dbce7179a9f703fcf235723be5a6a3a421bb610763e6",
+            "808e667681f01c6b11c4301bfa65bd498c4c726563c248d9731fd63dcbf5a372",
+            "ed2c374e81aea4238641273374d845abf5ac8db715dd61836540109423f2578d"
+          ],
+          "identity_aliases": [
+            "source_acfd6d6b6f8d2268fc3184cda4018d53b02b234ce30c9b1246300b15a36c37a0"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00022",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00022",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "085242376ff0d1950d2c4c8f59d11fad72c2d759de6dcb3ae63a10cb34dd39fc",
+            "363e290dae1fd9d37e019fa04248f51d18a04eb9ed2abeb341fa98086cdd8914",
+            "46a756a45a938292a83ded0aff6350ef38c1352ad19f2bde43b58a08eb9fb3b7",
+            "e74beff2c149417b92e2cad329082ae99384a7c78bec85bf140cf601c727da82"
+          ],
+          "identity_aliases": [
+            "source_f568f0db306e05fe4bb19915529906751e46ba64ea970a30e72babf1e144e58c"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00023",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00023",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "01ac336a5d8bfa1a0fd829068f17fa9f4ba7756d8aef8a2863b5ebee14277689",
+            "06b6d260e70ebaf412f465d46e91924b998310aebcca60493d70016ef9f00971",
+            "ac0621cb6b1f6460ca7282b4ce33b22a8cfe76ce4dbd545140a18c7de556435c",
+            "e1d81b02603d73c274b0841303b110937d88af697d7b2c98cf2adc6164cc2eba"
+          ],
+          "identity_aliases": [
+            "source_633ec1d3755c3686f8181fb70f349b1803dc33ccc2d08aeb2ee878ff19b945a5"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00024",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00024",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "178f18e341ae987859dbf02e995b886f003b7b6161412eb2729daa503585e320",
+            "19b6681f6c2e2304f7fd517b040ba712b48290439eecbeb97c6ac6a9bd67c755",
+            "a55275c348326af2b1abbe2150bf697eb1983c5f2dabf0eaa69f7a95b8927da2",
+            "ae6c95c93d004b7010aad2788baf615840030baebc78590d5145e7826d9eb4e7"
+          ],
+          "identity_aliases": [
+            "source_5e693066a0bdadae6193530182b624f1ef99bb5af638b169380d378a82037f01"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00025",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00025",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "4b9303fb5639e94d324d6f991195e9b936416e2188a8317cd01a82be88256573",
+            "55e72bbbeee647be2e878596b153e5f548525167a1594d1d392a64835306c042",
+            "7a3e2719f3869aed6b8c1d89ce1da77686dc86a228707f5e0ac843dc278a715d",
+            "7cde4db65e3f76d2102334939c6072dbbdf4c3a5afb22727e1b808c45a5d719d"
+          ],
+          "identity_aliases": [
+            "source_b62c5a4fe62b655e5af34f7c5c362ad1928ed480f47806faad88ec84a3a8b6e7"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00026",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00026",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "74ad9b0aa212b415966247756a3181ea12e991e8db91f39361187f8980d61f07",
+            "7bf8db63bb3920ba12e8db840ebb78f1df151300398173eaacbcb8f6d35df0b2",
+            "7fe8cf34983f8c46cc377436fd3187a36579fc8abb6da288d89b14931826c731",
+            "d65041fbef4e76f45a1ef3251f46df5cccdba73ab863fa1b960feebc0a4201c6"
+          ],
+          "identity_aliases": [
+            "source_ac8ea420c340c1a38fd48dd8e96fc64b7756aa449940b30f674d8dcd0bc0ba43"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00027",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00027",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "11ada762d2ad48ecc82fc184f136cb3618de1d6841afca98b6829813bf884dfb",
+            "3ef2c525ba9092f06902caff752566258711cd3df286f7dee8ad6ae031809caa",
+            "b1ad13a2dcbfcd9ab6f7222b39efc446bb0af6201dbb73f3c45edfca71d0fd05",
+            "b9c43107b1bba93f399b62b35ecffbfcf39cc60e9eddc385e5033421d2718094"
+          ],
+          "identity_aliases": [
+            "source_5a12b722189b58c029d07c8f554ece52dfecc4cfcb2d423118606f5bfc8f1e42"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00028",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00028",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "3ce4a8be69d76544758dbe845e80ef00a94a54a57d3ee79257b6ea28486e24ce",
+            "49b91f26908b92432f9d7c80511c7e869e6b6f71d114adb125b253504bf33b2c",
+            "bc63db659af451f8b8ec4e2222e8919bfee058fa143ec6afe61b6daba4d939e0",
+            "ffd7c6b6adaf7e10f020de126d023d34205069b5526f95dd6c81c45d40b69a54"
+          ],
+          "identity_aliases": [
+            "source_0ee9eeafd0b31dc4d8867d544f00be326e36ee8dabc98986b2e2ef390e640818"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00029",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00029",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "5afffad00ef943285067518324e39ec44257fd403e3228d19d025c4f02d82edb",
+            "8ac2646f0b0179b2a9661890070b1dc2335c029c8b57967fceb3f53ea51a3991",
+            "8fad2b9062e08b0da95aac7f8423e83fdd3aaeb25fe2fa427d29e99b8c108817",
+            "a0c3b93a2ed5d3a8112e5a698bd3284bca4c307eb04577d2612e41c5105ad4d9"
+          ],
+          "identity_aliases": [
+            "source_52ea18a9a6de445875d06fbcc86dd6d556c5797d657e50e2cf9a175220c872eb"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00030",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00030",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "62398bd01439816635c23cde37d9c9f7acda38387208eb161c96bf1178dff3bf",
+            "7655b23b331f2663c8a7dd8515906ae17b3e7d2e9a4366f016990aceca15bd14",
+            "d907f4281edeee1d3049d3ceb89e215e7cf45f76c14404e4a9d2bd3d91fd66da",
+            "fc21aa146d487605e591c606a861477f694b058fee763618281eb896a5fe4b79"
+          ],
+          "identity_aliases": [
+            "source_9e78b173b8f2addf24b298f458f2cad44a982061afb1810286dcea9574c698d7"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00031",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00031",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "44ac87e1395c1bc883c82e8318c6894c868534df39e43e34a4e36082c8199fff",
+            "700e8addad26f92a8869145f3239dc9290f3ceb7cd0bfcd11cab97b4c4d11b81",
+            "73422d64c69edd35dc6cb9334149b18932d99f850c8735d54c201a133039fd8d",
+            "b451df55e7c426b39993327ce71fd6c15eb8642011645eda07f434667da03e0b"
+          ],
+          "identity_aliases": [
+            "source_d857accf640da408e2c4047c8f43ea16380edecb417376ba25dabb3dbde7a370"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00032",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00032",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "2c1bd1223d682811667034018141eeae4d75f2d5246c5614d2db95df477b5fe7",
+            "8f777b20c16089f1d3ac692d9aacb1cf3c165bb387b3342e6f35a27b7ba91ac7",
+            "c0745ae208cfb389497edd12a035785660e167d3a947fc1e6fde113a3505e21c",
+            "f47f2cef7714e9f00082477b81476cac39d8e38e830261666faea0be115d92b3"
+          ],
+          "identity_aliases": [
+            "source_1cb0101a104fbc65abeac657db1f650e21d881704e3b98a370fda14d5999e5b7"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00033",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00033",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "043d9c7f792b14bb16eca54e6fe342dad017e77968e4bfc4964c9da07a548424",
+            "5c1bf4e6ccdb509d352367e2d471e7b0e8b7db76347e50eb57df1e2ccd4a7cac",
+            "a2a9b4336736bd794521107cfd9d3108dfc2210ca340a5be69c9012a3e6aae92",
+            "cc8143aa70ac377fe2e44ac75f3479a58c2fe20deaabc3b696e415f8a585d01c"
+          ],
+          "identity_aliases": [
+            "source_d4afc3667dedc52f21aa3e4d64e30339a6c7c78b3015ca04eec633ba246aa7f8"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00034",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00034",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "0bebaf95ae06e81c2fdf5723dbd475723fade607bc86644cb0cbf9c98207cac0",
+            "0da6e48f4aa9fce29035537225669b77508cc357337d16885ffbeeda1866dc27",
+            "507e12c09d35e95951fe7099d89a56c31e8f40de13fd6384e3fb14b008f0aa81",
+            "63626eabd859f59b3feb86a829c0a03fc96619b7a914c7db86fabe955cf751f2"
+          ],
+          "identity_aliases": [
+            "source_68fe8d395649b851d98f5275c6a4590361690f9e69a5a3e1a194819ad3f25da6"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00035",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00035",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "101324f90325e5508416b87d47830a38bbf5845c72c7eaaec06ad8be5f6898dd",
+            "1c95636cfd38c1b880ec742d688a0fabcb413d023e5269af00e57ad5f9fa8a67",
+            "519b4fa8996b90c4535a0903ad61fc4dceafc3c9fcf7ba4fa6df0e6a5709e2ba",
+            "cb843f7fdaa7f83a8c127525550a679d8dc9f207dc8dd035eab1acd85d25b8a6"
+          ],
+          "identity_aliases": [
+            "source_71c48b65ee6d8fcecfd48f362fd5ab5a19f676564f6f682e529dd1414ddfce70"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00036",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00036",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "3256e0cc669c3445c13ec1bd361ae05d1624430a0a4f13b29ea5917bd5814eb7",
+            "e526af02e0dc4b366b835150e2e33d7a0e97e8f0da64b0d376495a878a452b8e",
+            "ead3c92751f5361b7a36340d3e8261c9296b9f2fffb6094c6c57d6677f321c5e",
+            "f9c63efafa2989a1004a619ee95bc2741d618b86876420eb3daeb96fa522afbc"
+          ],
+          "identity_aliases": [
+            "source_feb0ae80d8df266f38488121c98289ddc5f623d985fc102208e138c501d55168"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00037",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00037",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "05e4ede5a3013a47a3fb82380ad9ca98a333e37a43f9f9a008c2179ae4be5676",
+            "78d266b513408d7933863eb28ed67a50b8c95b54a58258c52080a9538c03aa1d",
+            "9fb165487b4e7296c39239925ab7bc57cc188b7dedc9ecd59597eee368e8b8c5",
+            "fd19d4d8f214585fc71af046e0260090a2f50bd47fcee647efb5f4f6e91438bd"
+          ],
+          "identity_aliases": [
+            "source_902dc288b3724fe6ed9c090e908f755bc594314534fe269b20af737239e4062c"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00038",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00038",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "434572eddd673ba223ca852fb5a116368205a843af3ffb1d3419ab193c09f0af",
+            "4453286f26a89b748f550e0fd2db25023389298b76dc20e7734d2d429a4a345c",
+            "c0da0b6cd07da7c9272d46d29c7598547e692705eb06a033901544c4ae8d9f97",
+            "fdffe2c7b62f2e997f954b1e27fd239386fa51dd6971dea248518bbbbe96ab88"
+          ],
+          "identity_aliases": [
+            "source_ffb2322c7344410ce747c2d488e5668281136381631fecfb342e91dd8222dfe0"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00039",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00039",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "0362522c92261d70fdb89481072d4eae0c41b83770489b2941806cd908d78b8f",
+            "3a7177e83a53da7b7b4bdbd1958aaa4af0f825c46b09440dee5dc0407336fed7",
+            "a8ae6d915e3caf71dc484c7f0d365f0ce183249d4a3943c4fb7f669cad7e128e",
+            "dd672d8bfb08f4d3351a5d8a6493082b8bcf7a2c392428d0cc74a96de5c7124b"
+          ],
+          "identity_aliases": [
+            "source_e62d374646f6b23b2c4b38cf5ea63822faac925bbba5984b302bfee37ccfd787"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00040",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00040",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "0ab6c519c89f71eeb4df1e4dec7f968a5c788329ae636bae7e4a31398c1188cd",
+            "5f27de6162fc1360f482d9b0a6771ff16d049e1a9d8c38304b0f7043879529fb",
+            "cca9b9f2f819eef8f4cc57f5dfffd35b7d47ea3c721040b7cffcd3bd57d026f3",
+            "fbba343c1e8f347c0e26a47dc3cd3539d24882bd63fda02d1336f548a1b0ac22"
+          ],
+          "identity_aliases": [
+            "source_f8db82e1a98db2cddc56f36de5cd83bff01c4701d4300b4cd90936eefadc9221"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00041",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00041",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "1e11529335af8324af29492e658b686a72f9ff0c0deba845ac8eefa355a42822",
+            "69be041c13b9317773bc80f50b29aca5e38a91f12b23fd2a6eac0f41ad7475fa",
+            "81a1946e86ee4900c51fd5f8039e58925952807e30dbf2afb85ebdc4a91032c6",
+            "a6c5cfff3682e9f0c6cc1f4b3042f8cecb62037c5beef8beb4b51448b1f598a5"
+          ],
+          "identity_aliases": [
+            "source_35c83f417fb8bcf3cdae73c35a0bb0c18e91f9a200278e2a807fcb521297b9f5"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00042",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00042",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "3a86361c93df81e8a1cb3c585c1385945f0c5ade6bc50a86b51ada373ecae5ba",
+            "5c61b8f527e82846d6a365ebc8aa547769a9eb303f0b3e4055aae4917aa656fe",
+            "a4bce071125c70d27533f792037e0fd386b6df93c329be49ef7f3969d5ac4abe",
+            "b48de5cb6a6df0ce90ec96bb5b91868a7ccf6a9f3bc716c7f5cfaf8691a53514"
+          ],
+          "identity_aliases": [
+            "source_9a4331150beece4693d29bb8e28dc15bfe097b0bfa3bc6c6b2f826b700528e69"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00043",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00043",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "2d9c9299654c9fd75241eb754d285b56ee43b2c46cd81f4cdb3441c374b90ef9",
+            "79e2ec43a7885e822bca01be288e2f7edea502ccd7423f23485d32cf9da49c0d",
+            "7bf37ae485406da8d81d2e417d374e70403c4de0dc2af63a4f261dfc97524abb",
+            "da579a2774338c3d34490244d80b25f14415a207506535c229ff6c308a05df23"
+          ],
+          "identity_aliases": [
+            "source_a010573838760d29f215bcf25c00473edf6f89eab54e987943c2afeec29a523d"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00044",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00044",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "06737f656b791f73fb12d9573d285c9927a40ec4f8d29d431fa2c2e20eb9df47",
+            "7c1a1349242e66f952033a5741a59c46f26aa95736450c4018df6dd2f022a0ea",
+            "e6422e3a641bbd17f31cfd7a42796ad1dd3655e9cc82dbc382609803b1e599fc",
+            "eb8433c441294d4755fead46054d875f519599adc7ca687d9f2f4355c9bd35ca"
+          ],
+          "identity_aliases": [
+            "source_7579aed24e7d257d41528cc8bddd9efb620404271456704227bf1bac8f24a1b5"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00045",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00045",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "162795dba73ef2b5c7c97034c2b38ee9b71c61d82b1ec762759153dee174a03b",
+            "516348bed2ea5ae0a914ec9eed209c550ce014a48b31ee01cf5dc87d2e152dee",
+            "5b4aeacb891df1e1ac6e61c275a6c91553f75ad54f643ae3212360b66552c350",
+            "c6f0ea7811b33234ce4cc031d47f7ddba6fa3763de031820c1b0b0e995589f38"
+          ],
+          "identity_aliases": [
+            "source_846cd81dbde21867b25d86ff67b69ebc0fa94e9b24f65aeea4d38c304a19a6bc"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00046",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00046",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "17c8085253d16c3d8cb53e2f5ea2fc67ab70d6589b93c562e573516822ab71d6",
+            "1b613763e25acf3088344bb13577743d049fb5c72d25cf0335e04ebe04fd61e0",
+            "58d562e8f0c11dd1fe257da4f2d5a2cf363d7f4ece720044721e0044eace316b",
+            "a97bc8ec69490b4ee33c9d9d0975f4fc2996f0d83b78e25d5f8bf0dbe806d046"
+          ],
+          "identity_aliases": [
+            "source_7bb8f73a586ffcfc55b0c8f14c0be929bc4be46d1e70cafc01ab882102568137"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00047",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00047",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "777b83e6e257a92305a8d9788cea0e6cc98697331c1881679e9f98126f92a400",
+            "88fd0095012b152d1e6010d300c770869d5f209edeb2e4a910f2fea3fd893a3d",
+            "bec0226927bdbbef68e269697ae0337071c0b638b51fc82175d8ca1f1c0b6e8b",
+            "c9390ab8bc5b83684386fcbaf9c0f09ec28c0655606c012eb7dbf73fdfa09f93"
+          ],
+          "identity_aliases": [
+            "source_a98510206bc113a916116846aa25d4b7494a532e2a2cd77b819d2b94918dca75"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00048",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00048",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "0dbeaf6294230285245a62aa10970fe1801a4eba6bca471138ff36aaad7eafde",
+            "7a258f27589297e8a95e9653c39a64132f79cc30b57d61c262aab612c6ef3e70",
+            "f0e909f36f4d48862546548c2e8f56f66d0750c326dbb36648b25a946381d9c8",
+            "f8653e7b8e4981d1ee709e220943bed8de9e1a0b4fa4c2b76e307dbca2b74bb3"
+          ],
+          "identity_aliases": [
+            "source_6ffb6bc4ed5f2944878a30d332da190532ea9ac65dff8d92a9619de5e05d38bf"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00049",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00049",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "2fae606d9614e8bf64ea961591139b7959d8f67e2500ec9561301d2dd2b259ba",
+            "711e705aabf01785c85ecdc8f65da2ce4491a86f27ae8a17f03d18de663fe562",
+            "7864d2b61cf26be59f4def02f9d052adf8cf96d1c22398702c692fcaa82da360",
+            "83f65dd50384734abeaf6d802e1c16fb8125323aa6b9b396443fa34ad71b4ad8"
+          ],
+          "identity_aliases": [
+            "source_3c8372a777b131536535c06348f788c76e5c3bd75834b38d9959d153448428f3"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00050",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00050",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "00cedb9c9852e1e3a0613c1ced0aa8c0c7a185e1942ecdd9a365cb701aad2af3",
+            "2aa28c6c6ea7435f9a0d31a07df6cf70934470388f6207f2cc6fa599b2d6e8f0",
+            "3c68df8301d92ef778d5a8d6f661f2df8b0ab102a496d1e4c18c8d5408e6cadb",
+            "766e21ebea79d9901042fa7a956ea5ebf5d623c49648051409ee2a85addad3b4"
+          ],
+          "identity_aliases": [
+            "source_a2d36ad3e6cd9afcb589b630fbc2fba6deea0eb740eb27bce0447e4afc3284bc"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00051",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00051",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "3e6cdb343ad10bb1ce2b674f8afa2d76566be25faf213258f8bfd71d1ae67af3",
+            "405a2d805993cb549d8d512cffb42f823d854a0433da338432e90bd5cd532ae6",
+            "59d08feb2876ef6156b75dfb6230237ebf516daa03a7f36914f97be66986c485",
+            "e35935d99e4153ff08c69c61ffb5f8a2b645c30175a0c77d903213458b409107"
+          ],
+          "identity_aliases": [
+            "source_459c790bf844388093d894352ab199c6392fa6e40da2365451c8f78d5ac8a3af"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00052",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00052",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "13dde70437cbbe01a88c7ebe77b0275205da13ba88a175ea523691c63d652b81",
+            "85e593b339ad70673d73a1bfc2eac2e1ffcb4204a8939d8c098c8cf4d26c73a6",
+            "b490f978d6fde493d7680d7fd2265bd7d85de4a21fa4e7901ef119a92bd5b52b",
+            "d45b66d783d99e2c9e5de63f8bf799054d1c2a6fbcfb038f0c33f0806e79b875"
+          ],
+          "identity_aliases": [
+            "source_5513fc33230c6a941fe018c4952cb5129991137cdb3f04720fbe764770c775de"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00053",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00053",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "73cfc140b89aeba0b6c1d87db96b7f545cf7e0ce66b7f74270a0d364059573cd",
+            "757f6eabed96fb87c9b1d7b6bd26168ec00e8195569eca85f2eee8fac976b318",
+            "c73f74008843bf80310f6a29f98179af61616da4b06bd1756f36302ce695e974",
+            "f17cd8633c192a98f66f0264a49bd0ce17a493e83b2a4d68b194e9820fee2011"
+          ],
+          "identity_aliases": [
+            "source_65236a1e35d301388973cdb640e245408d035446246a3daf2e24798fe8e405e3"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00054",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00054",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "1ed4d908f7a9263e8eea7773ca4b6bf2966179e1c5b494bb0e4c48e2ebb9cb71",
+            "7c325eadc00ee56651e47beef0b5600f1c930878f158840f34f8c58bee70d8e3",
+            "8da33bf4bfb977c3bbd479cae5157fb4b38bd0e860b4428412e435039fdedf0c",
+            "9911bae1978b85c29f57a22d0c97c8a7f27ae9b50e207854d125986d8471b3f0"
+          ],
+          "identity_aliases": [
+            "source_00f4d47c821dbc87a3cb9444d081a13bba22f0956718a5a526d89cb840b956e5"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00055",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00055",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "40b614c5b895326263c70877a76bb51d05248ad862913f99a37834a440f449b4",
+            "415fdbc99aab6cb9621c880f0c5b2a598501ef533e2cf4945ab54e5b9e8fde3d",
+            "5e32fd4725c8bbe6fc001b91f3bdae6ea8496d895248fe92e02f958e88050ed5",
+            "e5848ff21223e0fe10d50c53677f09f0e0ccab4d5cd345777eb406a4b08dc11e"
+          ],
+          "identity_aliases": [
+            "source_1d6084d8146c5ec6298e316f9f885889311e48d4a43542fb3c93ac1542c7732f"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00056",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00056",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "21f89b0cfd9ed271a2e03db0aeb03256e3711afcb09a6e5b18f0c941d1c2b8fb",
+            "2bb31e7bbc697f59da27a43328e96e9f17c98baaef19b30c44a0e0b9fc1f2018",
+            "769570137964791d69032ef7c586102867d90ac228d71dac5f8994ba31520be8",
+            "b7a3ddc5e93f39ca0fb7db1374440f54ab158d0db2b0fc4a06b35ec11b7d47cc"
+          ],
+          "identity_aliases": [
+            "source_a3a7c1d469bde074a2a4f7023438a63c2c38c8205962451c1dc81e405bf01010"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00057",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00057",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "0e1404892ae4356f6b9ed52e355f6d7961f9bfab14d1da889136f1c55f81069d",
+            "6868ab129245e0abdfcd0bfeba422c318274658516ac510df7193e6f6bef7833",
+            "8a04f5ab6823328428579517baef6bd65287bc51713a7881943fe85146ea0ffc",
+            "ae0da6ab773a3cbeb593c648f4e07f6e023e3283983955168b303db3efed730a"
+          ],
+          "identity_aliases": [
+            "source_b6319930283fde977bb1c1e557fb36c9887b5a4d5cdf396fb1c4aae3d4e2f822"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00058",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00058",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "51c5e315eba1cb5c90668720727ca49246bc79e33d10612cbfe552c0741b5a91",
+            "c80a222ce5adb6ca6b2ba3663c07dae27a159641d9bbc29518a0db71bddabc07",
+            "d9a096e327e766405fc2faea37f779fc5d125236c2bb426056ad78e935aebcc8",
+            "dacf98e84aa530d45af0c39410695eecb10f86a8801a3a1e454094c5ef78de59"
+          ],
+          "identity_aliases": [
+            "source_27b079f78ae0f95d61fcc88357417f1e4975575cfc517d02324012ecf89864f4"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_00059",
+      "split": "evaluation",
+      "eligibility": "included",
+      "matches": [
+        {
+          "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+          "case_id": "case_00059",
+          "split": "evaluation",
+          "eligibility": "included",
+          "image_aliases": [
+            "1f634fb9cc6047d211d95eaa8ece57a2ab4876c2483018099ad20476d0b548a2",
+            "24f9626cd02dac0665f319068f583a241838cba51f6b5b30c0b2e7119a94ba53",
+            "c7f5dee3210a78b27f4d55d480139b7d910d9df15c68eee07eaad61487efaefc",
+            "fe81fcaf1b8478bc493d85123eda92eaf187c159f0168ba68ccdc27715ce64d1"
+          ],
+          "identity_aliases": [
+            "source_bf44f0a1bfcbf51ebc29f0cc0d5de1975ee5aaafc66b4a323b596096c98a005e"
+          ]
+        }
+      ]
+    }
+  ],
+  "limit": "declared registered enrollment only; not external authenticity, person independence, training-data coverage or empirical admission",
+  "target_study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+  "inference_executed": false
+}

@@ -1,5 +1,15 @@
 # Beyond the Wave10 consolidation
 
+The 0.16.0 enrollment registry implements the source-reuse gate across explicitly
+registered studies and model versions. It retains all splits and exclusions;
+observation outcomes never remove a source from registration. The next native
+integration window is HELEN roots `[120,132)` with the unchanged model. See
+[the registry design](ENROLLMENT_REGISTRY_DESIGN.md) and
+`evidence/enrollment-registry-20261003/VALIDATION.json`. Extend the retained
+registry with each completed source plan before prospective work. This does not
+correct adaptive cross-study choices, establish independent anatomical/visibility
+labels, or authorize retuning from evaluation results. Gate A remains open.
+
 The 0.15.0 source-window workflow continues Gate B with a second HELEN holdout,
 keeping the 0.13 model and its calibration fixed. It partitions the ranked source
 universe after photograph grouping, then applies the existing evaluation-only

@@ -1,0 +1,90 @@
+{
+  "frozen_utc": "2026-10-04T00:49:39.288204+00:00",
+  "engine_code_sha256": "dd1fbf7dd9d1d4cc5ee0ef10653f1a316a2d10bf70247000f29e1b74e38ba57d",
+  "study_sha256": "fda570cbfca27db9ec0ad24c65c07a8ce763b6cc0704f26737e2c2d4bae91015",
+  "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+  "registry_scope": "The retained dlib pilot, LFPW original-PTS cohort, HELEN donor, IBUG frozen transfer and HELEN roots 60-119 holdout; one complete source lock per plan, not independent replicas. Other studies, unknown person aliases and native training enrollment are outside this snapshot.",
+  "registered_sources": [
+    {
+      "name": "pilot",
+      "source": "evidence/native-pipeline-20261002/preseal/native-pipeline/study",
+      "study_sha256": "399ab02d5b4295a8215d9fce75b8d517559d12170d99ac51b2b7786a8a6d8d79",
+      "receipt_sha256": "a163217e4d965c3753870b27b59553c4f3878dfda86ede4deca0af777780b576",
+      "enrolled": 43,
+      "eligible": 43
+    },
+    {
+      "name": "lfpw",
+      "source": "evidence/source-cohort-20261002/preseal/native-pipeline/study",
+      "study_sha256": "8aac26bf5455057209143a1a47345ae8d5f75d9f21724d7e1ee076385280b937",
+      "receipt_sha256": "13a3ed8257564db164b627d9c80065ce3f0087c45dc9b2b721d37d566b75d4eb",
+      "enrolled": 60,
+      "eligible": 60
+    },
+    {
+      "name": "helen-donor",
+      "source": "evidence/bound-utility-20261002/preseal/native-pipeline/study",
+      "study_sha256": "3d3d4bfed7cfbe4a2e813020e1a4c35b98198c00386226667f730541ff115822",
+      "receipt_sha256": "b250aa9b8f5a570ad8deb5b0f9aa71179aa1d918dee6741012ec5a85db5e0f0c",
+      "enrolled": 60,
+      "eligible": 60
+    },
+    {
+      "name": "ibug-transfer",
+      "source": "evidence/model-transfer-20261002/preseal/native-pipeline/study",
+      "study_sha256": "ff46226db6b494a5901c66e2542532a13d8d0ee4d472b02de9a8e3baadd7a7a3",
+      "receipt_sha256": "b963d80c8700a37a516d10a8797c27f5d356782af4ee561ae44f25e8a0983250",
+      "enrolled": 20,
+      "eligible": 20
+    },
+    {
+      "name": "helen-holdout",
+      "source": "evidence/source-window-20261003/preseal/native-pipeline/study",
+      "study_sha256": "3b1bbc972b5528c653196d00492bc7966861b7ed13dba379adf95c0830efbe1f",
+      "receipt_sha256": "034c428b89aa378d123704dcf527f877d80ee5ea2107dcbf1e605ba3e90dd33e",
+      "enrolled": 60,
+      "eligible": 60
+    }
+  ],
+  "registered_cases": 243,
+  "check": {
+    "alias_policy": "exact_source_hashes_and_shared_group_lineage_ids.v1",
+    "disjoint": true,
+    "eligible": 12,
+    "enrolled": 12,
+    "format": "facemath.enrollment_check.v16",
+    "limit": "declared registered enrollment only; not external authenticity, person independence, training-data coverage or empirical admission",
+    "overlapping_cases": 0,
+    "overlaps": [],
+    "prospectively_excluded": 0,
+    "registered_cases": 243,
+    "registered_studies": 5,
+    "registry_sha256": "23db864f2725b9ea8899acd6f535fe00a59ac7bcb02ecc550ef67af08be88f65",
+    "scope": "The retained dlib pilot, LFPW original-PTS cohort, HELEN donor, IBUG frozen transfer and HELEN roots 60-119 holdout; one complete source lock per plan, not independent replicas. Other studies, unknown person aliases and native training enrollment are outside this snapshot.",
+    "splits": {
+      "calibration": 0,
+      "development": 0,
+      "evaluation": 12
+    },
+    "target_enrollment_sha256": "a493a10557620116dc3127ca321860222aef99c142a19d7d47d90f29a3820ffc"
+  },
+  "capsule_sha256": "7b78c5ab49ac5e5d0b44fde0f0dc82aa4e21450d299b147f7b9f5cfe4bbd77a6",
+  "calibration_sha256": "8f779b5a706f8188218a1e18a1dd5bcfb100e30632baa8efb90b9f9dc5dff4fd",
+  "model_bytes_sha256": "ad529bcd81fe8c2860cb5e5cbf38131dada45565c7d2f2a5eaf2d33d65993ce4",
+  "radius": 16.220889465226026,
+  "plan_sha256": "3061c8b86de14ffc76d696408b4378602c50b50d5e9bf5a4c8615268f19e1e77",
+  "selection_window": {
+    "unit": "photograph_filename_root",
+    "start_inclusive": 120,
+    "stop_exclusive": 132,
+    "candidate_annotations": 330,
+    "candidate_source_groups": 298,
+    "skipped_before": 120,
+    "selected": 12,
+    "remaining_after": 166
+  },
+  "inference_executed": false,
+  "fit_performed": false,
+  "empirical_admission": false,
+  "purpose": "prospective registry/native integration; no new scientific acceptance threshold or independent sample count from repeated executions"
+}

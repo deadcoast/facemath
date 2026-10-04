@@ -24,6 +24,9 @@ from .reference import REFERENCE_PROTOCOL_SHA256, ReferenceAnnotation, consensus
 from .validation import ValidationCase, validate_study
 
 STUDY_FORMAT = "facemath.prospective_study.v5"
+REGISTRY_STUDY_FORMAT = "facemath.prospective_study.v16"
+MANIFEST_FORMATS = {STUDY_FORMAT: "facemath.study_lock_manifest.v5",
+                    REGISTRY_STUDY_FORMAT: "facemath.study_lock_manifest.v16"}
 
 
 def read_json(path: str | Path) -> Any:
@@ -195,12 +198,28 @@ def load_study(path: str | Path) -> FrozenStudy:
     root = Path(path).resolve()
     manifest = read_json(root / "manifest.json")
     expected = manifest.pop("content_sha256")
-    if manifest.get("format") != "facemath.study_lock_manifest.v5" or object_digest(manifest) != expected:
+    if manifest.get("format") not in MANIFEST_FORMATS.values() or object_digest(manifest) != expected:
         raise ObservationError("invalid study-lock manifest")
     verify_inventory(root, manifest["files"], exclude=("manifest.json",))
     data = read_json(root / "study.lock.json")
-    if data.get("format") != STUDY_FORMAT or object_digest(data) != manifest["study_sha256"]:
+    if (data.get("format") not in MANIFEST_FORMATS
+            or MANIFEST_FORMATS[data["format"]] != manifest["format"]
+            or object_digest(data) != manifest["study_sha256"]):
         raise ObservationError("study lock mismatch")
+    if data["format"] == REGISTRY_STUDY_FORMAT:
+        from .enrollment import require_disjoint
+        binding = data.get("enrollment_registry", {})
+        if set(binding) != {"path", "content_sha256", "check"} or binding["path"] != "enrollment_registry.json":
+            raise ObservationError("registry study lost its frozen registry binding")
+        registry = read_json(local_file(root, binding["path"]))
+        if registry.get("content_sha256") != binding["content_sha256"]:
+            raise ObservationError("frozen registry digest mismatch")
+        check = require_disjoint(registry, [(c, tuple(ReferenceAnnotation.from_dict(
+            read_json(local_file(root, n))) for n in c["references"])) for c in data["cases"]])
+        if check != binding["check"]:
+            raise ObservationError("frozen registry enrollment check differs from recomputation")
+    elif "enrollment_registry" in data or "enrollment_registry.json" in manifest["files"]:
+        raise ObservationError("registry requires the v16 study format")
     ObserverDeclaration.from_dict(data["observer"])
     if data.get("bias_mode") == "development_joint_ocular_stratified":
         from .stratified import RoutingPolicy, validate_routes
@@ -246,7 +265,8 @@ def load_study(path: str | Path) -> FrozenStudy:
     return FrozenStudy(root, canonical_json(data))
 
 
-def freeze_study(spec_path: str | Path, destination: str | Path, *, frozen_model: dict | None = None) -> FrozenStudy:
+def freeze_study(spec_path: str | Path, destination: str | Path, *, frozen_model: dict | None = None,
+                 enrollment_registry: dict | None = None) -> FrozenStudy:
     """No detector is constructed by this function. Every source is preflighted."""
     spec_path, target = Path(spec_path).resolve(), Path(destination).resolve()
     if target.exists():
@@ -254,6 +274,8 @@ def freeze_study(spec_path: str | Path, destination: str | Path, *, frozen_model
     spec = read_json(spec_path)
     if "frozen_model" in spec:
         raise ObservationError("supply the frozen model capsule explicitly at freeze time")
+    if "enrollment_registry" in spec:
+        raise ObservationError("supply the enrollment registry explicitly at freeze time")
     if spec.get("format") != STUDY_FORMAT:
         raise ObservationError("expected facemath.prospective_study.v5")
     if not isinstance(spec.get("domain"), str) or not spec["domain"].strip():
@@ -390,6 +412,12 @@ def freeze_study(spec_path: str | Path, destination: str | Path, *, frozen_model
             for e, image, refs, encoded in loaded])
     elif not any(c.split == "calibration" for c in cases) or not any(c.split == "evaluation" for c in cases):
         raise ObservationError("prospective qualification requires calibration and evaluation groups")
+    if enrollment_registry is not None:
+        from .enrollment import require_disjoint
+        registry_check = require_disjoint(enrollment_registry, [(
+            {**e, "eligibility": e.get("eligibility", "included"), "lineage_ids": e.get("lineage_ids", []),
+             "image_sha256": array_digest(image), "image_shape": list(image.shape[:2]),
+             "original_encoded_sha256": encoded}, refs) for e, image, refs, encoded in loaded])
     target.parent.mkdir(parents=True, exist_ok=True)
     temp = Path(tempfile.mkdtemp(prefix=".facemath-study-", dir=target.parent))
     try:
@@ -422,6 +450,11 @@ def freeze_study(spec_path: str | Path, destination: str | Path, *, frozen_model
                                  "model_receives": "source raster only; not reference coordinates, split or stratum"}}
         if "workspace_origin" in spec:
             lock["workspace_origin"] = spec["workspace_origin"]
+        if enrollment_registry is not None:
+            lock["format"] = REGISTRY_STUDY_FORMAT
+            write_json_new(temp / "enrollment_registry.json", enrollment_registry)
+            lock["enrollment_registry"] = {"path": "enrollment_registry.json",
+                "content_sha256": enrollment_registry["content_sha256"], "check": registry_check}
         if frozen_model is not None:
             lock["frozen_model"] = frozen_model
         if joint_config is not None:
@@ -439,7 +472,7 @@ def freeze_study(spec_path: str | Path, destination: str | Path, *, frozen_model
             lock["admission_policy"] = admission.to_dict()
             lock["admission_plan"] = plan_admission(admission, frozen_cases, strata, observer.execution_kind)
         write_json_new(temp / "study.lock.json", lock)
-        manifest = {"format": "facemath.study_lock_manifest.v5", "study_sha256": object_digest(lock),
+        manifest = {"format": MANIFEST_FORMATS[lock["format"]], "study_sha256": object_digest(lock),
                     "files": file_inventory(temp)}
         manifest["content_sha256"] = object_digest(manifest)
         write_json_new(temp / "manifest.json", manifest)

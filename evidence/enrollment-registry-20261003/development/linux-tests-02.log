@@ -1,0 +1,615 @@
+........................................................................ [  6%]
+........................................................................ [ 12%]
+........................................................................ [ 18%]
+........................................................................ [ 24%]
+......................................EEEEEEEEEEEEEEEEE................. [ 31%]
+........................................................................ [ 37%]
+........................................................................ [ 43%]
+........................................................................ [ 49%]
+........................................................................ [ 56%]
+........................................................................ [ 62%]
+........................................................................ [ 68%]
+........................................................................ [ 74%]
+........................................................................ [ 80%]
+........................................................................ [ 87%]
+........................................................................ [ 93%]
+........................................................................ [ 99%]
+....                                                                     [100%]
+==================================== ERRORS ====================================
+_ ERROR at setup of test_both_frozen_branches_run_and_raw_geometry_stays_unchanged _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+_______ ERROR at setup of test_snapshot_reload_recomputes_same_admission _______
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+_____ ERROR at setup of test_withheld_qualification_cannot_authorize_pair ______
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+_______ ERROR at setup of test_summary_view_does_not_create_a_new_score ________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+_____ ERROR at setup of test_pair_replay_uses_same_complete_qualification ______
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+_ ERROR at setup of test_rehashed_derived_approval_rejected_by_raw_recomputation _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+_ ERROR at setup of test_query_context_cannot_reuse_any_enrolled_split[development] _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+_ ERROR at setup of test_query_context_cannot_reuse_any_enrolled_split[calibration] _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+_ ERROR at setup of test_query_context_cannot_reuse_any_enrolled_split[evaluation] _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+__ ERROR at setup of test_full_enrollment_leakage_not_just_calibration[group] __
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+_ ERROR at setup of test_full_enrollment_leakage_not_just_calibration[lineage] _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+_ ERROR at setup of test_full_enrollment_leakage_not_just_calibration[excluded_context] _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+_ ERROR at setup of test_qualification_does_not_select_only_successful_categories _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+___________ ERROR at setup of test_query_model_substitution_rejected ___________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+_ ERROR at setup of test_cli_preserves_actual_failure_journal_before_native_constructor _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+_ ERROR at setup of test_conflicting_research_and_qualification_flags_rejected _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+____ ERROR at setup of test_overview_terminal_discloses_fraction_semantics _____
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _trace=<pluggy._trac...basetemp=PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+C:\Users\ryanf\github\_active\facemath\tests\test_wave10_integration.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/facemath/observation/milestone_lab.py:156: in run_milestone_laboratory
+    negative=run_control_study(root/'negative',seed=seed+5000,shifted=True,compact=compact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/facemath/observation/milestone_lab.py:141: in run_control_study
+    run_session(frozen.root,root/'acquisition',executor)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+study_path = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/frozen')
+destination = PosixPath('/tmp/facemath-enrollment-registry-20261003-02/tests/wave100/lab/negative/acquisition')
+executor = ControlExecutor(records={'ec424ee3f4cde23c9a711aacf279fef8d7367115ee397fa7522ce4bc30159eb4': {'truth': array([[101.230...7665 ],
+       [-0.03878311,  0.01634347]]), 'hidden_shift': False, 'failure': False, 'condition': 'clear'}}, calls=38)
+maximum_new_cases = None
+
+    def run_session(study_path: str | Path, destination: str | Path, executor: ObserverExecutor, *,
+                    maximum_new_cases: int | None = None) -> dict[str, Any]:
+        """Idempotent resume of an existing lock-bound session; one attempt per case."""
+        if Path(destination).is_symlink():
+            raise ObservationError("session destination cannot be a symlink")
+        study, root = load_study(study_path), Path(destination).resolve()
+        if maximum_new_cases is not None and (type(maximum_new_cases) is not int or maximum_new_cases < 1):
+            raise ObservationError("maximum_new_cases must be a positive integer")
+        if study.data["engine_code_sha256"] != code_fingerprint():
+>           raise ObservationError("study code differs; freeze a new study rather than mutating its protocol")
+E           facemath.observation.contracts.ObservationError: study code differs; freeze a new study rather than mutating its protocol
+
+src/facemath/observation/study_runner.py:257: ObservationError
+=========================== short test summary info ============================
+ERROR tests/test_wave10_integration.py::test_both_frozen_branches_run_and_raw_geometry_stays_unchanged
+ERROR tests/test_wave10_integration.py::test_snapshot_reload_recomputes_same_admission
+ERROR tests/test_wave10_integration.py::test_withheld_qualification_cannot_authorize_pair
+ERROR tests/test_wave10_integration.py::test_summary_view_does_not_create_a_new_score
+ERROR tests/test_wave10_integration.py::test_pair_replay_uses_same_complete_qualification
+ERROR tests/test_wave10_integration.py::test_rehashed_derived_approval_rejected_by_raw_recomputation
+ERROR tests/test_wave10_integration.py::test_query_context_cannot_reuse_any_enrolled_split[development]
+ERROR tests/test_wave10_integration.py::test_query_context_cannot_reuse_any_enrolled_split[calibration]
+ERROR tests/test_wave10_integration.py::test_query_context_cannot_reuse_any_enrolled_split[evaluation]
+ERROR tests/test_wave10_integration.py::test_full_enrollment_leakage_not_just_calibration[group]
+ERROR tests/test_wave10_integration.py::test_full_enrollment_leakage_not_just_calibration[lineage]
+ERROR tests/test_wave10_integration.py::test_full_enrollment_leakage_not_just_calibration[excluded_context]
+ERROR tests/test_wave10_integration.py::test_qualification_does_not_select_only_successful_categories
+ERROR tests/test_wave10_integration.py::test_query_model_substitution_rejected
+ERROR tests/test_wave10_integration.py::test_cli_preserves_actual_failure_journal_before_native_constructor
+ERROR tests/test_wave10_integration.py::test_conflicting_research_and_qualification_flags_rejected
+ERROR tests/test_wave10_integration.py::test_overview_terminal_discloses_fraction_semantics
+1139 passed, 17 errors in 473.07s (0:07:53)

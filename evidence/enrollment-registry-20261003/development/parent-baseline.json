@@ -1,0 +1,41 @@
+{
+  "parent": "C:\\Users\\ryanf\\github\\_active\\facemath\\packages\\facemath-0.15.0-source-window-20261003.zip",
+  "sha256": "d70ccf98be02e28494e55162393fc3df6eb7eecbac2dddfe5c96e8f332bf7fc2",
+  "bytes": 1061848418,
+  "archive_verification": {
+    "verified": true,
+    "files": 8809,
+    "version": "0.15.0",
+    "archive_sha256": "d70ccf98be02e28494e55162393fc3df6eb7eecbac2dddfe5c96e8f332bf7fc2",
+    "kind": "archive",
+    "scope": "shipped-byte consistency, not external authenticity or numerical replay"
+  },
+  "extracted_verification": {
+    "verified": true,
+    "files": 8809,
+    "version": "0.15.0",
+    "kind": "extracted_files",
+    "scope": "shipped-byte consistency, not external authenticity or numerical replay"
+  },
+  "command": [
+    "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\transfer-holdout-20261003\\env311\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "-ra",
+    "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\parent.xml",
+    "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\parent-temp"
+  ],
+  "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\parent\\facemath-0.15.0",
+  "started_utc": "2026-10-04T00:31:23.196774+00:00",
+  "environment": {
+    "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\parent\\facemath-0.15.0\\src",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "FACEMATH_MODEL": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\parent\\facemath-0.15.0\\evidence\\source-window-20261003\\dataset\\assets\\face_landmarker.task",
+    "FACEMATH_FACE": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\parent\\facemath-0.15.0\\evidence\\source-window-20261003\\dataset\\inputs\\case_00000.png"
+  },
+  "returncode": 0,
+  "seconds": 268.90600000001723,
+  "finished_utc": "2026-10-04T00:35:52.109017+00:00"
+}

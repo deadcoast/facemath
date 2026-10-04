@@ -1,5 +1,31 @@
 # FACEMATH · reproducible facial geometry
 
+Version **0.16.0** adds immutable cross-study enrollment registries. Export a
+verified study's complete enrollment, retain earlier snapshots when extending a
+registry, and pass `--registry` to `study-freeze` or `dataset run`. Any registered
+source/hash/group/lineage overlap refuses the entire cohort before inference,
+including excluded cases and sources whose earlier observation failed. Bound
+studies, model exports and qualification snapshots preserve the registry through
+verification, transfer and query/context checks. See
+[the registry design](docs/ENROLLMENT_REGISTRY_DESIGN.md).
+
+```shell
+python -m facemath enrollment export runs/prior/study --out runs/prior-enrollment.json
+python -m facemath enrollment build --receipt runs/prior-enrollment.json --scope "Explicitly named prior studies" --out runs/registry.json
+python -m facemath dataset run runs/new-dataset --registry runs/registry.json --frozen-model runs/model.json --out runs/new-evaluation
+```
+
+`enrollment check REGISTRY STUDY --out REPORT` checks an existing frozen study;
+overlap writes the full report and exits 2. `enrollment build --prior REGISTRY`
+extends the same scope with new receipts without dropping old enrollment. These
+are source-reuse checks for the declared registry scope, not inferred person
+identity, independent anatomical labels or empirical admission. The retained
+12-source HELEN window `[120,132)` exercises this integration with the unchanged
+model; its results belong to `evidence/enrollment-registry-20261003/VALIDATION.json`.
+For future studies, start with `evidence/enrollment-registry-20261003/next-registry.json`:
+it includes all 255 cases from the six retained source plans. The older
+`registry.json` is the immutable five-plan snapshot frozen before this integration.
+
 Version **0.15.0** adds frozen photograph-group sampling windows for new holdouts.
 The supplied HELEN plan retains the donor seed and selects ranked roots 60–119
 for evaluation with the unchanged saved model. Selection retains the complete
@@ -38,7 +64,7 @@ The prior 0.10.1 blocker repairs remain documented in
 
 ## Run the sourced native pipeline
 
-To evaluate the next 60 HELEN sources after the original donor cohort:
+To reproduce the 0.15.0 HELEN holdout (the same enrolled sources, not a new sample):
 
 ```shell
 uv run --locked --extra observer python -m facemath dataset cohort examples/helen-transfer-window.json --archive runs/lfpw-assets/source.tar.gz --model runs/lfpw-assets/face_landmarker.task --out runs/helen-holdout-intake
