@@ -130,7 +130,7 @@ def test_instrument_export_readout_and_raw_state_preservation(tmp_path):
         np.testing.assert_array_equal(exported[key], value)
         assert not value.flags.writeable
     html = render_pair_readout(calibrated.evidence())
-    assert html.count('<th scope="row">') == 14
+    assert html.split('<section id="bilateral">')[0].count('<th scope="row">') == 14
     assert 'B − A' in html and 'Viewer-left eye width' in html
     text = terminal_readout({**data, 'report': str(bundle/'report.html')})
     assert 'Mouth to chin height: A=' in text and 'reference delta' in text

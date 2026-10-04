@@ -221,3 +221,14 @@
 {"at":"2026-10-04T15:38:06Z","actor":"codex","op":"status","id":"PAC-016","detail":{"from":"ACTIVE","to":"DONE"}}
 {"at":"2026-10-04T15:38:06Z","actor":"codex","op":"absorb","id":"NDL-006","detail":{}}
 {"at":"2026-10-04T15:38:06Z","actor":"codex","op":"archive","id":"PAC-016","detail":{"ids":["PAC-016","PAC-017","PAC-018"]}}
+{"at":"2026-10-04T15:49:01Z","actor":"codex","op":"add","id":"PAC-019","detail":{"register":"todo"}}
+{"at":"2026-10-04T15:49:01Z","actor":"codex","op":"add","id":"PAC-020","detail":{"register":"todo"}}
+{"at":"2026-10-04T15:49:01Z","actor":"codex","op":"add","id":"PAC-021","detail":{"register":"todo"}}
+{"at":"2026-10-04T15:49:01Z","actor":"codex","op":"add","id":"DEC-019","detail":{"register":"decision"}}
+{"at":"2026-10-04T15:49:01Z","actor":"codex","op":"add","id":"NDL-007","detail":{"register":"nodule"}}
+{"at":"2026-10-04T15:59:12Z","actor":"codex","op":"add","id":"OVR-033","detail":{"register":"overlord"}}
+{"at":"2026-10-04T15:59:12Z","actor":"codex","op":"add","id":"OGM-009","detail":{"register":"organism"}}
+{"at":"2026-10-04T15:59:12Z","actor":"codex","op":"link","id":"PAC-021","detail":{"field":"Binds","target":"OGM-009"}}
+{"at":"2026-10-04T15:59:12Z","actor":"codex","op":"link","id":"PAC-021","detail":{"field":"In","target":"OVR-033"}}
+{"at":"2026-10-04T15:59:12Z","actor":"codex","op":"link","id":"NDL-007","detail":{"field":"Targets","target":"OGM-009"}}
+{"at":"2026-10-04T16:01:06Z","actor":"codex","op":"probe","id":"OGM-009","detail":{"evidence":"rev:041a6c9 src:a454a1a exit:0 out:8b8ea4c at:2026-10-04T16:01:06Z","exit":0,"output_path":".pacer/run/probes/OGM-009/2026-10-04T160106Z.txt","freshness":"CURRENT","files":{"facemath/observation/artifacts.py":"bb17a64","facemath/observation/bilateral.py":"f7e1a63","facemath/observation/instrument.py":"2bbe055","facemath/observation/intrinsic.py":"a4ba2d7","facemath/observation/intrinsic_sets.py":"ba400a2","facemath/observation/readout.py":"c146c50","facemath/workspace.py":"9a1d9a1","facemath/workspace_ui.py":"4ba1b9c"}}}

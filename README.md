@@ -23,6 +23,19 @@ See [the application workflow](docs/WORKSPACE_DESIGN.md).
 
 ## Development history
 
+Version **0.23.0** compares bilateral configuration around the existing eye-defined
+midline: outer and inner eye corners, mouth corners, nose and chin. The application
+shows horizontal and vertical components in A and B, their signed changes and
+the size of the change. Expand a feature to locate the measured segment on both
+images. Equal-sized asymmetry in opposite directions remains a visible change.
+
+`analyze`, `overview`, reports and exported arrays share this computation.
+Research-calibrated runs propagate the existing reference-error sets through
+the uncertain eye axis and span; observed coordinates stay unchanged. Five fixed
+rows retain missing values and unavailable bounds. These are projected
+measurements affected by pose and expression. See the
+[bilateral comparison contract](docs/BILATERAL_COMPARISON_DESIGN.md).
+
 Version **0.21.0** compares image edges around the eyes, mouth and jaw. Both
 rasters are sampled on identical contour-normal rays in the existing canonical
 alignment. `analyze` returns `comparison.edge_comparison`; `overview` and the

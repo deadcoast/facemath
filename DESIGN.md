@@ -27,6 +27,13 @@ components:
 
 # FACEMATH report
 
+The bilateral comparison uses the same numerical table and disclosure controls.
+Each of five fixed rows has an expandable pair of images with a dashed midline,
+white predicted-point circle, cyan observed-point cross and connecting amber
+segment. Keep horizontal/vertical components and magnitude changes distinct.
+Missing landmarks produce text rather than a zero-length marker. Narrow views
+stack images and scroll the numerical table without horizontal page overflow.
+
 ## Overview
 
 This existing product surface is an instrument readout: image pairs, named

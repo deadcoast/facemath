@@ -127,10 +127,13 @@ class InstrumentResult:
         }
         structural_observed = {"structure_nominal", "structure_nominal_valid",
                                "structure_expression_a", "structure_expression_b"}
+        bilateral_observed = {"bilateral_nominal", "bilateral_nominal_valid", "bilateral_coefficients",
+                              "bilateral_display_segments", "bilateral_display_axes"}
         return {key: value for key, value in self.arrays().items()
                 if not key.startswith(("localization_", "acquisition_"))
                 and (not key.startswith("intrinsic_") or key in intrinsic_observed)
-                and (not key.startswith("structure_") or key in structural_observed)}
+                and (not key.startswith("structure_") or key in structural_observed)
+                and (not key.startswith("bilateral_") or key in bilateral_observed)}
 
 
 class InstrumentFailure(ObservationError):

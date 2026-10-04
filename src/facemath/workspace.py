@@ -294,7 +294,7 @@ class Handler(BaseHTTPRequestHandler):
                 elif relative == "readout.html" and record["status"] == "complete":
                     from .observation.readout import render_pair_readout
                     evidence = json.loads((work.root / parts[1] / "result/evidence.json").read_text(encoding="utf-8"))
-                    html = render_pair_readout(evidence)
+                    html = render_pair_readout(evidence, image_prefix=f"runs/{parts[1]}/result/")
                     self._send(200, html.encode(), "text/html; charset=utf-8")
                     return
                 elif relative in {"preview_a.png", "preview_b.png", "stderr.log", "stdout.log", "command.json", "comparison.zip"}:

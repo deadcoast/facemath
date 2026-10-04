@@ -25,6 +25,7 @@ def pair_readout(evidence: dict) -> dict:
         "registered_all_rms": measured.get("geometry.all.rms"),
         "shape_distance": intrinsic.get("shape_distance"), "families": family_rows,
         "structural_comparison": intrinsic.get("structural_comparison"),
+        "bilateral_comparison": intrinsic.get("bilateral_comparison"),
         "regional_comparison": evidence.get("regional_comparison"),
         "edge_comparison": (evidence.get("edge_diagnostics") or {}).get("paired_comparison"),
         "registration_diagnostics": evidence.get("registration_diagnostics"),
@@ -107,7 +108,56 @@ def render_edge_comparison(data: dict | None) -> str:
 <p>The range keeps every requested ray: rejected and missing rays remain unresolved. It is a missingness range, not a confidence interval or resemblance probability. Each side records its first failed rule. Weak, ambiguous or out-of-window edges cannot establish agreement. These gradients may describe texture rather than anatomical boundaries; tangential motion is not measured.</p></section>'''
 
 
-def render_pair_readout(evidence: dict) -> str:
+def render_bilateral(data: dict | None, *, image_prefix: str = "") -> str:
+    if data is None:
+        return ""
+    def vector(value):
+        return "Unavailable" if value is None else f"({_value(value[0], signed=True)}, {_value(value[1], signed=True)})"
+    def interval(value):
+        return "Unavailable" if value is None else f"[{_value(value[0])}, {_value(value[1])}]"
+    rows = []
+    locations = []
+    for row in data["rows"]:
+        rows.append(f'<tr><th scope="row">{escape(row["label"])}</th>'
+            f'<td>{vector(row["observed_a"])}<small>magnitude {_value(row["observed_magnitude_a"])}</small></td>'
+            f'<td>{vector(row["observed_b"])}<small>magnitude {_value(row["observed_magnitude_b"])}</small></td>'
+            f'<td>{vector(row["observed_delta_b_minus_a"])}<small>change {_value(row["observed_configuration_change"])} · {escape(row["observed_status"].replace("_", " "))}</small></td>'
+            f'<td>{interval(row["reference_configuration_change"])}<small>{escape(row["reference_status"].replace("_", " "))}</small></td></tr>')
+        views = []
+        for s, side in enumerate(("a", "b")):
+            segment = row["display_segments"][s]
+            if segment is None:
+                views.append(f'<p>{side.upper()}: measurement unavailable because a required point is missing.</p>')
+                continue
+            expected, actual = segment
+            start, end = data["display_axes"][s]
+            n = data["canvas_size"]
+            label = escape(row["label"] + " on image " + side.upper())
+            href = escape(image_prefix + "canonical_" + side + ".png", quote=True)
+            views.append(f'''<figure><svg role="img" aria-label="{label}" viewBox="-.5 -.5 {n} {n}">
+<image href="{href}" x="-.5" y="-.5" width="{n}" height="{n}"/>
+<g fill="none" stroke-width="1.2"><path stroke="#fff" stroke-dasharray="3 3" opacity=".7" d="M {start[0]} {start[1]} L {end[0]} {end[1]}"/>
+<path stroke="#ffca80" d="M {expected[0]} {expected[1]} L {actual[0]} {actual[1]}"/>
+<circle stroke="#fff" cx="{expected[0]}" cy="{expected[1]}" r="3"/>
+<path stroke="#79d7d0" d="M {actual[0]-3} {actual[1]} h 6 M {actual[0]} {actual[1]-3} v 6"/></g></svg>
+<figcaption>{side.upper()} · {vector(row['observed_'+side])} eye spans</figcaption></figure>''')
+        sources = "; ".join(f"{side}: {source['reason'].replace('_', ' ')}" for side, source in zip(("A", "B"), row["source_intervals"]))
+        component_bounds = row["reference_delta_b_minus_a"]
+        bounds = "Unavailable" if component_bounds is None else f"horizontal {interval(component_bounds[0])}; vertical {interval(component_bounds[1])}"
+        locations.append(f'<details data-bilateral="{escape(row["key"])}"><summary>Locate {escape(row["label"].lower())}</summary>'
+            f'<div class="gallery bilateral-gallery">{"".join(views)}</div>'
+            f'<p>Reference component changes: {bounds}. {escape(sources)}.</p></details>')
+    counts = data["observed_counts"]
+    return f'''<section id="bilateral"><h2>Bilateral configuration</h2>
+<p>Compare horizontal and vertical imbalance around each image's eye-defined midline. Eye and mouth rows measure the right corner minus the mirrored left corner. Nose and chin rows measure signed midline offset. All values use each image's eye span.</p>
+<div class="scroll" role="region" aria-label="Bilateral comparison table" tabindex="0"><table><caption>Five fixed rows · {counts['within_tolerance']} observed changes within tolerance · {counts['outside_tolerance']} outside · {counts['unavailable']} unavailable · tolerance {_value(data['tolerance'])}</caption>
+<thead><tr><th scope="col">Feature</th><th scope="col">A · horizontal, vertical</th><th scope="col">B · horizontal, vertical</th><th scope="col">B − A · components</th><th scope="col">Reference change range</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
+<p>Change is the length of the component-difference vector. Zero change means the same imbalance, even when both images are asymmetric. These dependent projected measurements vary with pose and expression.</p>
+<p>Expand a feature to locate it. White circle: mirrored left corner or projected midline point. Cyan cross: observed right corner or central point. Amber segment: measured difference. The dashed midline is defined by the eyes; no new alignment is fitted.</p>
+{''.join(locations)}</section>'''
+
+
+def render_pair_readout(evidence: dict, *, image_prefix: str = "") -> str:
     data = pair_readout(evidence)
     shape = data["shape_distance"]
     shape_text = "Unavailable: no intrinsic shape profile"
@@ -127,7 +177,7 @@ def render_pair_readout(evidence: dict) -> str:
         cells = "".join(f"<td>{v}</td>" for v in counts)
         rows.append(f'<tr><td>{escape(family["family"])}</td>{cells}<td>{text}</td></tr>')
     rows = "".join(rows)
-    return f'''{render_structure(data["structural_comparison"])}{render_edge_comparison(data["edge_comparison"])}<section id="readout"><h2>Comparison at a glance</h2><p>{escape(shape_text)}</p>
+    return f'''{render_structure(data["structural_comparison"])}{render_bilateral(data["bilateral_comparison"], image_prefix=image_prefix)}{render_edge_comparison(data["edge_comparison"])}<section id="readout"><h2>Comparison at a glance</h2><p>{escape(shape_text)}</p>
 <div class="scroll"><table><thead><tr><th>Relations</th><th>Declared total</th><th>Within</th><th>Outside</th><th>Unresolved</th><th>Within-tolerance range</th></tr></thead><tbody>{rows}</tbody></table></div>
 <p>{escape(data["percentage_meaning"])}. Missing relations remain in the denominator. Detailed rows and exact values remain below and in intrinsic.json.</p>
 {admission_panel(evidence.get("empirical_admission"))}</section>'''
@@ -160,6 +210,14 @@ def terminal_readout(data: dict, *, encoding: str = "utf-8") -> str:
         for row in admission.get("categories", []):
             lines.append(f"│   {row['category']}: {row['covered']}/{row['groups']} covered; " + ("pass" if row['passes'] else "WITHHELD"))
     else:
+        bilateral = data.get("bilateral_comparison")
+        if bilateral:
+            lines.append("├── Bilateral configuration (horizontal, vertical; own eye spans)")
+            for row in bilateral["rows"]:
+                def components(value):
+                    return "unavailable" if value is None else f"({_value(value[0], signed=True)}, {_value(value[1], signed=True)})"
+                lines.append(f"│   {row['label']}: A={components(row['observed_a'])} B={components(row['observed_b'])}; "
+                    f"delta={components(row['observed_delta_b_minus_a'])}; change={_value(row['observed_configuration_change'])}")
         edge_comparison = data.get("edge_comparison")
         if edge_comparison:
             lines.append("├── Image-edge displacement (B minus A along shared normals; eye spans)")

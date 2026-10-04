@@ -30,6 +30,7 @@ from .intrinsic_sets import (
 )
 from .reference import REFERENCE_NAMES, REFERENCE_PROTOCOL_SHA256, mapped_prediction
 from .structure import StructuralComparison, measure_structure
+from .bilateral import BilateralComparison, measure_bilateral
 
 FAMILIES = ("distance", "angle", "signed_double_area", "asymmetry")
 STATUS = {0: "no_localization_calibration", 1: "within_tolerance_under_envelope",
@@ -309,6 +310,7 @@ class IntrinsicProfile:
     joint: JointRelationAudit | None = None
     source_quantiles: tuple[float | None, float | None] | None = None
     structural_comparison: StructuralComparison | None = None
+    bilateral_comparison: BilateralComparison | None = None
     recipe_sha256: str = field(init=False)
 
     def __post_init__(self) -> None:
@@ -353,6 +355,8 @@ class IntrinsicProfile:
                   "directions": self.directions, "relations": [r.metadata() for r in self.relations]}
         if self.structural_comparison is not None:
             recipe["structural_recipe_sha256"] = self.structural_comparison.recipe_sha256
+        if self.bilateral_comparison is not None:
+            recipe["bilateral_recipe_sha256"] = self.bilateral_comparison.recipe_sha256
         object.__setattr__(self, "recipe_sha256", object_digest(recipe))
 
     def arrays(self) -> dict[str, np.ndarray]:
@@ -373,6 +377,8 @@ class IntrinsicProfile:
             result.update(self.joint.arrays())
         if self.structural_comparison is not None:
             result.update(self.structural_comparison.arrays())
+        if self.bilateral_comparison is not None:
+            result.update(self.bilateral_comparison.arrays())
         return result
 
     @property
@@ -409,6 +415,7 @@ class IntrinsicProfile:
                 "within_tolerance_fraction_bounds": [inside/len(ids), (len(ids)-outside)/len(ids)] if self.calibration_sha256 is not None else None,
                 "fraction_meaning": "deterministic fraction of these prespecified relations; dependencies retained, not resemblance probability"})
         return {"format": "facemath.intrinsic_profile.v7",
+            "bilateral_comparison": self.bilateral_comparison.to_dict() if self.bilateral_comparison is not None else None,
             "structural_comparison": self.structural_comparison.to_dict() if self.structural_comparison is not None else None,
             "joint_error_geometry": self.joint.to_dict() if self.joint is not None else None, "recipe_sha256": self.recipe_sha256,
             "observation_digests": list(self.observation_digests), "reference_names": list(REFERENCE_NAMES),
@@ -519,4 +526,7 @@ def measure_intrinsic(state: CanonicalState, localization: LocalizationEnvelope 
         "synthetic_only" if localization.calibration.reference_kind == "synthetic_fixture" else "conditional_reference_domain",
         state.config.intrinsic_directions, joint=joint_audit, source_quantiles=quantiles,
         structural_comparison=measure_structure(raw, supports, evaluators, quantiles,
-            localization.calibration.digest if localization is not None else None, state.config))
+            localization.calibration.digest if localization is not None else None, state.config),
+        bilateral_comparison=measure_bilateral(raw, supports, evaluators, quantiles,
+            localization.calibration.digest if localization is not None else None, state.config,
+            np.stack((state.source_to_canonical_a, state.source_to_canonical_b)) @ np.linalg.inv(charts)))

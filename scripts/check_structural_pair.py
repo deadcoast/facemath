@@ -55,6 +55,7 @@ def main():
     observed_intrinsic = {'raw_points', 'source_covariance', 'source_chart', 'source_supported',
                           'nominal', 'nominal_valid', 'relation_a', 'relation_b', 'support_normals'}
     observed_structure = {'nominal', 'nominal_valid', 'expression_a', 'expression_b'}
+    observed_bilateral = {'nominal', 'nominal_valid', 'coefficients', 'display_segments', 'display_axes'}
     digests = {}
     with np.load(out/'nominal/arrays.npz') as a, np.load(out/'calibrated/arrays.npz') as b:
         for name in a.files:
@@ -63,6 +64,8 @@ def main():
             if name.startswith('intrinsic_') and name.removeprefix('intrinsic_') not in observed_intrinsic:
                 continue
             if name.startswith('structure_') and name.removeprefix('structure_') not in observed_structure:
+                continue
+            if name.startswith('bilateral_') and name.removeprefix('bilateral_') not in observed_bilateral:
                 continue
             np.testing.assert_array_equal(a[name], b[name], err_msg=name)
             digests[name] = array_digest(a[name])

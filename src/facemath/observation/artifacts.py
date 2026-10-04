@@ -116,6 +116,9 @@ def _html(result: InstrumentResult, arrays: dict[str, np.ndarray]) -> str:
 :focus-visible{{outline:2px solid var(--accent);outline-offset:3px}}a:hover,summary:hover{{color:var(--ink)}}a:active,summary:active{{color:var(--accent)}}a,summary,input[type=range]{{cursor:pointer}}
 #structure table{{min-width:790px;font-variant-numeric:tabular-nums}}#structure caption{{text-align:left;padding:12px 14px;color:var(--muted)}}#structure th[scope=row]{{font-weight:500;background:transparent}}#structure td{{white-space:nowrap}}#structure td small{{white-space:normal}}
 #edge-comparison table{{min-width:1120px;font-variant-numeric:tabular-nums}}
+#bilateral table{{min-width:1000px;font-variant-numeric:tabular-nums}}#bilateral caption{{text-align:left;padding:12px 14px;color:var(--muted)}}
+#bilateral summary{{min-height:44px;padding:10px 0}}#bilateral .bilateral-gallery{{grid-template-columns:repeat(2,minmax(0,1fr));max-width:850px}}#bilateral svg{{display:block;width:100%}}
+@media(max-width:760px){{#bilateral .bilateral-gallery{{grid-template-columns:1fr}}}}
 @media(forced-colors:active){{:root{{scrollbar-color:auto}}:focus-visible{{outline-color:Highlight}}}}
 *{{box-sizing:border-box}}body{{background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,sans-serif;margin:0}}
 main{{max-width:1320px;padding:38px 30px 80px;margin:auto}}.eyebrow{{font:12px/1.5 ui-monospace,monospace;letter-spacing:.15em;color:var(--accent)}}
@@ -211,6 +214,7 @@ def write_bundle(result: InstrumentResult, destination: str | Path,
                 "edge_*": "landmark-guided normal-ray gradient response; offsets are meaningful only where accepted; not independent anatomy or landmark corrections",
                 "intrinsic_*": "source-chart reference8 relations with uncertain eye-span normalization; arrays use the 256-row registry in intrinsic.json; source axes A,B; missing bounds use explicit masks; no independent votes",
                 "structure_*": "fourteen named rows in intrinsic.json structural_comparison; same source graph; nominal arrays use observed points; delta is B minus A; unavailable masks retain zero sentinels",
+                "bilateral_*": "five fixed rows in intrinsic.json bilateral_comparison; components horizontal/vertical; display segments expected then observed in existing canonical pixel centers; source bounds share the existing reference-error graph; false masks mark zero sentinels",
                 "localization_*": "eight reference-protocol points only; source-ellipse-derived outer gap bounds in the fixed observed coordinate gauge; no extrapolation to 478 points",
             },
             "integrity_limit": "self-consistency hashes; not an externally signed execution attestation",

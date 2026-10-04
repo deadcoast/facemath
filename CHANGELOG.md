@@ -1,3 +1,14 @@
+# 0.23.0 — bilateral configuration comparison
+
+- Compute horizontal/vertical bilateral residuals for outer eyes, inner eyes,
+  mouth corners and nose/chin midline offsets in the normal pair instrument.
+- Preserve direction changes when asymmetry magnitudes are equal; expose A/B
+  components, signed differences, magnitude and configuration-change length.
+- Propagate the existing shared error sets through the uncertain eye frame;
+  retain all five rows and preserve unavailable bounds separately from values.
+- Add expandable image locations to the application and portable reports,
+  using the existing canonical transform without moving measured landmarks.
+
 # 0.22.0 — local image-pair application
 
 - Add `facemath app`: select PNG/JPEG images in a browser and execute the existing

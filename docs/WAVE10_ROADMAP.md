@@ -1,5 +1,12 @@
 # Beyond the Wave10 consolidation
 
+Current bilateral pass: 0.23.0 computes five named bilateral configurations from
+the same reference8 observations and relation graph. Component changes, bounds
+and image locations reach the application and normal pair output. This adds
+observed diagnostic utility; it does not supply new independent references or
+close the anatomical-accuracy gates below. The enrollment registry stays at 355
+cases; the retained native pair is reused without fitting or cohort expansion.
+
 Current application pass: 0.22.0 connects local image selection to the existing
 native pair instrument, durable run history, failure recovery and complete
 measurement reports. The selected pair executes all channels with measured

@@ -33,6 +33,8 @@ figure img{width:100%;display:block}figcaption,small{color:var(--muted);font-siz
 input[type=range]{width:100%;cursor:pointer;min-height:32px}table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
 .scroll{overflow:auto;border:1px solid var(--line)}th,td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}th{background:var(--panel)}
 #structure table{min-width:790px}#edge-comparison table{min-width:1120px}caption{text-align:left;padding:12px 14px;color:var(--muted)}
+#bilateral table{min-width:1000px}#bilateral summary{min-height:44px;padding:10px 0}#bilateral .bilateral-gallery{grid-template-columns:repeat(2,minmax(0,1fr));max-width:850px}#bilateral svg{display:block;width:100%}
+@media(max-width:760px){#bilateral .bilateral-gallery{grid-template-columns:1fr}}
 .number{white-space:nowrap}.panel{background:var(--panel);border-left:3px solid var(--accent);padding:18px}code{overflow-wrap:anywhere}
 *::-webkit-scrollbar{width:12px;height:12px}*::-webkit-scrollbar-track{background:var(--scroll-track)}*::-webkit-scrollbar-thumb{background:var(--scroll-thumb);border:3px solid var(--scroll-track)}
 *::-webkit-scrollbar-thumb:hover{background:var(--scroll-hover)}*::-webkit-scrollbar-thumb:active{background:var(--scroll-active)}
@@ -49,7 +51,7 @@ input[type=range]{width:100%;cursor:pointer;min-height:32px}table{width:100%;bor
 <div class="controls"><button class="primary" type="submit" id="start">Compare images</button></div></fieldset></form>
 <div id="message" role="status" aria-live="polite" hidden></div><div class="controls"><button id="cancel" type="button" hidden>Cancel comparison</button><button id="reconnect" type="button" hidden>Reconnect</button></div>
 <section id="results" aria-labelledby="result-title" hidden><h2 id="result-title" tabindex="-1">Comparison results</h2><p id="pair-label"></p>
-<nav class="result-nav" aria-label="Comparison results"><a id="full-report" target="_blank" rel="noopener">Open complete report</a><a id="download">Download comparison</a><a id="raw" target="_blank" rel="noopener">Measurement data</a><a href="#structure">Facial structure</a><a href="#edge-comparison">Image edges</a></nav>
+<nav class="result-nav" aria-label="Comparison results"><a id="full-report" target="_blank" rel="noopener">Open complete report</a><a id="download">Download comparison</a><a id="raw" target="_blank" rel="noopener">Measurement data</a><a href="#structure">Facial structure</a><a href="#bilateral">Bilateral configuration</a><a href="#edge-comparison">Image edges</a></nav>
 <h3>Registered images</h3><div class="gallery"><figure><img id="registered-a" alt="Registered image A"><figcaption>A · reference</figcaption></figure><figure><img id="registered-b" alt="Registered image B"><figcaption>B · comparison</figcaption></figure><figure><div class="blend"><img id="blend-a" alt="Registered A in blend"><img id="blend-b" alt="Registered B in blend"></div><figcaption><label for="opacity">Blend A → B</label><input id="opacity" type="range" min="0" max="100" value="50"></figcaption></figure></div>
 <div id="result-readout"></div></section>
 <section aria-labelledby="saved-title"><h2 id="saved-title">Saved comparisons</h2><p>Images and results stay in the local comparison directory. Failed and cancelled runs keep their inputs and logs.</p><ul id="history"><li>No comparisons yet. Choose two images to begin.</li></ul></section>

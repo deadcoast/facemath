@@ -50,6 +50,27 @@ def main():
                 value = row[field]
                 expected = "Unavailable" if value is None else format(value, "+.5g" if index == 2 else ".5g")
                 assert actual.locator("td").nth(index).inner_text().splitlines()[0] == expected
+        bilateral = summary["bilateral_comparison"]
+        assert page.locator("#bilateral tbody tr").count() == 5
+        for row, actual in zip(bilateral["rows"], page.locator("#bilateral tbody tr").all()):
+            assert row["label"] in actual.inner_text()
+            for index, field in enumerate(("observed_a", "observed_b", "observed_delta_b_minus_a")):
+                value = row[field]
+                expected = "Unavailable" if value is None else '(' + ', '.join(format(v, '+.5g') for v in value) + ')'
+                assert actual.locator("td").nth(index).inner_text().splitlines()[0] == expected
+            disclosure = page.locator(f'details[data-bilateral="{row["key"]}"]')
+            disclosure.locator('summary').focus()
+            page.keyboard.press('Enter')
+            assert disclosure.get_attribute('open') is not None
+            for s, svg in enumerate(disclosure.locator('svg').all()):
+                segment = row['display_segments'][s]
+                assert float(svg.locator('circle').get_attribute('cx')) == segment[0][0]
+                assert float(svg.locator('circle').get_attribute('cy')) == segment[0][1]
+                href = svg.locator('image').get_attribute('href')
+                response = page.request.get(args.url + href)
+                assert response.ok and response.headers['content-type'] == 'image/png'
+        page.locator('#bilateral').scroll_into_view_if_needed()
+        page.screenshot(path=str(args.out / 'bilateral.png'), full_page=True)
         with page.expect_download() as downloaded:
             page.locator("#download").click()
         downloaded.value.save_as(str(args.out / "comparison.zip"))
@@ -57,6 +78,10 @@ def main():
         page.reload()
         page.locator("#results").wait_for(state="visible")
         page.set_viewport_size({"width": 390, "height": 844})
+        page.locator('details[data-bilateral="mouth"] summary').click()
+        assert page.locator('details[data-bilateral="mouth"] svg').count() == 2
+        page.locator('details[data-bilateral="mouth"]').scroll_into_view_if_needed()
+        page.screenshot(path=str(args.out / 'bilateral-narrow.png'))
         table = page.get_by_role("region", name="Image-edge comparison table", exact=True)
         table.scroll_into_view_if_needed()
         table.focus()
@@ -91,6 +116,8 @@ def main():
         (args.out / "browser.json").write_text(json.dumps({"passed": True, "run_id": run_id,
             "browser": browser.version, "source": "real browser uploads into native analyze", "structure_rows": 14,
             "edge_rows": 8, "numeric_cells_compared": 42, "reload": True, "download": True,
+            "bilateral_rows": 5, "bilateral_numeric_components_compared": 30,
+            "bilateral_keyboard_disclosures": 5, "bilateral_marker_pairs_compared": 10,
             "keyboard_blend": True, "narrow_keyboard_scroll": True, "page_errors": errors,
             "invalid_upload": True, "no_face_run": failure_id, "cancelled_run": cancelled_id,
             "success_reopened_after_failure": True}, indent=2), encoding="utf-8")
