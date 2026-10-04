@@ -1,0 +1,100 @@
+{
+  "version": "0.22.0",
+  "code_sha256": "a88d455254feee33222578f7600e79761b2c7540cb060f3dac3af6b8e5593c7f",
+  "tests": {
+    "source": {
+      "tests": 1258,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1257,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ],
+      "live_observer_smoke_passed": true
+    },
+    "wheel": {
+      "tests": 1258,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1257,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ],
+      "live_observer_smoke_passed": true
+    },
+    "archive": {
+      "tests": 1258,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1257,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ],
+      "live_observer_smoke_passed": true
+    }
+  },
+  "milestones": {
+    "source": {
+      "observed_arrays_unchanged": 351,
+      "qualification_snapshot_replayed": true,
+      "scope": "synthetic qualification control"
+    },
+    "wheel": {
+      "observed_arrays_unchanged": 351,
+      "qualification_snapshot_replayed": true,
+      "scope": "synthetic qualification control"
+    },
+    "archive": {
+      "observed_arrays_unchanged": 351,
+      "qualification_snapshot_replayed": true,
+      "scope": "synthetic qualification control"
+    }
+  },
+  "archive": {
+    "path": "packages/facemath-0.22.0-local-application-20261004.zip",
+    "sha256": "7c965167f1c9658d86c86818adc73a8e4837faa0a0d381c47d386387a5fea6fe",
+    "files": 5928
+  },
+  "application": {
+    "code_sha256": "a88d455254feee33222578f7600e79761b2c7540cb060f3dac3af6b8e5593c7f",
+    "browser": {
+      "passed": true,
+      "run_id": "eca83585f2b04849a1c000c2c552e2fd",
+      "browser": "154.0.4258.53",
+      "source": "real browser uploads into native analyze",
+      "structure_rows": 14,
+      "edge_rows": 8,
+      "numeric_cells_compared": 42,
+      "reload": true,
+      "download": true,
+      "keyboard_blend": true,
+      "narrow_keyboard_scroll": true,
+      "page_errors": [],
+      "invalid_upload": true,
+      "no_face_run": "19e78fac4d75497597103d8f56d55abd",
+      "cancelled_run": "f5370ad9d0c042cb9ba35e1db0aed520",
+      "success_reopened_after_failure": true
+    },
+    "native_returncode": 0,
+    "download_sha256": "fc03ae40c3083a118d4ea7acaaf500659ec8e2ba410dd611763ff7352d91af2f",
+    "scope": "actual native browser workflow; no new cohort or anatomical validation"
+  },
+  "installed_bytes": {
+    "verified": true,
+    "python_files": 93,
+    "import": {
+      "file": "C:\\Users\\ryanf\\AppData\\Local\\Temp\\facemath-installed-nx4f9ysv\\installed\\facemath\\__init__.py",
+      "version": "0.22.0",
+      "code_sha256": "a88d455254feee33222578f7600e79761b2c7540cb060f3dac3af6b8e5593c7f"
+    },
+    "scope": "installed wheel Python bytes; same interpreter dependencies, not a new dependency stack"
+  },
+  "limits": [
+    "Workspace exposes observed comparisons; research calibration and qualification remain CLI options.",
+    "This supplies a working local workflow, not independent anatomical validation."
+  ],
+  "evidence": "evidence/workspace-release-20261004"
+}
