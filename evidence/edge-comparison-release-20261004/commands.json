@@ -1,0 +1,371 @@
+[
+  {
+    "name": "environment",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-c",
+      "import json; from facemath.observation.journal import environment; print(json.dumps(environment(),indent=2))"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+    "started_utc": "2026-10-04T13:39:07.119475+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T13:39:07.994255+00:00"
+  },
+  {
+    "name": "lock-check",
+    "command": [
+      "C:\\Users\\ryanf\\AppData\\Roaming\\Python\\Python313\\Scripts\\uv.EXE",
+      "lock",
+      "--check"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+    "started_utc": "2026-10-04T13:39:08.001761+00:00",
+    "environment": {
+      "PYTHONPATH": null,
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T13:39:08.024662+00:00"
+  },
+  {
+    "name": "source-tests",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "-ra",
+      "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\source.xml",
+      "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\source-temp"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+    "started_utc": "2026-10-04T13:39:08.024662+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T13:44:24.201499+00:00"
+  },
+  {
+    "name": "source-milestone",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "milestone-lab",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\source-lab"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+    "started_utc": "2026-10-04T13:44:24.202500+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T13:47:47.073295+00:00"
+  },
+  {
+    "name": "source-qualification-verify",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "verify",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\source-lab\\positive\\qualification"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+    "started_utc": "2026-10-04T13:47:47.073295+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T13:47:51.105589+00:00"
+  },
+  {
+    "name": "source-qualification-replay",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "replay",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\source-lab\\positive\\qualification",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\source-qualification-replay"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+    "started_utc": "2026-10-04T13:47:51.105589+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T13:48:06.539479+00:00"
+  },
+  {
+    "name": "source-pair-verify",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "verify",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\source-lab\\admitted_pair"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+    "started_utc": "2026-10-04T13:48:06.540483+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T13:48:25.434421+00:00"
+  },
+  {
+    "name": "source-pair-replay",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "replay",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\source-lab\\admitted_pair",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\source-pair-replay"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+    "started_utc": "2026-10-04T13:48:25.434421+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\src",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T13:49:19.553337+00:00"
+  },
+  {
+    "name": "wheel-build",
+    "command": [
+      "C:\\Users\\ryanf\\AppData\\Roaming\\Python\\Python313\\Scripts\\uv.EXE",
+      "build",
+      "--wheel",
+      "--out-dir",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\wheels"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+    "started_utc": "2026-10-04T13:49:19.560847+00:00",
+    "environment": {
+      "PYTHONPATH": null,
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T13:49:21.416325+00:00"
+  },
+  {
+    "name": "wheel-check",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\scripts\\check_wheel.py",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\wheels\\facemath-0.21.0-py3-none-any.whl",
+      "--tests",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\tests",
+      "--bundle",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\source-lab\\positive\\qualification",
+      "--pair-bundle",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\source-lab\\admitted_pair",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\wheel-check",
+      "--milestone"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath",
+    "started_utc": "2026-10-04T13:49:21.416325+00:00",
+    "environment": {
+      "PYTHONPATH": null,
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T13:58:57.696948+00:00"
+  },
+  {
+    "name": "archive-tests",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "-ra",
+      "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\archive.xml",
+      "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\archive-temp"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\extracted\\facemath-0.21.0",
+    "started_utc": "2026-10-04T14:00:18.787480+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\extracted\\facemath-0.21.0\\src",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T14:05:21.320310+00:00"
+  },
+  {
+    "name": "archive-milestone",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "milestone-lab",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\archive-lab"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\extracted\\facemath-0.21.0",
+    "started_utc": "2026-10-04T14:05:21.321316+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\extracted\\facemath-0.21.0\\src",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T14:08:43.326616+00:00"
+  },
+  {
+    "name": "archive-qualification-verify",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "verify",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\archive-lab\\positive\\qualification"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\extracted\\facemath-0.21.0",
+    "started_utc": "2026-10-04T14:08:43.327615+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\extracted\\facemath-0.21.0\\src",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T14:08:47.721480+00:00"
+  },
+  {
+    "name": "archive-qualification-replay",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "replay",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\archive-lab\\positive\\qualification",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\archive-qualification-replay"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\extracted\\facemath-0.21.0",
+    "started_utc": "2026-10-04T14:08:47.722480+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\extracted\\facemath-0.21.0\\src",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T14:09:05.207003+00:00"
+  },
+  {
+    "name": "archive-pair-verify",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "verify",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\archive-lab\\admitted_pair"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\extracted\\facemath-0.21.0",
+    "started_utc": "2026-10-04T14:09:05.208003+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\extracted\\facemath-0.21.0\\src",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T14:09:26.581127+00:00"
+  },
+  {
+    "name": "archive-pair-replay",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "replay",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\archive-lab\\admitted_pair",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\archive-pair-replay"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\extracted\\facemath-0.21.0",
+    "started_utc": "2026-10-04T14:09:26.582200+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\edge-comparison-20261004\\release-02\\extracted\\facemath-0.21.0\\src",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T14:10:26.077214+00:00"
+  }
+]

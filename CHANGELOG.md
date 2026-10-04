@@ -1,3 +1,13 @@
+# 0.21.0 — paired image-edge displacement
+
+- Compare both canonical rasters on shared contour-normal rays for the eyes,
+  mouth and jaw, with separate A- and B-anchored inventories.
+- Publish signed displacement, RMS, absolute percentiles and complete ray
+  rejection counts through normal analysis, terminal and HTML outputs.
+- Retain full paired responses and immutable masks without moving landmarks or
+  fitting another alignment. Missing rays remain unresolved.
+- Preserve literal path glyphs when Windows terminal decoration falls back to ASCII.
+
 # 0.19.0 — regional movement and finite deformation
 
 - Compute regional translation and mean-centered contour mismatch from the one

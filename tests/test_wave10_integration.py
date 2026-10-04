@@ -43,14 +43,21 @@ def test_both_frozen_branches_run_and_raw_geometry_stays_unchanged(milestone):
         assert c['observer_calls']==[4,38,38] and c['enrollment']['prospectively_excluded']==1
         assert c['duplicate_import_idempotent'] and c['frozen_origin_present']
     pair=report['admitted_pair']
-    # Original 135, four structural, ten regional, and two diagnostic masks.
+    # Original 135, four structural, ten regional, two diagnostic masks, and
+    # eight shared-ray pairs with 20 source-profile arrays plus five pair arrays.
     # Every new observed component must participate in qualification invariance.
-    assert pair['raw_arrays_unchanged'] and pair['raw_arrays_checked']==135+4+10+2
+    assert pair['raw_arrays_unchanged'] and pair['raw_arrays_checked']==135+4+10+2+8*25
     with np.load(root/'admitted_pair/arrays.npz') as arrays:
         assert all('structure_'+name in arrays.files for name in
                    ('nominal', 'nominal_valid', 'expression_a', 'expression_b'))
         assert sum(name.startswith('regional_') for name in arrays.files)==10
         assert {'heldout_fit_supported', 'sensitivity_draw_supported'} <= set(arrays.files)
+        assert sum(name.startswith('edge_pair_') for name in arrays.files)==8*25
+        for anchor in ('a','b'):
+            for region in ('left_eye','right_eye','mouth','jaw'):
+                prefix=f'edge_pair_{anchor}_{region}_'
+                assert {prefix+name for name in ('accepted','rejection_a','rejection_b',
+                    'delta_b_minus_a_px','displacement_b_minus_a_px')} <= set(arrays.files)
     assert pair['known_reference_shape_enclosed'] and pair['verified']
     assert report['withheld_query']['observer_calls']==0
     journal=(root/'withheld_query.events.jsonl').read_text()

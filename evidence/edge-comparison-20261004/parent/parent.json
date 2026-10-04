@@ -1,0 +1,38 @@
+{
+  "archive": "C:\\Users\\ryanf\\github\\_active\\facemath\\packages\\facemath-0.20.0-reference-input-20261004.zip",
+  "sha256": "97ba5d1da07a37922c8d86954bcf57448eac94e1261e1fd6d662f36632181900",
+  "extracted": {
+    "verified": true,
+    "files": 6081,
+    "version": "0.20.0",
+    "kind": "extracted_files",
+    "scope": "shipped-byte consistency, not external authenticity or numerical replay"
+  },
+  "baseline_reused": true,
+  "reason": "The actual unchanged extracted parent package suite completed in the preceding turn; retain its original execution, not a new claimed run.",
+  "baseline_command": {
+    "name": "archive-tests",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "-ra",
+      "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\archive.xml",
+      "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\archive-temp"
+    ],
+    "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\extracted\\facemath-0.20.0",
+    "started_utc": "2026-10-04T12:33:56.366166+00:00",
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\extracted\\facemath-0.20.0\\src",
+      "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+      "UV_OFFLINE": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "returncode": 0,
+    "finished_utc": "2026-10-04T12:39:55.418010+00:00"
+  },
+  "source_head": "9e6055a5e901304f27615fbc2c0d91619f87bae5"
+}

@@ -71,6 +71,12 @@ Square tables and image frames preserve the existing report language.
 ## Components
 
 `readout.py` renders shared readouts; `artifacts.py` owns the report shell.
+The paired image-edge table uses the same semantic, keyboard-scrollable owner.
+Its eight fixed rows distinguish ray anchor, support, signed displacement, RMS,
+absolute percentile and rejection reasons. Unsupported measurements stay visible.
+The image-edge gallery is the existing figure/grid owner with a two-column
+variant, stacking at the same breakpoint. It reuses white A circles, cyan B
+crosses and amber displacement lines for accepted gradient locations.
 `intrinsic_report.py` is the existing sibling for detailed relation inspection.
 Use semantic tables, native disclosures and the existing opacity range. These
 reports contain no editing, remote request, authentication or destructive flow.

@@ -1,0 +1,605 @@
+{
+  "format": "facemath.edge_comparison_release.v21",
+  "version": "0.21.0",
+  "code_sha256": "e0e3f874abec3ea0650fb810ca724f46d9a1547e77a957c78db01a635e59a027",
+  "parent": {
+    "archive": "C:\\Users\\ryanf\\github\\_active\\facemath\\packages\\facemath-0.20.0-reference-input-20261004.zip",
+    "sha256": "97ba5d1da07a37922c8d86954bcf57448eac94e1261e1fd6d662f36632181900",
+    "extracted": {
+      "verified": true,
+      "files": 6081,
+      "version": "0.20.0",
+      "kind": "extracted_files",
+      "scope": "shipped-byte consistency, not external authenticity or numerical replay"
+    },
+    "baseline_reused": true,
+    "reason": "The actual unchanged extracted parent package suite completed in the preceding turn; retain its original execution, not a new claimed run.",
+    "baseline_command": {
+      "name": "archive-tests",
+      "command": [
+        "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "-ra",
+        "--junitxml=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\archive.xml",
+        "--basetemp=C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\archive-temp"
+      ],
+      "cwd": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\extracted\\facemath-0.20.0",
+      "started_utc": "2026-10-04T12:33:56.366166+00:00",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\annotation-coordinates-20261004\\release-01\\extracted\\facemath-0.20.0\\src",
+        "UV_CACHE_DIR": "C:\\Users\\ryanf\\github\\_active\\facemath\\.uv-cache",
+        "UV_OFFLINE": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "returncode": 0,
+      "finished_utc": "2026-10-04T12:39:55.418010+00:00"
+    },
+    "source_head": "9e6055a5e901304f27615fbc2c0d91619f87bae5"
+  },
+  "tests": {
+    "source": {
+      "tests": 1241,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 1,
+      "live_observer_smoke_passed": true,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ],
+      "passed": 1240
+    },
+    "wheel": {
+      "tests": 1241,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 1,
+      "live_observer_smoke_passed": true,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ],
+      "passed": 1240
+    },
+    "archive": {
+      "tests": 1241,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 1,
+      "live_observer_smoke_passed": true,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ],
+      "passed": 1240
+    }
+  },
+  "milestones": {
+    "source": {
+      "raw_arrays_unchanged": 351,
+      "qualification_snapshot_replayed": true,
+      "withheld_query_observer_calls": 0,
+      "scope": "synthetic workflow control, not human accuracy"
+    },
+    "wheel": {
+      "raw_arrays_unchanged": 351,
+      "qualification_snapshot_replayed": true,
+      "withheld_query_observer_calls": 0,
+      "scope": "synthetic workflow control, not human accuracy"
+    },
+    "archive": {
+      "raw_arrays_unchanged": 351,
+      "qualification_snapshot_replayed": true,
+      "withheld_query_observer_calls": 0,
+      "scope": "synthetic workflow control, not human accuracy"
+    }
+  },
+  "archive": {
+    "path": "packages/facemath-0.21.0-paired-edges-20261004.zip",
+    "sha256": "bccd8509edcd81c2fe5992477405ba852aa0b929d83d34fd13a7403a66a281ea",
+    "bytes": 312604710,
+    "files": 5997
+  },
+  "changes": [
+    "Common-ray A/B image-edge displacement, separate A- and B-anchored inventories",
+    "Signed/RMS/absolute displacement, per-side rejection reasons and fixed missingness denominators",
+    "API and terminal output, report table and two spatial edge overlays",
+    "Windows terminal fallback preserves literal path glyphs"
+  ],
+  "native_pair": {
+    "format": "facemath.edge_pair_check.v21",
+    "raw_arrays_checked": 358,
+    "same_before_after_calibration_and_replay": true,
+    "shared_ray_coordinates_verified": true,
+    "rows": [
+      {
+        "anchor": "a",
+        "region": "left_eye",
+        "total": 32,
+        "supported": 7,
+        "unresolved": 25,
+        "available": true,
+        "reason": null,
+        "source_supported_both": 32,
+        "rejections": {
+          "a": {
+            "accepted": 24,
+            "source_unsupported": 0,
+            "weak_gradient": 0,
+            "ambiguous_peak": 7,
+            "oblique_gradient": 1,
+            "search_boundary": 0
+          },
+          "b": {
+            "accepted": 9,
+            "source_unsupported": 0,
+            "weak_gradient": 17,
+            "ambiguous_peak": 0,
+            "oblique_gradient": 0,
+            "search_boundary": 6
+          }
+        },
+        "canonical_pixels": {
+          "mean_signed_offset": 0.79959393288409,
+          "rms_offset": 2.4300435931185125,
+          "median_absolute_offset": 2.3321489709119287,
+          "p90_absolute_offset": 3.171722600440223
+        },
+        "eye_spans": {
+          "mean_signed_offset": 0.009523809523809526,
+          "rms_offset": 0.02894378179176265,
+          "median_absolute_offset": 0.02777777777777778,
+          "p90_absolute_offset": 0.03777777777777778
+        },
+        "mean_displacement_b_minus_a_px": [
+          0.7997683259140187,
+          -0.28538878682794555
+        ],
+        "within_tolerance": 7,
+        "tolerance_eye_spans": 0.05,
+        "within_tolerance_fraction_range": [
+          0.21875,
+          1.0
+        ],
+        "normalization_span_px": 83.95736295282943,
+        "search_radius_px": 4.197868147641471,
+        "sample_step_px": 0.46642979418238584,
+        "array_prefix": "edge_pair_a_left_eye_"
+      },
+      {
+        "anchor": "a",
+        "region": "right_eye",
+        "total": 32,
+        "supported": 15,
+        "unresolved": 17,
+        "available": true,
+        "reason": null,
+        "source_supported_both": 32,
+        "rejections": {
+          "a": {
+            "accepted": 25,
+            "source_unsupported": 0,
+            "weak_gradient": 0,
+            "ambiguous_peak": 5,
+            "oblique_gradient": 1,
+            "search_boundary": 1
+          },
+          "b": {
+            "accepted": 19,
+            "source_unsupported": 0,
+            "weak_gradient": 6,
+            "ambiguous_peak": 2,
+            "oblique_gradient": 2,
+            "search_boundary": 3
+          }
+        },
+        "canonical_pixels": {
+          "mean_signed_offset": -0.7462876706918169,
+          "rms_offset": 2.7933914042581547,
+          "median_absolute_offset": 2.332148970911928,
+          "p90_absolute_offset": 4.011296229968516
+        },
+        "eye_spans": {
+          "mean_signed_offset": -0.008888888888888885,
+          "rms_offset": 0.0332715476762603,
+          "median_absolute_offset": 0.02777777777777777,
+          "p90_absolute_offset": 0.047777777777777766
+        },
+        "mean_displacement_b_minus_a_px": [
+          -0.202695094544593,
+          -2.1333673889564397
+        ],
+        "within_tolerance": 14,
+        "tolerance_eye_spans": 0.05,
+        "within_tolerance_fraction_range": [
+          0.4375,
+          0.96875
+        ],
+        "normalization_span_px": 83.95736295282943,
+        "search_radius_px": 4.197868147641471,
+        "sample_step_px": 0.46642979418238584,
+        "array_prefix": "edge_pair_a_right_eye_"
+      },
+      {
+        "anchor": "a",
+        "region": "mouth",
+        "total": 32,
+        "supported": 5,
+        "unresolved": 27,
+        "available": true,
+        "reason": null,
+        "source_supported_both": 32,
+        "rejections": {
+          "a": {
+            "accepted": 26,
+            "source_unsupported": 0,
+            "weak_gradient": 2,
+            "ambiguous_peak": 0,
+            "oblique_gradient": 0,
+            "search_boundary": 4
+          },
+          "b": {
+            "accepted": 5,
+            "source_unsupported": 0,
+            "weak_gradient": 24,
+            "ambiguous_peak": 0,
+            "oblique_gradient": 0,
+            "search_boundary": 3
+          }
+        },
+        "canonical_pixels": {
+          "mean_signed_offset": 2.705292806257837,
+          "rms_offset": 2.775159284202657,
+          "median_absolute_offset": 2.798578765094314,
+          "p90_absolute_offset": 3.358294518113177
+        },
+        "eye_spans": {
+          "mean_signed_offset": 0.03222222222222222,
+          "rms_offset": 0.03305438840143004,
+          "median_absolute_offset": 0.03333333333333333,
+          "p90_absolute_offset": 0.04
+        },
+        "mean_displacement_b_minus_a_px": [
+          -1.2153407460820684,
+          0.7019779949280902
+        ],
+        "within_tolerance": 5,
+        "tolerance_eye_spans": 0.05,
+        "within_tolerance_fraction_range": [
+          0.15625,
+          1.0
+        ],
+        "normalization_span_px": 83.95736295282943,
+        "search_radius_px": 4.197868147641471,
+        "sample_step_px": 0.46642979418238584,
+        "array_prefix": "edge_pair_a_mouth_"
+      },
+      {
+        "anchor": "a",
+        "region": "jaw",
+        "total": 32,
+        "supported": 8,
+        "unresolved": 24,
+        "available": true,
+        "reason": null,
+        "source_supported_both": 32,
+        "rejections": {
+          "a": {
+            "accepted": 22,
+            "source_unsupported": 0,
+            "weak_gradient": 6,
+            "ambiguous_peak": 0,
+            "oblique_gradient": 0,
+            "search_boundary": 4
+          },
+          "b": {
+            "accepted": 9,
+            "source_unsupported": 0,
+            "weak_gradient": 18,
+            "ambiguous_peak": 0,
+            "oblique_gradient": 0,
+            "search_boundary": 5
+          }
+        },
+        "canonical_pixels": {
+          "mean_signed_offset": 2.1572377980935338,
+          "rms_offset": 2.440413102461445,
+          "median_absolute_offset": 2.0989340738207356,
+          "p90_absolute_offset": 3.731438353459085
+        },
+        "eye_spans": {
+          "mean_signed_offset": 0.025694444444444443,
+          "rms_offset": 0.02906729102285604,
+          "median_absolute_offset": 0.024999999999999998,
+          "p90_absolute_offset": 0.04444444444444443
+        },
+        "mean_displacement_b_minus_a_px": [
+          -0.585262463846457,
+          1.0615468349390471
+        ],
+        "within_tolerance": 8,
+        "tolerance_eye_spans": 0.05,
+        "within_tolerance_fraction_range": [
+          0.25,
+          1.0
+        ],
+        "normalization_span_px": 83.95736295282943,
+        "search_radius_px": 4.197868147641471,
+        "sample_step_px": 0.46642979418238584,
+        "array_prefix": "edge_pair_a_jaw_"
+      },
+      {
+        "anchor": "b",
+        "region": "left_eye",
+        "total": 32,
+        "supported": 9,
+        "unresolved": 23,
+        "available": true,
+        "reason": null,
+        "source_supported_both": 32,
+        "rejections": {
+          "a": {
+            "accepted": 16,
+            "source_unsupported": 0,
+            "weak_gradient": 1,
+            "ambiguous_peak": 6,
+            "oblique_gradient": 0,
+            "search_boundary": 9
+          },
+          "b": {
+            "accepted": 18,
+            "source_unsupported": 0,
+            "weak_gradient": 12,
+            "ambiguous_peak": 1,
+            "oblique_gradient": 0,
+            "search_boundary": 1
+          }
+        },
+        "canonical_pixels": {
+          "mean_signed_offset": 1.9693702421034058,
+          "rms_offset": 2.629347855979427,
+          "median_absolute_offset": 2.3321489709119283,
+          "p90_absolute_offset": 3.731438353459085
+        },
+        "eye_spans": {
+          "mean_signed_offset": 0.023456790123456785,
+          "rms_offset": 0.03131765652831067,
+          "median_absolute_offset": 0.027777777777777776,
+          "p90_absolute_offset": 0.04444444444444443
+        },
+        "mean_displacement_b_minus_a_px": [
+          0.44896692778980285,
+          -0.944718008416189
+        ],
+        "within_tolerance": 9,
+        "tolerance_eye_spans": 0.05,
+        "within_tolerance_fraction_range": [
+          0.28125,
+          1.0
+        ],
+        "normalization_span_px": 83.95736295282943,
+        "search_radius_px": 4.197868147641471,
+        "sample_step_px": 0.46642979418238584,
+        "array_prefix": "edge_pair_b_left_eye_"
+      },
+      {
+        "anchor": "b",
+        "region": "right_eye",
+        "total": 32,
+        "supported": 13,
+        "unresolved": 19,
+        "available": true,
+        "reason": null,
+        "source_supported_both": 32,
+        "rejections": {
+          "a": {
+            "accepted": 21,
+            "source_unsupported": 0,
+            "weak_gradient": 1,
+            "ambiguous_peak": 9,
+            "oblique_gradient": 1,
+            "search_boundary": 0
+          },
+          "b": {
+            "accepted": 20,
+            "source_unsupported": 0,
+            "weak_gradient": 3,
+            "ambiguous_peak": 6,
+            "oblique_gradient": 1,
+            "search_boundary": 2
+          }
+        },
+        "canonical_pixels": {
+          "mean_signed_offset": 0.6099466539308119,
+          "rms_offset": 2.860678404862413,
+          "median_absolute_offset": 2.798578765094314,
+          "p90_absolute_offset": 4.197868147641471
+        },
+        "eye_spans": {
+          "mean_signed_offset": 0.007264957264957263,
+          "rms_offset": 0.0340729901970558,
+          "median_absolute_offset": 0.03333333333333333,
+          "p90_absolute_offset": 0.049999999999999996
+        },
+        "mean_displacement_b_minus_a_px": [
+          -0.1871913568050455,
+          -1.4111331773003581
+        ],
+        "within_tolerance": 13,
+        "tolerance_eye_spans": 0.05,
+        "within_tolerance_fraction_range": [
+          0.40625,
+          1.0
+        ],
+        "normalization_span_px": 83.95736295282943,
+        "search_radius_px": 4.197868147641471,
+        "sample_step_px": 0.46642979418238584,
+        "array_prefix": "edge_pair_b_right_eye_"
+      },
+      {
+        "anchor": "b",
+        "region": "mouth",
+        "total": 32,
+        "supported": 7,
+        "unresolved": 25,
+        "available": true,
+        "reason": null,
+        "source_supported_both": 32,
+        "rejections": {
+          "a": {
+            "accepted": 25,
+            "source_unsupported": 0,
+            "weak_gradient": 0,
+            "ambiguous_peak": 4,
+            "oblique_gradient": 1,
+            "search_boundary": 2
+          },
+          "b": {
+            "accepted": 9,
+            "source_unsupported": 0,
+            "weak_gradient": 21,
+            "ambiguous_peak": 2,
+            "oblique_gradient": 0,
+            "search_boundary": 0
+          }
+        },
+        "canonical_pixels": {
+          "mean_signed_offset": 2.198883315431247,
+          "rms_offset": 3.7769706224805804,
+          "median_absolute_offset": 3.2650085592766995,
+          "p90_absolute_offset": 5.317299653679196
+        },
+        "eye_spans": {
+          "mean_signed_offset": 0.026190476190476188,
+          "rms_offset": 0.044986770542121864,
+          "median_absolute_offset": 0.03888888888888888,
+          "p90_absolute_offset": 0.06333333333333332
+        },
+        "mean_displacement_b_minus_a_px": [
+          -0.7867040341724624,
+          1.8539900972634722
+        ],
+        "within_tolerance": 4,
+        "tolerance_eye_spans": 0.05,
+        "within_tolerance_fraction_range": [
+          0.125,
+          0.90625
+        ],
+        "normalization_span_px": 83.95736295282943,
+        "search_radius_px": 4.197868147641471,
+        "sample_step_px": 0.46642979418238584,
+        "array_prefix": "edge_pair_b_mouth_"
+      },
+      {
+        "anchor": "b",
+        "region": "jaw",
+        "total": 32,
+        "supported": 8,
+        "unresolved": 24,
+        "available": true,
+        "reason": null,
+        "source_supported_both": 32,
+        "rejections": {
+          "a": {
+            "accepted": 13,
+            "source_unsupported": 0,
+            "weak_gradient": 14,
+            "ambiguous_peak": 2,
+            "oblique_gradient": 0,
+            "search_boundary": 3
+          },
+          "b": {
+            "accepted": 23,
+            "source_unsupported": 0,
+            "weak_gradient": 4,
+            "ambiguous_peak": 1,
+            "oblique_gradient": 0,
+            "search_boundary": 4
+          }
+        },
+        "canonical_pixels": {
+          "mean_signed_offset": 0.8162521398191748,
+          "rms_offset": 2.378334622257051,
+          "median_absolute_offset": 2.3321489709119283,
+          "p90_absolute_offset": 3.078436641603745
+        },
+        "eye_spans": {
+          "mean_signed_offset": 0.009722222222222219,
+          "rms_offset": 0.02832788618662658,
+          "median_absolute_offset": 0.027777777777777776,
+          "p90_absolute_offset": 0.03666666666666666
+        },
+        "mean_displacement_b_minus_a_px": [
+          -0.42844832211034073,
+          0.3564894162532964
+        ],
+        "within_tolerance": 8,
+        "tolerance_eye_spans": 0.05,
+        "within_tolerance_fraction_range": [
+          0.25,
+          1.0
+        ],
+        "normalization_span_px": 83.95736295282943,
+        "search_radius_px": 4.197868147641471,
+        "sample_step_px": 0.46642979418238584,
+        "array_prefix": "edge_pair_b_jaw_"
+      }
+    ],
+    "new_native_inference": false,
+    "fit_performed": false,
+    "scope": "Retained native pair, same frozen first two sources; image gradients are not independent anatomical labels"
+  },
+  "parent_array_parity": {
+    "code_sha256": "e0e3f874abec3ea0650fb810ca724f46d9a1547e77a957c78db01a635e59a027",
+    "parent_arrays_unchanged": 158,
+    "raw_arrays_unchanged_by_calibration": 358,
+    "new_paired_edge_arrays": 200,
+    "new_native_inference": false,
+    "fit_performed": false,
+    "source": "pair-02/comparison.json",
+    "parent": "evidence/annotation-coordinates-20261004/pair-parity.json"
+  },
+  "browser": {
+    "started_utc": "2026-10-04T13:30:54.401990+00:00",
+    "pair": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\edge-comparison-20261004\\pair-02",
+    "checks": [
+      "nominal: fourteen rows equal exported measurements",
+      "nominal: eight paired edge rows and unavailable values equal exported measurements",
+      "nominal: both anchored edge location views decode",
+      "nominal: all 56 regional component ledger values equal exported measurements",
+      "nominal: keyboard slider changes only overlay opacity",
+      "nominal: sibling relation filter empty and recovery states",
+      "nominal: selected relation button downloads all 168 filtered rows",
+      "nominal: narrow table scrolls by keyboard without page overflow",
+      "nominal: paired edge table supports narrow keyboard scrolling and visible focus",
+      "calibrated: fourteen rows equal exported measurements",
+      "calibrated: eight paired edge rows and unavailable values equal exported measurements",
+      "calibrated: both anchored edge location views decode",
+      "calibrated: all 56 regional component ledger values equal exported measurements",
+      "calibrated: keyboard slider changes only overlay opacity",
+      "calibrated: sibling relation filter empty and recovery states",
+      "calibrated: selected relation button downloads all 168 filtered rows",
+      "calibrated: source covariance button downloads 256 entries",
+      "calibrated: narrow table scrolls by keyboard without page overflow",
+      "calibrated: paired edge table supports narrow keyboard scrolling and visible focus",
+      "flat synthetic image control: all eight rows remain unavailable with full denominators"
+    ],
+    "scope": "emitted native pair HTML; browser interactions do not validate anatomical accuracy",
+    "browser_version": "154.0.4258.53",
+    "passed": true,
+    "script_errors": [],
+    "remote_requests": [],
+    "finished_utc": "2026-10-04T13:30:58.505389+00:00"
+  },
+  "failures": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\edge-comparison-20261004\\failure-history.json",
+  "report": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\edge-comparison-20261004\\pair-02\\calibrated\\report.html",
+  "verification": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\edge-comparison-release-20261004\\commands.json",
+  "installed_wheel_bytes": "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\edge-comparison-release-20261004\\wheel-check\\installed-byte-check.json",
+  "open": [
+    "Image gradients do not establish independent anatomical or visibility accuracy",
+    "Only normal displacement within the finite search window is measured; tangential changes and edge identity remain unresolved",
+    "Browser matrix ran headless Edge on Windows, not every platform",
+    "Installed wheel uses existing interpreter dependencies; no new native cohort or model fit"
+  ]
+}

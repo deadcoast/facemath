@@ -1,0 +1,21 @@
+{
+  "editable_install_01": {
+    "command": "uv pip install --python runs/enrollment-registry-20261003/env311/Scripts/python.exe --no-deps --no-build-isolation --offline --editable .",
+    "exit": 1,
+    "error": "ModuleNotFoundError: No module named 'setuptools'",
+    "evidence": "Original stderr retained in session tool output; this is a summary, not a reconstructed raw log.",
+    "resolution": "Use declared cached build dependencies via default build isolation; second install succeeded."
+  },
+  "pacer_setup": "Initial atomic write rejected invalid DEC Kind DESIGN; no registers changed. Retried with valid CHOICE.",
+  "pair_01": "Successful development run before spatial overlays and visible tolerance were added; retained unchanged.",
+  "flat_control": "Explicit synthetic no-gradient control, not human or native-reference validation",
+  "source_code_sha256": "e0e3f874abec3ea0650fb810ca724f46d9a1547e77a957c78db01a635e59a027",
+  "release_01": {
+    "passed": 1239,
+    "failed": 1,
+    "skipped": 1,
+    "failure": "Milestone test expected 151 observed arrays; the new channel adds 200. Actual 351 arrays were unchanged.",
+    "correction": "Assert exact 351 inventory plus exact 200 new arrays and each region/anchor mask; no production numerical change.",
+    "raw_evidence": "failed-release-01/source-tests.log"
+  }
+}

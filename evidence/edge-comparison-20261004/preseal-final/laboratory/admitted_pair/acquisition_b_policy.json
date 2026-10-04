@@ -1,0 +1,97 @@
+{
+  "format": "facemath.measured_acquisition_policy.v9",
+  "recipe": "declared_aperture_RGB_integer299_587_114_div255000_AREA_Sobel_interior.v9",
+  "definition": "Schematic stored-raster apertures; all enrolled group members. Clear: minimum detail >=0.30; smooth: minimum detail in [0.05,0.30). Both need >=96px, range>=0.10 and code-tail fractions<0.20. Engineering demonstration selected using three source-only development probes, not human recommendations.",
+  "rules": [
+    {
+      "category": "pixel_clear",
+      "predicates": [
+        {
+          "feature": "min.native_short_edge_px",
+          "op": ">=",
+          "threshold": 96.0
+        },
+        {
+          "feature": "min.code_range_90",
+          "op": ">=",
+          "threshold": 0.1
+        },
+        {
+          "feature": "max.low_code_fraction",
+          "op": "<",
+          "threshold": 0.2
+        },
+        {
+          "feature": "max.high_code_fraction",
+          "op": "<",
+          "threshold": 0.2
+        },
+        {
+          "feature": "min.detail_ratio",
+          "op": ">=",
+          "threshold": 0.3
+        }
+      ],
+      "deployment_permitted": true
+    },
+    {
+      "category": "pixel_smooth",
+      "predicates": [
+        {
+          "feature": "min.native_short_edge_px",
+          "op": ">=",
+          "threshold": 96.0
+        },
+        {
+          "feature": "min.code_range_90",
+          "op": ">=",
+          "threshold": 0.1
+        },
+        {
+          "feature": "max.low_code_fraction",
+          "op": "<",
+          "threshold": 0.2
+        },
+        {
+          "feature": "max.high_code_fraction",
+          "op": "<",
+          "threshold": 0.2
+        },
+        {
+          "feature": "min.detail_ratio",
+          "op": ">=",
+          "threshold": 0.05
+        },
+        {
+          "feature": "min.detail_ratio",
+          "op": "<",
+          "threshold": 0.3
+        }
+      ],
+      "deployment_permitted": true
+    }
+  ],
+  "maximum_group_members": 2,
+  "analysis_max_side": 128,
+  "low_code": 0.00392156862745098,
+  "high_code": 0.996078431372549,
+  "variance_floor": 1e-08,
+  "group_reducers": [
+    "min",
+    "max"
+  ],
+  "feature_order": [
+    "native_short_edge_px",
+    "native_area_px2",
+    "code_mean",
+    "code_p05",
+    "code_p95",
+    "code_range_90",
+    "low_code_fraction",
+    "high_code_fraction",
+    "detail_ratio"
+  ],
+  "routing": "one simultaneous match; zero or multiple matches withhold deployment",
+  "aperture": "explicit integer xyxy half-open source rectangle; omission means full stored raster",
+  "enrollment": "all declared group members, including prospectively excluded observation cases"
+}

@@ -43,6 +43,23 @@ def _overlay(result: InstrumentResult) -> np.ndarray:
     return image
 
 
+def _edge_overlay(result: InstrumentResult, anchor: str) -> np.ndarray:
+    """Show accepted image-edge locations, never relocated model landmarks."""
+    image = cv2.addWeighted(result.state.image_a, .5, result.state.image_b, .5, 0)
+    if result.edges is not None:
+        for key, pair in result.edges.pairs.items():
+            if not key.startswith(anchor + "_"):
+                continue
+            a = pair.a.points + pair.a.normals*pair.a.best_offset_px[:, None]
+            b = pair.b.points + pair.b.normals*pair.b.best_offset_px[:, None]
+            for pa, pb in zip(a[pair.accepted], b[pair.accepted]):
+                aa, bb = tuple(np.rint(pa).astype(int)), tuple(np.rint(pb).astype(int))
+                cv2.line(image, aa, bb, (255, 200, 80), 1, cv2.LINE_AA)
+                cv2.circle(image, aa, 2, (245, 245, 245), 1)
+                cv2.drawMarker(image, bb, (30, 220, 225), cv2.MARKER_CROSS, 5, 1)
+    return image
+
+
 def _html(result: InstrumentResult, arrays: dict[str, np.ndarray]) -> str:
     def uri(image: np.ndarray) -> str:
         return "data:image/png;base64," + b64encode(_png(image)).decode()
@@ -69,6 +86,10 @@ def _html(result: InstrumentResult, arrays: dict[str, np.ndarray]) -> str:
         summaries = result.edges.summary()
         erows = "".join(f"<tr><td>{escape(k)}</td><td>{v['accepted']} / {v['rays']}</td><td>{v['source_supported']}</td><td>{v['median_absolute_offset_px']:.3f}</td></tr>" if v['median_absolute_offset_px'] is not None else f"<tr><td>{escape(k)}</td><td>0 / {v['rays']}</td><td>{v['source_supported']}</td><td>withheld</td></tr>" for k, v in summaries['profiles'].items())
         edge_section = f"<h2>Image-edge support</h2><p>Landmark-guided normal-ray searches. Matching image gradients are diagnostic, not proof of correct anatomy. Landmarks are never moved to an edge candidate. Complete ray responses and rejection masks are in arrays.npz.</p><div class='scroll'><table><tr><th>Source / region</th><th>Accepted / attempted rays</th><th>Full source support</th><th>Median |normal offset| · px</th></tr>{erows}</table></div>"
+        edge_views = "".join(f'<figure><img src="{uri(_edge_overlay(result, side))}" alt="Paired image-edge locations on {side.upper()}-anchored rays">'
+            f'<figcaption>{side.upper()}-anchored rays · white circle: image A edge; cyan cross: image B edge; amber line: normal displacement.</figcaption></figure>'
+            for side in ("a", "b"))
+        edge_section += f'<h3>Locate the measured image edges</h3><p>Only rays localized in both images are drawn. Unresolved rays remain in the table denominator. These markers show selected gradients, not corrected anatomical landmarks.</p><div class="gallery edge-gallery">{edge_views}</div>'
     from .stratified_report import render_routing_pair
     routing_section = render_routing_pair(result.localization.calibration) if result.localization else ""
     acquisition_section = ""
@@ -97,6 +118,7 @@ main{{max-width:1320px;padding:38px 30px 80px;margin:auto}}.eyebrow{{font:12px/1
 h1{{font-size:34px;letter-spacing:-.025em;margin:10px 0}}h2{{font-size:21px;margin:35px 0 12px}}p{{max-width:92ch;color:var(--muted)}}
 header{{border-bottom:1px solid var(--line);padding-bottom:24px}}.tag{{border:1px solid var(--line);padding:5px 10px;font:12px ui-monospace,monospace;display:inline-block;margin:0 8px 8px 0}}
 .gallery{{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}}figure{{background:var(--panel);margin:0;padding:12px;border:1px solid var(--line)}}
+.edge-gallery{{grid-template-columns:repeat(2,minmax(0,1fr))}}
 figure img{{width:100%;display:block;image-rendering:auto}}figcaption{{padding:10px 0 0;color:var(--muted);font-size:13px}}
 .panel{{padding:18px;background:var(--panel);border-left:3px solid var(--accent);margin:18px 0}}
 .scroll{{overflow:auto;border:1px solid var(--line)}}table{{width:100%;border-collapse:collapse;font-size:13px}}th{{text-align:left;background:var(--panel)}}th,td{{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}}

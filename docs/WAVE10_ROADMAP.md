@@ -1,5 +1,12 @@
 # Beyond the Wave10 consolidation
 
+Current paired-image pass: 0.21.0 adds common-ray image-edge displacement to the
+existing diagnostic channel. It exposes contour-normal image differences and
+explicit rejection accounting without moving landmarks or fitting new geometry.
+This does not supply independent contour/visibility labels or close Gate A/C.
+The fixed prior native pair is reused for this numerical/output regression;
+no new cohort is selected and the enrollment registry remains at 355 cases.
+
 Current input repair: 0.20.0 resolves the documented D05 canvas-center defect
 and the prepared synthetic workspace's incompatible reference kind. Real browser
 exports now survive the existing intake/freeze path unchanged. This repairs a

@@ -1,0 +1,44 @@
+........................................................................ [  5%]
+........................................................................ [ 11%]
+........................................................................ [ 17%]
+........................................................................ [ 23%]
+........................................................................ [ 29%]
+..............................................F......................... [ 34%]
+........................................................................ [ 40%]
+........................................................................ [ 46%]
+........................................................................ [ 52%]
+........................................................................ [ 58%]
+.................................................................s...... [ 63%]
+........................................................................ [ 69%]
+........................................................................ [ 75%]
+........................................................................ [ 81%]
+........................................................................ [ 87%]
+........................................................................ [ 92%]
+........................................................................ [ 98%]
+.................                                                        [100%]
+================================== FAILURES ===================================
+_______ test_both_frozen_branches_run_and_raw_geometry_stays_unchanged ________
+
+milestone = (WindowsPath('C:/Users/ryanf/github/_active/facemath/runs/edge-comparison-20261004/release-01/source-temp/wave100/lab'...'source_count': 39, 'labels_initially_missing': True, 'ready_after_import': True, 'retained_revisions': 38, ...}, ...})
+
+    def test_both_frozen_branches_run_and_raw_geometry_stays_unchanged(milestone):
+        root,report=milestone
+        assert report['positive_control']['admission']['passed']
+        assert not report['negative_control']['admission']['passed']
+        assert report['positive_control']['admission']['policy']==report['negative_control']['admission']['policy']
+        for name in ('positive_control','negative_control'):
+            c=report[name]
+            assert c['labels_initially_missing'] and c['ready_after_import']
+            assert c['observer_calls']==[4,38,38] and c['enrollment']['prospectively_excluded']==1
+            assert c['duplicate_import_idempotent'] and c['frozen_origin_present']
+        pair=report['admitted_pair']
+        # Original 135, four structural, ten regional, and two diagnostic masks.
+        # Every new observed component must participate in qualification invariance.
+>       assert pair['raw_arrays_unchanged'] and pair['raw_arrays_checked']==135+4+10+2
+E       assert (True and 351 == (((135 + 4) + 10) + 2))
+
+tests\test_wave10_integration.py:48: AssertionError
+=========================== short test summary info ===========================
+SKIPPED [1] tests\test_wave5_execution.py:184: platform cannot create a directory symlink
+FAILED tests/test_wave10_integration.py::test_both_frozen_branches_run_and_raw_geometry_stays_unchanged
+1 failed, 1239 passed, 1 skipped in 305.96s (0:05:05)

@@ -10,7 +10,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 
-def run(pair: Path, out: Path, executable: str) -> dict:
+def run(pair: Path, out: Path, executable: str, unavailable: Path | None = None) -> dict:
     out.mkdir(parents=True, exist_ok=False)
     record = {'started_utc': datetime.now(timezone.utc).isoformat(), 'pair': str(pair), 'checks': [],
               'scope': 'emitted native pair HTML; browser interactions do not validate anatomical accuracy'}
@@ -38,6 +38,27 @@ def run(pair: Path, out: Path, executable: str) -> dict:
                         lo, hi = row['reference_delta_b_minus_a']
                         assert f'[{lo:+.5g}, {hi:+.5g}]' in cells.nth(3).inner_text()
                 record['checks'].append(branch+': fourteen rows equal exported measurements')
+                edge_data = json.loads((root/'summary.json').read_text(encoding='utf-8')).get('edge_comparison')
+                if edge_data:
+                    edge_rows = page.locator('#edge-comparison tbody tr')
+                    assert edge_rows.count() == 8
+                    for i, row in enumerate(edge_data['rows']):
+                        cells = edge_rows.nth(i).locator('td')
+                        assert cells.nth(0).inner_text().splitlines()[0] == f"{row['supported']} / {row['total']}"
+                        stats = row['eye_spans'] or {}
+                        for column, key, fmt in ((1,'mean_signed_offset','+.5g'),(2,'rms_offset','.5g'),(3,'p90_absolute_offset','.5g')):
+                            value = stats.get(key)
+                            expected = 'Unavailable' if value is None else format(value,fmt)
+                            assert cells.nth(column).inner_text() == expected
+                    page.locator('#edge-comparison').scroll_into_view_if_needed()
+                    page.screenshot(path=str(out/f'{branch}-edges-desktop.png'))
+                    record['checks'].append(branch+': eight paired edge rows and unavailable values equal exported measurements')
+                    edge_images = page.locator('.edge-gallery img')
+                    assert edge_images.count() == 2
+                    assert edge_images.evaluate_all('(images) => images.every(i => i.complete && i.naturalWidth > 0)')
+                    page.locator('.edge-gallery').scroll_into_view_if_needed()
+                    page.screenshot(path=str(out/f'{branch}-edge-locations.png'))
+                    record['checks'].append(branch+': both anchored edge location views decode')
                 evidence = json.loads((root/'evidence.json').read_text(encoding='utf-8'))
                 regional = [row for row in evidence['measurement_profile'] if row['name'].startswith('regional.')]
                 if regional:
@@ -100,7 +121,29 @@ def run(pair: Path, out: Path, executable: str) -> dict:
                 page.evaluate('() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))')
                 page.screenshot(path=str(out/f'{branch}-narrow.png'))
                 record['checks'].append(branch+': narrow table scrolls by keyboard without page overflow')
+                if edge_data:
+                    edge_table = page.get_by_role('region', name='Image-edge comparison table')
+                    edge_table.scroll_into_view_if_needed(); edge_table.focus()
+                    assert edge_table.evaluate('(e) => e.scrollWidth > e.clientWidth')
+                    edge_table.press('ArrowRight')
+                    page.wait_for_function("document.querySelector('#edge-comparison .scroll').scrollLeft > 0")
+                    assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+                    assert edge_table.evaluate('(e) => getComputedStyle(e).outlineStyle') != 'none'
+                    page.screenshot(path=str(out/f'{branch}-edges-narrow.png'))
+                    record['checks'].append(branch+': paired edge table supports narrow keyboard scrolling and visible focus')
                 page.set_viewport_size({'width': 1440, 'height': 1000})
+            if unavailable is not None:
+                page.goto((unavailable/'report.html').as_uri(), wait_until='load')
+                rows = page.locator('#edge-comparison tbody tr')
+                assert rows.count() == 8
+                for i in range(8):
+                    cells = rows.nth(i).locator('td')
+                    assert cells.nth(0).inner_text().startswith('0 / 32')
+                    assert all(cells.nth(c).inner_text() == 'Unavailable' for c in (1,2,3))
+                    assert cells.nth(4).inner_text() == '0.0–100.0%'
+                page.locator('#edge-comparison').scroll_into_view_if_needed()
+                page.screenshot(path=str(out/'unavailable-edges.png'))
+                record['checks'].append('flat synthetic image control: all eight rows remain unavailable with full denominators')
             assert not errors, errors
             assert not remote, remote
             record['browser_version'] = browser.version
@@ -120,5 +163,7 @@ if __name__ == '__main__':
     parser.add_argument('pair', type=Path)
     parser.add_argument('--out', required=True, type=Path)
     parser.add_argument('--browser', required=True)
+    parser.add_argument('--unavailable', type=Path)
     args = parser.parse_args()
-    print(json.dumps(run(args.pair.resolve(), args.out.resolve(), args.browser), indent=2))
+    print(json.dumps(run(args.pair.resolve(), args.out.resolve(), args.browser,
+                         args.unavailable.resolve() if args.unavailable else None), indent=2))

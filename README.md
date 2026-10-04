@@ -1,5 +1,27 @@
 # FACEMATH · reproducible facial geometry
 
+Version **0.21.0** compares image edges around the eyes, mouth and jaw. Both
+rasters are sampled on identical contour-normal rays in the existing canonical
+alignment. `analyze` returns `comparison.edge_comparison`; `overview` and the
+report show signed B-minus-A displacement, RMS, 90th absolute displacement and
+paired support. A-anchored and B-anchored rays remain separate inventories.
+Two annotated image views locate the accepted edge candidates and their measured
+normal displacements, using the report's existing circle/cross/line legend.
+
+Weak, ambiguous, truncated and source-padding rays retain their rejection reasons
+and denominators. Missing edges are unavailable, never zero mismatch. Exported
+response arrays and masks support inspection and replay. The within-tolerance
+range accounts for unresolved rays; it is not a resemblance probability or
+confidence interval. These image gradients can reflect texture or lighting and
+are not independently labeled anatomy. See [the paired-edge contract](docs/EDGE_COMPARISON_DESIGN.md).
+
+[Open the paired image-edge report](evidence/edge-comparison-20261004/pair-02/calibrated/report.html)
+or [inspect its component data](evidence/edge-comparison-20261004/pair-02/edge-audit.json).
+This reuses the first fixed native pair from the core-feature pass, without a
+new cohort or fit. Its eight rows retain 5–15 paired supported rays out of 32;
+the remaining rays stay unresolved. All 158 inherited observed arrays are
+unchanged, and calibration preserves all 358 current observed arrays.
+
 Version **0.20.0** repairs reference-coordinate input. Workbench clicks, markers,
 zoom anchors and the magnifier now share a content-box transform with explicit
 pixel-center coordinates. First/last pixels remain selectable at fractional

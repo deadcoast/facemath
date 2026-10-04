@@ -26,6 +26,7 @@ def pair_readout(evidence: dict) -> dict:
         "shape_distance": intrinsic.get("shape_distance"), "families": family_rows,
         "structural_comparison": intrinsic.get("structural_comparison"),
         "regional_comparison": evidence.get("regional_comparison"),
+        "edge_comparison": (evidence.get("edge_diagnostics") or {}).get("paired_comparison"),
         "registration_diagnostics": evidence.get("registration_diagnostics"),
         "percentage_meaning": "fraction of a prespecified, dependent relation inventory within explicit tolerances; NOT a probability of resemblance",
         "array_file": "arrays.npz", "exact_relation_rows": "intrinsic.json", "execution_journal": "events.jsonl",
@@ -81,6 +82,31 @@ def render_structure(data: dict | None) -> str:
 <p>Observed differences use the measured coordinates. Reference intervals use the attached error model; an unresolved interval cannot establish agreement. Eye-width asymmetry is (left − right)/(left + right). These dependent measurements do not form an identity or resemblance probability.</p></section>'''
 
 
+def render_edge_comparison(data: dict | None) -> str:
+    if data is None:
+        return ""
+    rows = []
+    for row in data["rows"]:
+        stats = row["eye_spans"] or {}
+        lo, hi = row["within_tolerance_fraction_range"]
+        decisions = (escape(row["reason"].replace("_", " ")) if row["rejections"] is None else
+            "".join(f'<small>{side.upper()}: ' + escape("; ".join(
+                f'{reason.replace("_", " ")} {count}' for reason, count in counts.items() if count)) + '</small>'
+                for side, counts in row["rejections"].items()))
+        rows.append(f'<tr><th scope="row">{escape(row["region"].replace("_", " ").capitalize())}'
+            f'<small>{row["anchor"].upper()}-anchored rays</small></th>'
+            f'<td>{row["supported"]} / {row["total"]}<small>{row["unresolved"]} unresolved</small></td>'
+            f'<td>{_value(stats.get("mean_signed_offset"), signed=True)}</td>'
+            f'<td>{_value(stats.get("rms_offset"))}</td><td>{_value(stats.get("p90_absolute_offset"))}</td>'
+            f'<td>{100*lo:.1f}–{100*hi:.1f}%</td><td>{decisions}</td></tr>')
+    return f'''<section id="edge-comparison"><h2>Image-edge displacement · A compared with B</h2>
+<p>Both images are sampled on the same rays around each contour. Values below are B minus A along the displayed anchor's normal, in registered eye spans. RMS and the 90th percentile retain mismatch that signed means can cancel.</p>
+<div class="scroll" role="region" aria-label="Image-edge comparison table" tabindex="0"><table>
+<caption>Four contour regions, sampled separately from A and B · tolerance {_value(data['tolerance_eye_spans'])} eye spans · no pooled score</caption>
+<thead><tr><th scope="col">Contour / ray anchor</th><th scope="col">Paired support</th><th scope="col">Signed mean</th><th scope="col">RMS</th><th scope="col">90th absolute</th><th scope="col">Within-tolerance range</th><th scope="col">Ray decisions</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
+<p>The range keeps every requested ray: rejected and missing rays remain unresolved. It is a missingness range, not a confidence interval or resemblance probability. Each side records its first failed rule. Weak, ambiguous or out-of-window edges cannot establish agreement. These gradients may describe texture rather than anatomical boundaries; tangential motion is not measured.</p></section>'''
+
+
 def render_pair_readout(evidence: dict) -> str:
     data = pair_readout(evidence)
     shape = data["shape_distance"]
@@ -101,7 +127,7 @@ def render_pair_readout(evidence: dict) -> str:
         cells = "".join(f"<td>{v}</td>" for v in counts)
         rows.append(f'<tr><td>{escape(family["family"])}</td>{cells}<td>{text}</td></tr>')
     rows = "".join(rows)
-    return f'''{render_structure(data["structural_comparison"])}<section id="readout"><h2>Comparison at a glance</h2><p>{escape(shape_text)}</p>
+    return f'''{render_structure(data["structural_comparison"])}{render_edge_comparison(data["edge_comparison"])}<section id="readout"><h2>Comparison at a glance</h2><p>{escape(shape_text)}</p>
 <div class="scroll"><table><thead><tr><th>Relations</th><th>Declared total</th><th>Within</th><th>Outside</th><th>Unresolved</th><th>Within-tolerance range</th></tr></thead><tbody>{rows}</tbody></table></div>
 <p>{escape(data["percentage_meaning"])}. Missing relations remain in the denominator. Detailed rows and exact values remain below and in intrinsic.json.</p>
 {admission_panel(evidence.get("empirical_admission"))}</section>'''
@@ -134,6 +160,15 @@ def terminal_readout(data: dict, *, encoding: str = "utf-8") -> str:
         for row in admission.get("categories", []):
             lines.append(f"│   {row['category']}: {row['covered']}/{row['groups']} covered; " + ("pass" if row['passes'] else "WITHHELD"))
     else:
+        edge_comparison = data.get("edge_comparison")
+        if edge_comparison:
+            lines.append("├── Image-edge displacement (B minus A along shared normals; eye spans)")
+            for row in edge_comparison["rows"]:
+                stats = row["eye_spans"] or {}
+                lines.append(f"│   {row['region']} [{row['anchor'].upper()} rays]: signed={_value(stats.get('mean_signed_offset'), signed=True)}; "
+                    f"RMS={_value(stats.get('rms_offset'))}; p90={_value(stats.get('p90_absolute_offset'))}; "
+                    f"paired={row['supported']}/{row['total']}; unresolved={row['unresolved']}")
+            lines.append("│   Image-gradient evidence; missing rays are unresolved, not anatomical agreement.")
         regional = data.get("regional_comparison")
         if regional:
             lines.append("├── Regional movement and deformation (observed geometry)")
@@ -173,6 +208,15 @@ def terminal_readout(data: dict, *, encoding: str = "utf-8") -> str:
     except UnicodeEncodeError:
         # Keep values intact in redirected Windows/code-page streams. Replace
         # only decoration; escape unrepresentable source labels/paths reversibly.
-        text = text.translate(str.maketrans({"◆": "*", "│": "|", "├": "+", "└": "\\", "─": "-", "–": "-"}))
+        # Convert generated prefixes only: a source path may contain these glyphs.
+        prefixes = {"FACEMATH ◆ EVIDENCE": "FACEMATH * EVIDENCE", "├──": "+--", "└──": "\\--", "│": "|"}
+        ascii_lines = []
+        for line in lines:
+            for prefix, replacement in prefixes.items():
+                if line.startswith(prefix):
+                    line = replacement + line[len(prefix):]
+                    break
+            ascii_lines.append(line)
+        text = "\n".join(ascii_lines)
         text = text.encode(encoding, errors="backslashreplace").decode(encoding)
     return text
