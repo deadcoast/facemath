@@ -528,5 +528,4 @@ def measure_intrinsic(state: CanonicalState, localization: LocalizationEnvelope 
         structural_comparison=measure_structure(raw, supports, evaluators, quantiles,
             localization.calibration.digest if localization is not None else None, state.config),
         bilateral_comparison=measure_bilateral(raw, supports, evaluators, quantiles,
-            localization.calibration.digest if localization is not None else None, state.config,
-            np.stack((state.source_to_canonical_a, state.source_to_canonical_b)) @ np.linalg.inv(charts)))
+            localization.calibration.digest if localization is not None else None, state.config))

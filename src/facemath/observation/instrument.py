@@ -31,6 +31,17 @@ class InstrumentResult:
     acquisition_groups: tuple[MeasuredGroup, MeasuredGroup] | None = None
     qualification_evidence: object | None = None
 
+    def bilateral_display(self) -> dict[str, np.ndarray]:
+        """Map source-frame marker geometry to this existing display chart only."""
+        if self.intrinsic is None or self.intrinsic.bilateral_comparison is None:
+            return {}
+        profile = self.intrinsic.bilateral_comparison
+        transforms = np.stack((self.state.source_to_canonical_a, self.state.source_to_canonical_b)) @ np.linalg.inv(self.intrinsic.source_chart)
+        segments = np.einsum('sij,snkj->snki', transforms[:, :2, :2], profile.source_segments) + transforms[:, None, None, :2, 2]
+        segments[~profile.nominal_valid] = 0.
+        axes = np.einsum('sij,skj->ski', transforms[:, :2, :2], profile.source_axes) + transforms[:, None, :2, 2]
+        return {"bilateral_display_segments": segments, "bilateral_display_axes": axes}
+
     def evidence(self) -> dict:
         return {
             "format": "facemath.evidence.v3", "recipe_sha256": self.state.recipe_sha256,
@@ -56,6 +67,8 @@ class InstrumentResult:
             "edge_diagnostics": self.edges.summary() if self.edges is not None else None,
             "localization_envelope": self.localization.to_dict() if self.localization is not None else None,
             "intrinsic_profile": self.intrinsic.to_dict() if self.intrinsic is not None else None,
+            "bilateral_display": {key.removeprefix("bilateral_display_"): value.tolist()
+                                  for key, value in self.bilateral_display().items()},
             "empirical_admission": self.qualification_evidence.summary if self.qualification_evidence is not None else {"status": "not_requested", "passed": False, "scope": "research analysis; empirical acceptance not asserted"},
             "measured_acquisition": [g.to_dict() for g in self.acquisition_groups] if self.acquisition_groups is not None else None,
             "limits": [
@@ -108,6 +121,7 @@ class InstrumentResult:
                 arrays.update(self.localization.directional.arrays())
         if self.intrinsic is not None:
             arrays.update(self.intrinsic.arrays())
+            arrays.update(self.bilateral_display())
         if self.acquisition_groups is not None:
             for name, group in zip(("a", "b"), self.acquisition_groups):
                 arrays.update(group.arrays(f"acquisition_{name}_"))
@@ -128,6 +142,7 @@ class InstrumentResult:
         structural_observed = {"structure_nominal", "structure_nominal_valid",
                                "structure_expression_a", "structure_expression_b"}
         bilateral_observed = {"bilateral_nominal", "bilateral_nominal_valid", "bilateral_coefficients",
+                              "bilateral_source_segments", "bilateral_source_axes",
                               "bilateral_display_segments", "bilateral_display_axes"}
         return {key: value for key, value in self.arrays().items()
                 if not key.startswith(("localization_", "acquisition_"))

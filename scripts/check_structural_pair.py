@@ -55,7 +55,7 @@ def main():
     observed_intrinsic = {'raw_points', 'source_covariance', 'source_chart', 'source_supported',
                           'nominal', 'nominal_valid', 'relation_a', 'relation_b', 'support_normals'}
     observed_structure = {'nominal', 'nominal_valid', 'expression_a', 'expression_b'}
-    observed_bilateral = {'nominal', 'nominal_valid', 'coefficients', 'display_segments', 'display_axes'}
+    observed_bilateral = {'nominal', 'nominal_valid', 'coefficients', 'source_segments', 'source_axes', 'display_segments', 'display_axes'}
     digests = {}
     with np.load(out/'nominal/arrays.npz') as a, np.load(out/'calibrated/arrays.npz') as b:
         for name in a.files:

@@ -31,6 +31,9 @@ The existing pair API, CLI, application and portable report expose the results.
 Expandable rows locate observed versus mirrored/projected points on the existing
 canonical images. Coordinates are transformed for display through the existing
 source chart and canonical transform. They are never substituted into geometry.
+Intrinsic arrays retain the marker segments in the source frame. Canonical
+display arrays are attached separately by InstrumentResult; changing canvas
+size or robust-registration settings cannot change any intrinsic array.
 
 Parent archive: facemath-0.22.0-local-application-20261004.zip, SHA-256
 7c965167f1c9658d86c86818adc73a8e4837faa0a0d381c47d386387a5fea6fe.

@@ -11,6 +11,13 @@ from .study import read_json
 
 def pair_readout(evidence: dict) -> dict:
     intrinsic = evidence.get("intrinsic_profile") or {}
+    bilateral = intrinsic.get("bilateral_comparison")
+    display = evidence.get("bilateral_display")
+    if bilateral and display:
+        bilateral = {**bilateral, "display_axes": display["axes"], "canvas_size": evidence["configuration"]["canvas_size"],
+            "rows": [{**row, "display_segments": [display["segments"][s][row["index"]]
+                       if row["observed_"+side] is not None else None for s, side in enumerate(("a", "b"))]}
+                     for row in bilateral["rows"]]}
     family_rows = []
     for family in intrinsic.get("families", []):
         fraction = family["within_tolerance_fraction_bounds"]
@@ -25,7 +32,7 @@ def pair_readout(evidence: dict) -> dict:
         "registered_all_rms": measured.get("geometry.all.rms"),
         "shape_distance": intrinsic.get("shape_distance"), "families": family_rows,
         "structural_comparison": intrinsic.get("structural_comparison"),
-        "bilateral_comparison": intrinsic.get("bilateral_comparison"),
+        "bilateral_comparison": bilateral,
         "regional_comparison": evidence.get("regional_comparison"),
         "edge_comparison": (evidence.get("edge_diagnostics") or {}).get("paired_comparison"),
         "registration_diagnostics": evidence.get("registration_diagnostics"),

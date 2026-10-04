@@ -55,9 +55,8 @@ class BilateralComparison:
     source_upper: np.ndarray
     source_available: np.ndarray
     source_reasons: tuple
-    display_segments: np.ndarray
-    display_axes: np.ndarray
-    canvas_size: int
+    source_segments: np.ndarray
+    source_axes: np.ndarray
     tolerance: float
     calibration_sha256: str | None
     source_quantiles: tuple[float | None, float | None]
@@ -67,8 +66,8 @@ class BilateralComparison:
     def __post_init__(self):
         shapes = {"nominal": (2, 5, 2), "nominal_valid": (2, 5),
                   "source_lower": (2, 5, 2), "source_upper": (2, 5, 2),
-                  "source_available": (2, 5), "display_segments": (2, 5, 2, 2),
-                  "display_axes": (2, 2, 2), "coefficients": (5, 2, 8)}
+                  "source_available": (2, 5), "source_segments": (2, 5, 2, 2),
+                  "source_axes": (2, 2, 2), "coefficients": (5, 2, 8)}
         for key, shape in shapes.items():
             value = frozen_array(getattr(self, key), bool if key.endswith(("valid", "available")) else float)
             if value.shape != shape:
@@ -87,7 +86,7 @@ class BilateralComparison:
     def arrays(self) -> dict[str, np.ndarray]:
         return {"bilateral_" + key: getattr(self, key) for key in
                 ("nominal", "nominal_valid", "source_lower", "source_upper", "source_available",
-                 "display_segments", "display_axes", "coefficients")}
+                 "source_segments", "source_axes", "coefficients")}
 
     def to_dict(self) -> dict:
         rows = []
@@ -124,12 +123,12 @@ class BilateralComparison:
                 "observed_configuration_change": change, "observed_status": observed_status,
                 "source_intervals": sources, "reference_delta_b_minus_a": delta_bounds,
                 "reference_configuration_change": change_bounds, "reference_status": reference_status,
-                "display_segments": [self.display_segments[s, i].tolist() if self.nominal_valid[s, i] else None for s in range(2)]})
+                "source_segments": [self.source_segments[s, i].tolist() if self.nominal_valid[s, i] else None for s in range(2)]})
         return {"format": "facemath.bilateral_comparison.v23", "recipe_sha256": self.recipe_sha256,
             "rows": rows, "prespecified_rows": 5, "unit": "own_reference_eye_spans", "tolerance": self.tolerance,
             "components": ["horizontal", "vertical"], "delta_convention": "B minus A",
             "calibration_sha256": self.calibration_sha256, "source_quantiles": list(self.source_quantiles),
-            "display_axes": self.display_axes.tolist(), "canvas_size": self.canvas_size,
+            "source_axes": self.source_axes.tolist(),
             "observed_counts": {status: sum(r["observed_status"] == status for r in rows) for status in
                                 ("within_tolerance", "outside_tolerance", "unavailable")},
             "reference_counts": {status: sum(r["reference_status"] == status for r in rows) for status in
@@ -142,8 +141,7 @@ class BilateralComparison:
 
 
 def measure_bilateral(raw: np.ndarray, supported: np.ndarray, evaluators: tuple[SourceRelations, SourceRelations],
-                      quantiles: tuple, calibration_sha256: str | None, config,
-                      display_transforms: np.ndarray) -> BilateralComparison:
+                      quantiles: tuple, calibration_sha256: str | None, config) -> BilateralComparison:
     values, valid = zip(*(nominal_components(raw[s], supported[s]) for s in range(2)))
     lower, upper, available = np.zeros((2, 5, 2)), np.zeros((2, 5, 2)), np.zeros((2, 5), bool)
     reasons, segments, axes = [], np.zeros((2, 5, 2, 2)), np.zeros((2, 2, 2))
@@ -165,14 +163,11 @@ def measure_bilateral(raw: np.ndarray, supported: np.ndarray, evaluators: tuple[
         if np.all(supported[s, :4]) and span > 0:
             center, unit = raw[s, :4].mean(axis=0), eye / span
             perpendicular = np.array([-unit[1], unit[0]])
-            transform = display_transforms[s]
-            def display(points):
-                return points @ transform[:2, :2].T + transform[:2, 2]
-            axes[s] = display(np.array([center - span * perpendicular, center + 3 * span * perpendicular]))
+            axes[s] = np.array([center - span * perpendicular, center + 3 * span * perpendicular])
             for i, (_, _, left, right) in enumerate(ROWS):
                 if valid[s][i]:
                     point = raw[s, left]
                     expected = point - (2 if left != right else 1) * ((point - center) @ unit) * unit
-                    segments[s, i] = display(np.array([expected, raw[s, right]]))
+                    segments[s, i] = np.array([expected, raw[s, right]])
     return BilateralComparison(np.array(values), np.array(valid), lower, upper, available, tuple(reasons),
-        segments, axes, config.canvas_size, config.intrinsic_length_tolerance, calibration_sha256, quantiles)
+        segments, axes, config.intrinsic_length_tolerance, calibration_sha256, quantiles)

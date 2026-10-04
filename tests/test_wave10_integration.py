@@ -43,13 +43,16 @@ def test_both_frozen_branches_run_and_raw_geometry_stays_unchanged(milestone):
         assert c['observer_calls']==[4,38,38] and c['enrollment']['prospectively_excluded']==1
         assert c['duplicate_import_idempotent'] and c['frozen_origin_present']
     pair=report['admitted_pair']
-    # Original 135, four structural, ten regional, two diagnostic masks, and
+    # Original 135, four structural, seven bilateral (including two display arrays),
+    # ten regional, two diagnostic masks, and
     # eight shared-ray pairs with 20 source-profile arrays plus five pair arrays.
     # Every new observed component must participate in qualification invariance.
-    assert pair['raw_arrays_unchanged'] and pair['raw_arrays_checked']==135+4+10+2+8*25
+    assert pair['raw_arrays_unchanged'] and pair['raw_arrays_checked']==135+4+7+10+2+8*25
     with np.load(root/'admitted_pair/arrays.npz') as arrays:
         assert all('structure_'+name in arrays.files for name in
                    ('nominal', 'nominal_valid', 'expression_a', 'expression_b'))
+        assert all('bilateral_'+name in arrays.files for name in
+                   ('nominal', 'nominal_valid', 'coefficients', 'source_segments', 'source_axes', 'display_segments', 'display_axes'))
         assert sum(name.startswith('regional_') for name in arrays.files)==10
         assert {'heldout_fit_supported', 'sensitivity_draw_supported'} <= set(arrays.files)
         assert sum(name.startswith('edge_pair_') for name in arrays.files)==8*25

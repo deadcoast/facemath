@@ -34,17 +34,18 @@ def main():
     scratch = root/'runs/bilateral-20261004'
     feature = root/'evidence/bilateral-20261004'
     if args.collect:
+        feature = feature/'final'
         feature.mkdir()
-        browser = read(scratch/'browser-01/browser.json')
+        browser = read(scratch/'browser-02/browser.json')
         assert browser['passed'] and browser['bilateral_numeric_components_compared'] == 30
-        shutil.copytree(scratch/'browser-01', feature/'browser', ignore=shutil.ignore_patterns('comparison.zip'))
-        shutil.copytree(scratch/'pair-01', feature/'pair')
+        shutil.copytree(scratch/'browser-02', feature/'browser', ignore=shutil.ignore_patterns('comparison.zip'))
+        shutil.copytree(scratch/'pair-02', feature/'pair')
         for key in ('run_id', 'no_face_run', 'cancelled_run'):
             shutil.copytree(scratch/'app'/browser[key], feature/'app'/browser[key],
                             ignore=shutil.ignore_patterns('runtime-cache', 'comparison.zip'))
         native = feature/'app'/browser['run_id']/'result'
         assert read(native/'environment.json')['engine_code_sha256'] == code_fingerprint()
-        for name in ('targeted-02.log', 'ui-audit.json', 'browser-01.log', 'pair-01.log'):
+        for name in ('targeted-03.log', 'ui-audit.json', 'browser-02.log', 'pair-02.log'):
             shutil.copyfile(scratch/name, feature/name)
         parent = feature/'parent'; parent.mkdir()
         for name in ('archive-tests.log', 'archive.xml', 'commands.json'):
@@ -53,7 +54,7 @@ def main():
         assert digest(parent_archive) == '7c965167f1c9658d86c86818adc73a8e4837faa0a0d381c47d386387a5fea6fe'
         # Compare the inherited observed arrays against the same retained native
         # observation pair. This is distinct from new-browser inference.
-        keys = read(scratch/'pair-01/comparison.json')['raw_array_sha256']
+        keys = read(scratch/'pair-02/comparison.json')['raw_array_sha256']
         with np.load(root/'evidence/edge-comparison-20261004/pair-02/nominal/arrays.npz') as before, np.load(feature/'pair/nominal/arrays.npz') as after:
             common = sorted(set(before.files) & set(keys))
             for key in common:
@@ -97,7 +98,7 @@ def main():
     if archive.exists():
         raise FileExistsError(archive)
     shutil.copyfile(release/'facemath-0.23.0.zip', archive)
-    workflow = read(feature/'workflow.json')
+    workflow = read(feature/'final/workflow.json')
     assert workflow['code_sha256'] == code_fingerprint()
     write(root/'BILATERAL_COMPARISON.json', {'version': '0.23.0', 'code_sha256': code_fingerprint(),
         'tests': counts, 'milestones': milestones, 'workflow': workflow,

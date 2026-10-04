@@ -18,8 +18,7 @@ def profile(a=POINTS, b=POINTS, *, support=None, quantiles=(0., 0.), calibration
     support = np.ones((2, 8), bool) if support is None else support
     evaluators = tuple(SourceRelations(EllipticSource(p, np.zeros((8, 2, 2)), support[s], quantiles[s] or 0., 64))
                        for s, p in enumerate((a, b)))
-    return measure_bilateral(np.stack((a, b)), support, evaluators, quantiles, calibration,
-                             configuration(), np.tile(np.eye(3), (2, 1, 1)))
+    return measure_bilateral(np.stack((a, b)), support, evaluators, quantiles, calibration, configuration())
 
 
 def test_exact_components_and_direction_reversal_not_hidden_by_equal_magnitude():
@@ -33,8 +32,8 @@ def test_exact_components_and_direction_reversal_not_hidden_by_equal_magnitude()
     assert nose['observed_delta_b_minus_a'] == [-.5, 0]
     assert nose['observed_configuration_change'] == .5
     assert nose['observed_status'] == 'outside_tolerance'
-    np.testing.assert_allclose(data['rows'][2]['display_segments'][1], [[2, 4], [4, 5]])
-    np.testing.assert_allclose(nose['display_segments'][1], [[0, 2], [-1, 2]])
+    np.testing.assert_allclose(data['rows'][2]['source_segments'][1], [[2, 4], [4, 5]])
+    np.testing.assert_allclose(nose['source_segments'][1], [[0, 2], [-1, 2]])
     for row in data['rows']:
         for component, bounds in zip(row['observed_delta_b_minus_a'], row['reference_delta_b_minus_a']):
             assert bounds[0] <= component <= bounds[1]
@@ -75,10 +74,13 @@ def test_missing_point_keeps_five_rows_and_only_withholds_affected_feature():
     assert data['observed_counts']['unavailable'] == 1
     assert data['reference_counts']['unavailable'] == 1
     assert data['rows'][2]['observed_b'] is None
-    assert data['rows'][2]['display_segments'][1] is None
+    assert data['rows'][2]['source_segments'][1] is None
     assert data['rows'][2]['source_intervals'][1]['reason'] == 'unobserved_dependency'
     np.testing.assert_array_equal(pair.nominal[1, 2], [0, 0])
-    assert 'B: measurement unavailable' in render_bilateral(data)
+    view = pair_readout({'recipe_sha256': 'a'*64, 'intrinsic_profile': {'bilateral_comparison': data},
+        'bilateral_display': {'segments': pair.source_segments.tolist(), 'axes': pair.source_axes.tolist()},
+        'configuration': {'canvas_size': 256}})
+    assert 'B: measurement unavailable' in render_bilateral(view['bilateral_comparison'])
 
 
 def test_per_source_radius_and_uncalibrated_observations_are_separate():
@@ -96,7 +98,7 @@ def test_shared_translation_error_cancels_without_independent_landmark_noise():
     graph = SourceRelations(EllipticSource(POINTS, np.tile(np.eye(2)*.16, (8, 1, 1)),
                                           np.ones(8, bool), 2., 128, translations @ translations.T))
     pair = measure_bilateral(np.stack((POINTS, POINTS)), np.ones((2, 8), bool), (graph, graph),
-                             (2., 2.), 'a'*64, configuration(), np.tile(np.eye(3), (2, 1, 1)))
+                             (2., 2.), 'a'*64, configuration())
     assert np.max(pair.source_upper - pair.source_lower) < 1e-6
     assert np.all(pair.source_lower <= pair.nominal) and np.all(pair.nominal <= pair.source_upper)
 
@@ -104,7 +106,7 @@ def test_shared_translation_error_cancels_without_independent_landmark_noise():
 def test_collapsed_eye_denominator_withholds_bound_not_observed_value():
     graph = SourceRelations(source(q=1000))
     pair = measure_bilateral(np.stack((POINTS, POINTS)), np.ones((2, 8), bool), (graph, graph),
-                             (1000., 1000.), 'a'*64, configuration(), np.tile(np.eye(3), (2, 1, 1)))
+                             (1000., 1000.), 'a'*64, configuration())
     assert not pair.source_available.any() and pair.nominal_valid.all()
     assert set(pair.source_reasons[0]) == {'denominator_may_vanish'}
 
@@ -135,7 +137,7 @@ def test_instrument_path_bundle_arrays_and_display_coordinates(tmp_path):
     for s, (observation, transform) in enumerate(((oa, calibrated.state.source_to_canonical_a),
                                                  (ob, calibrated.state.source_to_canonical_b))):
         expected = apply_points(mapped_prediction(observation)[0], transform)[[3, 2, 6, 4, 7]]
-        np.testing.assert_allclose(pair.display_segments[s, :, 1], expected, atol=1e-12)
+        np.testing.assert_allclose(calibrated.bilateral_display()['bilateral_display_segments'][s, :, 1], expected, atol=1e-12)
     bundle = write_bundle(calibrated, tmp_path/'pair', a, b)
     assert verify_bundle(bundle)['verified']
     arrays = np.load(bundle/'arrays.npz')
