@@ -1,0 +1,26 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FACEMATH · Source selection</title><style>:root{--bg:#10141a;--panel:#192029;--ink:#e7eef4;--muted:#a2b1c1;--line:#354252;--accent:#71ddd6;--scroll-thumb:#a2b1c1;--scroll-track:#192029;--scroll-hover:#e7eef4;--scroll-active:#71ddd6;scrollbar-color:var(--scroll-thumb) var(--scroll-track);scrollbar-width:auto}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,sans-serif}
+main{max-width:1200px;margin:auto;padding:24px}a{color:var(--accent)}p,figcaption{color:var(--muted)}code{overflow-wrap:anywhere}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}figure{margin:0;background:var(--panel);padding:12px}
+img,svg{display:block;width:100%;max-height:600px;object-fit:contain}:focus-visible{outline:2px solid var(--accent)}
+@media(max-width:760px){.pair{grid-template-columns:1fr}main{padding:14px}}</style><main>
+<h1>Source selection</h1><p><a href="result/report.html">Open complete comparison</a> · <a href="request.json">Input records</a></p>
+<p>Analysis coordinates belong to the selected raster. Original uploaded bytes remain in input_a.image and input_b.image. Previews use stored orientation, not EXIF display rotation. Selecting a crop does not establish anatomical accuracy.</p>
+<section><h2>A · two-faces.png</h2>
+<p>Original 1366 × 640 pixels. Selected columns [20, 673) and rows [20, 620): 653 × 600 pixels.</p>
+<div class="pair"><figure><svg role="img" aria-label="Original A with selected crop" viewBox="-.5 -.5 1366 640">
+<image href="preview_a.png" x="-.5" y="-.5" width="1366" height="640"/>
+<rect x="19.5" y="19.5" width="653" height="600" fill="none" stroke="#ffca80" stroke-width="3" vector-effect="non-scaling-stroke"/></svg>
+<figcaption>Original stored orientation · amber outline is the selected region.</figcaption></figure>
+<figure><img src="analysis_a.png" alt="Selected analysis image A"><figcaption>Actual analysis input · no resampling.</figcaption></figure></div>
+<p>To recover original pixel centers, add (20, 20) to the selected-raster coordinates.</p>
+<p>Original bytes: <code>b62dbcbbdc12b34ee22a4a63e0c5d93fdf3007ce61486fad777ba7e56c14c189</code><br>Analysis RGB array: <code>05c35b9c164c5494d1f71e323d74d6069cd653483d482d2af0e2f13f331c78ec</code></p></section><section><h2>B · single.png</h2>
+<p>Original 653 × 600 pixels. Selected columns [0, 653) and rows [0, 600): 653 × 600 pixels.</p>
+<div class="pair"><figure><svg role="img" aria-label="Original B with selected crop" viewBox="-.5 -.5 653 600">
+<image href="preview_b.png" x="-.5" y="-.5" width="653" height="600"/>
+<rect x="-0.5" y="-0.5" width="653" height="600" fill="none" stroke="#ffca80" stroke-width="3" vector-effect="non-scaling-stroke"/></svg>
+<figcaption>Original stored orientation · amber outline is the selected region.</figcaption></figure>
+<figure><img src="preview_b.png" alt="Selected analysis image B"><figcaption>Actual analysis input · no resampling.</figcaption></figure></div>
+<p>To recover original pixel centers, add (0, 0) to the selected-raster coordinates.</p>
+<p>Original bytes: <code>aa7aedf6967788ab545a5e652d6ce8e14cf36e779d454d9d6fe67d6240df37d0</code><br>Analysis RGB array: <code>05c35b9c164c5494d1f71e323d74d6069cd653483d482d2af0e2f13f331c78ec</code></p></section></main></html>

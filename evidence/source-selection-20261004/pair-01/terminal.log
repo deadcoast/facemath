@@ -1,0 +1,50 @@
+FACEMATH * EVIDENCE
+|
++-- Empirical acceptance: not_requested
++-- Bilateral configuration (horizontal, vertical; own eye spans)
+|   Outer eye corners: A=(-0.01424, +0.00097997) B=(-0.019175, +0.0022671); delta=(-0.0049348, +0.0012871); change=0.0050999
+|   Inner eye corners: A=(+0.01424, -0.00097997) B=(+0.019175, -0.0022671); delta=(+0.0049348, -0.0012871); change=0.0050999
+|   Mouth corners: A=(-0.057328, +0.017228) B=(-0.04276, -0.02062); delta=(+0.014567, -0.037847); change=0.040554
+|   Nose midline offset: A=(+0.049102, +0) B=(+0.099317, +0); delta=(+0.050216, +0); change=0.050216
+|   Chin midline offset: A=(-0.029326, +0) B=(-0.018477, +0); delta=(+0.010849, +0); change=0.010849
++-- Image-edge displacement (B minus A along shared normals; eye spans)
+|   left_eye [A rays]: signed=+0.0095238; RMS=0.028944; p90=0.037778; paired=7/32; unresolved=25
+|   right_eye [A rays]: signed=-0.0088889; RMS=0.033272; p90=0.047778; paired=15/32; unresolved=17
+|   mouth [A rays]: signed=+0.032222; RMS=0.033054; p90=0.04; paired=5/32; unresolved=27
+|   jaw [A rays]: signed=+0.025694; RMS=0.029067; p90=0.044444; paired=8/32; unresolved=24
+|   left_eye [B rays]: signed=+0.023457; RMS=0.031318; p90=0.044444; paired=9/32; unresolved=23
+|   right_eye [B rays]: signed=+0.007265; RMS=0.034073; p90=0.05; paired=13/32; unresolved=19
+|   mouth [B rays]: signed=+0.02619; RMS=0.044987; p90=0.063333; paired=7/32; unresolved=25
+|   jaw [B rays]: signed=+0.0097222; RMS=0.028328; p90=0.036667; paired=8/32; unresolved=24
+|   Image-gradient evidence; missing rays are unresolved, not anatomical agreement.
++-- Regional movement and deformation (observed geometry)
+|   left_eye: shift=(+0.051406, -0.031505); centered RMS=0.012001; area ratio=0.96242; anisotropic stretch=0.33399; landmarks=6/6, pixels=329/329
+|   right_eye: shift=(-0.049927, -0.038991); centered RMS=0.014579; area ratio=0.98491; anisotropic stretch=0.47766; landmarks=6/6, pixels=294/306
+|   nose: shift=(+0.030047, +0.080844); centered RMS=0.0381; area ratio=1.0666; anisotropic stretch=0.41133; landmarks=10/10, pixels=1686/1690
+|   mouth: shift=(+0.028617, +0.02589); centered RMS=0.054514; area ratio=0.62889; anisotropic stretch=1.2834; landmarks=12/12, pixels=1610/1680
+|   jaw: shift=(-0.023611, -0.020182); centered RMS=0.085773; area ratio=1.0033; anisotropic stretch=0.45329; landmarks=21/21, pixels=18740/19144
+|   central: shift=(+0.019198, +0.020475); centered RMS=0.069383; area ratio=0.87191; anisotropic stretch=0.88088; landmarks=34/34, pixels=3919/4005
+|   all: shift=(+0.010589, +0.01004); centered RMS=0.074379; area ratio=1.0136; anisotropic stretch=0.43859; landmarks=478/478, pixels=32131/32828
++-- Facial structure (B minus A; own eye spans unless marked contrast)
+|   Viewer-left eye width: A=0.44846 B=0.48267 delta=+0.034215; reference delta [-1.0562, +1.1309] (unresolved_at_tolerance)
+|   Viewer-right eye width: A=0.41994 B=0.44409 delta=+0.024158; reference delta [-1.0123, +1.0659] (unresolved_at_tolerance)
+|   Inner-eye gap: A=0.56848 B=0.5427 delta=-0.025774; reference delta [-1.44, +1.3831] (unresolved_at_tolerance)
+|   Mouth width: A=0.87833 B=0.88634 delta=+0.0080173; reference delta [-2.1282, +2.1491] (unresolved_at_tolerance)
+|   Eye line to nose height: A=0.53369 B=0.77153 delta=+0.23784; reference delta [-3.199, +4.2239] (unresolved_at_tolerance)
+|   Eye line to mouth height: A=0.91104 B=1.0935 delta=+0.18245; reference delta [-2.5588, +3.1146] (unresolved_at_tolerance)
+|   Eye line to chin height: A=1.6119 B=1.8739 delta=+0.26203; reference delta [-6.0471, +6.7972] (unresolved_at_tolerance)
+|   Nose to mouth height: A=0.37735 B=0.32197 delta=-0.055389; reference delta [-4.0533, +3.8147] (unresolved_at_tolerance)
+|   Mouth to chin height: A=0.70082 B=0.78039 delta=+0.079578; reference delta [-5.2293, +5.5722] (unresolved_at_tolerance)
+|   Nose lateral offset: A=0.049102 B=0.099317 delta=+0.050216; reference delta [-2.7335, +2.9502] (unresolved_at_tolerance)
+|   Mouth lateral offset: A=-0.028664 B=-0.02138 delta=+0.0072837; reference delta [-1.3363, +1.368] (unresolved_at_tolerance)
+|   Chin lateral offset: A=-0.029326 B=-0.018477 delta=+0.010849; reference delta [-5.8999, +5.947] (unresolved_at_tolerance)
+|   Right minus left mouth height: A=0.017228 B=-0.02062 delta=-0.037847; reference delta [-1.4729, +1.3098] (unresolved_at_tolerance)
+|   Eye-width asymmetry: A=0.032845 B=0.041627 delta=+0.0087825 contrast; reference delta [-1.6307, +1.6627] (unresolved_at_tolerance)
++-- Observed shape RMS: 0.1130207 eye spans
++-- Reference-shape bounds: [0, 2.374935]
+|   distance               0.00–100.00% within tolerance; 28 unresolved
+|   angle                  0.00–100.00% within tolerance; 168 unresolved
+|   signed_double_area     0.00–100.00% within tolerance; 56 unresolved
+|   asymmetry              0.00–100.00% within tolerance; 4 unresolved
+|   Fractions are dependent relation counts, not resemblance probabilities.
+\-- Report: C:\Users\ryanf\github\_active\facemath\runs\source-selection-20261004\pair-01\calibrated\report.html

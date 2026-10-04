@@ -23,3 +23,6 @@ PAC-021,PACE,A7.P1.01,Implement bilateral features,DONE,,"Compute bilateral comp
 PAC-022,AREA,A8,Regional inspection,DONE,,,,,,,,,,
 PAC-023,PHASE,A8.P1,Expose regional geometry,DONE,integrated,,,,OGM-010,,,Measured maps and values are usable in the browser and portable reports.,,
 PAC-024,PACE,A8.P1.01,Implement regional inspector,DONE,,"Expose regional movement and deformation maps with exact coordinates, support and fixed display scales.",OVR-026;OVR-028;OVR-015;OVR-016;OVR-018;OVR-032;OVR-034,facemath/observation/regional_view.py,OGM-010,,"""..\runs\enrollment-registry-20261003\env311\Scripts\python.exe"" -m pytest -q ../tests/test_regional_inspection.py --basetemp=.pacer/run/inspection24",,verify,
+PAC-025,AREA,A9,Source image selection,DONE,,,,,,,,,,
+PAC-026,PHASE,A9.P1,Select a face without an external editor,DONE,integrated,,,,OGM-011,,,The application selects exact pixel crops and exposes their provenance.,,
+PAC-027,PACE,A9.P1.01,Implement explicit source crops,DONE,,"Add stored-orientation previews, pointer and numeric crop selection, retained original bytes and downloadable crop provenance.",OVR-031;OVR-032;OVR-035,facemath/workspace_input.py,OGM-011,,"""..\runs\enrollment-registry-20261003\env311\Scripts\python.exe"" -m pytest -q ../tests/test_source_selection.py --basetemp=.pacer/run/source25",,integrate,

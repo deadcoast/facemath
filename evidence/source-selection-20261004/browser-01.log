@@ -1,0 +1,9 @@
+Retained full-image failure: f67872652e0d46b9ba6bf6e751d8b6ec
+Traceback (most recent call last):
+  File "C:\Users\ryanf\github\_active\facemath\scripts\browser_qa_source_selection.py", line 84, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\ryanf\github\_active\facemath\scripts\browser_qa_source_selection.py", line 55, in main
+    assert page.locator('#results').is_visible(),page.locator('#message').inner_text()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Reading and saving the selected images�

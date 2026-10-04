@@ -1,0 +1,262 @@
+{
+  "version": "0.25.0",
+  "code_sha256": "2212cef01da40c82be6162b975fe53413e090a5d4db1f11e3f5ef46731fb7954",
+  "tests": {
+    "source": {
+      "tests": 1296,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1295,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ],
+      "live_provider_passed": true
+    },
+    "wheel": {
+      "tests": 1296,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1295,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ],
+      "live_provider_passed": true
+    },
+    "archive": {
+      "tests": 1296,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1295,
+      "skip_reasons": [
+        "platform cannot create a directory symlink"
+      ],
+      "live_provider_passed": true
+    }
+  },
+  "milestones": {
+    "source": {
+      "raw_arrays_unchanged": true,
+      "raw_arrays_checked": 358,
+      "array_count": 425,
+      "known_reference_shape_rms": 0.08333333333333319,
+      "shape_bounds": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.08333333333333345,
+        "reference_set_center_rms": 0.08333333333333345,
+        "lower": 0.07081151304994406,
+        "upper": 0.09006813168888718,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.049086128476031644,
+        "quotient_lipschitz_lower": 0.07081151304997248,
+        "quotient_lipschitz_upper": 0.09585515361669443,
+        "candidate_rotation_upper": 0.09006813168885876,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "known_reference_shape_enclosed": true,
+      "verified": true,
+      "qualification_snapshot_replayed": true
+    },
+    "wheel": {
+      "raw_arrays_unchanged": true,
+      "raw_arrays_checked": 358,
+      "array_count": 425,
+      "known_reference_shape_rms": 0.08333333333333319,
+      "shape_bounds": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.08333333333333345,
+        "reference_set_center_rms": 0.08333333333333345,
+        "lower": 0.07081151304994406,
+        "upper": 0.09006813168888718,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.049086128476031644,
+        "quotient_lipschitz_lower": 0.07081151304997248,
+        "quotient_lipschitz_upper": 0.09585515361669443,
+        "candidate_rotation_upper": 0.09006813168885876,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "known_reference_shape_enclosed": true,
+      "verified": true,
+      "qualification_snapshot_replayed": true
+    },
+    "archive": {
+      "raw_arrays_unchanged": true,
+      "raw_arrays_checked": 358,
+      "array_count": 425,
+      "known_reference_shape_rms": 0.08333333333333319,
+      "shape_bounds": {
+        "metric": "intrinsic.eye_normalized_proper_procrustes_rms",
+        "observed_rms": 0.08333333333333345,
+        "reference_set_center_rms": 0.08333333333333345,
+        "lower": 0.07081151304994406,
+        "upper": 0.09006813168888718,
+        "available": true,
+        "reason": "bounded",
+        "distance_matrix_lower": 0.049086128476031644,
+        "quotient_lipschitz_lower": 0.07081151304997248,
+        "quotient_lipschitz_upper": 0.09585515361669443,
+        "candidate_rotation_upper": 0.09006813168885876,
+        "meaning": "outer range of optimally proper-rotation-refitted RMS over admissible reference shapes, with their own uncertain eye spans",
+        "not": "not fixed observed-gauge displacement, not exact extrema, not a resemblance percentage",
+        "arrays": [
+          "intrinsic_shape_deviation_radii",
+          "intrinsic_shape_candidate_rotation"
+        ]
+      },
+      "known_reference_shape_enclosed": true,
+      "verified": true,
+      "qualification_snapshot_replayed": true
+    }
+  },
+  "workflow": {
+    "version": "0.25.0",
+    "code_sha256": "2212cef01da40c82be6162b975fe53413e090a5d4db1f11e3f5ef46731fb7954",
+    "crop_browser": {
+      "passed": true,
+      "browser": "154.0.4258.53",
+      "controls": [
+        {
+          "viewport_width": 1440,
+          "device_scale_factor": 1,
+          "pointer_bounds": {
+            "left": 7,
+            "top": 11,
+            "width": 32,
+            "height": 24
+          },
+          "numeric_edit": true,
+          "invalid_crop": true,
+          "reset": true,
+          "exif_stored_orientation": true
+        },
+        {
+          "viewport_width": 390,
+          "device_scale_factor": 2,
+          "pointer_bounds": {
+            "left": 7,
+            "top": 11,
+            "width": 32,
+            "height": 24
+          },
+          "numeric_edit": true,
+          "invalid_crop": true,
+          "reset": true,
+          "exif_stored_orientation": true
+        }
+      ],
+      "full_image_multiple_faces_run": "85d36a7627454a038e2d00d32b68e65d",
+      "cropped_native_run": "dc1e4780c4e24902ac8f00a6eba019c4",
+      "crop": [
+        20,
+        20,
+        673,
+        620
+      ],
+      "analysis_pixel_identity": true,
+      "registered_rms": 2.806168418132599e-16,
+      "download": true,
+      "reload": true,
+      "source_selection_page": true,
+      "page_errors": [],
+      "scope": "Native workflow on explicitly composited copies of one portrait; not independent reference validation"
+    },
+    "whole_image_browser": {
+      "passed": true,
+      "run_id": "a460433f57e04367861361bed2def3d5",
+      "browser": "154.0.4258.53",
+      "source": "real browser uploads into native analyze",
+      "structure_rows": 14,
+      "edge_rows": 8,
+      "numeric_cells_compared": 42,
+      "reload": true,
+      "download": true,
+      "bilateral_rows": 5,
+      "bilateral_numeric_components_compared": 30,
+      "bilateral_keyboard_disclosures": 5,
+      "bilateral_marker_pairs_compared": 10,
+      "regional_keyboard_disclosures": 7,
+      "regional_maps": 21,
+      "regional_landmark_coordinates_compared": 567,
+      "regional_triangle_rows_compared": 2140,
+      "keyboard_blend": true,
+      "narrow_keyboard_scroll": true,
+      "page_errors": [],
+      "invalid_upload": true,
+      "no_face_run": "91553092a81e40e09b14b7bfaa25fd5c",
+      "cancelled_run": "0bfba87099e4403484a33afd711a4ee4",
+      "success_reopened_after_failure": true
+    },
+    "portable_download": {
+      "passed": true,
+      "browser": "154.0.4258.53",
+      "download_sha256": "b7515ea438d36a0f7e13678f5dd904c6b0c02f51024994f636092a6844768eaf",
+      "manifest_files_checked": 35,
+      "input_hashes_checked": 4,
+      "selection_images_loaded": 4,
+      "comparison_link_followed": true,
+      "keyboard_region_disclosures": 7,
+      "map_images_loaded": 21,
+      "page_errors": []
+    },
+    "native_pair_audit": {
+      "raw_arrays_checked": 365,
+      "raw_arrays_unchanged": true,
+      "regional_inspection_identical_with_calibration_and_replay": true,
+      "map_images_identical": 21,
+      "fit_performed": false,
+      "new_cohort": false,
+      "scope": "Retained native observations; no new independent anatomical validation"
+    },
+    "parent_baseline": {
+      "parent_archive": "packages/facemath-0.24.0-regional-inspection-20261004.zip",
+      "sha256": "546d173fd161c123204c1e0a8d6b691f3ee39afbb6c5995196fa2b2bb0b2ca87",
+      "baseline": "Reused the preceding completed actual 0.24 extracted-package execution; not a new test execution.",
+      "source_run": "runs/regional-inspection-20261004/release-01",
+      "passed": 1274,
+      "skipped": 1,
+      "skip_reason": "platform cannot create a directory symlink"
+    },
+    "inherited_arrays_unchanged": 392,
+    "development_failure": {
+      "path": "browser-01.log",
+      "cause": "Retry retained the previous failed status marker while preparing the upload; browser wait returned before the new run.",
+      "repair": "UI clears terminal state during preparation/loading; QA also waits for a distinct new run ID.",
+      "prefinal_runs": [
+        "f67872652e0d46b9ba6bf6e751d8b6ec",
+        "bb8a4a21644948919ba2f3fad915a6af"
+      ],
+      "prefinal_result": "First native cropped analysis completed, but the browser assertion failed before observing it. Distinct final-code runs are retained."
+    },
+    "scope": "Exact input preparation and native workflow on an explicitly duplicated portrait control; no new cohort, fit or independent anatomical validation"
+  },
+  "installed_bytes": {
+    "verified": true,
+    "python_files": 96,
+    "import": {
+      "file": "C:\\Users\\ryanf\\AppData\\Local\\Temp\\facemath-installed-vngvjp0l\\installed\\facemath\\__init__.py",
+      "version": "0.25.0",
+      "code_sha256": "2212cef01da40c82be6162b975fe53413e090a5d4db1f11e3f5ef46731fb7954"
+    },
+    "scope": "installed wheel Python bytes; same interpreter dependencies, not a new dependency stack"
+  },
+  "archive": {
+    "path": "packages/facemath-0.25.0-source-selection-20261004.zip",
+    "sha256": "8419344b784f37f7fac60c70443c5d38b27da750e91932bd7fd01d010d90f45a",
+    "files": 6200
+  },
+  "evidence": "evidence/source-selection-release-20261004"
+}

@@ -1,0 +1,1266 @@
+{
+  "cases": [
+    "case_00000",
+    "case_00001"
+  ],
+  "selection": "first two frozen evaluation entries, no outcome replacement",
+  "raw_arrays_unchanged": true,
+  "raw_arrays_checked": 365,
+  "raw_array_sha256": {
+    "observation_a_xy": "dc6fb589b91afdf119ad38ca0b7f226a12f75b1286d9e4f0b3f9e237425ceb83",
+    "observation_b_xy": "2f3be2ab2c02cbc4d91c3c270d6cac61a1700d78a4b2b2aed895125082a75efd",
+    "landmark_supported": "db4a641a233232847e538bb0e910c0a9d89a7f16cf2b3d54c04285b68bf12f70",
+    "sensitivity_region_supported": "6d2924ef2583c5d66b0013a9d63b072d94409471a2abdbc7b7cb59496b9587e6",
+    "observation_a_samples": "4c95ee8c969e5ea5b6850e5be1633fdba1ff02821efd779bb4842fb517fe8020",
+    "observation_b_samples": "7c2f8c3fe8fff5c98182f316f98c6b2e4b6103ab8786dd7fe4f9103e9de0ca6e",
+    "observation_a_covariance": "3cc5fc579d16c6134d440c04de24d12d853b0d38924376a42a81193fdad74a7d",
+    "observation_b_covariance": "529a17461aa790b055650f5d4fc1f20753569f8e46ce8000fc18aa700cd107a1",
+    "canonical_a_xy": "5fedbf3c60a8640e92f2e3cd60f29e1d98da2cef053c15815883caad593abc21",
+    "canonical_b_xy": "08ebea121b2cd9ecf10250e595334596d4d84ed37d1a2a500016a03ebfd906eb",
+    "source_to_canonical_a": "55e895e2e678355c63423101468ae5135575b42be5fb76946a26cd276a749fcb",
+    "source_to_canonical_b": "772fa239908578adf3ef5fd639719ae68f35fedd6bf527a2ed6251073fabc248",
+    "canonical_to_source_a": "083a94cdaec4d642660fca64db47243a69d1d22a8baf25ff00a93cc3378ac779",
+    "canonical_to_source_b": "8c0e414bd927706362cbddc523b1b73ad85f2d08935df240b6615865b3da611c",
+    "source_support_a": "3e3363cd45ceb03f50b181dbccb9cb5c16f892f0aa52e2e0acd72832764e0cff",
+    "source_support_b": "14a8e5cde4812bc6b28179226cd09559d3731fbf4a7c21140ebd93fd56886352",
+    "photometric_support": "b9900e38d3d72b7c486d256953da9815bb2a4bf4e5ca4d66f29a8fa2df43d845",
+    "registration_weights": "6594f50d05e428db0c0875d01bba87be0ab2264638f060056cfce2bafafcde4b",
+    "anatomical_uv": "ee3165cd44964ff78d62e4640a573211110c75944dfee168d3d1f7f53c21ffd7",
+    "triangle_indices": "6acdd79b4f0fb3420d2c81f271a12fdb8c198fa22ba8c25aef6d51f4379158f4",
+    "simplex_index": "56da7618943636bb4f2099a9bd72183060d034da1a1e16ddcdba230cbc74d351",
+    "triangle_jacobians": "05fbd941b1c90855d4e58a54d5f4d85eb80920a1a26a859e50f0f86301acdaa8",
+    "triangle_determinants": "e89bfa2fd86c839720bb169d153f61ed1438b997a1ca34b8a2ab2a5ec6c1314e",
+    "triangle_green_strain": "37dfdd9e41648c1b2b82a22cf6b90ed2efb818e6c3dc3487c884a1a82ff11609",
+    "triangle_principal_log_stretch": "887ef3dba6d846dc1084b0c29674bdcae8e8b428a3048b137a119e7e47d8b102",
+    "triangle_condition": "e3ab117fa7db3850b85cab4c2e5b3a550214c62c40c637cd8065995dd2352566",
+    "triangle_valid": "91102953fa2f4a9534d32567c20c3b79b4144a5cd51e7fe21b36243ccd4f686f",
+    "anatomical_support": "ad79144599f5b96c9be851abd623870b246e9545de8f350d0d0726420c4c45af",
+    "landmark_residual_vectors": "d74180b0fe83051b37bbef4d3bdcb428bc54b5f05a146c88a90be929c6838a63",
+    "relational_distortion": "57a089dee42d23b8d0f08e3eacb2fdff87917b0fbe743522415a4679834d48ec",
+    "heldout_residual_vectors": "42dd5a5cf64a85d88b204d606025fe549b8b5b1b4131da996a138876804424c2",
+    "sensitivity_draws": "1be23cd694e070f46ac1af5a02eb7a1d36ae5fc912c6ecbddaa7c240c095fb54",
+    "heldout_fit_supported": "e5478524c733eea3f7a32be981829be8b6841937b9310c4897e02d1e47b2111c",
+    "sensitivity_draw_supported": "6d1dfd2f8b2090b37923b5343de5b4f1802f1d5d298b4fa5e04b8fb0aa9c8089",
+    "regional_displacement_b_minus_a": "b4caf5c0d8a77c28b262a19d046fcb2eeb544a11767f3d8820f5ebdb9a37b825",
+    "regional_landmark_supported": "db4a641a233232847e538bb0e910c0a9d89a7f16cf2b3d54c04285b68bf12f70",
+    "regional_membership": "b4a590180a9b8c2dce8694f28762d366e58f43dc3b486e16b641c58ef2908145",
+    "regional_triangle_supported": "91102953fa2f4a9534d32567c20c3b79b4144a5cd51e7fe21b36243ccd4f686f",
+    "regional_triangle_rotation": "ab50991b913d36674bab41990f324c95827a44c9e3a1c87338f892a9a6be0ff0",
+    "regional_triangle_stretch": "7da4eb3d6003ad66a659c39af0d6628fcf9585594121c42df30f258a02c699f5",
+    "regional_triangle_log_stretch": "ea4fe4f76b7fb89a190070aa649aba706b06b61e1b3d10dde9431bd00f8d4669",
+    "regional_triangle_rotation_rad": "e48d37b2c8544870dfc2d04b7f6d3b7ec72d7235e9d259ac13eb002f578e1e3c",
+    "regional_triangle_log_area": "13e7a76daccc9e7119b28eb8c89aacfbbbed4c3bf02b5778ec11fe2efbcfb154",
+    "regional_triangle_deviatoric_log_stretch": "8976ab4b5cacd1a06f0b59af3a3f5470401a34d19dc68bbfa185e90a8e30f5d3",
+    "region_a_face": "46e3a36585b4dc403e7f5fb6f461d730e4bd6e1529423d1ad83eeb886ca13932",
+    "region_a_left_eye": "bef6ca6c9c354012fa5f8b1a3156727ead4a5337fd0312adce35cae13e15e0e9",
+    "region_a_right_eye": "7e8d350824ce75f18aebc2a4790e08a143500b6a3ed7f3cfbf8de1fc73a5c3c6",
+    "region_a_nose": "026ea8fbaebb1a383d2706fe38d1a70f3c7f0019e9eecce6b8f41c81f3b0d158",
+    "region_a_mouth": "04ba51ddb5e00ec895fddecdba8af563585e5300a88c5e3073f5f7bc126e1e8d",
+    "region_a_jaw": "7238d3688658924277b36eb35262e1b70eaf0a53874f1a03a21ecdf4c9f37c7d",
+    "region_a_central": "23801434aa51c70e95482a7eb67d927c6ce663eb73b914fcd1990526bbcadd67",
+    "region_b_face": "6993601aacbedca00805edaa80ea77f5e223e94b76ab02dcace90e864194d81b",
+    "region_b_left_eye": "b854cceee6c3a7627161cc51c0f1f7628feba44f56047097ba9bb430585d6ef0",
+    "region_b_right_eye": "a5d7bfaf1b32ddfa8a3305de0705c591ca4fbd9012844e6af16bf9e5c36b801a",
+    "region_b_nose": "5b2a1e5667349502c979920f4aa10ab7ab14a1110b3a952a7387adf3613541db",
+    "region_b_mouth": "de94931d1695984e84bc3cc9575d6ada30432a3083574dd288eab146feceb3f6",
+    "region_b_jaw": "9f5da27ace2e22908fbd55290417e8d39552be7d12c5625010fdb27492fd19a9",
+    "region_b_central": "8ab47422018cf730ec8b1d4070bff140d58cd82e5a79f91b3fb5b8441d7736ee",
+    "flow_uv": "958c5ff9f13e99b01db4179f71d910ec84200b8763fc3c27200b418cc8f7b79a",
+    "flow_cycle_error_px": "ee201b1c66e72a2d1bbbf9de86ee4e0490f2f3ac8d30b38dcf7313004cda9fe0",
+    "flow_texture_observability": "a6cd6036b25c9b347dfb966f10b475495f7e7cea8a9517c508e6f1525c92dee1",
+    "flow_photometric_residual": "0b8091063989cff22222cc32d5a643cea5ac5d3e4846c90ab71e1f6ff8ae6f67",
+    "flow_anatomical_disagreement_px": "309f8876a9bb0ec405c0e86ddc78a82e5cd06dfe28b9f6e5bac167493a249d99",
+    "flow_admissible": "3041a21ce01de6e5acf0d2984151baa43d5e2396711a4b704dce14f35dc623cb",
+    "flow_concordant": "d8325dfae0787b7ac227ec93621d13e1f3209e27c5c5c39dab0623e02a0a5201",
+    "edge_a_left_eye_points": "b33d1d5d0b24cdea7cc23622051d56f4e2e9752e21f1aa1372415e67918ecb93",
+    "edge_a_left_eye_normals": "8e5a6273c4faa4828c92a2e65c87ff1cde9ede08afae99941443ae7068add89a",
+    "edge_a_left_eye_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_a_left_eye_response": "d37e739876d352229e97b3bacc840ec6e0a35e51177e5baec3b23293a14ce4b4",
+    "edge_a_left_eye_orientation": "e7470dbefa09a439e129f0e69750b01092fee401530dc913327db33492427a2e",
+    "edge_a_left_eye_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_a_left_eye_accepted": "ca978b97c92ae817ffa8061319ed0719f3bb59896b3c9444e3faa5b2ccb80b3f",
+    "edge_a_left_eye_best_offset_px": "f7e63013e534a74530bfa28d5474f782b263cc4de99176f989c728dc32cce3ac",
+    "edge_a_left_eye_peak_strength": "35595cad9cf290232c4b5e575415878456fe511c2e3c8e5379af45603287e861",
+    "edge_a_left_eye_ambiguity_ratio": "703ceb3ff4d4a32d2179cef52292b2a163a0402387545644da0033e21767551f",
+    "edge_a_right_eye_points": "ea663b31e29c42d5b3499f7eb69f9cb9a3a9f069d00376fc430d0ea4385faebc",
+    "edge_a_right_eye_normals": "2346dbe4c0d39762ad86b98e013f83ffc6d689eaea7a76a60852eaf3f16eddaa",
+    "edge_a_right_eye_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_a_right_eye_response": "a52dca9aa6ef1726fc5d5d6739117b920f4b8e1031ebdc127d03117e8c8d01e5",
+    "edge_a_right_eye_orientation": "67209af261136269c86ebf7f91dfe08723834e1a2ec80f4515c67465fb75e193",
+    "edge_a_right_eye_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_a_right_eye_accepted": "a473b87226cd5140e1c3af2fb1949c115fd060014590b35396954366bc966991",
+    "edge_a_right_eye_best_offset_px": "b0d88adb5d21cf6ac543ece5ece613446008f938f4a61c28170f90656920efd7",
+    "edge_a_right_eye_peak_strength": "4cfcc9a54132ec81bf6474197f703e49890685fcb9a43bc3b6fe983b72f14239",
+    "edge_a_right_eye_ambiguity_ratio": "7882b7212d4bb2e476fbdc840f8301baee3eb8db215874cb8e42fc95292500b7",
+    "edge_a_mouth_points": "87034a9cc78e85ed78339665b10306c1a5d8f3f1fc5f0a366956c6c4599ecc02",
+    "edge_a_mouth_normals": "6bf838bd86745dba8479c86af66f3351ad5244d7656b8d44deb6a66199d94daf",
+    "edge_a_mouth_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_a_mouth_response": "94a0f0cecd0837c2720a72f04fd56c3322f676b10e7141f78184920a36511ecc",
+    "edge_a_mouth_orientation": "16b5508caddc33279fd781363b1982ddb6af5b2b787e1b167136d00fc59a8018",
+    "edge_a_mouth_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_a_mouth_accepted": "8e72e63a41266da884b19ee7bb71f4c8347c1d9960efe21b2f8f711680052ab1",
+    "edge_a_mouth_best_offset_px": "e13f5f256400c855d4aff1314be339e4c1ee116ba6b8297590cfab77282629cd",
+    "edge_a_mouth_peak_strength": "700c0d6f170d527e42536b63a4687d4369a5659d9ff6c32dde340cc81d1f43fb",
+    "edge_a_mouth_ambiguity_ratio": "aceeafe7210fc28f6eb0b343f72196302167a200cb290fdc7c8d896bdf8d0ba9",
+    "edge_a_jaw_points": "f956cbcd2816a1d7160000aadc10f1a5c343fb9f9e9cdfcbab67d6a21824a9a6",
+    "edge_a_jaw_normals": "58371f9344aa759cc71d56f7d850850e2a4d5c5556e4326791a188f6e1df1a8c",
+    "edge_a_jaw_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_a_jaw_response": "ab27636f3d0f2c82ddeeee3c0f6b6ed06cf410c1fd018396185b515f52d79c76",
+    "edge_a_jaw_orientation": "84e9fc05c05b187027c6496af36da006ed40975e2e035c5c2d5ff01dd827f93e",
+    "edge_a_jaw_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_a_jaw_accepted": "77e6084405c1c0c5d94c3b9c659603eebc64d1afdda4459a41eb72b0b0e80d28",
+    "edge_a_jaw_best_offset_px": "0dc79fec9a0d33f701dfb4ca7a6873e216093b10dc4bd2dd2fb21f228c51d88c",
+    "edge_a_jaw_peak_strength": "c15b7df972dec3fb20d2adc78853b92f76fd49e8f2e154db266d2e385c45cedd",
+    "edge_a_jaw_ambiguity_ratio": "35f6dd081d08fa52f32942cfc3bfbd64e86a8f41bb8f6f3cdc5f1f58db1dbf9a",
+    "edge_b_left_eye_points": "c647b32c779672b177357aa6e16e824b8cc9d409878e10a92bd5b72254d0b6b9",
+    "edge_b_left_eye_normals": "2dba3af9df33d3048b111db73ebac715331430c6446ccd76de1156788cd25552",
+    "edge_b_left_eye_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_b_left_eye_response": "1f6b7bce3d6bc5b8beaf3a14445dd5414dae5833acaa7a0745099d94a8bf046f",
+    "edge_b_left_eye_orientation": "af53dafca7432b405d65065a82e5a238f68def8deb961dd84eecde18578b5fe0",
+    "edge_b_left_eye_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_b_left_eye_accepted": "3233fe9c6a25f2785c0a0b711b37c73cbedf13c6bb1eb37588b61fd3dae96340",
+    "edge_b_left_eye_best_offset_px": "a18e269aaa1bfc166f1dffcea84f0b2a21919fccdfe2e481fa8e4193fc6125ea",
+    "edge_b_left_eye_peak_strength": "21119491cd505c779d44b08f64747a9430ee1935d499f181298a2daee713327f",
+    "edge_b_left_eye_ambiguity_ratio": "1d4b55b614f49ea3471d1767ebce9b6764155288f92f7e7e88da4223322d0d26",
+    "edge_b_right_eye_points": "86be45a3dafc6f9e75e2c5fbe4bd4446f155d83cfb39771d59219715a52c95ec",
+    "edge_b_right_eye_normals": "5c7cee50dcb4afbc0a10c10763999a7db79c597c66bd371f3a1811e5f120d755",
+    "edge_b_right_eye_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_b_right_eye_response": "1cd35b6d382d5b79184656dab34bfe9ae320c1fd0d4c4d7107346984d50a1bdd",
+    "edge_b_right_eye_orientation": "0f6b3c9e8d5bfd6ec3d19f2f7263b5750accc2874bfabac725cbc092bfc10cc9",
+    "edge_b_right_eye_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_b_right_eye_accepted": "22781360820b2b2dbbbf4f7d2761a0e4d55e3d76b9dc33a59d21e665fc9c7d25",
+    "edge_b_right_eye_best_offset_px": "d861292d08aa3254eb222c5d8eda53c3149e8953c2d874d17a34018c94eab7f6",
+    "edge_b_right_eye_peak_strength": "728ad956ada7194f1b112f351f202c0eb01a104196e6f13b8fcb805760a4a3ff",
+    "edge_b_right_eye_ambiguity_ratio": "bf6be105508680b3802fd2c5b184cbbfe04deadd03bff605ce2a6a91c92e4ec8",
+    "edge_b_mouth_points": "f6f214ffaec9f686b4fa7ad399b2b96f8b3d5eed2b3d1f3a2cd3d9a63183e489",
+    "edge_b_mouth_normals": "c929770d471430d8ab77191a0a573b2a78623710c9ecb7a2729e33bf2f441ef7",
+    "edge_b_mouth_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_b_mouth_response": "d8a9eb0be22a3df1a32aa69ec59efc29f93f98cca82af68598e89d626ce67fbb",
+    "edge_b_mouth_orientation": "8c358ac23e0e09a81396a4fb5439014f04d307a8229b233b09e97089b034e0aa",
+    "edge_b_mouth_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_b_mouth_accepted": "fbdbca9cdc483460c2d33c685f2d39fbe374c1a90b2538810f15b431816b3efd",
+    "edge_b_mouth_best_offset_px": "27bbd810f56709c3e82877e6402e882b90a097a721a62432fa39ab9b047f9479",
+    "edge_b_mouth_peak_strength": "b6ada9692f8037b7f2e1890f9f40e5a6ea92a578f15b8824fa964d1b78e587fb",
+    "edge_b_mouth_ambiguity_ratio": "588a547b959c520effdd35f7e8b041bdf95171539dec9412df07f65ca2c8f381",
+    "edge_b_jaw_points": "ff371c02e60b6b71ac5e6dc724906b3cadff39328548aab6d3307e4be2640e81",
+    "edge_b_jaw_normals": "798897a8947aff8fc861a32ec2da4b73bfdd10ea59d46d138a4a962d01ae9346",
+    "edge_b_jaw_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_b_jaw_response": "6b862bff4f0f215629432707cba8242e48a75c82826bd311a75816f6b1586578",
+    "edge_b_jaw_orientation": "6ca808e6e5b42b59a7541c92c36b861191e21704ba803297208b2f5645eba017",
+    "edge_b_jaw_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_b_jaw_accepted": "5714964dd720fa9cf96894725ca789dcb08373bae019a27e12c7d9aad05db2eb",
+    "edge_b_jaw_best_offset_px": "70b7003a6204d38f741c838df21dffe5b22b0063788f4f078ee5848cd6a6982c",
+    "edge_b_jaw_peak_strength": "6c8d170ac9e8f390fb0b1681d7411077e5451487a0a6ba541717fd963f14206c",
+    "edge_b_jaw_ambiguity_ratio": "add94bb772d68d4eb6343caf46860f6412ea7a695d2b518f48dec63b56c566ca",
+    "edge_pair_a_left_eye_a_points": "b33d1d5d0b24cdea7cc23622051d56f4e2e9752e21f1aa1372415e67918ecb93",
+    "edge_pair_a_left_eye_a_normals": "8e5a6273c4faa4828c92a2e65c87ff1cde9ede08afae99941443ae7068add89a",
+    "edge_pair_a_left_eye_a_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_pair_a_left_eye_a_response": "d37e739876d352229e97b3bacc840ec6e0a35e51177e5baec3b23293a14ce4b4",
+    "edge_pair_a_left_eye_a_orientation": "e7470dbefa09a439e129f0e69750b01092fee401530dc913327db33492427a2e",
+    "edge_pair_a_left_eye_a_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_pair_a_left_eye_a_accepted": "ca978b97c92ae817ffa8061319ed0719f3bb59896b3c9444e3faa5b2ccb80b3f",
+    "edge_pair_a_left_eye_a_best_offset_px": "f7e63013e534a74530bfa28d5474f782b263cc4de99176f989c728dc32cce3ac",
+    "edge_pair_a_left_eye_a_peak_strength": "35595cad9cf290232c4b5e575415878456fe511c2e3c8e5379af45603287e861",
+    "edge_pair_a_left_eye_a_ambiguity_ratio": "703ceb3ff4d4a32d2179cef52292b2a163a0402387545644da0033e21767551f",
+    "edge_pair_a_left_eye_b_points": "b33d1d5d0b24cdea7cc23622051d56f4e2e9752e21f1aa1372415e67918ecb93",
+    "edge_pair_a_left_eye_b_normals": "8e5a6273c4faa4828c92a2e65c87ff1cde9ede08afae99941443ae7068add89a",
+    "edge_pair_a_left_eye_b_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_pair_a_left_eye_b_response": "32a4d2594551cf503a41f9857e264e45707e2b1b28c9a2d66c7abde37e04a4cf",
+    "edge_pair_a_left_eye_b_orientation": "dcbae6556a8fb250249182e45286fd9d633ee278b88d210aa7b375d5cae9096a",
+    "edge_pair_a_left_eye_b_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_pair_a_left_eye_b_accepted": "47b3f539bbcafd4170741fb26fb0788221f0009443bdbfc7ce144f27010451c2",
+    "edge_pair_a_left_eye_b_best_offset_px": "043528e33ec6f57588e4d691d70166d8a313a9697ce1014e6aa7368a79528f63",
+    "edge_pair_a_left_eye_b_peak_strength": "771e644f6b9fc470054bbe9e2d41f9544bf97300884cff97269ffa63f24629e7",
+    "edge_pair_a_left_eye_b_ambiguity_ratio": "3d8b1c742234902b3b0bf5cd51d8ebb33d506029e35684c31089c3ac8dfa53a0",
+    "edge_pair_a_left_eye_accepted": "37dd36d66ec508bf05d48aca9bc8d9cfaa1363a156c677c00e059a9aa8e5a7b1",
+    "edge_pair_a_left_eye_rejection_a": "d0f93c5a2e724e176553123532353b91e26d12d460ba4e1e1bdbaed6225c814c",
+    "edge_pair_a_left_eye_rejection_b": "36d2ea0e5cce4e5ecafc9a94b05b2f0661b74907b0f4b80189dfb9bcdb2aeef4",
+    "edge_pair_a_left_eye_delta_b_minus_a_px": "30054cb8f423af040be009c0ce1143441264f81f749fa015a4cc48ed4188dd95",
+    "edge_pair_a_left_eye_displacement_b_minus_a_px": "5f274181a95309c5ad83552ea81e74c97f0513f8d8d3bf0ff5eb606c484989a6",
+    "edge_pair_a_right_eye_a_points": "ea663b31e29c42d5b3499f7eb69f9cb9a3a9f069d00376fc430d0ea4385faebc",
+    "edge_pair_a_right_eye_a_normals": "2346dbe4c0d39762ad86b98e013f83ffc6d689eaea7a76a60852eaf3f16eddaa",
+    "edge_pair_a_right_eye_a_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_pair_a_right_eye_a_response": "a52dca9aa6ef1726fc5d5d6739117b920f4b8e1031ebdc127d03117e8c8d01e5",
+    "edge_pair_a_right_eye_a_orientation": "67209af261136269c86ebf7f91dfe08723834e1a2ec80f4515c67465fb75e193",
+    "edge_pair_a_right_eye_a_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_pair_a_right_eye_a_accepted": "a473b87226cd5140e1c3af2fb1949c115fd060014590b35396954366bc966991",
+    "edge_pair_a_right_eye_a_best_offset_px": "b0d88adb5d21cf6ac543ece5ece613446008f938f4a61c28170f90656920efd7",
+    "edge_pair_a_right_eye_a_peak_strength": "4cfcc9a54132ec81bf6474197f703e49890685fcb9a43bc3b6fe983b72f14239",
+    "edge_pair_a_right_eye_a_ambiguity_ratio": "7882b7212d4bb2e476fbdc840f8301baee3eb8db215874cb8e42fc95292500b7",
+    "edge_pair_a_right_eye_b_points": "ea663b31e29c42d5b3499f7eb69f9cb9a3a9f069d00376fc430d0ea4385faebc",
+    "edge_pair_a_right_eye_b_normals": "2346dbe4c0d39762ad86b98e013f83ffc6d689eaea7a76a60852eaf3f16eddaa",
+    "edge_pair_a_right_eye_b_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_pair_a_right_eye_b_response": "561c81fb90357ad8e5a1dc924a78bcd1141ba22e2d86c50c57f716bd853d5807",
+    "edge_pair_a_right_eye_b_orientation": "b37693ab8f6963a89be09f72b84b3f2f382f96adcc6e87c00d9be381dfa3874b",
+    "edge_pair_a_right_eye_b_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_pair_a_right_eye_b_accepted": "279017fad4e611da186f1e8180626e28e53f7a1b040c2e23a6062c83509025b8",
+    "edge_pair_a_right_eye_b_best_offset_px": "f5afca492d0973333b0b07fc7872287061bfcfb2ffb0c99aa6d6d8f79bd788e7",
+    "edge_pair_a_right_eye_b_peak_strength": "fe1d8168824344f05e455272cbf456410e622133919d174da84efecab3399db6",
+    "edge_pair_a_right_eye_b_ambiguity_ratio": "6e7a21751bcde819eb51ab8cd6e4ed9f2779f220ae764ff01b9dc4aa6f1734e6",
+    "edge_pair_a_right_eye_accepted": "3bf9be614e8712fd7a18571b50baa43c89155fc6831f03fbbe87b925c73afc14",
+    "edge_pair_a_right_eye_rejection_a": "08bd088a1020f0d2a460607bd321a18402757ac5f35f01b8602c5b4ba5afd51b",
+    "edge_pair_a_right_eye_rejection_b": "5341dddc5e602a7481620347215542b9462131b5abe62f396b15cc42dc269df4",
+    "edge_pair_a_right_eye_delta_b_minus_a_px": "e6570e0efdcb63936f6aace8c65af7759444ffd91cf3299b6de1d74820d54895",
+    "edge_pair_a_right_eye_displacement_b_minus_a_px": "b652b71a3b4ca652c38d5eb0669d9155a54827e7a7fe0191918ed18491cddb61",
+    "edge_pair_a_mouth_a_points": "87034a9cc78e85ed78339665b10306c1a5d8f3f1fc5f0a366956c6c4599ecc02",
+    "edge_pair_a_mouth_a_normals": "6bf838bd86745dba8479c86af66f3351ad5244d7656b8d44deb6a66199d94daf",
+    "edge_pair_a_mouth_a_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_pair_a_mouth_a_response": "94a0f0cecd0837c2720a72f04fd56c3322f676b10e7141f78184920a36511ecc",
+    "edge_pair_a_mouth_a_orientation": "16b5508caddc33279fd781363b1982ddb6af5b2b787e1b167136d00fc59a8018",
+    "edge_pair_a_mouth_a_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_pair_a_mouth_a_accepted": "8e72e63a41266da884b19ee7bb71f4c8347c1d9960efe21b2f8f711680052ab1",
+    "edge_pair_a_mouth_a_best_offset_px": "e13f5f256400c855d4aff1314be339e4c1ee116ba6b8297590cfab77282629cd",
+    "edge_pair_a_mouth_a_peak_strength": "700c0d6f170d527e42536b63a4687d4369a5659d9ff6c32dde340cc81d1f43fb",
+    "edge_pair_a_mouth_a_ambiguity_ratio": "aceeafe7210fc28f6eb0b343f72196302167a200cb290fdc7c8d896bdf8d0ba9",
+    "edge_pair_a_mouth_b_points": "87034a9cc78e85ed78339665b10306c1a5d8f3f1fc5f0a366956c6c4599ecc02",
+    "edge_pair_a_mouth_b_normals": "6bf838bd86745dba8479c86af66f3351ad5244d7656b8d44deb6a66199d94daf",
+    "edge_pair_a_mouth_b_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_pair_a_mouth_b_response": "b95b80a1c5ec0ea49d75873608e6d78f0a07d02007ab5f1c8dace6974669e565",
+    "edge_pair_a_mouth_b_orientation": "5510a61cafe3c914f51fb3159aa6b21e15b0ede674e4513ebe3f69942989f423",
+    "edge_pair_a_mouth_b_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_pair_a_mouth_b_accepted": "092a7fff99cae04ee6b5d6035485dc5ce77c5a613c7c911af38db5df9a8b0bfd",
+    "edge_pair_a_mouth_b_best_offset_px": "6103b31eb76f78bc3d49be587222cdbb8460ca0ddbb435667ca462a9394c2996",
+    "edge_pair_a_mouth_b_peak_strength": "b8164c35742e7e786aeb6f07e74bc5ee7a8b320408d699d6c431856e6ae17fb1",
+    "edge_pair_a_mouth_b_ambiguity_ratio": "aa904642b7f42d7614f4df39812288156dfd5e2c7c97a9e080794a9f472f0cf4",
+    "edge_pair_a_mouth_accepted": "092a7fff99cae04ee6b5d6035485dc5ce77c5a613c7c911af38db5df9a8b0bfd",
+    "edge_pair_a_mouth_rejection_a": "38e433b673d8d359ac6629007c029d2fc8303b27700aabd4ebca829debfe9240",
+    "edge_pair_a_mouth_rejection_b": "75f74deacb96f94c1c5a86f2e4f1a5f15797ded8709b577603a8bbd878ace954",
+    "edge_pair_a_mouth_delta_b_minus_a_px": "eba3f52ee4a749428d6f29dc95bb1fe377f0eabc696cf20d3deb3fec5a4bbb5e",
+    "edge_pair_a_mouth_displacement_b_minus_a_px": "3f8c6127e15df84c80abd33b5e938a1f0cd6581ea75cdb5276dc4ab401025227",
+    "edge_pair_a_jaw_a_points": "f956cbcd2816a1d7160000aadc10f1a5c343fb9f9e9cdfcbab67d6a21824a9a6",
+    "edge_pair_a_jaw_a_normals": "58371f9344aa759cc71d56f7d850850e2a4d5c5556e4326791a188f6e1df1a8c",
+    "edge_pair_a_jaw_a_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_pair_a_jaw_a_response": "ab27636f3d0f2c82ddeeee3c0f6b6ed06cf410c1fd018396185b515f52d79c76",
+    "edge_pair_a_jaw_a_orientation": "84e9fc05c05b187027c6496af36da006ed40975e2e035c5c2d5ff01dd827f93e",
+    "edge_pair_a_jaw_a_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_pair_a_jaw_a_accepted": "77e6084405c1c0c5d94c3b9c659603eebc64d1afdda4459a41eb72b0b0e80d28",
+    "edge_pair_a_jaw_a_best_offset_px": "0dc79fec9a0d33f701dfb4ca7a6873e216093b10dc4bd2dd2fb21f228c51d88c",
+    "edge_pair_a_jaw_a_peak_strength": "c15b7df972dec3fb20d2adc78853b92f76fd49e8f2e154db266d2e385c45cedd",
+    "edge_pair_a_jaw_a_ambiguity_ratio": "35f6dd081d08fa52f32942cfc3bfbd64e86a8f41bb8f6f3cdc5f1f58db1dbf9a",
+    "edge_pair_a_jaw_b_points": "f956cbcd2816a1d7160000aadc10f1a5c343fb9f9e9cdfcbab67d6a21824a9a6",
+    "edge_pair_a_jaw_b_normals": "58371f9344aa759cc71d56f7d850850e2a4d5c5556e4326791a188f6e1df1a8c",
+    "edge_pair_a_jaw_b_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_pair_a_jaw_b_response": "7c1f8162c0b49cdb65859d347c631faa141f40895ada72bae3e96f46862f284b",
+    "edge_pair_a_jaw_b_orientation": "877a1e010d798010ad9b82b491f7ba6c5084e0663c77a16721426cc307223d18",
+    "edge_pair_a_jaw_b_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_pair_a_jaw_b_accepted": "27a4edbe8160088bde4101defb84d769abab46ba1dacea4868144700c953de65",
+    "edge_pair_a_jaw_b_best_offset_px": "ab292eb9ca0235e90c40badd6426a73079781d916cb66a3ef4fe39e91dec5e5d",
+    "edge_pair_a_jaw_b_peak_strength": "c6e2a7e57b91e87e33eca81c8b22247446b31e8989a9c167d3f9366a29a5eab9",
+    "edge_pair_a_jaw_b_ambiguity_ratio": "6ec2f2ea8dd26f62e024f2bddb492d39b225200e2ce2388dc5840460634bd784",
+    "edge_pair_a_jaw_accepted": "7381972d0d9ae10a9213190fd23d051fd90b463c59b6a309a08036d05ccb5c4c",
+    "edge_pair_a_jaw_rejection_a": "a6b7ca006ca858fcb025d230b05081f1899f95acb82aff6fbdd1417a7bd408d6",
+    "edge_pair_a_jaw_rejection_b": "9a3f193c7e609319578df3bba562442987ed9c2d23d2f0f1a80d1879c53d0ab6",
+    "edge_pair_a_jaw_delta_b_minus_a_px": "c2771f95b8142df74f2944d7270ab91f5a0b2eef69979de4c1cc6bc59b6cfe60",
+    "edge_pair_a_jaw_displacement_b_minus_a_px": "f4e0e53aef976f37bb035ced43a390a1d583981126a89bd18792ea1ef2e64c52",
+    "edge_pair_b_left_eye_a_points": "c647b32c779672b177357aa6e16e824b8cc9d409878e10a92bd5b72254d0b6b9",
+    "edge_pair_b_left_eye_a_normals": "2dba3af9df33d3048b111db73ebac715331430c6446ccd76de1156788cd25552",
+    "edge_pair_b_left_eye_a_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_pair_b_left_eye_a_response": "e8c0ecf52b75bd56c70090318eed042a9a0934a2cb2e13646b90250a27090ae0",
+    "edge_pair_b_left_eye_a_orientation": "1841a1960f48fa901fecde7433ccebf7d713199c4a51a7ec6a01ed00eb1e5735",
+    "edge_pair_b_left_eye_a_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_pair_b_left_eye_a_accepted": "3ab2adb6fdaad0a4908f355a005b9aee7b55c2dc0a6727cd7faa7dfa45013c9d",
+    "edge_pair_b_left_eye_a_best_offset_px": "6ad9a2f84cf6798a4c2a25b0d2484e0f78c4241f1efe7d1f3f390736aa029b56",
+    "edge_pair_b_left_eye_a_peak_strength": "949d99014fab028664d6f946a1c29c40cbd9b39507ef73d809d7c9f09073c028",
+    "edge_pair_b_left_eye_a_ambiguity_ratio": "5739c66e18afe55a6050ddf35a31ef2a840ac12385696b6990386f86cf8352eb",
+    "edge_pair_b_left_eye_b_points": "c647b32c779672b177357aa6e16e824b8cc9d409878e10a92bd5b72254d0b6b9",
+    "edge_pair_b_left_eye_b_normals": "2dba3af9df33d3048b111db73ebac715331430c6446ccd76de1156788cd25552",
+    "edge_pair_b_left_eye_b_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_pair_b_left_eye_b_response": "1f6b7bce3d6bc5b8beaf3a14445dd5414dae5833acaa7a0745099d94a8bf046f",
+    "edge_pair_b_left_eye_b_orientation": "af53dafca7432b405d65065a82e5a238f68def8deb961dd84eecde18578b5fe0",
+    "edge_pair_b_left_eye_b_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_pair_b_left_eye_b_accepted": "3233fe9c6a25f2785c0a0b711b37c73cbedf13c6bb1eb37588b61fd3dae96340",
+    "edge_pair_b_left_eye_b_best_offset_px": "a18e269aaa1bfc166f1dffcea84f0b2a21919fccdfe2e481fa8e4193fc6125ea",
+    "edge_pair_b_left_eye_b_peak_strength": "21119491cd505c779d44b08f64747a9430ee1935d499f181298a2daee713327f",
+    "edge_pair_b_left_eye_b_ambiguity_ratio": "1d4b55b614f49ea3471d1767ebce9b6764155288f92f7e7e88da4223322d0d26",
+    "edge_pair_b_left_eye_accepted": "027dacfa33924fa3e14c440021ff6665babf301d5896de7913ab026540f6faaa",
+    "edge_pair_b_left_eye_rejection_a": "1a95d994c5dbc712230482e26bc53a2421d47a2526a45a177401bacfa5a8c842",
+    "edge_pair_b_left_eye_rejection_b": "66310d285bd6471b973bb0473916a723ee28a8a5f7aa2e4a271a2ba81939bc5c",
+    "edge_pair_b_left_eye_delta_b_minus_a_px": "1e8ad250bab5c90da9b9522e6b9a4a795783b794e99bb4bbc079eeb037bc1c66",
+    "edge_pair_b_left_eye_displacement_b_minus_a_px": "39f64fe423e721c47be3860b289d6680f550c7a714bc1d76b663111221f8567a",
+    "edge_pair_b_right_eye_a_points": "86be45a3dafc6f9e75e2c5fbe4bd4446f155d83cfb39771d59219715a52c95ec",
+    "edge_pair_b_right_eye_a_normals": "5c7cee50dcb4afbc0a10c10763999a7db79c597c66bd371f3a1811e5f120d755",
+    "edge_pair_b_right_eye_a_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_pair_b_right_eye_a_response": "187c616fa38adb86210acbe93d8019ee2e52412c1b179bd8f8af8fead6e4a139",
+    "edge_pair_b_right_eye_a_orientation": "064627be54269004d73b60279aec39da2b8392cb8bb98b9e7029796553ad0f60",
+    "edge_pair_b_right_eye_a_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_pair_b_right_eye_a_accepted": "c5e9469678efebfff76dc362c9220622d3505fd009e0967ff139c05435a85db7",
+    "edge_pair_b_right_eye_a_best_offset_px": "a8d09458425c384d7c3597d71057f4685c7c6a09d08539805c291f6e43d08414",
+    "edge_pair_b_right_eye_a_peak_strength": "0b94f05db2150bbbd215d97c114e0ef223adccbd3a469944f5d81396e57bbdd0",
+    "edge_pair_b_right_eye_a_ambiguity_ratio": "89a08a5ba98c13fc31babb38085f97b48f97bd52e8815c265f64e6a6776a5f2c",
+    "edge_pair_b_right_eye_b_points": "86be45a3dafc6f9e75e2c5fbe4bd4446f155d83cfb39771d59219715a52c95ec",
+    "edge_pair_b_right_eye_b_normals": "5c7cee50dcb4afbc0a10c10763999a7db79c597c66bd371f3a1811e5f120d755",
+    "edge_pair_b_right_eye_b_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_pair_b_right_eye_b_response": "1cd35b6d382d5b79184656dab34bfe9ae320c1fd0d4c4d7107346984d50a1bdd",
+    "edge_pair_b_right_eye_b_orientation": "0f6b3c9e8d5bfd6ec3d19f2f7263b5750accc2874bfabac725cbc092bfc10cc9",
+    "edge_pair_b_right_eye_b_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_pair_b_right_eye_b_accepted": "22781360820b2b2dbbbf4f7d2761a0e4d55e3d76b9dc33a59d21e665fc9c7d25",
+    "edge_pair_b_right_eye_b_best_offset_px": "d861292d08aa3254eb222c5d8eda53c3149e8953c2d874d17a34018c94eab7f6",
+    "edge_pair_b_right_eye_b_peak_strength": "728ad956ada7194f1b112f351f202c0eb01a104196e6f13b8fcb805760a4a3ff",
+    "edge_pair_b_right_eye_b_ambiguity_ratio": "bf6be105508680b3802fd2c5b184cbbfe04deadd03bff605ce2a6a91c92e4ec8",
+    "edge_pair_b_right_eye_accepted": "202a36b821703675ebc38b2096994096f6964aa0d52a3852a0b78c05958efa04",
+    "edge_pair_b_right_eye_rejection_a": "15df4389cc6e467d8c65de6bb04ff3c9263900863bf05aa20a72e960f381955f",
+    "edge_pair_b_right_eye_rejection_b": "59f08bd0d2a7230c277a79d2f2698c3fd330d0aeb9fb2f98b53ba65e8ee67f2f",
+    "edge_pair_b_right_eye_delta_b_minus_a_px": "8f967f351b835e49e2adf9743894c6fcc73fd4fe943004f265cde40a803236f6",
+    "edge_pair_b_right_eye_displacement_b_minus_a_px": "7871ec42172c7a764a8b415463752993460fcedd3f71d5c27203d11f0599bc24",
+    "edge_pair_b_mouth_a_points": "f6f214ffaec9f686b4fa7ad399b2b96f8b3d5eed2b3d1f3a2cd3d9a63183e489",
+    "edge_pair_b_mouth_a_normals": "c929770d471430d8ab77191a0a573b2a78623710c9ecb7a2729e33bf2f441ef7",
+    "edge_pair_b_mouth_a_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_pair_b_mouth_a_response": "f8249aa90f2c86874f553a2c80d5bb22edd682d270243a4cbca7c29c6dad7ac9",
+    "edge_pair_b_mouth_a_orientation": "6530fd909cfa87bb85658913aee07aef2198c04eb97a92b7d9b292f8a483e7ca",
+    "edge_pair_b_mouth_a_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_pair_b_mouth_a_accepted": "1fa1384908b2816e52f9539147416c3f09fc9e4fc2ef5c6fac9f606474963948",
+    "edge_pair_b_mouth_a_best_offset_px": "41efabaa599e2f232c9061dba48e344213de8db5951b2d43fb31fe48399d8f89",
+    "edge_pair_b_mouth_a_peak_strength": "0de6aa45260b9ea2cb7e008022dace177cec418fc752987ccae7ec8dddb263a5",
+    "edge_pair_b_mouth_a_ambiguity_ratio": "2ffbb89a78462549d4ef8d09c800f556e797898ce3e7b586c021abd7d32d7901",
+    "edge_pair_b_mouth_b_points": "f6f214ffaec9f686b4fa7ad399b2b96f8b3d5eed2b3d1f3a2cd3d9a63183e489",
+    "edge_pair_b_mouth_b_normals": "c929770d471430d8ab77191a0a573b2a78623710c9ecb7a2729e33bf2f441ef7",
+    "edge_pair_b_mouth_b_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_pair_b_mouth_b_response": "d8a9eb0be22a3df1a32aa69ec59efc29f93f98cca82af68598e89d626ce67fbb",
+    "edge_pair_b_mouth_b_orientation": "8c358ac23e0e09a81396a4fb5439014f04d307a8229b233b09e97089b034e0aa",
+    "edge_pair_b_mouth_b_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_pair_b_mouth_b_accepted": "fbdbca9cdc483460c2d33c685f2d39fbe374c1a90b2538810f15b431816b3efd",
+    "edge_pair_b_mouth_b_best_offset_px": "27bbd810f56709c3e82877e6402e882b90a097a721a62432fa39ab9b047f9479",
+    "edge_pair_b_mouth_b_peak_strength": "b6ada9692f8037b7f2e1890f9f40e5a6ea92a578f15b8824fa964d1b78e587fb",
+    "edge_pair_b_mouth_b_ambiguity_ratio": "588a547b959c520effdd35f7e8b041bdf95171539dec9412df07f65ca2c8f381",
+    "edge_pair_b_mouth_accepted": "0ce7f46dec641aa10257173a89a9fbc7433d618d97057988802321512cb1d194",
+    "edge_pair_b_mouth_rejection_a": "a3afca852657e2f914a669e7985da1294005587b73a5863309ffa0794f6163d6",
+    "edge_pair_b_mouth_rejection_b": "0d380c0f01c3929510882ad189f43a268e84ef4c630eb9e6bcdbfe3e43e39b25",
+    "edge_pair_b_mouth_delta_b_minus_a_px": "cd27a6a4f97a6c6143fddea0eddc569236d0cd71fa7d76c49c1a0dc9cebd206e",
+    "edge_pair_b_mouth_displacement_b_minus_a_px": "ad3861baf90393ed3fc5abc2ab0b69fac09e4bd107602944c8405c8a96bb3f3d",
+    "edge_pair_b_jaw_a_points": "ff371c02e60b6b71ac5e6dc724906b3cadff39328548aab6d3307e4be2640e81",
+    "edge_pair_b_jaw_a_normals": "798897a8947aff8fc861a32ec2da4b73bfdd10ea59d46d138a4a962d01ae9346",
+    "edge_pair_b_jaw_a_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_pair_b_jaw_a_response": "9ba62090b33fa3615feda74728d8164b3d3ffe56abc659172d03557c7ec7d3f9",
+    "edge_pair_b_jaw_a_orientation": "2a00984dd1209f0a0c5655cff117e83e6136a3e0bfe7a94da92c53d627c887b5",
+    "edge_pair_b_jaw_a_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_pair_b_jaw_a_accepted": "420369eefc5e45febbc8c4dd07999d8e610c585bcb0d83de25690e49680f4848",
+    "edge_pair_b_jaw_a_best_offset_px": "5a991158d906b421df8b4a9bd786e06df48a02cee1efd844682c032b96366366",
+    "edge_pair_b_jaw_a_peak_strength": "67542f357d910174ec9f5ae7fe7aabce9bf7f050aaf1459352a4e20363b0e077",
+    "edge_pair_b_jaw_a_ambiguity_ratio": "d8f3e24baf0e45b67d272451c39c5f90e35d6f8b44f207531db4623bf3f83006",
+    "edge_pair_b_jaw_b_points": "ff371c02e60b6b71ac5e6dc724906b3cadff39328548aab6d3307e4be2640e81",
+    "edge_pair_b_jaw_b_normals": "798897a8947aff8fc861a32ec2da4b73bfdd10ea59d46d138a4a962d01ae9346",
+    "edge_pair_b_jaw_b_offsets": "5a1fbcbddae4e66b30b6334296b1f25fd8bdfb16a36874045b2363ad23251e24",
+    "edge_pair_b_jaw_b_response": "6b862bff4f0f215629432707cba8242e48a75c82826bd311a75816f6b1586578",
+    "edge_pair_b_jaw_b_orientation": "6ca808e6e5b42b59a7541c92c36b861191e21704ba803297208b2f5645eba017",
+    "edge_pair_b_jaw_b_ray_supported": "51702730bcffd8fdf070105a8c0814baf6170284cd3c42b94307452f7ef04d71",
+    "edge_pair_b_jaw_b_accepted": "5714964dd720fa9cf96894725ca789dcb08373bae019a27e12c7d9aad05db2eb",
+    "edge_pair_b_jaw_b_best_offset_px": "70b7003a6204d38f741c838df21dffe5b22b0063788f4f078ee5848cd6a6982c",
+    "edge_pair_b_jaw_b_peak_strength": "6c8d170ac9e8f390fb0b1681d7411077e5451487a0a6ba541717fd963f14206c",
+    "edge_pair_b_jaw_b_ambiguity_ratio": "add94bb772d68d4eb6343caf46860f6412ea7a695d2b518f48dec63b56c566ca",
+    "edge_pair_b_jaw_accepted": "7b1020e7e60a083ab7f78de02948c44695637ce5e256b50a50feb187824670d1",
+    "edge_pair_b_jaw_rejection_a": "f74e4eda75210cce5d59af9ae1b23280680a900491787ed9f25280652849ffd4",
+    "edge_pair_b_jaw_rejection_b": "966d4f80395a40bb5bef51c00c454a12c7d85cdb9d55f1c3c8565cd0b8147e48",
+    "edge_pair_b_jaw_delta_b_minus_a_px": "b99166c0ce811bc8f51bb11b46051c59052b8266f1dbe23df29763d45729ea50",
+    "edge_pair_b_jaw_displacement_b_minus_a_px": "137cac55d8092e5721281dea5468f54b5335d0ba2c890ace3733e78d1411da64",
+    "intrinsic_raw_points": "ffbd7c7115b9693e10e60a498d854e14fcef1e59058ab4ef3f5ac2b1f1838ed8",
+    "intrinsic_source_covariance": "32bce82fc0db9bb4b58df9069401c45d53110c6254216229aa2127a4bb1763d9",
+    "intrinsic_source_chart": "0cbac0b8c04770f4bf245abbb203abeb1920d333e4b0eccd7570c772c078c05f",
+    "intrinsic_source_supported": "0546b734e89eeda8fff9c3cc04e96fd3212ead7ae61f7fcb48bd82dacb876467",
+    "intrinsic_nominal": "98d25f5ed1a08d2142cd6d2631a290a6f41e58360828cf68d0b8147fd247489b",
+    "intrinsic_nominal_valid": "38012a87475e44c75ce1a642a6439d3ccf926acfaa92e265c9c5387ae5847c91",
+    "intrinsic_relation_a": "4d0c45f2fc2c91f88144ea78feeed0be84b34f0718bcad45529a2332c9d86836",
+    "intrinsic_relation_b": "c51bbb3dc312e09adf29977b42c15ac30e4a0b77ef4c4f56eb1218527831d37e",
+    "intrinsic_support_normals": "ad1896baf51f3f592905f190c88bd271f77c064497c409e907ca2478230bef7a",
+    "structure_nominal": "bdc649adb9fb6f11090c5308c87ba092521d176ab36c46e445f83d8e47a01fc3",
+    "structure_nominal_valid": "49e5768e83b0fb4206d3177a32f1362f869f66b6dc8a0d00f81f4cf5c63afed5",
+    "structure_expression_a": "48b6ed364f980e65b31f8137d22ea814d8149bfb5885d1515866bc9f104ee972",
+    "structure_expression_b": "dd5cdfa0d70d4ec30d79baca536c033c8af4c9bb15fe75e294b308f500d16ac3",
+    "bilateral_nominal": "cbdd6bd41396d4e9da47713b2466066724d9c807b2e899ca187ac192278b6813",
+    "bilateral_nominal_valid": "4a88a32ecc2350c12d4290570b33404314a8345af4158cc5e52e84a173d6d84e",
+    "bilateral_source_segments": "eea43f093d6c0756046c3a943067ae7e641ad67a7a7e17a2e5398ecfbfc34d44",
+    "bilateral_source_axes": "2371f0e342de56dc7b5a8b0ef17d233e21edfd59bf8761e7d7327787d34cdd75",
+    "bilateral_coefficients": "d9edfc585b93fd658c3f33e31b44a041bdeb6301d8ffc97c80d088e4b82ac50d",
+    "bilateral_display_segments": "14e698eaed22886c15785e649bcf3b3236bfb51851e23bc904505407dafdcab2",
+    "bilateral_display_axes": "302594bca8b4c22942dcdd3840f18cc4d59caf3178f63febbb00805bb7297e45"
+  },
+  "structure": {
+    "format": "facemath.structural_comparison.v18",
+    "recipe_sha256": "fee3d1d5e51704421b49ae9eb418632502704172e03443c4bf449236269363db",
+    "prespecified_measurements": 14,
+    "calibration_sha256": "09d1a8e986a4775a37599d13eead864960223018ab368207d9b50aa6e0d9fb84",
+    "source_quantiles": [
+      15.468775983904042,
+      15.468775983904042
+    ],
+    "observed_counts": {
+      "within_tolerance": 8,
+      "outside_tolerance": 6,
+      "unavailable": 0
+    },
+    "reference_counts": {
+      "within_tolerance_under_envelope": 0,
+      "outside_tolerance_under_envelope": 0,
+      "unresolved_at_tolerance": 14,
+      "unavailable": 0
+    },
+    "rows": [
+      {
+        "key": "left_eye_width",
+        "label": "Viewer-left eye width",
+        "operation": "width",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer"
+        ],
+        "a_coefficients": [
+          -1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 0,
+        "observed_a": 0.44845912830323326,
+        "observed_b": 0.4826738426898416,
+        "observed_delta_b_minus_a": 0.034214714386608336,
+        "observed_absolute_gap": 0.034214714386608336,
+        "observed_status": "within_tolerance",
+        "reference_status": "unresolved_at_tolerance",
+        "source_intervals": [
+          {
+            "lower": 0.04133836200466352,
+            "upper": 1.118846104440566,
+            "reason": "bounded"
+          },
+          {
+            "lower": 0.06267527005109635,
+            "upper": 1.1722874184776242,
+            "reason": "bounded"
+          }
+        ],
+        "reference_delta_b_minus_a": [
+          -1.056170834389502,
+          1.1309490564729932
+        ],
+        "reference_absolute_gap": [
+          0.0,
+          1.1309490564729932
+        ]
+      },
+      {
+        "key": "right_eye_width",
+        "label": "Viewer-right eye width",
+        "operation": "width",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer"
+        ],
+        "a_coefficients": [
+          0.0,
+          0.0,
+          -1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 1,
+        "observed_a": 0.41993681747201805,
+        "observed_b": 0.44409496596278614,
+        "observed_delta_b_minus_a": 0.024158148490768083,
+        "observed_absolute_gap": 0.024158148490768083,
+        "observed_status": "within_tolerance",
+        "reference_status": "unresolved_at_tolerance",
+        "source_intervals": [
+          {
+            "lower": 0.05397956956508427,
+            "upper": 1.0782924357482215,
+            "reason": "bounded"
+          },
+          {
+            "lower": 0.06594779449855695,
+            "upper": 1.1199155017845446,
+            "reason": "bounded"
+          }
+        ],
+        "reference_delta_b_minus_a": [
+          -1.012344641249695,
+          1.0659359322194908
+        ],
+        "reference_absolute_gap": [
+          0.0,
+          1.0659359322194908
+        ]
+      },
+      {
+        "key": "inner_eye_gap",
+        "label": "Inner-eye gap",
+        "operation": "width",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer"
+        ],
+        "a_coefficients": [
+          0.0,
+          -1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 2,
+        "observed_a": 0.568476020267108,
+        "observed_b": 0.5427021206541094,
+        "observed_delta_b_minus_a": -0.025773899612998585,
+        "observed_absolute_gap": 0.025773899612998585,
+        "observed_status": "within_tolerance",
+        "reference_status": "unresolved_at_tolerance",
+        "source_intervals": [
+          {
+            "lower": 0.12929630689904634,
+            "upper": 1.5500332535484154,
+            "reason": "bounded"
+          },
+          {
+            "lower": 0.11000622801819927,
+            "upper": 1.5124055525817008,
+            "reason": "bounded"
+          }
+        ],
+        "reference_delta_b_minus_a": [
+          -1.4400270255302572,
+          1.3831092456826957
+        ],
+        "reference_absolute_gap": [
+          0.0,
+          1.4400270255302572
+        ]
+      },
+      {
+        "key": "mouth_width",
+        "label": "Mouth width",
+        "operation": "width",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "mouth_left",
+          "mouth_right"
+        ],
+        "a_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.0,
+          1.0,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 3,
+        "observed_a": 0.8783266405080495,
+        "observed_b": 0.8863439318524118,
+        "observed_delta_b_minus_a": 0.008017291344362243,
+        "observed_absolute_gap": 0.008017291344362243,
+        "observed_status": "within_tolerance",
+        "reference_status": "unresolved_at_tolerance",
+        "source_intervals": [
+          {
+            "lower": 0.16351477012724824,
+            "upper": 2.3060323728521004,
+            "reason": "bounded"
+          },
+          {
+            "lower": 0.1778200369312183,
+            "upper": 2.3125813366204264,
+            "reason": "bounded"
+          }
+        ],
+        "reference_delta_b_minus_a": [
+          -2.128212335920944,
+          2.14906656649324
+        ],
+        "reference_absolute_gap": [
+          0.0,
+          2.14906656649324
+        ]
+      },
+      {
+        "key": "eye_to_nose_height",
+        "label": "Eye line to nose height",
+        "operation": "height",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "nose_tip"
+        ],
+        "a_coefficients": [
+          -0.25,
+          -0.25,
+          -0.25,
+          -0.25,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 4,
+        "observed_a": 0.5336855493439723,
+        "observed_b": 0.7715271890654383,
+        "observed_delta_b_minus_a": 0.237841639721466,
+        "observed_absolute_gap": 0.237841639721466,
+        "observed_status": "outside_tolerance",
+        "reference_status": "unresolved_at_tolerance",
+        "source_intervals": [
+          {
+            "lower": -0.6919518767607434,
+            "upper": 3.0008920820374527,
+            "reason": "bounded"
+          },
+          {
+            "lower": -0.1980857814761924,
+            "upper": 3.5319502093534596,
+            "reason": "bounded"
+          }
+        ],
+        "reference_delta_b_minus_a": [
+          -3.1989778635137656,
+          4.2239020861143235
+        ],
+        "reference_absolute_gap": [
+          0.0,
+          4.2239020861143235
+        ]
+      },
+      {
+        "key": "eye_to_mouth_height",
+        "label": "Eye line to mouth height",
+        "operation": "height",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "mouth_left",
+          "mouth_right"
+        ],
+        "a_coefficients": [
+          -0.25,
+          -0.25,
+          -0.25,
+          -0.25,
+          0.0,
+          0.5,
+          0.5,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 5,
+        "observed_a": 0.9110405306169408,
+        "observed_b": 1.0934935073881307,
+        "observed_delta_b_minus_a": 0.18245297677118988,
+        "observed_absolute_gap": 0.18245297677118988,
+        "observed_status": "outside_tolerance",
+        "reference_status": "unresolved_at_tolerance",
+        "source_intervals": [
+          {
+            "lower": 0.2639723288503871,
+            "upper": 2.9046712709622504,
+            "reason": "bounded"
+          },
+          {
+            "lower": 0.34585599823226515,
+            "upper": 3.3785771953988784,
+            "reason": "bounded"
+          }
+        ],
+        "reference_delta_b_minus_a": [
+          -2.558815272730074,
+          3.11460486654858
+        ],
+        "reference_absolute_gap": [
+          0.0,
+          3.11460486654858
+        ]
+      },
+      {
+        "key": "eye_to_chin_height",
+        "label": "Eye line to chin height",
+        "operation": "height",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "chin"
+        ],
+        "a_coefficients": [
+          -0.25,
+          -0.25,
+          -0.25,
+          -0.25,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 6,
+        "observed_a": 1.6118573373159424,
+        "observed_b": 1.8738879221646347,
+        "observed_delta_b_minus_a": 0.26203058484869235,
+        "observed_absolute_gap": 0.26203058484869235,
+        "observed_status": "outside_tolerance",
+        "reference_status": "unresolved_at_tolerance",
+        "source_intervals": [
+          {
+            "lower": 0.1341146672321067,
+            "upper": 6.315882259258013,
+            "reason": "bounded"
+          },
+          {
+            "lower": 0.26878497626038467,
+            "upper": 6.931352164348217,
+            "reason": "bounded"
+          }
+        ],
+        "reference_delta_b_minus_a": [
+          -6.0470972829978225,
+          6.797237497116305
+        ],
+        "reference_absolute_gap": [
+          0.0,
+          6.797237497116305
+        ]
+      },
+      {
+        "key": "nose_to_mouth_height",
+        "label": "Nose to mouth height",
+        "operation": "height",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "nose_tip",
+          "mouth_left",
+          "mouth_right"
+        ],
+        "a_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.0,
+          0.5,
+          0.5,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 7,
+        "observed_a": 0.3773549812729685,
+        "observed_b": 0.3219663183226923,
+        "observed_delta_b_minus_a": -0.055388662950276224,
+        "observed_absolute_gap": 0.055388662950276224,
+        "observed_status": "outside_tolerance",
+        "reference_status": "unresolved_at_tolerance",
+        "source_intervals": [
+          {
+            "lower": -1.1685111289829193,
+            "upper": 2.77276717710688,
+            "reason": "bounded"
+          },
+          {
+            "lower": -1.2805344930123088,
+            "upper": 2.646153196928936,
+            "reason": "bounded"
+          }
+        ],
+        "reference_delta_b_minus_a": [
+          -4.053301670119305,
+          3.814664325911971
+        ],
+        "reference_absolute_gap": [
+          0.0,
+          4.053301670119305
+        ]
+      },
+      {
+        "key": "mouth_to_chin_height",
+        "label": "Mouth to chin height",
+        "operation": "height",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "mouth_left",
+          "mouth_right",
+          "chin"
+        ],
+        "a_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.5,
+          -0.5,
+          1.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 8,
+        "observed_a": 0.7008168066990015,
+        "observed_b": 0.7803944147765042,
+        "observed_delta_b_minus_a": 0.07957760807750269,
+        "observed_absolute_gap": 0.07957760807750269,
+        "observed_status": "outside_tolerance",
+        "reference_status": "unresolved_at_tolerance",
+        "source_intervals": [
+          {
+            "lower": -1.2371288886586425,
+            "upper": 4.160559521391152,
+            "reason": "bounded"
+          },
+          {
+            "lower": -1.0687420900116582,
+            "upper": 4.335114352608881,
+            "reason": "bounded"
+          }
+        ],
+        "reference_delta_b_minus_a": [
+          -5.229301611402969,
+          5.572243241267683
+        ],
+        "reference_absolute_gap": [
+          0.0,
+          5.572243241267683
+        ]
+      },
+      {
+        "key": "nose_lateral_offset",
+        "label": "Nose lateral offset",
+        "operation": "offset",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "nose_tip"
+        ],
+        "a_coefficients": [
+          -0.25,
+          -0.25,
+          -0.25,
+          -0.25,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 9,
+        "observed_a": 0.04910179521753578,
+        "observed_b": 0.09931737558631278,
+        "observed_delta_b_minus_a": 0.050215580368777,
+        "observed_absolute_gap": 0.050215580368777,
+        "observed_status": "outside_tolerance",
+        "reference_status": "unresolved_at_tolerance",
+        "source_intervals": [
+          {
+            "lower": -1.2269060270527132,
+            "upper": 1.582913352647966,
+            "reason": "bounded"
+          },
+          {
+            "lower": -1.1505645739346477,
+            "upper": 1.723341841876936,
+            "reason": "bounded"
+          }
+        ],
+        "reference_delta_b_minus_a": [
+          -2.7334779265826983,
+          2.9502478689297336
+        ],
+        "reference_absolute_gap": [
+          0.0,
+          2.9502478689297336
+        ]
+      },
+      {
+        "key": "mouth_lateral_offset",
+        "label": "Mouth lateral offset",
+        "operation": "offset",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "mouth_left",
+          "mouth_right"
+        ],
+        "a_coefficients": [
+          -0.25,
+          -0.25,
+          -0.25,
+          -0.25,
+          0.0,
+          0.5,
+          0.5,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 10,
+        "observed_a": -0.028663804380009348,
+        "observed_b": -0.021380151637909846,
+        "observed_delta_b_minus_a": 0.0072836527420995015,
+        "observed_absolute_gap": 0.0072836527420995015,
+        "observed_status": "within_tolerance",
+        "reference_status": "unresolved_at_tolerance",
+        "source_intervals": [
+          {
+            "lower": -0.6594962523447618,
+            "upper": 0.6377558750277276,
+            "reason": "bounded"
+          },
+          {
+            "lower": -0.6985742810533032,
+            "upper": 0.7085006104326874,
+            "reason": "bounded"
+          }
+        ],
+        "reference_delta_b_minus_a": [
+          -1.3363301560810699,
+          1.3679968627774883
+        ],
+        "reference_absolute_gap": [
+          0.0,
+          1.3679968627774883
+        ]
+      },
+      {
+        "key": "chin_lateral_offset",
+        "label": "Chin lateral offset",
+        "operation": "offset",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "chin"
+        ],
+        "a_coefficients": [
+          -0.25,
+          -0.25,
+          -0.25,
+          -0.25,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 11,
+        "observed_a": -0.029326013953410075,
+        "observed_b": -0.018476519746398627,
+        "observed_delta_b_minus_a": 0.010849494207011447,
+        "observed_absolute_gap": 0.010849494207011447,
+        "observed_status": "within_tolerance",
+        "reference_status": "unresolved_at_tolerance",
+        "source_intervals": [
+          {
+            "lower": -2.9827513009720925,
+            "upper": 2.8604906847848626,
+            "reason": "bounded"
+          },
+          {
+            "lower": -3.039372738546507,
+            "upper": 2.964267024623385,
+            "reason": "bounded"
+          }
+        ],
+        "reference_delta_b_minus_a": [
+          -5.8998634233315395,
+          5.947018325595647
+        ],
+        "reference_absolute_gap": [
+          0.0,
+          5.947018325595647
+        ]
+      },
+      {
+        "key": "mouth_corner_height_difference",
+        "label": "Right minus left mouth height",
+        "operation": "height",
+        "unit": "own_reference_eye_spans",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer",
+          "mouth_left",
+          "mouth_right"
+        ],
+        "a_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.0,
+          1.0,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 12,
+        "observed_a": 0.017227882335483006,
+        "observed_b": -0.020619586011171757,
+        "observed_delta_b_minus_a": -0.03784746834665476,
+        "observed_absolute_gap": 0.03784746834665476,
+        "observed_status": "within_tolerance",
+        "reference_status": "unresolved_at_tolerance",
+        "source_intervals": [
+          {
+            "lower": -0.6955294011958901,
+            "upper": 0.6937819099008713,
+            "reason": "bounded"
+          },
+          {
+            "lower": -0.7791434837577256,
+            "upper": 0.6142767647333619,
+            "reason": "bounded"
+          }
+        ],
+        "reference_delta_b_minus_a": [
+          -1.472925393658639,
+          1.3098061659292943
+        ],
+        "reference_absolute_gap": [
+          0.0,
+          1.472925393658639
+        ]
+      },
+      {
+        "key": "eye_width_asymmetry",
+        "label": "Eye-width asymmetry",
+        "operation": "asymmetry",
+        "unit": "signed_length_contrast",
+        "tolerance": 0.05,
+        "required_points": [
+          "left_eye_outer",
+          "left_eye_inner",
+          "right_eye_inner",
+          "right_eye_outer"
+        ],
+        "a_coefficients": [
+          -1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b_coefficients": [
+          0.0,
+          0.0,
+          -1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "index": 13,
+        "observed_a": 0.03284482265258875,
+        "observed_b": 0.04162729298490625,
+        "observed_delta_b_minus_a": 0.0087824703323175,
+        "observed_absolute_gap": 0.0087824703323175,
+        "observed_status": "within_tolerance",
+        "reference_status": "unresolved_at_tolerance",
+        "source_intervals": [
+          {
+            "lower": -0.8606744622910955,
+            "upper": 0.827764407139157,
+            "reason": "bounded"
+          },
+          {
+            "lower": -0.8029247100835728,
+            "upper": 0.8020002490365186,
+            "reason": "bounded"
+          }
+        ],
+        "reference_delta_b_minus_a": [
+          -1.6306891172227773,
+          1.6626747113276616
+        ],
+        "reference_absolute_gap": [
+          0.0,
+          1.6626747113276616
+        ]
+      }
+    ],
+    "delta_convention": "B minus A",
+    "axis_convention": "viewer-left to viewer-right eye midpoint; positive height is clockwise perpendicular in stored-raster xy",
+    "normalization": "each source's own uncertain reference eye span; eye-width asymmetry uses sum of eye widths",
+    "meaning": "projected configuration under image pose and expression; dependent measurements, not identity probability or physical depth",
+    "bounds_meaning": "analytic outer intervals from the existing shared reference-error sets; no refit, new alignment or independent votes",
+    "missingness": "all fourteen measurements remain; false array masks mark zero sentinels"
+  },
+  "fit_performed": false,
+  "empirical_admission": false,
+  "scope": "Production CLI using real pinned native observations; full mesh, flow, edges, 96 sensitivity draws; source labels are published PTS"
+}

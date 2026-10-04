@@ -1,0 +1,79 @@
+{
+  "id": "85d36a7627454a038e2d00d32b68e65d",
+  "status": "failed",
+  "created": "2026-10-04T18:36:30.411616+00:00",
+  "inputs": [
+    {
+      "name": "two-faces.png",
+      "sha256": "b62dbcbbdc12b34ee22a4a63e0c5d93fdf3007ce61486fad777ba7e56c14c189",
+      "width": 1366,
+      "height": 640,
+      "decoded_rgb_sha256": "4e055e191960faaf0d126f6e6759ecea2c340160f0e312260857a17e62fdaca4",
+      "crop": null,
+      "analysis": {
+        "file": "input_a.image",
+        "width": 1366,
+        "height": 640,
+        "sha256": "b62dbcbbdc12b34ee22a4a63e0c5d93fdf3007ce61486fad777ba7e56c14c189",
+        "decoded_rgb_sha256": "4e055e191960faaf0d126f6e6759ecea2c340160f0e312260857a17e62fdaca4",
+        "to_original": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "coordinates": "pixel centers in selected raster; original center = selected center + (left, top)"
+      }
+    },
+    {
+      "name": "single.png",
+      "sha256": "aa7aedf6967788ab545a5e652d6ce8e14cf36e779d454d9d6fe67d6240df37d0",
+      "width": 653,
+      "height": 600,
+      "decoded_rgb_sha256": "05c35b9c164c5494d1f71e323d74d6069cd653483d482d2af0e2f13f331c78ec",
+      "crop": null,
+      "analysis": {
+        "file": "input_b.image",
+        "width": 653,
+        "height": 600,
+        "sha256": "aa7aedf6967788ab545a5e652d6ce8e14cf36e779d454d9d6fe67d6240df37d0",
+        "decoded_rgb_sha256": "05c35b9c164c5494d1f71e323d74d6069cd653483d482d2af0e2f13f331c78ec",
+        "to_original": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "coordinates": "pixel centers in selected raster; original center = selected center + (left, top)"
+      }
+    }
+  ],
+  "tolerance": 0.05,
+  "model_sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+  "message": "primary observation: multiple_faces; explicitly crop/select one face",
+  "directory": "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\source-selection-20261004\\app\\85d36a7627454a038e2d00d32b68e65d",
+  "returncode": 2,
+  "finished": "2026-10-04T18:36:32.782576+00:00"
+}
