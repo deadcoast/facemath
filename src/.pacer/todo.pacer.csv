@@ -1,4 +1,1 @@
 ID,Kind,Pos,Title,Status,Tier,Produce,In,Out,Binds,Needs,Probe,Exit,Next,Tags
-PAC-019,AREA,A7,Bilateral comparison,ACTIVE,,,,,,,,,,
-PAC-020,PHASE,A7.P1,Measured bilateral configuration,ACTIVE,integrated,,,,,,,Five fixed bilateral rows with preserved observations and usable image markers,,
-PAC-021,PACE,A7.P1.01,Implement bilateral features,ACTIVE,,"Compute bilateral components and uncertainty, and display their image locations in native comparison results",OVR-018;OVR-032;OVR-033,facemath/observation/bilateral.py;facemath/observation/intrinsic.py;facemath/observation/readout.py,OGM-009,,../runs/enrollment-registry-20261003/env311/Scripts/python.exe -m pytest -q ../tests/test_bilateral_comparison.py,,implement,

@@ -17,3 +17,6 @@ PAC-015,PACE,A5.P1.01,Compute paired contour-ray displacement,DONE,,"Add shared-
 PAC-016,AREA,A6,Usable comparison workflow,DONE,,,,,,,,,,
 PAC-017,PHASE,A6.P1,Native pair workspace,DONE,integrated,,,,OGM-008,,,Native browser upload reaches the complete report with errors and history retained.,,
 PAC-018,PACE,A6.P1.01,Implement local comparison workspace,DONE,,"Implement local image selection, asynchronous native analysis, result access and retry without overwriting runs.",OVR-017;OVR-018,facemath/workspace.py;facemath/workspace_ui.py,OGM-008,,"""..\runs\enrollment-registry-20261003\env311\Scripts\python.exe"" -m pytest -q ../tests/test_workspace.py --basetemp=.pacer/run/workspace22",,integrate,
+PAC-019,AREA,A7,Bilateral comparison,DONE,,,,,,,,,,
+PAC-020,PHASE,A7.P1,Measured bilateral configuration,DONE,integrated,,,,,,,Five fixed bilateral rows with preserved observations and usable image markers,,
+PAC-021,PACE,A7.P1.01,Implement bilateral features,DONE,,"Compute bilateral components and uncertainty, and display their image locations in native comparison results",OVR-018;OVR-032;OVR-033,facemath/observation/bilateral.py;facemath/observation/intrinsic.py;facemath/observation/readout.py,OGM-009,,../runs/enrollment-registry-20261003/env311/Scripts/python.exe -m pytest -q ../tests/test_bilateral_comparison.py,,verify,

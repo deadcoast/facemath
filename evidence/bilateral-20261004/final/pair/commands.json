@@ -1,0 +1,107 @@
+[
+  {
+    "name": "nominal",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "analyze",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\study\\inputs\\case_00000.png",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\study\\inputs\\case_00001.png",
+      "--observation-a",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\session\\cases\\case_00000\\observation.json",
+      "--observation-b",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\session\\cases\\case_00001\\observation.json",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\bilateral-20261004\\pair-02\\nominal"
+    ],
+    "started_utc": "2026-10-04T16:13:47.867372+00:00",
+    "finished_utc": "2026-10-04T16:13:51.974745+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "calibrated",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "analyze",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\study\\inputs\\case_00000.png",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\study\\inputs\\case_00001.png",
+      "--observation-a",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\session\\cases\\case_00000\\observation.json",
+      "--observation-b",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\session\\cases\\case_00001\\observation.json",
+      "--localization-calibration",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\evidence\\core-features-20261004\\native-01\\evaluation\\localization_calibration.json",
+      "--domain",
+      "Frozen HELEN roots [132,192), new correspondence-v2 joint fit; published PTS agreement; anatomical equivalence and visibility unresolved",
+      "--query-groups",
+      "source_eaa3f36687ed7e693bee4b1dc002120a077f1cc7e3adb71d7a40c61320740577",
+      "source_2c3a325da349a97419d8ee8b78b5255e5b0451d8b87dd516793226570cd3ab85",
+      "--lineage-a",
+      "source_eaa3f36687ed7e693bee4b1dc002120a077f1cc7e3adb71d7a40c61320740577",
+      "--lineage-b",
+      "source_2c3a325da349a97419d8ee8b78b5255e5b0451d8b87dd516793226570cd3ab85",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\bilateral-20261004\\pair-02\\calibrated"
+    ],
+    "started_utc": "2026-10-04T16:13:51.976251+00:00",
+    "finished_utc": "2026-10-04T16:13:57.141074+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "nominal-verify",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "verify",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\bilateral-20261004\\pair-02\\nominal"
+    ],
+    "started_utc": "2026-10-04T16:13:57.142073+00:00",
+    "finished_utc": "2026-10-04T16:13:59.543507+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "calibrated-verify",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "verify",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\bilateral-20261004\\pair-02\\calibrated"
+    ],
+    "started_utc": "2026-10-04T16:13:59.545009+00:00",
+    "finished_utc": "2026-10-04T16:14:03.050250+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "replay",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "replay",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\bilateral-20261004\\pair-02\\calibrated",
+      "--out",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\bilateral-20261004\\pair-02\\replayed"
+    ],
+    "started_utc": "2026-10-04T16:14:03.052749+00:00",
+    "finished_utc": "2026-10-04T16:14:12.273998+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "terminal",
+    "command": [
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\enrollment-registry-20261003\\env311\\Scripts\\python.exe",
+      "-m",
+      "facemath",
+      "overview",
+      "C:\\Users\\ryanf\\github\\_active\\facemath\\runs\\bilateral-20261004\\pair-02\\calibrated"
+    ],
+    "started_utc": "2026-10-04T16:14:12.274497+00:00",
+    "finished_utc": "2026-10-04T16:14:13.913057+00:00",
+    "returncode": 0
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "prefinal": {
+    "workflow": "workflow.json",
+    "source_commit": "63ba53775043347a6289cf950b104bd46be24210",
+    "code_sha256": "783fc4fa431f338e224352d6fc99b06feaf72a0d6b969bb5eb01d0874c6fe574",
+    "status": "superseded by final/workflow.json; retained without replacing its results"
+  },
+  "failed_regression": {
+    "evidence": "failed-regression-01",
+    "result": "1266 passed, 2 failed, 1 skipped",
+    "failures": [
+      {
+        "test": "test_both_frozen_branches_run_and_raw_geometry_stays_unchanged",
+        "cause": "Inherited assertion counted 351 arrays; the first implementation added five observed arrays.",
+        "correction": "Extend the exact inventory and assert every new observed array is present. The final separation adds seven arrays, including two separate display arrays."
+      },
+      {
+        "test": "test_canonical_display_size_and_robust_fit_settings_do_not_change_intrinsic_relations",
+        "cause": "Canonical display markers were incorrectly included in intrinsic arrays and changed with canvas size.",
+        "correction": "Keep source-frame markers intrinsic. Apply the existing canonical display transform at InstrumentResult output. Preserve the original invariance test unchanged."
+      }
+    ]
+  },
+  "final": {
+    "workflow": "final/workflow.json",
+    "code_sha256": "6976e35db378c5416d195784b8951a4cf979c6edc12e8e7b60d1405960cf6c34",
+    "native_pair_observed_arrays_preserved": 365,
+    "inherited_observed_arrays_preserved": 358,
+    "cohort_or_model_fit_changed": false,
+    "release_status": "See separate BILATERAL_COMPARISON.json and post-seal evidence when present; native checks alone do not constitute release validation."
+  }
+}
